@@ -3,12 +3,29 @@
   "theme": "mint",
   "name": "Lindy AI Documentation",
   "colors": {
-    "primary": "#5B47ED",
-    "light": "#7B68EE",
-    "dark": "#4B3BD4"
+    "primary": "#E6C147",
+    "light": "#FEF4D3",
+    "dark": "#C9A342"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
+  "font": {
+    "headings": {
+      "family": "Proxima Nova, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "weight": "600"
+    },
+    "body": {
+      "family": "Proxima Nova, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "weight": "400"
+    },
+    "code": {
+      "family": "Menlo, Monaco, 'Courier New', monospace"
+    }
+  },
+  "modeToggle": {
+    "default": "light"
+  },
   "navigation": {
+    "home": "index",
     "tabs": [
       {
         "tab": "Documentation",
@@ -16,111 +33,62 @@
           {
             "group": "Getting Started",
             "pages": [
-              "index",
               "quickstart",
-              "getting-started/what-is-lindy",
-              "getting-started/core-concepts",
-              "getting-started/your-first-agent",
-              "getting-started/understanding-triggers",
-              "getting-started/understanding-actions"
+              "getting-started/what-is-lindy"
             ]
           },
           {
-            "group": "Building Agents",
+            "group": "Core Concepts",
             "pages": [
-              "building-agents/agent-basics/creating-agents",
-              "building-agents/agent-basics/agent-settings",
-              "building-agents/agent-basics/testing-agents",
-              "building-agents/agent-basics/agent-templates"
+              "core-concepts/agents",
+              "core-concepts/actions-and-triggers",
+              "core-concepts/conditions",
+              "core-concepts/looping",
+              "core-concepts/workspace",
+              "core-concepts/tasks",
+              "core-concepts/human-in-the-loop",
+              "core-concepts/monitoring-agents",
+              "core-concepts/ai-models",
+              "core-concepts/knowledge-base",
+              "core-concepts/templates",
+              "core-concepts/lindy-mail",
+              "core-concepts/webhooks",
+              "core-concepts/api-calls"
             ]
           },
           {
-            "group": "Triggers",
+            "group": "Phone Calling",
             "pages": [
-              "building-agents/triggers/overview",
-              "building-agents/triggers/email-triggers",
-              "building-agents/triggers/calendar-triggers",
-              "building-agents/triggers/webhook-triggers",
-              "building-agents/triggers/scheduled-triggers",
-              "building-agents/triggers/manual-triggers"
-            ]
-          },
-          {
-            "group": "Actions",
-            "pages": [
-              "building-agents/actions/overview",
-              "building-agents/actions/communication-actions",
-              "building-agents/actions/data-actions",
-              "building-agents/actions/integration-actions",
-              "building-agents/actions/ai-actions"
-            ]
-          },
-          {
-            "group": "Advanced Features",
-            "pages": [
-              "building-agents/advanced-features/conditions",
-              "building-agents/advanced-features/loops",
-              "building-agents/advanced-features/variables",
-              "building-agents/advanced-features/knowledge-bases",
-              "building-agents/advanced-features/human-in-the-loop",
-              "building-agents/advanced-features/delegation"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Use Cases",
-        "groups": [
-          {
-            "group": "Sales",
-            "pages": [
-              "use-cases/sales/lead-qualification",
-              "use-cases/sales/meeting-automation",
-              "use-cases/sales/crm-updates",
-              "use-cases/sales/follow-up-sequences"
-            ]
-          },
-          {
-            "group": "Customer Support",
-            "pages": [
-              "use-cases/customer-support/ticket-routing",
-              "use-cases/customer-support/auto-responses",
-              "use-cases/customer-support/escalation-handling",
-              "use-cases/customer-support/knowledge-retrieval"
-            ]
-          },
-          {
-            "group": "Operations",
-            "pages": [
-              "use-cases/operations/data-processing",
-              "use-cases/operations/report-generation",
-              "use-cases/operations/workflow-automation",
-              "use-cases/operations/monitoring-alerts"
-            ]
-          },
-          {
-            "group": "Personal Productivity",
-            "pages": [
-              "use-cases/personal-productivity/email-management",
-              "use-cases/personal-productivity/calendar-optimization",
-              "use-cases/personal-productivity/task-automation",
-              "use-cases/personal-productivity/note-taking"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Phone Calling",
-        "groups": [
-          {
-            "group": "Phone Features",
-            "pages": [
-              "phone-calling/getting-started",
+              "phone-calling/overview",
               "phone-calling/inbound-calls",
               "phone-calling/outbound-calls",
               "phone-calling/call-transfers",
-              "phone-calling/transcription",
-              "phone-calling/medical-scribe"
+              "phone-calling/pricing"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/integrations/overview",
+              "integrations/integrations/google-sheets",
+              "integrations/integrations/gmail",
+              "integrations/integrations/slack",
+              "integrations/integrations/google-drive",
+              "integrations/integrations/hubspot",
+              "integrations/integrations/calendly",
+              "integrations/integrations/airtable",
+              "integrations/integrations/salesforce",
+              "integrations/integrations/whatsapp",
+              "integrations/integrations/telegram"
+            ]
+          },
+          {
+            "group": "FAQ & Troubleshooting",
+            "pages": [
+              "faq/troubleshooting",
+              "faq/billing",
+              "faq/cost-optimization",
+              "faq/credits"
             ]
           }
         ]
@@ -129,67 +97,43 @@
         "tab": "Tutorials",
         "groups": [
           {
-            "group": "Beginner",
+            "group": "Email & Communication",
             "pages": [
-              "tutorials/beginner/email-assistant",
-              "tutorials/beginner/meeting-scheduler",
-              "tutorials/beginner/slack-bot"
+              "tutorials/email-assistant",
+              "tutorials/email-negotiator",
+              "tutorials/outreach-automation"
             ]
           },
           {
-            "group": "Intermediate",
+            "group": "Meetings",
             "pages": [
-              "tutorials/intermediate/customer-support-system",
-              "tutorials/intermediate/sales-automation",
-              "tutorials/intermediate/data-enrichment"
+              "tutorials/meeting-scheduler",
+              "tutorials/meeting-notes",
+              "tutorials/post-meeting-automation"
             ]
           },
           {
-            "group": "Advanced",
+            "group": "Sales",
             "pages": [
-              "tutorials/advanced/multi-agent-workflows",
-              "tutorials/advanced/custom-integrations",
-              "tutorials/advanced/complex-automations"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Integrations",
-        "groups": [
-          {
-            "group": "Popular Integrations",
-            "pages": [
-              "integrations/overview",
-              "integrations/popular/gmail",
-              "integrations/popular/slack",
-              "integrations/popular/google-drive",
-              "integrations/popular/calendar",
-              "integrations/popular/salesforce",
-              "integrations/popular/hubspot",
-              "integrations/popular/notion"
+              "tutorials/lead-generation",
+              "tutorials/lead-enrichment",
+              "tutorials/sales-automation"
             ]
           },
           {
-            "group": "All Integrations",
+            "group": "Customer Support",
             "pages": [
-              "integrations/all-integrations"
+              "tutorials/slack-bot",
+              "tutorials/support-ticket-dispatcher",
+              "tutorials/chatbot"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
+          },
           {
-            "group": "API Documentation",
+            "group": "Workflow Automation",
             "pages": [
-              "reference/agent-api",
-              "reference/webhook-api",
-              "reference/triggers-reference",
-              "reference/actions-reference",
-              "reference/variables-reference",
-              "reference/errors-reference"
+              "tutorials/web-monitoring",
+              "tutorials/data-enrichment",
+              "tutorials/content-automation"
             ]
           }
         ]
@@ -197,19 +141,19 @@
     ],
     "global": {
       "anchors": [
-        {
+                {
           "anchor": "Templates",
-                      "href": "https://example.com/templates",
+          "href": "https://example.com/templates",
           "icon": "grid-2-plus"
         },
         {
           "anchor": "Community",
-          "href": "https://example.com",
+          "href": "https://discord.example.com",
           "icon": "discord"
         },
         {
           "anchor": "Support",
-                      "href": "mailto:support@example.com",
+          "href": "mailto:support@example.com",
           "icon": "envelope"
         }
       ]
@@ -223,45 +167,26 @@
     "links": [
       {
         "label": "Academy",
-        "href": "https://example.com"
+        "href": "https://www.lindy.ai/academy"
       },
       {
         "label": "Blog",
-        "href": "https://example.com"
+        "href": "https://blog.example.com"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Start Free",
-      "href": "https://example.com"
+      "href": "https://app.example.com/signup",
+      "style": "gradient"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://example.com",
-      "linkedin": "https://example.com",
-      "discord": "https://example.com"
-    },
-    "links": [
-      {
-        "label": "Platform",
-        "items": [
-          { "label": "Workspaces", "href": "https://example.com/platform/workspaces" },
-          { "label": "Security", "href": "https://example.com/platform/security" },
-          { "label": "Billing", "href": "https://example.com/platform/billing" },
-          { "label": "Credits", "href": "https://example.com/platform/credits" }
-        ]
-      },
-      {
-        "label": "Resources",
-        "items": [
-          { "label": "Templates", "href": "https://example.com/resources/templates" },
-          { "label": "Video Library", "href": "https://example.com/resources/video-library" },
-          { "label": "Changelog", "href": "https://example.com/resources/changelog" },
-          { "label": "Support", "href": "https://example.com/resources/support" }
-        ]
-      }
-    ]
+      "x": "https://twitter.example.com",
+      "linkedin": "https://linkedin.example.com",
+      "discord": "https://discord.example.com"
+    }
   },
   "feedback": {
     "thumbs": true,
@@ -272,21 +197,29 @@
     "ai": true,
     "placeholder": "Search documentation..."
   },
-  "analytics": {
-    "gtm": {
-      "tagId": "GTM-XXXXXX"
-    }
-  },
   "topbar": {
     "announcement": {
       "text": "🎉 New: Phone calling features are now available!",
-      "link": "/phone-calling/getting-started"
+      "link": "/phone-calling/overview"
     }
   },
   "metadata": {
     "og:title": "Lindy AI Documentation",
     "og:description": "Learn how to build powerful AI agents with Lindy",
-    "og:image": "https://example.com",
+    "og:image": "https://example.com/og-image.png",
     "twitter:card": "summary_large_image"
+  },
+  "integrations": {
+    "intercom": {
+      "appId": "your_app_id_here"
+    }
+  },
+  "analytics": {
+    "ga4": {
+      "measurementId": "G-XXXXXXXXXX"
+    }
+  },
+  "custom": {
+    "css": ["styles.css"]
   }
 }

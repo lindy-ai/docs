@@ -7,11 +7,20 @@ Create documentation so good that anyone - technical or not - can quickly unders
 
 ### ✅ Completed
 - Mintlify setup with template
-- Documentation structure defined
-- Brand assets integrated (logo, favicon)
+- Documentation structure intelligently expanded (26 → 52 pages based on Academy)
+- Full Lindy branding applied:
+  - Lindy app icon as favicon
+  - Yellow/orange color scheme (#FFB800)
+  - Proxima Nova font system
+  - Custom CSS matching Lindy's design
+  - Formatting style guide implemented
 - Placeholder system implemented
 - AI content generation prompts created
-- Example pages created (homepage, quickstart, what-is-lindy)
+- Example pages created:
+  - Homepage (redesigned with Lindy style) ✅
+  - Quickstart ✅
+  - What is Lindy ✅
+  - AI Agents (sample with formatting) ✅
 
 ### 🔄 Placeholders Created
 
@@ -47,25 +56,78 @@ Create documentation so good that anyone - technical or not - can quickly unders
 
 ```
 /docs
-├── MASTER_PLAN.md (this file - all planning consolidated)
+├── MASTER_PLAN.md (this file)
 ├── AI_CONTENT_PROMPTS.md (content generation guide)
-├── docs.json (Mintlify config with placeholders)
-├── setup-folders.sh (creates folder structure)
+├── docs.json (updated based on Academy gaps)
 ├── favicon.svg (Lindy icon)
 ├── logo/
-│   ├── light.svg (Lindy wordmark)
-│   └── dark.svg (Lindy wordmark)
-├── images/ (empty - needs 53 images)
-├── snippets/ (Mintlify snippets folder)
-├── index.mdx (homepage ✅)
-├── quickstart.mdx (5-minute guide ✅)
-└── getting-started/
-    └── what-is-lindy.mdx (product overview ✅)
+│   ├── light.svg (Lindy wordmark - swapped)
+│   └── dark.svg (Lindy wordmark - swapped)
+├── images/ (has app icon, needs more)
+├── index.mdx ✅
+├── quickstart.mdx ✅
+├── getting-started/
+│   └── what-is-lindy.mdx ✅
+├── core-concepts/ (14 files - all empty)
+│   ├── agents.mdx
+│   ├── actions-and-triggers.mdx
+│   ├── conditions.mdx
+│   ├── looping.mdx
+│   ├── workspace.mdx
+│   ├── tasks.mdx
+│   ├── human-in-the-loop.mdx
+│   ├── monitoring-agents.mdx
+│   ├── ai-models.mdx
+│   ├── knowledge-base.mdx
+│   ├── templates.mdx
+│   ├── lindy-mail.mdx
+│   ├── webhooks.mdx
+│   └── api-calls.mdx
+├── phone-calling/ (5 files - all empty)
+│   ├── overview.mdx
+│   ├── inbound-calls.mdx
+│   ├── outbound-calls.mdx
+│   ├── call-transfers.mdx
+│   └── pricing.mdx
+├── integrations/
+│   └── integrations/ (11 files - all empty)
+│       ├── overview.mdx
+│       ├── google-sheets.mdx
+│       ├── gmail.mdx
+│       ├── slack.mdx
+│       ├── google-drive.mdx
+│       ├── hubspot.mdx
+│       ├── calendly.mdx
+│       ├── airtable.mdx
+│       ├── salesforce.mdx
+│       ├── whatsapp.mdx
+│       └── telegram.mdx
+├── tutorials/ (15 files - all empty)
+│   ├── email-assistant.mdx
+│   ├── email-negotiator.mdx
+│   ├── outreach-automation.mdx
+│   ├── meeting-scheduler.mdx
+│   ├── meeting-notes.mdx
+│   ├── post-meeting-automation.mdx
+│   ├── lead-generation.mdx
+│   ├── lead-enrichment.mdx
+│   ├── sales-automation.mdx
+│   ├── slack-bot.mdx
+│   ├── support-ticket-dispatcher.mdx
+│   ├── chatbot.mdx
+│   ├── web-monitoring.mdx
+│   ├── data-enrichment.mdx
+│   └── content-automation.mdx
+└── faq/ (4 files - all empty)
+    ├── troubleshooting.mdx
+    ├── billing.mdx
+    ├── cost-optimization.mdx
+    └── credits.mdx
 ```
 
-**Total files:** 11 (excluding .git)
-**Content pages created:** 3 of 23 Priority 1 pages
-**Placeholders to replace:** 14 (12 URLs + 2 emails)
+**Total pages:** 52 (intelligently expanded based on Academy)
+**Pages completed:** 4 (homepage, quickstart, what-is-lindy, agents)
+**Pages remaining:** 48
 
 ## 🚀 Execution Plan
 
@@ -120,16 +182,31 @@ Create documentation so good that anyone - technical or not - can quickly unders
 
 ## 📋 Content Tracking
 
-### Priority 1 Pages (23 total)
-| Category | Pages | Status |
-|----------|-------|--------|
-| Homepage | 1 | ✅ Done |
-| Quickstart | 1 | ✅ Done |
-| Getting Started | 5 | 🔄 1/5 done |
-| Agent Basics | 4 | ❌ Not started |
-| Triggers | 5 | ❌ Not started |
-| Actions | 5 | ❌ Not started |
-| Integrations | 3 | ❌ Not started |
+### Content Status (52 total pages)
+| Category | Pages | Status | Priority |
+|----------|-------|--------|----------|
+| Homepage | 1 | ✅ Done | - |
+| Quickstart | 1 | ✅ Done | - |
+| Getting Started | 1 | ✅ Done | - |
+| Core Concepts | 14 | ❌ Not started | 1 |
+| Phone Calling | 5 | ❌ Not started | 2 |
+| Integrations | 11 | ❌ Not started | 3 |
+| Tutorials | 15 | ❌ Not started | 4 |
+| FAQ | 4 | ❌ Not started | 5 |
+
+### What We Added Based on Academy:
+- **Phone Calling**: Separated into its own section (very prominent in Academy)
+- **Core Concepts**: Added human-in-the-loop, monitoring, Lindy Mail, webhooks, API calls
+- **Integrations**: Expanded from 5 to 11 (added sheets, HubSpot, Calendly, Airtable, Salesforce, WhatsApp, Telegram)
+- **Tutorials**: Expanded from 6 to 15, organized by use case categories
+- **FAQ**: Expanded from 1 to 4 pages (billing, credits, cost optimization)
+
+### Priority Order:
+1. **Core Concepts** (14 pages) - Foundation knowledge
+2. **Phone Calling** (5 pages) - Major feature
+3. **Key Integrations** (top 5) - Most popular connections
+4. **Basic Tutorials** (top 5) - Quick wins
+5. **FAQ** (4 pages) - Common questions
 
 ### Success Metrics
 - Time to first success: < 5 minutes
