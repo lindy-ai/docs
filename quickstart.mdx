@@ -1,97 +1,189 @@
 ---
 title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+description: 'Build your first AI agent in 5 minutes'
+icon: 'rocket'
 ---
 
-## Setup your development
+<Info>
+  **Time to complete**: 5 minutes | **Difficulty**: Beginner | **What you'll build**: An email assistant that drafts responses
+</Info>
 
-Learn how to update your docs locally and deploy them to the public.
+## Let's build something amazing
 
-### Edit and preview
+In the next 5 minutes, you'll create an AI agent that automatically drafts email responses. By the end, you'll understand how Lindy works and be ready to build more complex automations.
 
-<AccordionGroup>
-  <Accordion icon="github" title="Clone your docs locally">
-    During the onboarding process, we created a repository on your Github with
-    your docs content. You can find this repository on our
-    [dashboard](https://dashboard.mintlify.com). To clone the repository
-    locally, follow these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    in your terminal.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview changes">
-    Previewing helps you make sure your changes look as intended. We built a
-    command line interface to render these changes locally. 
-    1. Install the
-    [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the
-    documentation changes locally with this command: ``` npm i -g mintlify ```
-    2. Run the following command at the root of your documentation (where
-    `docs.json` is): ``` mintlify dev ```
-    <Note>
-      If you’re currently using the legacy ```mint.json``` configuration file, please update the Mintlify CLI:
+<Frame>
+  <video
+    controls
+    className="w-full rounded-lg"
+    src="/videos/quickstart-demo.mp4"
+  />
+</Frame>
 
+## Before you begin
 
-      ```npm i -g mintlify@latest```
-      And run the new upgrade command in your docs repository:
-
-      ```mintlify upgrade```
-      You should now be using the new ```docs.json``` configuration file. Feel free to delete the ```mint.json``` file from your repository.
-    </Note>
-  </Accordion>
-</AccordionGroup>
-
-### Deploy your changes
-
-<AccordionGroup>
-
-<Accordion icon="message-bot" title="Install our Github app">
-  Our Github app automatically deploys your changes to your docs site, so you
-  don't need to manage deployments yourself. You can find the link to install on
-  your [dashboard](https://dashboard.mintlify.com). Once the bot has been
-  successfully installed, there should be a check mark next to the commit hash
-  of the repo.
-</Accordion>
-<Accordion icon="rocket" title="Push your changes">
-  [Commit and push your changes to
-  Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
-  for your changes to update in your docs site. If you push and don't see that
-  the Github app successfully deployed your changes, you can also manually
-  update your docs through our [dashboard](https://dashboard.mintlify.com).
-</Accordion>
-
-</AccordionGroup>
-
-## Update your docs
-
-Add content directly in your files with MDX syntax and React components. You can use any of our components, or even build your own.
-
-<CardGroup>
-
-<Card title="Add Content With MDX" icon="file" href="/essentials/markdown">
-  Add content to your docs with MDX syntax.
-</Card>
-
-<Card
-  title="Add Code Blocks"
-  icon="square-code"
-  href="/essentials/code"
->
-  Add code directly to your docs with syntax highlighting.
-</Card>
-
-<Card
-  title="Add Images"
-  icon="image"
-  href="/essentials/images"
->
-  Add images to your docs to make them more engaging.
-</Card>
-
-<Card
-  title="Add Custom Components"
-  icon="puzzle-piece"
-  href="/essentials/reusable-snippets"
->
-  Add templates to your docs to make them more reusable.
-</Card>
-
+<CardGroup cols={2}>
+  <Card title="Sign up for Lindy" icon="user-plus">
+    Create your free account at [app.lindy.ai]([PLACEHOLDER_SIGNUP_URL])
+  </Card>
+  <Card title="Connect Gmail" icon="envelope">
+    You'll connect your email during setup (takes 30 seconds)
+  </Card>
 </CardGroup>
+
+## Step 1: Create your first agent
+
+<Steps>
+  <Step title="Open Lindy">
+    Go to [app.lindy.ai]([PLACEHOLDER_APP_URL]) and click **"Create Agent"**
+  </Step>
+  <Step title="Choose a template">
+    Select **"Email Assistant"** from the templates
+    
+    <Frame>
+      <img src="/images/template-selection.png" alt="Template Selection" />
+    </Frame>
+  </Step>
+  <Step title="Name your agent">
+    Give it a memorable name like "Email Helper" or keep the default
+  </Step>
+</Steps>
+
+<Tip>
+  Can't find the template? You can also start from scratch and follow along!
+</Tip>
+
+## Step 2: Set up the trigger
+
+Your agent needs to know when to act. Let's set it up to trigger when you receive emails.
+
+<Tabs>
+  <Tab title="Using the template">
+    The email trigger is pre-configured! Just click **"Connect Gmail"** when prompted.
+  </Tab>
+  <Tab title="Starting from scratch">
+    1. Click **"Add Trigger"**
+    2. Choose **"Email Received"**
+    3. Connect your Gmail account
+    4. Set filter to "Unread emails in Inbox"
+  </Tab>
+</Tabs>
+
+<Frame caption="Your trigger should look like this">
+  <img src="/images/email-trigger-setup.png" alt="Email Trigger Setup" />
+</Frame>
+
+## Step 3: Configure the AI response
+
+Now let's tell Lindy how to draft responses.
+
+<CodeGroup>
+```text Prompt Template
+You are an AI email assistant. Draft a professional response to the email below.
+
+Guidelines:
+- Be friendly but professional
+- Keep responses concise (under 150 words)
+- If it's a question, provide a helpful answer
+- If it's a request, acknowledge it and provide next steps
+- Always end with a polite closing
+
+Email to respond to:
+{{email.body}}
+
+From: {{email.sender}}
+Subject: {{email.subject}}
+```
+
+```text Example Output
+Hi Sarah,
+
+Thanks for reaching out about the project timeline. I'd be happy to discuss this further.
+
+Based on our current progress, we're on track to complete Phase 1 by Friday. Phase 2 will likely take an additional week, putting us at completion around the 15th.
+
+Would you like to schedule a quick call tomorrow to go over the details? I'm available between 2-4 PM.
+
+Best regards,
+[Your name]
+```
+</CodeGroup>
+
+## Step 4: Test your agent
+
+Time to see your agent in action!
+
+<Steps>
+  <Step title="Send a test email">
+    Send an email to yourself with subject "Test for Lindy"
+  </Step>
+  <Step title="Run the agent">
+    Click **"Test Agent"** in Lindy
+  </Step>
+  <Step title="Review the draft">
+    Check the drafted response in the activity log
+  </Step>
+</Steps>
+
+<Accordion title="Not working? Common fixes">
+  - Make sure Gmail is properly connected
+  - Check that you have unread emails in your inbox
+  - Verify the trigger conditions match your test email
+  - Look at the activity log for any error messages
+</Accordion>
+
+## Step 5: Activate and customize
+
+<CardGroup cols={2}>
+  <Card title="Turn it on" icon="power-off">
+    Toggle the agent to **"Active"** to run automatically
+  </Card>
+  <Card title="Add conditions" icon="filter">
+    Set rules for which emails to respond to
+  </Card>
+  <Card title="Customize responses" icon="palette">
+    Adjust the prompt to match your writing style
+  </Card>
+  <Card title="Add actions" icon="plus">
+    Have Lindy create drafts, send emails, or update your CRM
+  </Card>
+</CardGroup>
+
+## 🎉 Congratulations!
+
+You've just built your first Lindy agent! Here's what you accomplished:
+
+- ✅ Created an AI agent from scratch
+- ✅ Connected it to your email
+- ✅ Configured intelligent responses
+- ✅ Tested it with real data
+
+## What's next?
+
+<CardGroup cols={3}>
+  <Card
+    title="Explore templates"
+    icon="grid-2"
+    href="[PLACEHOLDER_TEMPLATES_URL]"
+  >
+    Browse 50+ pre-built agents
+  </Card>
+  <Card
+    title="Learn core concepts"
+    icon="book"
+    href="/getting-started/core-concepts"
+  >
+    Understand triggers, actions, and more
+  </Card>
+  <Card
+    title="Join the community"
+    icon="users"
+    href="[PLACEHOLDER_DISCORD_URL]"
+  >
+    Get help and share ideas
+  </Card>
+</CardGroup>
+
+<Note>
+  **Pro tip**: Your agent improves over time! Review its responses and adjust the prompt to better match your style.
+</Note>

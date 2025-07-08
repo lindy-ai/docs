@@ -1,35 +1,179 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Lindy AI Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#5B47ED",
+    "light": "#7B68EE",
+    "dark": "#4B3BD4"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Getting Started",
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "getting-started/what-is-lindy",
+              "getting-started/core-concepts",
+              "getting-started/your-first-agent",
+              "getting-started/understanding-triggers",
+              "getting-started/understanding-actions"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Building Agents",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "building-agents/agent-basics/creating-agents",
+              "building-agents/agent-basics/agent-settings",
+              "building-agents/agent-basics/testing-agents",
+              "building-agents/agent-basics/agent-templates"
+            ]
+          },
+          {
+            "group": "Triggers",
+            "pages": [
+              "building-agents/triggers/overview",
+              "building-agents/triggers/email-triggers",
+              "building-agents/triggers/calendar-triggers",
+              "building-agents/triggers/webhook-triggers",
+              "building-agents/triggers/scheduled-triggers",
+              "building-agents/triggers/manual-triggers"
+            ]
+          },
+          {
+            "group": "Actions",
+            "pages": [
+              "building-agents/actions/overview",
+              "building-agents/actions/communication-actions",
+              "building-agents/actions/data-actions",
+              "building-agents/actions/integration-actions",
+              "building-agents/actions/ai-actions"
+            ]
+          },
+          {
+            "group": "Advanced Features",
+            "pages": [
+              "building-agents/advanced-features/conditions",
+              "building-agents/advanced-features/loops",
+              "building-agents/advanced-features/variables",
+              "building-agents/advanced-features/knowledge-bases",
+              "building-agents/advanced-features/human-in-the-loop",
+              "building-agents/advanced-features/delegation"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Use Cases",
+        "groups": [
+          {
+            "group": "Sales",
+            "pages": [
+              "use-cases/sales/lead-qualification",
+              "use-cases/sales/meeting-automation",
+              "use-cases/sales/crm-updates",
+              "use-cases/sales/follow-up-sequences"
+            ]
+          },
+          {
+            "group": "Customer Support",
+            "pages": [
+              "use-cases/customer-support/ticket-routing",
+              "use-cases/customer-support/auto-responses",
+              "use-cases/customer-support/escalation-handling",
+              "use-cases/customer-support/knowledge-retrieval"
+            ]
+          },
+          {
+            "group": "Operations",
+            "pages": [
+              "use-cases/operations/data-processing",
+              "use-cases/operations/report-generation",
+              "use-cases/operations/workflow-automation",
+              "use-cases/operations/monitoring-alerts"
+            ]
+          },
+          {
+            "group": "Personal Productivity",
+            "pages": [
+              "use-cases/personal-productivity/email-management",
+              "use-cases/personal-productivity/calendar-optimization",
+              "use-cases/personal-productivity/task-automation",
+              "use-cases/personal-productivity/note-taking"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Phone Calling",
+        "groups": [
+          {
+            "group": "Phone Features",
+            "pages": [
+              "phone-calling/getting-started",
+              "phone-calling/inbound-calls",
+              "phone-calling/outbound-calls",
+              "phone-calling/call-transfers",
+              "phone-calling/transcription",
+              "phone-calling/medical-scribe"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Tutorials",
+        "groups": [
+          {
+            "group": "Beginner",
+            "pages": [
+              "tutorials/beginner/email-assistant",
+              "tutorials/beginner/meeting-scheduler",
+              "tutorials/beginner/slack-bot"
+            ]
+          },
+          {
+            "group": "Intermediate",
+            "pages": [
+              "tutorials/intermediate/customer-support-system",
+              "tutorials/intermediate/sales-automation",
+              "tutorials/intermediate/data-enrichment"
+            ]
+          },
+          {
+            "group": "Advanced",
+            "pages": [
+              "tutorials/advanced/multi-agent-workflows",
+              "tutorials/advanced/custom-integrations",
+              "tutorials/advanced/complex-automations"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "groups": [
+          {
+            "group": "Popular Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/popular/gmail",
+              "integrations/popular/slack",
+              "integrations/popular/google-drive",
+              "integrations/popular/calendar",
+              "integrations/popular/salesforce",
+              "integrations/popular/hubspot",
+              "integrations/popular/notion"
+            ]
+          },
+          {
+            "group": "All Integrations",
+            "pages": [
+              "integrations/all-integrations"
             ]
           }
         ]
@@ -40,16 +184,12 @@
           {
             "group": "API Documentation",
             "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "reference/agent-api",
+              "reference/webhook-api",
+              "reference/triggers-reference",
+              "reference/actions-reference",
+              "reference/variables-reference",
+              "reference/errors-reference"
             ]
           }
         ]
@@ -58,19 +198,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Templates",
+                      "href": "https://example.com/templates",
+          "icon": "grid-2-plus"
         },
         {
           "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
+          "href": "https://example.com",
+          "icon": "discord"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Support",
+                      "href": "mailto:support@example.com",
+          "icon": "envelope"
         }
       ]
     }
@@ -82,21 +222,71 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Academy",
+        "href": "https://example.com"
+      },
+      {
+        "label": "Blog",
+        "href": "https://example.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Start Free",
+      "href": "https://example.com"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://example.com",
+      "linkedin": "https://example.com",
+      "discord": "https://example.com"
+    },
+    "links": [
+      {
+        "label": "Platform",
+        "items": [
+          { "label": "Workspaces", "href": "https://example.com/platform/workspaces" },
+          { "label": "Security", "href": "https://example.com/platform/security" },
+          { "label": "Billing", "href": "https://example.com/platform/billing" },
+          { "label": "Credits", "href": "https://example.com/platform/credits" }
+        ]
+      },
+      {
+        "label": "Resources",
+        "items": [
+          { "label": "Templates", "href": "https://example.com/resources/templates" },
+          { "label": "Video Library", "href": "https://example.com/resources/video-library" },
+          { "label": "Changelog", "href": "https://example.com/resources/changelog" },
+          { "label": "Support", "href": "https://example.com/resources/support" }
+        ]
+      }
+    ]
+  },
+  "feedback": {
+    "thumbs": true,
+    "suggestion": true,
+    "email": "docs@example.com"
+  },
+  "search": {
+    "ai": true,
+    "placeholder": "Search documentation..."
+  },
+  "analytics": {
+    "gtm": {
+      "tagId": "GTM-XXXXXX"
     }
+  },
+  "topbar": {
+    "announcement": {
+      "text": "🎉 New: Phone calling features are now available!",
+      "link": "/phone-calling/getting-started"
+    }
+  },
+  "metadata": {
+    "og:title": "Lindy AI Documentation",
+    "og:description": "Learn how to build powerful AI agents with Lindy",
+    "og:image": "https://example.com",
+    "twitter:card": "summary_large_image"
   }
 }
