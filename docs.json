@@ -41,7 +41,8 @@
             "group": "Core Concepts",
             "pages": [
               "core-concepts/agents",
-              "core-concepts/actions-and-triggers",
+              "core-concepts/triggers",
+              "core-concepts/actions",
               "core-concepts/conditions",
               "core-concepts/looping",
               "core-concepts/workspace",
