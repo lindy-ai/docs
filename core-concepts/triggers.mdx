@@ -1,4 +1,175 @@
 ---
 title: 'Triggers'
 description: 'Events that wake up your AI agents and start workflows'
---- 
+---
+
+## What are triggers?
+
+Triggers are events that "wake up" a Lindy and start a workflow. These can include time-based triggers (e.g., every weekday at 9 am), chat-based triggers (when a user starts a new chat), or event-based triggers (e.g., when you receive an email).
+
+A single Lindy can have multiple triggers, either managing different workflows or acting as entry points into the same workflow.
+
+## Types of triggers
+
+<CardGroup cols={3}>
+  <Card title="Time-based" icon="clock">
+    Starts the workflow at a set or recurring time
+  </Card>
+  <Card title="Chat-based" icon="message-circle">
+    Starts the workflow when a user initiates a chat
+  </Card>
+  <Card title="Event-based" icon="activity">
+    Starts the workflow when a specific event occurs
+  </Card>
+</CardGroup>
+
+### Time-based triggers
+Starts the workflow at a set or recurring time. Examples include:
+- Every weekday at 9 AM
+- Daily at midnight
+- Weekly on Monday
+- Monthly on the 1st
+
+### Chat-based triggers
+Starts the workflow when a user initiates a chat. This allows users to interact directly with your Lindy through the chat interface.
+
+### Event-based triggers
+Starts the workflow when a specific event occurs. Examples include:
+- Email received
+- Calendar event started
+- New row added to Google Sheets
+- Webhook received
+
+## How to add a trigger
+
+<Steps>
+  <Step title="Create a new Lindy">
+    Click the plus sign beside Lindies, then click "Start from scratch" to create a new Lindy
+  </Step>
+  <Step title="Select your trigger">
+    Click "Select Trigger" and search for a tool or trigger that will initiate a response from Lindy
+  </Step>
+  <Step title="Authorize your account">
+    If it's your first time, authorize your desired account and select which account to use
+  </Step>
+</Steps>
+
+### Example: Calendar trigger setup
+If you want Lindy to join your interview calls, select the Calendar Event Started trigger. This will wake Lindy up when a calendar event starts, assuming there is a meeting on your calendar.
+
+## Account selection
+
+If it is your first time setting up an app for a given trigger, you must authorize your desired account. Lindy supports multi-account authorization. You can select which account you want to use for the trigger in the Trigger Settings. The trigger will only fire for the selected account.
+
+## Trigger filters
+
+A trigger filter allows you to set conditional logic to filter which events will cause Lindy to wake up and execute the workflow.
+
+You can enable trigger filters at the bottom of the trigger configuration settings. This means you do not have to add additional steps to filter out triggering events from your workflow.
+
+### Filter rules
+- Trigger filters are not case-sensitive
+- You can add multiple filter conditions and combine them with AND or OR conditions
+- Condition Groups allow you to build more complex, nested filtering logic
+
+### Example filter
+In the example below, Lindy will only trigger if:
+- The Calendar Event name contains "Interview" AND the location contains "1841 Market Street"
+- OR the Calendar Event description contains "In-Person Interview"
+
+### Minutes offset
+Some triggers, such as the Calendar Event Started trigger, offer a Minutes Offset, which allows the trigger timing to begin before or after the event start time:
+- A negative Minutes Offset (-) sets the trigger before the event start time
+- A positive Minutes Offset (+) sets the trigger after the event start time
+
+For example, if you wanted a Meeting Prep Lindy to prep you 10 minutes before a meeting, you would set the Minutes Offset to -10. In this case, the workflow would begin 10 minutes before the Calendar Event Start time.
+
+## Multiple triggers
+
+One Lindy can have multiple triggers, either initiating the same workflow or triggering entirely different ones.
+
+### Multiple triggers for the same workflow
+
+For example, if you receive lead emails from a contact@company.com email address and also have a form on your website that sends leads to a Google Sheet, you can configure two triggers to aggregate your leads:
+
+1. One trigger would be on an Email Received
+2. The other would be on a New Row Added to a Google Sheet
+
+The workflow would execute exactly the same for both triggers.
+
+#### How to set up multiple triggers
+1. Create your first trigger and workflow
+2. Click "New Trigger" in the top left of the Flow Editor
+3. Add your second trigger
+4. Drag the grey arrow beneath the second trigger and connect it to the appropriate step in your existing workflow
+
+### A Lindy with multiple workflows
+
+Under some circumstances, you may want your Lindy to have two distinct workflows. For example, let's say you want to build a Meeting Notetaker Lindy that can also answer meeting questions in the Lindy app:
+
+1. **First Workflow**: Meeting recorder that joins your meeting, creates a Google Document with meeting notes and saves them in a Folder (triggered by Calendar Event Start)
+
+2. **Second Workflow**: Answer meeting questions with a Message Received trigger. This workflow begins when a user sends a message to Lindy, searches the knowledge base (which queries all the Documents in the Folder created by the first workflow), and then responds to the user.
+
+This example outlines two workflows with different triggers:
+- One workflow joins your meetings and takes notes
+- The other allows the user to chat with their meetings and get instant answers to questions about their meetings
+
+## Best practices
+
+<CardGroup cols={2}>
+  <Card title="Use filters wisely" icon="filter">
+    Use trigger filters to reduce costs and ensure workflows are only initiated by desired events
+  </Card>
+  <Card title="Consider multiple triggers" icon="layers">
+    Use multiple triggers when you want to aggregate data from different sources
+  </Card>
+  <Card title="Use minutes offset" icon="clock">
+    Use Minutes Offset for time-sensitive workflows that need to start before or after an event
+  </Card>
+  <Card title="Test thoroughly" icon="check-circle">
+    Test your triggers thoroughly to ensure they fire at the expected times and conditions
+  </Card>
+</CardGroup>
+
+## Common use cases
+
+<Tabs>
+  <Tab title="Email Automation">
+    **Email Received** trigger to automatically respond to customer inquiries, categorize emails, or route support tickets
+  </Tab>
+  <Tab title="Meeting Management">
+    **Calendar Event Started** trigger to join meetings, take notes, or send follow-ups
+  </Tab>
+  <Tab title="Data Processing">
+    **New Row Added** trigger to process new data, update databases, or generate reports
+  </Tab>
+  <Tab title="Scheduled Tasks">
+    **Time-based** trigger to run daily reports, send reminders, or perform maintenance tasks
+  </Tab>
+</Tabs>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Understanding Actions"
+    icon="play"
+    href="/core-concepts/actions"
+  >
+    Learn what your agents can do
+  </Card>
+  <Card
+    title="Building Your First Agent"
+    icon="rocket"
+    href="/getting-started/your-first-agent"
+  >
+    Create your first automated workflow
+  </Card>
+</CardGroup>
+
+<Note>
+  **Need help with a specific trigger?**
+  
+  Check out our integration guides for detailed setup instructions for Gmail, Calendar, Google Sheets, and more.
+</Note> 
