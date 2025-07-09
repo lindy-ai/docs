@@ -162,89 +162,6 @@ pre code {
   padding: 0;
   color: #FFFFFF;
 }
-
-/* Callout boxes - consolidated */
-aside,
-.tip, .info, .warning, .note,
-.info-box, .callout-info, [class*="callout"] {
-  background: var(--color-bg-light);
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: var(--spacing-lg) var(--spacing-xl);
-  margin: var(--spacing-lg) 0;
-  position: relative;
-}
-
-aside::before,
-.tip::before, .info::before, .warning::before, .note::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: #6c757d;
-}
-
-/* Callout text styling */
-aside p:first-child,
-.note strong:first-child,
-.tip strong:first-child,
-.warning strong:first-child,
-.info strong:first-child {
-  margin-top: 0;
-  font-weight: 600;
-  color: var(--color-text-primary);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-aside p,
-.info-box p, .callout-info p, [class*="callout"] p {
-  color: var(--color-dark-surface);
-  line-height: 1.6;
-  margin-bottom: var(--spacing-lg);
-}
-
-aside p:last-child,
-.info-box p:last-child, .callout-info p:last-child, [class*="callout"] p:last-child {
-  margin-bottom: 0;
-}
-
-aside strong {
-  color: var(--color-text-primary);
-  font-weight: 600;
-}
-
-/* Code in callouts */
-aside code {
-  background-color: #e9ecef;
-  border: 1px solid #dee2e6;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: 3px;
-  font-size: 0.875rem;
-  color: #495057;
-  font-weight: normal;
-}
-
-/* Callout headings */
-.info-box h3, .callout-info h3, [class*="callout"] h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-md);
-}
-
-/* Remove automatic colons */
-.note strong:first-child::after,
-.tip strong:first-child::after,
-.warning strong:first-child::after,
-.info strong:first-child::after {
-  content: '';
-}
-
 /* Buttons */
 .button, 
 a.button {
@@ -412,125 +329,34 @@ a.button:hover {
   text-transform: none !important;
 }
 
-/* Layout elements */
-img {
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
-  height: auto;
+/* Code block text contrast fix for Mintlify */
+/* Light mode code blocks */
+[data-theme="light"] pre code,
+[data-theme="light"] .code-block,
+[data-theme="light"] [class*="CodeBlock"],
+:root:not([data-theme="dark"]) pre code,
+:root:not([data-theme="dark"]) .code-block,
+:root:not([data-theme="dark"]) [class*="CodeBlock"] {
+  color: #2d3748 !important; /* Dark gray for better readability */
 }
 
-hr {
-  border: none;
-  border-top: 1px solid var(--color-border);
-  margin: var(--spacing-2xl) 0;
+/* Dark mode code blocks */
+[data-theme="dark"] pre code,
+[data-theme="dark"] .code-block,
+[data-theme="dark"] [class*="CodeBlock"],
+:root[data-theme="dark"] pre code,
+:root[data-theme="dark"] .code-block,
+:root[data-theme="dark"] [class*="CodeBlock"] {
+  color: #e2e8f0 !important; /* Light gray for dark mode */
 }
 
-/* Tables */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: var(--spacing-xl) 0;
+/* Inline code text contrast */
+[data-theme="light"] code:not(pre code),
+:root:not([data-theme="dark"]) code:not(pre code) {
+  color: #2d3748 !important;
 }
 
-table th {
-  background-color: #F9F9F9;
-  font-weight: 600;
-  text-align: left;
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-bottom: 2px solid var(--color-border);
-  color: var(--color-text-primary);
+[data-theme="dark"] code:not(pre code),
+:root[data-theme="dark"] code:not(pre code) {
+  color: var(--color-primary) !important;
 }
-
-table td {
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-text-secondary);
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #F5F5F5;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #C0C0C0;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #A0A0A0;
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    color: #FFFFFF;
-    background-color: var(--color-dark-bg);
-  }
-  
-  h1, h2, h3, h4, p strong, p b {
-    color: #FFFFFF;
-  }
-  
-  p, li {
-    color: var(--color-text-muted);
-  }
-  
-  code {
-    background-color: var(--color-dark-surface);
-    color: var(--color-primary);
-  }
-  
-  .card {
-    background: var(--color-dark-surface);
-    border-color: var(--color-dark-border);
-  }
-  
-  table th {
-    background-color: var(--color-dark-surface);
-    color: #FFFFFF;
-  }
-  
-  table td {
-    color: var(--color-text-muted);
-    border-bottom-color: var(--color-dark-border);
-  }
-  
-  /* Dark mode callouts */
-  aside,
-  .tip, .info, .warning, .note,
-  .info-box, .callout-info, [class*="callout"] {
-    background: var(--color-dark-surface);
-    border-color: var(--color-dark-border);
-  }
-  
-  aside::before,
-  .tip::before, .info::before, .warning::before, .note::before {
-    background: var(--color-dark-accent);
-  }
-  
-  .info-box h3, .callout-info h3, [class*="callout"] h3,
-  .info-box p, .callout-info p, [class*="callout"] p {
-    color: var(--color-dark-text);
-  }
-  
-  /* Dark mode scrollbar */
-  ::-webkit-scrollbar-track {
-    background: var(--color-dark-surface);
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-dark-accent);
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #5A5A5A;
-  }
-} 
