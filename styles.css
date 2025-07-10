@@ -283,7 +283,7 @@ a.button:hover {
   z-index: 1;
 }
 
-[style*="background: linear-gradient"] h3,
+[style*="background: linear-gradient"] h3, 
 [style*="background: linear-gradient"] p,
 [style*="background: linear-gradient"] strong {
   color: var(--color-dark-surface) !important;
@@ -357,4 +357,43 @@ a.button:hover {
 [data-theme="dark"] code:not(pre code),
 :root[data-theme="dark"] code:not(pre code) {
   color: var(--color-primary) !important;
+}
+
+/* Remove the gradient fill on cards while keeping all text underline effects */
+.card::before {
+  display: none !important; /* Removes only the card's gradient background fill */
+}
+
+/* Keep the card hover animation and shadow, but no background fill */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(240, 195, 65, 0.16);
+  border-color: var(--color-border); /* Keep the normal border */
+}
+
+/* Add yellow underline to card titles on hover */
+.card:hover h2,
+.card:hover h3,
+.card:hover h4,
+.card:hover .card-title {
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+}
+
+/* Add transition to paragraphs for smooth underline appearance */
+.card p {
+  transition: text-decoration 0.3s ease;
+  text-decoration: underline transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* Add 1px text underline to secondary text on hover */
+.card:hover p {
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
