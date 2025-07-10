@@ -31,7 +31,7 @@
           "group": "Lindy 101",
           "pages": [
             "fundamentals/lindy-101/introduction",
-            "fundamentals/lindy-101/input-options",
+            "fundamentals/lindy-101/fields",
             "fundamentals/lindy-101/triggers",
             "fundamentals/lindy-101/actions",
             "fundamentals/lindy-101/tasks",
@@ -47,9 +47,10 @@
         {
           "group": "Testing",
           "pages": [
-            "testing/test-mode",
+            "testing/test-panel",
             "testing/human-in-the-loop",
             "testing/debugging",
+            "testing/monitoring-your-agents",
             "testing/version-history"
           ]
         },
