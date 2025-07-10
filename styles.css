@@ -1,14 +1,9 @@
 /* Lindy AI Custom Styles */
 
-/* Import Montserrat as Proxima Nova alternative */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-
-/* Fallback to Inter if needed */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 /* CSS Variables for consistency */
 :root {
-  --font-sans: 'Montserrat', 'Proxima Nova', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Using Mintlify's default font stack */
+  --font-sans: inherit;
   
   /* Colors */
   --color-primary: #F0C341;
@@ -46,7 +41,7 @@
 
 /* Global styles */
 body {
-  font-family: var(--font-sans);
+  /* Using Mintlify's default font - removed font-family override */
   color: var(--color-text-primary);
   line-height: 1.6;
 }
@@ -148,7 +143,7 @@ code {
   border-radius: 4px;
   font-size: 0.875rem;
   color: var(--color-code);
-  font-family: 'Menlo', Monaco, 'Courier New', monospace;
+  /* Using Mintlify's default monospace font */
 }
 
 pre {

@@ -210,14 +210,6 @@
     }
   ],
   "theme": "quill",
-  "font": {
-    "headings": {
-      "family": "Montserrat"
-    },
-    "body": {
-      "family": "Montserrat"
-    }
-  },
   "custom": {
     "css": ["styles.css"]
   }
