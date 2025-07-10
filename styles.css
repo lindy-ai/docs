@@ -67,7 +67,7 @@ h1::after {
   left: 0;
   width: 60px;
   height: 4px;
-  background: var(--gradient-nav);
+  background: var(--color-primary);
   border-radius: 2px;
 }
 
