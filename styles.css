@@ -561,3 +561,16 @@ li[aria-expanded="true"] > div.group svg:last-child {
 .card:hover p {
   text-decoration: none !important;
 }
+
+/* Frames (images in tutorials) */
+.frame {
+  /* Match the base shadow style of cards */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Glow on hover (no translate/raise) */
+.frame:hover {
+  /* Keep outline unchanged, only enhance shadow on hover */
+  box-shadow: 0 6px 20px rgba(240, 195, 65, 0.25);
+}
