@@ -569,11 +569,7 @@ li[aria-expanded="true"] > div.group svg:last-child {
   color: var(--color-text-secondary) !important; /* Override nav-item yellow */
 }
 
-/* Add overrides to remove text underlines on card hover */
-.card:hover h2,
-.card:hover h3,
-.card:hover h4,
-.card:hover .card-title,
+/* Add overrides to remove text underline on paragraphs inside cards */
 .card p,
 .card:hover p {
   text-decoration: none !important;
