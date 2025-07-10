@@ -212,10 +212,10 @@
   "theme": "quill",
   "font": {
     "headings": {
-      "family": "Proxima Nova"
+      "family": "Montserrat"
     },
     "body": {
-      "family": "Proxima Nova"
+      "family": "Montserrat"
     }
   },
   "custom": {

@@ -1,11 +1,14 @@
 /* Lindy AI Custom Styles */
 
-/* Import Proxima Nova if not available */
+/* Import Montserrat as Proxima Nova alternative */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Fallback to Inter if needed */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* CSS Variables for consistency */
 :root {
-  --font-sans: 'Proxima Nova', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Montserrat', 'Proxima Nova', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   
   /* Colors */
   --color-primary: #F0C341;
