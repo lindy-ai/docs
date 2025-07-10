@@ -210,7 +210,7 @@
       ]
     }
   ],
-  "theme": "quill",
+  "theme": "prism",
   "custom": {
     "css": ["styles.css"]
   }

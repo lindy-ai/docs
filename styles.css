@@ -398,295 +398,139 @@ a.button:hover {
   text-underline-offset: 2px;
 }
 
-/* Remove ALL left spacing from sidebar */
-#sidebar-content * {
-  padding-left: 0.0rem !important;
-  margin-left: 0 !important;
+/* Mintlify Sidebar Alignment - Based on Actual Structure */
+
+/* Ensure sidebar group headers are left-aligned */
+.sidebar-group-header {
+  padding-left: 1rem;
+  text-align: left;
 }
 
-/* Keep indent for NESTED items (when expanded) */
-#sidebar-content ul ul a,
-#sidebar-content ul ul div,
-#sidebar-content li li a,
-#sidebar-content li li div {
-  padding-left: .1rem !important; /* or use 1.5rem for more indent */
-}
-
-/* Remove the left margin on large screens */
-#sidebar-content .lg\:ml-4 {
-  margin-left: 0 !important;
-}
-
-/* Consistent 0.3rem spacing for all nav items */
-#sidebar-content .py-1\.5 {
-  padding-top: 0.15rem !important;
-  padding-bottom: 0.15rem !important;
-}
-
-/* Consistent 0.3rem spacing between section groups */
-#sidebar-content .mt-12.lg\:mt-8 {
-  margin-top: 0.3rem !important;
-}
-
-/* Consistent 0.3rem spacing after group headers */
-#sidebar-content .mb-3\.5.lg\:mb-2\.5 {
-  margin-bottom: 0.3rem !important;
-}
-
-/* Remove the left border line */
-#sidebar-content .border-l {
-  border-left: none !important;
-}
-
-
-
-/* Base hover state - light yellow background */
-#sidebar-content a:hover,
-#sidebar-content div.group:hover {
-  background-color: #fbf6e7 !important;
-}
-
-/* Dark mode hover */
-@media (prefers-color-scheme: dark) {
-  #sidebar-content a:hover,
-  #sidebar-content div.group:hover {
-    background-color: rgba(240, 195, 65, 0.08) !important;
-  }
-}
-
-/* Make the sidebar wider and more spacious overall */
-#sidebar-content.overflow-auto {
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
-  width: 332px !important; /* Increased sidebar width by 15% (288px → 332px) */
-  min-width: 332px !important;
-}
-
-/* Increase the overall sidebar container width */
-aside,
-nav,
-[data-testid="sidebar"],
-[class*="sidebar"] {
-  width: 332px !important;
-  min-width: 332px !important;
-  max-width: 332px !important;
-}
-
-/* Remove the left margin from all items */
-#sidebar-content .lg\:ml-4 {
-  margin-left: 0 !important;
-}
-
-/* Adjust group headers to align properly */
-#sidebar-content .sidebar-group-header {
-  margin-left: -1rem !important;
-  padding-left: 1rem !important;
-}
-
-/* Base spacing for regular nav items (no toggles) - LEFT ALIGN ALL */
-#sidebar-content a {
-  margin-left: -1.5rem !important;
-  margin-right: 1rem !important;
-  padding: 0.15rem 1rem 0.15rem 1.5rem !important; /* LEFT ALIGN ALL ITEMS */
-  border-radius: 0.75rem !important;
-  margin-bottom: 0.3rem !important; /* Consistent 0.3rem spacing between items */
-  text-indent: 0 !important; /* NO INDENT FOR ANYTHING */
-  text-decoration: underline !important;
-  text-decoration-color: transparent !important;
-  text-decoration-thickness: 0.1px !important;
-  text-underline-offset: 2px !important;
-  transition: text-decoration-color 0.2s ease !important;
-}
-
-/* Special handling for group containers (with toggles) - LEFT ALIGN ALL */
+/* Main navigation links - already have inline padding-left:1rem */
+#sidebar-content a.group,
 #sidebar-content div.group {
-  margin-left: -1.5rem !important;
-  margin-right: 1rem !important;
-  padding: 0.15rem 1rem 0.15rem 1.5rem !important; /* LEFT ALIGN ALL ITEMS */
-  border-radius: 0.75rem !important;
-  margin-bottom: 0.3rem !important; /* Consistent 0.3rem spacing between items */
-  text-indent: 0 !important; /* NO INDENT FOR ANYTHING */
-  text-decoration: underline !important;
-  text-decoration-color: transparent !important;
-  text-decoration-thickness: 0.1px !important;
-  text-underline-offset: 2px !important;
-  transition: text-decoration-color 0.2s ease !important;
+  text-align: left;
+  justify-content: flex-start;
 }
 
-/* NESTED ITEMS - PROPER INDENTATION FOR CHILDREN */
-#sidebar-content [style*="padding-left: 1.75rem"],
-#sidebar-content [style*="padding-left: 2.75rem"],
-#sidebar-content [style*="padding-left: 3.5rem"] {
-  margin-left: -1.5rem !important;
-  margin-right: 1rem !important;
-  padding: 0.15rem 1rem 0.15rem 2.5rem !important; /* INDENT NESTED CHILDREN */
-  border-radius: 0.75rem !important;
-  text-indent: 0 !important;
-  margin-bottom: 0.3rem !important;
-  text-decoration: underline !important;
-  text-decoration-color: transparent !important;
-  text-decoration-thickness: 0.1px !important;
-  text-underline-offset: 2px !important;
-  transition: text-decoration-color 0.2s ease !important;
+/* Reduce icon gap if items appear too spaced */
+#sidebar-content .group {
+  gap: 0.75rem; /* Reduced from gap-x-3 (0.75rem from 1rem) */
 }
 
-/* Hover backgrounds - RESPECT INDENTATION */
-#sidebar-content a:hover,
-#sidebar-content div.group:hover {
-  background-color: #fbf6e7 !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  padding: 0.15rem 1rem 0.15rem 1.5rem !important; /* LEFT ALIGN FOR MAIN ITEMS */
+/* Optional: Remove or reduce the left padding if you want items more flush */
+#sidebar-content a[style*="padding-left:1rem"],
+#sidebar-content div[style*="padding-left:1rem"] {
+  padding-left: 0.75rem; /* Slightly less padding */
 }
 
-#sidebar-content [style*="padding-left: 1.75rem"]:hover,
-#sidebar-content [style*="padding-left: 2.75rem"]:hover,
-#sidebar-content [style*="padding-left: 3.5rem"]:hover {
-  background-color: #fbf6e7 !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  padding: 0.15rem 1rem 0.15rem 2.5rem !important; /* INDENT FOR NESTED CHILDREN */
+/* For nested items when groups are expanded */
+/* When a group is expanded, nested items should have more padding */
+#sidebar-content li[data-group-tag] + ul a,
+#sidebar-content li[data-group-tag] + ul div.group {
+  padding-left: 2.5rem;
 }
 
-/* Active/selected state - RESPECT INDENTATION */
-#sidebar-content a.border-primary,
-#sidebar-content a.text-primary.font-semibold,
-#sidebar-content a.bg-primary\/10,
-#sidebar-content a[class*="border-primary"],
-#sidebar-content a[class*="text-primary"],
-#sidebar-content a[class*="bg-primary"] {
-  background-color: #fbf6e7 !important;
-  color: var(--color-text-primary) !important;
-  font-weight: 500 !important;
-  text-decoration: underline !important;
-  text-decoration-color: var(--color-text-primary) !important;
-  text-decoration-thickness: 0.1px !important;
-  text-underline-offset: 2px !important;
-  transition: text-decoration-color 0.2s ease !important;
-  padding: 0.15rem 1rem 0.15rem 1.5rem !important; /* LEFT ALIGN FOR MAIN ITEMS */
+/* Third level nesting */
+#sidebar-content li[data-group-tag] + ul li[data-group-tag] + ul a,
+#sidebar-content li[data-group-tag] + ul li[data-group-tag] + ul div.group {
+  padding-left: 3.5rem;
 }
 
-#sidebar-content [style*="padding-left: 1.75rem"].border-primary,
-#sidebar-content [style*="padding-left: 1.75rem"].text-primary,
-#sidebar-content [style*="padding-left: 1.75rem"][class*="border-primary"],
-#sidebar-content [style*="padding-left: 1.75rem"][class*="text-primary"],
-#sidebar-content [style*="padding-left: 1.75rem"][class*="bg-primary"],
-#sidebar-content [style*="padding-left: 2.75rem"].border-primary,
-#sidebar-content [style*="padding-left: 2.75rem"].text-primary,
-#sidebar-content [style*="padding-left: 3.5rem"].border-primary,
-#sidebar-content [style*="padding-left: 3.5rem"].text-primary {
-  background-color: #fbf6e7 !important;
-  color: var(--color-text-primary) !important;
-  font-weight: 500 !important;
-  text-decoration: underline !important;
-  text-decoration-color: var(--color-text-primary) !important;
-  text-decoration-thickness: 0.1px !important;
-  text-underline-offset: 2px !important;
-  transition: text-decoration-color 0.2s ease !important;
-  padding: 0.15rem 1rem 0.15rem 2.5rem !important; /* INDENT FOR NESTED CHILDREN */
+/* Ensure text doesn't wrap and stays aligned */
+#sidebar-content .flex-1 {
+  text-align: left;
 }
 
-/* FORCE LEFT ALIGN - Target main navigation items only (exclude nested children) */
-#sidebar-content a:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]),
-#sidebar-content div:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]),
-#sidebar-content [class*="ml-"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]),
-#sidebar-content [style*="margin-left"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]),
-#sidebar-content [style*="padding-left:1rem"],
-#sidebar-content .sidebar-item,
-#sidebar-content .nav-item {
-  margin-left: -1.5rem !important;
-  padding-left: 1.5rem !important;
-  text-indent: 0 !important;
-  padding-right: 1rem !important;
+/* If you want ALL items to be more flush to the left edge */
+#sidebar-group {
+  padding-left: 0;
 }
 
-/* Fix spacing inconsistencies after headers */
-#sidebar-content .sidebar-group-header + * {
-  margin-top: 0.3rem !important; /* 0.3rem spacing after headers */
+/* Optional: Make the entire sidebar content area use full width */
+#sidebar-content {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
-/* Ensure consistent spacing for first items in groups */
-#sidebar-content .mt-12.lg\:mt-8 > * {
-  margin-top: 0.3rem !important; /* Consistent 0.3rem spacing */
+/* Handle the chevron rotation for expanded groups */
+li[aria-expanded="true"] > div.group svg:last-child {
+  transform: rotate(90deg);
 }
 
-/* Remove any extra spacing that causes inconsistencies */
-#sidebar-content .mb-3\.5.lg\:mb-2\.5 + * {
-  margin-top: 0.3rem !important; /* Consistent 0.3rem spacing after group headers */
+/* Make all navigation items full width */
+#sidebar-content li {
+  width: 100%;
 }
 
-/* NUCLEAR OPTION - FORCE ALL NAVIGATION TO LEFT ALIGN (except nested children) */
-#sidebar-content a[href]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]):not([style*="padding-left:2.75rem"]):not([style*="padding-left: 2.75rem"]):not([style*="padding-left:3.5rem"]):not([style*="padding-left: 3.5rem"]),
-#sidebar-content div[role]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]):not([style*="padding-left:2.75rem"]):not([style*="padding-left: 2.75rem"]):not([style*="padding-left:3.5rem"]):not([style*="padding-left: 3.5rem"]),
-#sidebar-content [class*="border-l"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]):not([style*="padding-left:2.75rem"]):not([style*="padding-left: 2.75rem"]):not([style*="padding-left:3.5rem"]):not([style*="padding-left: 3.5rem"]),
-#sidebar-content [class*="pl-"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]):not([style*="padding-left:2.75rem"]):not([style*="padding-left: 2.75rem"]):not([style*="padding-left:3.5rem"]):not([style*="padding-left: 3.5rem"]),
-#sidebar-content [class*="ml-"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]):not([style*="padding-left:2.75rem"]):not([style*="padding-left: 2.75rem"]):not([style*="padding-left:3.5rem"]):not([style*="padding-left: 3.5rem"]),
-#sidebar-content [style="padding-left:1rem"],
-#sidebar-content [style*="padding-left:1rem"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]) {
-  padding-left: 1.5rem !important;
-  margin-left: -1.5rem !important;
-  text-indent: 0 !important;
-  border-left: none !important;
+#sidebar-content a.group,
+#sidebar-content div.group {
+  width: 100%;
+  display: flex;
 }
 
-/* Remove all Tailwind margin/padding classes that might be causing indentation */
-#sidebar-content .ml-0,
-#sidebar-content .ml-1,
-#sidebar-content .ml-2,
-#sidebar-content .ml-3,
-#sidebar-content .ml-4,
-#sidebar-content .ml-5,
-#sidebar-content .ml-6,
-#sidebar-content .ml-7,
-#sidebar-content .ml-8,
-#sidebar-content .pl-0,
-#sidebar-content .pl-1,
-#sidebar-content .pl-2,
-#sidebar-content .pl-3,
-#sidebar-content .pl-4,
-#sidebar-content .pl-5,
-#sidebar-content .pl-6,
-#sidebar-content .pl-7,
-#sidebar-content .pl-8 {
-  padding-left: 1.5rem !important;
-  margin-left: -1.5rem !important;
+/* Ensure consistent background width for active/hover states */
+#sidebar-content .rounded-xl {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0.5rem; /* Changed from 0 to add rounded corners */
 }
 
-/* FINAL OVERRIDE - NESTED CHILDREN INDENTATION (must be last to override everything) */
-#sidebar-content a[style*="padding-left: 1.75rem"],
-#sidebar-content div[style*="padding-left: 1.75rem"],
-#sidebar-content a[style*="padding-left: 2.75rem"],
-#sidebar-content div[style*="padding-left: 2.75rem"],
-#sidebar-content a[style*="padding-left: 3.5rem"],
-#sidebar-content div[style*="padding-left: 3.5rem"] {
-  padding-left: 2.5rem !important; /* Nested children get slight indent */
-  margin-left: -1.5rem !important;
-  text-indent: 0 !important;
+/* Add back some visual padding to the container */
+#sidebar-content ul {
+  padding-right: 0;
+  padding-left: 0; /* New: remove left padding so highlight extends fully */
 }
 
-/* Nested children hover states */
-#sidebar-content a[style*="padding-left: 1.75rem"]:hover,
-#sidebar-content div[style*="padding-left: 1.75rem"]:hover,
-#sidebar-content a[style*="padding-left: 2.75rem"]:hover,
-#sidebar-content div[style*="padding-left: 2.75rem"]:hover,
-#sidebar-content a[style*="padding-left: 3.5rem"]:hover,
-#sidebar-content div[style*="padding-left: 3.5rem"]:hover {
-  padding-left: 2.5rem !important; /* Nested children get slight indent */
+/* Remove vertical gaps between navigation items for consistent spacing */
+#sidebar-content li {
+  margin: 0; /* New: eliminate default margin to close gaps */
 }
 
-/* Nested children active states */
-#sidebar-content a[style*="padding-left: 1.75rem"].border-primary,
-#sidebar-content a[style*="padding-left: 1.75rem"].text-primary,
-#sidebar-content div[style*="padding-left: 1.75rem"].border-primary,
-#sidebar-content div[style*="padding-left: 1.75rem"].text-primary,
-#sidebar-content a[style*="padding-left: 2.75rem"].border-primary,
-#sidebar-content a[style*="padding-left: 2.75rem"].text-primary,
-#sidebar-content div[style*="padding-left: 2.75rem"].border-primary,
-#sidebar-content div[style*="padding-left: 2.75rem"].text-primary,
-#sidebar-content a[style*="padding-left: 3.5rem"].border-primary,
-#sidebar-content a[style*="padding-left: 3.5rem"].text-primary,
-#sidebar-content div[style*="padding-left: 3.5rem"].border-primary,
-#sidebar-content div[style*="padding-left: 3.5rem"].text-primary {
-  padding-left: 2.5rem !important; /* Nested children get slight indent */
+/* Special styling for active/current items - full width background */
+#sidebar-content li[style*="background"],
+#sidebar-content a[style*="background"],
+#sidebar-content div[style*="background"] {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  border-radius: 0.5rem; /* Add rounded corners */
 }
 
+/* For the yellow highlighted items (like "Input options" and "Overview") */
+#sidebar-content li > div[style*="background"],
+#sidebar-content li > a[style*="background"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0.5rem; /* Add rounded corners */
+}
+
+/* Ensure icons maintain consistent size */
+#sidebar-content svg:first-child {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Remove any potential center alignment from parent containers */
+#navigation-items > div {
+  text-align: left;
+}
+
+/* Alternative approach - keep design but consistent widths */
+/* Ensure sidebar items stretch properly */
+#sidebar-group {
+  width: 100%;
+}
+
+#sidebar-group > li {
+  width: 100%;
+  padding-right: 0.75rem; /* Match the pr-3 from the links */
+}
+
+/* Make backgrounds consistent width */
+#sidebar-content .group {
+  width: 100%;
+  box-sizing: border-box;
+}
