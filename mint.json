@@ -1,0 +1,222 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Lindy Documentation",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#E6C147",
+    "light": "#F5E198",
+    "dark": "#D4A514"
+  },
+  "topbarLinks": [],
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://app.lindy.ai"
+  },
+  "tabs": [
+    {
+      "name": "Documentation",
+      "url": "start-here"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Start Here",
+      "pages": [
+        "start-here/what-is-lindy",
+        "start-here/quickstart"
+      ]
+    },
+    {
+      "group": "Fundamentals - Lindy 101",
+      "pages": [
+        "fundamentals/lindy-101/introduction",
+        "fundamentals/lindy-101/input-options",
+        "fundamentals/lindy-101/triggers",
+        "fundamentals/lindy-101/actions",
+        "fundamentals/lindy-101/tasks",
+        "fundamentals/lindy-101/conditions",
+        "fundamentals/lindy-101/ai-agents",
+        "fundamentals/lindy-101/looping",
+        "fundamentals/lindy-101/memory",
+        "fundamentals/lindy-101/phone-calls",
+        "fundamentals/lindy-101/prompt-guide"
+      ]
+    },
+    {
+      "group": "Testing",
+      "pages": [
+        "testing/test-mode",
+        "testing/human-in-the-loop",
+        "testing/debugging",
+        "testing/version-history"
+      ]
+    },
+    {
+      "group": "Account & Billing",
+      "pages": [
+        "account-billing/workspaces",
+        "account-billing/teams",
+        "account-billing/credits",
+        "account-billing/credit-optimizations"
+      ]
+    },
+    {
+      "group": "Use Cases - Popular Workflows",
+      "pages": [
+        "use-cases/popular-workflows/overview",
+        "use-cases/popular-workflows/use-case-1",
+        "use-cases/popular-workflows/use-case-2",
+        "use-cases/popular-workflows/use-case-3"
+      ]
+    },
+    {
+      "group": "Use Cases - Sales",
+      "pages": [
+        "use-cases/sales/overview",
+        "use-cases/sales/use-case-1",
+        "use-cases/sales/use-case-2",
+        "use-cases/sales/use-case-3"
+      ]
+    },
+    {
+      "group": "Use Cases - Operations",
+      "pages": [
+        "use-cases/operations/overview",
+        "use-cases/operations/use-case-1",
+        "use-cases/operations/use-case-2",
+        "use-cases/operations/use-case-3"
+      ]
+    },
+    {
+      "group": "Use Cases - Customer Success",
+      "pages": [
+        "use-cases/customer-success/overview",
+        "use-cases/customer-success/use-case-1",
+        "use-cases/customer-success/use-case-2",
+        "use-cases/customer-success/use-case-3"
+      ]
+    },
+    {
+      "group": "Use Cases - Finance",
+      "pages": [
+        "use-cases/finance/overview",
+        "use-cases/finance/use-case-1",
+        "use-cases/finance/use-case-2",
+        "use-cases/finance/use-case-3"
+      ]
+    },
+    {
+      "group": "Use Cases - Support",
+      "pages": [
+        "use-cases/support/overview",
+        "use-cases/support/use-case-1",
+        "use-cases/support/use-case-2",
+        "use-cases/support/use-case-3"
+      ]
+    },
+    {
+      "group": "Use Cases - Marketing",
+      "pages": [
+        "use-cases/marketing/overview",
+        "use-cases/marketing/use-case-1",
+        "use-cases/marketing/use-case-2",
+        "use-cases/marketing/use-case-3"
+      ]
+    },
+    {
+      "group": "Use Cases - HR",
+      "pages": [
+        "use-cases/hr/overview",
+        "use-cases/hr/use-case-1",
+        "use-cases/hr/use-case-2",
+        "use-cases/hr/use-case-3"
+      ]
+    },
+    {
+      "group": "Skills - By Lindy",
+      "pages": [
+        "skills/by-lindy/chat-with-lindy",
+        "skills/by-lindy/lindy-meeting-recorder",
+        "skills/by-lindy/lindy-phone",
+        "skills/by-lindy/lindy-email",
+        "skills/by-lindy/lindy-mail",
+        "skills/by-lindy/run-code",
+        "skills/by-lindy/http-request",
+        "skills/by-lindy/webhooks",
+        "skills/by-lindy/timer",
+        "skills/by-lindy/talk-with-other-lindy"
+      ]
+    },
+    {
+      "group": "Skills - Lindy Utilities",
+      "pages": [
+        "skills/lindy-utilities/skills-pack",
+        "skills/lindy-utilities/llm-call",
+        "skills/lindy-utilities/cortical",
+        "skills/lindy-utilities/memories",
+        "skills/lindy-utilities/set-variables",
+        "skills/lindy-utilities/configure"
+      ]
+    },
+    {
+      "group": "Skills - Popular Integrations",
+      "pages": [
+        "skills/popular-integrations/airtable",
+        "skills/popular-integrations/linear",
+        "skills/popular-integrations/github",
+        "skills/popular-integrations/gmail",
+        "skills/popular-integrations/google-calendar",
+        "skills/popular-integrations/google-docs",
+        "skills/popular-integrations/google-drive",
+        "skills/popular-integrations/google-sheets",
+        "skills/popular-integrations/hubspot",
+        "skills/popular-integrations/instagram",
+        "skills/popular-integrations/linkedin",
+        "skills/popular-integrations/microsoft-outlook",
+        "skills/popular-integrations/microsoft-teams",
+        "skills/popular-integrations/notion",
+        "skills/popular-integrations/people-data-labs",
+        "skills/popular-integrations/salesforce",
+        "skills/popular-integrations/slack",
+        "skills/popular-integrations/telegram",
+        "skills/popular-integrations/twilio",
+        "skills/popular-integrations/whatsapp",
+        "skills/popular-integrations/youtube",
+        "skills/popular-integrations/zendesk"
+      ]
+    },
+    {
+      "group": "Skills - Web Browsing",
+      "pages": [
+        "skills/web-browsing/overview",
+        "skills/web-browsing/apify",
+        "skills/web-browsing/parallel",
+        "skills/web-browsing/perplexity",
+        "skills/web-browsing/web-browser"
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "resources/security",
+        "resources/changelog"
+      ]
+    }
+  ],
+  "theme": "quill",
+  "font": {
+    "headings": {
+      "family": "Proxima Nova"
+    },
+    "body": {
+      "family": "Proxima Nova"
+    }
+  },
+  "custom": {
+    "css": ["styles.css"]
+  }
+}
