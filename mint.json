@@ -205,8 +205,8 @@
     {
       "group": "Resources",
       "pages": [
-        { "name": "Security", "url": "https://www.lindy.ai/security" },
-        { "name": "Changelog", "url": "https://www.lindy.ai/changelog" }
+        "resources/security",
+        "resources/changelog"
       ]
     }
   ],
