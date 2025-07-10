@@ -369,6 +369,7 @@ a.button:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(240, 195, 65, 0.16);
   border-color: var(--color-border); /* Keep the normal border */
+  text-decoration: none !important; /* Remove default underline on entire card */
 }
 
 /* Add yellow underline to card titles on hover */
@@ -382,21 +383,7 @@ a.button:hover {
   text-underline-offset: 2px;
 }
 
-/* Add transition to paragraphs for smooth underline appearance */
-.card p {
-  transition: text-decoration 0.3s ease;
-  text-decoration: underline transparent;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
 
-/* Add 1px text underline to secondary text on hover */
-.card:hover p {
-  text-decoration: underline;
-  text-decoration-color: var(--color-primary);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
 
 /* Mintlify Sidebar Alignment - Based on Actual Structure */
 
