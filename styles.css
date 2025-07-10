@@ -404,6 +404,14 @@ a.button:hover {
   margin-left: 0 !important;
 }
 
+/* Keep indent for NESTED items (when expanded) */
+#sidebar-content ul ul a,
+#sidebar-content ul ul div,
+#sidebar-content li li a,
+#sidebar-content li li div {
+  padding-left: .35rem !important; /* or use 1.5rem for more indent */
+}
+
 /* Remove the left margin on large screens */
 #sidebar-content .lg\:ml-4 {
   margin-left: 0 !important;
