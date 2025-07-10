@@ -409,7 +409,7 @@ a.button:hover {
 #sidebar-content ul ul div,
 #sidebar-content li li a,
 #sidebar-content li li div {
-  padding-left: .35rem !important; /* or use 1.5rem for more indent */
+  padding-left: .1rem !important; /* or use 1.5rem for more indent */
 }
 
 /* Remove the left margin on large screens */
@@ -417,23 +417,276 @@ a.button:hover {
   margin-left: 0 !important;
 }
 
-/* Tighten vertical spacing on nav items */
+/* Consistent 0.3rem spacing for all nav items */
 #sidebar-content .py-1\.5 {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.1rem !important;
+  padding-top: 0.15rem !important;
+  padding-bottom: 0.15rem !important;
 }
 
-/* Reduce spacing between section groups */
+/* Consistent 0.3rem spacing between section groups */
 #sidebar-content .mt-12.lg\:mt-8 {
-  margin-top: 1.5rem !important;
+  margin-top: 0.3rem !important;
 }
 
-/* Reduce spacing after group headers */
+/* Consistent 0.3rem spacing after group headers */
 #sidebar-content .mb-3\.5.lg\:mb-2\.5 {
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0.3rem !important;
 }
 
 /* Remove the left border line */
 #sidebar-content .border-l {
   border-left: none !important;
 }
+
+
+
+/* Base hover state - light yellow background */
+#sidebar-content a:hover,
+#sidebar-content div.group:hover {
+  background-color: #fbf6e7 !important;
+}
+
+/* Dark mode hover */
+@media (prefers-color-scheme: dark) {
+  #sidebar-content a:hover,
+  #sidebar-content div.group:hover {
+    background-color: rgba(240, 195, 65, 0.08) !important;
+  }
+}
+
+/* Make the sidebar wider and more spacious overall */
+#sidebar-content.overflow-auto {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  width: 332px !important; /* Increased sidebar width by 15% (288px → 332px) */
+  min-width: 332px !important;
+}
+
+/* Increase the overall sidebar container width */
+aside,
+nav,
+[data-testid="sidebar"],
+[class*="sidebar"] {
+  width: 332px !important;
+  min-width: 332px !important;
+  max-width: 332px !important;
+}
+
+/* Remove the left margin from all items */
+#sidebar-content .lg\:ml-4 {
+  margin-left: 0 !important;
+}
+
+/* Adjust group headers to align properly */
+#sidebar-content .sidebar-group-header {
+  margin-left: -1rem !important;
+  padding-left: 1rem !important;
+}
+
+/* Base spacing for regular nav items (no toggles) - LEFT ALIGN ALL */
+#sidebar-content a {
+  margin-left: -1.5rem !important;
+  margin-right: 1rem !important;
+  padding: 0.15rem 1rem 0.15rem 1.5rem !important; /* LEFT ALIGN ALL ITEMS */
+  border-radius: 0.75rem !important;
+  margin-bottom: 0.3rem !important; /* Consistent 0.3rem spacing between items */
+  text-indent: 0 !important; /* NO INDENT FOR ANYTHING */
+  text-decoration: underline !important;
+  text-decoration-color: transparent !important;
+  text-decoration-thickness: 0.1px !important;
+  text-underline-offset: 2px !important;
+  transition: text-decoration-color 0.2s ease !important;
+}
+
+/* Special handling for group containers (with toggles) - LEFT ALIGN ALL */
+#sidebar-content div.group {
+  margin-left: -1.5rem !important;
+  margin-right: 1rem !important;
+  padding: 0.15rem 1rem 0.15rem 1.5rem !important; /* LEFT ALIGN ALL ITEMS */
+  border-radius: 0.75rem !important;
+  margin-bottom: 0.3rem !important; /* Consistent 0.3rem spacing between items */
+  text-indent: 0 !important; /* NO INDENT FOR ANYTHING */
+  text-decoration: underline !important;
+  text-decoration-color: transparent !important;
+  text-decoration-thickness: 0.1px !important;
+  text-underline-offset: 2px !important;
+  transition: text-decoration-color 0.2s ease !important;
+}
+
+/* NESTED ITEMS - PROPER INDENTATION FOR CHILDREN */
+#sidebar-content [style*="padding-left: 1.75rem"],
+#sidebar-content [style*="padding-left: 2.75rem"],
+#sidebar-content [style*="padding-left: 3.5rem"] {
+  margin-left: -1.5rem !important;
+  margin-right: 1rem !important;
+  padding: 0.15rem 1rem 0.15rem 2.5rem !important; /* INDENT NESTED CHILDREN */
+  border-radius: 0.75rem !important;
+  text-indent: 0 !important;
+  margin-bottom: 0.3rem !important;
+  text-decoration: underline !important;
+  text-decoration-color: transparent !important;
+  text-decoration-thickness: 0.1px !important;
+  text-underline-offset: 2px !important;
+  transition: text-decoration-color 0.2s ease !important;
+}
+
+/* Hover backgrounds - RESPECT INDENTATION */
+#sidebar-content a:hover,
+#sidebar-content div.group:hover {
+  background-color: #fbf6e7 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  padding: 0.15rem 1rem 0.15rem 1.5rem !important; /* LEFT ALIGN FOR MAIN ITEMS */
+}
+
+#sidebar-content [style*="padding-left: 1.75rem"]:hover,
+#sidebar-content [style*="padding-left: 2.75rem"]:hover,
+#sidebar-content [style*="padding-left: 3.5rem"]:hover {
+  background-color: #fbf6e7 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  padding: 0.15rem 1rem 0.15rem 2.5rem !important; /* INDENT FOR NESTED CHILDREN */
+}
+
+/* Active/selected state - RESPECT INDENTATION */
+#sidebar-content a.border-primary,
+#sidebar-content a.text-primary.font-semibold,
+#sidebar-content a.bg-primary\/10,
+#sidebar-content a[class*="border-primary"],
+#sidebar-content a[class*="text-primary"],
+#sidebar-content a[class*="bg-primary"] {
+  background-color: #fbf6e7 !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--color-text-primary) !important;
+  text-decoration-thickness: 0.1px !important;
+  text-underline-offset: 2px !important;
+  transition: text-decoration-color 0.2s ease !important;
+  padding: 0.15rem 1rem 0.15rem 1.5rem !important; /* LEFT ALIGN FOR MAIN ITEMS */
+}
+
+#sidebar-content [style*="padding-left: 1.75rem"].border-primary,
+#sidebar-content [style*="padding-left: 1.75rem"].text-primary,
+#sidebar-content [style*="padding-left: 1.75rem"][class*="border-primary"],
+#sidebar-content [style*="padding-left: 1.75rem"][class*="text-primary"],
+#sidebar-content [style*="padding-left: 1.75rem"][class*="bg-primary"],
+#sidebar-content [style*="padding-left: 2.75rem"].border-primary,
+#sidebar-content [style*="padding-left: 2.75rem"].text-primary,
+#sidebar-content [style*="padding-left: 3.5rem"].border-primary,
+#sidebar-content [style*="padding-left: 3.5rem"].text-primary {
+  background-color: #fbf6e7 !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--color-text-primary) !important;
+  text-decoration-thickness: 0.1px !important;
+  text-underline-offset: 2px !important;
+  transition: text-decoration-color 0.2s ease !important;
+  padding: 0.15rem 1rem 0.15rem 2.5rem !important; /* INDENT FOR NESTED CHILDREN */
+}
+
+/* FORCE LEFT ALIGN - Target main navigation items only (exclude nested children) */
+#sidebar-content a:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]),
+#sidebar-content div:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]),
+#sidebar-content [class*="ml-"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]),
+#sidebar-content [style*="margin-left"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]),
+#sidebar-content [style*="padding-left:1rem"],
+#sidebar-content .sidebar-item,
+#sidebar-content .nav-item {
+  margin-left: -1.5rem !important;
+  padding-left: 1.5rem !important;
+  text-indent: 0 !important;
+  padding-right: 1rem !important;
+}
+
+/* Fix spacing inconsistencies after headers */
+#sidebar-content .sidebar-group-header + * {
+  margin-top: 0.3rem !important; /* 0.3rem spacing after headers */
+}
+
+/* Ensure consistent spacing for first items in groups */
+#sidebar-content .mt-12.lg\:mt-8 > * {
+  margin-top: 0.3rem !important; /* Consistent 0.3rem spacing */
+}
+
+/* Remove any extra spacing that causes inconsistencies */
+#sidebar-content .mb-3\.5.lg\:mb-2\.5 + * {
+  margin-top: 0.3rem !important; /* Consistent 0.3rem spacing after group headers */
+}
+
+/* NUCLEAR OPTION - FORCE ALL NAVIGATION TO LEFT ALIGN (except nested children) */
+#sidebar-content a[href]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]):not([style*="padding-left:2.75rem"]):not([style*="padding-left: 2.75rem"]):not([style*="padding-left:3.5rem"]):not([style*="padding-left: 3.5rem"]),
+#sidebar-content div[role]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]):not([style*="padding-left:2.75rem"]):not([style*="padding-left: 2.75rem"]):not([style*="padding-left:3.5rem"]):not([style*="padding-left: 3.5rem"]),
+#sidebar-content [class*="border-l"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]):not([style*="padding-left:2.75rem"]):not([style*="padding-left: 2.75rem"]):not([style*="padding-left:3.5rem"]):not([style*="padding-left: 3.5rem"]),
+#sidebar-content [class*="pl-"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]):not([style*="padding-left:2.75rem"]):not([style*="padding-left: 2.75rem"]):not([style*="padding-left:3.5rem"]):not([style*="padding-left: 3.5rem"]),
+#sidebar-content [class*="ml-"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]):not([style*="padding-left:2.75rem"]):not([style*="padding-left: 2.75rem"]):not([style*="padding-left:3.5rem"]):not([style*="padding-left: 3.5rem"]),
+#sidebar-content [style="padding-left:1rem"],
+#sidebar-content [style*="padding-left:1rem"]:not([style*="padding-left:1.75rem"]):not([style*="padding-left: 1.75rem"]) {
+  padding-left: 1.5rem !important;
+  margin-left: -1.5rem !important;
+  text-indent: 0 !important;
+  border-left: none !important;
+}
+
+/* Remove all Tailwind margin/padding classes that might be causing indentation */
+#sidebar-content .ml-0,
+#sidebar-content .ml-1,
+#sidebar-content .ml-2,
+#sidebar-content .ml-3,
+#sidebar-content .ml-4,
+#sidebar-content .ml-5,
+#sidebar-content .ml-6,
+#sidebar-content .ml-7,
+#sidebar-content .ml-8,
+#sidebar-content .pl-0,
+#sidebar-content .pl-1,
+#sidebar-content .pl-2,
+#sidebar-content .pl-3,
+#sidebar-content .pl-4,
+#sidebar-content .pl-5,
+#sidebar-content .pl-6,
+#sidebar-content .pl-7,
+#sidebar-content .pl-8 {
+  padding-left: 1.5rem !important;
+  margin-left: -1.5rem !important;
+}
+
+/* FINAL OVERRIDE - NESTED CHILDREN INDENTATION (must be last to override everything) */
+#sidebar-content a[style*="padding-left: 1.75rem"],
+#sidebar-content div[style*="padding-left: 1.75rem"],
+#sidebar-content a[style*="padding-left: 2.75rem"],
+#sidebar-content div[style*="padding-left: 2.75rem"],
+#sidebar-content a[style*="padding-left: 3.5rem"],
+#sidebar-content div[style*="padding-left: 3.5rem"] {
+  padding-left: 2.5rem !important; /* Nested children get slight indent */
+  margin-left: -1.5rem !important;
+  text-indent: 0 !important;
+}
+
+/* Nested children hover states */
+#sidebar-content a[style*="padding-left: 1.75rem"]:hover,
+#sidebar-content div[style*="padding-left: 1.75rem"]:hover,
+#sidebar-content a[style*="padding-left: 2.75rem"]:hover,
+#sidebar-content div[style*="padding-left: 2.75rem"]:hover,
+#sidebar-content a[style*="padding-left: 3.5rem"]:hover,
+#sidebar-content div[style*="padding-left: 3.5rem"]:hover {
+  padding-left: 2.5rem !important; /* Nested children get slight indent */
+}
+
+/* Nested children active states */
+#sidebar-content a[style*="padding-left: 1.75rem"].border-primary,
+#sidebar-content a[style*="padding-left: 1.75rem"].text-primary,
+#sidebar-content div[style*="padding-left: 1.75rem"].border-primary,
+#sidebar-content div[style*="padding-left: 1.75rem"].text-primary,
+#sidebar-content a[style*="padding-left: 2.75rem"].border-primary,
+#sidebar-content a[style*="padding-left: 2.75rem"].text-primary,
+#sidebar-content div[style*="padding-left: 2.75rem"].border-primary,
+#sidebar-content div[style*="padding-left: 2.75rem"].text-primary,
+#sidebar-content a[style*="padding-left: 3.5rem"].border-primary,
+#sidebar-content a[style*="padding-left: 3.5rem"].text-primary,
+#sidebar-content div[style*="padding-left: 3.5rem"].border-primary,
+#sidebar-content div[style*="padding-left: 3.5rem"].text-primary {
+  padding-left: 2.5rem !important; /* Nested children get slight indent */
+}
+
