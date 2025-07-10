@@ -534,3 +534,37 @@ li[aria-expanded="true"] > div.group svg:last-child {
   width: 100%;
   box-sizing: border-box;
 }
+
+/* Sidebar item hover style - match active highlight */
+#sidebar-content a.group:hover,
+#sidebar-content div.group:hover {
+  text-decoration: none !important; /* Remove underline */
+  background-color: var(--color-bg-code); /* Same soft yellow as active */
+  border-radius: 0.5rem; /* Match active rounded corners */
+  width: 100%; /* Ensure full-width highlight */
+  font-weight: 550; /* Slightly bold */
+}
+
+/* Active navigation items - keep original text color with bold weight */
+#sidebar-content li[style*="background"] a.group,
+#sidebar-content li[style*="background"] div.group,
+#sidebar-content a[style*="background"].group,
+#sidebar-content div[style*="background"].group {
+  font-weight: 550; /* Slightly bold */
+  color: var(--color-text-secondary) !important; /* Keep original dark grey text */
+}
+
+/* Override nav-item color changes for sidebar items specifically */
+#sidebar-content .nav-item:hover,
+#sidebar-content .nav-item.active,
+#sidebar-content .nav-item,
+#sidebar-content a.group,
+#sidebar-content div.group {
+  color: var(--color-text-secondary) !important; /* Force dark text color */
+}
+
+/* Ensure active sidebar items stay dark even with nav-item class */
+#sidebar-content li[style*="background"] .nav-item,
+#sidebar-content [style*="background"] .nav-item {
+  color: var(--color-text-secondary) !important; /* Override nav-item yellow */
+}
