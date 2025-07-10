@@ -143,13 +143,13 @@
             "skills/by-lindy/lindy-meeting-recorder",
             "skills/by-lindy/lindy-phone",
             "skills/by-lindy/lindy-embed",
-            "skills/by-lindy/lindy-form",
             "skills/by-lindy/lindy-mail",
             "skills/by-lindy/run-code",
             "skills/by-lindy/http-request",
             "skills/by-lindy/webhooks",
             "skills/by-lindy/timer",
-            "skills/by-lindy/talk-with-other-lindy"
+            "skills/by-lindy/talk-with-other-lindy",
+            "skills/by-lindy/step-by-step-onboarding"
           ]
         },
         {
