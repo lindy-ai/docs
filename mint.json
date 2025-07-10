@@ -55,7 +55,7 @@
           ]
         },
         {
-          "group": "Account & Billing",
+          "group": "Accounts & Billing",
           "pages": [
             "account-billing/workspaces",
             "account-billing/teams",
