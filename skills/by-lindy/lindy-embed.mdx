@@ -1,0 +1,173 @@
+---
+title: 'Lindy Embed'
+description: 'Learn how to embed Lindy agents into your website or application'
+---
+
+# Lindy Embed
+
+Lindy Embed allows you to integrate your Lindy agents directly into your website or application, providing a seamless user experience with AI-powered assistance.
+
+## What is Lindy Embed?
+
+Lindy Embed is a feature that enables you to embed your trained Lindy agents into web pages, applications, or other digital interfaces. This allows users to interact with your AI agents without leaving your platform.
+
+## Key Features
+
+- **Seamless Integration**: Embed agents directly into your existing interface
+- **Customizable UI**: Style the chat interface to match your brand
+- **Real-time Interaction**: Users can chat with your agents in real-time
+- **Context Awareness**: Agents can access relevant information from your platform
+- **Analytics**: Track usage and performance of embedded agents
+
+## Getting Started
+
+### 1. Create an Embed
+
+1. Navigate to the Embed section in your Lindy dashboard
+2. Click "Create New Embed"
+3. Select the agent you want to embed
+4. Configure the embed settings
+
+### 2. Configure Settings
+
+- **Agent Selection**: Choose which agent to embed
+- **Appearance**: Customize colors, fonts, and layout
+- **Behavior**: Set greeting messages and response styles
+- **Permissions**: Configure what the agent can access
+
+### 3. Generate Embed Code
+
+```html
+<!-- Example embed code -->
+<script src="https://embed.lindy.ai/agent.js" 
+        data-agent-id="your-agent-id"
+        data-theme="light">
+</script>
+```
+
+## Embedding Options
+
+### Chat Widget
+
+The most common embedding option is a chat widget that appears as a floating button or sidebar:
+
+```html
+<div id="lindy-chat-widget" 
+     data-agent-id="your-agent-id"
+     data-position="bottom-right">
+</div>
+```
+
+### Full Page Embed
+
+Embed the agent as a full page within your application:
+
+```html
+<iframe src="https://embed.lindy.ai/chat?agent=your-agent-id"
+        width="100%"
+        height="600px"
+        frameborder="0">
+</iframe>
+```
+
+### API Integration
+
+For more advanced integrations, use the Lindy API:
+
+```javascript
+// Initialize the embed
+const lindyEmbed = new LindyEmbed({
+  agentId: 'your-agent-id',
+  container: '#chat-container',
+  theme: 'dark'
+});
+
+// Start the chat
+lindyEmbed.start();
+```
+
+## Customization
+
+### Styling
+
+Customize the appearance to match your brand:
+
+```css
+/* Custom CSS for the embed */
+.lindy-chat-widget {
+  --primary-color: #E6C147;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --border-radius: 8px;
+}
+```
+
+### Behavior Configuration
+
+```javascript
+const config = {
+  greeting: "Hello! How can I help you today?",
+  autoStart: false,
+  showTypingIndicator: true,
+  enableFileUpload: true,
+  maxMessageLength: 1000
+};
+```
+
+## Best Practices
+
+- **Clear Purpose**: Make it obvious what the agent can help with
+- **Responsive Design**: Ensure the embed works on all device sizes
+- **Loading States**: Provide clear feedback while the agent is loading
+- **Error Handling**: Handle cases where the agent is unavailable
+- **Analytics**: Track usage to improve the agent's performance
+
+## Security Considerations
+
+- **Authentication**: Implement proper authentication if needed
+- **Data Privacy**: Ensure sensitive data is not exposed
+- **Rate Limiting**: Prevent abuse of your embedded agent
+- **Content Filtering**: Filter inappropriate content
+
+## Integration Examples
+
+### E-commerce Support
+
+```html
+<!-- Customer support agent for an e-commerce site -->
+<div id="customer-support-widget"
+     data-agent-id="ecommerce-support-agent"
+     data-context="product-catalog">
+</div>
+```
+
+### Documentation Assistant
+
+```html
+<!-- Help agent for documentation -->
+<iframe src="https://embed.lindy.ai/docs-assistant"
+        data-knowledge-base="product-docs">
+</iframe>
+```
+
+## Troubleshooting
+
+### Common Issues
+
+- **Agent Not Loading**: Check your agent ID and network connectivity
+- **Styling Issues**: Verify your CSS customizations
+- **Performance**: Monitor for slow response times
+- **Mobile Issues**: Test on various mobile devices
+
+### Support
+
+If you encounter issues with Lindy Embed:
+1. Check the Lindy documentation
+2. Review your embed configuration
+3. Contact Lindy support with specific error messages
+
+## Related Features
+
+- **Chat with Lindy**: Direct chat interface
+- **Knowledge Base**: Provide context to embedded agents
+- **Analytics**: Track embed performance and usage 

@@ -1,0 +1,20 @@
+import React from 'react';
+
+export default function ChatIcon(props) {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <rect width="20" height="20" rx="4" fill="url(#paint0_linear_1531_11369)"/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M3.75 8.125C3.75 6.05393 5.42893 4.375 7.5 4.375H12.5C14.5711 4.375 16.25 6.05393 16.25 8.125V11.875C16.25 13.9461 14.5711 15.625 12.5 15.625H4.375C4.02982 15.625 3.75 15.3452 3.75 15V8.125ZM8.125 8.125C7.77982 8.125 7.5 8.40482 7.5 8.75C7.5 9.09518 7.77982 9.375 8.125 9.375H11.875C12.2202 9.375 12.5 9.09518 12.5 8.75C12.5 8.40482 12.2202 8.125 11.875 8.125H8.125ZM8.125 10.625C7.77982 10.625 7.5 10.9048 7.5 11.25C7.5 11.5952 7.77982 11.875 8.125 11.875H10C10.3452 11.875 10.625 11.5952 10.625 11.25C10.625 10.9048 10.3452 10.625 10 10.625H8.125Z" fill="url(#paint1_linear_1531_11369)"/>
+      <defs>
+        <linearGradient id="paint0_linear_1531_11369" x1="29.4643" y1="-4.28572" x2="-7.32143" y2="30.5357" gradientUnits="userSpaceOnUse">
+          <stop stopColor="white"/>
+          <stop offset="1" stopColor="#FFD518"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_1531_11369" x1="17.0312" y1="-1.25" x2="9.48622" y2="16.2457" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#E28E19"/>
+          <stop offset="1" stopColor="#644530"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+} 

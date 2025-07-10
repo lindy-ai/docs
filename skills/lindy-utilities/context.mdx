@@ -1,0 +1,131 @@
+---
+title: 'Context'
+description: 'Learn how to use the Context utility to manage and access contextual information in your workflows'
+---
+
+# Context
+
+The Context utility allows you to manage and access contextual information throughout your Lindy workflows. It provides a way to store, retrieve, and manipulate data that needs to be shared across different parts of your agent's execution.
+
+## What is Context?
+
+Context is a utility that provides a shared data store for your Lindy workflows. It allows you to store information that can be accessed by different actions, conditions, and utilities within the same task execution.
+
+## Use Cases
+
+- **Data Sharing**: Pass information between different actions in your workflow
+- **State Management**: Maintain state across multiple steps
+- **Configuration**: Store configuration data that can be accessed throughout the workflow
+- **Temporary Storage**: Store intermediate results for later use
+
+## How to Use Context
+
+### Setting Context
+
+```javascript
+// Set a simple value
+await setContext("userName", "John Doe");
+
+// Set an object
+await setContext("userProfile", {
+  name: "John Doe",
+  email: "john@example.com",
+  preferences: {
+    language: "en",
+    timezone: "UTC"
+  }
+});
+```
+
+### Getting Context
+
+```javascript
+// Get a specific value
+const userName = await getContext("userName");
+
+// Get an object
+const userProfile = await getContext("userProfile");
+
+// Get all context
+const allContext = await getContext();
+```
+
+### Updating Context
+
+```javascript
+// Update existing context
+await setContext("userProfile.preferences.language", "es");
+
+// Merge with existing context
+const currentProfile = await getContext("userProfile");
+await setContext("userProfile", {
+  ...currentProfile,
+  lastLogin: new Date().toISOString()
+});
+```
+
+## Context Lifecycle
+
+- **Task Scope**: Context is available throughout the entire task execution
+- **Persistence**: Context persists across different actions and conditions within the same task
+- **Isolation**: Each task has its own isolated context
+- **Cleanup**: Context is automatically cleaned up when the task completes
+
+## Integration Examples
+
+### With LLM Calls
+
+```javascript
+// Store user information in context
+await setContext("userQuery", "How do I reset my password?");
+
+// Use context in LLM call
+const response = await llmCall({
+  prompt: `User asked: ${await getContext("userQuery")}. 
+           Provide a helpful response based on our knowledge base.`
+});
+```
+
+### With Conditions
+
+```javascript
+// Check context to make decisions
+const userType = await getContext("userType");
+if (userType === "premium") {
+  // Provide premium features
+} else {
+  // Provide basic features
+}
+```
+
+### With Actions
+
+```javascript
+// Pass context to external actions
+const userEmail = await getContext("userEmail");
+await sendEmail({
+  to: userEmail,
+  subject: "Your request has been processed",
+  body: "Thank you for your inquiry."
+});
+```
+
+## Best Practices
+
+- **Naming Convention**: Use clear, descriptive names for context keys
+- **Structure**: Organize related data into objects for better organization
+- **Cleanup**: Don't store unnecessary data in context
+- **Security**: Be careful not to store sensitive information in context
+- **Performance**: Avoid storing large amounts of data in context
+
+## Context vs Variables
+
+- **Context**: Shared across the entire task execution
+- **Variables**: Local to specific actions or conditions
+- **Memory**: Persistent across multiple task executions
+
+## Related Utilities
+
+- **Set Variable**: Store local variables within actions
+- **Memories**: Store persistent information across tasks
+- **Get Task**: Access task-level information 

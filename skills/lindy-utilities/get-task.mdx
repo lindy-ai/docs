@@ -1,0 +1,94 @@
+---
+title: 'Get Task'
+description: 'Learn how to use the Get Task utility to retrieve and work with task information'
+---
+
+# Get Task
+
+The Get Task utility allows you to retrieve information about the current task or specific tasks in your Lindy workflow. This is useful for accessing task metadata, status, and related information.
+
+## What is Get Task?
+
+Get Task is a utility that provides access to task-related information within your Lindy workflows. It can retrieve details about the current task being executed or fetch information about other tasks in your system.
+
+## Use Cases
+
+- **Task Status Checking**: Verify the current status of a task
+- **Metadata Access**: Retrieve task metadata like creation time, assignee, or custom fields
+- **Task History**: Access information about previous task executions
+- **Conditional Logic**: Use task information to make decisions in your workflow
+
+## How to Use Get Task
+
+### Basic Usage
+
+```javascript
+// Get information about the current task
+const currentTask = await getTask();
+
+// Access task properties
+console.log(currentTask.id);
+console.log(currentTask.status);
+console.log(currentTask.createdAt);
+```
+
+### Getting Specific Tasks
+
+```javascript
+// Get a specific task by ID
+const task = await getTask({
+  taskId: "task_123456"
+});
+
+// Get tasks with filters
+const tasks = await getTask({
+  status: "completed",
+  limit: 10
+});
+```
+
+## Task Properties
+
+When you retrieve a task, you'll have access to these properties:
+
+- **id**: Unique identifier for the task
+- **status**: Current status (pending, running, completed, failed)
+- **createdAt**: Timestamp when the task was created
+- **updatedAt**: Timestamp when the task was last updated
+- **metadata**: Custom data associated with the task
+- **result**: Output or result from task execution
+- **error**: Error information if the task failed
+
+## Integration Examples
+
+### With Conditions
+
+```javascript
+// Check if a task is completed before proceeding
+const task = await getTask();
+if (task.status === "completed") {
+  // Proceed with next action
+}
+```
+
+### With Memory
+
+```javascript
+// Store task information in memory for later use
+const task = await getTask();
+await setVariable("lastTaskId", task.id);
+await setVariable("lastTaskStatus", task.status);
+```
+
+## Best Practices
+
+- **Error Handling**: Always check for errors when retrieving tasks
+- **Caching**: Consider caching task information if you need it frequently
+- **Permissions**: Ensure your agent has the necessary permissions to access task information
+- **Performance**: Limit the number of task queries to avoid performance issues
+
+## Related Utilities
+
+- **Set Variable**: Store task information for later use
+- **LLM Call**: Use task information in AI prompts
+- **Memories**: Store task history for long-term reference 
