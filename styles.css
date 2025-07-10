@@ -204,7 +204,7 @@ a.button:hover {
   font-weight: 500;
   transition: all 0.2s ease;
   position: relative;
-  padding: 0.5rem 0;
+  padding: 0.1rem 0;
 }
 
 .nav-item::after {
@@ -396,4 +396,36 @@ a.button:hover {
   text-decoration-color: var(--color-primary);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
+}
+
+/* Remove ALL left spacing from sidebar */
+#sidebar-content * {
+  padding-left: 0.0rem !important;
+  margin-left: 0 !important;
+}
+
+/* Remove the left margin on large screens */
+#sidebar-content .lg\:ml-4 {
+  margin-left: 0 !important;
+}
+
+/* Tighten vertical spacing on nav items */
+#sidebar-content .py-1\.5 {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.1rem !important;
+}
+
+/* Reduce spacing between section groups */
+#sidebar-content .mt-12.lg\:mt-8 {
+  margin-top: 1.5rem !important;
+}
+
+/* Reduce spacing after group headers */
+#sidebar-content .mb-3\.5.lg\:mb-2\.5 {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Remove the left border line */
+#sidebar-content .border-l {
+  border-left: none !important;
 }
