@@ -574,3 +574,13 @@ li[aria-expanded="true"] > div.group svg:last-child {
   /* Keep outline unchanged, only enhance shadow on hover */
   box-shadow: 0 6px 20px rgba(240, 195, 65, 0.25);
 }
+
+/* -------- Video Card Highlight -------- */
+.video-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+.video-card:hover {
+  box-shadow: 0 8px 24px rgba(240, 195, 65, 0.16);
+}
