@@ -11,10 +11,15 @@
     "light": "#F5E198",
     "dark": "#D4A514"
   },
-  "topbarLinks": [],
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@lindy.ai"
+    }
+  ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://app.lindy.ai"
+    "url": "https://chat.lindy.ai"
   },
   "navigation": [
     {
@@ -71,26 +76,25 @@
         {
           "group": "Popular Workflows",
           "pages": [
-            "use-cases/popular-workflows/overview",
-            "use-cases/popular-workflows/use-case-1",
-            "use-cases/popular-workflows/use-case-2",
-            "use-cases/popular-workflows/use-case-3"
+            "use-cases/popular-workflows/meeting-assistant",
+            "use-cases/popular-workflows/email-triage",
+            "use-cases/popular-workflows/calendar-prep",
+            "use-cases/popular-workflows/scheduling-assistant"
           ]
         },
         {
           "group": "Sales",
           "pages": [
-            "use-cases/sales/overview",
-            "use-cases/sales/use-case-1",
-            "use-cases/sales/use-case-2",
-            "use-cases/sales/use-case-3"
+            "use-cases/sales/lead-enrichment",
+            "use-cases/sales/lead-qualification",
+            "use-cases/sales/multi-channel-outbound",
+            "use-cases/sales/email-negotiation"
           ]
         },
         {
           "group": "Operations",
           "pages": [
-            "use-cases/operations/overview",
-            "use-cases/operations/use-case-1",
+            "use-cases/operations/document-processing",
             "use-cases/operations/use-case-2",
             "use-cases/operations/use-case-3"
           ]
@@ -98,37 +102,33 @@
         {
           "group": "Finance",
           "pages": [
-            "use-cases/finance/overview",
-            "use-cases/finance/use-case-1",
-            "use-cases/finance/use-case-2",
+            "use-cases/finance/expense-reporting",
+            "use-cases/finance/memo-generation",
             "use-cases/finance/use-case-3"
           ]
         },
         {
-          "group": "Support",
+          "group": "Customer Success",
           "pages": [
-            "use-cases/support/overview",
-            "use-cases/support/use-case-1",
-            "use-cases/support/use-case-2",
-            "use-cases/support/use-case-3"
+            "use-cases/customer success/smart-support-agent",
+            "use-cases/customer success/report-generator",
+            "use-cases/customer success/voice-support"
           ]
         },
         {
           "group": "Marketing",
           "pages": [
-            "use-cases/marketing/overview",
-            "use-cases/marketing/use-case-1",
-            "use-cases/marketing/use-case-2",
-            "use-cases/marketing/use-case-3"
+            "use-cases/marketing/campaign-generator",
+            "use-cases/marketing/competitive-content-analysis",
+            "use-cases/marketing/focus-group-simulator"
           ]
         },
         {
           "group": "HR",
           "pages": [
-            "use-cases/hr/overview",
-            "use-cases/hr/use-case-1",
-            "use-cases/hr/use-case-2",
-            "use-cases/hr/use-case-3"
+            "use-cases/hr/employee-feedback-collector",
+            "use-cases/hr/resume-screening",
+            "use-cases/hr/employee-help-desk"
           ]
         }
       ]
