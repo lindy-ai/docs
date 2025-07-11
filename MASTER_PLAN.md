@@ -266,3 +266,59 @@ grep -r "Not Started" MASTER_PLAN.md | wc -l
 ---
 
 **Remember**: Every page should make users feel empowered and excited to build with Lindy! 
+
+---
+
+### 1. **Video File Path or Name Issue**
+- The video file must be accessible at `/videos/triggers.mp4` relative to your site’s public root.
+- Double-check that the file is actually at `docs/videos/triggers.mp4` and that your static file server exposes the `docs/videos` directory as `/videos`.
+
+**Test:**  
+Try opening `http://localhost:3000/videos/triggers.mp4` directly in your browser.  
+- If you get a 404 or nothing loads, the file is not being served correctly.
+
+---
+
+### 2. **MDX/Framework Static Assets Location**
+- Some documentation frameworks (like Mintlify, Next.js, Docusaurus, etc.) require static assets to be in a specific folder (often called `public` or `static` at the project root).
+- If you put the video in `docs/videos`, but your framework expects it in `public/videos`, it won’t be found.
+
+**Solution:**  
+- Move your video to the correct static folder (often `public/videos/triggers.mp4` at the root of your project, not inside `docs/`).
+
+---
+
+### 3. **File Permissions or Corruption**
+- Make sure the video file is not corrupted and is readable by the server.
+
+---
+
+### 4. **Browser/Console Errors**
+- Open your browser’s developer console and look for errors related to loading the video file.
+
+---
+
+## **How to Fix**
+
+1. **Move the video file to the correct static directory.**  
+   - If your project has a `public` folder, move the video to `public/videos/triggers.mp4`.
+   - If not, let me know your framework and I’ll tell you the right place.
+
+2. **Update the MDX video source if needed:**  
+   ```mdx
+   <video
+     src="/videos/triggers.mp4"
+     width="600"
+     autoPlay
+     muted
+     loop
+     playsInline
+     style={{ borderRadius: '16px', boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }}
+   />
+   ```
+
+3. **Reload your site and check if the video appears.**
+
+---
+
+Would you like me to move the file to a `public/videos` directory and update the reference? If you tell me your framework (Mintlify, Next.js, etc.), I can give you the exact path! 
