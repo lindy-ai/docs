@@ -460,7 +460,7 @@ li[aria-expanded="true"] > div.group svg:last-child {
 #sidebar-content .rounded-xl {
   margin-left: 0;
   margin-right: 0;
-  border-radius: 0.5rem; /* Changed from 0 to add rounded corners */
+  border-radius: 0.75rem !important; /* More rounded corners */
 }
 
 /* Add back some visual padding to the container */
@@ -481,7 +481,7 @@ li[aria-expanded="true"] > div.group svg:last-child {
   margin-left: 0;
   margin-right: 0;
   width: 100%;
-  border-radius: 0.5rem; /* Add rounded corners */
+  border-radius: 0.75rem !important; /* More rounded corners */
 }
 
 /* For the yellow highlighted items (like "Input options" and "Overview") */
@@ -490,7 +490,7 @@ li[aria-expanded="true"] > div.group svg:last-child {
   display: block;
   width: 100%;
   box-sizing: border-box;
-  border-radius: 0.5rem; /* Add rounded corners */
+  border-radius: 0.75rem !important; /* More rounded corners */
 }
 
 /* Ensure icons maintain consistent size */
@@ -527,7 +527,7 @@ li[aria-expanded="true"] > div.group svg:last-child {
 #sidebar-content div.group:hover {
   text-decoration: none !important; /* Remove underline */
   background-color: var(--color-bg-code); /* Same soft yellow as active */
-  border-radius: 0.5rem; /* Match active rounded corners */
+  border-radius: 0.75rem !important; /* More rounded corners */
   width: 100%; /* Ensure full-width highlight */
   font-weight: 550; /* Slightly bold */
 }
@@ -605,4 +605,74 @@ video {
   display: block !important; /* override any inline display */
   margin: 0 !important; /* remove any margin */
   padding: 0 !important; /* remove any padding */
+}
+
+/* ---------------- Topbar Customizations ---------------- */
+/* Center the nav horizontally and remove extra spacing */
+.flex-1.relative.hidden.lg\:flex.items-center.ml-auto.justify-end.space-x-4 {
+  justify-content: center !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove padding/margin from nav and ul */
+nav.text-sm {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+ul.flex.space-x-6.items-center {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  gap: 2rem !important; /* Increase spacing between Support and Dashboard */
+}
+
+/* Remove any extra space from the nav items */
+.navbar-link {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Ensure buttons have no extra bottom space */
+#topbar-cta-button {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Keep Support link as gray text (remove any custom styling) */
+a[href^="mailto:support@lindy.ai"] {
+  /* Let it use the default gray styling from the HTML classes */
+}
+
+/* Dashboard CTA → use custom light background */
+#topbar-cta-button > a > span.absolute {
+  background: #fdf8ee !important;
+}
+
+/* Dashboard text and arrow → use secondary text color */
+#topbar-cta-button .z-10 {
+  color: var(--color-text-secondary) !important;
+}
+
+#topbar-cta-button svg {
+  color: var(--color-text-secondary) !important;
+}
+
+/* Remove any underline effects */
+#topbar-cta-button > a {
+  text-decoration: none !important;
+}
+
+#topbar-cta-button > a:hover {
+  text-decoration: none !important;
+}
+
+/* Hover slightly darkens for feedback */
+#topbar-cta-button > a:hover > span.absolute {
+  opacity: 0.9 !important;
 }

@@ -11,10 +11,15 @@
     "light": "#F5E198",
     "dark": "#D4A514"
   },
-  "topbarLinks": [],
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@lindy.ai"
+    }
+  ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://app.lindy.ai"
+    "url": "https://chat.lindy.ai"
   },
   "navigation": [
     {
