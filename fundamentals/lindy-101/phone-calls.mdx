@@ -4,16 +4,292 @@ icon: 'phone'
 sidebarTitle: 'Phone Calls'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/videos/triggers.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%' }}
-    />
+Enable your agents to make and receive phone calls autonomously in 30+ languages across 100+ countries.
+
+<Frame>
+  <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+    <div style={{ background: '#f0f0f0', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: '#666', fontSize: '18px' }}>Video: Phone Calls Overview</span>
+    </div>
   </div>
-</div>
+</Frame>
+
+## Quick Overview
+
+Lindy Phone Calls enables AI-powered voice automation for both inbound and outbound calls. Build agents that can handle customer support, sales outreach, appointment booking, and more - all with natural conversation abilities.
+
+Key capabilities:
+- **Inbound & outbound** - Receive calls with triggers, make calls with actions
+- **30+ languages** - Support for global communication 
+- **Natural voices** - Human-like conversation flow
+- **Call transfers** - Route to humans or other agents
+- **Concurrent calls** - Handle multiple calls simultaneously
+- **100+ countries** - Global reach with competitive pricing
+
+<Note>
+Phone calls are available on Pro, Business, and Enterprise plans. Pro plans are limited to 30 calls/month and English only.
+</Note>
+
+
+## Types of Voice Agents
+
+### Inbound Call Handling
+Uses the "Call Received" trigger to answer incoming calls automatically.
+
+**Best for:**
+- Customer support automation
+- Booking and scheduling
+- Lead qualification
+- After-hours answering
+
+**Available actions:**
+- End call
+- Transfer call
+- Press numbers (phone tree navigation)
+
+### Outbound Call Campaigns  
+Uses the "Make Phone Call" action to initiate calls.
+
+**Best for:**
+- Sales outreach
+- Appointment reminders
+- Survey collection
+- Follow-up campaigns
+
+<Tip>
+For phone actions inside AI agent nodes, use GPT-4o mini. For standalone phone workflows, use GPT-4 Turbo for best results.
+</Tip>
+
+
+## Setting Up Phone Numbers
+
+### Purchasing a Number
+
+<Frame>
+  <img src="/lindy-brand-assets/phone-purchase-number-dropdown.png" alt="IMAGE NEEDED: Screenshot of Phone number dropdown showing available numbers to purchase" />
+</Frame>
+
+1. Add a **Call Received** trigger or **Make Phone Call** action
+2. Click the "Phone number from" field
+3. Select from available numbers or search for specific area codes
+4. Each number costs $10/month
+
+<Frame>
+  <img src="/lindy-brand-assets/phone-number-selection-typing.png" alt="IMAGE NEEDED: Screenshot showing typing to search for specific phone numbers" />
+</Frame>
+
+### Managing Phone Numbers
+
+Access your numbers through Settings:
+
+<Frame>
+  <img src="/lindy-brand-assets/phone-settings-management.png" alt="IMAGE NEEDED: Screenshot of Settings > Phone Numbers page showing purchased numbers with Disconnect/Release options" />
+</Frame>
+
+1. Click your user icon
+2. Select **Settings**
+3. Navigate to **Phone Numbers**
+4. Options: Disconnect or Release numbers
+
+
+## Language Configuration
+
+Lindy supports over 30 languages for natural conversation:
+
+<Frame>
+  <img src="/lindy-brand-assets/phone-language-dropdown.png" alt="IMAGE NEEDED: Screenshot of Language dropdown in phone action showing all 30+ language options" />
+</Frame>
+
+**Popular languages:**
+- English, Spanish, French, German
+- Chinese (Mandarin/Cantonese)
+- Japanese, Korean
+- Hindi, Arabic
+- And 25+ more
+
+To configure:
+1. Open your phone trigger or action
+2. Find the "Language" dropdown
+3. Select your desired language
+
+
+## Call Transfer
+
+Enable your agents to transfer calls to humans or other departments when needed.
+
+### As a Workflow Step
+
+<Frame>
+  <img src="/lindy-brand-assets/phone-transfer-action-step.png" alt="IMAGE NEEDED: Screenshot showing Transfer Call action being added after Call Received trigger" />
+</Frame>
+
+1. After **Call Received** trigger, click "Perform an action"
+2. Select **Lindy Phone** → **Transfer Call**
+3. Set "To" field to destination number
+
+### As an Agent Skill
+
+<Frame>
+  <img src="/lindy-brand-assets/phone-transfer-agent-skill.png" alt="IMAGE NEEDED: Screenshot of AI Agent with Transfer Call added as a skill" />
+</Frame>
+
+Add transfer capability to AI agents:
+
+1. In your agent prompt, include transfer instructions:
+   ```
+   If the customer asks for a human or you determine transfer is needed, 
+   transfer to: +1-555-0123
+   ```
+2. Add **Transfer Call** as an agent skill
+3. Agent will intelligently decide when to transfer
+
+<Tip>
+Add conditions before transfers to route calls based on area code, time of day, or conversation content.
+</Tip>
+
+
+## Pricing Structure
+
+### Phone Number Costs
+- **$10/month** per number
+- Supports concurrent calls
+- Available in 100+ countries
+
+### Per-Minute Rates
+Standard US configuration: **20 credits/minute** (approximately $0.19/min)
+
+<AccordionGroup>
+  <Accordion title="Major Markets">
+    - **US & Canada**: 20 credits/min
+    - **UK Landline**: 20 credits/min
+    - **Australia Landline**: 20 credits/min
+    - **Germany Landline**: 20 credits/min
+    - **France Landline**: 20 credits/min
+  </Accordion>
+  
+  <Accordion title="Mobile Rates">
+    - **US Mobile**: 20 credits/min
+    - **UK Mobile**: 21 credits/min
+    - **Australia Mobile**: 26 credits/min
+    - **Germany Mobile**: 53 credits/min
+    - **France Mobile**: 34 credits/min
+  </Accordion>
+  
+  <Accordion title="International">
+    View full pricing for 100+ countries in Settings → Phone Numbers → Pricing
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+Forwarded calls stop charging for LLM usage once connected to a human.
+</Note>
+
+
+## Plan Comparison
+
+<CardGroup cols={3}>
+  <Card title="Pro" icon="rocket-launch">
+    
+    • 30 calls/month  
+    • English only  
+    • Basic voice
+  </Card>
+  
+  <Card title="Business" icon="briefcase">
+    
+    • Unlimited calls  
+    • 30+ languages  
+    • Call transfers
+  </Card>
+  
+  <Card title="Enterprise" icon="building-columns">
+    
+    • Business features  
+    • Custom voices  
+    • Support
+  </Card>
+</CardGroup>
+
+
+## Building Your First Phone Agent
+
+### Inbound Support Agent
+
+<Frame>
+  <img src="/lindy-brand-assets/phone-inbound-template.png" alt="IMAGE NEEDED: Screenshot of inbound phone agent template showing Call Received trigger and agent configuration" />
+</Frame>
+
+1. Start with the **Inbound Phone Call Agent** template
+2. Configure your phone number
+3. Customize the agent prompt for your use case
+4. Add relevant skills (knowledge base, CRM updates)
+5. Test with a real call
+
+### Outbound Sales Agent
+
+<Frame>
+  <img src="/lindy-brand-assets/phone-outbound-workflow.png" alt="IMAGE NEEDED: Screenshot of outbound workflow with list trigger and Make Phone Call action" />
+</Frame>
+
+1. Set up a list of contacts (spreadsheet/CRM)
+2. Add **Make Phone Call** action
+3. Configure call script and objectives
+4. Set up post-call actions (log results, send follow-ups)
+
+
+## Best Practices
+
+- **Test thoroughly** - Always test with real calls before going live
+- **Clear prompts** - Provide specific instructions for conversation flow
+- **Fallback options** - Include transfer options for complex requests
+- **Monitor performance** - Review call logs and adjust prompts
+- **Set expectations** - Let callers know they're speaking with AI when appropriate
+
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Poor Audio Quality">
+    - Check internet connection stability
+    - Verify language settings match caller's language
+    - Test with different phone providers
+  </Accordion>
+  
+  <Accordion title="Agent Not Understanding">
+    - Review and simplify prompts
+    - Add more context about expected questions
+    - Consider using more advanced model
+  </Accordion>
+  
+  <Accordion title="Calls Not Connecting">
+    - Verify phone number is active
+    - Check workflow is saved and enabled
+    - Confirm billing is current
+  </Accordion>
+  
+  <Accordion title="Transfer Issues">
+    - Ensure destination number includes country code
+    - Test transfer number is reachable
+    - Check transfer conditions are clear
+  </Accordion>
+</AccordionGroup>
+
+
+## Next Steps
+
+Enhance your phone agents with these advanced features:
+
+<CardGroup cols={2}>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Give agents access to company information
+  </Card>
+  <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="code-branch">
+    Route calls based on caller data or time
+  </Card>
+  <Card title="AI Agents" href="/fundamentals/lindy-101/ai-agents" icon="brain">
+    Build complex conversational flows
+  </Card>
+  <Card title="Human in the Loop" href="/testing/human-in-the-loop" icon="user-check">
+    Add approval steps for sensitive actions
+  </Card>
+</CardGroup>
