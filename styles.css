@@ -564,23 +564,45 @@ li[aria-expanded="true"] > div.group svg:last-child {
 
 /* Frames (images in tutorials) */
 .frame {
-  /* Match the base shadow style of cards */
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: box-shadow 0.3s ease;
 }
 
-/* Glow on hover (no translate/raise) */
 .frame:hover {
-  /* Keep outline unchanged, only enhance shadow on hover */
   box-shadow: 0 6px 20px rgba(240, 195, 65, 0.25);
+}
+
+/* Generic video styling */
+video {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* 50px smaller */
+  border-radius: 16px; /* round edges */
+  overflow: hidden;
 }
 
 /* -------- Video Card Highlight -------- */
 .video-card {
+  display: inline-block; /* shrink to content */
+  background: transparent;
   border-radius: 16px;
-  overflow: hidden;
+  overflow: hidden; /* clip any internal overflow */
   transition: box-shadow 0.25s ease;
+  line-height: 0; /* remove inline spacing */
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); /* 15% more pronounced */
 }
 .video-card:hover {
-  box-shadow: 0 8px 24px rgba(240, 195, 65, 0.16);
+  box-shadow: 0 8px 28px rgba(240, 195, 65, 0.14); /* 15% more pronounced */
+}
+
+.video-card video {
+  width: auto !important; /* override inline width: 100% */
+  max-width: 100%;
+  height: auto !important; /* ensure height is auto */
+  display: block !important; /* override any inline display */
+  margin: 0 !important; /* remove any margin */
+  padding: 0 !important; /* remove any padding */
 }
