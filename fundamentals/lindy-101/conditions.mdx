@@ -4,16 +4,143 @@ icon: 'network-wired'
 sidebarTitle: 'Conditions'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/videos/triggers.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%' }}
-    />
+Define different paths in your workflow based on specific criteria to create dynamic, intelligent automations.
+
+<Frame>
+  <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+    <div style={{ background: '#f0f0f0', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: '#666', fontSize: '18px' }}>Video Coming Soon</span>
+    </div>
   </div>
-</div>
+</Frame>
+
+## Quick Overview
+
+Conditions let you create branching logic in your Lindy workflows. They evaluate specific criteria and direct your agent down different paths based on the results. Think of them as "if-then" statements that make your automations smarter and more responsive to different scenarios.
+
+Key benefits of using conditions:
+- **Smart routing** - Direct workflows down different paths based on content, context, or criteria
+- **Dynamic responses** - Handle multiple scenarios within a single workflow
+- **Intelligent filtering** - Process only relevant items or data that meet specific requirements
+- **Automated decision-making** - Let your agent choose the best action without manual intervention
+- **Workflow efficiency** - Avoid unnecessary steps by branching only when conditions are met
+
+
+## Creating Your First Condition
+
+To add a condition to your workflow, click the plus button (Add step) below any action or between two actions, then select "Condition".
+
+<Frame>
+  <img src="/lindy-brand-assets/hit_plus_add_condition_first_thing_to_do.png" alt="Adding a condition step" />
+</Frame>
+
+### Setting Up the Condition
+
+Once you've added a condition, you'll see the condition configuration panel.
+
+<Frame>
+  <img src="/lindy-brand-assets/conditions_initial.png" alt="Initial condition setup" />
+</Frame>
+
+Every condition prompt starts with **"Go down this path if..."** followed by your criteria. For example:
+- `the email received was asking a question and needs a response`
+- `the email contains a 6 digit user ID number`
+- `the user asked for a refund or seems angry`
+
+### Adding Multiple Condition Paths
+
+You can create multiple branches to handle different scenarios. Click "+ Add Condition" to create alternate paths.
+
+<Frame>
+  <img src="/lindy-brand-assets/condition_2_add_alternate_path.png" alt="Adding alternate condition paths" />
+</Frame>
+
+<Note>
+  Each condition branch should have a clear, distinct criteria. Lindy will evaluate all conditions and follow the first matching path.
+</Note>
+
+## Advanced Configuration
+
+### Force Agent to Select a Branch
+
+By default, if no conditions are met, Lindy will stop the task. You can change this behavior by enabling "Force the agent to select a branch".
+
+<Frame>
+  <img src="/lindy-brand-assets/force_agent_to_select_branch.png" alt="Force agent to select branch option" />
+</Frame>
+
+When enabled, Lindy must choose one of the defined paths even if none of the conditions perfectly match. This is useful when you want to ensure the workflow always continues.
+
+### Renaming Conditions
+
+For better organization, especially in complex workflows, rename your conditions with descriptive titles.
+
+<Frame>
+  <img src="/lindy-brand-assets/rename_condition.png" alt="Renaming a condition" />
+</Frame>
+
+Click on the condition title (e.g., "Condition 1") and replace it with a meaningful name like "Found a response" or "Customer is angry".
+
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Write Clear, Specific Prompts">
+    Be explicit about what you're looking for. Instead of "important email", use "email from a C-level executive or marked as high priority".
+  </Accordion>
+  
+  <Accordion title="Test Edge Cases">
+    Consider what happens when conditions overlap or when none match. Use the test panel to verify behavior.
+  </Accordion>
+  
+  <Accordion title="Order Matters">
+    Lindy evaluates conditions in order and takes the first matching path. Place more specific conditions before general ones.
+  </Accordion>
+  
+  <Accordion title="Add Examples">
+    Include examples in your condition prompts to improve accuracy: "the email asks about pricing (e.g., 'how much does it cost', 'what are your rates')".
+  </Accordion>
+</AccordionGroup>
+
+
+<Tip>
+  For conditions that require understanding context, sentiment, or complex logic, use more advanced models. For simple keyword matching or basic categorization, faster models work well.
+</Tip>
+
+## Troubleshooting
+#### Common Issues
+
+1. **Workflow stops when no conditions match**
+   - Enable "Force agent to select branch" or add a catch-all condition
+
+2. **Wrong path is chosen**
+   - Review and refine your condition prompts
+   - Check the order of conditions
+   - Add more specific examples
+
+3. **Conditions overlap**
+   - Make each condition mutually exclusive
+   - Order from most specific to least specific
+
+<Warning>
+  If your workflow stops unexpectedly, check that each condition branch has at least one action following it. Empty branches will cause the execution to end.
+</Warning>
+
+## Next Steps
+
+Now that you understand conditions, explore these related concepts:
+
+<CardGroup cols={2}>
+  <Card title="Loops" href="/fundamentals/lindy-101/looping" icon="repeat">
+    Repeat actions for multiple items using conditions as filters
+  </Card>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Combine conditions with knowledge search for intelligent routing
+  </Card>
+  <Card title="Human in the Loop" href="/testing/human-in-the-loop" icon="user-check">
+    Use conditions to determine when human review is needed
+  </Card>
+  <Card title="Testing Workflows" href="/testing/test-panel" icon="vial">
+    Test your conditions with different scenarios
+  </Card>
+</CardGroup>
