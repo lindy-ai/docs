@@ -5,6 +5,8 @@ sidebarTitle: 'Meeting Assistant'
 description: 'Enhance meetings with AI assistance from Lindy'
 ---
 
+Never miss a detail again – let Lindy automatically join your meetings, take comprehensive notes, and organize them for easy access.
+
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
@@ -18,3 +20,176 @@ description: 'Enhance meetings with AI assistance from Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+A Meeting Notetaker Lindy automatically joins your scheduled meetings, records the conversation, and creates detailed summaries with action items, decisions, and key discussion points. It's like having a dedicated assistant in every meeting who never misses a detail and always delivers organized notes.
+
+Key benefits of using a Meeting Notetaker:
+- **Automatic attendance** - Lindy joins meetings based on your calendar without manual intervention
+- **Comprehensive notes** - Captures all important discussions, decisions, and action items
+- **Organized storage** - Saves meeting notes in your preferred cloud storage with consistent formatting
+- **Searchable archive** - Creates a searchable repository of all your meeting history
+- **Team alignment** - Ensures everyone has access to the same information, even if they missed the meeting
+
+## Setting Up Your Meeting Notetaker
+
+Let's create a Meeting Notetaker that will automatically join your meetings and generate comprehensive notes.
+
+### Step 1: Configure Calendar Integration
+
+First, connect your calendar so Lindy knows which meetings to join.
+
+<Frame>
+  <img src="/placeholder-calendar-integration.png" alt="Connecting your calendar to Lindy" />
+</Frame>
+
+Click the **Calendar Event Started** trigger and select the calendar you want Lindy to monitor. This can be your personal calendar or a shared team calendar.
+
+<Tip>
+  Pro tip: Use filters to have Lindy only join specific types of meetings. For example, filter by meeting title containing "Team Sync" or "Client Call".
+</Tip>
+
+### Step 2: Set Up Meeting Recording
+
+Configure how Lindy will join and behave in your meetings.
+
+<Frame>
+  <img src="/placeholder-meeting-settings.png" alt="Configuring meeting recording settings" />
+</Frame>
+
+In the **Record Meeting** action:
+- Leave "Meeting URL" on "Auto" to let Lindy intelligently find the meeting link
+- Customize the join message or leave it blank for silent entry
+- Set your Lindy-bot's display name (e.g., "Sarah's Notetaker")
+
+### Step 3: Configure Note Generation
+
+Customize how Lindy processes and formats your meeting notes.
+
+<Frame>
+  <img src="/placeholder-note-template.png" alt="Setting up note generation template" />
+</Frame>
+
+In the **Generate Meeting Summary** action, you can customize the prompt to focus on what matters most to your workflow:
+
+```
+Create a comprehensive meeting summary including:
+- Meeting title, date, and attendees
+- Key discussion points organized by topic
+- All decisions made with clear owners
+- Action items with assignees and due dates
+- Questions that remain unanswered
+- Next steps and follow-up meetings scheduled
+```
+
+### Step 4: Set Up Cloud Storage
+
+Configure where your meeting notes will be saved for easy access.
+
+<Frame>
+  <img src="/placeholder-storage-setup.png" alt="Configuring Google Drive storage for meeting notes" />
+</Frame>
+
+1. Create a dedicated folder in Google Drive (e.g., "Meeting Notes 2024")
+2. In the **Google Docs Create Document** action:
+   - Select your Meeting Notes folder
+   - Use dynamic naming: `{{meeting_title}} - {{meeting_date}}`
+   - Choose your preferred formatting template
+
+## Advanced Features
+
+### Adding Smart Categorization
+
+Use conditions to automatically categorize and route different types of meetings.
+
+<Frame>
+  <img src="/placeholder-categorization.png" alt="Setting up meeting categorization with conditions" />
+</Frame>
+
+Example conditions:
+- "Client meetings" → Save to Client folder and notify sales team
+- "Internal standup" → Create brief summary and post to Slack
+- "Board meetings" → Generate detailed minutes and mark as confidential
+
+### Email Follow-ups
+
+Automatically send meeting summaries to attendees who couldn't make it.
+
+<Frame>
+  <img src="/placeholder-email-followup.png" alt="Configuring automatic email follow-ups" />
+</Frame>
+
+Add an **Email Send** action with:
+- Recipients: Meeting attendees or specific team members
+- Subject: "Meeting Notes: {{meeting_title}}"
+- Body: Include the generated summary with highlighted action items
+
+### Integration with Task Management
+
+Connect your Meeting Notetaker to project management tools for seamless task creation.
+
+<Frame>
+  <img src="/placeholder-task-integration.png" alt="Creating tasks from meeting action items" />
+</Frame>
+
+Use integrations to:
+- Create Asana tasks from action items
+- Update Linear issues mentioned in meetings
+- Add Notion database entries for decisions made
+
+## Testing Your Meeting Notetaker
+
+Before going live, test your Lindy to ensure everything works perfectly.
+
+<Frame>
+  <img src="/placeholder-test-panel.png" alt="Testing your Meeting Notetaker in the test panel" />
+</Frame>
+
+1. Schedule a test meeting on your calendar
+2. Use the test panel to simulate the workflow
+3. Verify that notes are generated and saved correctly
+4. Check that any integrations (Slack, email, etc.) work as expected
+
+<Warning>
+  During testing, use short test meetings to avoid consuming your recording minutes. You can also test with meeting transcript uploads instead of live recordings.
+</Warning>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Meeting Etiquette">
+    Inform meeting participants that Lindy will be taking notes. Consider adding a line to your calendar invites: "Note: An AI notetaker will join to capture meeting notes."
+  </Accordion>
+  
+  <Accordion title="Privacy Considerations">
+    Set up filters to exclude sensitive meetings like performance reviews or confidential discussions. Use calendar event titles or attendee lists as filter criteria.
+  </Accordion>
+  
+  <Accordion title="Note Organization">
+    Create a consistent folder structure in your cloud storage. Consider organizing by date, project, or meeting type for easy retrieval.
+  </Accordion>
+  
+  <Accordion title="Review and Refine">
+    Periodically review the generated notes and refine your prompts. The more specific your instructions, the better Lindy becomes at capturing what matters to you.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+Now that your Meeting Notetaker is set up, explore these complementary workflows:
+
+<CardGroup cols={2}>
+  <Card title="Chat With Your Meetings" href="/tutorials/chat-with-meetings" icon="comments">
+    Query your meeting history with natural language questions
+  </Card>
+  <Card title="Meeting Insights Dashboard" href="/tutorials/meeting-insights" icon="chart-line">
+    Track meeting metrics and team participation trends
+  </Card>
+  <Card title="Action Item Tracker" href="/tutorials/action-tracker" icon="tasks">
+    Automatically follow up on meeting commitments
+  </Card>
+  <Card title="Meeting Scheduler" href="/tutorials/meeting-scheduler" icon="calendar-plus">
+    Let Lindy coordinate and schedule your meetings
+  </Card>
+</CardGroup>
