@@ -270,11 +270,11 @@ grep -r "Not Started" MASTER_PLAN.md | wc -l
 ---
 
 ### 1. **Video File Path or Name Issue**
-- The video file must be accessible at `/videos/triggers.mp4` relative to your site’s public root.
-- Double-check that the file is actually at `docs/videos/triggers.mp4` and that your static file server exposes the `docs/videos` directory as `/videos`.
+- The video file must be accessible at `https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4` relative to your site’s public root.
+- Double-check that the file is actually at `docshttps://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4` and that your static file server exposes the `docs/videos` directory as `/videos`.
 
 **Test:**  
-Try opening `http://localhost:3000/videos/triggers.mp4` directly in your browser.  
+Try opening `http://localhost:3000https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4` directly in your browser.  
 - If you get a 404 or nothing loads, the file is not being served correctly.
 
 ---
@@ -284,7 +284,7 @@ Try opening `http://localhost:3000/videos/triggers.mp4` directly in your browser
 - If you put the video in `docs/videos`, but your framework expects it in `public/videos`, it won’t be found.
 
 **Solution:**  
-- Move your video to the correct static folder (often `public/videos/triggers.mp4` at the root of your project, not inside `docs/`).
+- Move your video to the correct static folder (often `publichttps://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4` at the root of your project, not inside `docs/`).
 
 ---
 
@@ -301,13 +301,13 @@ Try opening `http://localhost:3000/videos/triggers.mp4` directly in your browser
 ## **How to Fix**
 
 1. **Move the video file to the correct static directory.**  
-   - If your project has a `public` folder, move the video to `public/videos/triggers.mp4`.
+   - If your project has a `public` folder, move the video to `publichttps://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4`.
    - If not, let me know your framework and I’ll tell you the right place.
 
 2. **Update the MDX video source if needed:**  
    ```mdx
    <video
-     src="/videos/triggers.mp4"
+     src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
      width="600"
      autoPlay
      muted
