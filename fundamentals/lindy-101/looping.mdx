@@ -4,16 +4,277 @@ icon: 'arrows-repeat'
 sidebarTitle: 'Looping'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/videos/triggers.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%' }}
-    />
+Execute tasks in parallel across multiple items to unlock powerful batch processing and research capabilities.
+
+<Frame>
+  <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+    <div style={{ background: '#f0f0f0', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: '#666', fontSize: '18px' }}>Video: Looping Overview</span>
+    </div>
   </div>
-</div>
+</Frame>
+
+## Quick Overview
+
+Looping allows you to efficiently process lists of items in parallel, similar to a 'for' loop in programming but with the power of concurrent execution. Instead of handling items one at a time, loops let you process multiple items simultaneously, dramatically increasing efficiency.
+
+Key benefits:
+- **Parallel processing** - Execute multiple tasks concurrently, not sequentially
+- **Batch operations** - Process hundreds of items in the time it takes to process a few
+- **Scalable workflows** - Handle varying list sizes without workflow changes
+- **Aggregated outputs** - Collect and summarize results from all iterations
+- **Resource efficiency** - Complete bulk tasks in minutes instead of hours
+
+
+## Understanding Loop Components
+
+### Key Concepts
+
+- **Loop cycle** - A single execution for one item in your list
+- **Output** - The data passed from the loop to subsequent steps (only the output leaves the loop)
+- **Max cycles** - Safety limit to prevent infinite loops or excessive processing
+- **Items to loop through** - The list of data that drives each iteration
+
+<Note>
+The loop output is the ONLY information that passes from inside the loop to outside steps. Configure it carefully to include all data you'll need later.
+</Note>
+
+
+## Building Your First Loop
+
+Let's create a research assistant that loops through locations, researches each one, and summarizes findings. This pattern can be adapted for lead enrichment, candidate research, or any bulk processing task.
+
+### Step 1: Planning Your Loop
+
+Before building, define:
+1. **Items to process** - What list will you loop through?
+2. **Loop output** - What information should be available after the loop?
+3. **Actions per item** - What happens to each item?
+4. **Post-loop actions** - What happens with the aggregated results?
+
+### Step 2: Create the Workflow
+
+<Frame>
+  <img src="/lindy-brand-assets/loop-new-workflow.png" alt="IMAGE NEEDED: Screenshot of creating a new Lindy workflow" />
+</Frame>
+
+Start with a trigger that can receive your list of items. For our example, we'll use **Message Received** to pass a spreadsheet of travel locations.
+
+### Step 3: Add the Loop
+
+<Frame>
+  <img src="/lindy-brand-assets/loop-enter-loop.png" alt="IMAGE NEEDED: Screenshot showing 'Enter loop' option in the Add Step menu" />
+</Frame>
+
+Click the plus button and select "Enter loop" to add the loop step.
+
+
+## Configuring Your Loop
+
+### Setting Items to Loop Through
+
+<Frame>
+  <img src="/lindy-brand-assets/loop-items-configuration.png" alt="IMAGE NEEDED: Screenshot of loop configuration panel showing 'Items to loop through' field" />
+</Frame>
+
+Configure what the loop will process:
+- **Manual list** - Type items directly (e.g., `["New York", "Paris", "Tokyo"]`)
+- **Dynamic data** - Reference data from previous steps
+- **AI-generated** - Let AI extract or create the list
+
+Example using AI mode: `Research items from the spreadsheet in the previous step`
+
+### Defining Loop Output
+
+<Frame>
+  <img src="/lindy-brand-assets/loop-output-configuration.png" alt="IMAGE NEEDED: Screenshot showing loop output configuration in Prompt AI mode" />
+</Frame>
+
+Set what information should be available after the loop completes. In Prompt AI mode:
+
+```
+Summary of key findings for each location including costs and attractions
+```
+
+<Tip>
+Without a defined output, the loop will only provide a basic summary. Always specify exactly what data you need for subsequent steps.
+</Tip>
+
+
+## Building Inside the Loop
+
+Actions inside the loop execute for each item in parallel.
+
+### Adding Loop Actions
+
+<Frame>
+  <img src="/lindy-brand-assets/loop-add-search-action.png" alt="IMAGE NEEDED: Screenshot of adding a search action inside the loop" />
+</Frame>
+
+For our research example:
+1. Click the + icon inside the loop
+2. Add a search action (Perplexity, Web Search, etc.)
+3. Configure it to research the current loop item
+
+<Frame>
+  <img src="/lindy-brand-assets/loop-search-configuration.png" alt="IMAGE NEEDED: Screenshot showing search action configured with loop item reference" />
+</Frame>
+
+### Updating Original Data
+
+<Frame>
+  <img src="/lindy-brand-assets/loop-update-spreadsheet.png" alt="IMAGE NEEDED: Screenshot of Update Row action inside the loop" />
+</Frame>
+
+To update your source data with findings:
+1. Add an **Update Row** action
+2. Use the loop item as the lookup value
+3. Map search results to appropriate columns
+
+<Frame>
+  <img src="/lindy-brand-assets/loop-update-configuration.png" alt="IMAGE NEEDED: Screenshot showing Update Row configuration with item and findings mapping" />
+</Frame>
+
+
+## After the Loop
+
+Define what happens once all items are processed.
+
+<Frame>
+  <img src="/lindy-brand-assets/loop-after-actions.png" alt="IMAGE NEEDED: Screenshot showing Send Email action after the loop" />
+</Frame>
+
+Common post-loop actions:
+- **Send summary email** - Compile all findings
+- **Create report** - Generate comprehensive documentation  
+- **Update database** - Store aggregated results
+- **Trigger next workflow** - Continue processing
+
+For our example, add **Send Email** and reference the loop's output to email a summary of all research findings.
+
+
+## Advanced Configuration
+
+### Parallel Processing Power
+
+<Frame>
+  <img src="/lindy-brand-assets/loop-parallel-execution.png" alt="IMAGE NEEDED: Screenshot of task view showing multiple loop cycles running in parallel" />
+</Frame>
+
+Loops execute items simultaneously. Processing 100 items might take the same time as processing 10, limited only by rate limits and system resources.
+
+### Accessing Loop Data
+
+Inside the loop, you can reference:
+- **Current item** - The specific item being processed
+- **Item index** - The position in the list
+- **Previous action outputs** - Results from earlier loop steps
+
+Outside the loop, you can only access:
+- **Loop output** - The defined output from all cycles
+- **Aggregated results** - Combined data from all iterations
+
+
+## Customization Examples
+
+### Lead Enrichment
+Transform a simple list of companies into a comprehensive CRM database:
+- **Items**: Company names or emails
+- **Loop actions**: People Data Labs lookup, LinkedIn search
+- **Output**: Enriched contact details for all leads
+
+### Candidate Research  
+Evaluate multiple candidates simultaneously:
+- **Items**: Candidate profiles or resumes
+- **Loop actions**: Search experience, analyze skills, score fit
+- **Output**: Ranked candidates with summaries
+
+### Content Analysis
+Process documents or web content in bulk:
+- **Items**: URLs, documents, or articles
+- **Loop actions**: Extract content, analyze sentiment, find key points
+- **Output**: Aggregated insights and trends
+
+### Meeting Summaries
+Batch process recordings for weekly digests:
+- **Items**: Week's meeting recordings
+- **Loop actions**: Transcribe, extract action items and decisions
+- **Output**: Consolidated action items across all meetings
+
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Design Efficient Loops">
+    Start with a clear output definition. The loop output is your only bridge between the loop and subsequent steps - make it comprehensive.
+  </Accordion>
+  
+  <Accordion title="Handle Errors Gracefully">
+    Not every item might process successfully. Design your output to handle partial failures without breaking the workflow.
+  </Accordion>
+  
+  <Accordion title="Set Reasonable Limits">
+    Use Max Cycles to prevent runaway loops. Start conservative and increase as needed.
+  </Accordion>
+  
+  <Accordion title="Optimize for Parallel">
+    Avoid dependencies between items. Each cycle should be independent for maximum parallelization.
+  </Accordion>
+
+  <Accordion title="Test with Small Lists">
+    Debug with 3-5 items before processing hundreds. It's easier to spot issues in smaller batches.
+  </Accordion>
+</AccordionGroup>
+
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Loop Not Processing All Items">
+    - Check Max Cycles setting
+    - Verify item list format
+    - Look for rate limit errors
+  </Accordion>
+  
+  <Accordion title="Missing Data After Loop">
+    - Review output configuration
+    - Ensure output captures needed data
+    - Check if actions inside loop are completing
+  </Accordion>
+  
+  <Accordion title="Slow Performance">
+    - Reduce actions inside loop
+    - Check for rate-limited services
+    - Consider breaking into multiple smaller loops
+  </Accordion>
+  
+  <Accordion title="Errors in Specific Items">
+    - Add error handling inside loop
+    - Use conditions to skip problematic items
+    - Log failures for manual review
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+Remember: Only the defined loop output is accessible outside the loop. Any data not included in the output is lost once the loop completes.
+</Warning>
+
+
+## Next Steps
+
+Master these related concepts to build more sophisticated automations:
+
+<CardGroup cols={2}>
+  <Card title="AI Agents" href="/fundamentals/lindy-101/ai-agents" icon="brain">
+    Combine loops with AI agents for intelligent bulk processing
+  </Card>
+  <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="code-branch">
+    Add conditional logic inside loops for dynamic processing
+  </Card>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Store loop outputs in knowledge bases for future reference
+  </Card>
+  <Card title="Tasks" href="/fundamentals/lindy-101/tasks" icon="list-check">
+    Monitor and manage loop executions through the task interface
+  </Card>
+</CardGroup>
