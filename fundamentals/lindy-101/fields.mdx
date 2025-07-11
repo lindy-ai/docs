@@ -55,30 +55,55 @@ Auto mode excels in scenarios where:
 ### Example Use Case
 
 ```
-Scenario: Customer submits order form
+Scenario: Responding to customer emails
 Auto mode automatically:
-- Maps "Full Name" → "Customer" column
-- Maps "Email Address" → "Contact Email" field  
-- Maps "Order Total" → "Amount" field
+- Sets "To" field → Original sender's email
+- Keeps "From Name" → Your default sender name  
 No configuration needed!
 ```
+
+<Frame>
+  <img 
+    src="/lindy-brand-assets/auto_mode_image.png" 
+    alt="Auto mode intelligently filling email fields based on previous workflow data"
+    style={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+  />
+</Frame>
+
+The image above shows Auto mode in action - notice how the "To" field is set to Auto and displays "AI will automatically fill this field" based on context from previous steps.
 
 
 ## AI Prompt Mode  
 
 AI Prompt mode lets you give Lindy natural language instructions to generate dynamic content. She'll create text based on your directions and all available workflow data.
 
+<Frame>
+  <img 
+    src="/lindy-brand-assets/ai_prompt_mode_initial.png" 
+    alt="AI Prompt mode interface showing dropdown options"
+    style={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+  />
+</Frame>
+
 ### Writing Effective Prompts
 
 The key to AI Prompt mode is clear, specific instructions:
 
+<Frame>
+  <img 
+    src="/lindy-brand-assets/writing_effective-prompts.png" 
+    alt="Writing effective prompts with good and bad examples"
+    style={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+  />
+</Frame>
+
 ```
-✅ Good: "Write a friendly 2-line thank you mentioning [Order: Product Name]"
+✅ Good: "Write a friendly 2-line thank you mentioning the product name"
 ❌ Avoid: "Write something nice"
 ```
 
 <Tip>
-Reference previous steps using square brackets: `[Step Name: Field Name]`. Lindy will incorporate this data into her generated content.
+To reference data from previous steps, click the dropdown button and select from available outputs. The video below shows how this works - no need to type brackets manually!
 </Tip>
 
 ### When to Use AI Prompt Mode
@@ -89,68 +114,7 @@ Choose AI Prompt for:
 - **Data transformation** - Reformatting dates, combining fields creatively
 - **Conditional text** - Different messages based on context
 
-### Advanced Example
-
-```
-Prompt: Based on [Search: Customer History], write a personalized 
-discount offer. If they're a new customer, offer 10% off. 
-If they've purchased before, offer 15% off their favorite category.
-
-Result: Lindy analyzes purchase history and creates tailored offers
-```
-
-
-## Set Manually Mode
-
-Set Manually mode gives you complete control - what you type is exactly what appears. Perfect for fixed values and precise data references.
-
-### Direct Value Entry
-
-Two ways to use Set Manually:
-
-1. **Fixed text**: Type exactly what should appear
-   ```
-   Input: support@company.com
-   Output: support@company.com
-   ```
-
-2. **Data references**: Insert exact values from previous steps
-   ```
-   Input: Thanks for your order, [Form: Customer Name]!
-   Output: Thanks for your order, Sarah Johnson!
-   ```
-
-<Note>
-Set Manually mode uses no AI processing = fewer credits consumed. It's the most efficient option for fixed values.
-</Note>
-
-### When to Use Set Manually
-
-Perfect for:
-- **Email addresses** - CC fields, reply-to addresses
-- **Signatures** - Consistent email footers
-- **IDs and codes** - Order numbers, reference codes  
-- **Exact data transfer** - No transformation needed
-
-### Pro Tips
-
-- Leave a field empty in Set Manually to skip it entirely
-- Combine text with multiple references: `Order #[ID] for [Customer Name]`
-- Use for webhook URLs, API keys, and other sensitive fixed values
-
-
-## Using Output References
-
-This is where Lindy truly shines. The **+** button gives you access to ALL data from previous steps - a feature that sets Lindy apart from other platforms.
-
-### How References Work
-
-Click the **+** button next to any field to see a dropdown of all available data:
-- Form submissions
-- API responses  
-- Search results
-- Previous action outputs
-- Trigger data
+### Using References in AI Prompts
 
 <Frame>
   <video 
@@ -164,8 +128,71 @@ Click the **+** button next to any field to see a dropdown of all available data
 </Frame>
 
 <Tip>
-Watch the video above to see how the dropdown dynamically shows all available data from your workflow. This powerful feature lets you connect any piece of information from previous steps.
+The dropdown shows all available data from previous steps. In AI Prompt mode, these references become part of your instructions to generate dynamic content.
 </Tip>
+
+### Advanced Example
+
+<Frame>
+  <img 
+    src="/lindy-brand-assets/prompt_w_ai_and_reference_to_action_info_advanced.png" 
+    alt="Advanced AI Prompt example with references to previous action data"
+    style={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+  />
+</Frame>
+
+In this example, the AI Prompt intelligently combines:
+- **Reference to previous data**: `bodyAsText` pulls in the actual content from a previous step (like an email or document)
+- **Contextual analysis**: Lindy reads and understands the referenced content to determine if the person is new or returning
+- **Dynamic decision-making**: Based on what she finds in the data, she generates different personalized offers
+
+This showcases the power of AI Prompt mode - instead of rigid rules, Lindy analyzes the actual context from previous steps to generate the most appropriate response. The reference acts as a variable that gets replaced with real data at runtime, which Lindy then uses to make intelligent decisions.
+
+
+## Set Manually Mode
+
+Set Manually mode gives you complete control - what you type is exactly what appears. Perfect for fixed values and precise data references.
+
+### Direct Value Entry
+
+Two ways to use Set Manually:
+
+1. **Fixed text**: Type exactly what should appear
+
+<Frame>
+  <img 
+    src="/lindy-brand-assets/direct_value_entry_type%20exactly_what_appears.png" 
+    alt="Set Manually with fixed text - what you type is what appears"
+    style={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+  />
+</Frame>
+
+2. **Data references**: Insert exact values from previous steps
+
+<Frame>
+  <img 
+    src="/lindy-brand-assets/direct_value_entry_data_ref.png" 
+    alt="Set Manually with data references - combining text with exact values from previous steps"
+    style={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+  />
+</Frame>
+
+<Note>
+Set Manually mode uses no AI processing = fewer credits consumed. It's the most efficient option for fixed values.
+</Note>
+
+### When to Use Set Manually
+
+Perfect for:
+- **Fixed values**: Email addresses, signatures, webhook URLs, API keys
+- **Exact references**: Order IDs, customer names, timestamps  
+- **Skip fields**: Leave empty to skip a field entirely
+- **Combined text**: Mix static text with data references
+
+
+## Using Output References
+
+The "+" button gives you instant access to ALL data from previous steps - forms, API responses, search results, and more. This powerful feature lets you connect any piece of information across your workflow.
 
 ### Reference Behavior by Mode
 
@@ -177,48 +204,9 @@ References behave differently in each mode:
 | **AI Prompt** | Part of instructions | `Summarize [Search: Results]` → AI summary |
 | **Set Manually** | Exact value insertion | `Order #[Form: ID]` → `Order #12345` |
 
-<Frame>
-  <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px', border: '1px solid #e5e7eb' }}>
-    <p style={{ margin: 0, color: '#6b7280' }}>💡 <strong>Example:</strong> In AI Prompt mode, `[Customer: Name]` becomes part of the instruction. In Set Manually, it inserts the actual name.</p>
-  </div>
-</Frame>
 
 
-## Decision Guide
 
-Choose the right mode for your use case:
-
-<Tabs>
-  <Tab title="Quick Reference">
-    | Situation | Recommended Mode |
-    |-----------|-----------------|
-    | Copying form data to spreadsheet | Auto |
-    | Writing personalized emails | AI Prompt |
-    | Setting CC email address | Set Manually |
-    | Creating dynamic summaries | AI Prompt |
-    | Matching CRM fields | Auto |
-    | Adding email signatures | Set Manually |
-  </Tab>
-  
-  <Tab title="Detailed Scenarios">
-    **Auto Mode**
-    - Updating spreadsheet rows from form data
-    - Syncing data between similar systems
-    - Creating records with standard fields
-    
-    **AI Prompt Mode**  
-    - Composing email responses
-    - Generating meeting summaries
-    - Creating social media posts
-    - Writing personalized messages
-    
-    **Set Manually Mode**
-    - Fixed email addresses or phone numbers
-    - Consistent signatures or footers  
-    - Webhook URLs or API endpoints
-    - Reference numbers or IDs
-  </Tab>
-</Tabs>
 
 
 ## Best Practices
@@ -243,10 +231,6 @@ Choose the right mode for your use case:
 
 
 ## Common Pitfalls & Solutions
-
-<Warning>
-**Don't use AI Prompt for email addresses** - It might generate plausible but incorrect addresses. Always use Set Manually for exact emails.
-</Warning>
 
 ### Troubleshooting Guide
 
