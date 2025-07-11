@@ -3,3 +3,288 @@ title: 'Field Configuration'
 icon: 'input-text'
 sidebarTitle: 'Field Configuration'
 ---
+
+Master the three powerful ways to configure action fields in Lindy - Auto, AI Prompt, and Set Manually.
+
+<Frame>
+  <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+    <div style={{ background: '#f0f0f0', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: '#666', fontSize: '18px' }}>Video: Field Configuration & Output References</span>
+    </div>
+  </div>
+</Frame>
+
+## Quick Overview
+
+When you add any action in Lindy, you'll see fields to configure. Unlike other automation platforms, Lindy gives you three intelligent ways to fill each field, making your workflows both powerful and flexible.
+
+<Frame>
+  <img src="/lindy-brand-assets/field-all-3-modes.png" alt="Three field configuration modes in Lindy - Auto, AI Prompt, and Set Manually" />
+</Frame>
+
+- **Auto** - Let Lindy intelligently determine the best value based on all previous data
+- **AI Prompt** - Give natural language instructions for dynamic content generation  
+- **Set Manually** - Enter exact values or reference specific data from previous steps
+
+Each mode serves different purposes and choosing the right one makes your workflows more efficient and reliable.
+
+
+## Auto Mode
+
+Auto mode is Lindy's intelligent field completion system. It analyzes all previous steps in your workflow and automatically determines the most appropriate value for each field.
+
+### How It Works
+
+When set to Auto, Lindy:
+1. Examines all data from previous triggers and actions
+2. Matches field names with available data intelligently
+3. Infers the best value based on context and field type
+
+<Info>
+Unlike traditional automation tools, Lindy's Auto mode sees EVERYTHING - form submissions, API responses, search results, and more. It's like having an assistant who remembers every detail.
+</Info>
+
+### When to Use Auto Mode
+
+Auto mode excels in scenarios where:
+- **Data mapping is predictable** - Moving form data to spreadsheets
+- **Field names align** - "Customer Name" automatically maps to "Name" column
+- **Context is clear** - Updating CRM records with email data
+- **You want flexibility** - Let Lindy adapt to varying data structures
+
+### Example Use Case
+
+```
+Scenario: Customer submits order form
+Auto mode automatically:
+- Maps "Full Name" → "Customer" column
+- Maps "Email Address" → "Contact Email" field  
+- Maps "Order Total" → "Amount" field
+No configuration needed!
+```
+
+
+## AI Prompt Mode  
+
+AI Prompt mode lets you give Lindy natural language instructions to generate dynamic content. She'll create text based on your directions and all available workflow data.
+
+### Writing Effective Prompts
+
+The key to AI Prompt mode is clear, specific instructions:
+
+```
+✅ Good: "Write a friendly 2-line thank you mentioning [Order: Product Name]"
+❌ Avoid: "Write something nice"
+```
+
+<Tip>
+Reference previous steps using square brackets: `[Step Name: Field Name]`. Lindy will incorporate this data into her generated content.
+</Tip>
+
+### When to Use AI Prompt Mode
+
+Choose AI Prompt for:
+- **Email composition** - Subject lines, body content, personalized messages
+- **Content generation** - Summaries, descriptions, social posts
+- **Data transformation** - Reformatting dates, combining fields creatively
+- **Conditional text** - Different messages based on context
+
+### Advanced Example
+
+```
+Prompt: Based on [Search: Customer History], write a personalized 
+discount offer. If they're a new customer, offer 10% off. 
+If they've purchased before, offer 15% off their favorite category.
+
+Result: Lindy analyzes purchase history and creates tailored offers
+```
+
+
+## Set Manually Mode
+
+Set Manually mode gives you complete control - what you type is exactly what appears. Perfect for fixed values and precise data references.
+
+### Direct Value Entry
+
+Two ways to use Set Manually:
+
+1. **Fixed text**: Type exactly what should appear
+   ```
+   Input: support@company.com
+   Output: support@company.com
+   ```
+
+2. **Data references**: Insert exact values from previous steps
+   ```
+   Input: Thanks for your order, [Form: Customer Name]!
+   Output: Thanks for your order, Sarah Johnson!
+   ```
+
+<Note>
+Set Manually mode uses no AI processing = fewer credits consumed. It's the most efficient option for fixed values.
+</Note>
+
+### When to Use Set Manually
+
+Perfect for:
+- **Email addresses** - CC fields, reply-to addresses
+- **Signatures** - Consistent email footers
+- **IDs and codes** - Order numbers, reference codes  
+- **Exact data transfer** - No transformation needed
+
+### Pro Tips
+
+- Leave a field empty in Set Manually to skip it entirely
+- Combine text with multiple references: `Order #[ID] for [Customer Name]`
+- Use for webhook URLs, API keys, and other sensitive fixed values
+
+
+## Using Output References
+
+This is where Lindy truly shines. The **+** button gives you access to ALL data from previous steps - a feature that sets Lindy apart from other platforms.
+
+### How References Work
+
+Click the **+** button next to any field to see a dropdown of all available data:
+- Form submissions
+- API responses  
+- Search results
+- Previous action outputs
+- Trigger data
+
+<Frame>
+  <video 
+    controls 
+    src="/lindy-brand-assets/dropdown_for_field_configuration_within_fields.mp4"
+    title="Using the dropdown to reference previous step data"
+    style={{ width: '100%', borderRadius: '8px', border: '1px solid #e5e7eb' }}
+  >
+    Your browser does not support the video tag.
+  </video>
+</Frame>
+
+<Tip>
+Watch the video above to see how the dropdown dynamically shows all available data from your workflow. This powerful feature lets you connect any piece of information from previous steps.
+</Tip>
+
+### Reference Behavior by Mode
+
+References behave differently in each mode:
+
+| Mode | Reference Behavior | Example |
+|------|-------------------|---------|
+| **Auto** | Considered alongside all context | Lindy intelligently uses available data |
+| **AI Prompt** | Part of instructions | `Summarize [Search: Results]` → AI summary |
+| **Set Manually** | Exact value insertion | `Order #[Form: ID]` → `Order #12345` |
+
+<Frame>
+  <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px', border: '1px solid #e5e7eb' }}>
+    <p style={{ margin: 0, color: '#6b7280' }}>💡 <strong>Example:</strong> In AI Prompt mode, `[Customer: Name]` becomes part of the instruction. In Set Manually, it inserts the actual name.</p>
+  </div>
+</Frame>
+
+
+## Decision Guide
+
+Choose the right mode for your use case:
+
+<Tabs>
+  <Tab title="Quick Reference">
+    | Situation | Recommended Mode |
+    |-----------|-----------------|
+    | Copying form data to spreadsheet | Auto |
+    | Writing personalized emails | AI Prompt |
+    | Setting CC email address | Set Manually |
+    | Creating dynamic summaries | AI Prompt |
+    | Matching CRM fields | Auto |
+    | Adding email signatures | Set Manually |
+  </Tab>
+  
+  <Tab title="Detailed Scenarios">
+    **Auto Mode**
+    - Updating spreadsheet rows from form data
+    - Syncing data between similar systems
+    - Creating records with standard fields
+    
+    **AI Prompt Mode**  
+    - Composing email responses
+    - Generating meeting summaries
+    - Creating social media posts
+    - Writing personalized messages
+    
+    **Set Manually Mode**
+    - Fixed email addresses or phone numbers
+    - Consistent signatures or footers  
+    - Webhook URLs or API endpoints
+    - Reference numbers or IDs
+  </Tab>
+</Tabs>
+
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with Auto Mode">
+    When unsure, try Auto first. Lindy often correctly infers what you need, saving configuration time.
+  </Accordion>
+  
+  <Accordion title="Be Specific in AI Prompts">
+    Instead of "write an email", use "write a 3-paragraph follow-up email thanking them for [Meeting: Topic] and proposing next steps"
+  </Accordion>
+  
+  <Accordion title="Test with Real Data">
+    Use the test panel to see how each mode handles your actual data before going live.
+  </Accordion>
+  
+  <Accordion title="Combine Modes Strategically">
+    Use Set Manually for email addresses, AI Prompt for subject/body, and Auto for updating your CRM.
+  </Accordion>
+</AccordionGroup>
+
+
+## Common Pitfalls & Solutions
+
+<Warning>
+**Don't use AI Prompt for email addresses** - It might generate plausible but incorrect addresses. Always use Set Manually for exact emails.
+</Warning>
+
+### Troubleshooting Guide
+
+1. **Field shows as empty**
+   - Check if Set Manually has content (empty = skip)
+   - Verify referenced data exists in previous steps
+   - Ensure Auto mode has clear context
+
+2. **Wrong data appears**
+   - Review your mode selection
+   - Check reference syntax in Set Manually
+   - Refine AI Prompt instructions
+
+3. **Too many credits used**
+   - Switch fixed values from AI Prompt to Set Manually
+   - Use Auto instead of AI Prompt for simple mapping
+
+4. **Inconsistent results**
+   - Add examples to AI Prompts
+   - Use Set Manually for values that shouldn't change
+   - Ensure field names are clear for Auto mode
+
+
+## Next Steps
+
+Master these related concepts to build even more powerful workflows:
+
+<CardGroup cols={2}>
+  <Card title="Actions Overview" href="/fundamentals/lindy-101/actions" icon="play">
+    Explore all available actions and their field requirements
+  </Card>
+  <Card title="Prompt Engineering" href="/fundamentals/lindy-101/prompt-guide" icon="message">
+    Write better AI prompts for dynamic content generation
+  </Card>
+  <Card title="Testing Workflows" href="/testing/test-panel" icon="vial">
+    Test your field configurations with real data
+  </Card>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Combine field references with knowledge base searches
+  </Card>
+</CardGroup>
