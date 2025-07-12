@@ -585,20 +585,20 @@ video {
 }
 
 /* -------- Video Card Highlight -------- */
-.https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4 {
+.video-card {
   display: inline-block; /* shrink to content */
   background: transparent;
   border-radius: 16px;
   overflow: hidden; /* clip any internal overflow */
   transition: box-shadow 0.25s ease;
   line-height: 0; /* remove inline spacing */
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); /* 15% more pronounced */
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07); /* subtle shadow */
 }
-.https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4:hover {
-  box-shadow: 0 8px 28px rgba(240, 195, 65, 0.14); /* 15% more pronounced */
+.video-card:hover {
+  box-shadow: 0 8px 28px rgba(240, 195, 65, 0.18); /* yellow glow */
 }
 
-.https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4 video {
+.video-card video {
   width: auto !important; /* override inline width: 100% */
   max-width: 100%;
   height: auto !important; /* ensure height is auto */
