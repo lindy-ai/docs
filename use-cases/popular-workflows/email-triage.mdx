@@ -8,13 +8,157 @@ description: 'Automate email sorting and prioritization with Lindy'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="/videos/triggers.mp4"
+      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
       width="600"
       autoPlay
       muted
       loop
       playsInline
-      style={{ display: 'block', width: '100%' }}
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
     />
   </div>
 </div>
+
+## Quick Overview
+
+A powerful Email Responder Lindy automatically monitors your inbox, detects which messages need a reply, and drafts (or sends) personalized responses using information from your knowledge base. Say goodbye to inbox overload and hello to instant, accurate replies.
+
+Key benefits of an Email Responder:
+- **Automated filtering** – Only engages with emails that require attention
+- **Knowledge-powered answers** – References your knowledge base for accurate responses
+- **Time savings** – Handles repetitive questions so you can focus on critical tasks
+- **Consistent tone** – Matches your writing style across every reply
+- **Seamless integrations** – Can label, archive, or forward emails and update your CRM
+
+## Setting Up Your Email Responder
+
+Follow these steps to build an email triage workflow that responds (or drafts replies) in under five minutes.
+
+### Step 1: Connect Your Gmail Account
+
+Start by adding the Gmail trigger so Lindy knows when new mail arrives.
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Connecting Gmail trigger" />
+</Frame>
+
+Click the **Gmail Email Received** trigger and connect your account.  
+Optional: add trigger filters to process only certain senders, labels, or keywords.
+
+### Step 2: Decide If the Email Needs a Response
+
+Add a **Condition** step called `Requires response?` with the prompt:
+
+```text
+Go down this path if the emailer is asking a question about my service, product, or company.
+```
+
+Emails that don’t match stop here, keeping your workflow laser-focused.
+
+### Step 3: Search Your Knowledge Base
+
+Add a **Knowledge Base Search** action so Lindy can look up the right answer.
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Adding knowledge base search" />
+</Frame>
+
+Populate the knowledge base with FAQs, product docs, and policy pages to give Lindy plenty of material.
+
+### Step 4: Confirm an Answer Was Found
+
+Insert another **Condition** step named `Found response?` with the prompt:
+
+```text
+Go down this path if the previous step returned relevant knowledge.
+```
+
+This prevents Lindy from guessing when no information is available.
+
+### Step 5: Draft (or Send) the Reply
+
+Add the **Gmail Send Reply** action.
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Configuring Gmail reply" />
+</Frame>
+
+Key options:
+- Toggle **Save as Draft** to review emails before they’re sent.
+- Toggle **Ask for Confirmation** if you want final approval each time.
+- In the **Body** field, set the tone & style, for example:
+
+```text
+Respond in a friendly yet professional voice.  
+Reference any knowledge found.  
+Keep the email under 200 words.
+```
+
+## Testing Your Email Responder
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Testing email responder" />
+</Frame>
+
+1. Click **Save** then **Test** in the Flow Editor.  
+2. Select the **Gmail Email Received** step and choose a sample email.  
+3. Watch how the Conditions route the email and how the draft reply is generated.  
+4. Iterate on the body prompt until you’re satisfied.
+
+> **Tip**: Keep **Save as Draft** enabled during testing to avoid real sends.
+
+## Advanced Features
+
+### Smart Labeling & Routing
+
+Use additional **Condition** branches to:
+- Apply Gmail labels like `High Priority` or `Needs Review`.
+- Forward VIP emails to Slack.
+- Escalate billing issues to the finance team.
+
+### CRM & Research Actions
+
+Connect actions to:
+- Create or update contacts/leads in HubSpot or Salesforce.
+- Pull People Data Labs info about the sender.
+
+### Lead Qualification & Scheduling
+
+Combine your Email Responder with calendar actions to automatically propose meeting times for qualified leads.
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Keep the Knowledge Base Fresh">
+    Update FAQs and docs regularly so Lindy always has the latest answers.
+  </Accordion>
+
+  <Accordion title="Write Precise Prompts">
+    Be explicit about tone, length, and format. Short prompts like "reply politely" lead to generic emails.
+  </Accordion>
+
+  <Accordion title="Use Draft Mode First">
+    Review a few dozen replies before letting Lindy send autonomously.
+  </Accordion>
+
+  <Accordion title="Fail-Safe Path">
+    Add a catch-all branch that forwards emails to you if no answer is found.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Knowledge Base Guide" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Learn how to structure and upload content for perfect answers
+  </Card>
+  <Card title="Condition Builder" href="/fundamentals/lindy-101/conditions" icon="filter">
+    Master advanced branching for smarter workflows
+  </Card>
+  <Card title="Human-in-the-Loop" href="/testing/human-in-the-loop" icon="user-check">
+    Add approval steps before emails are sent
+  </Card>
+  <Card title="Testing Workflows" href="/testing/test-panel" icon="vial">
+    Debug and refine your responder with real examples
+  </Card>
+</CardGroup>
