@@ -17,3 +17,150 @@ sidebarTitle: 'Memory'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Memory and Context work together to give your Lindy agents consistent knowledge and behavior. While Context provides fixed instructions, Memory allows dynamic information that can be updated during execution. Both are injected into every AI call your Lindy makes, ensuring consistent behavior throughout workflows.
+
+Key concepts:
+- **Context** - Fixed instructions that guide overall behavior
+- **Memory** - Dynamic information that persists across executions
+- **Always available** - Both are included in every AI decision
+- **Complementary systems** - Context sets the rules, Memory stores the learnings
+- **Workflow persistence** - Information carries across multiple runs
+
+
+## Understanding Memory vs Context
+
+### Context
+Overarching instructions that remain constant throughout your automation. Think of Context as your agent's personality and core directives - it defines WHO your agent is and HOW it should behave.
+
+Examples:
+- "You are a customer support agent for Acme Corp. Always be professional and empathetic."
+- "You handle financial data. Never share account numbers in full, always mask them."
+- "You're a technical recruiter focusing on senior engineering roles."
+
+### Memory
+Dynamic information that your agent can read and update during execution. Memory allows your agent to learn and adapt based on interactions, storing information that persists across different runs.
+
+Examples:
+- "Don't schedule meetings before 11am for this user"
+- "Customer prefers email communication over phone calls"
+- "Last outreach to this lead was on March 15th about pricing"
+
+
+## Configuring Memory and Context
+
+Access these settings through the Settings tab in your Flow Editor.
+
+<Frame>
+  <img src="/lindy-brand-assets/memory-context-settings-page.png" alt="IMAGE NEEDED: Screenshot of Settings tab showing Context field, Memories field, Default Model dropdown, and Safe Mode toggle" />
+</Frame>
+
+### Setting Context
+
+In the Context field, provide clear instructions that define your agent's role and behavior:
+
+```
+You are a sales development representative for TechCorp, a B2B SaaS company. 
+Your role is to qualify leads and schedule demos with our sales team.
+
+Key guidelines:
+- Always be professional but conversational
+- Focus on understanding the prospect's pain points
+- Don't be pushy - education over selling
+- Our target customers are companies with 50-500 employees
+```
+
+### Managing Memories
+
+Memories can be:
+- **Pre-configured** - Set initial memories when building your agent
+- **User-defined** - Users can add memories like "I prefer morning meetings"
+- **Agent-updated** - Your agent can create/update memories during execution
+
+Memory format examples:
+- "User timezone: PST"
+- "Preferred meeting length: 30 minutes"
+- "Do not contact list: competitor1.com, competitor2.com"
+
+
+## How Memory Works in Practice
+
+### Memory Actions
+
+Your agent can interact with memories using memory actions:
+- **Read memories** - Access stored information
+- **Create memories** - Store new learnings
+- **Update memories** - Modify existing information
+- **Delete memories** - Remove outdated data
+
+### Automatic Memory Injection
+
+Both Context and Memory are automatically included in every AI call. When your agent makes decisions, it has access to:
+1. The Context instructions
+2. All current memories
+3. The immediate task data
+
+This ensures consistent behavior aligned with both fixed rules and learned preferences.
+
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Keep Context Focused">
+    Context should define the role and core behavior. Avoid cluttering with information that might change - use Memory for that instead.
+  </Accordion>
+  
+  <Accordion title="Structure Memories Clearly">
+    Use consistent formats like "Preference: value" or "Rule: description" to make memories easy to parse and update.
+  </Accordion>
+  
+  <Accordion title="Regular Memory Cleanup">
+    Implement workflows to review and clean outdated memories. Information can become stale over time.
+  </Accordion>
+  
+  <Accordion title="Test Memory Updates">
+    When agents update memories, verify the changes align with your intentions. Add validation steps if needed.
+  </Accordion>
+</AccordionGroup>
+
+
+## Additional Settings
+
+### Default Model
+Select the AI model used throughout your workflow. This can be overridden on specific steps if needed:
+- **Fast models** - For simple decisions and quick responses
+- **Balanced models** - For most use cases
+- **Advanced models** - For complex reasoning and nuanced tasks
+
+### Safe Mode
+When enabled, Lindy requests confirmation before actions with external effects:
+- Sending emails
+- Creating calendar events  
+- Updating databases
+- Making API calls
+
+<Tip>
+Enable Safe Mode during testing or for sensitive workflows where human oversight is crucial.
+</Tip>
+
+
+## Next Steps
+
+Master these related concepts to build more sophisticated agents:
+
+<CardGroup cols={2}>
+  <Card title="AI Agents" href="/fundamentals/lindy-101/ai-agents" icon="brain">
+    Combine memory with AI agents for adaptive workflows
+  </Card>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="books">
+    Supplement memory with structured knowledge repositories
+  </Card>
+  <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="code-branch">
+    Use memories in conditional logic for dynamic routing
+  </Card>
+  <Card title="Human in the Loop" href="/testing/human-in-the-loop" icon="user-check">
+    Add confirmation steps for memory updates
+  </Card>
+</CardGroup>

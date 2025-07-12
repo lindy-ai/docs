@@ -1,6 +1,6 @@
 ---
-title: Knowledge Base'
-icon: 'file-magnifying-glass'
+title: 'Knowledge Base'
+icon: 'database'
 sidebarTitle: 'Knowledge Base'
 ---
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -17,50 +17,199 @@ sidebarTitle: 'Knowledge Base'
   </div>
 </div>
 
-# Knowledge Base
+## Quick Overview
 
-Knowledge bases are repositories of data that your AI agents can search through to retrieve relevant information. They provide your agents with long-term memory and context, enabling them to make more informed decisions and provide better responses.
+A Knowledge Base is a repository that enables Lindy to reference and retrieve data from multiple sources. Using hybrid semantic and keyword search, Lindy intelligently queries your content to find relevant information for any task.
 
-## What is a Knowledge Base?
+Key capabilities:
+- **Semantic search** - Finds content by meaning, not just keywords
+- **Multiple sources** - Files, websites, cloud storage, and text
+- **Auto-refresh** - Content updates automatically every 24 hours
+- **Flexible search** - Adjust between semantic and keyword matching
+- **Scalable storage** - Up to 20M characters for Pro users
 
-A knowledge base is a collection of documents, data, or information that your AI agent can access and search through. When your agent needs to answer questions or make decisions, it can search the knowledge base to find relevant information.
+<Note>
+For small datasets (single Google Doc or Sheet), use direct actions like Get Document or Get Spreadsheet for better performance.
+</Note>
 
-## Key Features
 
-- **Semantic Search**: Agents search through knowledge bases semantically, finding results whose meaning is similar to the query
-- **Long-term Memory**: Store information that persists across conversations and sessions
-- **Context Enhancement**: Provide agents with background information and domain-specific knowledge
-- **Multiple Sources**: Import data from various sources including websites, documents, and databases
+## How Search Works
 
-## Creating a Knowledge Base
+### Semantic Search
+Matches meaning rather than exact words. Understands context and finds related concepts.
+- Query: "dark colored jeans"
+- Finds: "black and navy denim pants"
 
-1. Navigate to the Knowledge Base section in your Lindy dashboard
-2. Click "Create New Knowledge Base"
-3. Give your knowledge base a name and description
-4. Choose how you want to add content:
-   - **Website URLs**: Add web pages to scrape and index
-   - **File Upload**: Upload documents (PDF, DOCX, TXT, etc.)
-   - **Manual Entry**: Add content directly through the interface
+### Keyword Search  
+Matches exact words in your query. Useful for precise matching of specific terms.
+- Query: "invoice #12345"
+- Finds: Exact invoice number
 
-## Using Knowledge Bases in Agents
 
-Once you've created a knowledge base, you can reference it in your agent's prompts and actions:
+## Adding a Knowledge Base
 
-```
-You are a customer support agent. Use the knowledge base "Product Documentation" 
-to answer customer questions about our products and services.
-```
+Click the plus button in your workflow and select "Search knowledge base".
+
+<Frame>
+  <img src="/lindy-brand-assets/kb-add-search-knowledge-base.png" alt="IMAGE NEEDED: Screenshot showing the Add Step menu with 'Search knowledge base' option highlighted" />
+</Frame>
+
+### Selecting Content Sources
+
+<Frame>
+  <img src="/lindy-brand-assets/kb-select-content-sources.png" alt="IMAGE NEEDED: Screenshot of the content source selection modal showing Files, Text, Website, Google Drive, OneDrive, Dropbox, Notion, and Freshdesk options" />
+</Frame>
+
+Choose from multiple content types:
+
+**Files**
+- Supports: PDF, XLSX, CSV, DOCX, TXT, HTML
+- Maximum: 20MB per file
+- Audio files supported
+
+**Text**
+- Free-form text input
+- Ideal for FAQs and reference content
+- No formatting requirements
+
+**Websites**
+- Single page or full site crawling
+- Selective page removal
+- Automatic link following
+
+**Cloud Storage**
+- Google Drive, OneDrive, Dropbox
+- Notion databases
+- Freshdesk tickets
+
+
+## Configuring Search
+
+<Frame>
+  <img src="/lindy-brand-assets/kb-search-configuration.png" alt="IMAGE NEEDED: Screenshot of Search Knowledge Base configuration showing Query field, Max Results, and Search Fuzziness settings" />
+</Frame>
+
+### Query Field
+Instructions for what to search in the knowledge base.
+
+**Mode options:**
+- **Auto** - Lindy determines the optimal query
+- **Prompt AI** - Custom search instructions  
+- **Set Manually** - Use exact search query (no AI)
+
+Example: `Search for the answer to the user's question in the email`
+
+### Max Results
+Number of results returned per query.
+- Default: 4 results
+- Maximum: 10 results
+- Increase for frequently mentioned topics
+
+### Search Fuzziness
+Balance between semantic and keyword search (0-100 scale).
+- **0** - Pure keyword matching
+- **100** - Pure semantic search (default)
+- Lower values emphasize exact matches
+
+<Tip>
+Keep fuzziness at 100 to avoid the 1,500 file limit. Lower values restrict search to first 1,500 files only.
+</Tip>
+
+
+## Managing Your Knowledge Base
+
+### Automatic Updates
+Content refreshes every 24 hours automatically.
+
+### Manual Updates
+For immediate updates, use these actions:
+- **Resync Knowledge Base** - Updates entire knowledge base
+- **Resync Knowledge Base Entry** - Refreshes specific entries
+
+<Frame>
+  <img src="/lindy-brand-assets/kb-resync-actions.png" alt="IMAGE NEEDED: Screenshot showing Resync Knowledge Base actions in the action menu" />
+</Frame>
+
 
 ## Best Practices
 
-- **Keep it Updated**: Regularly update your knowledge base with new information
-- **Organize Content**: Use clear titles and descriptions for better searchability
-- **Quality Over Quantity**: Focus on high-quality, relevant content
-- **Test Regularly**: Verify that your agents can find the information they need
+- **Organize content** - Group similar information and remove duplicates
+- **Test queries** - Try different searches and adjust fuzziness for accuracy
+- **Update regularly** - Keep content current with manual resyncs when needed
+- **Start simple** - Begin with fewer sources and expand as needed
 
-## Integration with Other Features
 
-Knowledge bases work seamlessly with other Lindy features:
-- **Conditions**: Use knowledge base searches to make decisions
-- **Actions**: Reference knowledge base content in responses
-- **Memory**: Combine with agent memory for comprehensive context 
+## Common Use Cases
+
+<AccordionGroup>
+  <Accordion title="Customer Support Bot">
+    - **Content**: FAQs, product docs, support articles
+    - **Settings**: High semantic search (100)
+    - **Results**: 4-6 max results
+  </Accordion>
+  
+  <Accordion title="Email Responder">
+    - **Content**: Templates, documentation, policies  
+    - **Settings**: Balanced search (70-80)
+    - **Results**: 4 max results
+  </Accordion>
+  
+  <Accordion title="Meeting Assistant">
+    - **Content**: Transcripts, project docs, resources
+    - **Settings**: High semantic search (100)
+    - **Results**: 6-8 max results
+  </Accordion>
+  
+  <Accordion title="Document Query Tool">
+    - **Content**: Mixed files, cloud storage, websites
+    - **Settings**: Flexible based on content
+    - **Results**: 10 max results
+  </Accordion>
+</AccordionGroup>
+
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Irrelevant Results">
+    - Lower search fuzziness for more exact matching
+    - Organize content into clearer categories
+    - Use more specific search queries
+  </Accordion>
+  
+  <Accordion title="Missing Information">
+    - Check sync status of your sources
+    - Try exact keyword search (fuzziness near 0)
+    - Verify content is in supported formats
+  </Accordion>
+  
+  <Accordion title="Slow Performance">
+    - Reduce number of content sources
+    - Use direct actions for single documents
+    - Lower max results if not needed
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+Pro users have 20M character limit. Monitor usage to avoid hitting storage limits.
+</Warning>
+
+
+## Next Steps
+
+Enhance your knowledge base workflows with these concepts:
+
+<CardGroup cols={2}>
+  <Card title="Actions" href="/fundamentals/lindy-101/actions" icon="play">
+    Combine knowledge search with other actions
+  </Card>
+  <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="code-branch">
+    Route workflows based on search results
+  </Card>
+  <Card title="Memory" href="/fundamentals/lindy-101/memory" icon="brain">
+    Store important findings for future use
+  </Card>
+  <Card title="AI Agents" href="/fundamentals/lindy-101/ai-agents" icon="robot">
+    Let agents intelligently use knowledge bases
+  </Card>
+</CardGroup> 
