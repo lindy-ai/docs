@@ -18,3 +18,124 @@ description: 'Intelligent customer support automation with Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+With the Smart Support flow, Lindy will:
+
+- **Monitor** a support inbox (Gmail, Outlook—or swap in Help Desk APIs)  
+- **Detect** whether the message needs a knowledge-base reply or human help  
+- **Search** your docs, FAQs, and policies for accurate answers  
+- **Respond** in your brand voice or draft a reply for approval  
+- **Log** tickets and escalations to Slack, Zendesk, or HubSpot  
+
+You'll find the **Email Responder** template in your Lindy dashboard to kick-start the flow.
+
+## Setting Up Your Smart Support Agent
+
+### Step 1: Connect the Trigger
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Gmail trigger" />
+</Frame>
+
+1. Select `Gmail – Email Received` (swap for `Zendesk – Ticket Created` later).  
+2. Add optional filters—for example, skip internal or marketing emails.
+
+### Step 2: Determine If a Reply Is Needed
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Requires reply condition" />
+</Frame>
+
+`Condition` prompt:
+
+```
+Only continue if the sender asks a question about products, orders, or policies.
+```
+
+### Step 3: Search the Knowledge Base
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Knowledge base search" />
+</Frame>
+
+- Action: `Search Knowledge Base`  
+- Attach FAQs, shipping policies, refund rules, and troubleshooting docs.
+
+### Step 4: Verify an Answer Exists
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Found answer condition" />
+</Frame>
+
+- If answer found → continue.  
+- If not found → `Slack – DM` the thread to Support queue.
+
+### Step 5: Draft or Send the Reply
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Send reply" />
+</Frame>
+
+Body prompt:
+
+```
+Respond with the KB answer in a friendly, supportive tone (≤100 words).
+```
+
+Toggle `Ask for Confirmation` to review drafts during week 1.
+
+### Step 6: Update the Ticket System (Optional)
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Ticket update" />
+</Frame>
+
+- Action: `Zendesk – Update Ticket` or `HubSpot – Add Note` with the reply and status.
+
+## Advanced Customizations
+
+| Trick                  | What it does                                                                    |
+|------------------------|---------------------------------------------------------------------------------|
+| Multi-Channel Support  | Swap Gmail for Zendesk, Intercom, or Slack slash-commands.                      |
+| Sentiment Escalation   | Flag angry tone → route to human immediately.                                   |
+| SLA Timer              | `Wait` + Condition → alert if no answer within 2 h during business hours.       |
+| Auto-Survey            | Send CSAT form 24 h after ticket closure.                                       |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Keep KB Fresh">
+    Review policy and product docs weekly; outdated articles create wrong answers.
+  </Accordion>
+  
+  <Accordion title="Short & Clear">
+    Aim for one-screen replies; link out for deeper resources.
+  </Accordion>
+  
+  <Accordion title="Human First">
+    Escalate order issues or refund disputes early to avoid churn.
+  </Accordion>
+  
+  <Accordion title="Channel Flexibility">
+    The same flow works for chat or SMS—just swap the trigger/action pair.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Email Negotiator" href="/tutorials/email-negotiator" icon="handshake">
+    Close deals inside your inbox
+  </Card>
+  <Card title="Inbound Call Bot" href="/tutorials/inbound-calling" icon="phone">
+    Answer support calls 24/7
+  </Card>
+  <Card title="Slack Triage Bot" href="/tutorials/slack-triage" icon="slack">
+    Resolve questions posted in channels
+  </Card>
+  <Card title="Customer Insights" href="/tutorials/support-insights" icon="chart-line">
+    Analyze ticket themes and CSAT trends
+  </Card>
+</CardGroup>

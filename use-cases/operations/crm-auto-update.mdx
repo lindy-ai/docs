@@ -1,0 +1,244 @@
+---
+title: 'CRM Auto-Update & Hygiene'
+icon: 'database'
+sidebarTitle: 'CRM Auto-Update'
+description: 'Keep your CRM data fresh by automatically logging interactions, enriching contacts, and maintaining data quality.'
+---
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/videos/triggers.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%' }}
+    />
+  </div>
+</div>
+
+## Quick Overview
+
+Stop losing customer context in scattered communications. Lindy will:
+
+- **Capture** every customer interaction from email, calendar, and Slack
+- **Enrich** contact data with missing information automatically
+- **Update** your CRM in real-time with zero manual entry
+- **Clean** duplicate records and standardize data formats
+- **Alert** your team to important changes and opportunities
+
+Works with HubSpot, Salesforce, Pipedrive, or any CRM with an API.
+
+## Setting Up CRM Automation
+
+### Step 1: Connect Your Communication Channels
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Multi-channel trigger setup" />
+</Frame>
+
+Set up multiple triggers to capture all customer touchpoints:
+
+1. **Email**: `Gmail/Outlook – Email Received` and `Email Sent`
+2. **Calendar**: `Google Calendar – Event Ended`
+3. **Slack**: `Slack – Message Posted` (in customer channels)
+4. **Forms**: `Webhook` for website forms or surveys
+
+Filter emails to exclude internal/marketing messages.
+
+### Step 2: Identify the Customer
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Customer identification logic" />
+</Frame>
+
+Extract customer information and search your CRM:
+
+For HubSpot:
+- Use `HTTP Request – GET` to `/crm/v3/objects/contacts/search`
+- Search by email domain for company: `/crm/v3/objects/companies/search`
+
+For other CRMs:
+- Salesforce: SOQL query via API
+- Pipedrive: `/persons/search` endpoint
+- Custom CRM: Your search endpoint
+
+Store contact ID and company ID for updates.
+
+### Step 3: Extract Communication Insights
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="AI extraction of interaction details" />
+</Frame>
+
+Use `AI Agent – Extract Data` with this prompt:
+
+```
+From this customer communication, extract:
+
+1. INTERACTION SUMMARY
+- Main topic discussed
+- Customer sentiment (positive/neutral/negative)
+- Any pain points mentioned
+- Product interests or objections
+
+2. ACTION ITEMS
+- Follow-ups needed
+- Questions to answer
+- Commitments made
+
+3. CONTACT UPDATES
+- New job title from signature
+- Phone number changes
+- LinkedIn URL if mentioned
+
+4. DEAL SIGNALS
+- Budget mentioned
+- Timeline discussed
+- Decision makers revealed
+- Competitor mentions
+
+Return as structured JSON.
+```
+
+### Step 4: Enrich Missing Information
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Data enrichment workflow" />
+</Frame>
+
+For contacts with missing data:
+
+1. **LinkedIn Search**: `Search Internet` for "site:linkedin.com [name] [company]"
+2. **Company Data**: Use Clearbit/Apollo API or web search
+3. **Email Validation**: Check deliverability status
+4. Extract from signatures:
+   - Title, phone, address
+   - Social media links
+   - Company website updates
+
+### Step 5: Update CRM Records
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="CRM update configuration" />
+</Frame>
+
+**For HubSpot:**
+```
+HTTP Request – PATCH
+URL: /crm/v3/objects/contacts/{contactId}
+Body: {
+  "properties": {
+    "jobtitle": extracted_title,
+    "phone": extracted_phone,
+    "last_contacted": today,
+    "hs_lead_status": updated_status
+  }
+}
+```
+
+**Log the interaction:**
+```
+HTTP Request – POST  
+URL: /crm/v3/objects/notes
+Body: {
+  "properties": {
+    "hs_note_body": interaction_summary,
+    "hs_timestamp": event_time
+  },
+  "associations": [{
+    "to": {"id": contactId},
+    "types": [{"associationTypeId": 202}]
+  }]
+}
+```
+
+### Step 6: Data Hygiene Checks
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Data quality monitoring" />
+</Frame>
+
+Run daily hygiene workflows:
+
+1. **Duplicate Detection**:
+   - Search for contacts with same email domain + similar names
+   - Flag for manual merge or auto-merge if identical
+
+2. **Standardization**:
+   - Company names (Inc. → Incorporated)
+   - Phone formats (+1-555-1234)
+   - Title consistency (VP → Vice President)
+
+3. **Completeness Check**:
+   - Flag contacts missing: email, company, title
+   - Alert on deals missing next steps
+   - Identify stale leads (no activity >90 days)
+
+### Step 7: Smart Notifications
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Team notification setup" />
+</Frame>
+
+Set up intelligent alerts:
+
+- **Hot Lead Alert**: Customer mentions timeline/budget → Slack DM to rep
+- **Risk Alert**: Negative sentiment detected → Notify customer success
+- **Upsell Signal**: Customer asks about additional features → Alert AE
+- **Weekly Hygiene Report**: Summary of updates, duplicates, missing data
+
+Use `Condition` steps to route based on:
+- Deal size thresholds
+- Customer segment
+- Interaction sentiment
+- Keyword mentions
+
+## Advanced Features
+
+| Feature | What it does |
+|---------|--------------|
+| Multi-CRM Support | Use conditions to route to different CRM APIs |
+| Custom Field Mapping | Map extracted data to your custom CRM fields |
+| Bulk Operations | Process historical emails to backfill CRM |
+| Compliance Mode | Auto-redact sensitive data before storage |
+| Score Updates | Adjust lead scores based on engagement |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with High-Value Records">
+    Focus automation on active deals and key accounts first.
+  </Accordion>
+  
+  <Accordion title="Test with Read-Only First">
+    Run in monitoring mode before enabling updates.
+  </Accordion>
+  
+  <Accordion title="Set Up Error Handling">
+    Log failed updates for manual review rather than losing data.
+  </Accordion>
+  
+  <Accordion title="Regular Audit Trails">
+    Keep logs of all automated changes for compliance.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Lead Enrichment" href="/tutorials/lead-enrichment" icon="address-card">
+    Deep enrichment for new leads
+  </Card>
+  <Card title="Deal Intelligence" href="/tutorials/deal-intelligence" icon="brain">
+    AI-powered deal insights and forecasting
+  </Card>
+  <Card title="Email Sequencing" href="/tutorials/email-sequencing" icon="envelope">
+    Automated outbound campaigns
+  </Card>
+  <Card title="Pipeline Analytics" href="/tutorials/pipeline-analytics" icon="chart-line">
+    Real-time pipeline reporting
+  </Card>
+</CardGroup>

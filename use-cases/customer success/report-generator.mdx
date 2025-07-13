@@ -18,3 +18,115 @@ description: 'Generate automated reports and analytics with Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+With this flow, Lindy will:
+
+- **Collect** all support tickets or emails from the past 24 h  
+- **Summarize** counts, response speed, and the top recurring topics  
+- **Quote** two or three customer lines for color ("it keeps timing out…")  
+- **Suggest** one focus area for tomorrow  
+- **Post** the digest straight to Slack—no spreadsheets, no code
+
+You'll build it in about 10 minutes.
+
+## Building the Flow
+
+### Step 1: Daily Trigger
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Scheduler trigger" />
+</Frame>
+
+- Action: `Scheduler – Daily` → 18:00 local.
+
+### Step 2: Pull Today's Tickets
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="List tickets" />
+</Frame>
+
+- Action: `Zendesk – List Tickets` with filter `created >= today at 00:00`.  
+- Swap for Intercom / Help Scout equivalent if needed.
+
+### Step 3: Summarize with AI
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="AI agent summary" />
+</Frame>
+
+- Action: `AI Agent – Generate Text`  
+- Prompt:
+
+```
+You are "Support Digest Bot".
+You have JSON array {{tickets}}.
+• Count total tickets, how many solved, how many still open.
+• Estimate median first-reply time in minutes.
+• Extract the three most common words or short phrases from subjects or tags (ignore stop words).
+• Pull up to three customer quotes illustrating those themes (one line each, anonymize names).
+• Suggest one focus area for tomorrow in ≤12 words.
+Format exactly:
+📊 *Daily Support Digest* (Jun 11)
+• Tickets: 38 total | 29 solved | 9 open
+• Median first-reply: 27 min
+• Top issues: login timeout, billing address error, mobile UI glitch
+
+"Keeps logging me out after 5 min."
+"Card charged twice on renewal."
+"Menu overlaps on iPhone 13."
+
+*Focus tomorrow → fix login timeout*
+```
+
+### Step 4: Post to Slack
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Slack post" />
+</Frame>
+
+- Action: `Slack – Send Channel Message`  
+- Channel: `#support-daily`  
+- Message body: output from the AI Agent.
+
+<Tip>
+Need more granular metrics? Insert an optional **Run Code – Python** step before the AI Agent to pre-calculate numbers (e.g., exact medians, tag frequencies, SLA breaches) and pass them into the prompt for richer reporting.
+</Tip>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Tag Consistently">
+    Clean tagging = better top-issue detection; revisit macros monthly.
+  </Accordion>
+  
+  <Accordion title="Keep It Brief">
+    Aim for one Slack post; link back to tickets for deep dives.
+  </Accordion>
+  
+  <Accordion title="Escalate Urgent Themes">
+    Add a Condition to DM engineers if any quote contains "crash" or "outage."
+  </Accordion>
+  
+  <Accordion title="Iterate on Tone">
+    Skim the first few digests and tweak wording to match team culture.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Smart Support Email" href="/tutorials/smart-support" icon="life-ring">
+    Auto-reply to common questions
+  </Card>
+  <Card title="Inbound Call Bot" href="/tutorials/inbound-calling" icon="phone">
+    Handle support calls 24/7
+  </Card>
+  <Card title="Support Insights" href="/tutorials/support-insights" icon="chart-line">
+    Roll up weekly and monthly trends
+  </Card>
+  <Card title="Escalation Bot" href="/tutorials/escalation-bot" icon="bell">
+    Page engineers when critical issues spike
+  </Card>
+</CardGroup>

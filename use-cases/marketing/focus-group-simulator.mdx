@@ -2,7 +2,7 @@
 title: 'Focus Group Simulator'
 icon: 'users'
 sidebarTitle: 'Focus Group Simulator'
-description: 'Simulate focus groups and gather insights with Lindy'
+description: 'Create a virtual focus group with multiple personas to iterate on marketing copy until it resonates perfectly.'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -18,3 +18,152 @@ description: 'Simulate focus groups and gather insights with Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+This Marketing Focus Group flow lets Lindy:
+
+- **Simulate** a focus group discussion with distinct personas
+- **Iterate** on marketing copy based on participant feedback
+- **Score** each version for excitement and confusion levels
+- **Refine** automatically until all participants are satisfied
+- **Deliver** the final, polished marketing message
+
+Set it up once and use it anytime you need to refine marketing messages with diverse perspectives.
+
+## Setting Up Your Focus Group
+
+### Step 1: Configure the Trigger
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Chat message trigger" />
+</Frame>
+
+The workflow begins with a `Chat Message Received` trigger. This allows you to initiate the focus group by sending your initial marketing copy in the task view.
+
+No additional configuration needed—just send your copy to get started.
+
+### Step 2: Create Focus Group Participants
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Focus group personas setup" />
+</Frame>
+
+You'll see three `Chat Send Message` actions representing your focus group:
+
+**1. Focus Group Manager (Johnny)**
+- Role: Iterates on copy based on feedback
+- Manages the refinement process
+- Synthesizes participant input
+
+**2. Participant #1 (Tinkerer Tommy)**
+- Persona: 30-year-old solopreneur
+- Perspective: Technical, detail-oriented
+- Values: Clarity and innovation
+
+**3. Participant #2 (Savvy Sarah)**  
+- Persona: 45-year-old marketing director
+- Perspective: Strategic, brand-focused
+- Values: ROI and market positioning
+
+### Step 3: Set Up Feedback Ratings
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Scoring system configuration" />
+</Frame>
+
+Each participant provides two scores per iteration:
+
+- **Excitement Score**: How compelling is the copy? (0-10)
+- **Confusion Score**: How clear is the message? (0-10)
+
+Target: 10/10 excitement, 2/10 or less confusion from ALL participants.
+
+### Step 4: Configure Iteration Logic
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Iteration conditions" />
+</Frame>
+
+Add a `Condition` step that ensures:
+- Minimum 3 rounds of iteration
+- Continue if less than 3 rounds completed
+- Proceed to quality check after 3+ rounds
+
+This guarantees thorough refinement while preventing endless loops.
+
+### Step 5: Quality Check Conditions
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Success criteria conditions" />
+</Frame>
+
+Add another `Condition` to check if:
+- ALL participants rate 10/10 excitement
+- ALL participants rate 2/10 or less confusion
+
+If criteria not met → continue iterating
+If criteria met → proceed to final delivery
+
+### Step 6: Victory Message & Final Copy
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Final output configuration" />
+</Frame>
+
+1. `Chat Send Message` with victory confirmation:
+   ```
+   Victory! Explain the final positioning and summarize the whole conversation — what worked, what didn't. Be concise, no yapping.
+   ```
+
+2. `AI Agent` to deliver final copy:
+   ```
+   Send the user the final copy so they can copy and paste it. The user MUST receive the complete, final copy after revisions.
+   ```
+
+## Advanced Customizations
+
+| Feature | What it does |
+|---------|--------------|
+| Additional Personas | Add more participants for broader perspectives |
+| Industry-Specific Roles | Customize personas to match your target audience |
+| Multi-Language Testing | Create personas that evaluate copy in different languages |
+| Channel-Specific Feedback | Test how copy performs for email vs. social vs. web |
+| Compliance Checker | Add a legal/compliance persona for regulated industries |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Define Clear Personas">
+    Make each participant distinct with specific backgrounds, pain points, and evaluation criteria.
+  </Accordion>
+  
+  <Accordion title="Start with Rough Copy">
+    Don't over-polish before testing—let the focus group refine from an early draft.
+  </Accordion>
+  
+  <Accordion title="Customize Success Metrics">
+    Adjust excitement/confusion thresholds based on your brand and audience.
+  </Accordion>
+  
+  <Accordion title="Save Winning Formulas">
+    Archive successful copy patterns in your Knowledge Base for future reference.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="A/B Test Generator" href="/tutorials/ab-test-generator" icon="flask">
+    Create multiple variants for split testing
+  </Card>
+  <Card title="Email Campaign Builder" href="/tutorials/email-campaign" icon="envelope">
+    Turn copy into full email sequences
+  </Card>
+  <Card title="Social Media Scheduler" href="/tutorials/social-scheduler" icon="calendar">
+    Deploy approved copy across channels
+  </Card>
+  <Card title="Competitive Research" href="/tutorials/competitive-research" icon="magnifying-glass-chart">
+    See how competitors position similar products
+  </Card>
+</CardGroup>

@@ -86,7 +86,6 @@
           "group": "Sales",
           "pages": [
             "use-cases/sales/lead-enrichment",
-            "use-cases/sales/lead-qualification",
             "use-cases/sales/multi-channel-outbound",
             "use-cases/sales/email-negotiation"
           ]
@@ -95,16 +94,14 @@
           "group": "Operations",
           "pages": [
             "use-cases/operations/document-processing",
-            "use-cases/operations/use-case-2",
-            "use-cases/operations/use-case-3"
+            "use-cases/operations/crm-auto-update"
           ]
         },
         {
           "group": "Finance",
           "pages": [
-            "use-cases/finance/expense-reporting",
-            "use-cases/finance/memo-generation",
-            "use-cases/finance/use-case-3"
+            "use-cases/finance/invoice-processing",
+            "use-cases/finance/memo-generation"
           ]
         },
         {
@@ -118,7 +115,6 @@
         {
           "group": "Marketing",
           "pages": [
-            "use-cases/marketing/campaign-generator",
             "use-cases/marketing/competitive-content-analysis",
             "use-cases/marketing/focus-group-simulator"
           ]
