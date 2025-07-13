@@ -1,164 +1,167 @@
 ---
-title: 'Email Triage'
-icon: 'envelopes'
-sidebarTitle: 'Email Triage'
-description: 'Automate email sorting and prioritization with Lindy'
+title: 'Email Assistant'
+icon: 'envelope'
+sidebarTitle: 'Email Assistant'
+description: 'Auto-sort, label, and answer emails so your inbox stays at zero.'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/videos/triggers.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%' }}
-    />
-  </div>
-</div>
+<Frame>
+  <video
+    src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+  />
+</Frame>
 
 ## Quick Overview
 
-A powerful Email Responder Lindy automatically monitors your inbox, detects which messages need a reply, and drafts (or sends) personalized responses using information from your knowledge base. Say goodbye to inbox overload and hello to instant, accurate replies.
+Connect Lindy to Gmail or Outlook and let it:
 
-Key benefits of an Email Responder:
-- **Automated filtering** – Only engages with emails that require attention
-- **Knowledge-powered answers** – References your knowledge base for accurate responses
-- **Time savings** – Handles repetitive questions so you can focus on critical tasks
-- **Consistent tone** – Matches your writing style across every reply
-- **Seamless integrations** – Can label, archive, or forward emails and update your CRM
+- **Filter** incoming mail by sender, keywords, or labels  
+- **Categorize** messages (Marketing, Support, Colleagues, Spam, etc.)  
+- **Label** & tidy the inbox automatically  
+- **Draft** or send replies with your voice and brand tone  
+- **Tap** a Knowledge Base for accurate answers when needed  
 
-## Setting Up Your Email Responder
+You'll find the **Email Assistant** template in your Lindy dashboard to kick-start the flow.
 
-Follow these steps to build an email triage workflow that responds (or drafts replies) in under five minutes.
+## Setting Up Your Email Assistant
 
-### Step 1: Connect Your Gmail Account
-
-Start by adding the Gmail trigger so Lindy knows when new mail arrives.
+### Step 1: Connect Your Mailbox
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Connecting Gmail trigger" />
+  <img src="/lindy-brand-assets/placeholder.png" alt="Connect Gmail or Outlook" />
 </Frame>
 
-Click the **Gmail Email Received** trigger and connect your account.  
-Optional: add trigger filters to process only certain senders, labels, or keywords.
+1. Select `Gmail / Outlook – Email Received` as the trigger.  
+2. Complete OAuth to grant read/send access.  
+3. Pick the folders you want Lindy to watch (e.g., Inbox only).
 
-### Step 2: Decide If the Email Needs a Response
+### Step 2: Set Inbox Filters
 
-Add a **Condition** step called `Requires response?` with the prompt:
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Trigger filters for email" />
+</Frame>
 
-```text
-Go down this path if the emailer is asking a question about my service, product, or company.
+Use `Trigger Filters` to keep processing costs tight:
+
+- *Subject* contains "Invoice"  
+- *From* equals `news@` (route newsletters)  
+- Attachment present (flag items needing review)
+
+### Step 3: Categorize with Conditions
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Condition for email categories" />
+</Frame>
+
+Add a `Condition` node titled *Assign category* with the prompt:
+
+```
+Return marketing, support, coworker, spam, or unknown.
 ```
 
-Emails that don’t match stop here, keeping your workflow laser-focused.
+Feel free to add or rename categories to match your business.
 
-### Step 3: Search Your Knowledge Base
-
-Add a **Knowledge Base Search** action so Lindy can look up the right answer.
+### Step 4: Label & Organize
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Adding knowledge base search" />
+  <img src="/lindy-brand-assets/placeholder.png" alt="Apply labels" />
 </Frame>
 
-Populate the knowledge base with FAQs, product docs, and policy pages to give Lindy plenty of material.
+For each category, drop in a `Gmail – Modify Message` action:
 
-### Step 4: Confirm an Answer Was Found
+| Category  | Label           | Extra               |
+|-----------|-----------------|---------------------|
+| marketing | `Marketing 📣`  | Mark as *Read*      |
+| support   | `Support 🛠`    | Mark as *Important* |
+| coworker  | `Team 💬`       | Leave unread        |
+| spam      | `Spam ❌`       | Move to Archive     |
 
-Insert another **Condition** step named `Found response?` with the prompt:
+### Step 5: Draft or Send Replies
 
-```text
-Go down this path if the previous step returned relevant knowledge.
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Reply action" />
+</Frame>
+
+**Action**: `Gmail – Send Reply` (attach to categories that need a response).  
+
+Use this prompt in the Body field:
+
+```
+Reply in a friendly, concise tone.
+Pull facts from {{knowledge_base_result}} if available.
+Sign off as "{{Your Name}}".
 ```
 
-This prevents Lindy from guessing when no information is available.
+Toggle `Save as Draft` if you want to review before sending.
 
-### Step 5: Draft (or Send) the Reply
-
-Add the **Gmail Send Reply** action.
+### Step 6: Add a Knowledge Base (Optional)
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Configuring Gmail reply" />
+  <img src="/lindy-brand-assets/placeholder.png" alt="Knowledge Base search" />
 </Frame>
 
-Key options:
-- Toggle **Save as Draft** to review emails before they’re sent.
-- Toggle **Ask for Confirmation** if you want final approval each time.
-- In the **Body** field, set the tone & style, for example:
+1. Attach docs (FAQ, help center, pricing guides).  
+2. Insert `Search Knowledge Base` before the reply action.  
+3. Gate replies with a `Found answer?` condition to avoid guesswork.
 
-```text
-Respond in a friendly yet professional voice.  
-Reference any knowledge found.  
-Keep the email under 200 words.
-```
+## What's Next?
 
-## Testing Your Email Responder
+After the core six-step flow works, you can chain on extras:
 
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Testing email responder" />
-</Frame>
+- Slack DM for VIP senders  
+- CRM update when an email matches an open opportunity  
+- Scheduler to batch-process low-priority folders overnight  
 
-1. Click **Save** then **Test** in the Flow Editor.  
-2. Select the **Gmail Email Received** step and choose a sample email.  
-3. Watch how the Conditions route the email and how the draft reply is generated.  
-4. Iterate on the body prompt until you’re satisfied.
+## Advanced Customizations
 
-> **Tip**: Keep **Save as Draft** enabled during testing to avoid real sends.
+| Trick                  | What it does                                                                          |
+|------------------------|---------------------------------------------------------------------------------------|
+| Thread Sentiment Check | Score each email's tone (angry, happy, neutral) → escalate negative threads to Slack. |
+| VIP Escalation         | If `from` domain matches big-logo clients, bypass auto-reply and ping you instantly.  |
+| Spam Digest            | Collect low-priority marketing mails → send one daily summary at 7 AM.                |
+| Attachment OCR         | Auto-extract invoice data from PDFs and push to your accounting system.               |
 
-## Advanced Features
-
-### Smart Labeling & Routing
-
-Use additional **Condition** branches to:
-- Apply Gmail labels like `High Priority` or `Needs Review`.
-- Forward VIP emails to Slack.
-- Escalate billing issues to the finance team.
-
-### CRM & Research Actions
-
-Connect actions to:
-- Create or update contacts/leads in HubSpot or Salesforce.
-- Pull People Data Labs info about the sender.
-
-### Lead Qualification & Scheduling
-
-Combine your Email Responder with calendar actions to automatically propose meeting times for qualified leads.
+## Best Practices
 
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion title="Keep the Knowledge Base Fresh">
-    Update FAQs and docs regularly so Lindy always has the latest answers.
+  <Accordion title="Start in Draft Mode">
+    Keep `Save as Draft` on for the first week to spot issues.
   </Accordion>
-
-  <Accordion title="Write Precise Prompts">
-    Be explicit about tone, length, and format. Short prompts like "reply politely" lead to generic emails.
+  
+  <Accordion title="Keep the KB Fresh">
+    Out-of-date answers are worse than no answer; schedule monthly reviews.
   </Accordion>
-
-  <Accordion title="Use Draft Mode First">
-    Review a few dozen replies before letting Lindy send autonomously.
+  
+  <Accordion title="Be Transparent">
+    Add a footer: "Drafted by AI,reviewed by Your Name."
   </Accordion>
-
-  <Accordion title="Fail-Safe Path">
-    Add a catch-all branch that forwards emails to you if no answer is found.
+  
+  <Accordion title="Avoid Over-Automation">
+     Leave sensitive/legal threads for human review.
   </Accordion>
 </AccordionGroup>
 
 ## Next Steps
 
+Now that your Email Assistant is set up, explore these complementary workflows:
+
 <CardGroup cols={2}>
-  <Card title="Knowledge Base Guide" href="/fundamentals/lindy-101/knowledge-base" icon="database">
-    Learn how to structure and upload content for perfect answers
+  <Card title="Chat With Your Meetings" href="/tutorials/chat-with-meetings" icon="comments">
+    Query your meeting history with natural language questions
   </Card>
-  <Card title="Condition Builder" href="/fundamentals/lindy-101/conditions" icon="filter">
-    Master advanced branching for smarter workflows
+  <Card title="Meeting Insights Dashboard" href="/tutorials/meeting-insights" icon="chart-line">
+    Track meeting metrics and team participation trends
   </Card>
-  <Card title="Human-in-the-Loop" href="/testing/human-in-the-loop" icon="user-check">
-    Add approval steps before emails are sent
+  <Card title="Action Item Tracker" href="/tutorials/action-tracker" icon="check">
+    Automatically follow up on meeting commitments
   </Card>
-  <Card title="Testing Workflows" href="/testing/test-panel" icon="vial">
-    Debug and refine your responder with real examples
+  <Card title="Meeting Scheduler" href="/tutorials/meeting-scheduler" icon="calendar-plus">
+    Let Lindy coordinate and schedule your meetings
   </Card>
 </CardGroup>

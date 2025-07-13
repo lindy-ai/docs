@@ -1,20 +1,147 @@
 ---
 title: 'Calendar Prep'
-icon: 'calendar-check'
+icon: 'calendar-plus'
 sidebarTitle: 'Calendar Prep'
-description: 'Prepare for meetings and calendar events with Lindy'
+description: 'Show up to every call armed with attendee intel, past context, and a crisp agenda.'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/videos/triggers.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%' }}
-    />
-  </div>
-</div>
+<Frame>
+  <video
+    src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/meeting-prep.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+  />
+</Frame>
+
+## Quick Overview
+
+Connect Lindy to your calendar and let it:
+
+- **Trigger** before each meeting to gather context  
+- **Research** attendees across LinkedIn and the web  
+- **Summarize** past emails, CRM notes, and action items  
+- **Draft** a tailored brief or agenda for the call  
+- **Deliver** everything via Slack, email, or Docs  
+
+You'll find the **Meeting Prep** template in your Lindy dashboard to kick‑start the flow.
+
+## Setting Up Your Meeting Prep Flow
+
+### Step&nbsp;1: Daily Trigger & Calendar Pull
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Time trigger and calendar query" />
+</Frame>
+
+1. Choose `Scheduler – Daily at 6 AM` (or any offset you prefer).  
+2. Add `Google Calendar – List Events` for the next business day.  
+
+### Step&nbsp;2: Loop Through Events
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Loop over events" />
+</Frame>
+
+- Insert `Loop – For Each` to iterate over every upcoming event.  
+- Inside the loop, reference event fields such as `attendees`, `title`, and `hangoutLink`.
+
+### Step&nbsp;3: Enrich Attendees
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Attendee research" />
+</Frame>
+
+For each attendee:
+
+1. `AI Agent – Search the Internet`  
+
+Find the LinkedIn URL for `attendee.name` at `attendee.company`.
+
+2. `People Data Labs – Enrich Person` to pull title, phone, and company info.
+
+### Step&nbsp;4: Pull Past Communications
+
+<Frame>
+<img src="/lindy-brand-assets/placeholder.png" alt="Search past emails" />
+</Frame>
+
+- Action: `Gmail – Search Emails`  
+- Query:
+
+from:`attendee.email` OR to:`attendee.email` newer_than:365d
+
+Store snippets or thread links for context.
+
+### Step 5: Draft the Brief
+
+<Frame>
+<img src="/lindy-brand-assets/placeholder.png" alt="Generate meeting brief" />
+</Frame>
+
+Use `AI Agent – Generate Text`:
+
+Write a concise prep brief:
+- Name, role, LinkedIn
+- Recent news or funding
+- Last email summary
+- Open action items
+- Limit to 150 words.
+
+
+### Step 6: Send or Save
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Send prep summary" />
+</Frame>
+
+- Option A: `Slack – Send DM` with the compiled briefs.  
+- Option B: `Gmail – Send Email` to yourself or the team.  
+- Option C: `Google Docs – Append` to a rolling prep doc.
+
+## Advanced Customizations
+
+| Trick                     | What it does                                                                  |
+|---------------------------|--------------------------------------------------------------------------------|
+| Agenda Drafting           | Have Lindy propose a 3‑point agenda and email it to attendees pre‑call.        |
+| CRM Insight Pull          | Fetch lead/opportunity fields from HubSpot or Salesforce and add to the brief. |
+| Company News Monitor      | Use Perplexity to scan for funding, hires, or press releases within 30 days.    |
+| Last‑Call Notes Injection | Search past meeting transcripts and surface key decisions or blockers.         |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Respect Attendee Privacy">
+    Share briefs internally only; avoid forwarding personal data to external guests.
+  </Accordion>
+  
+  <Accordion title="Keep Research Timely">
+    Limit web news searches to the past 90 days for relevance.
+  </Accordion>
+  
+  <Accordion title="Stay Concise">
+    Aim for one screen‑length briefs—signal over noise.
+  </Accordion>
+  
+  <Accordion title="Automate, Then Review">
+    Skim each brief the first week to fine‑tune prompts before full auto‑send.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Meeting Notetaker" href="/tutorials/meeting-notetaker" icon="file-alt">
+    Record and summarize calls automatically
+  </Card>
+  <Card title="Action Item Tracker" href="/tutorials/action-tracker" icon="check">
+    Capture tasks and owners as you meet
+  </Card>
+  <Card title="Deal Desk Prep" href="/tutorials/deal-desk-prep" icon="handshake">
+    Pull pricing history & blockers before renewal calls
+  </Card>
+  <Card title="Post‑Meeting Recaps" href="/tutorials/post-meeting-recap" icon="paper-plane">
+    Auto‑email summaries and next steps to attendees
+  </Card>
+</CardGroup>

@@ -2,19 +2,154 @@
 title: 'Scheduling Assistant'
 icon: 'calendar-range'
 sidebarTitle: 'Scheduling Assistant'
-description: 'Automate meeting scheduling and calendar management with Lindy'
+description: 'Let Lindy negotiate times, send invites, and keep your calendar tidy.'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/videos/triggers.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%' }}
-    />
-  </div>
-</div> 
+<Frame>
+  <video
+    src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/meeting-scheduler.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+  />
+</Frame>
+
+## Quick Overview
+
+CC Lindy on any thread and she will:
+
+- **Detect** whether a specific time was suggested  
+- **Propose** three slots if none was given  
+- **Book** the meeting on your calendar with full context  
+- **Confirm** with all parties once the invite is sent  
+- **Reschedule** gracefully if plans change  
+
+You'll find the **Meeting Scheduler** template in your Lindy dashboard to kick-start the flow.
+
+## Setting Up Your Meeting Scheduler
+
+### Step 1: Configure Lindy Mail
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Lindy Mail address" />
+</Frame>
+
+1. Open the `Email Received` trigger.  
+2. Copy your unique **Lindy Mail Address**—this is the address you'll CC.  
+3. Optionally whitelist domains or subjects to limit when Lindy acts.
+
+### Step 2: Understand the Initial Condition
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Condition for time detection" />
+</Frame>
+
+The first `Condition` checks the email body:
+
+```
+Does the email specify a date or time?
+```
+
+- **Yes** → jump to event creation.  
+- **No** → find best times to propose.
+
+### Step 3: List Best Times
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="List best times" />
+</Frame>
+
+- Action: `Google Calendar – List Best Times`  
+- Set earliest/latest start, working hours, max meetings per day, and calendars to check.  
+
+### Step 4: Reply With Times
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Send times email" />
+</Frame>
+
+`Lindy Mail – Send Reply` with body:
+
+```
+Hi {{FIRSTNAME}},
+
+Happy to help schedule! Do any of these work for you? (all times in {{TIMEZONE}})
+
+* Monday, June 21 at 3 PM
+* Tuesday, June 22 at 11 AM
+* Wednesday, June 23 at 1 PM
+
+Best,
+Lindy
+```
+
+### Step 5: Create the Event
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Create calendar event" />
+</Frame>
+
+- Action: `Google Calendar – Create Event`  
+- Leave most fields on *Auto*; prompt the name/description using email context.  
+- Add a meeting link only if the thread agreed to virtual.
+
+### Step 6: Confirm or Reschedule
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Confirmation email" />
+</Frame>
+
+1. `Lindy Mail – Send Reply` to confirm booking:
+
+```
+Sounds great, I just sent the invite! Let me know if I can help with anything else.
+```
+
+2. Final `Condition` watches for reschedule requests; if true, delete the old event and loop back to Step 3.
+
+## Advanced Customizations
+
+| Trick                 | What it does                                                             |
+|-----------------------|---------------------------------------------------------------------------|
+| Multi-time-zone Logic | Detect the recipient's locale and convert proposed times automatically.  |
+| Round-Robin Calendars | Cycle availability across a team for shared demo inboxes.                |
+| Buffer Windows        | Add min/max gaps between meetings to avoid calendar pile-ups.            |
+| Meeting Type Routing  | Use subject keywords (Demo, Interview, Support) → route to right calendar.|
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Keep Replies Human">
+    Tailor Lindy's email prompts so they match your personal style and brand.
+  </Accordion>
+  
+  <Accordion title="Limit Calendar Scope">
+    Check only relevant calendars to avoid false conflicts or double-booking.
+  </Accordion>
+  
+  <Accordion title="Sanity-Check First Week">
+    Run in confirmation-only mode until you trust the flow end-to-end.
+  </Accordion>
+  
+  <Accordion title="Respect Time Zones">
+    Always include a clear time-zone label in proposed times and confirmations.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Meeting Prep Brief" href="/tutorials/meeting-prep" icon="clipboard-list">
+    Arrive prepared with attendee intel
+  </Card>
+  <Card title="Meeting Notetaker" href="/tutorials/meeting-notetaker" icon="file-alt">
+    Record and summarize every call
+  </Card>
+  <Card title="Action Item Tracker" href="/tutorials/action-tracker" icon="check">
+    Follow through on meeting commitments
+  </Card>
+  <Card title="Slack Agenda Bot" href="/tutorials/agenda-bot" icon="paper-plane">
+    Auto-post agendas before each meeting
+  </Card>
+</CardGroup>
