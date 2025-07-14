@@ -23,129 +23,147 @@ description: 'Show up to every call armed with attendee intel, past context, and
 
 Connect Lindy to your calendar and let it:
 
-- **Trigger** before each meeting to gather context  
-- **Research** attendees across LinkedIn and the web  
-- **Summarize** past emails, CRM notes, and action items  
-- **Draft** a tailored brief or agenda for the call  
-- **Deliver** everything via Slack, email, or Docs  
+- **Trigger** 10 minutes before each meeting
+- **Detect** if it's an external meeting worth researching
+- **Research** attendees across LinkedIn and the web
+- **Review** past email conversations and context
+- **Deliver** a quick brief right before you jump on the call
 
-You'll find the **Meeting Prep** template in your Lindy dashboard to kick‑start the flow.
+You can use the [meeting prep template](https://chat.lindy.ai/home/?templateId=687565fdc1c16f08152a968a) to get started.
 
 ## Setting Up Your Meeting Prep Flow
 
-### Step&nbsp;1: Daily Trigger & Calendar Pull
+### Step 1: Configure Pre-Meeting Trigger
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Time trigger and calendar query" />
+ <img src="/lindy-brand-assets/calendar-prep-start.png" alt="Calendar event trigger with offset" />
 </Frame>
 
-1. Choose `Scheduler – Daily at 6 AM` (or any offset you prefer).  
-2. Add `Google Calendar – List Events` for the next business day.  
+1. Select `Google Calendar – Calendar Event Started` trigger
+2. Set offset to **-10 minutes** (triggers 10 min before meeting)
+3. Connect your calendar account
 
-### Step&nbsp;2: Loop Through Events
+### Step 2: Check If External Meeting
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Loop over events" />
+ <img src="/lindy-brand-assets/calendar-prep-conditions.png" alt="External meeting condition" />
 </Frame>
 
-- Insert `Loop – For Each` to iterate over every upcoming event.  
-- Inside the loop, reference event fields such as `attendees`, `title`, and `hangoutLink`.
+Add a `Condition` to identify external meetings:
 
-### Step&nbsp;3: Enrich Attendees
+```
+Go down this path if any attendee email domain is different from your company domain
+```
+
+This skips events like internal standups and focuses on important external calls.
+
+### Step 3: Research the Attendee
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Attendee research" />
+  <img src="/lindy-brand-assets/calendar-prep-research.png" alt="Research attendee using multiple sources" />
 </Frame>
 
-For each attendee:
+Research your attendee using two complementary approaches:
 
-1. `AI Agent – Search the Internet`  
+1. **Perplexity Search** for comprehensive context:
+```
+Tell me about [attendee name] at [attendee company]. Include their current role, background, recent professional updates, and any recent company news.
+```
 
-Find the LinkedIn URL for `attendee.name` at `attendee.company`.
+2. **Search the Internet** for LinkedIn profile:
+```
+site:linkedin.com/in [attendee name] [attendee company]
+```
 
-2. `People Data Labs – Enrich Person` to pull title, phone, and company info.
+This combination gives you both detailed context and their professional profile link.
 
-### Step&nbsp;4: Pull Past Communications
+### Step 4: Check Email History
 
 <Frame>
-<img src="/lindy-brand-assets/placeholder.png" alt="Search past emails" />
+  <img src="/lindy-brand-assets/calendar-prep-search-emails.png" alt="Email history search" />
 </Frame>
 
-- Action: `Gmail – Search Emails`  
-- Query:
+Use `Gmail – Search Emails`:
 
-from:`attendee.email` OR to:`attendee.email` newer_than:365d
+Query: `from:[attendee email]` using a prompt
 
-Store snippets or thread links for context.
+Limit to most recent 10 emails to get:
+- Last interaction date
+- Recent topics discussed
+- Any open questions or commitments
 
-### Step 5: Draft the Brief
+### Step 5: Send Meeting Brief via Lindy Mail
 
 <Frame>
-<img src="/lindy-brand-assets/placeholder.png" alt="Generate meeting brief" />
+  <img src="/lindy-brand-assets/calendar-prep-send.png" alt="Meeting brief delivery via email" />
 </Frame>
 
-Use `AI Agent – Generate Text`:
+Use `Lindy Mail – Send Email` to deliver your brief:
 
-Write a concise prep brief:
-- Name, role, LinkedIn
-- Recent news or funding
-- Last email summary
-- Open action items
-- Limit to 150 words.
+```
+Subject: Quick prep for meeting with [attendee name] in 10 min
 
+[Attendee Name] - [Title] at [Company]
 
-### Step 6: Send or Save
+BACKGROUND:
+[2-3 key points from research]
 
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Send prep summary" />
-</Frame>
+LAST INTERACTION: 
+[Date and main topic from email history]
 
-- Option A: `Slack – Send DM` with the compiled briefs.  
-- Option B: `Gmail – Send Email` to yourself or the team.  
-- Option C: `Google Docs – Append` to a rolling prep doc.
+TALKING POINTS:
+• [Relevant topic based on their background]
+• [Follow-up from previous emails]
+• [Current company initiative they might care about]
+
+LinkedIn: [profile URL]
+```
+
+**Alternative**: Use `Slack – Send DM` if you prefer instant notifications on your phone.
 
 ## Advanced Customizations
 
-| Trick                     | What it does                                                                  |
-|---------------------------|--------------------------------------------------------------------------------|
-| Agenda Drafting           | Have Lindy propose a 3‑point agenda and email it to attendees pre‑call.        |
-| CRM Insight Pull          | Fetch lead/opportunity fields from HubSpot or Salesforce and add to the brief. |
-| Company News Monitor      | Use Perplexity to scan for funding, hires, or press releases within 30 days.    |
-| Last‑Call Notes Injection | Search past meeting transcripts and surface key decisions or blockers.         |
+| Feature | What it does |
+|---------|--------------|
+| CRM Integration | Pull deal stage and account history from HubSpot/Salesforce |
+| Company News | Add recent funding or announcements from their company |
+| Meeting Type Detection | Different prep for sales vs. partnership vs. interview calls |
+| Team Briefings | CC relevant team members on high-stakes meetings |
+| Auto-Agenda | Generate and send agenda to attendees 1 hour before |
 
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion title="Respect Attendee Privacy">
-    Share briefs internally only; avoid forwarding personal data to external guests.
+  <Accordion title="Optimize Timing">
+    10 minutes works well, but adjust based on your schedule density.
   </Accordion>
   
-  <Accordion title="Keep Research Timely">
-    Limit web news searches to the past 90 days for relevance.
+  <Accordion title="Focus on External">
+    Skip internal meetings to avoid notification overload.
   </Accordion>
   
-  <Accordion title="Stay Concise">
-    Aim for one screen‑length briefs—signal over noise.
+  <Accordion title="Mobile-Friendly">
+    Keep briefs short since you might read on your phone between meetings.
   </Accordion>
   
-  <Accordion title="Automate, Then Review">
-    Skim each brief the first week to fine‑tune prompts before full auto‑send.
+  <Accordion title="Privacy First">
+    Only research public information and keep briefs internal.
   </Accordion>
 </AccordionGroup>
 
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card title="Meeting Notetaker" href="/tutorials/meeting-notetaker" icon="file-alt">
-    Record and summarize calls automatically
+  <Card title="Meeting Notetaker" href="/tutorials/meeting-notetaker" icon="microphone">
+    Record and summarize your meetings
   </Card>
-  <Card title="Action Item Tracker" href="/tutorials/action-tracker" icon="check">
-    Capture tasks and owners as you meet
+  <Card title="Follow-Up Automation" href="/tutorials/meeting-follow-up" icon="paper-plane">
+    Send recap emails after meetings
   </Card>
-  <Card title="Deal Desk Prep" href="/tutorials/deal-desk-prep" icon="handshake">
-    Pull pricing history & blockers before renewal calls
+  <Card title="CRM Auto-Update" href="/tutorials/crm-auto-update" icon="database">
+    Log meeting notes to your CRM
   </Card>
-  <Card title="Post‑Meeting Recaps" href="/tutorials/post-meeting-recap" icon="paper-plane">
-    Auto‑email summaries and next steps to attendees
+  <Card title="Calendar Analytics" href="/tutorials/calendar-analytics" icon="chart-line">
+    Analyze your meeting patterns
   </Card>
 </CardGroup>
