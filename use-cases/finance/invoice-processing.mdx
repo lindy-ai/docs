@@ -1,0 +1,241 @@
+---
+title: 'Invoice Processing Automation'
+icon: 'file-invoice-dollar'
+sidebarTitle: 'Invoice Processing'
+description: 'Transform your accounts payable by automatically extracting invoice data, matching POs, and routing for approval.'
+---
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/videos/triggers.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%' }}
+    />
+  </div>
+</div>
+
+
+## Quick Overview
+
+Turn your invoice processing from hours to minutes. Lindy will:
+
+- **Receive** invoices sent to a dedicated email address
+- **Extract** vendor details, amounts, line items, and due dates
+- **Validate** against PO numbers and vendor database
+- **Route** for approval based on amount thresholds
+- **Track** payment status and send reminders
+
+No more manual data entry or lost invoices in email threads.
+
+## Setting Up Invoice Automation
+
+### Step 1: Create Your AP Inbox
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Dedicated AP email setup" />
+</Frame>
+
+1. Set up a dedicated email: invoices@yourcompany.com
+2. Configure `Gmail – Email Received` trigger
+3. Add filter: "Has attachment" = Yes
+4. Share this email with all vendors and internal teams
+
+<Tip>
+Add this email to your vendor portal profiles and email signatures: "Send all invoices to: invoices@yourcompany.com"
+</Tip>
+
+### Step 2: Extract Invoice Data
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="AI invoice data extraction" />
+</Frame>
+
+Add `AI Agent – Extract Invoice Data` with prompt:
+
+```
+Extract the following from the attached invoice:
+- vendor_name
+- vendor_email
+- invoice_number
+- invoice_date
+- due_date
+- total_amount
+- tax_amount
+- subtotal
+- payment_terms (e.g., Net 30)
+- po_number (if present)
+- line_items: [{description, quantity, unit_price, amount}]
+- bank_details
+
+Return as structured JSON. If any field is not found, mark as null.
+```
+
+### Step 3: Validate Invoice Information
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Invoice validation checks" />
+</Frame>
+
+Add validation conditions to check:
+
+1. **Vendor Verification**
+   - Check vendor name against approved vendor list in Google Sheets
+   - Flag new or unrecognized vendors for review
+
+2. **PO Matching** (if PO number exists)
+   - Look up PO in your tracking sheet
+   - Verify amount is within 10% of PO value
+   - Check if PO has remaining budget
+
+3. **Duplicate Check**
+   - Search existing invoices for same invoice number + vendor
+   - Prevent double payments
+
+### Step 4: Calculate Approval Routing
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Approval routing logic" />
+</Frame>
+
+Set up approval tiers with `Conditions`:
+
+| Amount | Approval Required | Action |
+|--------|------------------|---------|
+| < $1,000 | Auto-approve | Log and process |
+| $1,000 - $5,000 | Manager | Email manager with summary |
+| $5,000 - $25,000 | Director | Email director + Slack alert |
+| > $25,000 | CFO | Email CFO + urgent Slack |
+
+### Step 5: Log to Master Invoice Tracker
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Invoice tracking spreadsheet" />
+</Frame>
+
+Create a Google Sheet with columns:
+- Date Received
+- Vendor Name
+- Invoice Number
+- Amount
+- Due Date
+- PO Number
+- Approval Status
+- Approver
+- Payment Status
+- GL Coding
+- Notes
+- Invoice Link (Google Drive)
+
+Use `Google Sheets – Append Row` to add each invoice.
+
+### Step 6: Request Approval
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Approval request email" />
+</Frame>
+
+For invoices requiring approval, use `Gmail – Send Email`:
+
+**Subject**: Invoice Approval Needed: [Vendor] - $[Amount]
+
+**Body**:
+```
+Hi [Approver Name],
+
+New invoice requires your approval:
+
+Vendor: [Vendor Name]
+Invoice #: [Invoice Number]
+Amount: $[Total Amount]
+Due Date: [Due Date]
+PO Number: [PO Number]
+
+Line Items:
+[Formatted line items list]
+
+✅ APPROVE: Reply with "Approved"
+❌ REJECT: Reply with "Rejected" and reason
+❓ QUESTION: Reply with your questions
+
+View invoice: [Google Drive Link]
+View in tracker: [Sheet Link]
+
+This invoice is due in [X] days.
+```
+
+### Step 7: Process Approval Responses
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Approval response handling" />
+</Frame>
+
+Set up a separate flow triggered by email replies:
+
+1. Check if reply contains "Approved" → Update sheet status
+2. Check if reply contains "Rejected" → Flag and notify vendor
+3. If questions → Create task for AP team
+4. Send confirmation to approver
+
+### Step 8: Payment Reminders
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Payment reminder system" />
+</Frame>
+
+Daily scheduled check:
+- Query sheet for approved invoices due within 5 days
+- Send consolidated reminder to AP team
+- Flag any overdue invoices in red
+- Weekly aging report to CFO
+
+## Advanced Features
+
+| Feature | What it does |
+|---------|--------------|
+| GL Code Suggestion | AI suggests general ledger codes based on line items |
+| Multi-Currency Support | Convert amounts and track exchange rates |
+| Vendor Portal Integration | Direct API connection to pull invoices |
+| Early Payment Discounts | Flag and calculate 2/10 Net 30 opportunities |
+| Audit Trail | Complete log of all actions and approvals |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Vendor Onboarding">
+    Email all vendors about the new invoice email and add to onboarding docs.
+  </Accordion>
+  
+  <Accordion title="Clear Approval Limits">
+    Document and communicate approval thresholds to all stakeholders.
+  </Accordion>
+  
+  <Accordion title="Regular Reconciliation">
+    Weekly review of pending invoices and monthly reconciliation with GL.
+  </Accordion>
+  
+  <Accordion title="Exception Handling">
+    Create a manual review queue for invoices that fail extraction.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Expense Management" href="/tutorials/expense-management" icon="receipt">
+    Automate employee expense processing
+  </Card>
+  <Card title="PO Automation" href="/tutorials/po-automation" icon="file-contract">
+    Create POs from approved requests
+  </Card>
+  <Card title="Vendor Management" href="/tutorials/vendor-management" icon="address-book">
+    Build a complete vendor lifecycle system
+  </Card>
+  <Card title="Financial Reporting" href="/tutorials/financial-reporting" icon="chart-line">
+    Generate AP aging and cash flow reports
+  </Card>
+</CardGroup>

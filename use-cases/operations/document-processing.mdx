@@ -2,7 +2,7 @@
 title: 'Document Processing'
 icon: 'file-lines'
 sidebarTitle: 'Document Processing'
-description: 'Automate document processing and analysis with Lindy'
+description: 'Automatically process any document type, extract key data, and organize information across your systems.'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -18,3 +18,184 @@ description: 'Automate document processing and analysis with Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Set up a central document processing hub that:
+
+- **Receives** documents via a dedicated email inbox
+- **Identifies** document types automatically (invoices, contracts, forms, etc.)
+- **Extracts** key information based on document type
+- **Logs** data to organized spreadsheets for easy access
+- **Notifies** relevant teams when action is needed
+
+Build it once and process hundreds of documents daily without manual data entry.
+
+## Setting Up Your Document Hub
+
+### Step 1: Create Your Document Inbox
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Gmail setup for document processing" />
+</Frame>
+
+1. Set up a dedicated Gmail account (e.g., docs@yourcompany.com)
+2. Configure `Gmail – Email Received` as your trigger
+3. Add filter: "Has attachment" = Yes
+4. Share this email with teams who need document processing
+
+### Step 2: Identify Document Type
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="AI document classification" />
+</Frame>
+
+Add `AI Agent – Analyze Document` with prompt:
+
+```
+Analyze the attached document and classify it as one of:
+- INVOICE: Bills, invoices, payment requests
+- CONTRACT: Agreements, contracts, legal documents
+- RECEIPT: Expense receipts, purchase confirmations
+- FORM: Application forms, request forms, surveys
+- REPORT: Financial reports, analytics, statements
+- OTHER: Anything else
+
+Also note the vendor/party name and document date if visible.
+Return as: {"type": "XXX", "party": "name", "date": "YYYY-MM-DD"}
+```
+
+### Step 3: Extract Document Text
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Text extraction from documents" />
+</Frame>
+
+- Action: `File – Extract Text`
+- Input: Email attachment
+- This handles PDFs, Word docs, images with OCR
+- Store output as document_text for next steps
+
+### Step 4: Extract Type-Specific Data
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Custom data extraction per document type" />
+</Frame>
+
+Add `Condition` based on document type, then extract relevant data:
+
+**For INVOICE:**
+```
+Extract: vendor_name, invoice_number, total_amount, due_date, 
+line_items[], payment_terms, PO_number
+```
+
+**For CONTRACT:**
+```
+Extract: party_names[], contract_value, start_date, end_date,
+renewal_terms, key_obligations[], termination_clause
+```
+
+**For RECEIPT:**
+```
+Extract: merchant, amount, date, category, payment_method,
+expense_type, project_code
+```
+
+**For FORM:**
+```
+Extract all field names and their values as key-value pairs
+```
+
+### Step 5: Log to Appropriate Spreadsheet
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Spreadsheet organization by document type" />
+</Frame>
+
+Create separate Google Sheets for each document type:
+
+1. **Invoices Sheet**
+   - Columns: Date Received, Vendor, Invoice #, Amount, Due Date, Status, Link to Original
+
+2. **Contracts Sheet**
+   - Columns: Date Received, Parties, Value, Start, End, Renewal Date, Key Terms, Link
+
+3. **Receipts Sheet**
+   - Columns: Date, Merchant, Amount, Category, Employee, Approved, Link
+
+4. **Forms Sheet**
+   - Columns: Date, Form Type, Submitter, Key Fields (JSON), Status, Link
+
+Use `Google Sheets – Append Row` for each type.
+
+### Step 6: Smart Notifications
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Notification routing based on document content" />
+</Frame>
+
+Add conditional notifications based on document characteristics:
+
+- **High-value invoices** (>$5,000) → Slack DM to Finance Manager
+- **Contract renewals** (within 60 days) → Email to Legal Team  
+- **Urgent forms** (containing "urgent" or "ASAP") → Slack to Ops Team
+- **Weekly summary** → Email digest of all processed documents
+
+### Step 7: File Organization
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Automated filing system" />
+</Frame>
+
+- Create organized Google Drive folders by type and date
+- Save original document with smart naming: `[TYPE]_[PARTY]_[DATE]_[ID]`
+- Add document URL to spreadsheet entries
+- Maintain searchable archive
+
+## Advanced Features
+
+| Feature | What it does |
+|---------|--------------|
+| Duplicate Detection | Check if invoice/contract already processed |
+| Auto-Approval Routes | Route based on amount thresholds and vendor status |
+| Data Validation | Verify tax IDs, validate against PO numbers |
+| Multi-Language Support | Process documents in any language |
+| Analytics Dashboard | Connect Sheets to Looker/Tableau for insights |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with High-Volume Doc Types">
+    Focus on the documents that eat the most time - usually invoices and receipts.
+  </Accordion>
+  
+  <Accordion title="Create Clear Naming Conventions">
+    Standardize how documents are named and filed from day one.
+  </Accordion>
+  
+  <Accordion title="Set Up Error Handling">
+    Route failed extractions to a manual review queue rather than losing them.
+  </Accordion>
+  
+  <Accordion title="Regular Accuracy Audits">
+    Spot-check 10% of processed documents weekly to refine extraction prompts.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Invoice Processing" href="/tutorials/invoice-processing" icon="file-invoice">
+    Deep dive into AP automation
+  </Card>
+  <Card title="Contract Management" href="/tutorials/contract-management" icon="file-contract">
+    Build a full contract lifecycle system
+  </Card>
+  <Card title="CRM Auto-Update" href="/tutorials/crm-auto-update" icon="database">
+    Sync document data to your CRM
+  </Card>
+  <Card title="Compliance Monitor" href="/tutorials/compliance-monitor" icon="shield-check">
+    Track document compliance and expiry
+  </Card>
+</CardGroup>

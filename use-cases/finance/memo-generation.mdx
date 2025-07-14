@@ -2,7 +2,7 @@
 title: 'Memo Generation'
 icon: 'memo'
 sidebarTitle: 'Memo Generation'
-description: 'Generate financial memos and reports automatically with Lindy'
+description: 'Transform folders of financial reports and data into polished board memos with AI-powered insights and analysis'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -18,3 +18,180 @@ description: 'Generate financial memos and reports automatically with Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Stop spending hours compiling board updates. Lindy will:
+
+- **Search** your Google Drive for the latest board materials folder
+- **Process** all financial statements, KPIs, and reports in that folder
+- **Analyze** the data to surface key insights and trends
+- **Generate** a comprehensive memo with executive-ready narrative
+- **Deliver** the polished memo directly to your inbox
+
+Turn a day-long task into a 5-minute request.
+
+## Setting Up Your Memo Generator
+
+### Step 1: Configure the Trigger
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Chat message trigger setup" />
+</Frame>
+
+Start with a `Chat Message Received` trigger. This lets you request memos on-demand:
+
+Example messages:
+- "Generate board memo for January 2025"
+- "Create investor update from Q4 materials"
+- "Summarize financial performance YTD"
+
+### Step 2: Search for Board Materials
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Google Drive search configuration" />
+</Frame>
+
+Add `Google Drive – Search` action:
+
+- Search query: Use the topic/month from the chat message
+- File type: Folders only
+- Look for folders like "Board Materials Jan 2025" or "Investor Updates Q4"
+
+This ensures you're always working with the latest materials.
+
+### Step 3: List All Files in Folder
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="List files in board folder" />
+</Frame>
+
+Add `Google Drive – List Files`:
+
+- Folder: Use the folder found in Step 2
+- Include: All file types (PDFs, Sheets, Docs, Slides)
+- This captures financials, KPI dashboards, strategy docs, meeting notes
+
+### Step 4: Process All Documents
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Loop through files for processing" />
+</Frame>
+
+Create a `Loop – For Each` file:
+
+Inside the loop:
+1. `File – Extract Text` from each document
+2. Build comprehensive context by combining all content
+3. Preserve file names as section markers
+
+This gives the AI complete context from all your materials.
+
+### Step 5: Generate the Memo
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="AI memo generation configuration" />
+</Frame>
+
+Add `AI Agent – Generate Text` with this prompt:
+
+```
+You are a strategic finance advisor preparing a board memo. You have been provided with all recent board materials including financial statements, KPI dashboards, strategic updates, and meeting notes.
+
+Generate a comprehensive board memo with these sections:
+
+1. EXECUTIVE SUMMARY
+- 3 most important points for the board
+- Overall health of the business in one sentence
+
+2. FINANCIAL PERFORMANCE
+- Revenue vs. plan (% variance and why)
+- Burn rate and runway analysis
+- Key P&L highlights and concerns
+- Cash position and working capital
+
+3. KEY METRICS & TRENDS
+- Customer metrics (growth, churn, NPS)
+- Product/operational KPIs
+- Team/headcount updates
+- Highlight improving vs. deteriorating metrics
+
+4. STRATEGIC PROGRESS
+- Status of board-approved initiatives
+- Major wins since last update
+- Delays or pivots to flag
+
+5. RISKS & OPPORTUNITIES
+- Top 3 risks to the business
+- Mitigation strategies in progress
+- Emerging opportunities to capture
+
+6. BOARD ACTIONS REQUESTED
+- Specific decisions needed
+- Information requests
+- Strategic guidance sought
+
+Write in clear, executive language. Use specific numbers. Focus on insights and implications, not just reporting data. If performance is below plan, explain why and what's being done.
+```
+
+### Step 6: Deliver the Memo
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Email delivery configuration" />
+</Frame>
+
+Use `Gmail – Send Email`:
+
+- To: Your email (or specified board prep distribution list)
+- Subject: "Board Memo - [Month] - Generated [Date]"
+- Body: The complete memo from Step 5
+- Optional: CC executive team for review
+
+The memo arrives formatted and ready for review.
+
+## Advanced Features
+
+| Feature | What it does |
+|---------|--------------|
+| Comparison Analysis | Compare to prior period and year-ago automatically |
+| Scenario Planning | Generate bull/bear/base case projections |
+| Ask Highlighting | Bold or highlight specific board asks |
+| Appendix Generation | Auto-create detailed appendices for deep dives |
+| Multi-Format Output | Generate both summary and detailed versions |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Organize Source Materials">
+    Keep a consistent folder structure: "Board Materials - [Month Year]" with subfolders by type.
+  </Accordion>
+  
+  <Accordion title="Update Before Generating">
+    Ensure all data sources are refreshed before running the memo generator.
+  </Accordion>
+  
+  <Accordion title="Review Before Sending">
+    Always review AI-generated memos for accuracy before board distribution.
+  </Accordion>
+  
+  <Accordion title="Create Templates">
+    Save your best memos as templates to maintain consistent quality.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Financial Reporting" href="/tutorials/financial-reporting" icon="chart-line">
+    Automate monthly financial packages
+  </Card>
+  <Card title="Investor Updates" href="/tutorials/investor-updates" icon="envelope">
+    Generate and send investor newsletters
+  </Card>
+  <Card title="KPI Dashboard" href="/tutorials/kpi-dashboard" icon="gauge">
+    Build real-time metrics tracking
+  </Card>
+  <Card title="Document Processing" href="/tutorials/document-processing" icon="file-search">
+    Process any document type automatically
+  </Card>
+</CardGroup>

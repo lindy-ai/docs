@@ -2,7 +2,7 @@
 title: 'Email Negotiation'
 icon: 'handshake'
 sidebarTitle: 'Email Negotiation'
-description: 'Automate email negotiations and deal closing with Lindy'
+description: 'Let Lindy answer inquiries, negotiate terms, and close deals—then loop you in.'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -18,3 +18,152 @@ description: 'Automate email negotiations and deal closing with Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+With the Email Negotiator flow, Lindy will:
+
+- **Monitor** your inbox for pricing or partnership inquiries  
+- **Query** a rich knowledge base for rates, packages, and policies  
+- **Respond** in your brand voice with accurate info  
+- **Negotiate** back-and-forth until a deal is closed or lost  
+- **Escalate** edge cases or wins straight to you via Slack  
+
+Start from the **Email Responder** template in your Lindy dashboard and tweak as below.
+
+## Setting Up Your Negotiator
+
+### Step 1: Connect the Trigger
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Gmail trigger" />
+</Frame>
+
+1. Use `Gmail – Email Received` as the trigger.  
+2. Add filters to ignore internal threads or newsletters.
+
+### Step 2: Gate with a Condition
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Deserves reply condition" />
+</Frame>
+
+`Condition` prompt:
+
+```
+Only continue if the email asks about pricing, packages, quotes, discounts, or partnerships.
+```
+
+### Step 3: Build the Knowledge Base
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Knowledge base" />
+</Frame>
+
+- Action: `Search Knowledge Base`  
+- Upload FAQs, rate cards, discount policies, and negotiation guidelines.  
+- Connect CRM or Google Docs as needed.
+
+### Step 4: Verify an Answer Exists
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Found answer condition" />
+</Frame>
+
+Add `Condition – Found answer?`  
+- **Yes** → proceed to first reply.  
+- **No** → send you a Slack DM for manual follow-up.
+
+### Step 5: Send the First Reply
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="First reply" />
+</Frame>
+
+Body prompt:
+
+```
+Use knowledge base content to answer questions and offer next steps.
+Be concise, friendly, and on-brand.
+```
+
+Toggle `Ask for Confirmation` = Always (optional).
+
+### Step 6: Branch on Response Type
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Three-way condition" />
+</Frame>
+
+Add a three-way `Condition`:
+
+| Path               | Prompt snippet                                                                     |
+|--------------------|------------------------------------------------------------------------------------|
+| Requires Negotiation | the email asks for more options, discounts, or custom packages                    |
+| Closed Deal          | the email agrees to the quoted terms                                             |
+| Not Interested       | the email declines the offer                                                     |
+
+### Step 7: AI Agent for Negotiation
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="AI agent negotiation" />
+</Frame>
+
+- Under *Requires Negotiation*, insert `AI Agent` with skills: `Gmail – Send Reply`.  
+- Prompt guidelines: use only KB facts, stay within 1-2 sentences, sign "Thanks – Lindy".
+
+### Step 8: Close the Loop
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Closed deal reply" />
+</Frame>
+
+- *Closed Deal* → `Gmail – Send Reply` confirming terms and next steps.  
+- *Not Interested* → polite thank-you reply.  
+- Both paths → `Slack – Send DM` to alert your team.
+
+## Advanced Customizations
+
+| Trick              | What it does                                                        |
+|--------------------|----------------------------------------------------------------------|
+| Dynamic Discount   | Offer tiered discounts based on deal size pulled from the email.     |
+| Auto-Quote PDF     | Generate and attach a PDF quote via DocGen once terms are agreed.    |
+| Sentiment Monitor  | Escalate to human if tone becomes negative or urgent.                |
+| CRM Update         | Create/advance opportunities in HubSpot or Salesforce automatically. |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Keep KB Current">
+    Refresh rate cards and policies regularly to avoid outdated offers.
+  </Accordion>
+  
+  <Accordion title="Short & Sweet">
+    Limit every reply to two sentences unless more detail is requested.
+  </Accordion>
+  
+  <Accordion title="Human Escalation">
+    Route complex legal or enterprise deals to a rep early.
+  </Accordion>
+  
+  <Accordion title="Tone Matching">
+    Include sample emails in the KB so Lindy mirrors your brand voice.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Multi-Channel Outbound" href="/tutorials/outbound" icon="paper-plane">
+    Warm up leads before they inquire
+  </Card>
+  <Card title="Quote Generator" href="/tutorials/quote-generator" icon="file-invoice">
+    Auto-create PDF proposals after agreement
+  </Card>
+  <Card title="Lead Enrichment" href="/tutorials/lead-enrichment" icon="address-card">
+    Fill gaps before negotiating
+  </Card>
+  <Card title="CRM Auto-Log" href="/tutorials/crm-auto-log" icon="database">
+    Sync every negotiation to your pipeline
+  </Card>
+</CardGroup>
