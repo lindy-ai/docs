@@ -5,15 +5,19 @@ sidebarTitle: 'Email Assistant'
 description: 'Auto-sort, label, and answer emails so your inbox stays at zero.'
 ---
 
-<Frame>
-  <video
-    src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
-    autoPlay
-    muted
-    loop
-    playsInline
-  />
-</Frame>
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
 ## Quick Overview
 
@@ -25,96 +29,103 @@ Connect Lindy to Gmail or Outlook and let it:
 - **Draft** or send replies with your voice and brand tone  
 - **Tap** a Knowledge Base for accurate answers when needed  
 
-You'll find the **Email Assistant** template in your Lindy dashboard to kick-start the flow.
+You can build off of both the [email triage template](https://chat.lindy.ai/home?templateId=6684857db1aa4ed9d5baa9e3) and [email responder template](https://chat.lindy.ai/home?templateId=681f0d58c7832f340735ba2d).
 
 ## Setting Up Your Email Assistant
 
 ### Step 1: Connect Your Mailbox
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Connect Gmail or Outlook" />
+  <img src="/lindy-brand-assets/email-triage-auth.png" alt="Connect Gmail or Outlook" />
 </Frame>
 
 1. Select `Gmail / Outlook – Email Received` as the trigger.  
-2. Complete OAuth to grant read/send access.  
-3. Pick the folders you want Lindy to watch (e.g., Inbox only).
+2. Complete authentication to grant read/send access. 
 
 ### Step 2: Set Inbox Filters
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Trigger filters for email" />
+  <img src="/lindy-brand-assets/email-triage-trigger.png" alt="Trigger filters for email" />
 </Frame>
 
-Use `Trigger Filters` to keep processing costs tight:
+Use `Trigger Filters` to keep processing costs tight. Examples:
 
 - *Subject* contains "Invoice"  
 - *From* equals `news@` (route newsletters)  
 - Attachment present (flag items needing review)
 
-### Step 3: Categorize with Conditions
+## Step 3: Categorize with Conditions
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Condition for email categories" />
+  <img src="/lindy-brand-assets/email-triage-conditions.png" alt="Condition for email categories" />
 </Frame>
 
-Add a `Condition` node titled *Assign category* with the prompt:
+Add a `Condition` step to branch emails into different paths based on their content.
 
-```
-Return marketing, support, coworker, spam, or unknown.
-```
+Click `Add Condition` to create branches for each email type. Here are some examples:
 
-Feel free to add or rename categories to match your business.
+| Condition Type | Example Setup |
+|----------------|---------------|
+| **Team** | Prompt: "Is from a coworker (from address contains @lindy.ai)" |
+| **Support** | Prompt: "Is this a support request?" |
+| **Marketing** | Prompt: "Is this marketing related?" |
+| **Spam** | Prompt: "Is likely spam and does not need response" |
+| **Unknown** | Prompt: "None of the above applies" |
+
+You can add as many conditions as needed – each one creates a separate branch in your workflow. Feel free to customize these categories to match your business needs and email patterns.
 
 ### Step 4: Label & Organize
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Apply labels" />
+  <img src="/lindy-brand-assets/email-triage-label.png" alt="Apply labels" />
 </Frame>
 
-For each category, drop in a `Gmail – Modify Message` action:
+For each category, drop in a `Add Label to Email` action:
 
-| Category  | Label           | Extra               |
-|-----------|-----------------|---------------------|
-| marketing | `Marketing 📣`  | Mark as *Read*      |
-| support   | `Support 🛠`    | Mark as *Important* |
-| coworker  | `Team 💬`       | Leave unread        |
-| spam      | `Spam ❌`       | Move to Archive     |
+| Category  | Label           |
+|-----------|-----------------|
+| marketing | `Marketing 📣`  |
+| support   | `Support 🛠`    |
+| coworker  | `Team 💬`       |
+| spam      | `Spam ❌`       |
 
 ### Step 5: Draft or Send Replies
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Reply action" />
+  <img src="/lindy-brand-assets/email-triage-body.png" alt="Reply action" />
 </Frame>
 
-**Action**: `Gmail – Send Reply` (attach to categories that need a response).  
+For each path you want a response, connect them to a `Send Reply` action. 
 
-Use this prompt in the Body field:
+Use a prompt like this in the `Body` field and adjust the adjectives to match your style:
 
 ```
-Reply in a friendly, concise tone.
-Pull facts from {{knowledge_base_result}} if available.
-Sign off as "{{Your Name}}".
+Reply to this email. 
+
+My style is : [ADJ1], [ADJ2], [ADJ3] 
+
+Always sign off like this: [insert signature]
+
+Be concise and actionable.
 ```
+
+You can also use the signature field and add in your custom html signature. 
 
 Toggle `Save as Draft` if you want to review before sending.
+
+<Frame>
+  <img src="/lindy-brand-assets/email-triage-draft.png" alt="Reply action" />
+</Frame>
 
 ### Step 6: Add a Knowledge Base (Optional)
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Knowledge Base search" />
+  <img src="/lindy-brand-assets/email-triage-KB.png" alt="Knowledge Base search" />
 </Frame>
 
 1. Attach docs (FAQ, help center, pricing guides).  
 2. Insert `Search Knowledge Base` before the reply action.  
 3. Gate replies with a `Found answer?` condition to avoid guesswork.
-
-## What's Next?
-
-After the core six-step flow works, you can chain on extras:
-
-- Slack DM for VIP senders  
-- CRM update when an email matches an open opportunity  
-- Scheduler to batch-process low-priority folders overnight  
 
 ## Advanced Customizations
 
@@ -127,8 +138,6 @@ After the core six-step flow works, you can chain on extras:
 
 ## Best Practices
 
-## Best Practices
-
 <AccordionGroup>
   <Accordion title="Start in Draft Mode">
     Keep `Save as Draft` on for the first week to spot issues.
@@ -136,10 +145,6 @@ After the core six-step flow works, you can chain on extras:
   
   <Accordion title="Keep the KB Fresh">
     Out-of-date answers are worse than no answer; schedule monthly reviews.
-  </Accordion>
-  
-  <Accordion title="Be Transparent">
-    Add a footer: "Drafted by AI,reviewed by Your Name."
   </Accordion>
   
   <Accordion title="Avoid Over-Automation">
