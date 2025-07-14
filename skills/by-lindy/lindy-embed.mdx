@@ -2,13 +2,12 @@
 title: 'Lindy Embed'
 icon: 'message-dots'
 sidebarTitle: 'Lindy Embed'
-description: 'Learn how to embed Lindy agents into your website or application'
+description: 'Embed Lindy onto your website as a popup or an iFrame'
 ---
-
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/LIndy_embed_add_trigger_first_video.mp4"
       width="600"
       autoPlay
       muted
@@ -19,171 +18,180 @@ description: 'Learn how to embed Lindy agents into your website or application'
   </div>
 </div>
 
-# Lindy Embed
+## Customize Your Chatbot For Your Website
 
-Lindy Embed allows you to integrate your Lindy agents directly into your website or application, providing a seamless user experience with AI-powered assistance.
+Select the "Lindy Embed" trigger in the flow editor. Click Configure Embed Settings.
 
-## What is Lindy Embed?
+<Frame>
+  <img 
+    src="/lindy-brand-assets/initial_embed _set_up_first_imge.png" 
+    alt="Lindy Embed trigger in flow editor with Configure Embed Settings button highlighted" 
+    style={{ borderRadius: '8px', border: '1px solid #E5E7EB' }}
+  />
+</Frame>
 
-Lindy Embed is a feature that enables you to embed your trained Lindy agents into web pages, applications, or other digital interfaces. This allows users to interact with your AI agents without leaving your platform.
+You'll see several options to customize your chatbot:
 
-## Key Features
+**Domain Name:** Restrict where your Lindy can be embedded. Leave it empty to use on any domain, or enter a specific domain like "yourcompany.com".
 
-- **Seamless Integration**: Embed agents directly into your existing interface
-- **Customizable UI**: Style the chat interface to match your brand
-- **Real-time Interaction**: Users can chat with your agents in real-time
-- **Context Awareness**: Agents can access relevant information from your platform
-- **Analytics**: Track usage and performance of embedded agents
+**Display Name:** Set the name of your bot as it will appear to users. For example, "Technical Interview Assistant" or "Customer Survey Bot".
 
-## Getting Started
+**Accent Color:** Choose a color that matches your brand for the top of the chatbot window.
 
-### 1. Create an Embed
+**Popup or iFrame:** Decide between a floating popup chatbot or a fixed iFrame embedded directly in your page.
 
-1. Navigate to the Embed section in your Lindy dashboard
-2. Click "Create New Embed"
-3. Select the agent you want to embed
-4. Configure the embed settings
+**Logo:** Upload your company or project logo to appear in the top left of the expanded chatbot.
 
-### 2. Configure Settings
+**Icon:** Select an icon for your chatbot's collapsed bubble.
 
-- **Agent Selection**: Choose which agent to embed
-- **Appearance**: Customize colors, fonts, and layout
-- **Behavior**: Set greeting messages and response styles
-- **Permissions**: Configure what the agent can access
+**Greeting Message:** The introductory message the user sees when they start a chat.
 
-### 3. Generate Embed Code
+**Conversation Starters:** Customize messages next to your bot to prompt engagement.
 
-```html
-<!-- Example embed code -->
-<script src="https://embed.lindy.ai/agent.js" 
-        data-agent-id="your-agent-id"
-        data-theme="light">
-</script>
-```
+**Callout message:** Create a prompt to encourage users to interact with your chatbot.
 
-## Embedding Options
-
-### Chat Widget
-
-The most common embedding option is a chat widget that appears as a floating button or sidebar:
-
-```html
-<div id="lindy-chat-widget" 
-     data-agent-id="your-agent-id"
-     data-position="bottom-right">
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/lindy_embed_config_screen_popup.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
 </div>
-```
 
-### Full Page Embed
+## Access The Popup Code Snippet
 
-Embed the agent as a full page within your application:
+Select the "Lindy Embed" trigger in the flow editor. Click Configure Embed Settings.
 
-```html
-<iframe src="https://embed.lindy.ai/chat?agent=your-agent-id"
-        width="100%"
-        height="600px"
-        frameborder="0">
-</iframe>
-```
+Ensure you have the popup tab selected and copy the "Code Snippet" to your clipboard.
 
-### API Integration
+<Frame>
+  <img 
+    src="/lindy-brand-assets/lindy_embed_popup_code_snippet.png" 
+    alt="Embed settings showing the code snippet to copy for website integration" 
+    style={{ borderRadius: '8px', border: '1px solid #E5E7EB' }}
+  />
+</Frame>
 
-For more advanced integrations, use the Lindy API:
+Paste the code snippet into your website's header.
 
-```javascript
-// Initialize the embed
-const lindyEmbed = new LindyEmbed({
-  agentId: 'your-agent-id',
-  container: '#chat-container',
-  theme: 'dark'
-});
+We offer instructions on how to do so for the most popular platforms:
 
-// Start the chat
-lindyEmbed.start();
-```
+### Webflow
 
-## Customization
+1. Access your Site Settings.
+2. Navigate to "Custom Code".
+3. Paste the Code Snippet at the bottom of your "Head Code" section.
+4. Publish your changes!
 
-### Styling
+### Wix
 
-Customize the appearance to match your brand:
+1. Choose the site you want to embed Lindy on and click Settings.
+2. Scroll down until you see Custom Code.
+3. You will see an option in the top right corner to Add Custom Code.
+4. Click this and paste your Lindy Code Snippet here.
+5. Click Apply.
 
-```css
-/* Custom CSS for the embed */
-.lindy-chat-widget {
-  --primary-color: #E6C147;
-  --background-color: #ffffff;
-  --text-color: #333333;
-  --border-radius: 8px;
-}
-```
+### Squarespace
 
-### Behavior Configuration
+1. Access your Site Settings then click Advanced.
+2. Select Code Injection.
+3. Paste your Lindy Code Snippet into the Header section.
+4. Remember to Save and Publish your changes.
 
-```javascript
-const config = {
-  greeting: "Hello! How can I help you today?",
-  autoStart: false,
-  showTypingIndicator: true,
-  enableFileUpload: true,
-  maxMessageLength: 1000
-};
-```
+### WordPress
+
+1. Install and activate the free Insert Headers and Footers plugin by WPCode.
+2. In your WordPress dashboard, navigate to Code Snippets → Header & Footer.
+3. Paste the Lindy Code Snippet into the Header box.
+4. Click Save Changes.
+
+## Embedding Lindy as an iFrame
+
+You can also embed Lindy as an iFrame.
+
+On the Configure Embed Settings modal, select the iFrame tab and copy the code snippet to your clipboard. You can then paste this code anywhere your website builder accepts iFrames.
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/lindy_export_embed_iframe.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+When embedding Lindy as an iFrame, it is important to set the height on the element containing the Embed iFrame.
+
+You can also change the height property of the iFrame itself to a specific pixel value (e.g., 100px, 500px) instead of using "100%".
+
+<Note>
+  When using iFrame embedding, ensure your container element has a defined height. The iFrame will inherit the height of its container, so setting this correctly is crucial for proper display.
+</Note>
 
 ## Best Practices
 
-- **Clear Purpose**: Make it obvious what the agent can help with
-- **Responsive Design**: Ensure the embed works on all device sizes
-- **Loading States**: Provide clear feedback while the agent is loading
-- **Error Handling**: Handle cases where the agent is unavailable
-- **Analytics**: Track usage to improve the agent's performance
-
-## Security Considerations
-
-- **Authentication**: Implement proper authentication if needed
-- **Data Privacy**: Ensure sensitive data is not exposed
-- **Rate Limiting**: Prevent abuse of your embedded agent
-- **Content Filtering**: Filter inappropriate content
-
-## Integration Examples
-
-### E-commerce Support
-
-```html
-<!-- Customer support agent for an e-commerce site -->
-<div id="customer-support-widget"
-     data-agent-id="ecommerce-support-agent"
-     data-context="product-catalog">
-</div>
-```
-
-### Documentation Assistant
-
-```html
-<!-- Help agent for documentation -->
-<iframe src="https://embed.lindy.ai/docs-assistant"
-        data-knowledge-base="product-docs">
-</iframe>
-```
+- **Test on Multiple Devices**: Ensure your embed works well on desktop, tablet, and mobile
+- **Match Your Brand**: Use your brand colors and logo for a cohesive experience
+- **Clear Purpose**: Make the chatbot's purpose obvious through the display name and greeting
+- **Domain Security**: Always specify allowed domains for production sites
+- **Performance**: Monitor loading times and optimize as needed
 
 ## Troubleshooting
 
-### Common Issues
+<AccordionGroup>
+  <Accordion title="Widget not appearing on my website">
+    - Verify the code snippet is placed in the correct location (usually `<head>` section)
+    - Check browser console for JavaScript errors
+    - Ensure your domain matches the domain restriction if set
+    - Clear browser cache and try again
+    - Make sure the Lindy agent is published and active
+  </Accordion>
+  
+  <Accordion title="iFrame height issues">
+    - Set explicit height on the container element
+    - Use pixel values instead of percentages for better control
+    - Test different heights to find optimal size
+    - Consider responsive breakpoints for mobile devices
+  </Accordion>
+  
+  <Accordion title="Styling conflicts">
+    - Use more specific CSS selectors if needed
+    - Consider using the iFrame option for complete style isolation
+    - Check for z-index conflicts with other page elements
+  </Accordion>
+  
+  <Accordion title="Code snippet not copying">
+    - Try using a different browser
+    - Copy the code manually by selecting all text
+    - Ensure JavaScript is enabled in your browser
+    - Check if browser extensions are blocking functionality
+  </Accordion>
+</AccordionGroup>
 
-- **Agent Not Loading**: Check your agent ID and network connectivity
-- **Styling Issues**: Verify your CSS customizations
-- **Performance**: Monitor for slow response times
-- **Mobile Issues**: Test on various mobile devices
+## Next Steps
 
-### Support
-
-If you encounter issues with Lindy Embed:
-1. Check the Lindy documentation
-2. Review your embed configuration
-3. Contact Lindy support with specific error messages
-
-## Related Features
-
-- **Chat with Lindy**: Direct chat interface
-- **Knowledge Base**: Provide context to embedded agents
-- **Analytics**: Track embed performance and usage 
+<CardGroup cols={2}>
+  <Card title="Test Your Embed" href="/building-agents/agent-basics/testing-agents" icon="vial">
+    Test your embedded agent before going live
+  </Card>
+  <Card title="Configure Agent" href="/building-agents/agent-basics/agent-settings" icon="cog">
+    Fine-tune your agent's behavior and responses
+  </Card>
+  <Card title="Add Knowledge" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Enhance your agent with specific knowledge
+  </Card>
+  <Card title="Monitor Performance" href="/testing/monitoring-your-agents" icon="chart-line">
+    Track usage and optimize your embed
+  </Card>
+</CardGroup> 
