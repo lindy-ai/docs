@@ -2,13 +2,13 @@
 title: 'Voice Support'
 icon: 'phone'
 sidebarTitle: 'Voice Support'
-description: 'Voice-enabled customer support with Lindy'
+description: 'Let Lindy answer support calls, consult your knowledge base, and log every interaction.'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +18,120 @@ description: 'Voice-enabled customer support with Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+This inbound flow lets Lindy:
+
+- **Answer** calls on a dedicated number  
+- **Gather** the caller's name and question in natural conversation  
+- **Search** your knowledge base for accurate answers  
+- **Respond** concisely and close the loop  
+- **Record** summaries to Sheets and alert your team in Slack  
+
+You'll find the **Inbound Calling** template in your Lindy dashboard to kick-start the flow.
+
+## Setting Up Your Inbound Call Bot
+
+### Step 1: Provision a Number
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Call Received trigger" />
+</Frame>
+
+1. Click the `Call Received` trigger.  
+2. Purchase or select a unique Lindy Phone number.
+
+### Step 2: Initial Greeting Agent
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Greeting AI agent" />
+</Frame>
+
+AI Agent prompt (summary):
+
+```
+• Ask for the caller's name.
+• Wait for response, then ask how you can help.
+• Keep answers 1-2 sentences.
+• Say goodbye and end call when finished.
+```
+
+### Step 3: Exit to Knowledge Search
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Exit condition" />
+</Frame>
+
+`Exit Condition`: caller has asked a question → proceed to KB search.
+
+### Step 4: Search the Knowledge Base
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Knowledge search" />
+</Frame>
+
+Attach FAQs, booking policies, and troubleshooting docs. Lindy will re-query for each new question.
+
+### Step 5: Document the Call
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Append row and task URL" />
+</Frame>
+
+- `Get Task URL` → store reference link.  
+- `Google Sheets – Append Row` with name, question, answer, outcome, URL.
+
+### Step 6: Team Alert
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Slack alert" />
+</Frame>
+
+Send a Slack message summarizing the call with the task URL.
+
+## Advanced Customizations
+
+| Trick                  | What it does                                                              |
+|------------------------|---------------------------------------------------------------------------|
+| IVR Front Door         | Ask callers to press 1 for sales, 2 for support → branch to different KB. |
+| Call Recording Review  | Save recordings to cloud storage and run sentiment analysis overnight.    |
+| After-Hours Handling   | Use a Condition on call time → route to voicemail prompt after 6 PM.      |
+| Live-Transfer Option   | Offer "Press 0 to speak to a human" and warm-transfer via Twilio.          |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use GPT-4 Turbo">
+    Reduce latency and keep answers coherent on phone calls.
+  </Accordion>
+  
+  <Accordion title="Keep Replies Short">
+    Callers prefer concise answers; avoid reading long policy text aloud.
+  </Accordion>
+  
+  <Accordion title="Log Everything">
+    Sheet + Slack combo creates an instant audit trail for QA.
+  </Accordion>
+  
+  <Accordion title="Update KB Often">
+    Phone agents rely 100% on KB accuracy—refresh weekly.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Smart Support Email" href="/tutorials/smart-support" icon="life-ring">
+    Mirror the same logic in your inbox
+  </Card>
+  <Card title="Outbound Call Bot" href="/tutorials/outbound-calling" icon="paper-plane">
+    Proactively dial warm leads
+  </Card>
+  <Card title="Support Insights" href="/tutorials/support-insights" icon="chart-line">
+    Spot trends in call topics
+  </Card>
+  <Card title="CRM Auto-Log" href="/tutorials/crm-auto-log" icon="database">
+    Attach every call to the right contact
+  </Card>
+</CardGroup>

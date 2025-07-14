@@ -2,13 +2,13 @@
 title: 'Scheduling Assistant'
 icon: 'calendar-range'
 sidebarTitle: 'Scheduling Assistant'
-description: 'Automate meeting scheduling and calendar management with Lindy'
+description: 'Let Lindy negotiate times, send invites, and keep your calendar tidy.'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
       width="600"
       autoPlay
       muted
@@ -17,4 +17,153 @@ description: 'Automate meeting scheduling and calendar management with Lindy'
       style={{ display: 'block', width: '100%', borderRadius: '16px' }}
     />
   </div>
-</div> 
+</div>
+## Quick Overview
+
+Calendly links can feel impersonal. Coordinating times is a hassle. Let Lindy do it for you!
+
+CC Lindy on any thread and she will:
+
+- **Detect** whether a specific time was suggested  
+- **Propose** three slots if none was given  
+- **Book** the meeting on your calendar with full context  
+- **Confirm** with all parties once the invite is sent  
+- **Reschedule** gracefully if plans change  
+
+You can use the [meeting scheduler template](https://chat.lindy.ai/home/?templateId=68755951168421e8baec59fd) to get started.
+
+## Setting Up Your Meeting Scheduler
+
+### Step 1: Configure Lindy Mail
+
+<Frame>
+  <img src="/lindy-brand-assets/meeting-scheduler-trigger.png" alt="Lindy Mail address" />
+</Frame>
+
+1. Open the `Email Received` trigger.  
+2. Copy your unique **Lindy Mail Address**—this is the address you'll CC.  
+
+### Step 2: Understand the Initial Condition
+
+<Frame>
+  <img src="/lindy-brand-assets/meeting-scheduler-condition.png" alt="Condition for time detection" />
+</Frame>
+
+The `Condition` step "Time given or requires a search?" determines what type of scheduling request this is:
+
+**Two paths:**
+
+1. **"CC'ing Lindy to find time:"** When the sender asks Lindy to find available times
+   - Example: "CC'ing Lindy to find time for us to meet on Tuesday"
+
+2. **"User request to book directly":** When a specific date/time is already agreed upon
+   - Example: "Lindy, please book time for us at Thursday the 10th, at 4:00pm PST"
+
+This smart branching ensures Lindy either proposes available times (if none given) OR books the meeting immediately (if time already agreed). The condition prevents Lindy from suggesting times when people have already decided when to meet, making the flow more natural.
+
+
+### Step 3: List Best Times
+
+<Frame>
+  <img src="/lindy-brand-assets/meeting-scheduler-user-preferences.png" alt="List best times" />
+</Frame>
+
+* Action: `Google Calendar – Find available time`
+* In the `Find available time` step, configure your scheduling preferences such as time of day, days of week, working hours, earliest/latest start times, max meetings per day, and which calendars to check for conflicts.
+
+### Step 4: Respond With Times
+
+<Frame>
+  <img src="/lindy-brand-assets/meeting-scheduler-reply.png" alt="Send times email" />
+</Frame>
+
+`Lindy Mail – Send Reply` with body:
+
+```
+Hi {{FIRSTNAME}},
+
+Happy to help schedule! Do any of these work for you? (all times in {{TIMEZONE}})
+
+* Monday, June 21 at 3 PM
+* Tuesday, June 22 at 11 AM
+* Wednesday, June 23 at 1 PM
+
+Best,
+Lindy
+```
+
+### Step 5: Create the Event
+
+<Frame>
+  <img src="/lindy-brand-assets/meeting-scheduler-create-event.png" alt="Create calendar event" />
+</Frame>
+
+- Action: `Google Calendar – Create Event`  
+- Leave most fields on *Auto*; prompt the name/description using email context.  
+- Add a meeting link only if the thread agreed to virtual.
+
+### Step 6: Confirm or Reschedule
+
+<Frame>
+  <img src="/lindy-brand-assets/meeting-scheduler-confirm-event.png" alt="Confirmation email" />
+</Frame>
+
+1. `Lindy Mail – Send Reply` to confirm booking:
+
+```
+Reply with a confirmation that the invite has been sent, the reply should look like this:
+
+“Sounds great, I just sent the invite! Let me know if there is any other way I can be helpful.
+
+--Lindy”
+
+Personalize the email where you see fit based on the general context, but do not vary the response far from the suggested response.
+```
+
+2. Final `Condition` watches for reschedule requests; if true, delete the old event and loop back to Step 3.
+
+## Advanced Customizations
+
+| Trick                 | What it does                                                             |
+|-----------------------|---------------------------------------------------------------------------|
+| Multi-time-zone Logic | Detect the recipient's locale and convert proposed times automatically.  |
+| Round-Robin Calendars | Cycle availability across a team for shared demo inboxes.                |
+| Buffer Windows        | Add min/max gaps between meetings to avoid calendar pile-ups.            |
+| Meeting Type Routing  | Use subject keywords (Demo, Interview, Support) → route to right calendar.|
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Keep Replies Human">
+    Tailor Lindy's email prompts so they match your personal style and brand.
+  </Accordion>
+  
+  <Accordion title="Limit Calendar Scope">
+    Check only relevant calendars to avoid false conflicts or double-booking.
+  </Accordion>
+  
+  <Accordion title="Test First Week">
+    Run in confirmation-only mode until you trust the flow end-to-end.
+  </Accordion>
+  
+  <Accordion title="Respect Time Zones">
+    Always include a clear time-zone label in proposed times and confirmations.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Meeting Prep Brief" href="/tutorials/meeting-prep" icon="clipboard-list">
+    Arrive prepared with attendee intel
+  </Card>
+  <Card title="Meeting Notetaker" href="/tutorials/meeting-notetaker" icon="file-alt">
+    Record and summarize every call
+  </Card>
+  <Card title="Action Item Tracker" href="/tutorials/action-tracker" icon="check">
+    Follow through on meeting commitments
+  </Card>
+  <Card title="Slack Agenda Bot" href="/tutorials/agenda-bot" icon="paper-plane">
+    Auto-post agendas before each meeting
+  </Card>
+</CardGroup>

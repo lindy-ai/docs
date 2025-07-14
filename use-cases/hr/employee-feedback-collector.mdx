@@ -8,7 +8,7 @@ description: 'Automate employee feedback collection and analysis with Lindy'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +18,141 @@ description: 'Automate employee feedback collection and analysis with Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Each week, Lindy will:
+
+- **Email** every employee a 3-question pulse check  
+- **Listen** for their replies and add them to a Google Sheet  
+- **Summarize** themes, sentiment, and standout quotes every Friday  
+- **Send** a concise digest to leadership via Slack or email  
+
+## Building the Flow
+
+### Step 1: Weekly Survey Blast
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Scheduler + email blast" />
+</Frame>
+
+1. `Scheduler – Weekly` → Monday 09:00.  
+2. `Gmail – Send Email`  
+   - **To**: comma-separated employee list (or Google Group).  
+   - **Subject**: `Weekly Pulse – 2-minute check-in 🙌`.  
+   - **Body**:  
+     ```
+     Hi team!
+
+     1) What went well last week?  
+     2) Biggest frustration or blocker?  
+     3) One idea to make next week smoother?
+
+     Reply directly to this email—answers are anonymous in the summary.
+     Thanks!
+     ```
+
+### Step 2: Capture Replies
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Email received trigger" />
+</Frame>
+
+- Trigger: `Gmail – Email Received`  
+- Filter: `subject contains "Weekly Pulse"`.
+
+### Step 3: Log to Google Sheets
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Append row" />
+</Frame>
+
+- Action: `Google Sheets – Append Row`  
+- Columns: Date, RawBody, From (anonymize by storing only domain or alias).
+
+### Step 4: Weekly Digest
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Weekly summary" />
+</Frame>
+
+1. `Scheduler – Weekly` → Friday 16:00.  
+2. `Google Sheets – Read Rows` for current week.  
+3. `AI Agent – Generate Text` prompt:
+
+```
+You have array {{rows}} each with "RawBody".
+
+• Count total responses.
+• Detect overall sentiment (positive / mixed / negative).
+• List top 3 recurring words or phrases (≤4 words each).
+• Quote 2 upbeat lines and 2 concerns (anonymized).
+• Suggest one focus area for next week in ≤12 words.
+
+Format as:
+
+---
+
+🗒️ *Weekly Feedback Digest* (Jun 9–15)
+
+• Responses: 37
+• Sentiment: mixed
+• Top themes: deployment delay, PTO overlap, new dashboard love
+
+"Launch felt smoother than last month!"
+"Staging server kept timing out."
+"Would like clearer PTO calendar."
+"Dashboard update is awesome 👏"
+
+*Focus → reduce staging downtime*
+```
+
+### Step 5: Deliver the Digest
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Slack post" />
+</Frame>
+
+- `Slack – Send Channel Message` to `#leadership-digests` (or `Gmail – Send Email` to execs).  
+- Message body: output from the AI Agent.
+
+<Tip>
+Prefer Slack DMs? Swap Steps 1 & 5 for `Slack – Send Direct Message` to each employee and back to the channel for the digest—the rest of the flow stays the same.
+</Tip>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Keep It Short">
+    Three questions = highest response rates; avoid survey fatigue.
+  </Accordion>
+  
+  <Accordion title="Reinforce Anonymity">
+    Strip names/emails when appending rows so answers stay candid.
+  </Accordion>
+  
+  <Accordion title="Close the Loop">
+    Start Monday stand-up by highlighting one change inspired by the feedback.
+  </Accordion>
+  
+  <Accordion title="Iterate on Prompts">
+    Tweak wording after the first two digests to match team voice and length.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Daily Support Digest" href="/tutorials/support-digest" icon="chart-line">
+    Share customer issues with the same approach
+  </Card>
+  <Card title="Smart Support Email" href="/tutorials/smart-support" icon="life-ring">
+    Let Lindy answer common questions
+  </Card>
+  <Card title="Onboarding Survey" href="/tutorials/onboarding-survey" icon="clipboard-list">
+    Collect feedback from new hires at day 30
+  </Card>
+  <Card title="Retention Dashboard" href="/tutorials/retention-dashboard" icon="chart-pie">
+    Visualize long-term sentiment trends
+  </Card>
+</CardGroup>

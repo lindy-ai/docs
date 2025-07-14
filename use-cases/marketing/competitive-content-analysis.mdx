@@ -8,7 +8,7 @@ description: 'Analyze competitor content and strategies with Lindy'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +18,151 @@ description: 'Analyze competitor content and strategies with Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+With this competitive intelligence flow, Lindy will:
+
+- **Monitor** competitor websites, news, and social media on autopilot
+- **Track** product updates, pricing changes, and new feature launches
+- **Analyze** their content strategy and market positioning
+- **Synthesize** findings into actionable intelligence reports
+- **Alert** your team to threats and opportunities as they emerge
+
+Set it up once and get continuous competitive intelligence delivered to your inbox.
+
+## Setting Up Your Research Flow
+
+### Step 1: Define Competitors & Triggers
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Competitor list setup" />
+</Frame>
+
+1. Create a Google Sheet with columns: Company, Domain, LinkedIn, Twitter, Blog URL
+2. Add two triggers:
+   - `Chat Message Received` to add new competitors on demand
+   - `Scheduler – Weekly` → Monday 08:00 for regular research runs
+
+### Step 2: Web Monitoring
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Web search configuration" />
+</Frame>
+
+Add a `Loop – For Each` to iterate through competitors, then:
+
+- `Search the Internet` → "company announcement news past week"
+- `Search the Internet` → "company funding product launch"
+- `Web Fetch` → domain/pricing to capture current pricing
+- `Web Fetch` → blog_url to check for new posts
+
+### Step 3: Social Media Analysis
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Social media monitoring" />
+</Frame>
+
+Within the same loop:
+
+- `Search the Internet` → "site:linkedin.com/company/company posts"
+- `Search the Internet` → "twitter_handle product feature announcement"
+- Look for patterns in job postings: "company hiring senior roles"
+
+Store findings in variables for later synthesis.
+
+### Step 4: Product & Feature Tracking
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Feature comparison matrix" />
+</Frame>
+
+- `Web Fetch` → domain/features or /products page
+- `AI Agent – Extract` to pull out feature lists and capabilities
+- `Google Sheets – Update Row` to maintain feature comparison matrix
+- Add `Condition` to flag if competitor adds features you don't have
+
+### Step 5: Generate Intelligence Report
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="AI report generation" />
+</Frame>
+
+After the loop completes:
+
+- `AI Agent – Generate Text` with prompt:
+
+```
+Using all competitor findings from research_data:
+
+Create an executive intelligence brief with:
+1. Executive Summary (3 bullets)
+2. Key Moves This Week
+   - Major product/feature launches
+   - Pricing or positioning changes
+   - Notable hires or expansions
+3. Emerging Threats (what could impact us)
+4. Opportunities (gaps we could exploit)
+5. Recommended Actions (3-5 specific steps)
+
+Keep it scannable with bullet points and bold key insights.
+```
+
+### Step 6: Distribute & Archive
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Report distribution" />
+</Frame>
+
+- `Slack – Send Channel Message` to #competitive-intel with summary
+- `Gmail – Send Email` full report to leadership team
+- `Google Docs – Create Document` to archive the full report
+- `Knowledge Base – Add Document` for future reference
+- `Google Sheets – Append Row` with date, key findings, action items
+
+## Advanced Customizations
+
+| Feature | What it does |
+|---------|--------------|
+| Review Mining | Analyze competitor reviews on G2/Capterra for pain points |
+| Patent Monitoring | Search USPTO for new filings in your space |
+| Executive Tracking | Alert when key leaders join/leave competitors |
+| Campaign Detection | Flag new marketing campaigns or messaging pivots |
+| Pricing History | Track pricing changes over time with charts |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Focus on Actionable Intel">
+    Skip vanity metrics; prioritize insights that could change your strategy.
+  </Accordion>
+  
+  <Accordion title="Verify Major Claims">
+    Add a human review step for big news before sharing widely.
+  </Accordion>
+  
+  <Accordion title="Respect Legal Boundaries">
+    Monitor only public information; never attempt to access private data.
+  </Accordion>
+  
+  <Accordion title="Track Trends Over Time">
+    Weekly snapshots build into powerful trend analysis after 3-6 months.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Market Trend Analyzer" href="/tutorials/market-trends" icon="chart-line">
+    Expand beyond competitors to full market intelligence
+  </Card>
+  <Card title="Social Listening Bot" href="/tutorials/social-listening" icon="ear-listen">
+    Monitor brand mentions and sentiment
+  </Card>
+  <Card title="Content Gap Finder" href="/tutorials/content-gaps" icon="magnifying-glass">
+    Identify topics competitors miss
+  </Card>
+  <Card title="Win/Loss Analyzer" href="/tutorials/win-loss" icon="trophy">
+    Track why deals go to competitors
+  </Card>
+</CardGroup>

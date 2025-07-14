@@ -8,7 +8,7 @@ description: 'Automated HR help desk for employee support with Lindy'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +18,159 @@ description: 'Automated HR help desk for employee support with Lindy'
     />
   </div>
 </div>
+
+Here's an Employee Help Desk tutorial in the same format:
+
+## Quick Overview
+
+Turn any Slack channel into a smart help desk where Lindy:
+
+- **Monitors** employee questions in designated help channels
+- **Searches** your knowledge base (policies, FAQs, benefits docs)
+- **Answers** common questions instantly with accurate information
+- **Escalates** complex issues to HR or IT with full context
+- **Tracks** frequently asked questions to improve documentation
+
+You'll find the **Employee Help Desk** template in your Lindy dashboard to kick-start the flow.
+
+## Setting Up Your Employee Help Desk
+
+### Step 1: Connect Slack Channel
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Connect Slack workspace" />
+</Frame>
+
+1. Select `Slack Message Received` as the trigger
+2. Choose your help channel (e.g., #ask-hr, #it-help, #general-questions)
+3. Enable "Filter events on this trigger" 
+4. Add filter: Message does NOT contain "from: Lindy" (to avoid loops)
+
+### Step 2: Set Up Your Knowledge Base
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Configure knowledge base" />
+</Frame>
+
+Upload your company resources:
+- Employee handbook PDF
+- Benefits documentation
+- IT setup guides
+- Office policies
+- Expense procedures
+- PTO policies
+
+Click `Knowledge Base` and select the folder containing these documents.
+
+### Step 3: Categorize the Question
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Question categorization" />
+</Frame>
+
+Add a `Condition` node to route questions:
+
+```
+Categorize this as: HR, IT, Finance, Facilities, or General
+Question: {{slack_message}}
+```
+
+This helps with routing and analytics later.
+
+### Step 4: Search for Answers
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Knowledge base search" />
+</Frame>
+
+Add `Search Knowledge Base` action:
+- Query: `{{slack_message}}`
+- Max results: 3
+- Include relevance scores
+
+### Step 5: Generate Response
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="AI response generation" />
+</Frame>
+
+Add `AI Agent - Generate Text`:
+
+```
+You are a helpful employee assistant. Using the knowledge base results, answer this question:
+{{slack_message}}
+
+If found in knowledge base: Provide a clear, friendly answer with the specific policy reference.
+If NOT found: Say "I don't have that information, but I've flagged this for the {{category}} team."
+
+Keep responses under 200 words. Use bullet points for clarity.
+```
+
+### Step 6: Reply in Thread
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Slack thread reply" />
+</Frame>
+
+Use `Slack - Send Message`:
+- Channel: `{{trigger_channel}}`
+- Thread: `{{message_ts}}` (keeps channel tidy)
+- Message: `{{ai_response}}`
+
+### Step 7: Handle Escalations
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Escalation routing" />
+</Frame>
+
+Add a `Condition`: If knowledge base found no results
+- `Slack - Send DM` to relevant team lead
+- Include original question + employee name
+- Create support ticket in your HRIS/ticketing system
+
+## Advanced Features
+
+| Feature | What it does |
+|---------|--------------|
+| Multi-language Support | Detect language and respond in Spanish, Mandarin, etc. |
+| Anonymous Questions | DM Lindy for sensitive HR questions |
+| Office Hours Mode | Auto-escalate outside 9-5 to on-call staff |
+| Feedback Reactions | Track 👍👎 to improve responses |
+| Weekly FAQ Digest | Email top 10 questions to improve docs |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Keep Knowledge Fresh">
+    Schedule monthly reviews of your knowledge base. Outdated benefits info is worse than no info.
+  </Accordion>
+  
+  <Accordion title="Set Clear Boundaries">
+    Add a footer: "For urgent or sensitive matters, please contact HR directly at hr@company.com"
+  </Accordion>
+  
+  <Accordion title="Monitor Unanswered Questions">
+    Weekly review questions Lindy couldn't answer to expand your knowledge base.
+  </Accordion>
+  
+  <Accordion title="Respect Privacy">
+    Never store salary discussions or health queries. Route these directly to HR.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Onboarding Assistant" href="/tutorials/onboarding-bot" icon="user-plus">
+    Guide new hires through their first week
+  </Card>
+  <Card title="PTO Tracker" href="/tutorials/pto-tracker" icon="calendar-check">
+    Automate time-off requests and approvals
+  </Card>
+  <Card title="Expense Bot" href="/tutorials/expense-bot" icon="receipt">
+    Process expense reports via Slack
+  </Card>
+  <Card title="IT Ticket Router" href="/tutorials/it-ticket-router" icon="computer">
+    Auto-create and assign IT support tickets
+  </Card>
+</CardGroup>

@@ -1,14 +1,14 @@
 ---
 title: 'Lead Enrichment'
-icon: 'user-plus'
+icon: 'address-card'
 sidebarTitle: 'Lead Enrichment'
-description: 'Enrich leads with comprehensive data using Lindy'
+description: 'Turn raw names and emails into fully enriched, ready-to-sell prospects.'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +18,127 @@ description: 'Enrich leads with comprehensive data using Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Drop a lead's basic details into Google Sheets and let Lindy:
+
+- **Pull** firmographics & contact data (People Data Labs)  
+- **Locate** each prospect's LinkedIn URL  
+- **Scrape** recent roles and socials  
+- **Fetch** news, funding, and buying signals (Perplexity)  
+- **Write** everything back into clean, structured columns  
+
+You'll find the **Lead Enrichment** template in your Lindy dashboard to kick-start the flow.
+
+## Setting Up Your Lead Enrichment Flow
+
+### Step 1: Add a New Row Trigger
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Sheet trigger" />
+</Frame>
+
+1. Choose `Google Sheets – New Row Added` as the trigger.  
+2. Make sure the sheet has `Full Name` and `Email` (or `Company`).  
+3. Optional: add empty columns like `LinkedIn URL`, `Funding`, `Recent News`, `HQ City`.
+
+### Step 2: Fetch Core Contact & Firmographics
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="People Data Labs action" />
+</Frame>
+
+- Action: `People Data Labs – Enrich Person`  
+- Maps `Full Name` + `Email` → returns job title, company, phone, etc.  
+- Save outputs to matching columns (e.g., `Job Title`, `Work Phone`).
+
+### Step 3: Find LinkedIn & Socials
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Search LinkedIn" />
+</Frame>
+
+Use `Search the Internet` with this query:
+
+```
+
+site\:linkedin.com/in {{Full Name}} current {{Company}}
+
+```
+
+Store the result in `LinkedIn URL`. Repeat with Twitter, GitHub, or others as needed.
+
+### Step 4: Surface News & Funding Signals
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Perplexity research" />
+</Frame>
+
+- Action: `Perplexity Search` (model = Sonar Lite or Sonar Reasoning Pro)  
+- Prompt:
+
+```
+
+Recent funding rounds, press releases, or big hires for {{Company}} in the last 12 months.
+
+```
+
+- Write a one-line summary to `Recent News` and add the amount to `Funding`.
+
+### Step 5: Write Back to the Sheet
+
+<Frame>
+<img src="/lindy-brand-assets/placeholder.png" alt="Update row" />
+</Frame>
+
+- Action: `Google Sheets – Update Row`  
+- Lookup Column: `Email` or `Full Name`  
+- Row Number: `{{trigger.rowNumber}}` to guarantee the same row  
+- Map every new datapoint to its matching header.
+
+## Advanced Customizations
+
+| Trick               | What it does                                                                                         |
+|---------------------|-------------------------------------------------------------------------------------------------------|
+| Parallel Model Swap | Use Sonar Reasoning Pro for enterprise leads, Lite for SMBs to save tokens.                           |
+| Daily Signal Sweep  | Scheduler → Perplexity → update `Recent News` so reps never miss breaking events.                    |
+| De-dup Guard        | If a lead already exists, enrich only empty fields to preserve hand-curated data.                     |
+| Opportunity Score   | Calculate a `leadScore` column and auto-route hot prospects to your A-team.                           |
+
+## Best Practices
+
+<AccordionGroup>
+<Accordion title="Mind API Costs">
+  People Data Labs charges per contact—limit calls to net-new leads.
+</Accordion>
+
+<Accordion title="Validate Emails">
+  Run an SMTP or ZeroBounce check before sequencing to cut bounces.
+</Accordion>
+
+<Accordion title="Keep Columns Atomic">
+  One datapoint per column → cleaner pivots and dashboards.
+</Accordion>
+
+<Accordion title="Respect Compliance">
+  Store only necessary PII and honor all GDPR/CCPA opt-outs.
+</Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+<Card title="Outbound Sequencer" href="/tutorials/outbound-sequencer" icon="envelope-open-text">
+  Fire personalized sequences instantly
+</Card>
+<Card title="Opportunity Scoring" href="/tutorials/opportunity-scoring" icon="bullseye">
+  Rank prospects by win probability
+</Card>
+<Card title="Meeting Prep Brief" href="/tutorials/meeting-brief" icon="file-alt">
+  Auto-generate call briefs before demos
+</Card>
+<Card title="Signal Monitor" href="/tutorials/signal-monitor" icon="rss">
+  Track funding & hiring events in real time
+</Card>
+</CardGroup>

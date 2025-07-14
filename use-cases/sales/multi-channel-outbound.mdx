@@ -8,7 +8,7 @@ description: 'Execute multichannel outbound campaigns with Lindy'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +18,131 @@ description: 'Execute multichannel outbound campaigns with Lindy'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Let Lindy act as a self-learning SDR that:
+
+- **Triggers** when a new lead appears in Sheets or Task view  
+- **Crafts** personalized first-touch emails (and texts if the lead has opted in)  
+- **Waits** a set interval, then follows up with added value  
+- **Calls** qualified leads by phone to book meetings  
+- **Alerts** you the moment a lead replies—or after the full cadence with no response  
+
+You'll find the **Lead Outreacher** template in your Lindy dashboard to kick-start the flow.
+
+## Setting Up Your Outbound Flow
+
+### Step 1: Lead Trigger
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="New Row trigger and task message" />
+</Frame>
+
+1. Add both `Google Sheets – New Row Added` *and* `Message Received` triggers.  
+2. Paste your Sheet URL in the trigger settings.  
+3. Optional: upload a CSV or DM Lindy in Task view to start ad-hoc outreach.
+
+### Step 2: Enrich the Lead (Optional)
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Enrich lead data" />
+</Frame>
+
+- Insert `People Data Labs – Enrich Person` or a `Lead Enrichment` sub-flow.  
+- More context → better personalization and reply rates.
+
+### Step 3: Send First-Touch Email / SMS
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="First outreach email" />
+</Frame>
+
+- Action: `Gmail – Send Email`  
+- **Ask for Confirmation** toggle if you need human approval.  
+- Body prompt:  
+```
+Write a personalized email using sheet data (Name, Title, Company).
+Keep it friendly, <120 words, end with a clear CTA.
+```
+- If the lead provided an opted-in mobile number, add `Twilio – Send SMS` with a shorter variant.
+
+### Step 4: Wait, Then Follow-Up
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Wait action" />
+</Frame>
+
+- Action: `Wait – For Minutes` set to 4320 (three days).  
+- Add `Gmail – Send Reply` for follow-up #1.  
+- Repeat Wait + Reply as many times as needed.
+
+### Step 5: Make an Outbound Call (Optional)
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Outbound phone call" />
+</Frame>
+
+- Action: `Lindy Phone – Make Outbound Call`  
+- `To` field prompt:  
+```
+use the phone number from the lead row
+```
+- Inside, an `AI Agent` books a consultation or leaves voicemail.  
+- **Opt-in compliance**: only call if `Opt-In` column = `Yes`.
+
+### Step 6: Alert & Exit
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Slack alert" />
+</Frame>
+
+- If the lead replies at any point → `Slack – Send DM` with interest level + task URL.  
+- If cadence finishes with no reply → different Slack alert so you can decide next steps.
+
+## Advanced Customizations
+
+| Trick                     | What it does                                                         |
+|---------------------------|-----------------------------------------------------------------------|
+| A/B Subject Testing       | Randomize two subjects, log open rates to Sheets.                     |
+| Channel Rotation          | Email → SMS → Call sequence or any order you define.                  |
+| Intent Detection          | Use sentiment to shorten cadence if interest is "cold."              |
+| Auto-CRM Update           | Create/advance deals in HubSpot or Salesforce when engagement occurs.|
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Respect Opt-In">
+    Only text or call leads who explicitly consented; store opt-in status in your sheet.
+  </Accordion>
+  
+  <Accordion title="Throttle Volume">
+    Limit to 10 new leads per 10 min to avoid Gmail or Twilio rate limits.
+  </Accordion>
+  
+  <Accordion title="Personalize Deeply">
+    Use company news or role-specific pain points in each touch.
+  </Accordion>
+  
+  <Accordion title="Monitor Deliverability">
+    Track bounce rates and adjust sending domains or phone numbers as needed.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Lead Enrichment" href="/tutorials/lead-enrichment" icon="address-card">
+    Auto-research every new prospect
+  </Card>
+  <Card title="Email Negotiator" href="/tutorials/email-negotiator" icon="handshake">
+    Let Lindy close deals in your inbox
+  </Card>
+  <Card title="Call Coach" href="/tutorials/call-coach" icon="phone">
+    Analyze call recordings for objection handling
+  </Card>
+  <Card title="CRM Auto-Log" href="/tutorials/crm-auto-log" icon="database">
+    Sync every touch to your pipeline
+  </Card>
+</CardGroup>
+
