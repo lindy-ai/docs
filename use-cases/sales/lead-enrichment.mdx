@@ -5,22 +5,26 @@ sidebarTitle: 'Lead Enrichment'
 description: 'Turn raw names and emails into fully enriched, ready-to-sell prospects.'
 ---
 
-<Frame>
-  <video
-    src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
-    autoPlay
-    muted
-    loop
-    playsInline
-  />
-</Frame>
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
 ## Quick Overview
 
-Drop a lead’s basic details into Google Sheets and let Lindy:
+Drop a lead's basic details into Google Sheets and let Lindy:
 
 - **Pull** firmographics & contact data (People Data Labs)  
-- **Locate** each prospect’s LinkedIn URL  
+- **Locate** each prospect's LinkedIn URL  
 - **Scrape** recent roles and socials  
 - **Fetch** news, funding, and buying signals (Perplexity)  
 - **Write** everything back into clean, structured columns  

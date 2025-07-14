@@ -4,16 +4,415 @@ icon: 'pen-to-square'
 sidebarTitle: 'Prompt Guide'
 ---
 
+Master the art of crafting effective prompts to create powerful, reliable AI agents with clear instructions and optimal performance.
+
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="/videos/triggers.mp4"
+      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
       width="600"
       autoPlay
       muted
       loop
       playsInline
-      style={{ display: 'block', width: '100%' }}
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
     />
   </div>
 </div>
+
+## Quick Overview
+
+Effective prompting is the foundation of building successful Lindy agents. Well-crafted prompts ensure your agents understand their tasks, execute actions accurately, and maintain consistency across all interactions.
+
+Key benefits of mastering prompts:
+- **Precise execution** - Agents perform exactly what you intend with clear, unambiguous instructions
+- **Consistent behavior** - Maintain reliable performance across different scenarios and contexts
+- **Efficient processing** - Reduce errors and iterations with well-structured prompts
+- **Better outputs** - Get formatted, relevant responses that meet your exact requirements
+- **Scalable automation** - Build agents that handle edge cases and complex workflows
+
+
+## Where to Prompt in Lindy
+
+Lindy provides three key areas where you can add prompts, each serving a specific purpose in your automation workflow.
+
+### 1. Agent-Level Settings
+
+These are overarching instructions that Lindy keeps in mind throughout the entire automation process. They're added as a prefix to every LLM call made by this agent.
+
+```
+You are an AI assistant for a marketing agency. Always maintain 
+a professional tone and focus on marketing-related tasks.
+```
+
+<Tip>
+  Agent-level prompts are perfect for setting personality, tone, domain expertise, and consistent behavior patterns across all actions.
+</Tip>
+
+### 2. Action Parameters
+
+Specific instructions for completing particular fields within actions. These provide precise control over individual steps in your workflow.
+
+```
+Extract the customer's name and email address from the following text, 
+formatting them as 'Name: [name], Email: [email]'
+```
+
+### 3. AI Agent Actions
+
+When next steps are uncertain or highly variable, AI Agents use broad guidelines and skills to determine the best course of action.
+
+```
+You are a customer service agent. Your goal is to resolve customer 
+inquiries efficiently while maintaining a friendly tone. Choose the 
+appropriate skill based on the customer's needs.
+```
+
+
+## Core Prompting Principles
+
+### Be Direct and Specific
+
+Skip pleasantries and ambiguous language. Lindy executes direct commands most effectively.
+
+<Tabs>
+  <Tab title="❌ Ineffective">
+    ```
+    Could you please try to find the customer's email address 
+    somewhere in the message if possible?
+    ```
+  </Tab>
+  <Tab title="✅ Effective">
+    ```
+    Extract the customer email address from the message body.
+    ```
+  </Tab>
+</Tabs>
+
+### Use Action-Oriented Language
+
+Prefer imperative verbs ("do") over passive suggestions ("don't").
+
+<Tabs>
+  <Tab title="❌ Passive">
+    ```
+    The response shouldn't be too long and try not to include 
+    technical jargon that might confuse the customer.
+    ```
+  </Tab>
+  <Tab title="✅ Active">
+    ```
+    Write a concise response under 100 words. Use simple, 
+    non-technical language.
+    ```
+  </Tab>
+</Tabs>
+
+### Define Clear Personas
+
+Give Lindy a clear role and expertise level for consistent responses.
+
+```
+You are an expert B2B sales professional with 10 years of experience 
+in SaaS. Craft compelling follow-up emails that include a strong hook 
+and clear call-to-action (CTA). All communication should be 
+conversational yet professional.
+```
+
+### Step-by-Step Instructions
+
+Break down complex tasks into simple, sequential steps, guiding Lindy through each part of the process.
+
+```
+1. Analyze the webpage text
+2. Identify all open job openings
+3. Qualify the job openings, selecting only those that are remote positions
+4. Format the results as a bulleted list with job title and location
+```
+
+
+## Advanced Prompting Techniques
+
+### 1. Chain of Thought (CoT)
+
+Guide Lindy through complex reasoning by breaking down the thinking process.
+
+```
+Analyze this support ticket step by step:
+1. First, identify the customer's primary issue
+2. Then, check if it matches any known problems in our knowledge base
+3. If yes, provide the solution. If no, escalate to human support
+4. Finally, categorize the ticket type for reporting
+```
+
+### 2. Few-Shot Examples
+
+Provide examples to demonstrate the exact format and style you want.
+
+```
+Categorize emails using these examples:
+
+Email: "Your invoice is attached" → Category: Billing
+Email: "How do I reset my password?" → Category: Support
+Email: "Interested in enterprise pricing" → Category: Sales
+
+Now categorize this email: {{email_body}}
+```
+
+### 3. Output Formatting
+
+Specify exact output structure for consistent, parseable results.
+
+```
+Format your response as JSON:
+{
+  "customer_name": "[extracted name]",
+  "sentiment": "[positive/negative/neutral]",
+  "priority": "[high/medium/low]",
+  "summary": "[one sentence summary]"
+}
+```
+
+### 4. Constraints and Boundaries
+
+Set clear limits to prevent unwanted behaviors.
+
+```
+Reply to customer inquiries following these rules:
+- Maximum 150 words per response
+- Never share internal pricing calculations
+- Only discuss products listed in the knowledge base
+- If asked about competitors, redirect to our strengths
+- Always include one relevant help article link
+```
+
+### 5. Context Injection
+
+Reference available data and previous interactions.
+
+```
+Using the customer's purchase history from {{hubspot_contact_data}} 
+and their last 3 support tickets, personalize your response to 
+acknowledge their loyalty and address their specific product usage.
+```
+
+### 6. Conditional Logic
+
+Build prompts that adapt based on input conditions.
+
+```
+If the email sentiment is negative:
+  - Start with an empathy statement
+  - Offer immediate assistance
+  - Escalate to supervisor if requested
+
+If the email sentiment is positive:
+  - Thank them for their feedback
+  - Ask for a review or testimonial
+  - Suggest relevant add-on products
+```
+
+### 7. Error Handling
+
+Anticipate edge cases and provide fallback instructions.
+
+```
+Extract the order number from the email.
+
+If no order number is found:
+- Check for alternative identifiers (invoice #, reference #)
+- If still not found, ask the customer to provide it
+- Log this as "missing_order_number" for follow-up
+```
+
+
+## Essential Prompting Elements
+
+### Include References
+
+If your task is based on a template or previous example, instruct Lindy to use the same language or structure. Leverage Lindy's ability to maintain context throughout the workflow by referencing data from prior steps.
+
+<Frame>
+  <img 
+    src="/lindy-brand-assets/reference_previous_steps_in_prompts.png" 
+    alt="Referencing previous steps in prompts"
+    style={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+  />
+</Frame>
+
+### Keywords and Phrases
+
+Incorporate essential words to emphasize important aspects and priorities:
+
+- "Your task is..."
+- "You MUST..."
+- "It is crucial that..."
+- "You will be penalized if..."
+
+### Use Delimiters Effectively
+
+Delimiters organize information and reduce ambiguity:
+
+- Triple quotes: `"""example text"""`
+- Triple backticks: ` ```example text``` `
+- Triple dashes: `---example text---`
+- XML-like tags: `<example>example text</example>`
+- Hashtags: `###example text###`
+
+### Consistency is Key
+
+Instruct Lindy to maintain the flow and style of writing from previous steps in the workflow or examples you have added to the prompt. This ensures a cohesive output across the entire process.
+
+### Clear Formatting
+
+Separate instructions with line breaks for clarity. This visual organization helps Lindy process information more effectively.
+
+```
+First instruction here.
+
+Second instruction here.
+
+Third instruction here.
+```
+
+### Enhance Specificity
+
+Provide complete information for tasks that require detailed responses or actions. Context is crucial for accurate results.
+
+```
+When responding to customer support tickets, consider:
+- Customer tier (Free/Pro/Enterprise)
+- Previous support history
+- Product features they have access to
+- Time zone and business hours
+```
+
+### Edit for Clarity
+
+Every word matters! Proofread your prompts for grammar, punctuation, and vocabulary to ensure they are clear and consistent. Ambiguity can lead to unexpected results.
+
+<Tabs>
+  <Tab title="❌ Ambiguous">
+    ```
+    Process the data and send it to the right place based on what 
+    type it is and who needs it
+    ```
+  </Tab>
+  <Tab title="✅ Clear">
+    ```
+    Categorize incoming data by type (sales/support/billing). 
+    Route sales data to CRM, support tickets to helpdesk, and 
+    billing queries to finance team.
+    ```
+  </Tab>
+</Tabs>
+
+
+## Common Patterns
+
+### The CLEAR Framework
+
+- **Context**: Set the scene and role
+- **Length**: Specify output constraints
+- **Examples**: Show desired format
+- **Action**: Define specific task
+- **Rules**: List must-follow guidelines
+
+### The SPECIFIC Method
+
+- **Situation**: Describe the scenario
+- **Persona**: Define who Lindy represents
+- **Explicit Instructions**: Clear step-by-step actions
+- **Constraints**: What NOT to do
+- **Input Format**: Expected data structure
+- **Format Output**: Desired response structure
+- **Include Examples**: Show ideal outcomes
+- **Conditions**: If-then scenarios
+
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with simple prompts and iterate">
+    Begin with basic instructions and add complexity as you test. Monitor agent behavior and refine based on actual outputs.
+  </Accordion>
+  
+  <Accordion title="Use consistent terminology">
+    Define key terms once and use them consistently. If you call it "customer" in one place, don't switch to "client" elsewhere.
+  </Accordion>
+  
+  <Accordion title="Test with edge cases">
+    Try unusual inputs, empty fields, and unexpected formats. Build prompts that handle these gracefully.
+  </Accordion>
+  
+  <Accordion title="Leverage available context">
+    Reference trigger data, previous actions, and knowledge base content. The more context, the better the response.
+  </Accordion>
+  
+  <Accordion title="Version and document changes">
+    Keep track of prompt iterations and why changes were made. This helps troubleshooting and team collaboration.
+  </Accordion>
+  
+  <Accordion title="Balance specificity with flexibility">
+    Be specific enough to get consistent results but flexible enough to handle variations in input.
+  </Accordion>
+</AccordionGroup>
+
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Agent provides inconsistent responses">
+    - Add more specific examples
+    - Define clearer boundaries and constraints
+    - Check for conflicting instructions between agent-level and action-level prompts
+  </Accordion>
+  
+  <Accordion title="Output format varies">
+    - Use structured formats (JSON, markdown)
+    - Provide exact templates to follow
+    - Add validation rules for critical fields
+  </Accordion>
+  
+  <Accordion title="Agent misses important information">
+    - Make extraction instructions more explicit
+    - Add fallback searches for alternative formats
+    - Use step-by-step extraction logic
+  </Accordion>
+  
+  <Accordion title="Responses are too verbose or too brief">
+    - Set specific word/character limits
+    - Provide length examples
+    - Use "concise" or "detailed" qualifiers appropriately
+  </Accordion>
+  
+  <Accordion title="Agent doesn't follow conditional logic">
+    - Simplify conditions to be mutually exclusive
+    - Use clear if-then-else structures
+    - Test each condition path separately
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  Remember that prompts in action parameters override agent-level prompts for that specific field. Ensure they complement rather than contradict each other.
+</Warning>
+
+
+## Next Steps
+
+Now that you understand effective prompting, enhance your agents with these related concepts:
+
+<CardGroup cols={2}>
+  <Card title="AI Agents" href="/fundamentals/lindy-101/ai-agents" icon="robot">
+    Build intelligent agents using your prompting skills
+  </Card>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Combine prompts with knowledge retrieval for smarter responses
+  </Card>
+  <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="network-wired">
+    Use prompts in conditional logic for dynamic workflows
+  </Card>
+  <Card title="Testing Agents" href="/building-agents/agent-basics/testing-agents" icon="vial">
+    Test and refine your prompts with real scenarios
+  </Card>
+</CardGroup>

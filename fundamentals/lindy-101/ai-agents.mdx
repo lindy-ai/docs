@@ -7,13 +7,267 @@ sidebarTitle: 'AI Agents'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="/videos/triggers.mp4"
+      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
       width="600"
       autoPlay
       muted
       loop
       playsInline
-      style={{ display: 'block', width: '100%' }}
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
     />
   </div>
 </div>
+
+## Quick Overview
+
+AI Agents are autonomous components that can make decisions and execute skills based on guidelines you provide. Unlike fixed workflows, they adapt to uncertain situations by choosing which actions to take and when. While powerful, they're more expensive and introduce variability compared to standard actions and conditions.
+
+Key characteristics:
+- **Autonomous decision-making** - Agents decide which skills to use and when
+- **Flexible execution** - Adapt to unexpected scenarios and data
+- **Skill-based actions** - Execute multiple capabilities as needed
+- **Guideline-driven** - Follow broad instructions rather than rigid steps
+- **Loop until complete** - Continue working until exit conditions are met
+
+<Warning>
+AI Agents are powerful but more expensive and potentially less reliable than standard actions. Use them only when the next steps are truly uncertain. When possible, use actions and conditions instead.
+</Warning>
+
+
+## Understanding AI Agent Components
+
+AI Agents consist of five essential parts that work together:
+
+### 1. Prompt
+The core instructions that guide your agent's behavior. Think of this as the agent's mission statement - what it should accomplish and how.
+
+### 2. Model
+The AI model (e.g., GPT-4, Claude) that powers the agent's decision-making capabilities.
+
+### 3. Ask for Confirmation
+Optional human-in-the-loop feature that requires approval before the agent executes certain actions.
+
+### 4. Skills
+The actions and capabilities available to the agent. These are the tools it can use to accomplish its goals.
+
+### 5. Exit Conditions
+Criteria that tell the agent when its task is complete and it should proceed to the next workflow step.
+
+
+## Creating Your First AI Agent
+
+Let's build an AI Agent that researches email senders and creates CRM contacts. This example demonstrates the power of adaptive intelligence in uncertain scenarios.
+
+### Step 1: Create a New Workflow
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-new-lindy.png" alt="IMAGE NEEDED: Screenshot of clicking 'New Lindy' button in the workspace" />
+</Frame>
+
+Click **New Lindy** in your workspace to begin building your AI agent workflow.
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-start-from-scratch.png" alt="IMAGE NEEDED: Screenshot of 'Start from scratch' option" />
+</Frame>
+
+Select "Start from scratch" to create a new agent.
+
+### Step 2: Add a Trigger
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-select-trigger.png" alt="IMAGE NEEDED: Screenshot showing trigger selection with Gmail highlighted" />
+</Frame>
+
+1. Click "Select Trigger"
+2. Choose **Gmail**
+3. Add the **Email Received** trigger
+4. Connect your Gmail account
+
+### Step 3: Add the AI Agent Step
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-add-step.png" alt="IMAGE NEEDED: Screenshot of clicking 'Enter AI agent' option when adding a step" />
+</Frame>
+
+Click the plus button and select "Enter AI agent" to add the AI Agent step.
+
+
+## Configuring Your AI Agent
+
+### Setting the Agent Prompt
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-prompt-field.png" alt="IMAGE NEEDED: Screenshot of AI Agent configuration panel showing the prompt field" />
+</Frame>
+
+Add clear instructions for your agent. Example prompt:
+
+```
+Use what you know about the emailer to find their:
+- Company name
+- Company founding date
+- Company headcount
+- LinkedIn profile URL
+
+Research thoroughly using web searches and compile accurate information.
+```
+
+### Adding Skills
+
+Skills are the actions your agent can perform. Click the plus button beside "Skills" to add capabilities.
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-add-skills.png" alt="IMAGE NEEDED: Screenshot showing the skills section with + button highlighted" />
+</Frame>
+
+For our research agent, add:
+- **Web Search** - Find relevant pages
+- **Extract Web Content** - Read and analyze page content
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-skills-added.png" alt="IMAGE NEEDED: Screenshot showing both web browser skills added to the agent" />
+</Frame>
+
+<Tip>
+Give your agent complementary skills. For research tasks, combining search and content extraction provides comprehensive capabilities.
+</Tip>
+
+### Defining Exit Conditions
+
+Exit conditions tell your agent when to stop and proceed to the next workflow step.
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-exit-condition.png" alt="IMAGE NEEDED: Screenshot of exit condition field with example text" />
+</Frame>
+
+Example exit condition:
+```
+you completed the research on the emailer
+```
+
+The agent will continue researching until this condition is met.
+
+
+## Adding Follow-up Actions
+
+After the AI Agent completes its task, add actions to use the gathered information.
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-add-hubspot.png" alt="IMAGE NEEDED: Screenshot showing 'Add Step' after AI agent and selecting HubSpot Create Contact" />
+</Frame>
+
+1. Click "Add Step" under the exit condition
+2. Select "Perform an action"
+3. Search for and select **HubSpot Create Contact**
+
+### Configuring Dynamic Fields
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-hubspot-fields.png" alt="IMAGE NEEDED: Screenshot of HubSpot action with fields set to 'Prompt AI' mode" />
+</Frame>
+
+Set fields to "Prompt AI" mode and reference the agent's research:
+- **Contact Email**: `the emailer's email address`
+- **Company Name**: `the company name you found`
+- **LinkedIn URL**: `the LinkedIn profile URL you discovered`
+
+
+## Advanced Configuration
+
+### Multiple Exit Conditions
+
+Add alternative exit paths for different scenarios, like when research fails.
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-multiple-exits.png" alt="IMAGE NEEDED: Screenshot showing multiple exit conditions with different colored paths" />
+</Frame>
+
+1. Click "Add Step" beside your first exit condition
+2. Define a second condition: `attempted to perform all requested research but failed to find all the information`
+3. Add appropriate actions for this path (e.g., send Slack alert)
+
+### Connecting Non-Linear Flows
+
+<Frame>
+  <img src="/lindy-brand-assets/ai-agent-connect-flows.png" alt="IMAGE NEEDED: Screenshot showing dragging the arrow to connect Slack step to HubSpot step" />
+</Frame>
+
+Drag connection arrows to create complex flows where multiple paths can converge.
+
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use AI Agents Sparingly">
+    Only use AI Agents when the next steps are genuinely uncertain. For predictable workflows, use standard actions and conditions for better reliability and lower costs.
+  </Accordion>
+  
+  <Accordion title="Write Clear, Specific Prompts">
+    Provide detailed instructions about what information to find, how to evaluate it, and what constitutes success. Vague prompts lead to inconsistent results.
+  </Accordion>
+  
+  <Accordion title="Choose Appropriate Skills">
+    Give your agent only the skills it needs. Too many options can lead to confusion; too few limit effectiveness.
+  </Accordion>
+  
+  <Accordion title="Define Clear Exit Conditions">
+    Be specific about when the agent should stop. Ambiguous exit conditions can cause infinite loops or premature exits.
+  </Accordion>
+
+  <Accordion title="Test Thoroughly">
+    AI Agents introduce variability. Test with diverse inputs to ensure consistent performance across scenarios.
+  </Accordion>
+</AccordionGroup>
+
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Agent Stuck in Loop">
+    - Check exit conditions are achievable
+    - Ensure skills can gather required information
+    - Add timeout or iteration limits
+  </Accordion>
+  
+  <Accordion title="Inconsistent Results">
+    - Add specific examples to prompts
+    - Use more deterministic models
+    - Add validation after completion
+  </Accordion>
+  
+  <Accordion title="High Costs">
+    - Verify AI Agent is necessary
+    - Limit skills to essentials only
+    - Consider using conditions instead
+  </Accordion>
+  
+  <Accordion title="Skills Not Being Used">
+    - Check skill permissions
+    - Clarify in prompt when to use each skill
+    - Test skills individually first
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+If costs are high or results inconsistent, consider using conditions and standard actions instead of AI Agents.
+</Warning>
+
+
+## Next Steps
+
+Master these related concepts to build more sophisticated automations:
+
+<CardGroup cols={2}>
+  <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="code-branch">
+    Use conditions for predictable branching logic instead of AI Agents
+  </Card>
+  <Card title="Human in the Loop" href="/testing/human-in-the-loop" icon="user-check">
+    Add confirmation steps for critical AI Agent decisions
+  </Card>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Combine AI Agents with knowledge bases for informed decisions
+  </Card>
+  <Card title="Testing Workflows" href="/testing/test-panel" icon="vial">
+    Learn advanced testing strategies for AI Agent workflows
+  </Card>
+</CardGroup>
