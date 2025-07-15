@@ -7,7 +7,7 @@ sidebarTitle: 'Run Code'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/run-code-overview.mp4"
       width="600"
       autoPlay
       muted
@@ -17,3 +17,170 @@ sidebarTitle: 'Run Code'
     />
   </div>
 </div>
+
+## Quick Overview
+
+The Code action lets you run custom Python or JavaScript code directly within your Lindy workflows. It's ideal for tasks like data manipulation, data analysis, API calls, complex calculations, or conditional logic.
+
+Key benefits:
+- **Multi-language support** - Write in Python or JavaScript
+- **Variable integration** - Use outputs from previous steps as variables
+- **Flexible output** - Return results, printed text, or error messages
+- **Rich libraries** - Access to popular data science and utility libraries
+
+## Action Configuration
+
+<Frame>
+  <img src="/lindy-brand-assets/code-language-choices.png" alt="Code action configuration showing language selection, variables, and code editor" />
+</Frame>
+
+### Language Selection
+
+Choose between Python and JavaScript based on your needs:
+- **Python** - Best for data analysis, scientific computing, and complex calculations
+- **JavaScript** - Ideal for web APIs, JSON manipulation, and async operations
+
+### Variables
+
+<Frame>
+  <img src="/lindy-brand-assets/code-variables.png" alt="Variables configuration showing name and value fields with output references" />
+</Frame>
+
+Set up variables to pass data from previous steps into your code:
+- **Name** - The variable name you'll use in your code
+- **Value** - Set to output references from previous steps
+- **Type** - Variable values are always passed as strings
+
+<Warning>
+All variable values are passed as strings. Convert to appropriate types (int, float, etc.) within your code as needed.
+</Warning>
+
+### Code Editor
+
+<Frame>
+  <img src="/lindy-brand-assets/code-editor.png" alt="Code editor showing Python code with variable usage and function definition" />
+</Frame>
+
+Write your code using the variables defined in the previous step. The code editor supports:
+- Syntax highlighting
+- Auto-completion
+- Error detection
+- Multi-line code blocks
+
+## Reference Code Output
+
+<Frame>
+  <img src="/lindy-brand-assets/code-variables-reference.png" alt="Output references showing result, text, and stderr options in subsequent steps" />
+</Frame>
+
+The results of your code action can be used in subsequent steps with three output references:
+
+- **result** - What your code returns (using `return` statement)
+- **text** - Any text printed during execution (stdout)
+- **stderr** - Standard error buffer for debugging
+
+
+## Available Libraries
+
+### Python Libraries
+
+<AccordionGroup>
+  <Accordion title="Data Science & Analytics">
+    - **pandas** (v1.5.3) - Data manipulation and analysis
+    - **numpy** (v1.26.4) - Numerical computing
+    - **scipy** (v1.12.0) - Scientific computing
+    - **scikit-learn** (v1.4.1.post1) - Machine learning
+    - **matplotlib** (v3.8.3) - Plotting and visualization
+    - **seaborn** (v0.13.2) - Statistical visualization
+    - **plotly** (v5.19.0) - Interactive plotting
+    - **bokeh** (v3.3.4) - Web-based visualization
+  </Accordion>
+
+  <Accordion title="Web & API">
+    - **requests** (v2.26.0) - HTTP requests
+    - **aiohttp** (v3.9.3) - Async HTTP client/server
+    - **urllib3** (v1.26.7) - HTTP client library
+    - **beautifulsoup4** (v4.12.3) - Web scraping
+  </Accordion>
+
+  <Accordion title="Text & NLP">
+    - **nltk** (v3.8.1) - Natural language processing
+    - **textblob** (v0.18.0) - Text processing
+    - **spacy** (v3.7.4) - Advanced NLP
+    - **gensim** (v4.3.2) - Topic modeling
+  </Accordion>
+
+  <Accordion title="File & Data Processing">
+    - **openpyxl** (v3.1.2) - Excel file handling
+    - **xlrd** (v2.0.1) - Excel file reading
+    - **python-docx** (v1.1.0) - Word document processing
+    - **xarray** (v2024.2.0) - N-dimensional arrays
+  </Accordion>
+
+  <Accordion title="Media & Image Processing">
+    - **opencv-python** (v4.9.0.80) - Computer vision
+    - **scikit-image** (v0.22.0) - Image processing
+    - **imageio** (v2.34.0) - Image I/O
+    - **librosa** (v0.10.1) - Audio analysis
+    - **soundfile** (v0.12.1) - Audio file I/O
+  </Accordion>
+
+  <Accordion title="Utilities">
+    - **pytz** (v2024.1) - Timezone handling
+    - **joblib** (v1.3.2) - Parallel computing
+    - **tornado** (v6.4) - Web framework
+    - **pytest** (v8.1.0) - Testing framework
+    - **sympy** (v1.12) - Symbolic mathematics
+  </Accordion>
+</AccordionGroup>
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Data Analysis">
+    Process CSV files, calculate statistics, generate reports from your data sources
+  </Accordion>
+  
+  <Accordion title="API Integration">
+    Call external APIs, parse responses, and format data for your workflows
+  </Accordion>
+  
+  <Accordion title="Complex Calculations">
+    Perform mathematical operations, financial calculations, or scientific computations
+  </Accordion>
+  
+  <Accordion title="Data Transformation">
+    Convert between data formats, clean datasets, or restructure information
+  </Accordion>
+
+  <Accordion title="Conditional Logic">
+    Implement complex decision trees and branching logic beyond simple conditions
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<Tip>
+Always handle errors gracefully in your code. Use try-catch blocks and return meaningful error messages.
+</Tip>
+
+<Warning>
+Code execution has timeouts. Keep your code efficient and avoid infinite loops or very long-running operations.
+</Warning>
+
+- **Error handling** - Use try-catch blocks to handle potential failures
+- **Variable validation** - Check variable types and values before processing
+- **Efficient code** - Optimize for performance, especially with large datasets
+- **Clear returns** - Return structured data that's easy to use in subsequent steps
+- **Documentation** - Comment your code for future maintenance
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="AI Actions" href="/building-agents/actions/ai-actions" icon="brain">
+    Combine code with AI for powerful data processing
+  </Card>
+  <Card title="Data Actions" href="/building-agents/actions/data-actions" icon="database">
+    Learn about other data manipulation tools
+  </Card>
+</CardGroup>
