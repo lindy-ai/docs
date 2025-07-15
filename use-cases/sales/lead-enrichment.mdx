@@ -2,143 +2,171 @@
 title: 'Lead Enrichment'
 icon: 'address-card'
 sidebarTitle: 'Lead Enrichment'
-description: 'Turn raw names and emails into fully enriched, ready-to-sell prospects.'
+description: 'Turn raw names and emails into fully enriched, ready-to-sell prospects with LinkedIn profiles and company insights.'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/triggers.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
+<Frame>
+  <video
+    src="https://lindyfiles.nyc3.cdn.digitaloceanspaces.com/lead-enrichment.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+  />
+</Frame>
 
 ## Quick Overview
 
 Drop a lead's basic details into Google Sheets and let Lindy:
 
-- **Pull** firmographics & contact data (People Data Labs)  
-- **Locate** each prospect's LinkedIn URL  
-- **Scrape** recent roles and socials  
-- **Fetch** news, funding, and buying signals (Perplexity)  
-- **Write** everything back into clean, structured columns  
+- **Search** for contact details using People Data Labs
+- **Find** their LinkedIn profile URL through multiple sources
+- **Scrape** full LinkedIn profile data when found
+- **Research** company news, funding, and buying signals
+- **Update** your sheet with all enriched data automatically
 
-You'll find the **Lead Enrichment** template in your Lindy dashboard to kick-start the flow.
+You can use the [lead enrichment template](https://chat.lindy.ai/home/?templateId=687575ad808fe9c345b054cb) to get started.
 
 ## Setting Up Your Lead Enrichment Flow
 
-### Step 1: Add a New Row Trigger
+### Step 1: Configure Your Spreadsheet Trigger
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Sheet trigger" />
+  <img src="/lindy-brand-assets/lead-enrich-trigger.png" alt="New row trigger setup" />
 </Frame>
 
-1. Choose `Google Sheets – New Row Added` as the trigger.  
-2. Make sure the sheet has `Full Name` and `Email` (or `Company`).  
-3. Optional: add empty columns like `LinkedIn URL`, `Funding`, `Recent News`, `HQ City`.
+1. Select `Google Sheets – New Row Added` as your trigger
+2. Connect your spreadsheet with columns for:
+   - Full Name (required)
+   - Company
+   - Role
+   - Email
+   - LinkedIn URL
+   - Background
+   - Company News
+3. Paste your spreadsheet link in the trigger settings
 
-### Step 2: Fetch Core Contact & Firmographics
+**Google Sheets integrations always interpret first row as headers.**
+
+### Step 2: Search with People Data Labs
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="People Data Labs action" />
+  <img src="/lindy-brand-assets/lead-enrich-PDL.png" alt="People Data Labs search" />
 </Frame>
 
-- Action: `People Data Labs – Enrich Person`  
-- Maps `Full Name` + `Email` → returns job title, company, phone, etc.  
-- Save outputs to matching columns (e.g., `Job Title`, `Work Phone`).
+Use `People Data Labs – Search for People` action:
 
-### Step 3: Find LinkedIn & Socials
+Recommend limiting results to `2` as each person queried consumes credits.
+
+### Step 3: Double Down on LinkedIn Search
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Search LinkedIn" />
+  <img src="/lindy-brand-assets/lead-enrich-search-internet.png" alt="Search the internet for LinkedIn" />
 </Frame>
 
-Use `Search the Internet` with this query:
+Add `Search the Internet` as a backup method:
 
 ```
-
-site\:linkedin.com/in {{Full Name}} current {{Company}}
-
+site:linkedin.com/in [Full Name] [Company Name]
 ```
 
-Store the result in `LinkedIn URL`. Repeat with Twitter, GitHub, or others as needed.
+This ensures you catch LinkedIn profiles that People Data Labs might miss.
 
-### Step 4: Surface News & Funding Signals
+### Step 4: Check If LinkedIn Was Found
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Perplexity research" />
+  <img src="/lindy-brand-assets/lead-enrich-condition.png" alt="LinkedIn found condition" />
 </Frame>
 
-- Action: `Perplexity Search` (model = Sonar Lite or Sonar Reasoning Pro)  
-- Prompt:
+Add a `Condition` step:
+- **LinkedIn found**: If we have a LinkedIn URL from either search
+- **LinkedIn not found**: If both searches came up empty
 
-```
+This branches your flow based on whether you can scrape LinkedIn data.
 
-Recent funding rounds, press releases, or big hires for {{Company}} in the last 12 months.
-
-```
-
-- Write a one-line summary to `Recent News` and add the amount to `Funding`.
-
-### Step 5: Write Back to the Sheet
+### Step 5: Scrape LinkedIn Profile (If Found)
 
 <Frame>
-<img src="/lindy-brand-assets/placeholder.png" alt="Update row" />
+  <img src="/lindy-brand-assets/lead-enrich-LI.png" alt="LinkedIn profile scraping" />
 </Frame>
 
-- Action: `Google Sheets – Update Row`  
-- Lookup Column: `Email` or `Full Name`  
-- Row Number: `{{trigger.rowNumber}}` to guarantee the same row  
-- Map every new datapoint to its matching header.
+If LinkedIn was found, use `LinkedIn – Get Profile by URL`:
+- Input: The LinkedIn URL from previous steps
+- Extracts: Full work history, skills, education, bio
+- Wait for "After results available" before proceeding
 
-## Advanced Customizations
+### Step 6: Research with Perplexity
 
-| Trick               | What it does                                                                                         |
-|---------------------|-------------------------------------------------------------------------------------------------------|
-| Parallel Model Swap | Use Sonar Reasoning Pro for enterprise leads, Lite for SMBs to save tokens.                           |
-| Daily Signal Sweep  | Scheduler → Perplexity → update `Recent News` so reps never miss breaking events.                    |
-| De-dup Guard        | If a lead already exists, enrich only empty fields to preserve hand-curated data.                     |
-| Opportunity Score   | Calculate a `leadScore` column and auto-route hot prospects to your A-team.                           |
+<Frame>
+  <img src="/lindy-brand-assets/lead-enrich-perplexity.png" alt="Perplexity company research" />
+</Frame>
+
+Use `Search Perplexity` for company intelligence:
+
+```
+Tell me about [Full Name] at [Company Name] and any recent company news, funding, or major initiatives in the last 6 months.
+```
+
+### Step 7: Update Your Spreadsheet
+
+<Frame>
+  <img src="/lindy-brand-assets/lead-enrich-update-row.png" alt="Update spreadsheet row" />
+</Frame>
+
+Use `Google Sheets – Update Row`:
+- Match on the row from `New Row Added` trigger
+- Update all enriched fields:
+  - Full Name (required)
+  - Company
+  - Role
+  - Email
+  - LinkedIn URL
+  - Background
+  - Company News
+
+## Advanced Features
+
+| Feature | What it does |
+|---------|--------------|
+| Bulk Processing | Process group of leads by importing CSV |
+| Duplicate Detection | Check if lead already exists before enriching |
+| Lead Scoring | Calculate score based on seniority and company fit |
+| CRM Sync | Push enriched data directly to HubSpot or Salesforce |
+| Alert on Hot Leads | Slack notification for high-value prospects |
 
 ## Best Practices
 
 <AccordionGroup>
-<Accordion title="Mind API Costs">
-  People Data Labs charges per contact—limit calls to net-new leads.
-</Accordion>
-
-<Accordion title="Validate Emails">
-  Run an SMTP or ZeroBounce check before sequencing to cut bounces.
-</Accordion>
-
-<Accordion title="Keep Columns Atomic">
-  One datapoint per column → cleaner pivots and dashboards.
-</Accordion>
-
-<Accordion title="Respect Compliance">
-  Store only necessary PII and honor all GDPR/CCPA opt-outs.
-</Accordion>
+  <Accordion title="Set Up Your Columns First">
+    Create all output columns in your sheet before starting - Lindy needs them to exist.
+  </Accordion>
+  
+  <Accordion title="Use Email When Possible">
+    People Data Labs works best with email addresses for accurate matching.
+  </Accordion>
+  
+  <Accordion title="Monitor API Usage">
+    Both People Data Labs and LinkedIn scraping have usage limits - process in batches.
+  </Accordion>
+  
+  <Accordion title="Keep Data Fresh">
+    Set up a monthly re-enrichment for key accounts to catch job changes.
+  </Accordion>
 </AccordionGroup>
 
 ## Next Steps
 
 <CardGroup cols={2}>
-<Card title="Outbound Sequencer" href="/tutorials/outbound-sequencer" icon="envelope-open-text">
-  Fire personalized sequences instantly
-</Card>
-<Card title="Opportunity Scoring" href="/tutorials/opportunity-scoring" icon="bullseye">
-  Rank prospects by win probability
-</Card>
-<Card title="Meeting Prep Brief" href="/tutorials/meeting-brief" icon="file-alt">
-  Auto-generate call briefs before demos
-</Card>
-<Card title="Signal Monitor" href="/tutorials/signal-monitor" icon="rss">
-  Track funding & hiring events in real time
-</Card>
+  <Card title="Outbound Campaigns" href="/tutorials/outbound-campaigns" icon="paper-plane">
+    Use enriched data for personalized outreach
+  </Card>
+  <Card title="Lead Scoring" href="/tutorials/lead-scoring" icon="star">
+    Automatically score and prioritize leads
+  </Card>
+  <Card title="CRM Auto-Update" href="/tutorials/crm-auto-update" icon="database">
+    Sync enriched data to your CRM
+  </Card>
+  <Card title="Competitive Intel" href="/tutorials/competitive-research" icon="magnifying-glass-chart">
+    Research prospects' competitors
+  </Card>
 </CardGroup>

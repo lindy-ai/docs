@@ -29,14 +29,14 @@ This Marketing Focus Group flow lets Lindy:
 - **Refine** automatically until all participants are satisfied
 - **Deliver** the final, polished marketing message
 
-Set it up once and use it anytime you need to refine marketing messages with diverse perspectives.
+You can use the [focus group template](https://chat.lindy.ai/home/?templateId=68759ad92b44a92d1fef076a) to get started.
 
 ## Setting Up Your Focus Group
 
 ### Step 1: Configure the Trigger
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Chat message trigger" />
+  <img src="/lindy-brand-assets/focus-group-trigger.png" alt="Chat message trigger" />
 </Frame>
 
 The workflow begins with a `Chat Message Received` trigger. This allows you to initiate the focus group by sending your initial marketing copy in the task view.
@@ -46,7 +46,7 @@ No additional configuration needed—just send your copy to get started.
 ### Step 2: Create Focus Group Participants
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Focus group personas setup" />
+  <img src="/lindy-brand-assets/focus-group-personas.png" alt="Focus group personas setup" />
 </Frame>
 
 You'll see three `Chat Send Message` actions representing your focus group:
@@ -66,10 +66,12 @@ You'll see three `Chat Send Message` actions representing your focus group:
 - Perspective: Strategic, brand-focused
 - Values: ROI and market positioning
 
+We recommend creating personas that match your ICP!
+
 ### Step 3: Set Up Feedback Ratings
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Scoring system configuration" />
+  <img src="/lindy-brand-assets/focus-group-scoring.png" alt="Scoring system configuration" />
 </Frame>
 
 Each participant provides two scores per iteration:
@@ -82,7 +84,7 @@ Target: 10/10 excitement, 2/10 or less confusion from ALL participants.
 ### Step 4: Configure Iteration Logic
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Iteration conditions" />
+  <img src="/lindy-brand-assets/focus-group-iterations.png" alt="Iteration conditions" />
 </Frame>
 
 Add a `Condition` step that ensures:
@@ -95,7 +97,7 @@ This guarantees thorough refinement while preventing endless loops.
 ### Step 5: Quality Check Conditions
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Success criteria conditions" />
+  <img src="/lindy-brand-assets/focus-group-alignment.png" alt="Success criteria conditions" />
 </Frame>
 
 Add another `Condition` to check if:
@@ -108,7 +110,7 @@ If criteria met → proceed to final delivery
 ### Step 6: Victory Message & Final Copy
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Final output configuration" />
+  <img src="/lindy-brand-assets/focus-group-final.png" alt="Final output configuration" />
 </Frame>
 
 1. `Chat Send Message` with victory confirmation:
@@ -143,7 +145,7 @@ If criteria met → proceed to final delivery
   </Accordion>
   
   <Accordion title="Customize Success Metrics">
-    Adjust excitement/confusion thresholds based on your brand and audience.
+    Adjust excitement/confusion thresholds based on your brand and audience. You can also lower the threshold to decrease the number of iterations performed.
   </Accordion>
   
   <Accordion title="Save Winning Formulas">
