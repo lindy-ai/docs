@@ -676,3 +676,385 @@ a[href^="mailto:support@lindy.ai"] {
 #topbar-cta-button > a:hover > span.absolute {
   opacity: 0.9 !important;
 }
+
+/* ============== DARK MODE DASHBOARD BUTTON ============== */
+/* Make Dashboard button fit dark mode theme with darker yellow */
+
+/* Dark mode: Dashboard button background - darker yellow */
+.dark #topbar-cta-button > a > span.absolute {
+  background: rgba(240, 195, 65, 0.25) !important; /* Darker yellow background for dark mode */
+}
+
+/* Dark mode: Dashboard button text - brighter for contrast */
+.dark #topbar-cta-button .z-10 {
+  color: #f9fafb !important; /* Bright white text for better contrast */
+}
+
+/* Dark mode: Dashboard button arrow - brighter for contrast */
+.dark #topbar-cta-button svg {
+  color: #f9fafb !important; /* Bright white arrow */
+}
+
+/* Dark mode: Dashboard button hover effect */
+.dark #topbar-cta-button > a:hover > span.absolute {
+  background: rgba(240, 195, 65, 0.35) !important; /* Slightly brighter on hover */
+  opacity: 1 !important; /* Override the opacity change */
+}
+
+/* Dark mode: Keep smooth transitions */
+.dark #topbar-cta-button > a > span.absolute {
+  transition: background-color 0.2s ease !important;
+}
+
+/* ============== DARK MODE TEXT CONTRAST FIXES ============== */
+/* Fix dark mode text readability - keep light mode unchanged */
+
+/* Dark mode: Make sidebar text more readable */
+.dark #sidebar-content .text-gray-600,
+.dark #sidebar-content .text-gray-500,
+.dark #sidebar-content .text-gray-400,
+.dark .text-gray-600,
+.dark .text-gray-500,
+.dark .text-gray-400 {
+  color: #d1d5db !important; /* Much lighter grey for better readability */
+}
+
+/* Dark mode: Improve prose text contrast */
+.dark .prose .text-gray-600,
+.dark .prose .text-gray-500,
+.dark .prose .text-gray-400,
+.dark .prose p,
+.dark .prose .leading-6 {
+  color: #d1d5db !important; /* Better contrast for body text */
+}
+
+/* Dark mode: Fix small text elements */
+.dark .text-sm.text-gray-600,
+.dark .text-sm.text-gray-500,
+.dark .text-sm.text-gray-400,
+.dark .text-xs.text-gray-600,
+.dark .text-xs.text-gray-500,
+.dark .text-xs.text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Navigation and sidebar improvements */
+.dark #navigation-items .text-gray-600,
+.dark #navigation-items .text-gray-500,
+.dark #navigation-items .text-gray-400,
+.dark .sidebar-link .text-gray-600,
+.dark .sidebar-link .text-gray-500,
+.dark .sidebar-link .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Card content text */
+.dark .card .text-gray-600,
+.dark .card .text-gray-500,
+.dark .card .text-gray-400,
+.dark .card .prose {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Table of contents and on-page navigation */
+.dark .toc .text-gray-600,
+.dark .toc .text-gray-500,
+.dark .toc .text-gray-400,
+.dark #on-this-page .text-gray-600,
+.dark #on-this-page .text-gray-500,
+.dark #on-this-page .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Footer and disclaimer text */
+.dark footer .text-gray-600,
+.dark footer .text-gray-500,
+.dark footer .text-gray-400,
+.dark .chat-assistant-disclaimer-text {
+  color: #9ca3af !important; /* Slightly more muted for disclaimers */
+}
+
+/* Dark mode: Meta information (breadcrumbs, timestamps, etc.) */
+.dark .eyebrow,
+.dark .meta-text,
+.dark .text-gray-600.text-sm,
+.dark .text-gray-500.text-sm,
+.dark .text-gray-400.text-sm {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Assistant chat interface text improvements */
+.dark .chat-assistant-sheet .text-gray-600,
+.dark .chat-assistant-sheet .text-gray-500,
+.dark .chat-assistant-sheet .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Ensure headings maintain good contrast */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #f9fafb !important; /* Very light for headings */
+}
+
+/* Dark mode: Link text improvements */
+.dark a.text-gray-600,
+.dark a.text-gray-500,
+.dark a.text-gray-400 {
+  color: #d1d5db !important;
+}
+
+.dark a.text-gray-600:hover,
+.dark a.text-gray-500:hover,
+.dark a.text-gray-400:hover {
+  color: #f3f4f6 !important;
+}
+
+/* Dark mode: Step component text */
+.dark .step .text-gray-600,
+.dark .step .text-gray-500,
+.dark .step .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Callout content text */
+.dark .callout .text-gray-600,
+.dark .callout .text-gray-500,
+.dark .callout .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Tab content text */
+.dark .tabs .text-gray-600,
+.dark .tabs .text-gray-500,
+.dark .tabs .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Override any remaining low-contrast text */
+.dark [class*="text-gray-6"],
+.dark [class*="text-gray-5"],
+.dark [class*="text-gray-4"] {
+  color: #d1d5db !important;
+}
+
+/* Ensure light mode stays unchanged by being more specific with light mode rules */
+:root:not(.dark) .text-gray-600,
+:root:not(.dark) .text-gray-500,
+:root:not(.dark) .text-gray-400,
+html:not(.dark) .text-gray-600,
+html:not(.dark) .text-gray-500,
+html:not(.dark) .text-gray-400 {
+  /* Let original Tailwind classes handle light mode - no overrides needed */
+}
+
+/* ============== ADDITIONAL DARK MODE FIXES ============== */
+/* Catch remaining hard-to-read text elements */
+
+/* Dark mode: More comprehensive sidebar fixes */
+.dark #sidebar-content a,
+.dark #sidebar-content div,
+.dark #sidebar-content span,
+.dark #sidebar-content .flex-1,
+.dark .sidebar-item,
+.dark .nav-link {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Sidebar group headers and navigation items */
+.dark #sidebar-content .group .flex-1,
+.dark #sidebar-content .text-sm,
+.dark #sidebar-content .leading-6,
+.dark .sidebar-group-header {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Main content body text improvements */
+.dark .mdx-content p,
+.dark .prose-gray p,
+.dark .prose-invert p,
+.dark .mt-2.text-lg.prose p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: List item descriptions and bullet points */
+.dark ul li,
+.dark ol li,
+.dark .prose ul li,
+.dark .prose ol li {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Step descriptions and numbered lists */
+.dark .step-content p,
+.dark .steps p,
+.dark [data-component-part="step-content"] p,
+.dark [role="listitem"] p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Tab content and descriptions */
+.dark .tab-content p,
+.dark [data-component-part="tab-content"] p,
+.dark .prose.dark\:prose-dark p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Generic paragraph and text improvements */
+.dark .text-lg.prose p,
+.dark .text-sm.leading-6,
+.dark .font-normal.text-sm.leading-6,
+.dark .mt-1.font-normal.text-sm.leading-6 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Catch any remaining grey text variants */
+.dark [class*="text-gray"],
+.dark .text-muted,
+.dark .text-secondary {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Override Tailwind's prose component specifically */
+.dark .prose,
+.dark .prose p,
+.dark .prose-gray,
+.dark .prose-invert {
+  --tw-prose-body: #d1d5db !important;
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Navigation and menu items */
+.dark nav a,
+.dark nav span,
+.dark nav div,
+.dark .navigation-item,
+.dark .menu-item {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Override any remaining low contrast elements */
+.dark .opacity-70,
+.dark .opacity-60,
+.dark .opacity-50 {
+  opacity: 0.9 !important;
+}
+
+/* Dark mode: Ensure proper contrast for interactive elements */
+.dark button span,
+.dark a span,
+.dark .clickable span {
+  color: inherit !important;
+}
+
+/* Dark mode: Fix any text inside containers that might be missed */
+.dark .container p,
+.dark .content p,
+.dark .main p,
+.dark .section p {
+  color: #d1d5db !important;
+}
+
+/* ============== HIGHLY SPECIFIC SCREENSHOT FIXES ============== */
+/* Target exact elements visible in the screenshot */
+
+/* Dark mode: Sidebar navigation text (Introduction, Field Configuration, etc.) */
+.dark #sidebar-content a[class*="group"],
+.dark #sidebar-content div[class*="group"],
+.dark #sidebar-content .group a,
+.dark #sidebar-content .group div,
+.dark #sidebar-content .group span {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Main content descriptions like "on CRM updates and follow-up emails" */
+.dark .prose p:not(strong):not(b),
+.dark .mdx-content p:not(strong):not(b),
+.dark .text-lg p,
+.dark .mt-2 p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Concept descriptions ("Your AI workers...", "Events that start...", etc.) */
+.dark li p,
+.dark ul p,
+.dark ol p,
+.dark .list-item p,
+.dark .concept-description {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Step component text like "No credit card required" and "Build your first agent" */
+.dark .step p,
+.dark .steps .step p,
+.dark [role="listitem"] div p,
+.dark [data-component-part="step-content"],
+.dark [data-component-part="step-content"] p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Catch all paragraph text that might be using default colors */
+.dark p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Override any element with low opacity that makes text hard to read */
+.dark * {
+  /* Only apply to text elements, not backgrounds */
+}
+
+.dark p,
+.dark span:not([class*="bg-"]):not([style*="background"]),
+.dark div:not([class*="bg-"]):not([style*="background"]) {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Ensure sidebar items have proper contrast */
+.dark #sidebar-content * {
+  color: #d1d5db !important;
+}
+
+/* Exception: Keep headings bright white */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #f9fafb !important;
+}
+
+/* Exception: Keep primary colored elements as intended */
+.dark .text-primary,
+.dark .text-primary-light,
+.dark [class*="text-yellow"],
+.dark [class*="text-amber"] {
+  color: var(--color-primary) !important;
+}
+
+/* ============== DARK MODE SIDEBAR HOVER IMPROVEMENTS ============== */
+/* Make hover state more subtle and match active state styling */
+
+/* Dark mode: Subtle hover state for sidebar items */
+.dark #sidebar-content a.group:hover,
+.dark #sidebar-content div.group:hover {
+  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow for better visibility */
+  border-radius: 0.75rem !important;
+  opacity: 0.85 !important; /* Slightly increased opacity */
+  font-weight: 500 !important; /* Slightly less bold than before */
+}
+
+/* Dark mode: Remove the overly bright hover from existing styles */
+.dark #sidebar-content .group:hover {
+  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow, override any existing bright hover */
+  font-weight: 500 !important;
+}
+
+/* Dark mode: Ensure active states keep their intended styling */
+.dark #sidebar-content li[style*="background"] a.group,
+.dark #sidebar-content li[style*="background"] div.group,
+.dark #sidebar-content a[style*="background"].group,
+.dark #sidebar-content div[style*="background"].group {
+  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow for active state */
+  opacity: 1 !important; /* Full opacity for active items */
+  font-weight: 550 !important; /* Keep active items slightly bolder */
+}
+
+/* Dark mode: Smooth transitions for better UX */
+.dark #sidebar-content a.group,
+.dark #sidebar-content div.group {
+  transition: all 0.2s ease !important;
+}
