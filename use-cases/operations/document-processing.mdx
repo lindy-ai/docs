@@ -31,12 +31,16 @@ Set up a central document processing hub that:
 
 Build it once and process hundreds of documents daily without manual data entry.
 
+You can use the [document processing template](https://chat.lindy.ai/home/?templateId=6875d1d5423a619119d0d417) to get started.
+
 ## Setting Up Your Document Hub
 
 ### Step 1: Create Your Document Inbox
 
+Set up a dedicated email address to serve as the central entry point for all documents requiring processing.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Gmail setup for document processing" />
+  <img src="/lindy-brand-assets/doc-processor-trigger.png" alt="Gmail setup for document processing" />
 </Frame>
 
 1. Set up a dedicated Gmail account (e.g., docs@yourcompany.com)
@@ -46,112 +50,128 @@ Build it once and process hundreds of documents daily without manual data entry.
 
 ### Step 2: Identify Document Type
 
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="AI document classification" />
-</Frame>
-
-Add `AI Agent – Analyze Document` with prompt:
-
-```
-Analyze the attached document and classify it as one of:
-- INVOICE: Bills, invoices, payment requests
-- CONTRACT: Agreements, contracts, legal documents
-- RECEIPT: Expense receipts, purchase confirmations
-- FORM: Application forms, request forms, surveys
-- REPORT: Financial reports, analytics, statements
-- OTHER: Anything else
-
-Also note the vendor/party name and document date if visible.
-Return as: {"type": "XXX", "party": "name", "date": "YYYY-MM-DD"}
-```
-
-### Step 3: Extract Document Text
+Automatically classify incoming documents to determine the appropriate processing workflow for each type.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Text extraction from documents" />
+  <img src="/lindy-brand-assets/doc-processor-classify.png" alt="AI document classification" />
 </Frame>
 
-- Action: `File – Extract Text`
-- Input: Email attachment
-- This handles PDFs, Word docs, images with OCR
-- Store output as document_text for next steps
+Add `AI Agent` with prompt:
 
-### Step 4: Extract Type-Specific Data
+```
+Analyze the attached document and classify it into exactly ONE of these categories:
+
+**INVOICE** - Documents requesting payment:
+- Bills, invoices, statements
+- Payment requests, purchase orders
+- Proforma invoices, quotes with payment terms
+
+**CONTRACT** - Documents establishing agreements:
+- Contracts, agreements, terms of service
+- NDAs, MOUs, LOIs
+- Legal binding documents, amendments
+
+**RECEIPT** - Documents confirming completed transactions:
+- Purchase receipts, sales receipts
+- Payment confirmations, transaction records
+- Proof of purchase, order confirmations
+
+**OTHER** - Any document that doesn't fit the above categories
+
+Extract the following information if clearly visible:
+- Vendor/Party Name: The primary company or person named
+- Document Date: The main date on the document
+
+Return your classification in this exact JSON format and nothing else:
+{"type": "[INVOICE/CONTRACT/RECEIPT/OTHER]", "party": "[name or null]", "date": "[YYYY-MM-DD or null]"}
+
+Complete the classification immediately upon document review. Do not provide explanations or additional analysis.
+```
+
+<Tip>
+The AI Agent automatically has attachments from email in context.
+</Tip>
+
+### Step 3: Route to Correct Document Processing
+
+Use conditional routing based on the document classification to send each document type down the appropriate processing path.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Custom data extraction per document type" />
+  <img src="/lindy-brand-assets/doc-processor-conditions.png" alt="Conditional routing based on document type" />
 </Frame>
 
-Add `Condition` based on document type, then extract relevant data:
+Add `Condition` nodes to route based on document type:
+- **If type = "INVOICE"** → Invoice processing branch
+- **If type = "CONTRACT"** → Contract processing branch  
+- **If type = "RECEIPT"** → Receipt processing branch
+- **If type = "OTHER"** → General document processing branch
 
-**For INVOICE:**
+This ensures each document gets the specialized treatment it needs.
+
+### Step 4: Extract Specific Type Data for Those Categories
+
+Pull out the relevant information fields based on the document type with specialized AI agents for each category.
+
+<Frame>
+  <img src="/lindy-brand-assets/doc-processor-extract.png" alt="Type-specific data extraction" />
+</Frame>
+
+<Tip>
+Edit the prompts and attributes to match your documents. For best results would also prompt the model to leave items not identified as "N/A" or blank.
+</Tip>
+
+**For INVOICE branch:**
 ```
+You're a sharp-eyed accounting detective who never misses a detail. Your mission: extract every critical piece of financial data from this invoice with laser precision.
+
 Extract: vendor_name, invoice_number, total_amount, due_date, 
-line_items[], payment_terms, PO_number
+line_items[], payment_terms, PO_number, tax_amount, billing_address
 ```
 
-**For CONTRACT:**
+**For CONTRACT branch:**
 ```
+You're a meticulous legal analyst with an eye for binding commitments. Your job: identify all the key terms that matter for contract management and compliance tracking.
+
 Extract: party_names[], contract_value, start_date, end_date,
-renewal_terms, key_obligations[], termination_clause
+renewal_terms, key_obligations[], termination_clause, governing_law, signatures_required
 ```
 
-**For RECEIPT:**
+**For RECEIPT branch:**
 ```
+You're a savvy expense tracker who knows every receipt tells a story. Your task: capture all the details needed for perfect expense reporting and reimbursement.
+
 Extract: merchant, amount, date, category, payment_method,
-expense_type, project_code
+expense_type, project_code, tax_amount, receipt_number
 ```
 
-**For FORM:**
+**For OTHER branch:**
 ```
-Extract all field names and their values as key-value pairs
+You're a versatile document wizard who adapts to any format. Your mission: intelligently extract whatever structured data exists in this document, no matter what type it is.
+
+Extract all field names and their values as key-value pairs, focusing on dates, amounts, names, and identifiers.
 ```
 
-### Step 5: Log to Appropriate Spreadsheet
+### Step 5: Log to an Appropriate Spreadsheet
+
+Organize extracted data into your preferred system - spreadsheets are just the starting point.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Spreadsheet organization by document type" />
+  <img src="/lindy-brand-assets/doc-processor-log.png" alt="Data logging and integration options" />
 </Frame>
 
-Create separate Google Sheets for each document type:
+<Warning>
+Make sure the fields you are logging match the attributes extracted in the previous step.
+</Warning>
 
-1. **Invoices Sheet**
-   - Columns: Date Received, Vendor, Invoice #, Amount, Due Date, Status, Link to Original
+**Basic Option:** Use `Google Sheets – Append Row` to log data by document type.
 
-2. **Contracts Sheet**
-   - Columns: Date Received, Parties, Value, Start, End, Renewal Date, Key Terms, Link
+**Advanced Integrations:** You can post this information anywhere using:
+- `HTTP Request` actions to send data to your ERP, CRM, or custom databases
+- Direct integrations with Airtable, Notion, or other platforms
+- Webhook endpoints for real-time processing
+- API calls to accounting software like QuickBooks or Xero
 
-3. **Receipts Sheet**
-   - Columns: Date, Merchant, Amount, Category, Employee, Approved, Link
-
-4. **Forms Sheet**
-   - Columns: Date, Form Type, Submitter, Key Fields (JSON), Status, Link
-
-Use `Google Sheets – Append Row` for each type.
-
-### Step 6: Smart Notifications
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Notification routing based on document content" />
-</Frame>
-
-Add conditional notifications based on document characteristics:
-
-- **High-value invoices** (>$5,000) → Slack DM to Finance Manager
-- **Contract renewals** (within 60 days) → Email to Legal Team  
-- **Urgent forms** (containing "urgent" or "ASAP") → Slack to Ops Team
-- **Weekly summary** → Email digest of all processed documents
-
-### Step 7: File Organization
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Automated filing system" />
-</Frame>
-
-- Create organized Google Drive folders by type and date
-- Save original document with smart naming: `[TYPE]_[PARTY]_[DATE]_[ID]`
-- Add document URL to spreadsheet entries
-- Maintain searchable archive
+Spreadsheets are just a foundation - the real power comes from connecting to your existing systems.
 
 ## Advanced Features
 
@@ -159,9 +179,7 @@ Add conditional notifications based on document characteristics:
 |---------|--------------|
 | Duplicate Detection | Check if invoice/contract already processed |
 | Auto-Approval Routes | Route based on amount thresholds and vendor status |
-| Data Validation | Verify tax IDs, validate against PO numbers |
-| Multi-Language Support | Process documents in any language |
-| Analytics Dashboard | Connect Sheets to Looker/Tableau for insights |
+| Data Validation | Add additional QA agent steps |
 
 ## Best Practices
 

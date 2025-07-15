@@ -29,75 +29,128 @@ Let Lindy act as a self-learning SDR that:
 - **Calls** qualified leads by phone to book meetings  
 - **Alerts** you the moment a lead replies—or after the full cadence with no response  
 
-You'll find the **Lead Outreacher** template in your Lindy dashboard to kick-start the flow.
+Start from the [multichannel outbound template](https://chat.lindy.ai/home/?templateId=6875c321cb447178e1192a26) and customize.
 
 ## Setting Up Your Outbound Flow
 
 ### Step 1: Lead Trigger
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="New Row trigger and task message" />
+  <img src="/lindy-brand-assets/multi-channel-trigger.png" alt="New Row trigger and task message" />
 </Frame>
 
 1. Add both `Google Sheets – New Row Added` *and* `Message Received` triggers.  
-2. Paste your Sheet URL in the trigger settings.  
+2. **Your input must have email or phone # depending on the form of outreach.**  
 3. Optional: upload a CSV or DM Lindy in Task view to start ad-hoc outreach.
 
 ### Step 2: Enrich the Lead (Optional)
 
+Optionally add an enrichment step to gather additional context about your prospects for better personalization.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Enrich lead data" />
+  <img src="/lindy-brand-assets/multi-channel-enrich.png" alt="Enrich lead data" />
 </Frame>
 
-- Insert `People Data Labs – Enrich Person` or a `Lead Enrichment` sub-flow.  
+- Follow the [Lead Enrichment tutorial](/use-cases/sales/lead-enrichment) to learn how to enrich a lead.
 - More context → better personalization and reply rates.
 
-### Step 3: Send First-Touch Email / SMS
+### Step 3: Wait, Then Follow-Up
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="First outreach email" />
-</Frame>
-
-- Action: `Gmail – Send Email`  
-- **Ask for Confirmation** toggle if you need human approval.  
-- Body prompt:  
-```
-Write a personalized email using sheet data (Name, Title, Company).
-Keep it friendly, <120 words, end with a clear CTA.
-```
-- If the lead provided an opted-in mobile number, add `Twilio – Send SMS` with a shorter variant.
-
-### Step 4: Wait, Then Follow-Up
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Wait action" />
+  <img src="/lindy-brand-assets/multi-channel-followup.png" alt="Wait action" />
 </Frame>
 
 - Action: `Wait – For Minutes` set to 4320 (three days).  
 - Add `Gmail – Send Reply` for follow-up #1.  
 - Repeat Wait + Reply as many times as needed.
+Example prompt:
 
-### Step 5: Make an Outbound Call (Optional)
+```
+Follow up with the lead. This time, send them a snappy, persuasive, two sentence email. 
+
+It should follow one of these templates: 
+
+"Hey [NAME], [Example company] achieved a 30% increase on ROAS within 3 months of getting in touch with us. 
+
+Want to learn how?"
+
+or 
+
+"Hey [NAME], wanted to share with you [this] (www.example.com) 30sec demo video so you can have a better sense on how to achieve [insert specific company goal/initiative]. 
+
+Lmk your thoughts,"
+```
+
+### Step 4: Make an Outbound Call (Optional)
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Outbound phone call" />
+  <img src="/lindy-brand-assets/multi-channel-agent.png" alt="Outbound phone call" />
 </Frame>
 
 - Action: `Lindy Phone – Make Outbound Call`  
-- `To` field prompt:  
+
+Example prompt:
+
 ```
-use the phone number from the lead row
+You are on a phone call with a qualified inbound sales lead.
+
+**Follow these conversation steps (note: items in [square brackets] are variables to be extracted from the received message):**
+
+1. Introduce yourself briefly:
+
+"Hi [$FIRSTNAME], my name is Lindy. I noticed you signed up for [PRODUCT/SERVICE/FORM FROM MESSAGE]. I wanted to follow up and see if you'd like to schedule a 15-minute free consultation to learn more about [USER'S PRODUCT/COMPANY]."
+
+
+2. [Instruction]: WAIT FOR THE OTHER PERSON TO RESPOND BEFORE CONTINUING.
+
+
+3. Continue the conversation naturally, aiming to have them book a time with the team. 
+
+**Always use the EXIT CONDITION (Find Available Times action) before scheduling an event.**
+
+**Always PAUSE and wait for the user to respond when giving times.**
+
+4. [Instruction]: WAIT FOR THE USER ON THE PHONE TO RESPOND AFTER YOU GAVE THEM TIME OPTIONS. 
+
+**Booking the Consultation Hints:**
+
+* WAIT after suggesting three available times *
+
+5. When the user:
+
+* Accepts a time: Thank them and ask them to check their calendar for the invite and accept it to confirm (do not add anything else to this statement / request)
+
+* Declines booking: Act as a thoughtful and persuasive negotiator (e.g., ask why they're uninterested in {THE PRODUCT}) before concluding the conversation
+
+[Instruction]: WAIT FOR THE USER ON THE PHONE TO RESPOND AFTER YOU REQUEST FOR THEM TO CONFIRM THE CALENDAR INVITE. 
+
+5. Summarize the outcome:
+* If accepted: "To wrap things up, I wanted to confirm that you are booked to meet with the team at [EVENT TIME AND DATE]" (do not mention the day and time if you have already mentioned it previously)
+
+* If declined: "Thank you for taking the time to consider connecting with the team"
+
+[Instruction]: WAIT FOR THE OTHER PERSON TO RESPOND BEFORE PROCEEDING TO ASK IF THEY NEED HELP WITH ANYTHING ELSE. 
+
+6. Ask: "Is there anything else I can help you with?"
+
+After they confirm nothing else is needed, thank them and end the call.
+
+### IMPORTANT NOTES:
+
+* If initial times don't work, don't give up. Continue using the EXIT CONDITION to Find Available Times until you find a suitable option
+* Demonstrate skilled negotiation by working to find mutually agreeable times
+* Always maintain a professional and helpful demeanor throughout the conversation
+* Always do your best to book the consultation. If they say no initially, ensure you respond with concise rebuttals to persuade them to book a consultation. 
 ```
-- Inside, an `AI Agent` books a consultation or leaves voicemail.  
-- **Opt-in compliance**: only call if `Opt-In` column = `Yes`.
 
 ### Step 6: Alert & Exit
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Slack alert" />
+  <img src="/lindy-brand-assets/multi-channel-slack.png" alt="Slack alert" />
 </Frame>
 
-- If the lead replies at any point → `Slack – Send DM` with interest level + task URL.  
+- If the lead replies at any point → `Cancel Timers` to stop the sequence and prevent future outreach
+- After canceling timers send a slack update with a summary of the outcome and sentiment
 - If cadence finishes with no reply → different Slack alert so you can decide next steps.
 
 ## Advanced Customizations
@@ -106,7 +159,6 @@ use the phone number from the lead row
 |---------------------------|-----------------------------------------------------------------------|
 | A/B Subject Testing       | Randomize two subjects, log open rates to Sheets.                     |
 | Channel Rotation          | Email → SMS → Call sequence or any order you define.                  |
-| Intent Detection          | Use sentiment to shorten cadence if interest is "cold."              |
 | Auto-CRM Update           | Create/advance deals in HubSpot or Salesforce when engagement occurs.|
 
 ## Best Practices
@@ -117,16 +169,13 @@ use the phone number from the lead row
   </Accordion>
   
   <Accordion title="Throttle Volume">
-    Limit to 10 new leads per 10 min to avoid Gmail or Twilio rate limits.
+    Limit volume to avoid rate limits from Twilio or Gmail.
   </Accordion>
   
   <Accordion title="Personalize Deeply">
     Use company news or role-specific pain points in each touch.
   </Accordion>
   
-  <Accordion title="Monitor Deliverability">
-    Track bounce rates and adjust sending domains or phone numbers as needed.
-  </Accordion>
 </AccordionGroup>
 
 ## Next Steps

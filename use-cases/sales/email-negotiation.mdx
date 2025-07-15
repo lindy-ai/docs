@@ -29,14 +29,14 @@ With the Email Negotiator flow, Lindy will:
 - **Negotiate** back-and-forth until a deal is closed or lost  
 - **Escalate** edge cases or wins straight to you via Slack  
 
-Start from the **Email Responder** template in your Lindy dashboard and tweak as below.
+Start from the [email responder template](https://chat.lindy.ai/marketplace/?templateId=66bfc603ea73bec3fea906db) and tweak as below.
 
 ## Setting Up Your Negotiator
 
 ### Step 1: Connect the Trigger
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Gmail trigger" />
+  <img src="/lindy-brand-assets/email-negotiator-trigger.png" alt="Gmail trigger" />
 </Frame>
 
 1. Use `Gmail – Email Received` as the trigger.  
@@ -44,8 +44,10 @@ Start from the **Email Responder** template in your Lindy dashboard and tweak as
 
 ### Step 2: Gate with a Condition
 
+Filter out irrelevant emails early to avoid wasting resources on messages that don't need negotiation.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Deserves reply condition" />
+  <img src="/lindy-brand-assets/email-negotiator-condition.png" alt="Deserves reply condition" />
 </Frame>
 
 `Condition` prompt:
@@ -56,8 +58,10 @@ Only continue if the email asks about pricing, packages, quotes, discounts, or p
 
 ### Step 3: Build the Knowledge Base
 
+Create a central repository of pricing and policy information so Lindy can provide accurate, consistent responses.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Knowledge base" />
+  <img src="/lindy-brand-assets/email-negotiator-KB.png" alt="Knowledge base" />
 </Frame>
 
 - Action: `Search Knowledge Base`  
@@ -66,56 +70,91 @@ Only continue if the email asks about pricing, packages, quotes, discounts, or p
 
 ### Step 4: Verify an Answer Exists
 
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Found answer condition" />
-</Frame>
+Check if we have the information needed to respond before attempting to negotiate, preventing unhelpful responses.
 
-Add `Condition – Found answer?`  
-- **Yes** → proceed to first reply.  
-- **No** → send you a Slack DM for manual follow-up.
+<Frame>
+  <img src="/lindy-brand-assets/email-negotiator-found-action.png" alt="Found answer condition" />
+</Frame>
 
 ### Step 5: Send the First Reply
 
+Provide an initial response with relevant information to begin the negotiation process professionally.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="First reply" />
+  <img src="/lindy-brand-assets/email-negotiator-first-reply.png" alt="First reply" />
 </Frame>
 
-Body prompt:
+Example prompt:
 
 ```
-Use knowledge base content to answer questions and offer next steps.
-Be concise, friendly, and on-brand.
-```
+You are responding to an inbound partnership inquiry email. 
 
-Toggle `Ask for Confirmation` = Always (optional).
+Your job is to use the content in your knowledge base to answer the emailer’s questions, respond succinctly and help the user close a partnership deal*
+
+An example response could be:
+
+"Hey {FIRSTNAME}, thanks so much for reaching out! I'd love to learn more about {THEIR BRAND} and see if there is mutual alignment for a partnership.
+
+Here are my rates:
+
+{Insert content found from knowledge base, example below:- Youtube Shorts = $2,500- 30 Sec Reel on Instagram = $3,000- 60 sec Reel on Instagram = $6,500- TikTok Reel = $12,000 ($14,000 if pinned)}
+
+Please let me know your thoughts and any ideas you had on specific collab content."
+```
 
 ### Step 6: Branch on Response Type
 
+Categorize the prospect's response to determine the appropriate next action in the negotiation flow.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Three-way condition" />
+  <img src="/lindy-brand-assets/email-negotiator-conditions.png" alt="Three-way condition" />
 </Frame>
 
 Add a three-way `Condition`:
 
 | Path               | Prompt snippet                                                                     |
 |--------------------|------------------------------------------------------------------------------------|
-| Requires Negotiation | the email asks for more options, discounts, or custom packages                    |
+| Requires Negotiation | the email requires further negotiation                    |
 | Closed Deal          | the email agrees to the quoted terms                                             |
 | Not Interested       | the email declines the offer                                                     |
 
 ### Step 7: AI Agent for Negotiation
 
+Deploy an AI agent to handle back-and-forth negotiations automatically while staying within your guidelines.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="AI agent negotiation" />
+  <img src="/lindy-brand-assets/email-negotiator-ai-agent.png" alt="AI agent negotiation" />
 </Frame>
 
 - Under *Requires Negotiation*, insert `AI Agent` with skills: `Gmail – Send Reply`.  
-- Prompt guidelines: use only KB facts, stay within 1-2 sentences, sign "Thanks – Lindy".
+- Example prompt:
+
+```
+Your job is to negotiate with the emailer and respond to their questions until a decision is made in regard to the partnership opportunity. Only answer questions using answers found from the knowledge base. Here are some example responses to mirror the structure and style of our brand’s tone:
+
+“Hey {FIRSTNAME} – appreciate the interest! We only discount 10% for fall deals, as it is our busiest time for collaborations. Let me know what you decide!”
+
+“Hi {FIRSTNAME}, thanks for the follow-up questions. We typically post on Mondays at 8:00am PST and pin them for 4 weeks. If you would like a collab post pinned longer than 4 weeks, we charge $1,000 extra per week that is pinned.
+
+Let me know if this sounds good to you or if you have questions :)” 
+
+Important Instructions: 
+
+* Always respond directly to the emailer and sign off with: 
+
+“Thanks – Lindy”
+
+* Keep responses 1-2 sentences long, concise and friendly. 
+
+* Never make offerings or agree to a deal unless there is content in the knowledge base that supports the partnership details.
+```
 
 ### Step 8: Close the Loop
 
+Finalize the negotiation outcome after it is complete and send them to the correct path whether or not the deal was closed.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Closed deal reply" />
+  <img src="/lindy-brand-assets/email-negotiator-close-loop.png" alt="Closed deal reply" />
 </Frame>
 
 - *Closed Deal* → `Gmail – Send Reply` confirming terms and next steps.  
@@ -127,7 +166,6 @@ Add a three-way `Condition`:
 | Trick              | What it does                                                        |
 |--------------------|----------------------------------------------------------------------|
 | Dynamic Discount   | Offer tiered discounts based on deal size pulled from the email.     |
-| Auto-Quote PDF     | Generate and attach a PDF quote via DocGen once terms are agreed.    |
 | Sentiment Monitor  | Escalate to human if tone becomes negative or urgent.                |
 | CRM Update         | Create/advance opportunities in HubSpot or Salesforce automatically. |
 
@@ -137,11 +175,7 @@ Add a three-way `Condition`:
   <Accordion title="Keep KB Current">
     Refresh rate cards and policies regularly to avoid outdated offers.
   </Accordion>
-  
-  <Accordion title="Short & Sweet">
-    Limit every reply to two sentences unless more detail is requested.
-  </Accordion>
-  
+
   <Accordion title="Human Escalation">
     Route complex legal or enterprise deals to a rep early.
   </Accordion>

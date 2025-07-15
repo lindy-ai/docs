@@ -29,23 +29,24 @@ With the Smart Support flow, Lindy will:
 - **Respond** in your brand voice or draft a reply for approval  
 - **Log** tickets and escalations to Slack, Zendesk, or HubSpot  
 
-You'll find the **Email Responder** template in your Lindy dashboard to kick-start the flow.
+Start from the [email responder template](https://chat.lindy.ai/marketplace/?templateId=66bfc603ea73bec3fea906db) and tweak as below.
 
 ## Setting Up Your Smart Support Agent
 
-### Step 1: Connect the Trigger
+### Step 1: Connect the Trigger to Support Inbox
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Gmail trigger" />
+  <img src="/lindy-brand-assets/support-agent-trigger.png" alt="Gmail trigger" />
 </Frame>
 
-1. Select `Gmail – Email Received` (swap for `Zendesk – Ticket Created` later).  
-2. Add optional filters—for example, skip internal or marketing emails.
+Select `Gmail – Email Received` (could swap for other systems like `Zendesk – New Ticket`).  
 
 ### Step 2: Determine If a Reply Is Needed
 
+Filter out non-support emails early to avoid responding to newsletters, confirmations, or internal messages.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Requires reply condition" />
+  <img src="/lindy-brand-assets/support-agent-trigger.png" alt="Requires reply condition" />
 </Frame>
 
 `Condition` prompt:
@@ -56,43 +57,66 @@ Only continue if the sender asks a question about products, orders, or policies.
 
 ### Step 3: Search the Knowledge Base
 
+Query your documentation to find relevant answers before crafting a response.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Knowledge base search" />
+  <img src="/lindy-brand-assets/support-agent-KB.png" alt="Knowledge base search" />
 </Frame>
 
 - Action: `Search Knowledge Base`  
-- Attach FAQs, shipping policies, refund rules, and troubleshooting docs.
+- Attach FAQs, policies, refund rules, troubleshooting docs, and more
 
 ### Step 4: Verify an Answer Exists
 
+Check if we have sufficient information to provide a helpful response, escalating complex issues to humans.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Found answer condition" />
+  <img src="/lindy-brand-assets/support-agent-verify.png" alt="Found answer condition" />
 </Frame>
 
 - If answer found → continue.  
-- If not found → `Slack – DM` the thread to Support queue.
+- If not found → `Slack – Send Channel Message` the thread for human intervention
+    - For `Send Channel Message` to work correctly, remember to add the Lindy app to your channel
+
+<Frame>
+  <img src="/lindy-brand-assets/support-agent-slack.png" alt="Found answer condition" />
+</Frame>
 
 ### Step 5: Draft or Send the Reply
 
+Provide a helpful response using knowledge base information in your brand voice.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Send reply" />
+  <img src="/lindy-brand-assets/support-agent-reply.png" alt="Send reply" />
 </Frame>
 
 Body prompt:
 
 ```
-Respond with the KB answer in a friendly, supportive tone (≤100 words).
+You are a professional customer support agent responding to a customer inquiry.
+
+Using the knowledge base information provided, craft a concise, helpful response that:
+- Directly answers their question using KB content
+- Maintains a friendly, professional tone
+- Provides clear next steps when applicable
+- Stays under 100 words
+- Includes relevant links or resources from the KB
+
+If multiple solutions exist, offer the most appropriate one based on their specific situation.
+
+Sign off professionally with your name/team.
 ```
 
-Toggle `Ask for Confirmation` to review drafts during week 1.
+### Step 6: Log Support Interactions
 
-### Step 6: Update the Ticket System (Optional)
+Track all support interactions in a Google Sheet for reporting and analysis, with optional integration to your existing ticketing system instead.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Ticket update" />
+  <img src="/lindy-brand-assets/support-agent-log.png" alt="Ticket update" />
 </Frame>
 
-- Action: `Zendesk – Update Ticket` or `HubSpot – Add Note` with the reply and status.
+- Action: `Google Sheets – Append Row` to log ticket details, response time, and resolution
+- Update your support management system if applicable
 
 ## Advanced Customizations
 

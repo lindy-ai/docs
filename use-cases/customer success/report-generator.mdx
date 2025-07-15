@@ -23,7 +23,7 @@ description: 'Generate automated reports and analytics with Lindy'
 
 With this flow, Lindy will:
 
-- **Collect** all support tickets or emails from the past 24 h  
+- **Collect** all support emails from the past 24 h  
 - **Summarize** counts, response speed, and the top recurring topics  
 - **Quote** two or three customer lines for color ("it keeps timing out…")  
 - **Suggest** one focus area for tomorrow  
@@ -35,64 +35,92 @@ You'll build it in about 10 minutes.
 
 ### Step 1: Daily Trigger
 
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Scheduler trigger" />
-</Frame>
-
-- Action: `Scheduler – Daily` → 18:00 local.
-
-### Step 2: Pull Today's Tickets
+Set up a recurring schedule to automatically generate reports at the same time each day for consistency.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="List tickets" />
+  <img src="/lindy-brand-assets/report-generator-trigger.png" alt="Scheduler trigger" />
 </Frame>
 
-- Action: `Zendesk – List Tickets` with filter `created >= today at 00:00`.  
-- Swap for Intercom / Help Scout equivalent if needed.
+- Action: `On Recurring Schedule` → 9pm daily.
+
+### Step 2: Pull Today's Support Emails
+
+Collect all support communications from the past 24 hours to analyze recent customer interactions.
+
+<Frame>
+  <img src="/lindy-brand-assets/report-generator-search-email.png" alt="List emails" />
+</Frame>
+
+- Action: `Gmail – Search Emails` with query filter for sent within the past 24 hours
+    - Make sure to increase `Max Results` to a higher number limit to fetch all tickets
+- Optionally use other actions that align with your ticket management system
 
 ### Step 3: Summarize with AI
 
+Process the collected emails to extract meaningful insights and patterns about customer experience.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="AI agent summary" />
+  <img src="/lindy-brand-assets/generate-report-agent.png" alt="AI agent summary" />
 </Frame>
 
-- Action: `AI Agent – Generate Text`  
-- Prompt:
+- We use an `AI Agent` since it will perform higher levels of reasoning. Example prompt:
 
 ```
-You are "Support Digest Bot".
-You have JSON array {{tickets}}.
-• Count total tickets, how many solved, how many still open.
-• Estimate median first-reply time in minutes.
-• Extract the three most common words or short phrases from subjects or tags (ignore stop words).
-• Pull up to three customer quotes illustrating those themes (one line each, anonymize names).
-• Suggest one focus area for tomorrow in ≤12 words.
-Format exactly:
-📊 *Daily Support Digest* (Jun 11)
-• Tickets: 38 total | 29 solved | 9 open
-• Median first-reply: 27 min
-• Top issues: login timeout, billing address error, mobile UI glitch
+You are "Support Digest Bot" who is highly observant and reads a LOT. 
 
-"Keeps logging me out after 5 min."
-"Card charged twice on renewal."
-"Menu overlaps on iPhone 13."
+You have emails in your context and you must throughly review them all.
 
-*Focus tomorrow → fix login timeout*
+
+Create a qualitative daily digest that emphasizes customer experience over metrics. Focus on patterns, sentiment, and actionable insights rather than counts and numbers.
+
+Include:
+• Overall flow assessment (busy/quiet, resolution quality)
+• Response pattern observations (when fast/slow, any bottlenecks)
+• Three main customer pain points based on sentiment and language
+• Three brief customer quotes showing emotional impact
+• One specific action for tomorrow
+
+Keep responses conversational and insight-focused. Avoid exact counts, percentages, or time measurements. Use descriptive language like "most," "few," "quick," "delayed" instead of numbers.
+
+Format as a brief, scannable digest with clear sections and emphasis on what matters most to the customer experience.
+
+Create a qualitative daily digest that emphasizes customer experience over metrics. Focus on patterns, sentiment, and actionable insights rather than counts and numbers.
+
+Include:
+• Overall flow assessment (busy/quiet, resolution quality)
+• Response pattern observations (when fast/slow, any bottlenecks)
+• Three main customer pain points based on sentiment and language
+• Three brief customer quotes showing emotional impact (anonymize names)
+• One specific action for tomorrow
+
+Keep responses conversational and insight-focused. Avoid exact counts, percentages, or time measurements. Use descriptive language like "most," "few," "quick," "delayed" instead of numbers.
+
+Format as a brief, scannable digest with clear sections and emphasis on what matters most to the customer experience.
+
+Your task is complete when you are done writing.
 ```
 
 ### Step 4: Post to Slack
 
+Share the daily digest with your team to keep everyone informed about customer support trends.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Slack post" />
+  <img src="/lindy-brand-assets/generate-report-slack.png" alt="Slack post" />
 </Frame>
 
 - Action: `Slack – Send Channel Message`  
-- Channel: `#support-daily`  
-- Message body: output from the AI Agent.
+- Example channel: `#support-daily`  
+- Message body: formatted output from the AI Agent
 
-<Tip>
-Need more granular metrics? Insert an optional **Run Code – Python** step before the AI Agent to pre-calculate numbers (e.g., exact medians, tag frequencies, SLA breaches) and pass them into the prompt for richer reporting.
-</Tip>
+### Step 5: Advanced Analysis (Optional)
+
+Enhance the reporting with structured data analysis for quantitative insights.
+
+Before qualitatively analyzing with AI, you can optionally use a `Run Code – Python` block to parse the structured output and calculate key metrics if your support system has tags or structured data.
+
+<Frame>
+  <img src="/lindy-brand-assets/generate-report-code.png" alt="Slack post" />
+</Frame>
 
 ## Best Practices
 
@@ -102,15 +130,11 @@ Need more granular metrics? Insert an optional **Run Code – Python** step befo
   </Accordion>
   
   <Accordion title="Keep It Brief">
-    Aim for one Slack post; link back to tickets for deep dives.
+    Aim for one Slack post that is digestible for the team.
   </Accordion>
   
-  <Accordion title="Escalate Urgent Themes">
-    Add a Condition to DM engineers if any quote contains "crash" or "outage."
-  </Accordion>
-  
-  <Accordion title="Iterate on Tone">
-    Skim the first few digests and tweak wording to match team culture.
+  <Accordion title="Iterate on Output">
+    Actively read the digests andi iterate on the AI agent prompts.
   </Accordion>
 </AccordionGroup>
 

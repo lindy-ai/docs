@@ -19,7 +19,6 @@ description: 'Transform your accounts payable by automatically extracting invoic
   </div>
 </div>
 
-
 ## Quick Overview
 
 Turn your invoice processing from hours to minutes. Lindy will:
@@ -30,14 +29,16 @@ Turn your invoice processing from hours to minutes. Lindy will:
 - **Route** for approval based on amount thresholds
 - **Track** payment status and send reminders
 
-No more manual data entry or lost invoices in email threads.
+You can use the [invoice processing template](https://chat.lindy.ai/home/?templateId=6875d732842252d66b38c0ea) to get started.
 
 ## Setting Up Invoice Automation
 
 ### Step 1: Create Your AP Inbox
 
+Set up a dedicated email system to capture all incoming invoices automatically.
+
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Dedicated AP email setup" />
+  <img src="/lindy-brand-assets/invoice-trigger.png" alt="Dedicated AP email setup" />
 </Frame>
 
 1. Set up a dedicated email: invoices@yourcompany.com
@@ -49,159 +50,100 @@ No more manual data entry or lost invoices in email threads.
 Add this email to your vendor portal profiles and email signatures: "Send all invoices to: invoices@yourcompany.com"
 </Tip>
 
-### Step 2: Extract Invoice Data
+### Step 2: Extract Invoice Data with AI
+
+Use AI to extract all key invoice data with forensic precision and accounting expertise.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="AI invoice data extraction" />
+  <img src="/lindy-brand-assets/invoice-extract.png" alt="AI invoice data extraction" />
 </Frame>
 
-Add `AI Agent – Extract Invoice Data` with prompt:
+Add `AI Agent – Extract Invoice Data` with this enhanced prompt:
 
 ```
-Extract the following from the attached invoice:
+You are a meticulous forensic accountant with 20+ years of experience in accounts payable. You have an eagle eye for detail and never miss critical financial information.
+
+Extract the following from the attached invoice with absolute precision:
 - vendor_name
-- vendor_email
+- vendor_email  
+- vendor_address
 - invoice_number
 - invoice_date
 - due_date
 - total_amount
 - tax_amount
 - subtotal
-- payment_terms (e.g., Net 30)
+- payment_terms (e.g., Net 30, 2/10 Net 30)
 - po_number (if present)
 - line_items: [{description, quantity, unit_price, amount}]
 - bank_details
+- early_payment_discount (if applicable)
+- currency
 
-Return as structured JSON. If any field is not found, mark as null.
+IF YOU CANNOT CONFIDENTLY FIND AN ATTRIBUTE LEAVE IT BLANK
+
+Return as structured JSON. If any field is not found, mark as null. Double-check all amounts for mathematical accuracy.
 ```
 
-### Step 3: Validate Invoice Information
+<Tip>
+The AI Agent automatically has attachments from Gmail in context - no need to reference them explicitly.
+</Tip>
+
+### Step 3: Double-Check Extraction Quality
+
+Add a quality control layer to ensure 100% accuracy before processing.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Invoice validation checks" />
+  <img src="/lindy-brand-assets/invoice-QA.png" alt="AI quality control validation" />
 </Frame>
 
-Add validation conditions to check:
+Add `AI Agent – Quality Control` with prompt:
 
-1. **Vendor Verification**
-   - Check vendor name against approved vendor list in Google Sheets
-   - Flag new or unrecognized vendors for review
-
-2. **PO Matching** (if PO number exists)
-   - Look up PO in your tracking sheet
-   - Verify amount is within 10% of PO value
-   - Check if PO has remaining budget
-
-3. **Duplicate Check**
-   - Search existing invoices for same invoice number + vendor
-   - Prevent double payments
-
-### Step 4: Calculate Approval Routing
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Approval routing logic" />
-</Frame>
-
-Set up approval tiers with `Conditions`:
-
-| Amount | Approval Required | Action |
-|--------|------------------|---------|
-| < $1,000 | Auto-approve | Log and process |
-| $1,000 - $5,000 | Manager | Email manager with summary |
-| $5,000 - $25,000 | Director | Email director + Slack alert |
-| > $25,000 | CFO | Email CFO + urgent Slack |
-
-### Step 5: Log to Master Invoice Tracker
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Invoice tracking spreadsheet" />
-</Frame>
-
-Create a Google Sheet with columns:
-- Date Received
-- Vendor Name
-- Invoice Number
-- Amount
-- Due Date
-- PO Number
-- Approval Status
-- Approver
-- Payment Status
-- GL Coding
-- Notes
-- Invoice Link (Google Drive)
-
-Use `Google Sheets – Append Row` to add each invoice.
-
-### Step 6: Request Approval
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Approval request email" />
-</Frame>
-
-For invoices requiring approval, use `Gmail – Send Email`:
-
-**Subject**: Invoice Approval Needed: [Vendor] - $[Amount]
-
-**Body**:
 ```
-Hi [Approver Name],
+You are a senior audit manager reviewing extracted invoice data. Verify the previous extraction is complete and accurate.
 
-New invoice requires your approval:
+Review the extracted data against the invoice attachment and check:
+1. All required fields are captured (unless they cannot be found then its okay to leave blank)
+2. Mathematical accuracy (line items sum to subtotal, tax calculations correct)
+3. Date formats are consistent 
+4. Currency symbols and amounts match
+5. Vendor information is complete
 
-Vendor: [Vendor Name]
-Invoice #: [Invoice Number]
-Amount: $[Total Amount]
-Due Date: [Due Date]
-PO Number: [PO Number]
-
-Line Items:
-[Formatted line items list]
-
-✅ APPROVE: Reply with "Approved"
-❌ REJECT: Reply with "Rejected" and reason
-❓ QUESTION: Reply with your questions
-
-View invoice: [Google Drive Link]
-View in tracker: [Sheet Link]
-
-This invoice is due in [X] days.
+If you find any errors or missing data, extract the correct information. If extraction is perfect, confirm with "VERIFIED" and the validated JSON data.
 ```
 
-### Step 7: Process Approval Responses
+### Step 4: Log Invoice Data
+
+Organize extracted data into your preferred system - spreadsheets are just the starting point.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Approval response handling" />
+  <img src="/lindy-brand-assets/invoice-log.png" alt="Data logging and integration options" />
 </Frame>
 
-Set up a separate flow triggered by email replies:
+<Warning>
+Make sure the fields you are logging match the attributes extracted in the previous step.
+</Warning>
 
-1. Check if reply contains "Approved" → Update sheet status
-2. Check if reply contains "Rejected" → Flag and notify vendor
-3. If questions → Create task for AP team
-4. Send confirmation to approver
+**Basic Option:** Use `Google Sheets – Append Row` to log data by document type.
 
-### Step 8: Payment Reminders
+**Advanced Integrations:** You can post this information anywhere using:
+- `HTTP Request` actions to send data to your ERP, CRM, or custom databases
+- Direct integrations with Airtable, Notion, or other platforms
+- Webhook endpoints for real-time processing
+- API calls to accounting software like QuickBooks or Xero
 
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Payment reminder system" />
-</Frame>
-
-Daily scheduled check:
-- Query sheet for approved invoices due within 5 days
-- Send consolidated reminder to AP team
-- Flag any overdue invoices in red
-- Weekly aging report to CFO
+<Tip>
+The real power comes when you integrate this with your ERP system using API calls or webhook connections from Google Sheets to update your accounting software directly.
+</Tip>
 
 ## Advanced Features
 
 | Feature | What it does |
 |---------|--------------|
-| GL Code Suggestion | AI suggests general ledger codes based on line items |
-| Multi-Currency Support | Convert amounts and track exchange rates |
-| Vendor Portal Integration | Direct API connection to pull invoices |
+| Auto-Approval Rules | Automatically approve trusted vendors under set thresholds |
+| API Integrations | Direct connection to QuickBooks, NetSuite, or SAP for seamless data flow |
+| Duplicate Detection | Prevent double payments by checking invoice numbers and vendor combinations |
 | Early Payment Discounts | Flag and calculate 2/10 Net 30 opportunities |
-| Audit Trail | Complete log of all actions and approvals |
 
 ## Best Practices
 

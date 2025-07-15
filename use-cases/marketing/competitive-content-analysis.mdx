@@ -19,150 +19,254 @@ description: 'Analyze competitor content and strategies with Lindy'
   </div>
 </div>
 
+You can use the [weekly competitor analysis template](https://chat.lindy.ai/home/?templateId=687610877b70782297d2a281) to get started.
+
 ## Quick Overview
 
-With this competitive intelligence flow, Lindy will:
+Automate competitor tracking across social media and company announcements. Lindy will:
 
-- **Monitor** competitor websites, news, and social media on autopilot
-- **Track** product updates, pricing changes, and new feature launches
-- **Analyze** their content strategy and market positioning
-- **Synthesize** findings into actionable intelligence reports
-- **Alert** your team to threats and opportunities as they emerge
+- **Monitor** competitors across all major platforms weekly
+- **Analyze** their latest posts, product releases, and content strategies  
+- **Track** engagement patterns and emerging trends
+- **Compile** weekly reports with findings and insights
+- **Alert** your team to new launches and company updates
 
-Set it up once and get continuous competitive intelligence delivered to your inbox.
+Keep tabs on competitor activity without manual research.
 
-## Setting Up Your Research Flow
+## Setting Up Your Competitor Tracking
 
-### Step 1: Define Competitors & Triggers
+### Step 1: Weekly Analysis Trigger
 
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Competitor list setup" />
-</Frame>
-
-1. Create a Google Sheet with columns: Company, Domain, LinkedIn, Twitter, Blog URL
-2. Add two triggers:
-   - `Chat Message Received` to add new competitors on demand
-   - `Scheduler – Weekly` → Monday 08:00 for regular research runs
-
-### Step 2: Web Monitoring
+Set up automatic weekly competitor analysis to track their latest activity.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Web search configuration" />
+  <img src="/lindy-brand-assets/research-trigger.png" alt="Weekly competitive analysis trigger" />
 </Frame>
 
-Add a `Loop – For Each` to iterate through competitors, then:
+Use `On Recurring Schedule` set to weekly (e.g., Monday 8:30 AM).
 
-- `Search the Internet` → "company announcement news past week"
-- `Search the Internet` → "company funding product launch"
-- `Web Fetch` → domain/pricing to capture current pricing
-- `Web Fetch` → blog_url to check for new posts
+### Step 2: Get Competitor Directory
 
-### Step 3: Social Media Analysis
+Retrieve your competitor tracking spreadsheet with all platform URLs for comprehensive analysis.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Social media monitoring" />
+  <img src="/lindy-brand-assets/research-spreadsheet.png" alt="Competitor spreadsheet lookup" />
 </Frame>
 
-Within the same loop:
+Use `Google Sheets – Get Spreadsheet` from your competitor tracking sheet.
 
-- `Search the Internet` → "site:linkedin.com/company/company posts"
-- `Search the Internet` → "twitter_handle product feature announcement"
-- Look for patterns in job postings: "company hiring senior roles"
+Required columns:
+- **Competitor Name**: Company name for reporting
+- **Website**: Main company website URL
+- **LinkedIn URL**: LinkedIn company page
+- **YouTube URL**: YouTube channel link
+- **TikTok URL**: TikTok profile link  
+- **Instagram URL**: Instagram business account
 
-Store findings in variables for later synthesis.
+<Tip>
+Keep your competitor spreadsheet updated with active social media accounts for comprehensive coverage.
+</Tip>
 
-### Step 4: Product & Feature Tracking
+### Step 3: Start Competitor Analysis Loop
+
+Begin processing each competitor individually for cross-platform content analysis.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Feature comparison matrix" />
+  <img src="/lindy-brand-assets/research-enter-loop.png" alt="Competitor analysis loop start" />
 </Frame>
 
-- `Web Fetch` → domain/features or /products page
-- `AI Agent – Extract` to pull out feature lists and capabilities
-- `Google Sheets – Update Row` to maintain feature comparison matrix
-- Add `Condition` to flag if competitor adds features you don't have
+Add the `rows` output reference from your `Get Spreadsheet` action to iterate through each competitor.
 
-### Step 5: Generate Intelligence Report
+### Step 4: Multi-Platform Analysis
+
+Analyze competitor activity across all their social media and web platforms.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="AI report generation" />
+  <img src="/lindy-brand-assets/research-agent.png" alt="Multi-platform competitor analysis" />
 </Frame>
 
-After the loop completes:
-
-- `AI Agent – Generate Text` with prompt:
+Add `AI Agent – Competitor Research Assistant`:
 
 ```
-Using all competitor findings from research_data:
+You are a research assistant focused on tracking competitor activity and content. 
 
-Create an executive intelligence brief with:
-1. Executive Summary (3 bullets)
-2. Key Moves This Week
-   - Major product/feature launches
-   - Pricing or positioning changes
-   - Notable hires or expansions
-3. Emerging Threats (what could impact us)
-4. Opportunities (gaps we could exploit)
-5. Recommended Actions (3-5 specific steps)
+TASK: Analyze competitor activity for: competitor_name
 
-Keep it scannable with bullet points and bold key insights.
+TOOLS AVAILABLE:
+- Search Perplexity (ALWAYS use Sonar Reasoning Pro for searches)
+- Get TikTok profile by URL
+- Get YouTube channel by URL  
+- Get LinkedIn profile by URL
+- Get Instagram by URL
+
+ANALYSIS PROTOCOL:
+
+1. RECENT ACTIVITY SCAN (Past 7 Days):
+   - Use Perplexity to search: "competitor_name product launch announcement news past week"
+   - Use Perplexity to search: "competitor_name funding acquisition partnership news 7 days"
+   - Check ALL provided social URLs for new posts, campaigns, content themes
+
+2. CONTENT STRATEGY ANALYSIS:
+   - LinkedIn: Analyze post frequency, engagement rates, thought leadership topics
+   - YouTube: Check for new videos, view counts, subscriber growth, content themes
+   - TikTok: Look for viral content, trending hashtags, brand personality shifts
+   - Instagram: Examine visual brand evolution, story content, influencer partnerships
+   - Website: Scan for new features, pricing changes, messaging updates
+
+3. COMPETITIVE INTELLIGENCE:
+   - Product announcements or feature releases
+   - Marketing campaign launches or messaging pivots
+   - Executive hires or departures  
+   - Customer wins or case studies
+   - Pricing strategy changes
+   - Partnership or integration announcements
+
+4. CONTENT THEMES & TRENDS:
+   - What topics are they focusing on?
+   - How is their brand voice evolving?
+   - Which content formats are performing best?
+   - What audience segments are they targeting?
+
+DELIVERABLE FORMAT:
+Return organized findings by platform with specific examples, metrics, and key takeaways. Focus on notable changes or patterns.
+
+BE THOROUGH AND SPECIFIC.
+
+Your task is complete once your detailed research has concluded.
 ```
 
-### Step 6: Distribute & Archive
+### Step 5: Add Findings to Context
+
+Compile and organize all gathered competitor research for the weekly report.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Report distribution" />
+  <img src="/lindy-brand-assets/research-add-context.png" alt="Competitive intelligence context collection" />
 </Frame>
 
-- `Slack – Send Channel Message` to #competitive-intel with summary
-- `Gmail – Send Email` full report to leadership team
-- `Google Docs – Create Document` to archive the full report
-- `Knowledge Base – Add Document` for future reference
-- `Google Sheets – Append Row` with date, key findings, action items
+Use `Add Context` action with all discovered findings:
 
-## Advanced Customizations
+```
+COMPETITOR RESEARCH: competitor_name
+Week of: current_date
+
+PLATFORM ANALYSIS:
+[All platform findings organized by LinkedIn, YouTube, TikTok, Instagram, Website]
+
+KEY TAKEAWAYS:
+[Notable changes and patterns]
+
+ACTIVITY LEVEL:
+[Assessment of their recent activity and updates]
+```
+
+### Step 6: Exit Analysis Loop  
+
+Complete competitor analysis and prepare comprehensive compilation.
+
+<Frame>
+  <img src="/lindy-brand-assets/research-exit-loop.png" alt="Exit competitor analysis loop" />
+</Frame>
+
+Add `Exit Loop` action and include the context variable to transfer all competitor research outside the loop for final report generation.
+
+### Step 7: Compile Weekly Report
+
+Use AI to analyze all collected research and create a comprehensive weekly summary.
+
+<Frame>
+  <img src="/lindy-brand-assets/research-report.png" alt="Compile weekly competitor report" />
+</Frame>
+
+Add `AI Agent – Weekly Report Compiler`:
+
+```
+You are an expert research analyst who synthesizes competitor intelligence into actionable weekly reports. You excel at identifying patterns and extracting the most strategic insights from large amounts of data.
+
+CONTEXT: You have access to a week's worth of competitor research across all platforms and channels.
+
+MISSION: Create a comprehensive weekly competitor analysis report that highlights the most important findings, trends, and changes.
+
+ANALYSIS FRAMEWORK:
+1. PRIORITY RANKINGS: Rank competitors by activity level and significance of updates
+2. TREND IDENTIFICATION: Spot patterns across multiple competitors 
+3. CHANGE DETECTION: Flag notable shifts in messaging, strategy, or product focus
+4. CONTENT PERFORMANCE: Identify their best-performing content and formats
+5. OPPORTUNITY MAPPING: Note gaps or weaknesses in competitor approaches
+
+REPORT STRUCTURE:
+- Executive Summary (2-3 key takeaways)
+- Competitor-by-competitor breakdown with activity highlights
+- Cross-competitor trends and patterns
+- Notable launches, announcements, or strategy shifts
+- Content performance insights
+- Recommendations for our team
+
+TONE: Professional but engaging. Focus on actionable insights over raw data dumps.
+
+Synthesize all the context provided into a polished weekly intelligence report.
+
+Keep your language concise but helpful. only include words that add value to the report - no fluff.
+
+Your task is finished when you finish writing the report.
+```
+
+### Step 8: Send Weekly Report
+
+Send the compiled competitor research to your team.
+
+<Frame>
+  <img src="/lindy-brand-assets/research-final-slack.png" alt="Competitive intelligence report delivery" />
+</Frame>
+
+Use `Slack – Send Message` to your competitor tracking channel with the compiled report from Step 7:
+
+```
+Reference the output from the recent AI agent to send the exact report in markdown
+```
+
+## Advanced Features
 
 | Feature | What it does |
 |---------|--------------|
-| Review Mining | Analyze competitor reviews on G2/Capterra for pain points |
-| Patent Monitoring | Search USPTO for new filings in your space |
-| Executive Tracking | Alert when key leaders join/leave competitors |
-| Campaign Detection | Flag new marketing campaigns or messaging pivots |
-| Pricing History | Track pricing changes over time with charts |
+| Sentiment Analysis | Track brand sentiment changes across platforms |
+| Engagement Benchmarking | Compare competitor engagement rates to industry standards |  
+| Content Performance Tracking | Identify their highest-performing content formats |
+| Executive Monitoring | Alert when key leaders join/leave competitors |
+| Campaign Detection | Flag new marketing campaigns or messaging shifts |
 
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion title="Focus on Actionable Intel">
-    Skip vanity metrics; prioritize insights that could change your strategy.
+  <Accordion title="Focus on Meaningful Changes">
+    Look for significant updates like product releases or messaging changes rather than just engagement metrics.
   </Accordion>
   
-  <Accordion title="Verify Major Claims">
-    Add a human review step for big news before sharing widely.
+  <Accordion title="Monitor Platform-Specific Trends">
+    Different platforms reveal different strategic insights.
   </Accordion>
   
-  <Accordion title="Respect Legal Boundaries">
-    Monitor only public information; never attempt to access private data.
+  <Accordion title="Track Patterns Over Time">
+    Weekly snapshots build powerful trend analysis - save reports for quarterly strategic reviews.
   </Accordion>
   
-  <Accordion title="Track Trends Over Time">
-    Weekly snapshots build into powerful trend analysis after 3-6 months.
+  <Accordion title="Act on Intelligence">
+    Set up follow-up actions for high-priority opportunities or threats identified in reports.
   </Accordion>
 </AccordionGroup>
 
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card title="Market Trend Analyzer" href="/tutorials/market-trends" icon="chart-line">
-    Expand beyond competitors to full market intelligence
+  <Card title="Focus Group Simulator" href="/use-cases/marketing/focus-group-simulator" icon="users">
+    Test your responses to competitor moves
   </Card>
   <Card title="Social Listening Bot" href="/tutorials/social-listening" icon="ear-listen">
     Monitor brand mentions and sentiment
   </Card>
-  <Card title="Content Gap Finder" href="/tutorials/content-gaps" icon="magnifying-glass">
-    Identify topics competitors miss
+  <Card title="Market Trend Analyzer" href="/tutorials/market-trends" icon="chart-line">
+    Expand to full market intelligence
   </Card>
-  <Card title="Win/Loss Analyzer" href="/tutorials/win-loss" icon="trophy">
-    Track why deals go to competitors
+  <Card title="Campaign Performance Tracker" href="/tutorials/campaign-tracker" icon="target">
+    Monitor your own campaign performance
   </Card>
 </CardGroup>
