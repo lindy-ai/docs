@@ -706,6 +706,77 @@ a[href^="mailto:support@lindy.ai"] {
   transition: background-color 0.2s ease !important;
 }
 
+/* ============== STANDARDIZE ALL YELLOW SHADES IN DARK MODE ============== */
+/* Make all solid yellow instances use the same lighter shade */
+
+/* Dark mode: Standardize all primary/yellow text colors */
+.dark .text-primary,
+.dark .text-primary-light,
+.dark [class*="text-yellow"],
+.dark [class*="text-amber"],
+.dark .gradient-text,
+.dark .text-link,
+.dark a[style*="color: #F0C341"],
+.dark a[style*="color: #E6C147"],
+.dark span[style*="color: #F0C341"],
+.dark span[style*="color: #E6C147"] {
+  color: #F5E198 !important; /* Lighter, consistent yellow for all text */
+}
+
+/* Dark mode: Standardize all yellow backgrounds */
+.dark [style*="background: #F0C341"],
+.dark [style*="background: #E6C147"],
+.dark [style*="background-color: #F0C341"],
+.dark [style*="background-color: #E6C147"],
+.dark .bg-primary,
+.dark .bg-primary-light {
+  background-color: #F5E198 !important; /* Lighter yellow for backgrounds */
+}
+
+/* Dark mode: Standardize yellow borders */
+.dark [style*="border-color: #F0C341"],
+.dark [style*="border-color: #E6C147"],
+.dark .border-primary,
+.dark .border-primary-light {
+  border-color: #F5E198 !important; /* Lighter yellow for borders */
+}
+
+/* Dark mode: Override any CSS custom properties for yellow */
+.dark {
+  --color-primary: #F5E198 !important;
+  --color-primary-light: #F5E198 !important;
+  --color-link: #F5E198 !important;
+  --color-link-hover: #F3D773 !important; /* Slightly darker for hover */
+}
+
+/* Dark mode: Nav items and links using yellow */
+.dark .nav-item:hover,
+.dark .nav-item.active,
+.dark a:hover {
+  color: #F5E198 !important;
+}
+
+/* Dark mode: Any remaining yellow elements */
+.dark .yellow,
+.dark .primary-color,
+.dark [class*="primary"] {
+  color: #F5E198 !important;
+}
+
+/* Dark mode: Underlines and decorations */
+.dark .text-decoration-yellow,
+.dark [style*="text-decoration-color"],
+.dark .underline-yellow {
+  text-decoration-color: #F5E198 !important;
+}
+
+/* Dark mode: Sidebar "On this page" yellow text */
+.dark #on-this-page .text-primary,
+.dark .toc .text-primary,
+.dark .table-of-contents .text-primary {
+  color: #F5E198 !important;
+}
+
 /* ============== DARK MODE TEXT CONTRAST FIXES ============== */
 /* Fix dark mode text readability - keep light mode unchanged */
 
