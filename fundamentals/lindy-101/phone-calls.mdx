@@ -31,7 +31,7 @@ Key capabilities:
 - **100+ countries** - Global reach with competitive pricing
 
 <Note>
-Phone calls are available on Pro, Business, and Enterprise plans. Pro plans are limited to 30 calls/month and English only.
+Phone calls are available on Pro, Business, and Enterprise plans. Pro plans are limited to 30 calls/month, English only, and one call at a time. Business and Enterprise plans offer unlimited concurrent calls and support all languages.
 </Note>
 
 
@@ -61,7 +61,7 @@ Uses the "Make Phone Call" action to initiate calls.
 - Follow-up campaigns
 
 <Tip>
-For phone actions inside AI agent nodes, use GPT-4o mini. For standalone phone workflows, use GPT-4 Turbo for best results.
+Currently, we recommend using GPT-4o mini for phone actions inside AI agent nodes and GPT-4 Turbo for standalone phone workflows. These recommendations may change as new models emerge.
 </Tip>
 
 
@@ -197,6 +197,7 @@ Forwarded calls stop charging for LLM usage once connected to a human.
     • 30 calls/month  
     • English only  
     • Basic voice
+    • Non-concurrent calls only
   </Card>
   
   <Card title="Business" icon="briefcase">
@@ -204,6 +205,7 @@ Forwarded calls stop charging for LLM usage once connected to a human.
     • Unlimited calls  
     • 30+ languages  
     • Call transfers
+    • Unlimited concurrent calls
   </Card>
   
   <Card title="Enterprise" icon="building-columns">
@@ -211,6 +213,7 @@ Forwarded calls stop charging for LLM usage once connected to a human.
     • Business features  
     • Custom voices  
     • Support
+    • Unlimited concurrent calls
   </Card>
 </CardGroup>
 
@@ -254,7 +257,7 @@ Forwarded calls stop charging for LLM usage once connected to a human.
 
 <AccordionGroup>
   <Accordion title="Poor Audio Quality">
-    - Check internet connection stability
+    - Check phone line quality and signal strength
     - Verify language settings match caller's language
     - Test with different phone providers
   </Accordion>
