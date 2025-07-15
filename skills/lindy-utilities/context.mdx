@@ -2,8 +2,9 @@
 title: 'Context'
 icon: 'database'
 sidebarTitle: 'Context'
-description: 'Learn how to use the Context utility to manage and access contextual information in your workflows'
+description: 'Manage your agent memory by adding important information to context or clearing it to focus on what matters most'
 ---
+
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
@@ -19,129 +20,107 @@ description: 'Learn how to use the Context utility to manage and access contextu
   </div>
 </div>
 
-# Context
+## Overview
 
-The Context utility allows you to manage and access contextual information throughout your Lindy workflows. It provides a way to store, retrieve, and manipulate data that needs to be shared across different parts of your agent's execution.
+Context management in Lindy gives you direct control over your agent's memory and attention. Perfect for:
 
-## What is Context?
+- **Prioritizing important information** - anything you add to context gets favored in future decisions
+- **Managing token costs** - clear context when it gets too large or expensive
+- **Focusing agent attention** - remove distractions and highlight what matters
+- **Advanced memory control** - combine with variables for sophisticated patterns
 
-Context is a utility that provides a shared data store for your Lindy workflows. It allows you to store information that can be accessed by different actions, conditions, and utilities within the same task execution.
+Context accrual happens automatically behind the scenes, but these actions give you more control.
 
-## Use Cases
+## Add Context Action
 
-- **Data Sharing**: Pass information between different actions in your workflow
-- **State Management**: Maintain state across multiple steps
-- **Configuration**: Store configuration data that can be accessed throughout the workflow
-- **Temporary Storage**: Store intermediate results for later use
+- **What it does**: Explicitly adds important information to your agent's working memory, ensuring it's prioritized in all future decisions.
 
-## How to Use Context
+<Frame>
+  <img src="/lindy-brand-assets/add-context.png" alt="Adding important information to context" />
+</Frame>
 
-### Setting Context
+### Inputs
+- **Contextt**: The information you want to add to context
 
-```javascript
-// Set a simple value
-await setContext("userName", "John Doe");
+### Outputs
+- **Context Reference**: Can be referenced as an output in other actions
+- **Updated Context**: The agent's context is updated behind the scenes
+<Tip>
+Lindy automatically manages context accrual for all actions. Anything you explicitly add to context gets prioritized and placed at the top - making it highly favored in the agent's decision-making process.
+</Tip>
 
-// Set an object
-await setContext("userProfile", {
-  name: "John Doe",
-  email: "john@example.com",
-  preferences: {
-    language: "en",
-    timezone: "UTC"
-  }
-});
-```
+## Clear Task Context Action
 
-### Getting Context
+- **What it does**: Removes all or selected context to reduce token usage and refocus your agent's attention on what matters most.
 
-```javascript
-// Get a specific value
-const userName = await getContext("userName");
+<Frame>
+  <img src="/lindy-brand-assets/clear-context.png" alt="Clearing context to manage memory" />
+</Frame>
 
-// Get an object
-const userProfile = await getContext("userProfile");
+### Inputs
+- **Message**: Instructions for what to preserve - like "preserve customer contacts or important information that will stay after the context is cleared"
 
-// Get all context
-const allContext = await getContext();
-```
+### Outputs
+- **Cleared Status**: Confirmation of what was removed
+- **Remaining Context**: What context (if any) was preserved
 
-### Updating Context
+<Tip>
+Advanced Pattern: Before clearing context, save important information to variables. After clearing, add only the essential context back using those variables.
+</Tip>
 
-```javascript
-// Update existing context
-await setContext("userProfile.preferences.language", "es");
+## When to Use Context Actions
 
-// Merge with existing context
-const currentProfile = await getContext("userProfile");
-await setContext("userProfile", {
-  ...currentProfile,
-  lastLogin: new Date().toISOString()
-});
-```
+### Add Context
+Use when you need to prioritize information:
+- Customer details when a call or conversation starts
+- Critical findings that should influence all future decisions  
+- Process state that other actions need to know about
+- Error conditions that need to be tracked
 
-## Context Lifecycle
-
-- **Task Scope**: Context is available throughout the entire task execution
-- **Persistence**: Context persists across different actions and conditions within the same task
-- **Isolation**: Each task has its own isolated context
-- **Cleanup**: Context is automatically cleaned up when the task completes
-
-## Integration Examples
-
-### With LLM Calls
-
-```javascript
-// Store user information in context
-await setContext("userQuery", "How do I reset my password?");
-
-// Use context in LLM call
-const response = await llmCall({
-  prompt: `User asked: ${await getContext("userQuery")}. 
-           Provide a helpful response based on our knowledge base.`
-});
-```
-
-### With Conditions
-
-```javascript
-// Check context to make decisions
-const userType = await getContext("userType");
-if (userType === "premium") {
-  // Provide premium features
-} else {
-  // Provide basic features
-}
-```
-
-### With Actions
-
-```javascript
-// Pass context to external actions
-const userEmail = await getContext("userEmail");
-await sendEmail({
-  to: userEmail,
-  subject: "Your request has been processed",
-  body: "Thank you for your inquiry."
-});
-```
+### Clear Context
+Use to manage costs and focus:
+- When context gets large and expensive
+- Switching between different workflow phases
+- Processing multiple independent items
+- Need to eliminate distractions
 
 ## Best Practices
 
-- **Naming Convention**: Use clear, descriptive names for context keys
-- **Structure**: Organize related data into objects for better organization
-- **Cleanup**: Don't store unnecessary data in context
-- **Security**: Be careful not to store sensitive information in context
-- **Performance**: Avoid storing large amounts of data in context
+<AccordionGroup>
 
-## Context vs Variables
+  <Accordion title="Advanced Context Management">
+    - Use variables to preserve essential data before clearing
+    - Clear context at natural workflow breakpoints
+    - Add context immediately after discovering critical information
+    - Monitor context size in complex workflows
+    - Use descriptive source labels for tracking
+  </Accordion>
 
-- **Context**: Shared across the entire task execution
-- **Variables**: Local to specific actions or conditions
-- **Memory**: Persistent across multiple task executions
+  <Accordion title="Token Cost Optimization">
+    - Clear context when processing multiple similar items
+    - Add only truly essential information to context
+    - Use variables for temporary data that doesn't need global access
+    - Monitor context accumulation in loops
+    - Clear context before major workflow transitions
+  </Accordion>
+</AccordionGroup>
 
-## Related Utilities
+## Next Steps
 
-- **Set Variable**: Store local variables within actions
-- **Memories**: Store persistent information across tasks
-- **Get Task**: Access task-level information 
+<CardGroup cols={2}>
+  <Card title="Set Variables" icon="gear" href="/skills/lindy-utilities/set-variables">
+    Learn how to store temporary data that doesn't need to be in global context
+  </Card>
+  
+  <Card title="Memories" icon="brain" href="/skills/lindy-utilities/memories">
+    Understand persistent memory that survives across different task executions
+  </Card>
+  
+  <Card title="Get Task" icon="list" href="/skills/lindy-utilities/get-task">
+    Access task-level information and execution details
+  </Card>
+  
+  <Card title="LLM Call" icon="message-lines" href="/skills/lindy-utilities/llm-call">
+    Make direct AI requests with controlled context
+  </Card>
+</CardGroup> 

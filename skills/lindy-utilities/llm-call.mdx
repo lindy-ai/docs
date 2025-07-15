@@ -2,8 +2,8 @@
 title: 'LLM Call'
 icon: 'microchip-ai'
 sidebarTitle: 'LLM Call'
+description: 'Make lightweight AI requests with direct model access - cheaper than AI agents but without built-in context'
 ---
-
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
@@ -18,3 +18,119 @@ sidebarTitle: 'LLM Call'
     />
   </div>
 </div>
+
+## Overview
+
+Make direct AI requests to any model provider with full control over prompts and parameters. LLM Call is perfect for:
+
+- **Single AI requests** where you need a specific answer or analysis
+- **Cost-effective processing** - cheaper than using full AI agents
+- **Custom prompt control** - write exactly what you want the AI to do
+- **Output references** - use the AI response in other parts of your workflow
+
+Perfect when you need AI for a specific task without the overhead of a full agent.
+
+## LLM Call Action
+
+- **What it does**: Makes a direct request to your chosen model provider with complete control over the prompt, temperature, and output settings.
+
+<Frame>
+  <img src="/lindy-brand-assets/llm-call.png" alt="LLM Call usage examples" />
+</Frame>
+
+### Inputs
+- **Model Provider**: Choose your AI model (GPT-4, Claude, etc.)
+- **System Prompt**: The instructions you give to the AI
+- **User Prompt**: The actual content you want analyzed
+- **Temperature**: Controls randomness (0 = focused, 1 = creative)
+- **Max Output Tokens**: Limits how long the response can be
+
+<Tip>
+If you set these to manual, the AI won't have context about what's happening in your workflow. It only knows what you explicitly tell it in the prompts.
+</Tip>
+
+### Outputs
+- **AI Response**: The model's complete response to your prompt
+
+### When to Use vs AI Agents
+
+**Use LLM Call when:**
+- You need a single, specific AI analysis
+- Cost is a concern (it's cheaper than AI agents)
+- You want full control over the prompt
+- You don't need workflow context or tool access
+
+**Use AI Agents when:**
+- You need access to tools and integrations
+- The AI should understand your workflow context
+- You want conversational, multi-step interactions
+- You need the AI to make decisions about next actions
+
+## Common Use Cases
+
+### Data Analysis
+```
+System Prompt: "Analyze this data and provide 3 key insights"
+User Message: [CSV data or metrics]
+Result: Focused analysis without expensive agent overhead
+```
+
+### Content Processing
+```
+System Prompt: "Extract the main topic and sentiment from this text"
+User Message: [Email, review, or document content]
+Result: Quick classification or extraction
+```
+
+### Format Conversion
+```
+System Prompt: "Convert this to JSON format with these fields: name, email, company"
+User Message: [Unstructured contact information]
+Result: Structured data output you can use in other actions
+```
+## Advanced Features
+
+| Feature | What it does |
+|---------|--------------|
+| Output References | Use AI response as input for other actions in your workflow |
+| Model Selection | Choose different models based on task complexity and cost |
+| Temperature Control | Fine-tune creativity vs consistency for different use cases |
+| Token Management | Control costs by limiting response length |
+| Batch Processing | Make multiple LLM calls for different data points |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Write Clear System Prompts">
+    Be specific about what you want. Include format requirements, tone, and any constraints.
+  </Accordion>
+  
+  <Accordion title="Consider Context Trade-offs">
+    Remember that LLM Call doesn't know about your workflow. Include all necessary context in your prompts.
+  </Accordion>
+  
+  <Accordion title="Optimize for Cost">
+    Use LLM Call for simple tasks and AI Agents for complex ones that need tools or context.
+  </Accordion>
+  
+  <Accordion title="Test Different Temperatures">
+    Lower temperatures (0.2-0.5) for factual tasks, higher (0.7-1.0) for creative work.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Set Variables" href="/skills/lindy-utilities/set-variables" icon="memory">
+    Store LLM responses for later use
+  </Card>
+  <Card title="Context" href="/skills/lindy-utilities/context" icon="list">
+    Pass AI analysis to other actions
+  </Card>
+  <Card title="Memories" href="/skills/lindy-utilities/memories" icon="brain">
+    Save insights for future reference
+  </Card>
+  <Card title="Configure" href="/skills/lindy-utilities/configure" icon="gear">
+    Set up dynamic prompts and parameters
+  </Card>
+</CardGroup>

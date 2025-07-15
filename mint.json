@@ -150,12 +150,11 @@
         {
           "group": "Lindy Utilities",
           "pages": [
-            "skills/lindy-utilities/get-task",
+            "skills/lindy-utilities/observability",
             "skills/lindy-utilities/llm-call",
             "skills/lindy-utilities/context",
             "skills/lindy-utilities/memories",
-            "skills/lindy-utilities/set-variables",
-            "skills/lindy-utilities/configure"
+            "skills/lindy-utilities/set-variables"
           ]
         },
         {
