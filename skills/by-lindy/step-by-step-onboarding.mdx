@@ -64,7 +64,7 @@ All Step by Step Onboardings start with an **Onboarding trigger** from Lindy Con
 </Note>
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Settings Level Prompt" />
+  <img src="/lindy-brand-assets/sbso4.avif" alt="Step-by-Step Onboarding Trigger" />
 </Frame>
 
 <Tip>
@@ -81,25 +81,18 @@ User authorizations are automatically collected at the beginning of onboarding. 
 ## Form Actions
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Settings Level Prompt" />
+  <img src="/lindy-brand-assets/SBSO-form.png" alt="Form actions" />
 </Frame>
 
 Form Actions enable you to show information and collect input from users:
 
-### Show Multiple-Choice
-Shows a multiple choice question to users and collects input.
-
-### Show Copyable Content
-Shows a piece of text ready to copy.
-
-### Show Info Step
-Shows information to template users.
-
-### Show Text Input
-Shows a question to users and collects long or short text input.
-
-### Show Copyable Embed Code
-Shows the code snippet of a Lindy embed to copy.
+| Action | Purpose |
+|--------|---------|
+| **Show Multiple-Choice** | Shows a multiple choice question to users and collects input |
+| **Show Copyable Content** | Shows a piece of text ready to copy |
+| **Show Info Step** | Shows information to template users |
+| **Show Text Input** | Shows a question to users and collects long or short text input |
+| **Show Copyable Embed Code** | Shows the code snippet of a Lindy embed to copy |
 
 <Note>
 Each step has an 'illustration' field. If no file is uploaded, there will be a default illustration.
@@ -167,96 +160,6 @@ To ensure a smooth experience, add a **Message Received trigger** to your templa
   </Accordion>
 </AccordionGroup>
 
-## Example: Meeting Notetaker Onboarding
-
-Let's walk through building a Step by Step Onboarding for the Meeting Notetaker template.
-
-### Planning Phase
-**Input needed**: Calendar configuration from the Calendar Event Started step
-**Output needed**: None (Lindy will automatically join meetings)
-
-### Building the Flow
-
-1. **Start with Onboarding trigger** (from Lindy Utilities)
-
-2. **Add Show Info step** to introduce the template:
-   ```
-   Title: "Meeting Notetaker Setup"
-   Description: "This Lindy will automatically join your meetings, take notes, and send summaries to attendees."
-   ```
-
-3. **Add Collect User Input to Configure Step**:
-   - Question: "Which calendar should Lindy monitor for meetings?"
-   - Description: "Select the calendar containing meetings you want Lindy to join"
-   - Configure: Calendar Event Started step → Calendar field
-
-4. **Add final Show Info step**:
-   ```
-   Title: "Setup Complete!"
-   Description: "Your Meeting Notetaker is ready! You can further customize it in the Flow Editor."
-   ```
-
-### Test and Share
-- Test the onboarding flow
-- Share your template with built-in onboarding
-
-## Example: Meeting Scheduler with Copyable Content
-
-### Planning Phase
-**Input needed**: Optional Zoom link configuration for Schedule Event step
-**Output needed**: User's Lindy Mail address for CC'ing
-
-### Building the Flow
-
-1. **Onboarding trigger**
-
-2. **Show Info step**: Introduce the Meeting Scheduler
-
-3. **Collect User Input to Configure Step**: Configure Zoom link option
-
-4. **Get User Info**: Collect Lindy Mail Suffix
-
-5. **Show Copyable Content**: Display the Lindy Mail address
-   - Copyable Field: Lindy Mail Suffix from Get User Info
-   - Title: "Your Lindy Mail Address"
-   - Description: "CC this address in email threads to have Lindy schedule meetings"
-
-6. **Final Show Info step**: Completion message
-
-## Example: Website Customer Support Bot
-
-### Planning Phase
-**Input needed**: 
-- Knowledge Base configuration
-- Embed configuration  
-- Escalation conditions
-
-**Output needed**: Embed code for website integration
-
-### Building the Flow
-
-1. **Onboarding trigger**
-
-2. **Show Info step**: Introduce the Customer Support Bot
-
-3. **Configure Knowledge Base**: Set up support documentation
-   - Title: "Add Your Support Content"
-   - Description: "Upload FAQs, documentation, and support articles"
-
-4. **Configure Lindy Embed**: Set up the chat widget
-   - Title: "Customize Your Chat Widget"
-   - Description: "Configure how the support chat appears on your website"
-
-5. **Configure Step**: Set escalation conditions
-   - Title: "Define Escalation Rules"
-   - Description: "When should complex issues be escalated to human agents?"
-   - Configure: Condition step for escalation logic
-
-6. **Show Copyable Lindy Embed Code**: Display integration code
-   - Title: "Add to Your Website"
-   - Description: "Copy this code and add it to your website to enable the support chat"
-
-7. **Final Show Info step**: Completion and next steps
 
 <Warning>
 Template users will not be able to see the onboarding flow in their template's Flow Editor after sharing.
