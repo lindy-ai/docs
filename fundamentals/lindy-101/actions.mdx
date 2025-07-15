@@ -16,3 +16,252 @@ sidebarTitle: 'Actions'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Actions are the building blocks of your Lindy workflows - specific operations that your AI agent can perform to complete tasks. From sending emails and creating calendar events to complex data processing and multi-step reasoning, actions transform your Lindy from a simple chatbot into a powerful automation engine.
+A single workflow can contain multiple actions that execute sequentially or in parallel, creating sophisticated automations that handle everything from customer support to lead qualification.
+
+## Key benefits of using actions:
+
+- Automated task execution – Perform complex operations without manual intervention
+- Seamless integrations – Connect with hundreds of third-party applications
+- AI-powered intelligence – Adapt behavior based on context and data
+- Scalable operations – Handle single tasks or process thousands of items in parallel
+- Reliable workflows – Constrained AI ensures predictable, business-ready automation
+
+
+## How to add an action
+<Steps>
+  <Step title="Enter the Flow Editor">
+    Navigate to your Lindy workflow and open the Flow Editor - the visual canvas for building your automation
+    <Frame>
+      <img src="/lindy-brand-assets/Actions_5.png" alt="Flow Editor interface" />
+    </Frame>
+  </Step>
+  <Step title="Click the plus button">
+    Click the blue plus (+) button beneath any workflow step or right-click on the canvas to add a new action
+    <Frame>
+      <img src="/lindy-brand-assets/Actions_6.png" alt="Adding actions interface" />
+    </Frame>
+  </Step>
+  <Step title="Select your action">
+    Search for and select the action you want to add from the comprehensive library of first-party and third-party integrations
+    <Frame>
+      <img src="/lindy-brand-assets/Actions_7.png" alt="Action selection interface" />
+    </Frame>
+  </Step>
+  <Step title="Configure the action">
+    Set up the action parameters, account connections, and AI instructions to customize the behavior for your specific use case
+    <Frame>
+      <img src="/lindy-brand-assets/Actions_8.png" alt="Action configuration interface" />
+    </Frame>
+  </Step>
+</Steps>
+
+
+## Types of actions
+
+### Basic actions
+<Frame>
+  <img src="/lindy-brand-assets/Actions_1.png" alt="Basic actions workflow example" />
+</Frame>
+Basic actions provide simple, deterministic operations that follow predefined rules. They consume fewer credits (minimum 1 credit per task), offer higher reliability, and are recommended for straightforward workflows. Examples include:
+- Send Email
+- Create Calendar Event
+- Update Spreadsheet
+- Send Slack Message
+### AI Agent actions
+<Frame>
+  <img src="/lindy-brand-assets/Actions_2.png" alt="AI Agent actions workflow example" />
+</Frame>
+AI Agent actions offer more powerful capabilities with complex reasoning and adaptive behavior. These actions can continue "looping" until exit conditions are met and adapt to context dynamically. They consume more credits but provide sophisticated decision-making for multi-step processes.
+### Stateful actions
+<Frame>
+  <img src="/lindy-brand-assets/Actions_3.png" alt="Stateful actions workflow example" />
+</Frame>
+Stateful actions maintain context and memory across multiple executions, allowing your Lindy to remember previous interactions and build upon past conversations or decisions. Perfect for customer support scenarios where conversation history matters.
+### Multi-thread actions
+<Frame>
+  <img src="/lindy-brand-assets/Actions_4.png" alt="Multi-thread actions workflow example" />
+</Frame>
+Multi-thread actions enable parallel processing of multiple items simultaneously, like sending personalized emails to hundreds of leads or processing bulk data operations. These actions provide massive scalability through parallel execution.
+
+
+
+## Action configuration
+Every action in Lindy offers several configuration options to customize its behavior and ensure it works perfectly within your workflow.
+### Account selection
+<Frame>
+  <img src="/lindy-brand-assets/Actions_9.png" alt="Account selection interface" />
+</Frame>
+Choose which connected account the action should use. If you authorize your company Gmail account, Lindy will only access your company email. You can authorize multiple accounts for a given application, but each action will only use one account.
+### Model selection
+<Frame>
+  <img src="/lindy-brand-assets/Actions_10.png" alt="Model selection interface" />
+</Frame>
+Select the AI model to be used for the action. The model completes the parameters using context from the workflow and data from prior steps. Bigger models are smarter but more expensive - Lindy provides top AI models ready to use out of the box.
+### Parameter configuration
+There are two main ways to configure action parameters:
+#### AI Prompt mode
+<Frame>
+  <img src="/lindy-brand-assets/Actions_11.png" alt="AI Prompt mode interface" />
+</Frame>
+Use natural language instructions to tell Lindy how to complete the action. The AI will analyze context and determine appropriate values. Example: "Send a follow-up email thanking the customer for their interest and asking if they have any questions."
+#### Set Manually mode
+<Frame>
+  <img src="/lindy-brand-assets/Actions_12.png" alt="Set Manually mode interface" />
+</Frame>
+Input specific values that Lindy will always use. Ideal for fields that should have consistent values. Example: Setting the email subject to always be "Thank you for your interest" or marking a status field as "Completed."
+### Human-in-the-loop controls
+<Frame>
+  <img src="/lindy-brand-assets/Actions_13.png" alt="Human approval interface" />
+</Frame>
+For sensitive actions, you can require human approval before execution. This adds an extra layer of control for critical operations like sending emails to important customers or making significant data changes.
+## First-party actions
+Lindy provides powerful first-party actions that are built specifically for the platform and offer unique capabilities not available elsewhere.
+### Lindy Mail
+<Frame>
+  <img src="/lindy-brand-assets/Actions_14.png" alt="Lindy Mail action" />
+</Frame>
+Every Lindy gets a dedicated email address that can send and receive emails. Perfect for creating automated email workflows without using your personal or business email accounts.
+### Lindy Meeting
+<Frame>
+  <img src="/lindy-brand-assets/Actions_15.png" alt="Lindy Meeting action" />
+</Frame>
+Join meetings automatically, record calls, and provide speaker-identified transcriptions. Ideal for note-taking, meeting summaries, and follow-up automation.
+### Knowledge Base Search
+<Frame>
+  <img src="/lindy-brand-assets/Actions_16.png" alt="Knowledge Base Search action" />
+</Frame>
+Perform semantic search through your indexed company information, documentation, and files. Enables your Lindy to provide accurate, contextual responses based on your specific knowledge base.
+### Code Action
+<Frame>
+  <img src="/lindy-brand-assets/Actions_17.png" alt="Code Action interface" />
+</Frame>
+Execute custom Python or JavaScript code in isolated E2B sandboxes. Perfect for complex data processing, API integrations, or custom business logic that requires programming.
+## Third-party actions
+Lindy integrates with hundreds of external applications, enabling seamless automation across your entire tech stack.
+
+### Communication actions
+Email 
+- Send Email
+- Send Reply
+- Add Label
+- Search Emails
+
+Messaging (Slack)
+- Send Direct Message
+- Send Channel Message
+- Upload File
+- Set Status
+
+### Productivity actions
+Calendar (Google & Microsoft Outlook)
+
+- Create Event
+- Update Event
+- Get Event Details
+- Check Availability
+
+### Spreadsheets 
+
+- Add Row
+- Update Cell
+- Get Data
+- Create Worksheet
+
+### CRM and Sales actions
+Salesforce
+
+Create/Update Records
+SOQL Queries
+Chatter Posts
+Custom Field Management
+
+HubSpot
+
+Contact Management
+Deal Updates
+Email Tracking
+Custom Properties
+
+## Advanced action features
+
+### Conditional logic
+<Frame>
+  <img src="/lindy-brand-assets/Actions_18.png" alt="Conditional logic workflow" />
+</Frame>
+Use conditions to create sophisticated workflow routing. Actions can be executed based on specific criteria, enabling dynamic workflows that adapt to different scenarios and data inputs.
+### Looping capabilities
+<Frame>
+  <img src="/lindy-brand-assets/Actions_19.png" alt="Looping actions workflow" />
+</Frame>
+Process multiple items in parallel instead of sequential execution. Perfect for bulk operations like sending personalized emails to lead lists or processing multiple form submissions simultaneously.
+### Error handling
+<Frame>
+  <img src="/lindy-brand-assets/Actions_20.png" alt="Error handling interface" />
+</Frame>
+Built-in error detection provides automatic notifications when actions fail, marks errors in Task History, and offers retry functionality to continue from where execution stopped.
+### Output referencing
+<Frame>
+  <img src="/lindy-brand-assets/Actions_21.png" alt="Output referencing interface" />
+</Frame>
+Reference data from previous steps in your workflow. Use outputs from earlier actions as inputs for later ones, creating sophisticated data flows and eliminating manual data entry.
+## Action categories
+
+### Communication actions
+Perfect for customer outreach, internal notifications, and cross-platform messaging:
+
+Email automation and responses
+Slack notifications and updates
+SMS and phone integrations
+Social media posting
+
+### Data actions
+Handle information processing and storage:
+
+Database updates and queries
+Spreadsheet management
+File processing and organization
+Data validation and enrichment
+
+### Integration actions
+Connect different systems and platforms:
+
+CRM synchronization
+API calls and webhooks
+Cross-platform data transfer
+System notifications
+
+### AI-powered actions
+Leverage artificial intelligence for complex tasks:
+
+Content generation and summarization
+Language translation and processing
+Decision-making and classification
+Intelligent data extraction
+
+## Best practices
+<Tip>
+  Start with simple actions and gradually add complexity. Test each action individually before building complex workflows.
+</Tip>
+Optimization strategies
+Model Selection: Begin with powerful models to get workflows right, then optimize costs by switching to smaller models once workflows are proven. Match model complexity to task requirements.
+Credit Management: Basic automations use 1 credit minimum while complex tasks consume more. Use "Set Manually" mode for direct data transfer to reduce credit consumption.
+Error Prevention: Implement human-in-the-loop controls for sensitive actions, test workflows thoroughly, and set up proper error notifications.
+Security considerations
+Data Protection: All actions use encryption at rest and in transit, with account isolation and granular permission management for maximum security.
+Access Control: Each action only accesses the specific accounts you authorize, with secure OAuth authentication that never stores passwords.
+Audit Trails: Complete logging of all action executions provides full visibility into what your Lindy is doing and when.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Understanding Triggers" href="/fundamentals/lindy-101/triggers" icon="bolt">
+    Learn how to start workflows automatically
+  </Card>
+  <Card title="Testing Workflows" href="/testing/test-panel" icon="vial">
+    Verify your actions behave as expected
+  </Card>
+</CardGroup>
