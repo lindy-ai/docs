@@ -19,140 +19,270 @@ description: 'Automate employee feedback collection and analysis with Lindy'
   </div>
 </div>
 
+
+You can use the [weekly employee feedback template](https://chat.lindy.ai/home/?templateId=6875fa3a17018229eea893fe) to get started.
+
 ## Quick Overview
 
-Each week, Lindy will:
+Transform employee feedback collection from manual surveys to an automated weekly pulse system. Lindy will:
 
-- **Email** every employee a 3-question pulse check  
-- **Listen** for their replies and add them to a Google Sheet  
-- **Summarize** themes, sentiment, and standout quotes every Friday  
-- **Send** a concise digest to leadership via Slack or email  
+- **Schedule** weekly feedback campaigns automatically
+- **Retrieve** employee contact information from your spreadsheet
+- **Send** personalized feedback requests to each team member
+- **Monitor** responses and alert you to feedback as it arrives
+- **Collect** all responses using context for comprehensive tracking
+- **Compile** a weekly summary report after the collection period
 
-## Building the Flow
+No more chasing down feedback or manually organizing responses.
 
-### Step 1: Weekly Survey Blast
+## Setting Up Your Feedback System
 
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Scheduler + email blast" />
-</Frame>
+### Step 1: Weekly Schedule Trigger
 
-1. `Scheduler – Weekly` → Monday 09:00.  
-2. `Gmail – Send Email`  
-   - **To**: comma-separated employee list (or Google Group).  
-   - **Subject**: `Weekly Pulse – 2-minute check-in 🙌`.  
-   - **Body**:  
-     ```
-     Hi team!
-
-     1) What went well last week?  
-     2) Biggest frustration or blocker?  
-     3) One idea to make next week smoother?
-
-     Reply directly to this email—answers are anonymous in the summary.
-     Thanks!
-     ```
-
-### Step 2: Capture Replies
+Set up automatic weekly feedback collection to maintain consistent pulse checks.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Email received trigger" />
+  <img src="/lindy-brand-assets/feedback-trigger.png" alt="Weekly schedule trigger setup" />
 </Frame>
 
-- Trigger: `Gmail – Email Received`  
-- Filter: `subject contains "Weekly Pulse"`.
+Use `On Recurring Schedule` set to weekly (e.g., Monday 9:00 AM) to kick off the feedback collection process automatically.
 
-### Step 3: Log to Google Sheets
+### Step 2: Get Employee Directory
+
+Retrieve the list of employees who should receive feedback requests from your master spreadsheet.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Append row" />
+  <img src="/lindy-brand-assets/feedback-get-spreadsheet.png" alt="Employee spreadsheet lookup" />
 </Frame>
 
-- Action: `Google Sheets – Append Row`  
-- Columns: Date, RawBody, From (anonymize by storing only domain or alias).
+Use `Google Sheets – Get Spreadsheet` from your employee directory sheet.
 
-### Step 4: Weekly Digest
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Weekly summary" />
-</Frame>
-
-1. `Scheduler – Weekly` → Friday 16:00.  
-2. `Google Sheets – Read Rows` for current week.  
-3. `AI Agent – Generate Text` prompt:
-
-```
-You have array {{rows}} each with "RawBody".
-
-• Count total responses.
-• Detect overall sentiment (positive / mixed / negative).
-• List top 3 recurring words or phrases (≤4 words each).
-• Quote 2 upbeat lines and 2 concerns (anonymized).
-• Suggest one focus area for next week in ≤12 words.
-
-Format as:
-
----
-
-🗒️ *Weekly Feedback Digest* (Jun 9–15)
-
-• Responses: 37
-• Sentiment: mixed
-• Top themes: deployment delay, PTO overlap, new dashboard love
-
-"Launch felt smoother than last month!"
-"Staging server kept timing out."
-"Would like clearer PTO calendar."
-"Dashboard update is awesome 👏"
-
-*Focus → reduce staging downtime*
-```
-
-### Step 5: Deliver the Digest
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Slack post" />
-</Frame>
-
-- `Slack – Send Channel Message` to `#leadership-digests` (or `Gmail – Send Email` to execs).  
-- Message body: output from the AI Agent.
+Required columns:
+- **Full Name**: Employee's complete name for personalization
+- **Email**: Work email address for survey delivery
 
 <Tip>
-Prefer Slack DMs? Swap Steps 1 & 5 for `Slack – Send Direct Message` to each employee and back to the channel for the digest—the rest of the flow stays the same.
+Keep your employee spreadsheet updated with current team members for accurate feedback collection. The default row limit is 100 - increase if you have more employees.
 </Tip>
+
+### Step 3: Start Employee Loop
+
+Begin processing each employee individually to send personalized feedback requests.
+
+<Frame>
+  <img src="/lindy-brand-assets/feedback-enter-loop.png" alt="For each employee loop start" />
+</Frame>
+
+Add the `rows` output reference from your `Get Spreadsheet` action to iterate through each employee row from your spreadsheet.
+
+<Warning>
+Increase the max cycles & concurrent above the number of employees you want to send feedback too.
+</Warning>
+
+### Step 4: Send Individual Feedback Email
+
+Send personalized feedback requests to each employee with engaging questions.
+
+<Frame>
+  <img src="/lindy-brand-assets/feedback-send.png" alt="Personalized feedback email" />
+</Frame>
+
+Use `Gmail – Send Email` with:
+
+- **To**: employee email (auto is okay setting)
+- **Example Subject**: Weekly Pulse Check - 2 Minutes 📝
+- **Example Body**:
+
+```
+Hi employee_name,
+
+Hope you're having a great week! Quick 3-question pulse check:
+
+1️⃣ What went really well for you this week?
+
+2️⃣ What was your biggest challenge or frustration?
+
+3️⃣ One thing that would make next week better?
+
+Just reply to this email - your feedback helps us improve!
+
+Thanks,
+The Team
+```
+
+### Step 5: Send Feedback to Private Channel
+
+Immediately share feedback responses in a private Slack channel as they come in.
+
+<Frame>
+  <img src="/lindy-brand-assets/feedback-private-slack.png" alt="Feedback response monitoring" />
+</Frame>
+
+
+Use `Slack – Send Message` after email reply received:
+
+```
+📬 **New Feedback Received**
+
+**From**: sender_name
+**Received**: current_time
+
+**Response**: full response
+```
+
+<Warning>
+Remember to add Lindy app to the proper slack channel to correctly receive messages.
+</Warning>
+
+### Step 6: Add Feedback to Context
+
+Add the full questions and answers from the person into tcontext for Lindy to compile a report.
+
+<Frame>
+  <img src="/lindy-brand-assets/feedback-add-context.png" alt="Context collection for feedback" />
+</Frame>
+
+Use `Add Context` action with prompt:
+
+```
+Add the full questions and answers from this feedback response into the context:
+
+Questions asked: [3 feedback questions]
+Employee response: email_body
+Received from: sender_name on current_date
+```
+
+### Step 7: Set Collection Timer
+
+Set a 5-day timer to allow employees time to respond before compiling the final report.
+
+<Frame>
+  <img src="/lindy-brand-assets/feedback-timer.png" alt="Timer for feedback collection" />
+</Frame>
+
+After sending each email, add `Set Timer` for 7200 minutes (5 days).
+
+<Warning>
+Make sure to connect the "after wait elapsed" output to the "exit loop" action. This is crucial for exiting the loop correctly at the right time.
+</Warning>
+
+### Step 8: Exit Loop
+
+Exit the employee processing loop and prepare to compile the weekly report.
+
+<Frame>
+  <img src="/lindy-brand-assets/feedback-exit-loop.png" alt="Exit loop processing" />
+</Frame>
+
+Add `Exit Loop` action with prompt:
+
+```
+If the employee did not reply to feedback request, leave this empty.
+If the employee did reply, include the full context that you just received from their response.
+```
+
+<Tip>
+Loops have scope memory - this step allows us to correctly transfer the collected feedback memory outside of the loop for final report generation.
+</Tip>
+
+### Step 9: Generate Weekly Report
+
+After the collection period ends, compile all received feedback into a comprehensive weekly summary.
+
+<Frame>
+  <img src="/lindy-brand-assets/feedback-agent.png" alt="Weekly report compilation" />
+</Frame>
+
+When timer elapses (Friday), exit the loop and use `AI Agent – Generate Weekly Report`:
+
+```
+Compile a weekly feedback summary using all collected context.
+
+ANALYSIS:
+- Total responses received vs sent
+- Overall sentiment (positive/mixed/negative)
+- Top 3 recurring themes or issues
+- Notable quotes (anonymized)
+- Recommended focus areas for next week
+
+FORMAT:
+📊 **Weekly Feedback Summary** (Date Range)
+
+**Response Rate**: X/Y employees (X%)
+**Overall Sentiment**: [positive/mixed/negative]
+
+**Key Themes**:
+• Theme 1 (mentioned X times)
+• Theme 2 (mentioned X times) 
+• Theme 3 (mentioned X times)
+
+**Notable Feedback**:
+"[Positive quote]"
+"[Constructive feedback]"
+"[Suggestion for improvement]"
+
+**Recommended Focus**: [One key area for next week]
+
+Keep summary under 200 words, actionable and clear.
+```
+
+### Step 10: Send Weekly Summary Email
+
+Send the compiled feedback report to leadership for review and action planning.
+
+<Frame>
+  <img src="/lindy-brand-assets/feedback-final-report.png" alt="Weekly summary delivery" />
+</Frame>
+
+Use `Gmail – Send Email` to leadership team with the report you just generated:
+
+- **To**: leadership_emails
+- **Subject**: Weekly Team Feedback Summary - week_dates
+- **Body**: the full exact report you just generated in markdown
+
+## Advanced Features
+
+| Feature | What it does |
+|---------|--------------|
+| Response Tracking | Monitor which employees haven't responded for gentle follow-ups |
+| Sentiment Analysis | Track mood trends over time to identify patterns |
+| Anonymous Mode | Allow anonymous feedback submission for sensitive topics |
+| Custom Questions | Rotate different question sets for varied insights |
+| Department Filtering | Separate reports by team or department |
 
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion title="Keep It Short">
-    Three questions = highest response rates; avoid survey fatigue.
+  <Accordion title="Keep Questions Consistent">
+    Use the same 3 questions for several weeks to track trends before changing them.
   </Accordion>
   
-  <Accordion title="Reinforce Anonymity">
-    Strip names/emails when appending rows so answers stay candid.
+  <Accordion title="Respond to Feedback">
+    Share one action taken based on feedback in your next all-hands to close the loop.
   </Accordion>
   
-  <Accordion title="Close the Loop">
-    Start Monday stand-up by highlighting one change inspired by the feedback.
+  <Accordion title="Maintain Anonymity">
+    While leadership sees real-time alerts, ensure final reports anonymize responses.
   </Accordion>
   
-  <Accordion title="Iterate on Prompts">
-    Tweak wording after the first two digests to match team voice and length.
+  <Accordion title="Monitor Participation">
+    Track response rates and personally follow up with consistently non-responsive team members.
   </Accordion>
 </AccordionGroup>
 
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card title="Daily Support Digest" href="/tutorials/support-digest" icon="chart-line">
-    Share customer issues with the same approach
+  <Card title="Employee Help Desk" href="/use-cases/hr/employee-help-desk" icon="headset">
+    Answer employee questions automatically
   </Card>
-  <Card title="Smart Support Email" href="/tutorials/smart-support" icon="life-ring">
-    Let Lindy answer common questions
+  <Card title="Resume Screening" href="/use-cases/hr/resume-screening" icon="file-user">
+    Automate candidate evaluation process
   </Card>
-  <Card title="Onboarding Survey" href="/tutorials/onboarding-survey" icon="clipboard-list">
-    Collect feedback from new hires at day 30
+  <Card title="Voice Support" href="/use-cases/customer-success/voice-support" icon="phone">
+    Handle employee calls with AI
   </Card>
-  <Card title="Retention Dashboard" href="/tutorials/retention-dashboard" icon="chart-pie">
-    Visualize long-term sentiment trends
+  <Card title="Onboarding Automation" href="/tutorials/onboarding-automation" icon="rocket">
+    Streamline new hire experience
   </Card>
 </CardGroup>
