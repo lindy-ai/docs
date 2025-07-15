@@ -2,6 +2,7 @@
 title: 'Step by Step Onboarding'
 icon: 'memo-circle-check'
 sidebarTitle: 'Step by Step Onboarding'
+description: 'Create form-style onboarding flows that make your Lindy templates easy to configure and use.'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -17,3 +18,265 @@ sidebarTitle: 'Step by Step Onboarding'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Step-by-Step Onboarding enables you to easily onboard others to a Lindy template. Instead of requiring template users to navigate a complex flow editor, build a simple form-style onboarding that allows your template users to easily configure and start using the Lindy!
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Settings Level Prompt" />
+</Frame>
+
+Key benefits:
+- **Simplified setup** - Form-style interface instead of complex flow editor
+- **Guided configuration** - Step users through only the essential settings
+- **Professional experience** - Clean, intuitive onboarding flow
+- **Automatic auth handling** - User authorizations collected automatically
+- **Template sharing** - Easy distribution with built-in onboarding
+
+## Creating a Step by Step Onboarding
+
+This is the high-level process for creating a Step by Step Onboarding:
+
+### Step 1: Plan Your Requirements
+
+**Input Collection**
+Figure out what input you need to collect from your users to configure the Lindy template.
+
+*Example: Meeting Notetaker Template*
+- Required: Calendar selection (required field)
+- Optional: 'Restrict by attendee type' configuration
+
+**Output Display**
+Determine what output you need to show users so they can use the template.
+
+*Example: Meeting Scheduler Template*
+- Output: User's Lindy Mail address for CC'ing to email threads
+
+### Step 2: Build the Onboarding Flow
+
+Build the onboarding flow in the Flow Editor using:
+- **Form Actions** - Show information and collect input
+- **Lindy Configuration Actions** - Configure template steps
+
+<Note>
+All Step by Step Onboardings start with an **Onboarding trigger** from Lindy Configuration Actions (located under Lindy Utilities).
+</Note>
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Settings Level Prompt" />
+</Frame>
+
+<Tip>
+User authorizations are automatically collected at the beginning of onboarding. You do not need to collect user auths as an onboarding step.
+</Tip>
+
+### Step 3: Test and Share
+
+1. Click **Test** in the upper right corner
+2. Select the onboarding trigger
+3. Make changes if necessary
+4. Share your template
+
+## Form Actions
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Settings Level Prompt" />
+</Frame>
+
+Form Actions enable you to show information and collect input from users:
+
+### Show Multiple-Choice
+Shows a multiple choice question to users and collects input.
+
+### Show Copyable Content
+Shows a piece of text ready to copy.
+
+### Show Info Step
+Shows information to template users.
+
+### Show Text Input
+Shows a question to users and collects long or short text input.
+
+### Show Copyable Embed Code
+Shows the code snippet of a Lindy embed to copy.
+
+<Note>
+Each step has an 'illustration' field. If no file is uploaded, there will be a default illustration.
+</Note>
+
+## Lindy Configuration Actions
+
+Located within **Lindy Utilities** in the action modal, these actions allow you to collect input from users while configuring template steps:
+
+### Collect User Input to Configure Step
+Collects input from a user for a specific field and uses the values to update the configuration of the fields in a step.
+
+<Warning>
+Cannot configure AI Agents or condition steps. Use Configure Step for these instead.
+</Warning>
+
+### Configure Step
+Collects input from a user for a step and updates the configuration of any step. Use this over "Collect User Input to Configure Step" if:
+- There are multiple fields in a step that you want to configure
+- You need to configure AI Agents or condition steps
+
+### Configure Lindy Embed
+Configures the Lindy embed trigger node.
+
+### Configure Knowledge Base
+Collects data sources for a knowledge base node.
+
+### Get User Info
+Gets a user's information, including:
+- Name
+- Email
+- Time Zone
+- Lindy Mail Suffix
+
+## The Step by Step Onboarding Experience
+
+### User Flow
+- **Incomplete onboarding**: Users who click out without completing will land on the Flow Editor for the template and can resume onboarding
+- **Completed onboarding**: Users are redirected to the Task View for the Lindy they just configured
+
+### Harmonious Experience
+To ensure a smooth experience, add a **Message Received trigger** to your template with a greeting message that introduces your user to the Lindy.
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with Introduction">
+    Begin with an Info Step introducing your user to the Lindy they will be onboarded to and what it does.
+  </Accordion>
+  
+  <Accordion title="End with Next Steps">
+    In the last step, let the user know that the Lindy can be configured further in the Flow Editor.
+  </Accordion>
+  
+  <Accordion title="Add Welcome Message">
+    Add a Message Received trigger to your template with a greeting message. Users will see this after completing onboarding.
+  </Accordion>
+  
+  <Accordion title="Consider Simple Templates">
+    If the Lindy consists of only a Message Received trigger and an agent state, onboarding may not be needed. Consider using a Show Info step to tell the user how to use the Lindy.
+  </Accordion>
+  
+  <Accordion title="Focus on Essentials">
+    When thinking of inputs and outputs, consider what is required for the user to configure to ensure the Lindy can run, and critical steps that the user might want to configure.
+  </Accordion>
+</AccordionGroup>
+
+## Example: Meeting Notetaker Onboarding
+
+Let's walk through building a Step by Step Onboarding for the Meeting Notetaker template.
+
+### Planning Phase
+**Input needed**: Calendar configuration from the Calendar Event Started step
+**Output needed**: None (Lindy will automatically join meetings)
+
+### Building the Flow
+
+1. **Start with Onboarding trigger** (from Lindy Utilities)
+
+2. **Add Show Info step** to introduce the template:
+   ```
+   Title: "Meeting Notetaker Setup"
+   Description: "This Lindy will automatically join your meetings, take notes, and send summaries to attendees."
+   ```
+
+3. **Add Collect User Input to Configure Step**:
+   - Question: "Which calendar should Lindy monitor for meetings?"
+   - Description: "Select the calendar containing meetings you want Lindy to join"
+   - Configure: Calendar Event Started step → Calendar field
+
+4. **Add final Show Info step**:
+   ```
+   Title: "Setup Complete!"
+   Description: "Your Meeting Notetaker is ready! You can further customize it in the Flow Editor."
+   ```
+
+### Test and Share
+- Test the onboarding flow
+- Share your template with built-in onboarding
+
+## Example: Meeting Scheduler with Copyable Content
+
+### Planning Phase
+**Input needed**: Optional Zoom link configuration for Schedule Event step
+**Output needed**: User's Lindy Mail address for CC'ing
+
+### Building the Flow
+
+1. **Onboarding trigger**
+
+2. **Show Info step**: Introduce the Meeting Scheduler
+
+3. **Collect User Input to Configure Step**: Configure Zoom link option
+
+4. **Get User Info**: Collect Lindy Mail Suffix
+
+5. **Show Copyable Content**: Display the Lindy Mail address
+   - Copyable Field: Lindy Mail Suffix from Get User Info
+   - Title: "Your Lindy Mail Address"
+   - Description: "CC this address in email threads to have Lindy schedule meetings"
+
+6. **Final Show Info step**: Completion message
+
+## Example: Website Customer Support Bot
+
+### Planning Phase
+**Input needed**: 
+- Knowledge Base configuration
+- Embed configuration  
+- Escalation conditions
+
+**Output needed**: Embed code for website integration
+
+### Building the Flow
+
+1. **Onboarding trigger**
+
+2. **Show Info step**: Introduce the Customer Support Bot
+
+3. **Configure Knowledge Base**: Set up support documentation
+   - Title: "Add Your Support Content"
+   - Description: "Upload FAQs, documentation, and support articles"
+
+4. **Configure Lindy Embed**: Set up the chat widget
+   - Title: "Customize Your Chat Widget"
+   - Description: "Configure how the support chat appears on your website"
+
+5. **Configure Step**: Set escalation conditions
+   - Title: "Define Escalation Rules"
+   - Description: "When should complex issues be escalated to human agents?"
+   - Configure: Condition step for escalation logic
+
+6. **Show Copyable Lindy Embed Code**: Display integration code
+   - Title: "Add to Your Website"
+   - Description: "Copy this code and add it to your website to enable the support chat"
+
+7. **Final Show Info step**: Completion and next steps
+
+<Warning>
+Template users will not be able to see the onboarding flow in their template's Flow Editor after sharing.
+</Warning>
+
+## Next Steps
+
+Enhance your template sharing with these concepts:
+
+<CardGroup cols={2}>
+  <Card title="Agent Templates" href="/building-agents/agent-basics/agent-templates" icon="clipboard-list">
+    Learn about creating and sharing agent templates
+  </Card>
+  <Card title="Testing Agents" href="/building-agents/agent-basics/testing-agents" icon="vial">
+    Test your onboarding flows thoroughly
+  </Card>
+  <Card title="Lindy Embed" href="/skills/by-lindy/lindy-embed" icon="code">
+    Embed Lindy chat widgets in websites
+  </Card>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Configure knowledge bases for support templates
+  </Card>
+</CardGroup>
