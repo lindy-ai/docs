@@ -93,8 +93,7 @@
         {
           "group": "Operations",
           "pages": [
-            "use-cases/operations/document-processing",
-            "use-cases/operations/crm-auto-update"
+            "use-cases/operations/document-processing"
           ]
         },
         {
