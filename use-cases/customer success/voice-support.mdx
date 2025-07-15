@@ -25,85 +25,92 @@ This inbound flow lets Lindy:
 
 - **Answer** calls on a dedicated number  
 - **Gather** the caller's name and question in natural conversation  
-- **Search** your knowledge base for accurate answers  
+- **Access** pre-loaded context for fast, accurate responses  
 - **Respond** concisely and close the loop  
 - **Record** summaries to Sheets and alert your team in Slack  
 
-You'll find the **Inbound Calling** template in your Lindy dashboard to kick-start the flow.
+Start from the [inbound support template](https://chat.lindy.ai/home/?templateId=6875ad458aeebd9c66a8b3b5) and customize.
 
 ## Setting Up Your Inbound Call Bot
 
 ### Step 1: Provision a Number
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Call Received trigger" />
+  <img src="/lindy-brand-assets/voice-support-trigger.png" alt="Call Received trigger" />
 </Frame>
 
 1. Click the `Call Received` trigger.  
 2. Purchase or select a unique Lindy Phone number.
 
-### Step 2: Initial Greeting Agent
+### Step 2: Add Context for Support Knowledge
+
+Pre-load your support information to ensure fast response times during calls.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Greeting AI agent" />
+  <img src="/lindy-brand-assets/voice-support-context.png" alt="Add Context action" />
 </Frame>
 
-AI Agent prompt (summary):
+- Action: `Add Context`
+- Upload lightweight company context: FAQs, key policies, common troubleshooting steps
+- Keep it concise - this context stays in memory during the entire call for optimal latency
+
+<Tip>
+We use Add Context instead of Search Knowledge Base because even though you can perform actions during phone calls, pre-loading lightweight context helps maintain fast response times.
+</Tip>
+
+### Step 3: Inbound Phone Call Agent
+
+Configure your AI agent to handle the conversation with pre-loaded context.
+
+<Frame>
+  <img src="/lindy-brand-assets/voice-support-agent.png" alt="AI Agent for calls" />
+</Frame>
+
+AI Agent prompt:
 
 ```
-• Ask for the caller's name.
-• Wait for response, then ask how you can help.
-• Keep answers 1-2 sentences.
-• Say goodbye and end call when finished.
+You are a professional customer support agent answering inbound calls.
+
+Instructions:
+- Greet callers warmly and ask for their name
+- Listen to their question and provide helpful answers using the context provided
+- Keep responses concise and conversational (1-2 sentences)
+- End calls politely when the issue is resolved
+- Always maintain a friendly, professional tone
+
+Use the company context provided to answer questions about policies, procedures, and common issues.
 ```
 
-### Step 3: Exit to Knowledge Search
+<Tip> 
+Use balanced or fast Claude models for phone calls - they perform well for real-time conversations.
+</Tip> 
+
+### Step 4: Document the Call
+
+Track all phone interactions for quality assurance and follow-up.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Exit condition" />
-</Frame>
-
-`Exit Condition`: caller has asked a question → proceed to KB search.
-
-### Step 4: Search the Knowledge Base
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Knowledge search" />
-</Frame>
-
-Attach FAQs, booking policies, and troubleshooting docs. Lindy will re-query for each new question.
-
-### Step 5: Document the Call
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Append row and task URL" />
+  <img src="/lindy-brand-assets/voice-support-log.png" alt="Append row and task URL" />
 </Frame>
 
 - `Get Task URL` → store reference link.  
 - `Google Sheets – Append Row` with name, question, answer, outcome, URL.
 
-### Step 6: Team Alert
+### Step 5: Team Alert
+
+Notify your team about the call for immediate follow-up if needed.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Slack alert" />
+  <img src="/lindy-brand-assets/voice-support-alert.png" alt="Slack alert" />
 </Frame>
 
 Send a Slack message summarizing the call with the task URL.
 
-## Advanced Customizations
-
-| Trick                  | What it does                                                              |
-|------------------------|---------------------------------------------------------------------------|
-| IVR Front Door         | Ask callers to press 1 for sales, 2 for support → branch to different KB. |
-| Call Recording Review  | Save recordings to cloud storage and run sentiment analysis overnight.    |
-| After-Hours Handling   | Use a Condition on call time → route to voicemail prompt after 6 PM.      |
-| Live-Transfer Option   | Offer "Press 0 to speak to a human" and warm-transfer via Twilio.          |
-
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion title="Use GPT-4 Turbo">
-    Reduce latency and keep answers coherent on phone calls.
+  <Accordion title="Keep Context Lightweight">
+    Pre-load only essential info - too much context can slow down responses.
   </Accordion>
   
   <Accordion title="Keep Replies Short">
@@ -114,8 +121,8 @@ Send a Slack message summarizing the call with the task URL.
     Sheet + Slack combo creates an instant audit trail for QA.
   </Accordion>
   
-  <Accordion title="Update KB Often">
-    Phone agents rely 100% on KB accuracy—refresh weekly.
+  <Accordion title="Update Context Regularly">
+    Refresh your context monthly to keep answers current and accurate.
   </Accordion>
 </AccordionGroup>
 
