@@ -19,142 +19,182 @@ description: 'Automated HR help desk for employee support with Lindy'
   </div>
 </div>
 
-Here's an Employee Help Desk tutorial in the same format:
-
 ## Quick Overview
 
-Turn any Slack channel into a smart help desk where Lindy:
+Transform any Slack channel into an intelligent employee help desk. Lindy will:
 
-- **Monitors** employee questions in designated help channels
-- **Searches** your knowledge base (policies, FAQs, benefits docs)
-- **Answers** common questions instantly with accurate information
-- **Escalates** complex issues to HR or IT with full context
-- **Tracks** frequently asked questions to improve documentation
+- **Monitor** employee questions in your designated help channels 24/7
+- **Search** your company knowledge base for relevant policies and procedures
+- **Respond** instantly with accurate, friendly answers to common questions
+- **Escalate** complex or sensitive issues to HR with full context
+- **Continue** monitoring conversations for follow-up questions
 
-You'll find the **Employee Help Desk** template in your Lindy dashboard to kick-start the flow.
-
+You can use the [employee helpdesk template](https://chat.lindy.ai/home/?templateId=6875fa3a17018229eea893fe) to get started.
 ## Setting Up Your Employee Help Desk
 
 ### Step 1: Connect Slack Channel
 
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Connect Slack workspace" />
-</Frame>
-
-1. Select `Slack Message Received` as the trigger
-2. Choose your help channel (e.g., #ask-hr, #it-help, #general-questions)
-3. Enable "Filter events on this trigger" 
-4. Add filter: Message does NOT contain "from: Lindy" (to avoid loops)
-
-### Step 2: Set Up Your Knowledge Base
+Set up monitoring for employee questions in your designated help channel.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Configure knowledge base" />
+  <img src="/lindy-brand-assets/helpdesk-trigger.png" alt="Slack message trigger setup" />
 </Frame>
 
-Upload your company resources:
-- Employee handbook PDF
-- Benefits documentation
-- IT setup guides
-- Office policies
-- Expense procedures
+1. Use `Slack – Message Received` trigger
+2. Select your help channel (e.g., #ask-hr, #employee-help, #general-questions)
+
+<Warning>
+Make sure to add Lindy as an integration to your Slack channel so it can monitor and respond to messages.
+</Warning>
+
+### Step 2: Search Company Knowledge Base
+
+Query your company documentation to find relevant information for the employee's question.
+
+<Frame>
+  <img src="/lindy-brand-assets/helpdesk-KB.png" alt="Knowledge base search for company info" />
+</Frame>
+
+Use `Search Knowledge Base` with the employee's message as the query.
+
+Upload your essential company documents:
+- Employee handbook
+- Benefits documentation  
 - PTO policies
+- IT setup guides
+- Office procedures
+- Expense policies
 
-Click `Knowledge Base` and select the folder containing these documents.
+<Tip>
+The more comprehensive your knowledge base, the better Lindy can help your employees without escalation.
+</Tip>
 
-### Step 3: Categorize the Question
+### Step 3: Draft Response with AI
+
+Have AI analyze the context and create an appropriate response or determine it cannot answer.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Question categorization" />
+  <img src="/lindy-brand-assets/helpdesk-agent.png" alt="AI response drafting" />
 </Frame>
 
-Add a `Condition` node to route questions:
+Add `AI Agent – Draft Employee Response`:
 
 ```
-Categorize this as: HR, IT, Finance, Facilities, or General
-Question: {{slack_message}}
+You are a helpful and professional employee assistant representing HR.
+
+Using the knowledge base results, respond to this employee question: slack_message
+
+GUIDELINES:
+- Keep concise for Slack readability
+- Be friendly, professional, and empathetic
+- Use bullet points for clarity when listing multiple items
+- If you found relevant information: Provide a clear answer with policy reference
+- If information is unclear or missing: Respond with "I don't have that specific information available"
+
+RESPONSE FORMAT:
+- Direct answer to their question
+- Reference to relevant policy/document if applicable  
+- Offer to escalate if needed: "If you need more details, I can connect you with HR directly"
+
+IMPORTANT RULE: IF YOU DO NOT KNOW THE ANSWER TO A QUESTION BECAUSE IT IS NOT IN YOUR CONTEXT - ONLY REPLY "ANSWER NOT FOUND" AND EXIT
+
+Return ONLY the response text, no additional formatting.
 ```
 
-This helps with routing and analytics later.
+### Step 4: Check if Answer Found
 
-### Step 4: Search for Answers
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Knowledge base search" />
-</Frame>
-
-Add `Search Knowledge Base` action:
-- Query: `{{slack_message}}`
-- Max results: 3
-- Include relevance scores
-
-### Step 5: Generate Response
+Determine whether to respond directly or escalate based on AI's ability to find relevant information.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="AI response generation" />
+  <img src="/lindy-brand-assets/helpdesk-condition.png" alt="Answer found condition routing" />
 </Frame>
 
-Add `AI Agent - Generate Text`:
+- **Answer Not Found Path**: Route to HR escalation
+- **Answer Found Path**: Route to direct response
+
+### Step 5: Escalate to HR Manager
+
+For questions the AI couldn't answer, send context to HR for personal follow-up.
+
+<Frame>
+  <img src="/lindy-brand-assets/helpdesk-escalate.png" alt="HR escalation via DM" />
+</Frame>
+
+Use `Slack – Send Direct Message` to HR manager:
 
 ```
-You are a helpful employee assistant. Using the knowledge base results, answer this question:
-{{slack_message}}
+📋 **Employee Question Needs Your Attention**
 
-If found in knowledge base: Provide a clear, friendly answer with the specific policy reference.
-If NOT found: Say "I don't have that information, but I've flagged this for the {{category}} team."
+**From**: message_author
+**Channel**: channel_name
+**Question**: slack_message
 
-Keep responses under 200 words. Use bullet points for clarity.
+**Thread Link**: message_link
+
+Lindy couldn't find this information in our knowledge base. Please respond directly in the thread.
 ```
+<Warning>
+Remember to change the user email to the correct team member.
+</Warning>
 
-### Step 6: Reply in Thread
+### Step 6: Reply to Employee
 
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Slack thread reply" />
-</Frame>
-
-Use `Slack - Send Message`:
-- Channel: `{{trigger_channel}}`
-- Thread: `{{message_ts}}` (keeps channel tidy)
-- Message: `{{ai_response}}`
-
-### Step 7: Handle Escalations
+For questions with found answers, respond directly in the thread with helpful information using `Slack - Send Reply`.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Escalation routing" />
+  <img src="/lindy-brand-assets/helpdesk-reply.png" alt="Direct response to employee" />
 </Frame>
 
-Add a `Condition`: If knowledge base found no results
-- `Slack - Send DM` to relevant team lead
-- Include original question + employee name
-- Create support ticket in your HRIS/ticketing system
+
+### Step 6: Monitor Thread for Follow-ups
+
+Continuously watch the conversation thread for additional questions or clarifications.
+
+<Frame>
+  <img src="/lindy-brand-assets/helpdesk-observe.png" alt="Thread observation and monitoring" />
+</Frame>
+
+Add `Observe Messages` action to monitor the thread for new messages.
+
+This creates a listening state that waits for any new messages in the conversation.
+
+### Step 7: Handle Follow-up Messages
+
+Check if new messages in the thread require additional assistance or are just acknowledgments.
+
+<Frame>
+  <img src="/lindy-brand-assets/helpdesk-handle-thread.png" alt="Follow-up message evaluation" />
+</Frame>
+
+Add `Conditions` with AI evaluation:
+
+- **If NEEDS_RESPONSE**: Loop back to Step 2 (Search Knowledge Base)
+- **If NO_RESPONSE**: Loop back to Step 6 (Continue Observing)
 
 ## Advanced Features
 
 | Feature | What it does |
 |---------|--------------|
-| Multi-language Support | Detect language and respond in Spanish, Mandarin, etc. |
-| Anonymous Questions | DM Lindy for sensitive HR questions |
-| Office Hours Mode | Auto-escalate outside 9-5 to on-call staff |
-| Feedback Reactions | Track 👍👎 to improve responses |
-| Weekly FAQ Digest | Email top 10 questions to improve docs |
+| Escalation Categories | Route different question types to specific team members |
+| Response Analytics | Track common questions to improve knowledge base |
 
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion title="Keep Knowledge Fresh">
-    Schedule monthly reviews of your knowledge base. Outdated benefits info is worse than no info.
+  <Accordion title="Keep Knowledge Current">
+    Schedule monthly reviews of your knowledge base to ensure policies and procedures are up to date.
+  </Accordion>
+  
+  <Accordion title="Monitor Escalations">
+    Weekly review of escalated questions helps identify gaps in your knowledge base coverage.
   </Accordion>
   
   <Accordion title="Set Clear Boundaries">
-    Add a footer: "For urgent or sensitive matters, please contact HR directly at hr@company.com"
+    Add guidance about sensitive topics that should always go directly to HR (salary, health, etc.).
   </Accordion>
   
-  <Accordion title="Monitor Unanswered Questions">
-    Weekly review questions Lindy couldn't answer to expand your knowledge base.
-  </Accordion>
-  
-  <Accordion title="Respect Privacy">
-    Never store salary discussions or health queries. Route these directly to HR.
+  <Accordion title="Response Quality">
+    Regularly check Lindy's responses and refine prompts based on employee feedback.
   </Accordion>
 </AccordionGroup>
 

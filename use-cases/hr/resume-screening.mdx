@@ -21,142 +21,245 @@ description: 'Automate resume screening and candidate evaluation with Lindy'
 
 ## Quick Overview
 
-Lindy will:
+Transform your hiring process from manual resume reviews to instant AI-powered screening. Lindy will:
 
-- **Trigger** whenever a résumé arrives by email, folder upload, or ATS webhook  
-- **Parse** the document into structured data (name, skills, experience)  
-- **Filter** out obvious mismatches (years, must-have skills)  
-- **Score** remaining candidates with an AI agent and two-line rationale  
-- **Route** A-players to Slack and log everyone else in Google Sheets  
+- **Receive** resumes through multiple channels (email, direct upload, Google Drive)
+- **Categorize** candidates by role type automatically
+- **Analyze** with role-specific AI experts who score and evaluate
+- **Log** detailed results and scores to your tracking spreadsheet
+- **Alert** your team when top candidates are found
 
-Build the flow once—then let Lindy pre-screen every application 24/7.
+Screen hundreds of resumes in minutes, not hours. You can use the [resume screening template](https://chat.lindy.ai/home/?templateId=6875efa878f838c65b829be8) to get started.
 
 ## Setting Up Your Resume Screener
 
-### Step 1: Capture Incoming Résumés
+### Step 1: Set Up Resume Collection
+
+Configure multiple ways for resumes to enter your screening pipeline automatically.
 
 <Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Resume trigger" />
+  <img src="/lindy-brand-assets/resume-trigger.png" alt="Multiple resume intake triggers" />
 </Frame>
 
-1. Use one or more triggers:  
-   • `Gmail – Email Received` (filter subject contains "Application")  
-   • `Google Drive – File Added` in folder *Resumes/2025*  
+Choose your preferred trigger option:
 
-2. OPTIONAL: add an ATS webhook when a new applicant is created.
+**Option A: Email Intake**
+- Use `Gmail – Email Received` trigger
+- Filter for emails with attachments
+- Set up dedicated email: resumes@yourcompany.com
 
-### Step 2: Parse the Document
+**Option B: Direct Upload**
+- Files uploaded directly to Lindy
+- No additional setup needed
 
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Parse resume" />
-</Frame>
-
-- Action: `File – Extract Text` (handles PDF, DOCX, TXT).  
-- Store output as `resumeText`.
-
-### Step 3: Extract Key Fields
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="AI extract fields" />
-</Frame>
-
-- Action: `AI Agent – Extract JSON`  
-- Prompt:
-
-```
-From resumeText, return JSON:
-name, email, years_experience, skills[], last_company, education
-```
-
-### Step 4: Basic Filters
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="Filter conditions" />
-</Frame>
-
-- **Condition 1**: years_experience < 2 → stop flow.  
-- **Condition 2**: skills missing "React" OR "TypeScript" → stop flow.
-
-### Step 5: Score & Summarize
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="AI score" />
-</Frame>
-
-- Action: `AI Agent – Generate Text`  
-- Prompt:
-
-```
-You are a Tech Recruiter.
-
-Using extractedJSON, rate fit for "Frontend Engineer" 1-5 and give a 2-sentence justification.
-Return:
-"score": X, "summary": "…"
-```
-
-### Step 6: Route the Outcomes
-
-| Path | Action |
-|------|--------|
-| score ≥ 4 | `Slack – Send DM` to #hiring with summary + résumé attached |
-| score 2-3 | `Google Sheets – Append Row` to tab *Warm Pipeline* |
-| score ≤ 1 | (Optional) `Gmail – Send Reply` polite rejection |
-
-### Step 7: (Optional) LinkedIn Enrichment
-
-<Frame>
-  <img src="/lindy-brand-assets/placeholder.png" alt="LinkedIn search" />
-</Frame>
-
-- `Search the Internet` → "site:linkedin.com/in name last_company"  
-- Append profile URL to Slack or sheet entries.
+**Option C: Google Drive Integration**
+- Use `Google Drive – New File` trigger
+- Set up organized folders: `/Resumes/Sales`, `/Resumes/Engineering`, `/Resumes/Marketing` for highest precision
+- **Important:** Add `Google Drive – Download File` step immediately after trigger
 
 <Tip>
-If you need exact statistics (median score, number passed) for weekly hiring stand-ups, insert a **Run Code – Python** step before the Slack action to calculate and include those numbers in the DM.
+For Google Drive option, make sure your folder structure is set up correctly and the download file step is configured to get the resume content into Lindy's context.
 </Tip>
 
-## Advanced Customizations
+### Step 2: Identify Candidate Type
 
-| Trick             | What it does                                                      |
-|-------------------|--------------------------------------------------------------------|
-| Bias-Blind Scoring | Strip name & school in extract step to create anonymized reviews. |
-| Keyword Boost      | +1 score if skills include "GraphQL" or "Performance Tuning".     |
-| Attach PDF         | Slack DM can include the original résumé file for quick skim.     |
-| Auto-Calendar      | High scorers → trigger Meeting Scheduler to book intro screen.    |
+Automatically categorize candidates by role to route them to specialized analysis.
+
+<Frame>
+  <img src="/lindy-brand-assets/resume-condition.png" alt="Candidate type routing conditions" />
+</Frame>
+
+Add `Conditions` to determine role type. For best results provide more context in the condition prompts.
+
+### Step 3: Analyze and Score by Role
+
+Deploy specialized AI experts to evaluate candidates with role-specific criteria and personality.
+
+<Frame>
+  <img src="/lindy-brand-assets/resume-agent.png" alt="Role-specific AI analysis" />
+</Frame>
+
+**For Sales Candidates - Add `AI Agent – Sales Recruiter`:**
+
+```
+You're a seasoned sales director who's hired hundreds of top performers. You have an eye for spotting quota-crushers and relationship builders.
+
+Analyze this sales candidate's resume with ruthless precision:
+
+SCORING (1-10 scale):
+- Sales Experience: Years in B2B/B2C sales roles
+- Achievement Metrics: Quota attainment, revenue numbers, growth percentages  
+- Communication Skills: Writing quality, presentation experience
+- Industry Fit: Relevant industry experience for our market
+- Career Progression: Upward trajectory and increasing responsibility
+
+EXTRACT:
+- Total years in sales
+- Biggest achievement (number)
+- Previous companies and roles
+- Education background
+- Key skills and tools
+- Overall personality/culture fit assessment
+
+FINAL VERDICT: Give an overall score (1-10) and one-sentence hiring recommendation.
+Return as structured JSON with all scoring and extracted data.
+```
+
+**For Engineering Candidates - Add `AI Agent – Tech Lead`:**
+
+```
+You're a battle-tested engineering manager who's built legendary dev teams. You spot coding talent like Neo sees the Matrix.
+
+Dissect this engineer's technical DNA:
+
+SCORING (1-10 scale):
+- Technical Depth: Programming languages, frameworks, complexity of projects
+- Problem Solving: Evidence of tackling challenging technical problems
+- Leadership Potential: Mentoring, team lead experience, open source contributions
+- Learning Agility: Continuous skill development, new technology adoption
+- Product Impact: Features shipped, systems scaled, measurable technical outcomes
+
+EXTRACT:
+- Programming languages and years experience
+- Most impressive technical project
+- Company progression and role levels
+- Education and certifications
+- GitHub/portfolio presence
+- Architecture and system design experience
+
+FINAL VERDICT: Overall technical score (1-10) and gut-check on hiring potential.
+Return as structured JSON with complete technical profile.
+```
+
+**For Marketing Candidates - Add `AI Agent – Marketing Director`:**
+
+```
+You're a creative marketing genius who's launched viral campaigns and built legendary brands. You recognize marketing superstars from their first campaign story.
+
+Decode this marketer's creative and strategic potential:
+
+SCORING (1-10 scale):
+- Campaign Results: ROI, conversion rates, growth metrics from previous work
+- Creative Vision: Evidence of innovative thinking and brand-building
+- Digital Mastery: SEO, social media, email marketing, analytics expertise
+- Strategic Thinking: Market research, customer insights, positioning skills
+- Multi-Channel Experience: Paid ads, content, events, partnerships
+
+EXTRACT:
+- Years in marketing roles
+- Best campaign result with metrics
+- Channel expertise and tools mastery
+- Brand experience (B2B/B2C)
+- Content creation abilities
+- Data analysis and optimization skills
+
+FINAL VERDICT: Creative + analytical score (1-10) and culture fit assessment.
+Return as structured JSON with complete marketing evaluation.
+```
+
+### Step 4: Log Results to Tracking Sheet
+
+Store all candidate evaluations and scores in your master recruitment spreadsheet.
+
+<Frame>
+  <img src="/lindy-brand-assets/resume-log.png" alt="Resume screening results logging" />
+</Frame>
+
+Create a Google Sheet with columns:
+- Date Reviewed
+- Candidate Name
+- Role Type
+- Contact Information
+- Overall Score
+- Background Summary
+- Rating Justification
+
+Use `Google Sheets – Append Row` to log each candidate's complete evaluation.
+
+### Step 5: Check for High Scores
+
+Filter for candidates that exceed your quality threshold to trigger immediate team alerts.
+
+<Frame>
+  <img src="/lindy-brand-assets/resume-high-score.png" alt="Top candidate filtering conditions" />
+</Frame>
+
+Add `Conditions` with prompt: "Go down this path if the overall score was above 7.5"
+
+### Step 6: Alert Team About Top Talent
+
+Send immediate notifications for candidates that are deemed high scoring.
+
+<Frame>
+  <img src="/lindy-brand-assets/resume-high-score.png" alt="Top candidate Slack alerts" />
+</Frame>
+
+For high-scoring candidates, use `Slack – Send Message` to alert team:
+- **Channel**: #recruiting or #top-candidates
+- Example prompt:
+```
+🎯 **TOP CANDIDATE ALERT** 
+
+**Candidate**: [Name]
+**Role**: [Sales/Engineering/Marketing]
+**Score**: [X]/10 ⭐
+
+**Key Highlights**:
+• [Biggest achievement]
+• [Years experience] at [Previous companies]
+• [Key skills/education]
+
+**Recommendation**: [AI verdict in 2 concise sentences]
+```
+
+<Warning>
+Lindy must be added to the Slack channel in order to send messages.
+</Warning>
+
+• You can notify your team however you'd like - this is just one example format.
+
+## Advanced Features
+
+| Feature | What it does |
+|---------|--------------|
+| Duplicate Detection | Identify candidates who've applied multiple times |
+| Custom Scoring Weights | Adjust importance of different criteria by role |
+| Interview Scheduling | Auto-schedule interviews for top candidates |
+| ATS Integration | Sync results with Workday, Greenhouse, or other ATS |
 
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion title="Standardize Skills">
-    Keep a canonical skill list so "ReactJS" and "React.js" map to one tag.
+  <Accordion title="Consistent Scoring Criteria">
+    Define clear 1-10 scoring rubrics for each role and stick to them consistently.
   </Accordion>
   
-  <Accordion title="Human Calibration">
-    Review Lindy's first 20 scored résumés to fine-tune thresholds.
+  <Accordion title="Regular Prompt Tuning">
+    Update AI prompts based on successful hires to improve accuracy over time.
   </Accordion>
   
-  <Accordion title="Privacy Compliance">
-    Store résumés only as long as policy allows; auto-purge after 6 months.
+  <Accordion title="Bias Monitoring">
+    Regularly audit results to ensure fair evaluation across all candidate backgrounds.
   </Accordion>
   
   <Accordion title="Feedback Loop">
-    Add a column for human hire/no-hire outcome to retrain future prompts.
+    Track which AI-scored candidates become successful hires to refine scoring.
   </Accordion>
 </AccordionGroup>
 
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card title="Interview Scheduler" href="/tutorials/meeting-scheduler" icon="calendar-plus">
-    Auto-book calls with top candidates
+  <Card title="Interview Automation" href="/tutorials/interview-automation" icon="video">
+    Automate interview scheduling and follow-ups
   </Card>
-  <Card title="Offer Letter Generator" href="/tutorials/offer-generator" icon="file-invoice">
-    Draft contracts in one click
+  <Card title="Candidate Nurturing" href="/tutorials/candidate-nurturing" icon="heart">
+    Keep top candidates engaged throughout the process
   </Card>
-  <Card title="Onboarding Checklist" href="/tutorials/onboarding-bot" icon="clipboard-list">
-    Track tasks once the hire starts
+  <Card title="Onboarding Automation" href="/tutorials/onboarding-automation" icon="rocket">
+    Streamline the new hire onboarding experience
   </Card>
-  <Card title="Diversity Dashboard" href="/tutorials/diversity-report" icon="chart-pie">
-    Monitor hiring pipeline demographics
+  <Card title="Recruiting Analytics" href="/tutorials/recruiting-analytics" icon="chart-bar">
+    Build dashboards to track hiring metrics
   </Card>
 </CardGroup>
