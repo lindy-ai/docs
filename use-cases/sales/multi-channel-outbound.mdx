@@ -54,30 +54,7 @@ Optionally add an enrichment step to gather additional context about your prospe
 - Follow the [Lead Enrichment tutorial](/use-cases/sales/lead-enrichment) to learn how to enrich a lead.
 - More context → better personalization and reply rates.
 
-### Step 3: Send First-Touch Email / SMS
-
-<Frame>
-  <img src="/lindy-brand-assets/multi-channel-first-email.png" alt="First outreach email" />
-</Frame>
-
-- Action: `Gmail – Send Email`  
-- Example prompt:  
-```
-Write a personalized email based on the information you have from the Google Sheet row trigger.
-
-Example template:
-
-"Hey [NAME],
-
-I noticed that [Lead's Company] is focused on [specific area or industry-related goal]. At [Your Company], we help businesses like yours [briefly mention a relevant solution or benefit].
-
-Would you be open to a quick chat?"
-
-**Always do your best to personalize this**
-```
-- If the lead provided an opted-in mobile number, add `Twilio – Send SMS` with a shorter variant.
-
-### Step 4: Wait, Then Follow-Up
+### Step 3: Wait, Then Follow-Up
 
 <Frame>
   <img src="/lindy-brand-assets/multi-channel-followup.png" alt="Wait action" />
@@ -104,7 +81,7 @@ or
 Lmk your thoughts,"
 ```
 
-### Step 5: Make an Outbound Call (Optional)
+### Step 4: Make an Outbound Call (Optional)
 
 <Frame>
   <img src="/lindy-brand-assets/multi-channel-agent.png" alt="Outbound phone call" />
