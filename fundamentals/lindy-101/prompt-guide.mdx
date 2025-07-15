@@ -40,6 +40,10 @@ Lindy provides three key areas where you can add prompts, each serving a specifi
 
 These are overarching instructions that Lindy keeps in mind throughout the entire automation process. They're added as a prefix to every LLM call made by this agent.
 
+<Frame>
+  <img src="/lindy-brand-assets/settings-level-prompt.png" alt="Settings Level Prompt" />
+</Frame>
+
 ```
 You are an AI assistant for a marketing agency. Always maintain 
 a professional tone and focus on marketing-related tasks.
@@ -53,6 +57,10 @@ a professional tone and focus on marketing-related tasks.
 
 Specific instructions for completing particular fields within actions. These provide precise control over individual steps in your workflow.
 
+<Frame>
+  <img src="/lindy-brand-assets/action-level-prompt.png" alt="Action Level Prompt" />
+</Frame>
+
 ```
 Extract the customer's name and email address from the following text, 
 formatting them as 'Name: [name], Email: [email]'
@@ -61,6 +69,10 @@ formatting them as 'Name: [name], Email: [email]'
 ### 3. AI Agent Actions
 
 When next steps are uncertain or highly variable, AI Agents use broad guidelines and skills to determine the best course of action.
+
+<Frame>
+  <img src="/lindy-brand-assets/agent-level-prompt.png" alt="AI Agent Prompt" />
+</Frame>
 
 ```
 You are a customer service agent. Your goal is to resolve customer 
@@ -258,6 +270,22 @@ Delimiters organize information and reduce ambiguity:
 - Triple dashes: `---example text---`
 - XML-like tags: `<example>example text</example>`
 - Hashtags: `###example text###`
+
+**Example using XML tags:**
+
+```
+<role>You are a customer service representative for a tech company.</role>
+
+<task>Respond to customer inquiries about product features.</task>
+
+<context>{{email_body}}</context>
+
+<response_format>
+- Be friendly and professional
+- Include specific pricing details
+- Offer to help with setup if needed
+</response_format>
+```
 
 ### Consistency is Key
 
