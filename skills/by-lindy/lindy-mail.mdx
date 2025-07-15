@@ -7,7 +7,7 @@ sidebarTitle: 'Lindy Mail'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/lindy-email-overview.mp4"
       width="600"
       autoPlay
       muted
@@ -17,3 +17,114 @@ sidebarTitle: 'Lindy Mail'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Lindy Mail gives your agent its own email address to send and receive emails independently. Perfect for CC'ing Lindy on threads, forwarding emails for action, or handling inbound emails directly.
+
+Key benefits:
+- **Dedicated inbox** - Lindy gets her own email address
+- **Direct handling** - Emails go straight to Lindy, not your inbox
+- **Thread awareness** - Lindy can observe and respond to follow-ups
+- **Flexible triggers** - Filter which emails Lindy responds to
+
+
+## Adding Lindy Mail Trigger
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/lindy-mail-trigger-select.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Add the "Lindy Mail Email Received" trigger to have Lindy wake up when emails arrive at her address.
+
+### Configuring the Trigger
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-mail-trigger-config.png" alt="Lindy Mail trigger configuration showing email address customization and follow-up options" />
+</Frame>
+
+- **Customize email address** - Set Lindy's unique email (e.g., support@yourlindy.ai)
+- **Observe follow-ups** - Enable to have Lindy respond to thread replies
+- **Add filters** - Include/exclude specific emails from triggering
+
+
+## Sending Emails with Lindy Mail
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/lindy-mail-send-reply.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Add the "Lindy Mail Send Email" action to respond from Lindy's email address.
+
+<Tip>
+Match the email address in both trigger and action to ensure replies come from the same Lindy Mail address.
+</Tip>
+
+### Customizing Responses
+
+
+Configure the "Body" field with your prompt to control how Lindy responds:
+
+```
+Respond professionally to customer inquiries. 
+Address their specific questions and offer helpful next steps.
+Sign off as "Lindy, Customer Success Team"
+```
+
+
+1. Copy Lindy's email address from your trigger
+2. Send a test email to that address
+3. Watch Lindy process and respond based on your instructions
+
+
+## Common Use Cases
+
+<AccordionGroup>
+  <Accordion title="Support Inbox">
+    Give Lindy a support@company.ai address to handle first-line customer inquiries
+  </Accordion>
+  
+  <Accordion title="Email Assistant">
+    CC Lindy on important threads to draft responses or extract action items
+  </Accordion>
+  
+  <Accordion title="Lead Capture">
+    Forward leads to Lindy for qualification and CRM entry
+  </Accordion>
+  
+  <Accordion title="Meeting Scheduler">
+    Let Lindy handle scheduling emails with her own calendar assistant address
+  </Accordion>
+</AccordionGroup>
+
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Gmail Integration" href="/skills/popular-integrations/gmail" icon="envelope">
+    Compare Lindy Mail with Gmail integration options
+  </Card>
+  <Card title="Email Automation" href="/tutorials/beginner/email-assistant" icon="robot">
+    Build advanced email automation workflows
+  </Card>
+</CardGroup>
