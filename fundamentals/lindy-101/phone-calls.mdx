@@ -78,17 +78,24 @@ For phone actions inside AI agent nodes, use GPT-4o mini. For standalone phone w
 3. Select from available numbers or search for specific area codes
 4. Each number costs $10/month
 
-<Frame>
-  <img src="/lindy-brand-assets/phone-number-selection-typing.png" alt="IMAGE NEEDED: Screenshot showing typing to search for specific phone numbers" />
-</Frame>
 
 ### Managing Phone Numbers
 
 Access your numbers through Settings:
 
-<Frame>
-  <img src="/lindy-brand-assets/phone-settings-management.png" alt="IMAGE NEEDED: Screenshot of Settings > Phone Numbers page showing purchased numbers with Disconnect/Release options" />
-</Frame>
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/phone-settings-management.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
 1. Click your user icon
 2. Select **Settings**
@@ -100,9 +107,6 @@ Access your numbers through Settings:
 
 Lindy supports over 30 languages for natural conversation:
 
-<Frame>
-  <img src="/lindy-brand-assets/phone-language-dropdown.png" alt="IMAGE NEEDED: Screenshot of Language dropdown in phone action showing all 30+ language options" />
-</Frame>
 
 **Popular languages:**
 - English, Spanish, French, German
@@ -110,6 +114,20 @@ Lindy supports over 30 languages for natural conversation:
 - Japanese, Korean
 - Hindi, Arabic
 - And 25+ more
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/phone-language-dropdown.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
 To configure:
 1. Open your phone trigger or action
@@ -127,9 +145,8 @@ Enable your agents to transfer calls to humans or other departments when needed.
   <img src="/lindy-brand-assets/phone-transfer-action-step.png" alt="IMAGE NEEDED: Screenshot showing Transfer Call action being added after Call Received trigger" />
 </Frame>
 
-1. After **Call Received** trigger, click "Perform an action"
-2. Select **Lindy Phone** → **Transfer Call**
-3. Set "To" field to destination number
+1. Select **Lindy Phone** → **Transfer Call**
+2. Set "To" field to destination number
 
 ### As an Agent Skill
 
@@ -214,31 +231,6 @@ Forwarded calls stop charging for LLM usage once connected to a human.
   </Card>
 </CardGroup>
 
-
-## Building Your First Phone Agent
-
-### Inbound Support Agent
-
-<Frame>
-  <img src="/lindy-brand-assets/phone-inbound-template.png" alt="IMAGE NEEDED: Screenshot of inbound phone agent template showing Call Received trigger and agent configuration" />
-</Frame>
-
-1. Start with the **Inbound Phone Call Agent** template
-2. Configure your phone number
-3. Customize the agent prompt for your use case
-4. Add relevant skills (knowledge base, CRM updates)
-5. Test with a real call
-
-### Outbound Sales Agent
-
-<Frame>
-  <img src="/lindy-brand-assets/phone-outbound-workflow.png" alt="IMAGE NEEDED: Screenshot of outbound workflow with list trigger and Make Phone Call action" />
-</Frame>
-
-1. Set up a list of contacts (spreadsheet/CRM)
-2. Add **Make Phone Call** action
-3. Configure call script and objectives
-4. Set up post-call actions (log results, send follow-ups)
 
 
 ## Best Practices

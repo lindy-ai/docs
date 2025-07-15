@@ -54,42 +54,13 @@ The actions and capabilities available to the agent. These are the tools it can 
 Criteria that tell the agent when its task is complete and it should proceed to the next workflow step.
 
 
-## Creating Your First AI Agent
-
-Let's build an AI Agent that researches email senders and creates CRM contacts. This example demonstrates the power of adaptive intelligence in uncertain scenarios.
-
-### Step 1: Create a New Workflow
+## Adding an AI Agent
 
 <Frame>
-  <img src="/lindy-brand-assets/ai-agent-new-lindy.png" alt="IMAGE NEEDED: Screenshot of clicking 'New Lindy' button in the workspace" />
+  <img src="/lindy-brand-assets/enter_ai_agent.png" alt="IMAGE NEEDED: Screenshot of clicking 'Enter AI agent' option when adding a step" />
 </Frame>
 
-Click **New Lindy** in your workspace to begin building your AI agent workflow.
-
-<Frame>
-  <img src="/lindy-brand-assets/ai-agent-start-from-scratch.png" alt="IMAGE NEEDED: Screenshot of 'Start from scratch' option" />
-</Frame>
-
-Select "Start from scratch" to create a new agent.
-
-### Step 2: Add a Trigger
-
-<Frame>
-  <img src="/lindy-brand-assets/ai-agent-select-trigger.png" alt="IMAGE NEEDED: Screenshot showing trigger selection with Gmail highlighted" />
-</Frame>
-
-1. Click "Select Trigger"
-2. Choose **Gmail**
-3. Add the **Email Received** trigger
-4. Connect your Gmail account
-
-### Step 3: Add the AI Agent Step
-
-<Frame>
-  <img src="/lindy-brand-assets/ai-agent-add-step.png" alt="IMAGE NEEDED: Screenshot of clicking 'Enter AI agent' option when adding a step" />
-</Frame>
-
-Click the plus button and select "Enter AI agent" to add the AI Agent step.
+Click the plus button in your workflow and select "Enter AI agent" to add the AI Agent step.
 
 
 ## Configuring Your AI Agent
@@ -116,17 +87,23 @@ Research thoroughly using web searches and compile accurate information.
 
 Skills are the actions your agent can perform. Click the plus button beside "Skills" to add capabilities.
 
-<Frame>
-  <img src="/lindy-brand-assets/ai-agent-add-skills.png" alt="IMAGE NEEDED: Screenshot showing the skills section with + button highlighted" />
-</Frame>
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/agent_skills_add.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
 For our research agent, add:
 - **Web Search** - Find relevant pages
-- **Extract Web Content** - Read and analyze page content
-
-<Frame>
-  <img src="/lindy-brand-assets/ai-agent-skills-added.png" alt="IMAGE NEEDED: Screenshot showing both web browser skills added to the agent" />
-</Frame>
+- **Website Content Crawler** - Crawl websites and extract text content to feed AI models, LLM applications, and RAG pipelines
 
 <Tip>
 Give your agent complementary skills. For research tasks, combining search and content extraction provides comprehensive capabilities.
@@ -136,63 +113,22 @@ Give your agent complementary skills. For research tasks, combining search and c
 
 Exit conditions tell your agent when to stop and proceed to the next workflow step.
 
-<Frame>
-  <img src="/lindy-brand-assets/ai-agent-exit-condition.png" alt="IMAGE NEEDED: Screenshot of exit condition field with example text" />
-</Frame>
-
-Example exit condition:
-```
-you completed the research on the emailer
-```
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/ai_agent_exit_condition.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
 The agent will continue researching until this condition is met.
 
-
-## Adding Follow-up Actions
-
-After the AI Agent completes its task, add actions to use the gathered information.
-
-<Frame>
-  <img src="/lindy-brand-assets/ai-agent-add-hubspot.png" alt="IMAGE NEEDED: Screenshot showing 'Add Step' after AI agent and selecting HubSpot Create Contact" />
-</Frame>
-
-1. Click "Add Step" under the exit condition
-2. Select "Perform an action"
-3. Search for and select **HubSpot Create Contact**
-
-### Configuring Dynamic Fields
-
-<Frame>
-  <img src="/lindy-brand-assets/ai-agent-hubspot-fields.png" alt="IMAGE NEEDED: Screenshot of HubSpot action with fields set to 'Prompt AI' mode" />
-</Frame>
-
-Set fields to "Prompt AI" mode and reference the agent's research:
-- **Contact Email**: `the emailer's email address`
-- **Company Name**: `the company name you found`
-- **LinkedIn URL**: `the LinkedIn profile URL you discovered`
-
-
-## Advanced Configuration
-
-### Multiple Exit Conditions
-
-Add alternative exit paths for different scenarios, like when research fails.
-
-<Frame>
-  <img src="/lindy-brand-assets/ai-agent-multiple-exits.png" alt="IMAGE NEEDED: Screenshot showing multiple exit conditions with different colored paths" />
-</Frame>
-
-1. Click "Add Step" beside your first exit condition
-2. Define a second condition: `attempted to perform all requested research but failed to find all the information`
-3. Add appropriate actions for this path (e.g., send Slack alert)
-
-### Connecting Non-Linear Flows
-
-<Frame>
-  <img src="/lindy-brand-assets/ai-agent-connect-flows.png" alt="IMAGE NEEDED: Screenshot showing dragging the arrow to connect Slack step to HubSpot step" />
-</Frame>
-
-Drag connection arrows to create complex flows where multiple paths can converge.
 
 
 ## Best Practices
