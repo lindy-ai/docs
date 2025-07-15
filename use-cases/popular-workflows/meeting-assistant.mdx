@@ -2,7 +2,7 @@
 title: 'Meeting Assistant'
 icon: 'video'
 sidebarTitle: 'Meeting Assistant'
-Description: 'Never miss a detail again – let Lindy automatically join your meetings, take notes, and organize them for easy access.'
+Description: 'Never miss a detail again – let your agent automatically join your meetings, take notes, and organize them for easy access.'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -21,12 +21,12 @@ Description: 'Never miss a detail again – let Lindy automatically join your me
 
 ## Quick Overview
 
-A Meeting Notetaker Lindy automatically joins your scheduled meetings, records the conversation, and creates detailed summaries with action items, decisions, and key discussion points. It's like having a dedicated assistant in every meeting who never misses a detail and always delivers organized notes.
+A Meeting Notetaker agent automatically joins your scheduled meetings, records the conversation, and creates detailed summaries with action items, decisions, and key discussion points. It's like having a dedicated assistant in every meeting who never misses a detail and always delivers organized notes.
 
 You can find a `Meeting Notetaker template` on the left-hand side of your Lindy dashboard to get started quickly.
 
 Key benefits of using a Meeting Notetaker:
-- **Automatic attendance** - Lindy joins meetings based on your calendar without manual intervention
+- **Automatic attendance** - Agent joins meetings based on your calendar without manual intervention
 - **Comprehensive notes** - Captures all important discussions, decisions, and action items
 - **Organized storage** - Saves meeting notes in your preferred format with consistent formatting
 - **Searchable archive** - Creates a searchable repository of all your meeting history
@@ -38,7 +38,7 @@ Once you've clicked on the Meeting Notetaker template to your account, open the 
 
 ### Step 1: Connect Your Calendar
 
-Start by connecting the Google Calendar that contains the meetings you want Lindy to join.
+Start by connecting the Google Calendar that contains the meetings you want your agent to join.
 
 <Frame>
   <img src="/lindy-brand-assets/meeting-recorder-config-calendar.png" alt="Connecting your calendar to Lindy" />
@@ -49,7 +49,7 @@ Click the `Calendar Event Started` trigger and select the calendar you want Lind
 
 ### Step 2: Filter for Virtual Meetings
 
-The next step is a `Condition` that ensures Lindy only processes virtual meetings.
+The next step is a `Condition` that ensures the agent only processes virtual meetings.
 
 <Frame>
   <img src="/lindy-brand-assets/meeting-recorder-filter.png" alt="Virtual meeting condition" />
@@ -57,18 +57,18 @@ The next step is a `Condition` that ensures Lindy only processes virtual meeting
 
 This condition uses the prompt: "if the event contains a meeting link" to filter out in-person meetings or events without video conference links.
 
-You can add trigger filters to give you more control over which meetings Lindy joins. For example:
+You can add trigger filters to give you more control over which meetings your agent joins. For example:
 - Filter for events containing "Demo Call" in the name
 - Only join meetings with specific attendees
 - Skip meetings marked as "Private"
 
 <Tip>
-  Pro tip: Use filters to have Lindy only join specific types of meetings. This prevents Lindy from joining every calendar event, like personal appointments.
+  Pro tip: Use filters to have your agent only join specific types of meetings. This prevents Lindy from joining every calendar event, like personal appointments.
 </Tip>
 
 ### Step 3: Configure Meeting Recording
 
-Now let's set up how Lindy will join and behave in your meetings.
+Now let's set up how your agent will join and behave in your meetings.
 
 <Frame>
   <img src="/lindy-brand-assets/meeting-recorder-config-name.png" alt="Configuring meeting recording settings" />
@@ -77,12 +77,12 @@ Now let's set up how Lindy will join and behave in your meetings.
 In the `Record Meeting` action you can customize several options, but here are a few suggestions:
 
 #### Chat Message Settings
-- **Chat Message On Join**: Customize what Lindy says when joining (or leave blank for silent entry)
-- **Name**: Set your Lindy-bot's display name (e.g., "Sarah's Notetaker")
+- **Chat Message On Join**: Customize what your agent says when joining (or leave blank for silent entry)
+- **Name**: Set your agent's display name (e.g., "Sarah's Notetaker")
 
 #### Recording Options
-- Meeting URL is set to "Auto" so Lindy intelligently finds the meeting link
-- Recording will start automatically when Lindy joins
+- Meeting URL is set to "Auto" so your agent intelligently finds the meeting link
+- Recording will start automatically when your agent joins
 
 ### Step 4: Email Meeting Recap to Attendees
 
@@ -140,7 +140,7 @@ Congratulations! Your Meeting Notetaker is now set up to:
 ### Accessing Meeting Content
 
 You can view your meeting recordings by:
-- Clicking the task in your Lindy's task view
+- Clicking the task in your agent's task view
 - Clicking the task URL if added to a message via output reference
 - Copying the transcript using the Copy icon
 - Downloading the recording via the three dots menu
@@ -173,7 +173,7 @@ Enhance team workflows by:
 
 <AccordionGroup>
   <Accordion title="Meeting Etiquette">
-    Inform meeting participants that Lindy will be taking notes. Consider adding a line to your calendar invites: "Note: An AI notetaker will join to capture meeting notes."
+    Inform meeting participants that your agent will be taking notes. Consider adding a line to your calendar invites: "Note: An AI notetaker will join to capture meeting notes."
   </Accordion>
   
   <Accordion title="Privacy Considerations">
@@ -185,7 +185,7 @@ Enhance team workflows by:
   </Accordion>
   
   <Accordion title="Review and Refine">
-    Periodically review the generated notes and refine your prompts. The more specific your instructions, the better Lindy becomes at capturing what matters to you.
+    Periodically review the generated notes and refine your prompts. The more specific your instructions, the better your agent becomes at capturing what matters to you.
   </Accordion>
 </AccordionGroup>
 
@@ -204,6 +204,6 @@ Now that your Meeting Notetaker is set up, explore these complementary workflows
     Automatically follow up on meeting commitments
   </Card>
   <Card title="Meeting Scheduler" href="/tutorials/meeting-scheduler" icon="calendar-plus">
-    Let Lindy coordinate and schedule your meetings
+    Let your agent coordinate and schedule your meetings
   </Card>
 </CardGroup>
