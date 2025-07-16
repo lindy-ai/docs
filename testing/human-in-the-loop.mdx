@@ -17,3 +17,218 @@ sidebarTitle: 'Human in Loop'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Learn how to add a human in the loop, at any step of your automation. Lindy performs workflows autonomously but can keep you updated and ask for confirmation when needed.
+
+We call this "adding a human in the loop."
+
+Key benefits of human-in-the-loop:
+- **Maintain control** - Approve critical actions before they execute
+- **Stay informed** - Receive updates about important workflow events
+- **Quality assurance** - Review decisions before final execution
+- **Flexible oversight** - Choose when and how to be involved
+- **Team collaboration** - Loop in relevant team members via multiple channels
+
+There are three ways to do this:
+
+1. **Ask for Confirmation** - Lindy will not perform the action until you confirm it in the app
+2. **Receive an Email** - Have Lindy send you an email update directly to your inbox
+3. **Receive a Message from Your App of Choice** - Have Lindy update you through a message on Slack, Twilio, WhatsApp, Telegram, etc.
+
+## Ask for Confirmation
+
+The Ask for Confirmation field only appears for actions with "side effects," e.g. writing / updating data in other apps.
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-human-in-loop-ask-confirmation.png" alt="Ask for Confirmation setting in action configuration" />
+</Frame>
+
+If this is turned ON, Lindy will not take action (send the email, update the record, create the Calendar event, etc) until you approve the action in the Lindy task view.
+
+### How It Works
+
+To "approve" the action before Lindy proceeds, you will see the action as a "draft" in your Lindy's task view (where you see the history of workflow executions). Once you click "Send email" (or whichever action was set to "Ask for Confirmation"), Lindy will proceed with executing the task.
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-human-in-the-loop-pending-tasks.png" alt="Pending tasks notification showing actions waiting for confirmation" />
+</Frame>
+
+When your Lindies have tasks that are pending or require confirmation, there will be a notification in your Lindy's sidebar on the given task.
+
+### When to Use Confirmation
+
+<AccordionGroup>
+  <Accordion title="High-Stakes Actions">
+    Use for actions that have significant business impact, like sending emails to important clients or updating critical records.
+  </Accordion>
+  
+  <Accordion title="Learning Phase">
+    Enable confirmation while you're training your agent and want to verify outputs before they go live.
+  </Accordion>
+  
+  <Accordion title="Sensitive Data">
+    Use when working with confidential information or when compliance requires human oversight.
+  </Accordion>
+  
+  <Accordion title="External Communications">
+    Consider enabling for outbound communications that represent your brand or business.
+  </Accordion>
+</AccordionGroup>
+
+## Receive an Email
+
+Keeping a human in the loop by receiving an email is especially common for workflow updates and intercepting scenarios where you might want to take action yourself instead of having Lindy do it.
+
+An example scenario would be when you have Lindy emailing back and forth with a lead or negotiating collaboration pricing and packaging options. Once they have come to an agreement, you can have Lindy email you with the agreement details so you can finalize the process.
+
+### Setting Up Email Notifications
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Email notification workflow setup showing condition and send email action" />
+</Frame>
+
+To receive an email from Lindy, follow the steps below:
+
+**Step 1: Add a Condition**
+- Add a Condition after the action that you intend on being updated about
+- Define the Condition by adding a statement to instruct Lindy on when she should send you an Email update
+
+**Example:** `you came to an agreement with the emailer or they declined the offering`
+
+**Step 2: Configure Send Email Action**
+- Add the Send Email action
+- Set the To, Cc, and Bcc fields to "Manually Select"
+- Insert your email address in the To field
+
+**Step 3: Write the Email Body**
+In the Body field, insert a prompt to instruct Lindy on what she is updating you with and what details need to be included:
+
+**Example:** name, email address of the lead, deal information, etc.
+
+<Note>
+Example below for how Lindy alerts agencies when they close a new influencer partnership (and yes, Lindy drafts the partnership proposals as well).
+</Note>
+
+<Tip>
+  Be specific about what information you need in the email update. This helps Lindy provide complete and actionable summaries.
+</Tip>
+
+## Receive a Message from Your App of Choice
+
+Lindy can also update you through your app of choice, such as Slack, Twilio, Telegram, WhatsApp, etc. This is helpful when you want a group of people to be looped in, for instance, on a public Slack channel.
+
+In this example, we are going to have Lindy send a Slack alert when a customer is requesting a refund. This is extremely helpful to ensure support tickets are properly escalated and directed to the correct team to take action.
+
+<Frame>
+  <img src="/lindy-brand-assets/placeholder.png" alt="Slack notification setup for customer refund requests" />
+</Frame>
+
+### Setting Up Messaging Notifications
+
+To receive a Slack alert from Lindy, follow these steps below:
+
+**Step 1: Add a Condition**
+- Add a Condition after the action that you intend on being updated about
+- Define the Condition by adding a statement to instruct Lindy on when she should send a Slack message
+
+In this example, `the customer is requesting a refund` is your conditional statement.
+
+**Step 2: Configure Messaging Action**
+- Add the Send Channel Message action
+
+**Step 3: Customize the Message**
+- Add a prompt to the Channel field to tell Lindy what channel to send the alert to
+- In the Message field, insert a prompt to instruct Lindy on what she is updating you with and what details need to be included
+
+**Example:**
+Extract the email address of the recipient (not the user's email) and append it to the Google doc. Add nothing other than the raw email address.
+
+<Note>
+Example below for how Lindy sends a Slack alert when a customer is requesting a refund.
+</Note>
+
+<Note>
+  For Slack notifications, you can mention specific team members using @username or notify entire channels using @channel when urgent attention is needed.
+</Note>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Choose the Right Method">
+    Use confirmations for critical actions, emails for detailed updates, and messaging for team coordination.
+  </Accordion>
+  
+  <Accordion title="Be Specific with Conditions">
+    Write clear conditions that trigger notifications only when necessary to avoid notification fatigue.
+  </Accordion>
+  
+  <Accordion title="Include Context">
+    Always provide enough context in notifications so recipients can take appropriate action without seeking additional information.
+  </Accordion>
+  
+  <Accordion title="Test Your Notifications">
+    Use the test panel to verify that notifications trigger correctly and contain the right information.
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  Avoid setting up too many notifications for routine tasks. Focus on scenarios where human judgment or action is truly needed.
+</Warning>
+
+## Advanced Scenarios
+
+### Escalation Workflows
+
+Combine multiple notification methods for escalation:
+1. Start with a Slack notification to the team
+2. If no response within 30 minutes, send an email to management
+3. For critical issues, require confirmation before proceeding
+
+### Conditional Notifications
+
+Use conditions to determine the appropriate notification method:
+- High-value deals → Email the sales manager
+- Technical issues → Slack the engineering team  
+- Customer complaints → Both Slack and email notifications
+
+## Troubleshooting
+
+#### Common Issues
+
+1. **Notifications not sending**
+   - Check that your condition logic is correctly configured
+   - Verify integration permissions for messaging apps
+   - Test with simpler condition criteria
+
+2. **Too many notifications**
+   - Refine your condition statements to be more specific
+   - Consider combining related notifications into summaries
+
+3. **Missing context in notifications**
+   - Improve your notification prompts with specific fields to include
+   - Reference earlier workflow steps for complete context
+
+<Tip>
+  Start with basic notifications and gradually add complexity. It's easier to expand a working system than to troubleshoot a complex one.
+</Tip>
+
+## Next Steps
+
+Explore these related concepts to build more sophisticated workflows:
+
+<CardGroup cols={2}>
+  <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="network-wired">
+    Master condition logic for precise notification triggers
+  </Card>
+  <Card title="Test Panel" href="/testing/test-panel" icon="vial">
+    Test your human-in-the-loop workflows before going live
+  </Card>
+  <Card title="Debugging" href="/testing/debugging" icon="bug">
+    Troubleshoot notification and approval workflows
+  </Card>
+  <Card title="Version History" href="/testing/version-history" icon="clock-rotate-left">
+    Track changes to your notification settings
+  </Card>
+</CardGroup>

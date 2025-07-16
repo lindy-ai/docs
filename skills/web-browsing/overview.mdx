@@ -7,7 +7,7 @@ sidebarTitle: 'Overview'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/web-scrape-overview.mp4"
       width="600"
       autoPlay
       muted
@@ -17,3 +17,255 @@ sidebarTitle: 'Overview'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Lindy's web browsing capabilities enable you to extract, monitor, and interact with web data at scale. From simple data scraping to complex multi-page workflows, Lindy provides powerful tools to automate web-based tasks while maintaining ethical standards and optimal performance.
+
+Key benefits of web browsing with Lindy:
+- **Intelligent extraction** - AI-powered data parsing and structure recognition
+- **Ethical compliance** - Built-in respect for robots.txt and rate limiting
+- **Multiple approaches** - Choose from browser automation, API integration, or specialized tools
+- **Error resilience** - Automatic retries and fallback mechanisms
+- **Scalable performance** - Handle single pages or massive data collection projects
+
+## Web Data Extraction Methods
+
+Lindy offers several approaches to web data extraction, each optimized for different use cases:
+
+### 1. Web Browser Action
+
+<Frame>
+  <img src="/lindy-brand-assets/web-browse-action.png" alt="Web browser action configuration showing URL input and extraction settings" />
+</Frame>
+
+Perfect for dynamic content and JavaScript-heavy sites. The Web Browser action renders pages completely and can interact with elements just like a human user.
+
+**Best for:**
+- Single-page applications (SPAs)
+- Sites requiring user interaction
+- Content loaded via JavaScript
+- Taking screenshots or PDFs
+
+### 2. Apify Integration
+
+<Frame>
+  <img src="/lindy-brand-assets/apify-browse.png" alt="Apify integration setup showing actor selection and configuration" />
+</Frame>
+
+Leverage pre-built scrapers from the Apify ecosystem for common platforms like Amazon, LinkedIn, or Google Maps.
+
+**Best for:**
+- Popular websites with existing scrapers
+- Large-scale data collection
+- Complex extraction workflows
+- Platform-specific optimizations
+
+
+
+## Scraping Ethics and Legal Considerations
+
+
+**Always Check Before Scraping:**
+- **robots.txt** - Review the site's robots.txt file for scraping guidelines
+- **Terms of Service** - Read and comply with website terms of use
+- **Copyright laws** - Respect intellectual property and fair use principles
+- **Data protection** - Follow GDPR, CCPA, and other privacy regulations
+- **API availability** - Prefer official APIs when available
+
+### Ethical Best Practices
+
+<AccordionGroup>
+  <Accordion title="Respect Rate Limits">
+    - Implement delays between requests (1-2 seconds minimum)
+    - Monitor server response times and adjust accordingly
+    - Use exponential backoff for retries
+    - Never overwhelm servers with concurrent requests
+  </Accordion>
+  
+  <Accordion title="Identify Your Bot">
+    - Use descriptive User-Agent strings
+    - Include contact information when possible
+    - Be transparent about your scraping purpose
+    - Respond to takedown requests promptly
+  </Accordion>
+  
+  <Accordion title="Data Minimization">
+    - Extract only the data you actually need
+    - Avoid scraping sensitive personal information
+    - Implement data retention policies
+    - Secure any collected data appropriately
+  </Accordion>
+  
+  <Accordion title="Server Courtesy">
+    - Check robots.txt and honor directives
+    - Scrape during off-peak hours when possible
+    - Cache results to avoid repeat requests
+    - Use compression to reduce bandwidth usage
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+Web scraping laws vary by jurisdiction and can change rapidly. Always consult with legal experts for compliance guidance specific to your use case and location.
+</Warning>
+
+## Rate Limiting Best Practices
+
+**Key Strategies:**
+
+1. **Fixed Delays** - Set consistent delays between requests
+2. **Adaptive Throttling** - Adjust speed based on server response times
+3. **Concurrent Limits** - Restrict simultaneous connections
+4. **Retry Logic** - Handle temporary failures gracefully
+
+### Rate Limiting Configuration
+
+```python
+import time
+import random
+
+def respectful_request(url, min_delay=1, max_delay=3):
+    # Random delay to appear more human-like
+    delay = random.uniform(min_delay, max_delay)
+    time.sleep(delay)
+    
+    # Add jitter to avoid synchronized requests
+    jitter = random.uniform(0.1, 0.5)
+    time.sleep(jitter)
+    
+    return requests.get(url)
+```
+
+<Tip>
+Start with conservative rate limits (1-2 seconds between requests) and gradually optimize based on the target site's response and your specific needs.
+</Tip>
+
+
+
+## Performance Optimization
+
+**Optimization Techniques:**
+
+1. **Caching Strategy**
+   - Cache frequently accessed pages
+   - Implement intelligent cache invalidation
+   - Use CDN endpoints when available
+
+2. **Resource Management**
+   - Optimize memory usage for large datasets
+   - Stream process large files
+   - Clean up temporary resources
+
+3. **Parallel Processing**
+   - Split work across multiple agents
+   - Use thread pools for I/O operations
+   - Implement queue-based processing
+
+### Performance Monitoring
+
+<AccordionGroup>
+  <Accordion title="Success Metrics">
+    - Page load times
+    - Extraction success rates
+    - Data quality scores
+    - Error frequency
+  </Accordion>
+  
+  <Accordion title="Resource Usage">
+    - Memory consumption
+    - Network bandwidth
+    - Processing time per page
+    - Storage requirements
+  </Accordion>
+  
+  <Accordion title="Cost Optimization">
+    - Credit usage per extraction
+    - Time-based efficiency
+    - Data-to-effort ratio
+    - Infrastructure costs
+  </Accordion>
+</AccordionGroup>
+
+## Common Use Cases
+
+### Business Intelligence
+
+<AccordionGroup>
+  <Accordion title="Competitive Analysis">
+    Monitor competitor pricing, product launches, and marketing campaigns across multiple websites automatically.
+  </Accordion>
+  
+  <Accordion title="Market Research">
+    Collect product reviews, customer feedback, and industry trends from various sources for analysis.
+  </Accordion>
+  
+  <Accordion title="Lead Generation">
+    Extract contact information, company data, and prospect details from business directories and social platforms.
+  </Accordion>
+  
+  <Accordion title="Content Aggregation">
+    Gather news articles, blog posts, and industry updates from multiple sources for content curation.
+  </Accordion>
+</AccordionGroup>
+
+### E-commerce Applications
+
+<AccordionGroup>
+  <Accordion title="Price Monitoring">
+    Track product prices across marketplaces to optimize pricing strategies and identify opportunities.
+  </Accordion>
+  
+  <Accordion title="Inventory Tracking">
+    Monitor stock levels and availability across supplier websites for supply chain optimization.
+  </Accordion>
+  
+  <Accordion title="Product Catalog">
+    Extract product details, specifications, and images to build comprehensive catalogs.
+  </Accordion>
+  
+  <Accordion title="Review Analysis">
+    Collect customer reviews and ratings to analyze sentiment and product performance.
+  </Accordion>
+</AccordionGroup>
+
+## Security and Privacy
+
+### Data Protection Measures
+
+<Warning>
+Always implement proper security measures when handling scraped data, especially if it contains personal or sensitive information.
+</Warning>
+
+**Security Checklist:**
+- Encrypt data in transit and at rest
+- Implement access controls and authentication
+- Regular security audits and updates
+- Secure API endpoints and databases
+- Compliance with data protection regulations
+
+### Privacy Considerations
+
+- **Data minimization** - Collect only necessary information
+- **Purpose limitation** - Use data only for stated purposes
+- **Retention policies** - Delete data when no longer needed
+- **User consent** - Respect opt-out requests and preferences
+- **Anonymization** - Remove personally identifiable information
+
+## Next Steps
+
+Ready to start web scraping with Lindy? Explore these specific tools and techniques:
+
+<CardGroup cols={2}>
+  <Card title="Web Browser" href="/skills/web-browsing/web-browser" icon="globe-pointer">
+    Learn browser automation for dynamic content
+  </Card>
+  <Card title="Apify Integration" href="/skills/web-browsing/apify" icon="square-code">
+    Use pre-built scrapers for popular platforms
+  </Card>
+  <Card title="Parallel Processing" href="/skills/web-browsing/parallel" icon="layer-group">
+    Scale your scraping with concurrent operations
+  </Card>
+  <Card title="Run Code" href="/skills/by-lindy/run-code" icon="code">
+    Build custom scraping solutions with Python
+  </Card>
+</CardGroup>
