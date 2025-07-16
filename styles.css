@@ -678,30 +678,29 @@ a[href^="mailto:support@lindy.ai"] {
 }
 
 /* ============== DARK MODE DASHBOARD BUTTON ============== */
-/* Make Dashboard button fit dark mode theme with darker yellow */
+/* Make Dashboard button fit dark mode theme with appropriate yellow */
 
-/* Dark mode: Dashboard button background - darker yellow */
+/* Dark mode: Dashboard button background */
 .dark #topbar-cta-button > a > span.absolute {
-  background: rgba(240, 195, 65, 0.25) !important; /* Darker yellow background for dark mode */
+  background: rgba(240, 195, 65, 0.15) !important; /* Subtle dark mode yellow background */
 }
 
-/* Dark mode: Dashboard button text - brighter for contrast */
+/* Dark mode: Dashboard text and arrow colors */
 .dark #topbar-cta-button .z-10 {
-  color: #f9fafb !important; /* Bright white text for better contrast */
+  color: #f3f4f6 !important; /* Light text for better contrast */
 }
 
-/* Dark mode: Dashboard button arrow - brighter for contrast */
 .dark #topbar-cta-button svg {
-  color: #f9fafb !important; /* Bright white arrow */
+  color: #f3f4f6 !important; /* Light arrow color */
 }
 
-/* Dark mode: Dashboard button hover effect */
+/* Dark mode: Dashboard button hover state */
 .dark #topbar-cta-button > a:hover > span.absolute {
-  background: rgba(240, 195, 65, 0.35) !important; /* Slightly brighter on hover */
-  opacity: 1 !important; /* Override the opacity change */
+  background: rgba(240, 195, 65, 0.25) !important; /* Slightly more prominent on hover */
+  opacity: 1 !important; /* Override the opacity rule */
 }
 
-/* Dark mode: Keep smooth transitions */
+/* Dark mode: Dashboard button smooth transitions */
 .dark #topbar-cta-button > a > span.absolute {
   transition: background-color 0.2s ease !important;
 }
@@ -775,6 +774,12 @@ a[href^="mailto:support@lindy.ai"] {
 .dark .toc .text-primary,
 .dark .table-of-contents .text-primary {
   color: #F5E198 !important;
+}
+
+/* Light mode: Keep existing light styling unchanged */
+:root:not(.dark) #topbar-cta-button > a > span.absolute,
+html:not(.dark) #topbar-cta-button > a > span.absolute {
+  background: #fdf8ee !important; /* Keep original light background */
 }
 
 /* ============== DARK MODE TEXT CONTRAST FIXES ============== */
@@ -1128,4 +1133,122 @@ html:not(.dark) .text-gray-400 {
 .dark #sidebar-content a.group,
 .dark #sidebar-content div.group {
   transition: all 0.2s ease !important;
+}
+
+/* ============== CALLOUT THEME FIXES ============== */
+/* Override green emerald colors with PURPLE theme colors for tips */
+
+/* Tip callouts - replace emerald with PURPLE */
+.callout[data-callout-type="tip"] {
+  border-color: rgba(147, 51, 234, 0.2) !important; /* Purple border instead of emerald */
+  background-color: rgba(147, 51, 234, 0.1) !important; /* Purple background instead of emerald */
+}
+
+/* Dark mode tip callouts */
+.dark .callout[data-callout-type="tip"] {
+  border-color: rgba(147, 51, 234, 0.3) !important; /* Darker purple border for dark mode */
+  background-color: rgba(147, 51, 234, 0.15) !important; /* Darker purple background for dark mode */
+}
+
+/* Tip callout icon color */
+.callout[data-callout-type="tip"] svg {
+  color: #7c3aed !important; /* Purple icon instead of emerald */
+}
+
+.dark .callout[data-callout-type="tip"] svg {
+  color: #a855f7 !important; /* Lighter purple icon for dark mode */
+}
+
+/* Tip callout text colors */
+.callout[data-callout-type="tip"] .prose {
+  color: #5b21b6 !important; /* Dark purple text for light mode */
+}
+
+.dark .callout[data-callout-type="tip"] .prose {
+  color: #c4b5fd !important; /* Light purple text for dark mode */
+}
+
+/* Override any specific emerald classes with PURPLE */
+.callout[data-callout-type="tip"] .text-emerald-600 {
+  color: #7c3aed !important; /* Override emerald text with purple */
+}
+
+.dark .callout[data-callout-type="tip"] .text-emerald-400,
+.dark .callout[data-callout-type="tip"] .text-emerald-200 {
+  color: #c4b5fd !important; /* Override dark mode emerald text with light purple */
+}
+
+/* ============== IMAGE BUFFER/PADDING FIXES ============== */
+/* Remove unwanted spacing around images and frames */
+
+/* Remove default margins and padding from images (excluding nav logo) */
+img:not(#topbar-logo):not(.logo):not([class*="logo"]) {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Remove spacing from image containers */
+.frame,
+.image-container,
+.screenshot,
+[class*="image"],
+figure {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0; /* Remove line-height spacing */
+}
+
+/* Ensure images fill their containers completely */
+.frame img,
+.image-container img,
+.screenshot img,
+figure img {
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Remove any wrapper padding that might create buffers */
+div[style*="text-align: center"] img,
+div[style*="justify-content: center"] img,
+.text-center img,
+.flex.justify-center img {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fix centered image containers */
+div[style*="display: flex; justify-content: center"] {
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+}
+
+/* Remove default browser image spacing */
+img {
+  vertical-align: top; /* Remove baseline spacing */
+}
+
+/* Ensure iframe and embedded content fills properly */
+iframe:not([class*="embed"]):not([id*="chat"]) {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  border: none !important;
+}
+
+/* Remove spacing from any wrapper divs around images */
+.mdx-content img,
+.prose img,
+.content img {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
