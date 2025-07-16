@@ -2,8 +2,8 @@
 title: 'Perplexity'
 icon: 'map'
 sidebarTitle: 'Perplexity'
+description: 'Search the web with AI-powered research using Perplexity models for real-time information.'
 ---
-
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
@@ -18,3 +18,87 @@ sidebarTitle: 'Perplexity'
     />
   </div>
 </div>
+
+## Overview
+
+The Search Perplexity action gives your agent access to real-time web search with AI-powered research capabilities. Perfect for:
+
+- **Real-time information** - access current news, trends, and up-to-date data
+- **Research tasks** - get detailed answers with sources and citations
+- **Fact checking** - verify claims and get authoritative information
+
+## Search Perplexity Action
+
+- **What it does**: Searches the web using Perplexity's AI models to provide sourced answers to your queries with real-time information.
+
+<Frame>
+  <img src="/lindy-brand-assets/perplexity.png" alt="Search Perplexity action configuration" />
+</Frame>
+
+### Inputs
+- **Query**: The search query or question you want answered
+- **Model**: Choose from Perplexity's model lineup based on your needs
+
+### Outputs
+- **Response**: The answer to your query
+- **Citations**: Sources and references used in the response
+
+### Query Options
+You have two ways to set the query:
+
+- **Manual Query**: Write your search query directly
+- **AI-Generated Query**: Let your agent craft the optimal query based on workflow context
+
+### Model Selection
+
+| Model | Description | Strength |
+|-------|-------------|----------|
+| **Sonar** | Quick research and basic searches | ⭐ |
+| **Sonar Pro** | Better searches with more detailed results | ⭐⭐ |
+| **Sonar Reasoning** | Adds reasoning capabilities to search results | ⭐⭐⭐ |
+| **Sonar Reasoning Pro** | Advanced reasoning with better analysis | ⭐⭐⭐⭐ |
+| **Sonar Deep Research** | Uses Perplexity's deep research function | ⭐⭐⭐⭐⭐ |
+
+<Tip>
+Sonar Reasoning Pro is recommended for most use cases as it provides the best balance of reasoning capability, search quality, and performance.
+</Tip>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Query Optimization">
+    - Be specific about what information you need
+    - Include timeframes when relevant ("latest", "2024", "recent")
+    - Use AI query generation when context is important
+    - Test different phrasings for complex topics
+    - Include industry or domain context for better results
+  </Accordion>
+
+  <Accordion title="Model Selection Strategy">
+    - Start with lower-tier models for simple queries
+    - Use Deep Research for comprehensive analysis
+    - Consider cost vs. thoroughness trade-offs
+    - Use Reasoning models when you need logical connections
+    - Scale model choice to query complexity
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Apify Web Scraping" icon="spider" href="/skills/web-browsing/apify">
+    Extract specific data from websites found in your research
+  </Card>
+  
+  <Card title="Context Management" icon="database" href="/skills/lindy-utilities/context">
+    Store important research findings for your agent's memory
+  </Card>
+  
+  <Card title="Set Variables" icon="memory" href="/skills/lindy-utilities/set-variables">
+    Save search results for use in other workflow steps
+  </Card>
+  
+  <Card title="LLM Call" icon="microchip-ai" href="/skills/lindy-utilities/llm-call">
+    Analyze Perplexity results with custom AI prompts
+  </Card>
+</CardGroup>
