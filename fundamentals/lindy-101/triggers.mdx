@@ -34,7 +34,7 @@ Key benefits of using triggers:
 
 <Steps>
   <Step title="Create a new Lindy">
-    Click the plus sign beside Lindies, then click "Start from scratch" to create a new Lindy
+    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" from the pop-up menu 
     <Frame>
   <img src="/lindy-brand-assets/Triggers_5.png" alt="Calendar + Chat multi-trigger workflow" />
 </Frame>
@@ -84,6 +84,9 @@ Starts the workflow when a specific event occurs. Examples include:
 - New row added to Google Sheets
 - Webhook received
 
+<Tip>
+  Use triggers together with `conditions` to route workflows intelligently based on context.
+</Tip>
 
 
 ## Trigger filters
@@ -95,10 +98,6 @@ You can enable trigger filters at the bottom of the trigger configuration settin
 
 ### Example: Email received trigger setup
 If you want your agent to process only emails with a specific label, you can configure the Email Received trigger to filter by label. This way, Lindy will only wake up and run the workflow when an email with that label arrives.
-
-<Tip>
-  Use triggers together with `conditions` to route workflows intelligently based on context.
-</Tip>
 
 
 <Frame>
