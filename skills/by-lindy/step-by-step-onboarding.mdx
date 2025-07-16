@@ -109,7 +109,7 @@ Located within Lindy Utilities in the action modal, these actions allow you to c
 Collects input from a user for a specific field and uses the values to update the configuration of the fields in a step.
 
 <Warning>
-Cannot configure AI Agents or condition steps. Use Configure Step for these instead.
+You cannot configure AI Agents or condition steps. Use Configure Step for these instead.
 </Warning>
 
 ### Configure Step
@@ -134,9 +134,19 @@ Gets a user's information, including:
 
 ### User Flow
 
-<Frame>
-  <img src="/lindy-brand-assets/SBSO-continue.png" alt="Step-by-Step Onboarding Continue" />
-</Frame>
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/continue-sbso.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
 - **Incomplete onboarding**: Users who click out without completing will land on the Flow Editor for the template and can resume onboarding
 - **Completed onboarding**: Users are redirected to the Task View for the Lindy they just configured
