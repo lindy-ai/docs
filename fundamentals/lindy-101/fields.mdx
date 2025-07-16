@@ -26,7 +26,7 @@ When you add any action in Lindy, you'll see fields to configure. Unlike other a
   <img src="/lindy-brand-assets/field-all-3-modes.png" alt="Three field configuration modes in Lindy - Auto, AI Prompt, and Set Manually" />
 </Frame>
 
-- **Auto** - Let Lindy intelligently determine the best value based on all previous data
+- **Auto** - Let your agent intelligently determine the best value based on all previous data
 - **AI Prompt** - Give natural language instructions for dynamic content generation  
 - **Set Manually** - Enter exact values or reference specific data from previous steps
 
@@ -39,7 +39,7 @@ Auto mode is Lindy's intelligent field completion system. It analyzes all previo
 
 ### How It Works
 
-When set to Auto, Lindy:
+When set to Auto, your agent:
 1. Examines all data from previous triggers and actions
 2. Matches field names with available data intelligently
 3. Infers the best value based on context and field type
@@ -100,6 +100,9 @@ The key to AI Prompt mode is clear, specific instructions:
     style={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
   />
 </Frame>
+<p style={{ textAlign: 'center', fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+  💡 Learn more about [writing effective prompts](/fundamentals/lindy-101/prompt-guide)
+</p>
 
 ```
 ✅ Good: "Write a friendly 2-line thank you mentioning the product name"
@@ -150,7 +153,7 @@ The dropdown shows all available data from previous steps. In AI Prompt mode, th
 
 In this example, the AI Prompt intelligently combines:
 - **Reference to previous data**: `bodyAsText` pulls in the actual content from a previous step (like an email or document)
-- **Contextual analysis**: Lindy reads and understands the referenced content to determine if the person is new or returning
+- **Contextual analysis**: Your agent reads and understands the referenced content to determine if the person is new or returning
 - **Dynamic decision-making**: Based on what she finds in the data, she generates different personalized offers
 
 This showcases the power of AI Prompt mode - instead of rigid rules, Lindy analyzes the actual context from previous steps to generate the most appropriate response. The reference acts as a variable that gets replaced with real data at runtime, which Lindy then uses to make intelligent decisions.
