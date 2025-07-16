@@ -1252,3 +1252,72 @@ iframe:not([class*="embed"]):not([id*="chat"]) {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
+/* ============== VIDEO BUFFER/PADDING FIXES ============== */
+/* Remove unwanted spacing around videos and make them fill containers */
+
+/* Remove default margins and padding from videos */
+video {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Remove spacing from video containers */
+.video-container,
+.video-wrapper,
+[class*="video"],
+.media-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important; /* Remove line-height spacing */
+}
+
+/* Ensure videos in specific containers fill completely */
+.video-card video,
+.frame video,
+.screenshot video,
+figure video,
+.media video {
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Remove wrapper padding that might create buffers around videos */
+div[style*="text-align: center"] video,
+div[style*="justify-content: center"] video,
+.text-center video,
+.flex.justify-center video {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fix centered video containers */
+div[style*="display: flex; justify-content: center"] video {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove spacing from content areas containing videos */
+.mdx-content video,
+.prose video,
+.content video {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Ensure video elements have no baseline spacing */
+video {
+  vertical-align: top !important; /* Remove baseline spacing */
+}
