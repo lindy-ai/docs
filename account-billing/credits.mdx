@@ -2,6 +2,7 @@
 title: 'Credits'
 icon: 'coins'
 sidebarTitle: 'Credits'
+description: 'Understanding how Lindy credits work, model pricing, usage monitoring, and optimization strategies for your automation workflows'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -17,3 +18,93 @@ sidebarTitle: 'Credits'
     />
   </div>
 </div>
+
+## Overview
+
+Credits are the currency at the core of Lindy's billing system. Understanding how they work helps you optimize costs and plan your automation workflows. Perfect for:
+
+- **Cost planning** - understand what drives credit consumption in your workflows
+- **Usage monitoring** - track credit spending across tasks and models
+- **Optimization** - reduce costs while maintaining automation effectiveness
+
+Most tasks cost about `1-3 credits` on small models and `10 credits` on Large models, with costs varying based on AI model choice, task complexity, and actions used.
+
+<Tip>
+Basic models often work well for simple tasks. Start with more powerful models to get workflows right, then downgrade while monitoring results to find the optimal balance.
+</Tip>
+
+## What are Credits?
+
+Credits determine the cost of each task based on the AI model you use, task complexity, and actions included in your workflow.
+
+**Every task is at minimum 1 credit.** Tasks that include premium actions or LLM calls will consume more credits. Credit costs scale with:
+
+- **Model intelligence** - more advanced models use more credits
+- **Task complexity** - processing hundreds of spreadsheet rows vs. updating one row
+- **Premium actions** - specialized integrations and features
+- **AI agent duration** - agents run until completion, using more credits for longer tasks
+
+### What is a Task?
+
+A task is everything Lindy does after being triggered by an event or user message. Tasks begin when a workflow is initiated and include all subsequent steps - conditions, actions, AI agent steps, and messages.
+
+## Monitoring Your Credits
+
+Track credit usage through Lindy's task view and sidebar gauge:
+
+### Task View
+1. **Click your Lindy** in the sidebar and select "Tasks"
+2. **Access a task** from the task list
+3. **Hover over each step** to see credits used for that specific step
+
+### Total Usage
+- **Bottom left gauge** shows billing credit consumption for current cycle
+- **Hover for details** to see when credit balance resets for next billing cycle
+
+<Warning>
+Credits do not roll over between billing cycles. When you run out of credits, Lindy pauses operations and new tasks are put on hold.
+</Warning>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Optimize Credit Usage">
+    - **Filter High-Volume Triggers** - Only allow actions on relevant events with specific filters (e.g., limit email triggers to specific domains)
+    - **Use Cheaper Models** - Basic models work well for simple tasks; evaluate if you need advanced capabilities
+    - **Test and Monitor** - Start with powerful models, then gradually downgrade while monitoring results
+  </Accordion>
+
+  <Accordion title="Monitor and Plan">
+    - Check the task view regularly to understand credit consumption patterns
+    - Use the sidebar gauge to track monthly usage
+    - Set up workflows gradually to understand their credit impact
+    - Review premium action usage to identify optimization opportunities
+  </Accordion>
+
+  <Accordion title="Model Selection Strategy">
+    - Start with mid-tier models for development and testing
+    - Use advanced models only when you need their specific capabilities
+    - Consider task complexity when choosing models
+    - Monitor results when downgrading to ensure quality maintains
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Credit Optimizations" icon="chart-line" href="/account-billing/credit-optimizations">
+    Learn advanced strategies to reduce credit consumption
+  </Card>
+  
+  <Card title="Workspaces" icon="building" href="/account-billing/workspaces">
+    Manage multiple projects and their credit usage
+  </Card>
+  
+  <Card title="Teams" icon="users" href="/account-billing/teams">
+    Understand team billing and credit sharing
+  </Card>
+  
+  <Card title="Test Panel" icon="play" href="/testing/test-panel">
+    Test workflows to understand their credit impact
+  </Card>
+</CardGroup>

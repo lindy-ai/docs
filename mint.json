@@ -64,7 +64,6 @@
           "group": "Accounts & Billing",
           "pages": [
             "account-billing/workspaces",
-            "account-billing/teams",
             "account-billing/credits",
             "account-billing/credit-optimizations"
           ]
