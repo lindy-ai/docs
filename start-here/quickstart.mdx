@@ -19,24 +19,47 @@ icon: 'rocket'
 </div>
 
 <Note>
-  **Time to complete:** 5 minutes  
-  **Difficulty:** Beginner  
-  **What you'll build:** An AI email assistant that automatically responds to inquiries
+  Time to complete: 5 minutes  
+  Difficulty: Beginner  
+  What you'll build: An AI email assistant that automatically responds to inquiries
 </Note>
-
-## What is a Lindy?
-
-Lindy is a no-code platform that allows you to build your own AI agents to automate business workflows.
-
-Triggered by specific events, Lindy's AI agents connect your favorite apps and communicate with you through almost any platform to complete tasks.
-
-AI agents can respond to emails, schedule meetings, assist with sales, take meeting notes, handle data entry, and provide customer support, helping you automate entire business workflows.
 
 ## Building Your First Lindy
 
 Welcome to Lindy! 
 
 In this guide, you'll learn how to build your first AI email assistant. This will take less than five minutes, and after you're done, you'll have an email responder (because no one loves to answer emails themselves).
+
+## What You'll Build
+
+You'll create an AI agent that:
+1. **Monitors your Gmail** for incoming emails
+2. **Filters emails intelligently** using conditions to identify business inquiries
+3. **Searches your knowledge base** (your website) for relevant information
+4. **Automatically responds** with helpful, accurate information
+5. **Keeps you in the loop** by BCC'ing you on all responses
+
+## Step Overview
+
+Here's exactly what we'll do:
+
+<Steps>
+  <Step title="Create agent & add trigger">
+    Create a new Lindy agent and add a Gmail trigger to monitor incoming emails
+  </Step>
+  <Step title="Add condition">
+    Add a condition to filter for business inquiries
+  </Step>
+  <Step title="Add knowledge base">
+    Add your website as a knowledge base for accurate responses
+  </Step>
+  <Step title="Add actions">
+    Add a Gmail action to send automated replies
+  </Step>
+  <Step title="Test & monitor">
+    Test your agent with a real email and monitor its performance
+  </Step>
+</Steps>
 
 Let's get started!
 
@@ -46,7 +69,7 @@ Click the "New Lindy" button below Home in the top left of your workspace to beg
 
 <Frame>
   <img 
-    src="/lindy-brand-assets/create_new_lindy.avif" 
+    src="/lindy-brand-assets/new-lindy-agent.png" 
     alt="Create a new Lindy" 
   />
 </Frame>
@@ -55,7 +78,7 @@ Click "Start from scratch" to create a new AI agent.
 
 <Frame>
   <img 
-    src="/lindy-brand-assets/start_from_scratch.avif" 
+    src="/lindy-brand-assets/start-from-scratch.png" 
     alt="Start from scratch option" 
   />
 </Frame>
@@ -63,8 +86,7 @@ Click "Start from scratch" to create a new AI agent.
 ## Step 2: Add a Trigger
 
 <Info>
-**What are triggers?**
-
+What are triggers?
 [Triggers](/core-concepts/triggers) are events that "wake up" an AI agent. Examples include time-based triggers (e.g., every weekday at 9 am) or event-based triggers (e.g., when you receive an email).
 
 A single AI agent can have multiple triggers, either managing different workflows, or acting as entry points into the same workflow.
@@ -78,28 +100,21 @@ You can apply filters to your triggers to reduce costs and ensure all workflows 
 2. Click **Gmail** 
 3. Add the **Email Received** trigger
 
-<Frame>
-  <img 
-    src="/lindy-brand-assets/select_trigger.avif" 
-    alt="Select trigger interface" 
-  />
-</Frame>
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/gmail_select_trigger.avif" 
-    alt="Gmail trigger selection" 
-  />
-</Frame>
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/select_gmail-trigger.mp4" 
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
 Connect the Gmail account you want your AI agent to monitor.
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/connect_gmail.avif" 
-    alt="Connect Gmail account" 
-  />
-</Frame>
 
 ## Step 3: Add a Condition
 
