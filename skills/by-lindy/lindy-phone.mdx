@@ -2,12 +2,13 @@
 title: 'Lindy Phone'
 icon: 'phone'
 sidebarTitle: 'Lindy Phone'
+description: 'Build AI-powered voice agents that can handle complex phone conversations with tool integrations'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Phone%20Calls.mp4"
       width="600"
       autoPlay
       muted
@@ -17,3 +18,191 @@ sidebarTitle: 'Lindy Phone'
     />
   </div>
 </div>
+
+## Overview
+
+Lindy Phone transforms voice interactions into powerful automated workflows. Unlike traditional IVR systems, Lindy Phone seamlessly connects to AI agents that can access your entire integration ecosystem - making API calls, searching the web, updating databases, and more - all during a live conversation.
+
+<Note>
+**Key insight:** Every phone call in Lindy is automatically followed by an AI Agent node, enabling sophisticated tool integrations and dynamic responses based on the conversation.
+</Note>
+
+## How Lindy Phone Works
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-utilities-lindy-phone.png" alt="Phone call workflow showing call received trigger followed by AI agent node [[memory:2619471]]" />
+</Frame>
+
+The magic happens through this workflow pattern:
+1. **Phone trigger** (inbound) or **action** (outbound) initiates the call
+2. **AI Agent node** automatically follows, providing access to:
+   - All Lindy integrations (Gmail, Slack, CRMs, etc.)
+   - Web browsing and search capabilities
+   - API connections
+   - Database operations
+   - Custom code execution
+
+This means your voice agent isn't just talking - it's actively working across your entire tech stack in real-time.
+
+## Setting Up Your AI-Powered Voice Agent
+
+### Step 1: Configure the AI Agent
+
+After adding your phone trigger/action, the AI agent node appears automatically:
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-phone-ai-agent-setup.png" alt="AI agent configuration showing prompt field and model selection [[memory:2619471]]" />
+</Frame>
+
+**Essential configuration:**
+- **Prompt**: Define your agent's personality, objectives, and conversation guidelines
+- **Model**: GPT-4o mini for simple flows, GPT-4 Turbo for complex conversations
+- **Skills**: Add any Lindy action as a skill your agent can use
+
+<Tip>
+Pro tip: Start your prompt with clear role definition: "You are a [role] for [company]. Your goal is to [objective]."
+</Tip>
+
+### Step 2: Add Agent Skills
+
+Your voice agent can perform any action available in Lindy:
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-phone-ai-agent-skills.png" alt="AI agent skills panel showing phone-specific actions and other integrations [[memory:2619471]]" />
+</Frame>
+
+**Phone-specific skills:**
+- **End Call** - Gracefully terminate conversations
+- **Press Numbers** - Navigate phone trees (IVR systems)
+- **Transfer Call** - Route to humans or departments
+
+**Power-user skills to add:**
+- **Search Internet** - Look up information mid-call
+- **HTTP Request** - Query APIs for real-time data
+- **Update Spreadsheet** - Log call details instantly
+- **Send Email/SMS** - Follow up automatically
+- **Create Calendar Event** - Book appointments
+- **Search Knowledge Base** - Access company information
+
+## Real-World Examples
+
+<AccordionGroup>
+  <Accordion title="Smart Customer Support Agent">
+    ```
+    Prompt: You are a technical support agent for TechCorp. 
+    Help customers troubleshoot issues and create tickets when needed.
+    
+    Skills:
+    - Search Knowledge Base (find solutions)
+    - Create Ticket in Zendesk (log issues)
+    - Send SMS (confirmation texts)
+    - Transfer Call (escalate to human)
+    ```
+  </Accordion>
+  
+  <Accordion title="AI Sales Assistant">
+    ```
+    Prompt: You qualify leads and schedule demos for our sales team.
+    Gather company size, budget, and timeline information.
+    
+    Skills:
+    - Search Internet (research company)
+    - Check Calendar (find open slots)
+    - Create Calendar Event (book demos)
+    - Update CRM (log lead data)
+    - Send Email (confirmation + materials)
+    ```
+  </Accordion>
+  
+  <Accordion title="Appointment Scheduler">
+    ```
+    Prompt: You handle appointment booking for our medical practice.
+    Verify insurance and find suitable time slots.
+    
+    Skills:
+    - Query API (verify insurance)
+    - Search Calendar (check availability)
+    - Create Event (book appointment)
+    - Send SMS (reminders)
+    - Update Database (patient records)
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Configuration Options
+
+<Tabs>
+  <Tab title="Languages">
+    Lindy Phone supports 30+ languages for global reach:
+    - English, Spanish, French, German
+    - Chinese (Mandarin/Cantonese)
+    - Japanese, Korean, Hindi, Arabic
+    - And 25+ more
+    
+    Configure in your phone trigger/action settings.
+  </Tab>
+  
+  <Tab title="Phone Numbers">
+    - **Cost**: $10/month per number
+    - **Coverage**: 100+ countries
+    - **Features**: Concurrent calls, SMS capable
+    - **Management**: Settings → Phone Numbers
+  </Tab>
+  
+  <Tab title="Voice Selection">
+    Choose from multiple voice options:
+    - Standard voices (included)
+    - Premium voices (Business/Enterprise)
+    - Gender and accent variations
+    - Language-specific options
+  </Tab>
+</Tabs>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Conversation Design">
+    - Keep prompts conversational and natural
+    - Plan for common scenarios and edge cases
+    - Include fallback responses
+    - Test with real users
+  </Accordion>
+  
+  <Accordion title="Skill Selection">
+    - Only add skills the agent actually needs
+    - Group related actions logically
+    - Test each skill in isolation first
+    - Monitor usage patterns
+  </Accordion>
+  
+  <Accordion title="Error Handling">
+    - Always include transfer option
+    - Handle API failures gracefully
+    - Provide clear error messages
+    - Log issues for review
+  </Accordion>
+  
+  <Accordion title="Performance">
+    - Use appropriate AI models
+    - Minimize API call latency
+    - Cache frequently used data
+    - Monitor call duration
+  </Accordion>
+</AccordionGroup>
+
+## Related Resources
+
+<CardGroup cols={2}>
+  <Card title="AI Agents" href="/fundamentals/lindy-101/ai-agents" icon="robot">
+    Deep dive into AI agent configuration
+  </Card>
+  <Card title="Phone Calls Guide" href="/fundamentals/lindy-101/phone-calls" icon="phone-volume">
+    Detailed phone system documentation
+  </Card>
+  <Card title="Human in the Loop" href="/testing/human-in-the-loop" icon="user-check">
+    Add approval steps to workflows
+  </Card>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="books">
+    Give agents access to information
+  </Card>
+</CardGroup>

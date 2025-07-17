@@ -2,6 +2,7 @@
 title: 'Monitor Your Agents'
 icon: 'magnifying-glass'
 sidebarTitle: 'Monitor Your Agents'
+description: 'Track your agent performance and task execution with built-in monitoring and observability tools'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -17,3 +18,169 @@ sidebarTitle: 'Monitor Your Agents'
     />
   </div>
 </div>
+
+## Overview
+
+Monitoring your agents helps you track performance, identify issues, and ensure your workflows are running smoothly. Perfect for:
+
+- **Performance tracking** - see how your agents are performing over time
+- **Issue identification** - quickly spot and diagnose problems
+- **Usage analysis** - understand how often and when your agents run
+
+We'll show you how to access your task history and view things manually, plus our observability tools to help you monitor your agents more autonomously.
+
+## Accessing Task History
+
+To view all your agent task runs:
+
+1. **Select the agent** - Choose the specific agent you want to monitor
+2. **Click Tasks** - In the top right of your task or flow editor, click on "Tasks"
+3. **View all runs** - Within the task history, you can see all task runs across agents
+4. **Review execution** - Examine each run individually to see what happened step-by-step
+
+<Frame>
+  <img src="/lindy-brand-assets/task-menu-monitor.png" alt="Task history access" />
+</Frame>
+
+<Tip>
+You can use the "Set task title" action to improve the task titling in run history.
+</Tip>
+
+## Observability Tools
+
+Monitor and analyze agent performance with detailed task execution data. There are two key actions for full observability into your agents:
+
+- `Agent Task Change` trigger wakes up when another Lindy agent performs specific actions (errors, starts, finishes, etc.)
+- `Get Task Details` action reads and analyzes everything an agent did during task execution, showing you block-by-block inputs, outputs, and performance data.
+
+### Agent Task Change Trigger
+
+- **What it does**: Triggers when another Lindy agent performs specific actions - perfect for monitoring agent activity and building reactive workflows.
+
+<Frame>
+  <img src="/lindy-brand-assets/observability-trigger.png" alt="Agent Task Change Trigger setup" />
+</Frame>
+
+**Inputs:**
+- **Agent**: Select which agent you want to monitor
+- **Events**: Multi-select from task states:
+  - Task was created
+  - Task succeeded
+  - Task is working
+  - Task was canceled
+  - Task failed
+- **Filter by subtask title**: Optional - monitor specific subtasks only
+
+**Common Examples:**
+- **Error Alerts**: Trigger on "Task failed" → Send email with failure details
+- **Performance Tracking**: Trigger on "Task succeeded" → Log completion metrics
+- **Real-time Monitoring**: Trigger on "Task is working" → Send status updates
+
+### Get Task Details
+
+- **What it does**: Reads and analyzes everything an agent did during task execution. Shows you block-by-block inputs, outputs, and performance data for complete observability.
+
+<Frame>
+  <img src="/lindy-brand-assets/observability-get-task-details.png" alt="Get Task Details action configuration" />
+</Frame>
+
+**Inputs:**
+- **Agent**: Select the agent to analyze
+- **Sub Task** (required): ID of the specific task/subtask to examine
+- **Max Number of Blocks**: Recommended to set high - controls how much execution history to retrieve
+
+<Tip>
+Usually you want to use this action after an "Agent Task Change" trigger and you can leave the fields on "Auto" to pull in the correct agent & task ID.
+</Tip>
+
+**Outputs:**
+- **Block-by-block execution**: Every action the agent performed
+- **Inputs and outputs**: Exact data flowing through each step
+- **Performance metrics**: Timing, success rates, error details
+- **Task metadata**: Status, timestamps, execution context
+
+**Common Examples:**
+- **Error Analysis**: Get task details on failure → Analyze what went wrong → Send diagnostic report
+- **Quality Evaluation**: Get task details after completion → Score performance → Log to spreadsheet
+- **Performance Optimization**: Analyze slow tasks → Identify bottlenecks → Optimize workflows
+
+**Use Cases:**
+- Build evaluation tools for agent quality
+- Create automated debugging systems
+- Track agent performance over time
+- Generate detailed audit logs
+- Feed execution data to AI for analysis and insights
+
+### Working Together
+
+These actions are designed to work together for complete agent observability:
+
+<Frame>
+  <img src="/lindy-brand-assets/observability-together.png" alt="Observability workflow example" />
+</Frame>
+
+`Agent Task Change` triggers when something happens → `Get Task Details` analyzes exactly what occurred
+
+This gives you full visibility into your agents - you'll know when they run, how they perform, and exactly what they do at every step.
+
+### Advanced Features
+
+| Feature | What it does |
+|---------|--------------|
+| Multi-Agent Monitoring | Track multiple agents from one observability workflow |
+| Performance Benchmarking | Compare agent execution times and success rates over time |
+| Error Pattern Analysis | Identify common failure points across different agents |
+| Custom Alert Routing | Send different types of failures to different teams or channels |
+| Quality Score Tracking | Build evaluation systems that score agent performance automatically |
+
+## What to Monitor
+
+<AccordionGroup>
+  <Accordion title="Task Execution">
+    - Success vs failure rates across your agents
+    - Execution times to identify performance bottlenecks
+    - Error patterns to spot recurring issues
+    - Trigger frequency to understand usage patterns
+  </Accordion>
+
+  <Accordion title="Agent Performance">
+    - Which agents run most frequently
+    - Average completion times for different workflows
+    - Resource usage and costs per agent
+    - Success rates for different types of tasks
+  </Accordion>
+
+  <Accordion title="Error Analysis">
+    - Common failure points in your workflows
+    - Integration issues with external services
+    - Input validation problems
+    - Rate limiting or timeout issues
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+- **Regular monitoring** - Check task history regularly to catch issues early
+- **Set up alerts** - Use conditional workflows to notify you of failures
+- **Track patterns** - Look for trends in execution times and success rates
+- **Document issues** - Keep track of recurring problems and their solutions
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Get Task Utility" icon="clipboard" href="/skills/lindy-utilities/get-task">
+    Learn how to use the Get Task utility for monitoring
+  </Card>
+  
+  <Card title="Debugging" icon="bug" href="/testing/debugging">
+    Troubleshoot issues found during monitoring
+  </Card>
+  
+  <Card title="Human in the Loop" icon="square-user" href="/testing/human-in-the-loop">
+    Add oversight for critical agent actions
+  </Card>
+  
+  <Card title="Test Panel" icon="play" href="/testing/test-panel">
+    Test agents after making monitoring-based improvements
+  </Card>
+</CardGroup>

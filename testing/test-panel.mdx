@@ -2,6 +2,7 @@
 title: 'Test Panel'
 icon: 'play'
 sidebarTitle: 'Test Panel'
+description: 'Test your agents step-by-step using the built-in test panel with free credits and real-time monitoring'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -17,3 +18,74 @@ sidebarTitle: 'Test Panel'
     />
   </div>
 </div>
+
+## Overview
+
+The Test Panel lets you test your agents in real-time before deploying them. Perfect for:
+
+- **Testing workflows**: run your agent step-by-step to see exactly what happens
+- **Debugging issues**: identify problems in your agent's logic or configuration  
+- **Validating triggers**: test different trigger scenarios and inputs
+
+## How to Use the Test Panel
+
+1. **Open the Test Panel** - Click the test button in the top right corner of your agent builder
+
+<Frame>
+  <img src="/lindy-brand-assets/test-panel-button.png" alt="Test panel button location" />
+</Frame>
+
+2. **Select Your Trigger** 
+   - A right panel will appear where you can choose from available triggers
+   - If you have multiple triggers, you'll see multiple trigger options to start from
+   - Click the trigger you want to test
+
+3. **Run and Monitor** 
+   - Your agent will execute step-by-step
+   - Watch each action happen in real-time
+   - See outputs, errors, and decision points
+   - Follow the complete workflow from start to finish
+
+<Tip>
+The first 100 credits per test run are free! This gives you plenty of credits to thoroughly test your workflows before going live.
+</Tip>
+
+## What to Expect
+
+- **Step-by-step execution** - See each action as it happens
+- **Real-time feedback** - Get immediate results and error messages
+- **Multiple trigger testing** - Test different entry points for your agent
+- **Free testing credits** - No cost for your first 100 runs
+
+## Important Notes
+
+<AccordionGroup>
+
+  <Accordion title="Real-time Testing">
+    The test panel shows actual execution - not a simulation. Actions will really run, APIs will be called, and data will be processed. Use test data when possible.
+  </Accordion>
+
+  <Accordion title="Google Sheets Testing">
+    When testing Google Sheets, it can often take 2-5 minutes for new rows to populate in the test panel. Be patient - this is because of the Google API.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Debugging" icon="bug" href="/testing/debugging">
+    Learn how to troubleshoot common issues
+  </Card>
+  
+  <Card title="Monitoring Your Agents" icon="chart-line" href="/testing/monitoring-your-agents">
+    Set up monitoring for production agents
+  </Card>
+  
+  <Card title="Human in the Loop" icon="user" href="/testing/human-in-the-loop">
+    Add manual review steps to your workflows
+  </Card>
+  
+  <Card title="Agent Templates" icon="template" href="/fundamentals/lindy-101/templates">
+    Start with pre-built agent templates
+  </Card>
+</CardGroup>

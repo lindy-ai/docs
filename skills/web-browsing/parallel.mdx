@@ -1,7 +1,8 @@
 ---
 title: 'Parallel'
 icon: 'print-magnifying-glass'
-sidebarTitle: 'Parallel Browsing'
+sidebarTitle: 'Parallel'
+description: "Chat with websites and enrich data using Parallel's web browsing and data enrichment capabilities"
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -17,3 +18,110 @@ sidebarTitle: 'Parallel Browsing'
     />
   </div>
 </div>
+
+## Overview
+
+Parallel provides powerful web browsing and data enrichment capabilities for your agents. Perfect for:
+
+- **Web research** - ask questions and get answers from web content
+- **Data enrichment** - automatically enhance your data with web information
+- **Entity research** - gather detailed information about companies, people, or topics
+
+## Chat with Web Action
+
+- **What it does**: Ask questions and get answers by browsing and analyzing web content in real-time.
+
+<Frame>
+  <img src="/lindy-brand-assets/parallel-web-chat.png" alt="Chat with Web action configuration" />
+</Frame>
+
+### Inputs
+- **Question**: The query or question you want answered
+- **Processor**: Choose the model strength for your research needs
+
+### Outputs
+- **Response**: The response based on web research
+
+## Web Enrichment Action
+
+- **What it does**: Enriches your data by automatically gathering additional information about entities from the web.
+
+<Frame>
+  <img src="/lindy-brand-assets/parallel-web-enrichment.png" alt="Web Enrichment action configuration" />
+</Frame>
+
+### Inputs
+- **Entity**: The thing you want to enrich (company name, person, topic, etc.)
+- **Enrichment Columns**: Choose automatic enrichment or specify custom columns
+- **Processor**: Choose the model strength for processing
+
+### Example Enrichment Columns
+
+| Entity Type | Common Columns |
+|-------------|----------------|
+| **Companies** | Industry, Employee Count, Revenue, Website, Headquarters, Founded Year |
+| **People** | Job Title, Company, LinkedIn Profile, Education, Location |
+| **General Entities** | Description, Category, Related Links, Key Facts |
+
+### Outputs
+- **Enriched Data**: Enhanced information about your entity
+
+## Processor Selection
+
+Both actions use the same processor options:
+
+| Processor | Description | Strength |
+|-----------|-------------|----------|
+| **Lite** | Basic web browsing and research | ⭐ |
+| **Base** | Standard processing with better analysis | ⭐⭐ |
+| **Core** | Enhanced capabilities for complex tasks | ⭐⭐⭐ |
+| **Pro** | Advanced processing with detailed results | ⭐⭐⭐⭐ |
+| **Ultra** | Maximum capability for thorough research | ⭐⭐⭐⭐⭐ |
+
+<Tip>
+Core processor provides good balance of speed and detail for most research tasks.
+</Tip>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Question Optimization">
+    - Be specific about what information you need
+    - Include context when asking about entities
+    - Use clear, direct questions for better results
+    - Specify timeframes when relevant
+  </Accordion>
+
+  <Accordion title="Enrichment Strategy">
+    - Start with automatic enrichment to see available data
+    - Use specific columns when you know what you need
+    - Choose appropriate processor based on entity complexity
+    - Test with sample entities before processing large datasets
+  </Accordion>
+
+  <Accordion title="Rate Limit Management">
+    - When looping, set concurrency limits to prevent hitting rate limits
+    - Reduce parallel requests when processing large datasets
+    - Monitor for timeout errors and adjust concurrency accordingly
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Perplexity Search" icon="map" href="/skills/web-browsing/perplexity">
+    Alternative web search with AI-powered research
+  </Card>
+  
+  <Card title="Context Management" icon="database" href="/skills/lindy-utilities/context">
+    Store research findings for your agent's memory
+  </Card>
+  
+  <Card title="Set Variables" icon="memory" href="/skills/lindy-utilities/set-variables">
+    Save enriched data for use in other workflow steps
+  </Card>
+  
+  <Card title="Apify Web Scraping" icon="spider" href="/skills/web-browsing/apify">
+    Extract specific data from websites
+  </Card>
+</CardGroup>

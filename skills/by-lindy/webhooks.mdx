@@ -2,12 +2,13 @@
 title: 'Webhooks'
 icon: 'webhook'
 sidebarTitle: 'Webhooks'
+description: 'Trigger Lindy workflows with custom API calls from any external system'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/webhook-demo.mp4"
       width="600"
       autoPlay
       muted
@@ -17,3 +18,205 @@ sidebarTitle: 'Webhooks'
     />
   </div>
 </div>
+
+## Overview
+
+While Lindy supports over 5,000 integrations out of the box, webhooks provide the ultimate flexibility for custom integrations. Use webhooks to trigger Lindy workflows from any system that can make HTTP requests - your own applications, third-party services, or custom scripts.
+
+<Note>
+Webhooks are ideal when you need real-time event processing or when working with systems that don't have native Lindy integrations.
+</Note>
+
+## Adding a Webhook Trigger
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-webhook-add-trigger.png" alt="Add Trigger menu showing Webhook option in popular triggers and other triggers sections [[memory:2619471]]" />
+</Frame>
+
+To get started:
+1. Click **Add Trigger** in your workflow
+2. Search for "Webhook" 
+3. Select **Webhook Received** trigger
+
+The webhook trigger appears in both the "Popular" section and under "Other Triggers" for easy access.
+
+## Configuration Options
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-webhook-show-fields-to-fill.png" alt="Webhook configuration interface showing webhook selection and follow-up behavior options [[memory:2619471]]" />
+</Frame>
+
+### Webhook Selection
+Choose an existing webhook or create a new one. Each webhook has its own unique URL and security settings.
+
+### Follow-up Behavior
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-webhook-follow-up-behavior.png" alt="Follow-up behavior dropdown showing Handle in same task, Create new task, and Ignore options [[memory:2619471]]" />
+</Frame>
+
+Configure how Lindy processes webhook requests:
+
+| Option | Description | Use Case |
+|--------|-------------|----------|
+| **Handle in same task** | Process immediately in the current workflow | Real-time responses, synchronous processing |
+| **Create new task** | Spawn a new task for each webhook call | Async processing, heavy workloads |
+| **Ignore** | Acknowledge receipt without processing | Testing, selective processing |
+
+## Creating a New Webhook
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-webhook-create-webhook.png" alt="Create new webhook interface with name field and webhook list [[memory:2619471]]" />
+</Frame>
+
+1. Click **"Select an option"** → **"Create new"**
+2. Enter a descriptive name for your webhook
+3. Press Enter to save and select the webhook
+
+Each webhook gets a unique URL in the format:
+```plaintext
+https://public.lindy.ai/api/v1/webhooks/[unique-id]
+```
+
+## Security with Secret Keys
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-webhok-generate-secret.png" alt="Generate Secret button and copy to clipboard option for webhook security [[memory:2619471]]" />
+</Frame>
+
+Protect your webhooks from unauthorized access:
+
+1. Click **Generate Secret** to create a secure token
+2. Copy the secret key immediately
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-webhook-secret-generated.png" alt="Secret key display with warning that it's only shown once [[memory:2619471]]" />
+</Frame>
+
+<Warning>
+The secret key is only shown once! Copy it now and store it securely. You'll need to include this in the Authorization header of all webhook requests.
+</Warning>
+
+### Using the Secret Key
+
+Include the secret in your webhook requests:
+```http
+Authorization: Bearer [your-secret-key]
+```
+
+## Webhook + AI Agent Pattern
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-webhook-ai-agent.png" alt="Webhook trigger followed by AI Agent node in workflow [[memory:2619471]]" />
+</Frame>
+
+The most powerful webhook pattern combines the trigger with an AI Agent that can intelligently process incoming data:
+
+### AI Agent Configuration
+
+After your webhook trigger, add an AI Agent to:
+- Analyze incoming webhook data
+- Make decisions based on content
+- Execute multiple actions conditionally
+- Handle complex business logic
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-webhook-ai-agent-skills.png" alt="AI Agent skills panel showing Send POST Request to Callback as a suggested skill [[memory:2619471]]" />
+</Frame>
+
+### Essential AI Agent Skills
+
+**Suggested skill for webhooks:**
+- **Send POST Request to Callback** - Respond back to the original request sender
+
+**Additional powerful skills to add:**
+- **HTTP Request** - Call other APIs based on webhook data
+- **Update Spreadsheet** - Log webhook data
+- **Send Email/Slack** - Notify teams
+- **Search Knowledge Base** - Enrich with context
+- **Create Calendar Event** - Schedule based on webhooks
+- **Run Code** - Custom data transformations
+
+## Working with Webhook Data
+
+Access webhook data in your workflow through:
+
+### Request Body
+Reference the complete payload: `{{webhook_received.request.body}}`
+
+### Headers
+Access request headers: `{{webhook_received.request.headers}}`
+
+### Query Parameters
+Use URL parameters: `{{webhook_received.request.query}}`
+
+<Tip>
+Use AI Prompt mode in action fields to intelligently extract and use specific fields from your webhook payload.
+</Tip>
+
+## Callback Responses
+
+<AccordionGroup>
+  <Accordion title="Send POST Request to Callback">
+    When you need to respond to the webhook sender:
+    
+    1. Include a `callbackURL` field in your webhook request body
+    2. Add the "Send POST Request to Callback" action
+    3. Configure your response data
+    
+    This enables two-way communication between your external system and Lindy.
+  </Accordion>
+  
+  <Accordion title="Response Patterns">
+    Common callback scenarios:
+    - Acknowledge receipt with status
+    - Return processed results
+    - Send error messages
+    - Provide async job IDs
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Secure Your Webhooks" icon="shield-halved">
+    Always use secret keys and validate incoming requests
+  </Card>
+  
+  <Card title="Handle Errors Gracefully" icon="triangle-exclamation">
+    Add error handling conditions after webhook processing
+  </Card>
+  
+  <Card title="Test Thoroughly" icon="vial">
+    Use tools like Postman or curl to test webhook endpoints
+  </Card>
+  
+  <Card title="Monitor Usage" icon="chart-line">
+    Track webhook calls in your task history for debugging
+  </Card>
+</CardGroup>
+
+## Common Use Cases
+
+- **Form Submissions** - Process data from web forms
+- **Payment Events** - Handle payment provider notifications
+- **IoT Sensors** - React to device data streams
+- **CI/CD Pipelines** - Trigger workflows from build systems
+- **Custom Integrations** - Bridge any system with Lindy
+
+## Related Resources
+
+<CardGroup cols={2}>
+  <Card title="HTTP Request" href="/skills/by-lindy/http-request" icon="globe">
+    Make outbound API calls from Lindy
+  </Card>
+  <Card title="AI Agents" href="/fundamentals/lindy-101/ai-agents" icon="robot">
+    Build intelligent webhook processors
+  </Card>
+  <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="code-branch">
+    Route webhook data conditionally
+  </Card>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Enrich webhook data with context
+  </Card>
+</CardGroup>

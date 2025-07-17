@@ -4,11 +4,10 @@ icon: 'comments'
 sidebarTitle: 'Slack'
 ---
 
-
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/slack-integration.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +17,386 @@ sidebarTitle: 'Slack'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Transform your Slack workspace into an AI-powered productivity hub with Lindy's Slack integration. Build intelligent bots that can answer questions, route tickets, send alerts, and automate team communications—all without writing a single line of code.
+
+Key benefits of Slack + Lindy:
+- **Instant knowledge access** - Answer team questions using your internal documents
+- **Smart automation** - Route messages, escalate tickets, and send notifications
+- **24/7 availability** - AI assistance that never sleeps
+- **Context awareness** - Understand intent and provide relevant responses
+- **Seamless integration** - Works with your existing Slack channels and workflows
+
+
+## Available Triggers
+
+### Slack Message Received
+
+Monitor specific channels or direct messages for new activity:
+
+<Frame>
+  <img src="/lindy-brand-assets/slack-message-received.png" alt="Slack message received trigger configuration showing channel selection and filters" />
+</Frame>
+
+
+
+<Tip>
+Use filters to prevent your bot from responding to every message. Try starting with keywords like "Hey Lindy" or "@bot" to create intentional interactions.
+</Tip>
+
+## Available Actions
+
+### Send Channel Message
+
+<Frame>
+  <img src="/lindy-brand-assets/slac-send-channel-message+config.png" alt="Send message action configuration with channel selection and message composition" />
+</Frame>
+
+Send messages to channels or direct messages with smart AI-generated content.
+**Configuration options:**
+- **Specific channels** - Monitor selected channels only
+- **All channels** - Listen to every channel in your workspace
+- **Direct messages** - Respond to private messages
+- **Keyword filters** - Trigger only on specific words or phrases
+- **User filters** - React to messages from specific team members
+
+
+## Step-by-Step Setup Guide
+
+### Building Your First Slack Bot
+
+<Steps>
+  <Step title="Create a New Lindy">
+    Start by creating a new agent specifically for Slack automation.
+    
+    <Frame>
+      <img src="/lindy-brand-assets/lindy-slack-bot.png" alt="Creating a new Lindy agent for Slack integration" />
+    </Frame>
+  </Step>
+  
+  <Step title="Add Slack Message Trigger">
+    Click on "Select Trigger" and choose "Slack Message Received" from the list of available triggers. This will make your bot wake up whenever a message is posted in your Slack workspace.
+    
+    In the trigger configuration:
+    - **Channel Selection**: Choose specific channels to monitor (like #support or #general) or select "All" to monitor your entire workspace
+    - **Direct Messages**: Enable if you want the bot to respond to private messages
+    - **Integration Setup**: Authorize your Slack workspace by clicking "Connect" and following the OAuth flow
+  </Step>
+  
+  <Step title="Set Up Filters (Optional)">
+    Add trigger filters to control when your bot responds and avoid unnecessary activations:
+    
+    Filter by Keywords : Set the bot to only trigger when messages contain specific words
+    - Example: "Hey Lindy", "help", "support", "question"
+    
+    Filter by Users: Exclude or include specific team members
+    - Useful to prevent the bot from responding to other bots or specific users
+    
+    Filter by Channels: Fine-tune which channels trigger the bot even if monitoring "All"
+    - Example: Exclude #random or #general but include #support
+    
+    **Advanced Filters**: Use conditions like "message starts with" or "message contains question mark"
+  </Step>
+  
+  <Step title="Add Conditions">
+    Click the "+" button and select "Condition" to create smart routing logic that determines when your bot should actually respond:
+    
+    Example Conditions:
+    - "the message contains a question about company policies or procedures"
+    - "the user is asking for help with our product or service"
+    - "the message is a support request that needs immediate attention"
+    
+    Why Use Conditions: They ensure your bot only responds to relevant messages, improving accuracy and preventing spam. You can add multiple conditions to create different response paths.
+    
+    Best Practice: Start with broad conditions and refine them based on actual usage patterns.
+  </Step>
+  
+  <Step title="Connect Knowledge Base">
+    Add a "Search Knowledge Base" step to give your bot access to company information:
+    
+    Knowledge Base Setup:
+    - Upload your company documentation, FAQs, policies, and procedures
+    - Include website content, Notion pages, Google Docs, or PDF files
+    - Organize content by categories (HR, IT, Product, etc.)
+    
+    Search Configuration:
+    - Set the search to look for relevant information based on the user's question
+    - Configure how many results to return (typically 3-5 for best performance)
+    - Choose between semantic search (meaning-based) or keyword search
+    
+    Content Tips: Keep your knowledge base updated and well-organized for best results.
+  </Step>
+  
+  <Step title="Configure Response Action">
+    Add a "Send Message" action to define how your bot responds:
+    
+    Message Configuration:
+    - **Channel**: Choose to respond in the same channel, send a DM, or post to a specific channel
+    - **Thread Reply**: Enable to keep conversations organized within message threads
+    
+    Response Prompt: Write clear instructions for how the bot should respond:
+    ```
+    "Answer the user's question using information from the knowledge base. 
+    Be helpful and concise. If you can't find the answer, suggest who 
+    they should contact or how to get help. Always maintain a friendly, 
+    professional tone that matches our company culture."
+    ```
+    
+    Advanced Options: 
+    - Add fallback responses for when no knowledge base match is found
+    - Include escalation paths to human team members
+    - Set up follow-up actions like logging the interaction
+  </Step>
+</Steps>
+
+## Common Use Cases
+
+### Customer Support Bot
+
+<AccordionGroup>
+  <Accordion title="Setup Process">
+    1. **Trigger**: Slack Message Received in #support channel
+    2. **Condition**: Message contains a customer inquiry or support request
+    3. **Action**: Search knowledge base for solutions
+    4. **Response**: Provide answer or escalate to human agent
+  </Accordion>
+  
+  <Accordion title="Example Configuration">
+    ```
+    Condition: "the message is asking for help with our product or service"
+    
+    Knowledge Base: Customer support documentation, FAQ, troubleshooting guides
+    
+    Response Prompt: "Help the customer by providing a clear solution from our documentation. If the issue requires human assistance, let them know someone will follow up shortly."
+    ```
+  </Accordion>
+</AccordionGroup>
+
+### HR Assistant Bot
+
+<AccordionGroup>
+  <Accordion title="Common Questions Handled">
+    - PTO policies and vacation requests
+    - Benefits information and enrollment
+    - Company handbook and procedures
+    - Office hours and remote work policies
+    - Expense reporting and reimbursements
+  </Accordion>
+  
+  <Accordion title="Setup Example">
+    ```
+    Trigger Filter: Message contains "PTO", "vacation", "benefits", "policy"
+    
+    Condition: "the message is asking about HR policies, benefits, or company procedures"
+    
+    Knowledge Base: Employee handbook, HR policies, benefits documentation
+    
+    Response: "Provide accurate information from our HR documentation. Include relevant links or next steps when helpful."
+    ```
+  </Accordion>
+</AccordionGroup>
+
+### Sales Alert System
+
+<AccordionGroup>
+  <Accordion title="Integration Flow">
+    1. **External Trigger**: New lead added to CRM (HubSpot, Salesforce)
+    2. **Processing**: Extract lead information and qualification data
+    3. **Notification**: Send formatted alert to #sales channel
+    4. **Follow-up**: Include next steps and assignment suggestions
+  </Accordion>
+  
+  <Accordion title="Alert Template">
+    ```
+    🚨 New Lead Alert!
+    
+    Name: {{lead.name}}
+    Company: {{lead.company}}
+    Source: {{lead.source}}
+    Score: {{lead.score}}/10
+    
+    Next Steps: {{suggested_actions}}
+    Assigned to: {{sales_rep}}
+    ```
+  </Accordion>
+</AccordionGroup>
+
+### Meeting Notes Distribution
+
+<AccordionGroup>
+  <Accordion title="Automated Workflow">
+    1. **Trigger**: Meeting ends (calendar integration)
+    2. **Processing**: Generate meeting summary using AI
+    3. **Distribution**: Send summary to relevant Slack channels
+    4. **Action Items**: Extract and assign follow-up tasks
+  </Accordion>
+  
+  <Accordion title="Summary Format">
+    ```
+    📋 Meeting Summary: {{meeting_title}}
+    Date: {{date}}
+    Attendees: {{participants}}
+    
+    Key Decisions:
+    • {{decision_1}}
+    • {{decision_2}}
+    
+    Action Items:
+    • {{action_1}} - Due: {{date}} - Assigned: {{person}}
+    • {{action_2}} - Due: {{date}} - Assigned: {{person}}
+    
+    Next Meeting: {{next_meeting_date}}
+    ```
+  </Accordion>
+</AccordionGroup>
+
+
+## Best Practices
+
+### Bot Personality and Tone
+
+<AccordionGroup>
+  <Accordion title="Setting the Right Tone">
+    Configure your bot's personality to match your company culture:
+    
+    **Professional**: "I'm here to help with your questions about our policies and procedures."
+    
+    **Friendly**: "Hey there! 👋 What can I help you with today?"
+    
+    **Technical**: "I can assist you with documentation, code examples, and troubleshooting steps."
+  </Accordion>
+  
+  <Accordion title="Response Guidelines">
+    - Keep responses concise but complete
+    - Include relevant links and resources
+    - Use emojis sparingly and appropriately
+    - Always provide next steps or alternatives
+    - Maintain consistency across all interactions
+  </Accordion>
+</AccordionGroup>
+
+### Performance Optimization
+
+<AccordionGroup>
+  <Accordion title="Response Time">
+    - Keep knowledge base content organized and up-to-date
+    - Use specific conditions to avoid unnecessary processing
+    - Cache frequently requested information
+    - Set appropriate timeouts for external integrations
+  </Accordion>
+  
+  <Accordion title="Accuracy Improvement">
+    - Regularly review and update knowledge base content
+    - Monitor bot interactions and user feedback
+    - Refine conditions based on actual usage patterns
+    - Test bot responses with different question phrasings
+  </Accordion>
+</AccordionGroup>
+
+### Security and Privacy
+
+<Warning>
+Be mindful of sensitive information in Slack channels. Configure appropriate access controls and avoid exposing confidential data through bot responses.
+</Warning>
+
+**Security Guidelines:**
+- Limit bot access to appropriate channels only
+- Use private channels for sensitive discussions
+- Regularly audit bot permissions and access
+- Implement data retention policies for bot interactions
+- Train team members on proper bot usage
+
+## Testing Your Slack Bot
+
+### Testing Checklist
+
+<Steps>
+  <Step title="Basic Functionality">
+    - Test trigger activation with sample messages
+    - Verify response accuracy and tone
+    - Check knowledge base search results
+    - Confirm proper channel targeting
+  </Step>
+  
+  <Step title="Edge Cases">
+    - Test with typos and informal language
+    - Try questions outside the knowledge base
+    - Test concurrent requests from multiple users
+    - Verify error handling and fallback responses
+  </Step>
+  
+  <Step title="Integration Testing">
+    - Test external system connections
+    - Verify data synchronization
+    - Check notification delivery
+    - Validate escalation workflows
+  </Step>
+</Steps>
+
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Bot Not Responding">
+    **Common causes:**
+    - Incorrect channel permissions
+    - Overly restrictive filters
+    - Bot not properly connected to Slack
+    - Trigger conditions not met
+    
+    **Solutions:**
+    - Check integration status in dashboard
+    - Review and adjust trigger filters
+    - Verify channel membership
+    - Test with simple, direct messages
+  </Accordion>
+  
+  <Accordion title="Incorrect Responses">
+    **Common causes:**
+    - Outdated knowledge base content
+    - Ambiguous or unclear prompts
+    - Insufficient training data
+    - Context not properly understood
+    
+    **Solutions:**
+    - Update knowledge base with current information
+    - Refine response prompts with examples
+    - Add more specific conditions
+    - Provide feedback to improve responses
+  </Accordion>
+  
+  <Accordion title="Performance Issues">
+    **Common causes:**
+    - Large knowledge base without optimization
+    - Complex conditions causing delays
+    - External API timeouts
+    - High concurrent usage
+    
+    **Solutions:**
+    - Optimize knowledge base structure
+    - Simplify conditions where possible
+    - Implement caching for common queries
+    - Consider load balancing for high usage
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+Ready to supercharge your Slack workspace? Here are some ways to expand your automation:
+
+<CardGroup cols={2}>
+  <Card title="Gmail Integration" href="/skills/popular-integrations/gmail" icon="envelope">
+    Connect email workflows with Slack notifications
+  </Card>
+  <Card title="Google Calendar" href="/skills/popular-integrations/google-calendar" icon="calendar">
+    Automate meeting scheduling and reminders
+  </Card>
+  <Card title="HubSpot CRM" href="/skills/popular-integrations/hubspot" icon="chart-line">
+    Sync sales data and lead notifications
+  </Card>
+  <Card title="Human in the Loop" href="/testing/human-in-the-loop" icon="user-check">
+    Add approval workflows for sensitive actions
+  </Card>
+</CardGroup>

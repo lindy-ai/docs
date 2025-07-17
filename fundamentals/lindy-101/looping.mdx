@@ -43,6 +43,35 @@ Key benefits:
 The loop output is the ONLY information that passes from inside the loop to outside steps. Configure it carefully to include all data you'll need later.
 </Note>
 
+## Loop Configuration Fields
+
+When setting up your loop, you'll configure several key fields:
+
+### Items to Loop Through
+The list of data that drives each loop iteration.
+
+### Max Cycles
+The maximum number of loop iterations that will run. This controls resource usage. Set this based on your expected list size plus a safety buffer.
+
+**Example:** If you expect 50 items, set Max Cycles to 100 to allow for growth while preventing runaway loops.
+
+### Max Concurrent
+The maximum number of loop cycles that can run simultaneously in parallel. Higher numbers mean faster processing.
+
+- **Auto ** - Lindy optimizes based on the context
+- **Manual** - Set a specific limit (useful for rate-limited APIs or resource constraints)
+
+**When to adjust:** Lower this if you're hitting rate limits on external services, or if parallel execution is causing issues.
+
+### Output
+The information passed from inside the loop to subsequent steps. This is the **only** data that survives the loop completion.
+
+- **Auto mode** - AI generates a summary of loop results
+- **AI prompt** - Specify exactly what data you need
+
+<Warning>
+Any data not included in the loop output won't be available to the outside of the loop. Be specific about what information you'll need after the loop completes.
+</Warning>
 
 ## Building Your First Loop
 

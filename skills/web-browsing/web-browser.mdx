@@ -2,8 +2,8 @@
 title: 'Web Browser'
 icon: 'globe-pointer'
 sidebarTitle: 'Web Browser'
+description: 'Search the internet and extract text from webpages using built-in web browsing capabilities'
 ---
-
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
@@ -18,3 +18,91 @@ sidebarTitle: 'Web Browser'
     />
   </div>
 </div>
+
+## Overview
+
+Web Browser actions provide direct access to internet search and webpage content extraction. Perfect for:
+
+- **Internet search** - search Google and other search engines for information
+- **Text extraction** - convert webpages and PDFs into readable text
+- **Research workflows** - gather and process web content for analysis
+
+## Search the Internet Action
+
+- **What it does**: Searches the internet using your chosen search engine to find relevant results for your query.
+
+<Frame>
+  <img src="/lindy-brand-assets/search-the-internet.png" alt="Search the Internet action configuration" />
+</Frame>
+
+### Inputs
+- **Query**: The search terms or question you want to search for
+- **Search Engine**: Choose your preferred search engine (Google is most common)
+
+### Outputs
+- **Search Results**: List of relevant websites and information found
+
+This action becomes particularly powerful when used inside an AI agent, as the agent can formulate search queries based on context and process the results intelligently.
+
+## Extract Webpage Text Action
+
+- **What it does**: Converts webpages or PDFs into clean, readable text that can be processed by your agent.
+
+<Frame>
+  <img src="/lindy-brand-assets/extract-webpage-text.png" alt="Extract Webpage Text action configuration" />
+</Frame>
+
+### Inputs
+- **URL**: The webpage or PDF URL you want to extract text from
+
+### Outputs
+- **Extracted Text**: Clean text content from the webpage or PDF
+
+This is straightforward but essential for processing web content - just provide any webpage or PDF URL and get back the text content.
+
+## Other Web Browsing Actions
+
+The Web Browser also includes several other specialized actions:
+
+- **Contact Details Scraper** - Extract contact information from websites
+- **RAG Web Browser** - Advanced browsing for AI applications
+- **Similarweb Scraper** - Get website analytics and traffic data
+- **Website Content Crawler** - Crawl entire websites for content
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Search Optimization">
+    - Use specific, targeted search queries for better results
+    - Let AI agents formulate queries based on workflow context
+    - Combine with other actions to process search results
+    - Test different search engines for specific use cases
+  </Accordion>
+
+  <Accordion title="Text Extraction">
+    - Verify URLs are accessible before extraction
+    - Handle extraction errors gracefully in workflows
+    - Process extracted text with other actions for analysis
+    - Be mindful of large documents that may hit processing limits
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Perplexity Search" icon="map" href="/skills/web-browsing/perplexity">
+    AI-powered search with reasoning capabilities
+  </Card>
+  
+  <Card title="Context Management" icon="database" href="/skills/lindy-utilities/context">
+    Store search results and extracted text
+  </Card>
+  
+  <Card title="Set Variables" icon="memory" href="/skills/lindy-utilities/set-variables">
+    Save web content for later processing
+  </Card>
+  
+  <Card title="LLM Call" icon="microchip-ai" href="/skills/lindy-utilities/llm-call">
+    Analyze extracted text with custom prompts
+  </Card>
+</CardGroup>

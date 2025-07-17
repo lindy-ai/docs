@@ -4,11 +4,10 @@ icon: 'github'
 sidebarTitle: 'GitHub'
 ---
 
-
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/github-integration.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +17,248 @@ sidebarTitle: 'GitHub'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Automate your development workflow with Lindy's comprehensive GitHub integration. From monitoring repository activity to generating engineering reports, Lindy helps development teams stay informed, streamline code reviews, and maintain project visibility without manual overhead.
+
+Key benefits of GitHub + Lindy:
+- **Repository monitoring** - Track issues, PRs, and security alerts automatically
+- **Team notifications** - Alert relevant team members about code reviews and mentions
+- **Automated reporting** - Generate engineering digests and progress summaries
+- **Workflow automation** - Trigger actions based on repository events
+- **Cross-platform integration** - Connect GitHub data with Slack, email, and other tools
+
+## Available Triggers
+
+<Frame>
+  <img src="/lindy-brand-assets/available-github-triggers.png" alt="GitHub repository triggers showing new repository, new star, and security alert options" />
+</Frame>
+
+### Repository Activity Triggers
+
+New Repository: Automatically respond when new repositories are created in your GitHub account or organization.
+
+New Star By User: Track when specific users star repositories to monitor engagement and adoption.
+
+New Security Alert: Get immediate notifications about security vulnerabilities in your repositories.
+
+### Collaboration Triggers
+
+New Review Request: Get notified when someone requests a code review on pull requests.
+
+New Mention: Trigger workflows when you're mentioned in comments, issues, or pull requests.
+
+Pull Request Opened: Respond to new pull requests with automated workflows.
+
+### Organizational Triggers
+
+New Team: Monitor when new teams are created in your GitHub organization.
+
+New Organization: Track the creation of new GitHub organizations.
+
+New Notification: Process GitHub notifications as they arrive.
+
+## Available Actions
+
+<div style={{ display: 'flex', gap: '1rem', margin: '1rem 0' }}>
+  <Frame style={{ flex: 1 }}>
+    <img src="/lindy-brand-assets/avaialble-github-actions1.png" alt="GitHub actions part 1 - repository and issue management" />
+  </Frame>
+  <Frame style={{ flex: 1 }}>
+    <img src="/lindy-brand-assets/avaialbe-github-actions-2.png" alt="GitHub actions part 2 - workflow and project management" />
+  </Frame>
+</div>
+
+### Repository Management
+
+Create Repository: Set up new repositories with customizable settings and features.
+
+Create Or Update File Contents: Modify repository files programmatically.
+
+Get Repository Content: Retrieve files and contents from repositories.
+
+Enable/Disable Workflow: Control GitHub Actions workflows remotely.
+
+### Issue and PR Management
+
+Create Issue: Automatically create GitHub issues based on triggers.
+
+Update Issue: Modify issue details, labels, and assignments.
+
+Create Issue Comment: Add comments to issues and pull requests.
+
+Search Issues And Pull Requests: Find specific issues and PRs using keywords and qualifiers.
+
+Create Pull Request: Generate pull requests automatically.
+
+### Project Tracking
+
+Update Project Item Status: Manage GitHub Project (V2) item statuses.
+
+List Issues: Retrieve lists of repository issues.
+
+Get Issue Assignees: Find users assigned to specific issues.
+
+## Example: Daily Engineering Digest
+
+<Frame>
+  <img src="/lindy-brand-assets/daily-engineering-digest.png" alt="Daily Engineering Digest workflow showing scheduled trigger, repository loop, and Slack notification" />
+</Frame>
+
+This automated workflow demonstrates how to create comprehensive engineering reports by analyzing multiple repositories and sending digest summaries to your team.
+
+### Workflow Components
+
+Scheduled Trigger: Runs daily to generate consistent reporting.
+
+Repository Loop: Iterates through a list of repositories to gather comprehensive data.
+
+Issue Analysis: Collects both open and closed issues to track progress and workload.
+
+Code Analysis: Processes repository activity and generates insights.
+
+Team Notification: Sends formatted digest to Slack channels.
+
+### Setup Process
+
+1. **Configure Schedule**: Set up a recurring trigger for your preferred digest frequency
+2. **Define Repository List**: Create a list of repositories to monitor
+3. **Add Loop Logic**: Use "Enter Loop" to process each repository
+4. **Collect Issue Data**: Gather open and closed issues for each repository
+5. **Analyze Activity**: Process the collected data for insights
+6. **Format Output**: Create a digestible summary format
+7. **Send Notification**: Deliver the digest via Slack or email
+
+<Tip>
+  For the Daily Engineering Digest, start with a small set of repositories to test your workflow before scaling to your entire organization.
+</Tip>
+
+## Common Use Cases
+
+<AccordionGroup>
+  <Accordion title="Development Team Automation">
+    Streamline your development process with intelligent automation for code reviews, security, and releases.
+    
+    **Code Review Notifications**
+    - Trigger: New Review Request
+    - Action: Send Slack notification to reviewer
+    - Benefit: Faster review cycles and better team coordination
+    
+    **Security Monitoring**
+    - Trigger: New Security Alert
+    - Action: Create high-priority issue and notify security team
+    - Benefit: Immediate response to security vulnerabilities
+    
+    **Release Management**
+    - Trigger: New Release
+    - Action: Update project status and notify stakeholders
+    - Benefit: Automated release communication
+  </Accordion>
+  
+  <Accordion title="Project Management">
+    Enhance project visibility and tracking with automated issue management and milestone monitoring.
+    
+    **Issue Tracking**
+    - Trigger: New Issue created
+    - Action: Add to project board and assign based on labels
+    - Benefit: Streamlined issue management workflow
+    
+    **Progress Reporting**
+    - Trigger: Scheduled (weekly)
+    - Action: Generate repository activity summary
+    - Benefit: Regular progress visibility for managers
+    
+    **Milestone Monitoring**
+    - Trigger: Issue closed
+    - Action: Check milestone progress and notify if complete
+    - Benefit: Automated milestone tracking
+  </Accordion>
+  
+  <Accordion title="Team Coordination">
+    Improve team communication and visibility with automated notifications and activity summaries.
+    
+    **Mention Alerts**
+    - Trigger: New Mention
+    - Action: Send personalized notification with context
+    - Benefit: Never miss important mentions or requests
+    
+    **Team Activity Digest**
+    - Trigger: Scheduled (daily)
+    - Action: Summarize team contributions and activity
+    - Benefit: Improved team visibility and recognition
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Workflow Organization">
+    Structure your GitHub automations for maximum efficiency and clarity.
+    
+    **Repository Grouping**: Organize repositories by team, project, or importance for targeted monitoring.
+    
+    **Notification Routing**: Send different types of notifications to appropriate channels or team members.
+    
+    **Frequency Management**: Balance between staying informed and avoiding notification fatigue.
+  </Accordion>
+  
+  <Accordion title="Security Considerations">
+    Maintain security best practices when integrating GitHub with automation workflows.
+    
+    **Webhook Security**: Use secure webhook configurations for sensitive repositories.
+    
+    **Access Control**: Limit Lindy's repository access to necessary permissions only.
+    
+    **Sensitive Data**: Avoid exposing sensitive information in automated messages.
+  </Accordion>
+  
+  <Accordion title="Performance Optimization">
+    Optimize your GitHub workflows for better performance and reliability.
+    
+    **Rate Limiting**: Respect GitHub API rate limits, especially with high-frequency workflows.
+    
+    **Batch Processing**: Group related operations to improve efficiency.
+    
+    **Selective Monitoring**: Focus on active repositories to reduce unnecessary processing.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<Warning>
+  Always test GitHub workflows with low-frequency triggers first to avoid hitting API rate limits during development.
+</Warning>
+
+<AccordionGroup>
+  <Accordion title="Common Issues & Solutions">
+    Resolve the most frequent GitHub integration problems with these targeted solutions.
+    
+    **Authentication Issues**: Ensure GitHub integration is properly connected and has necessary permissions.
+    
+    **Rate Limiting**: If workflows fail due to rate limits, consider reducing frequency or batching operations.
+    
+    **Webhook Delivery**: Check webhook configurations if triggers aren't firing consistently.
+    
+    **Data Accuracy**: Verify repository permissions if certain data isn't accessible.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+Enhance your development workflow by combining GitHub with other integrations:
+
+<CardGroup cols={2}>
+  <Card title="Slack Integration" href="/skills/popular-integrations/slack" icon="comments">
+    Send GitHub notifications to team channels
+  </Card>
+  <Card title="Gmail Integration" href="/skills/popular-integrations/gmail" icon="envelope">
+    Email repository updates and summaries
+  </Card>
+  <Card title="Linear Integration" href="/skills/popular-integrations/linear" icon="list-check">
+    Sync GitHub issues with Linear tasks
+  </Card>
+  <Card title="Notion Integration" href="/skills/popular-integrations/notion" icon="file-text">
+    Document repository insights in Notion
+  </Card>
+</CardGroup>

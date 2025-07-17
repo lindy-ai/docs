@@ -2,6 +2,7 @@
 title: 'Version History'
 icon: 'rectangle-history'
 sidebarTitle: 'Version History'
+description: 'Access previous versions of your agent and restore earlier configurations when needed'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -17,3 +18,68 @@ sidebarTitle: 'Version History'
     />
   </div>
 </div>
+
+## Overview
+
+Version History lets you view and restore previous versions of your agent. Perfect for:
+
+- **Reverting changes** - go back to a working version if something breaks
+- **Comparing versions** - see what changed between different iterations
+- **Recovering work** - restore accidentally deleted or modified configurations
+
+## How to Access Version History
+
+1. **Find the agent title** - In the top left of your Flow editor, locate your agent's title
+2. **Click the dropdown** - Click on the agent title to open the dropdown menu  
+3. **Select Version History** - Choose "Version History" from the dropdown options
+
+## Viewing and Restoring Versions
+
+Once in Version History, you can:
+
+- **Browse all versions** - See a chronological list of your agent's versions
+- **Review changes** - Check what was modified in each version
+- **Restore any version** - Select a previous version to restore
+
+### How Restoration Works
+
+When you restore a previous version:
+1. **Select the version** you want to restore from the list
+2. **Click restore** to load that version into your editor
+3. **Make any adjustments** if needed
+4. **Save your agent** - this creates a new version with the restored configuration
+
+<Tip>
+Restoring a version doesn't delete your current work - it creates a new version once you save, so you can always go back to recent changes if needed.
+</Tip>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Version Management">
+    - Save frequently to create regular save points and have more restoration options
+    - Use descriptive names when significant changes are made
+    - Test before major changes by saving a working version first
+    - Review before restoring to make sure you're selecting the right version
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Test Panel" icon="play" href="/testing/test-panel">
+    Test your restored agent to ensure it works as expected
+  </Card>
+  
+  <Card title="Debugging" icon="bug" href="/testing/debugging">
+    Troubleshoot any issues with your agent
+  </Card>
+  
+  <Card title="Human in the Loop" icon="square-user" href="/testing/human-in-the-loop">
+    Add oversight to critical agent actions
+  </Card>
+  
+  <Card title="Agent Settings" icon="gear" href="/building-agents/agent-basics/agent-settings">
+    Configure your agent's behavior and permissions
+  </Card>
+</CardGroup>
