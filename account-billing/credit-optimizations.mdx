@@ -2,4 +2,135 @@
 title: 'Credit Optimization'
 icon: 'badge-percent'
 sidebarTitle: 'Credit Optimization'
+description: 'Learn strategies to reduce credit consumption while maintaining automation effectiveness through smart filtering, model selection, and memory management'
 ---
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/credit_optimization.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+## Overview
+
+We want to make using Lindy as efficient and affordable as possible. This guide explains how to cut costs while maintaining automation quality. Perfect for:
+
+- **Cost reduction** - significantly lower credit consumption without sacrificing performance
+- **Smart filtering** - only run automations when they're actually needed
+- **Model optimization** - choose the right balance of capability and cost
+
+Many expensive operations happen because Lindy manages memory and context throughout workflows. Using strategic memory management can dramatically reduce costs while keeping what matters.
+
+## How to Cut Costs
+
+### 1. Filter High-Volume Triggers
+
+One of the most effective ways to save money is by filtering frequently occurring triggers, such as new incoming emails. Not every email or event needs to trigger a Lindy action.
+
+- **Example**: If you work at Acme and want Lindy to label emails from your team with "Acme", apply a filter to only trigger when the email is from an address containing `acme.com`.
+- **Benefits**:
+    - Prevents unnecessary task runs on irrelevant events
+    - Reduces credit consumption from high-volume triggers
+    - Ensures only relevant data gets processed
+
+### 2. Use a Cheaper Model
+
+Lindy offers a range of language models from basic to advanced. While advanced models provide more nuanced responses for complex tasks, they also cost more credits. In many cases, a cheaper model works just as well.
+
+ **Model Selection Strategy:**
+- **Evaluate Your Needs:** Consider task complexity. For straightforward responses, summarization, or limited actions, basic models are often effective
+- **Experiment:** Try executing tasks with cheaper models and compare outcomes
+- **Start Big, Then Optimize:** Begin with bigger models to get workflows right, then gradually downgrade to optimize costs
+- **Monitor Performance:** Watch for drops in effectiveness and weigh cost savings against performance
+
+### 3. Clear Context to Reduce Credit Usage
+
+Every time Lindy processes a task, it carries forward conversation history as context. This quickly increases credit consumption, especially when analyzing large amounts of data like webpage contents or spreadsheet processing.
+
+- **The Problem**: Expensive operations often happen because Lindy manages memory and context throughout the entire workflow, carrying unnecessary historical data.
+- **The Solution**: Add `Clear Task Context` actions in your workflows after significant data processing steps. This resets conversation memory, ensuring Lindy only carries forward relevant information.
+
+**When to Use Clear Context:**
+- After extracting webpage contents
+- Following large data processing steps  
+- Between major workflow phases
+- When switching between different types of tasks
+
+### 4. Use Cheaper Actions
+
+Some actions have different credit costs. Compare action costs and choose more efficient alternatives when possible.
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Trigger Optimization">
+    - Set up specific filters for high-volume triggers like emails
+    - Use domain-based filtering (e.g., only emails from specific companies)
+    - Filter by subject lines, sender types, or content keywords
+    - Test filters to ensure they catch relevant events without overfiltering
+  </Accordion>
+
+  <Accordion title="Model Management">
+    - Start with more powerful models during development
+    - Gradually downgrade while monitoring quality
+    - Use basic models for simple tasks like data routing or notifications
+    - Reserve advanced models for complex reasoning or analysis
+    - Document which models work best for each workflow type
+  </Accordion>
+
+  <Accordion title="Memory and Context Strategy">
+    - Use Clear Context after processing large data sets
+    - Clear context between distinct workflow phases
+    - Keep only essential information in memory
+    - Monitor credit consumption patterns to identify context bloat
+    - Test workflows with and without context clearing to measure impact
+  </Accordion>
+
+  <Accordion title="Action Selection">
+    - Compare credit costs for different actions that achieve similar results
+    - Consider alternatives like Perplexity for research tasks
+    - Evaluate whether premium actions are necessary for your use case
+    - Check action costs in the Flow Editor before adding them
+  </Accordion>
+</AccordionGroup>
+
+## Monitoring and Testing
+
+### Track Your Optimizations
+- Use the task view to monitor credit consumption per step
+- Compare costs before and after implementing optimizations
+- Set up regular reviews of your highest-cost workflows
+- Document which strategies work best for different types of automations
+
+### Gradual Implementation
+- Make one optimization at a time to measure impact
+- Test model downgrades on non-critical workflows first
+- Implement filters gradually to avoid breaking existing automations
+- Keep backup versions of workflows before making changes
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Credits Guide" icon="coins" href="/account-billing/credits">
+    Understand how credits work and what drives costs
+  </Card>
+  
+  <Card title="Test Panel" icon="play" href="/testing/test-panel">
+    Test optimized workflows before deploying
+  </Card>
+  
+  <Card title="Monitor Your Agents" icon="magnifying-glass" href="/testing/monitoring-your-agents">
+    Track performance after implementing optimizations
+  </Card>
+  
+  <Card title="Context Management" icon="database" href="/skills/lindy-utilities/context">
+    Learn advanced context and memory management
+  </Card>
+</CardGroup>
