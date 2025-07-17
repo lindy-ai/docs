@@ -1,14 +1,14 @@
 ---
-title: 'API Calls'
+title: 'HTTP Request'
 icon: 'globe'
-sidebarTitle: 'API Calls'
-description: 'Making custom API calls from your Lindy agents'
+sidebarTitle: 'HTTP Request'
+description: 'Execute custom API calls and webhooks directly from your Lindy workflows'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/http-request-demo.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +18,258 @@ description: 'Making custom API calls from your Lindy agents'
     />
   </div>
 </div>
+
+## Overview
+
+The HTTP Request action enables your Lindy agents to interact with any API or webhook endpoint. Whether you're fetching data, updating records, or triggering external workflows, HTTP Request provides complete control over your API interactions.
+
+<Note>
+HTTP Request is one of the most popular Lindy actions, giving you access to thousands of APIs that don't have native Lindy integrations yet.
+</Note>
+
+## Adding HTTP Request to Your Workflow
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-http-request.png" alt="HTTP Request action in the Add Action menu under Popular and By Lindy categories [[memory:2619471]]" />
+</Frame>
+
+Find HTTP Request in two places:
+- **Popular** section (highlighted for quick access)
+- **By Lindy** → **All By Lindy** section
+
+## Configuration Fields
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/lindy-http-fields-video.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+### URL (Required)
+The complete endpoint URL for your API call.
+
+**Examples:**
+- `https://api.example.com/v1/users`
+- `https://webhook.site/unique-id`
+- `{{api_base_url}}/customers/{{customer_id}}`
+
+<Tip>
+Use variables from previous steps by typing `{{` to see available options.
+</Tip>
+
+### Method
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-http-method.png" alt="HTTP method dropdown showing GET, POST, PUT, PATCH, DELETE options [[memory:2619471]]" />
+</Frame>
+
+Select the HTTP method based on your API's requirements:
+
+| Method | Use Case |
+|--------|----------|
+| **GET** | Retrieve data without making changes |
+| **POST** | Create new resources or submit data |
+| **PUT** | Update entire resources |
+| **PATCH** | Partially update resources |
+| **DELETE** | Remove resources |
+
+### Headers
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-http-headers.png" alt="Headers configuration showing key-value pairs with Content-Type example [[memory:2619471]]" />
+</Frame>
+
+Headers provide additional context about your request. Common headers include:
+
+**Authentication:**
+```
+Authorization: Bearer {{api_token}}
+X-API-Key: {{secret_key}}
+```
+
+**Content Type:**
+```
+Content-Type: application/json
+Content-Type: application/xml
+Content-Type: application/x-www-form-urlencoded
+```
+
+**Custom Headers:**
+```
+X-Client-Version: 2.0
+X-Request-ID: {{unique_id}}
+```
+
+<Note>
+If you specify a Content-Type header, it will override the content type field selection.
+</Note>
+
+### Content Type
+
+Tells the server what format your request body is in:
+
+- **application/json** - Most common for modern APIs (default)
+- **application/xml** - For XML-based APIs
+- **application/x-www-form-urlencoded** - For form submissions
+- **multipart/form-data** - For file uploads
+- **text/plain** - For plain text data
+
+### Body
+
+The request body contains the data you're sending to the API. Lindy offers two powerful modes:
+
+<Tabs>
+  <Tab title="Auto Mode">
+    <Frame>
+      <img src="/lindy-brand-assets/lindy-http-body.png" alt="Body field in Auto mode with AI assistance [[memory:2619471]]" />
+    </Frame>
+    
+    In Auto mode, AI automatically constructs the request body based on:
+    - The URL and method you've chosen
+    - Available variables from previous steps
+    - Common patterns for the API endpoint
+    
+    Simply leave it blank and Lindy will intelligently fill in the appropriate data.
+  </Tab>
+  
+  <Tab title="Prompt AI Mode">
+    <Frame>
+      <img src="/lindy-brand-assets/lindy-http-request-body-prompt-example.png" alt="Body field using Prompt AI mode to create a complex search query [[memory:2619471]]" />
+    </Frame>
+    
+    Use Prompt AI when you need precise control over the body structure. Describe what you want in natural language:
+    
+    ```
+    Create a JSON search request for Apollo API to find the author. 
+    Use this format (do NOT include api_key in body since it's in 
+    the X-Api-Key header):
+    
+    {
+      "q_keywords": "[author name from previous step]",
+      "person_titles": ["journalist", "reporter", "staff writer", 
+                        "correspondent", "editor", "news writer",
+                        "contributing writer", "freelance journalist"],
+      "page": 1,
+      "per_page": 10
+    }
+    WE MUST GET WORK EMAIL FROM THIS
+    ```
+    
+    Lindy will generate the exact JSON structure based on your instructions and available data.
+  </Tab>
+</Tabs>
+
+## Common Patterns
+
+<AccordionGroup>
+  <Accordion title="Authentication">
+    **Bearer Token:**
+    ```
+    Headers:
+      Authorization: Bearer {{access_token}}
+    ```
+    
+    **API Key:**
+    ```
+    Headers:
+      X-API-Key: {{api_key}}
+    ```
+    
+    **Basic Auth:**
+    ```
+    Headers:
+      Authorization: Basic {{base64_credentials}}
+    ```
+  </Accordion>
+  
+  <Accordion title="Working with JSON APIs">
+    **Sending JSON data:**
+    ```
+    Method: POST
+    Content-Type: application/json
+    Body: {
+      "name": "{{customer_name}}",
+      "email": "{{customer_email}}",
+      "tags": ["new", "premium"]
+    }
+    ```
+    
+    **Updating records:**
+    ```
+    Method: PATCH
+    URL: https://api.example.com/users/{{user_id}}
+    Body: {
+      "status": "active",
+      "last_seen": "{{current_timestamp}}"
+    }
+    ```
+  </Accordion>
+  
+  <Accordion title="Error Handling">
+    Add conditions after your HTTP Request to handle different responses:
+    
+    1. Check status code: `{{http_request.status_code}}`
+    2. Parse error messages: `{{http_request.response.error}}`
+    3. Implement retry logic for failures
+    4. Log errors for debugging
+  </Accordion>
+</AccordionGroup>
+
+## Response Handling
+
+After execution, access the response data:
+
+- **Response body**: `{{http_request.response}}`
+- **Status code**: `{{http_request.status_code}}`
+- **Headers**: `{{http_request.headers}}`
+
+Use these in subsequent steps to:
+- Parse JSON responses
+- Check for success/failure
+- Extract specific data fields
+- Trigger different workflows based on results
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Use Variables" icon="brackets-curly">
+    Reference data from previous steps using `{{variable_name}}` syntax
+  </Card>
+  
+  <Card title="Test First" icon="flask">
+    Use webhook.site or similar tools to test your requests before going live
+  </Card>
+  
+  <Card title="Handle Errors" icon="shield-exclamation">
+    Always add error handling conditions after API calls
+  </Card>
+  
+  <Card title="Secure Secrets" icon="key">
+    Store API keys in Lindy's secure credential manager, not in plain text
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="code-branch">
+    Route workflows based on API responses
+  </Card>
+  <Card title="Loops" href="/fundamentals/lindy-101/loops" icon="repeat">
+    Process multiple API calls efficiently
+  </Card>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Store API responses for future use
+  </Card>
+  <Card title="Error Handling" href="/testing/debugging" icon="bug">
+    Debug and handle API failures
+  </Card>
+</CardGroup>
