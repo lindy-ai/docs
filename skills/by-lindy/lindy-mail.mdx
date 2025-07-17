@@ -53,8 +53,8 @@ Add the "Lindy Mail Email Received" trigger to have Lindy wake up when emails ar
   <img src="/lindy-brand-assets/lindy-mail-trigger-config.png" alt="Lindy Mail trigger configuration showing email address customization and follow-up options" />
 </Frame>
 
-- **Customize email address** - Set Lindy's unique email (e.g., support@yourlindy.ai)
-- **Observe follow-ups** - Enable to have Lindy respond to thread replies
+- **Customize email address** - Set Lindy's unique email (e.g., support@lindymail.ai)
+- **Observe follow-ups** - Enable to have Lindy respond to replies in the same thread
 - **Add filters** - Include/exclude specific emails from triggering
 
 
@@ -82,14 +82,27 @@ Match the email address in both trigger and action to ensure replies come from t
 
 ### Customizing Responses
 
+Configure the "Body" field with detailed prompts to control how Lindy responds to emails. Well-crafted prompts ensure consistent, professional communication that reflects your brand voice and meets customer expectations.
 
-Configure the "Body" field with your prompt to control how Lindy responds:
+**Best practices for email prompts:**
+- Define the tone and personality Lindy should adopt
+- Specify how to handle different types of inquiries
+- Include escalation guidelines for complex issues
+- Set clear expectations for response format and length
+
+Example prompt:
 
 ```
-Respond professionally to customer inquiries. 
-Address their specific questions and offer helpful next steps.
-Sign off as "Lindy, Customer Success Team"
+Respond professionally and warmly to customer inquiries. 
+Carefully read the entire email thread to understand context and previous interactions.
+Address their specific questions with helpful, actionable information.
+If you cannot fully resolve their issue, acknowledge their concern and provide clear next steps.
+For urgent matters or complex technical issues, offer to escalate to a human team member.
+Keep responses concise but thorough, and maintain a friendly, solution-oriented tone.
+Sign off as "Lindy"
 ```
+
+This approach ensures Lindy provides consistent, high-quality responses that build trust and effectively resolve customer needs while maintaining your organization's professional standards.
 
 
 1. Copy Lindy's email address from your trigger
