@@ -17,3 +17,163 @@ sidebarTitle: 'Tasks'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Tasks are your mission control center for monitoring all of your Lindy's activities. When you click the Tasks button in your Lindy interface, you're accessing the Task History or Tasks View - a real-time dashboard that shows every single workflow execution (called a "task") that your Lindy has performed.
+
+The Tasks view provides complete transparency into your Lindy's operations, giving you detailed step-by-step breakdowns, error detection, and performance insights.
+
+Key benefits of using the Tasks view:
+- **Real-time execution monitoring** – Watch your workflows execute step-by-step as they happen
+- **Detailed audit trail** – See every action, decision, and data transformation
+- **Error detection and troubleshooting** – Quickly identify and resolve issues
+- **Performance optimization** – Monitor timing and identify bottlenecks
+
+## How to access Tasks
+
+<Steps>
+  <Step title="Click the Tasks button">
+    Click the "Tasks" button to access your Task History view
+    <Frame>
+      <img src="/lindy-brand-assets/tasks_1.png" alt="Tasks interface access" />
+    </Frame>
+  </Step>
+  <Step title="Monitor your workflows">
+    View all task executions with their current status: Running, Completed, Errored, or Pending
+    <Frame>
+      <img src="/lindy-brand-assets/Tasks_2.png" alt="Task status overview" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Types of task monitoring
+
+### Real-time execution monitoring
+<Frame>
+  <img src="/lindy-brand-assets/Tasks_3.png" alt="Real-time task monitoring" />
+</Frame>
+Watch your workflows execute in real-time with:
+- Live step-by-step execution tracking
+- Current status indicators (Running, Completed, Errored, Pending)
+- Chronological list of all activities
+- Progress monitoring through complex multi-step workflows
+
+### Detailed step-by-step breakdown
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Actions.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+Click on any individual task to see:
+- Every single step your Lindy executed in that workflow
+- The exact order of operations
+- Input and output data for each step
+- Timestamps showing when each step was completed
+- Any decisions or conditions your Lindy evaluated
+
+### Error detection and troubleshooting
+<Frame>
+  <img src="/lindy-brand-assets/Triggers_16.png" alt="Error detection interface" />
+</Frame>
+Quickly identify and resolve issues with:
+- Clearly highlighted errored tasks
+- Exact error location and failure reasons
+- Suggested fixes and troubleshooting steps
+- "Edit action configuration" button for quick resolution
+- Detailed error messages and debugging information
+
+<Tip>
+  Use the Tasks view alongside Test Mode in the Flow Editor to compare expected vs. actual results and iterate on your workflows.
+</Tip>
+
+## What you can see in real-time
+
+### Live execution tracking
+Monitor your workflows as they happen:
+- Watch each step execute in real-time
+- See which step is currently running
+- Track progress through complex workflows
+- Monitor overall task completion times
+
+### Data flow visibility
+<Frame>
+  <img src="/lindy-brand-assets/Triggers_8.png" alt="Data flow monitoring" />
+</Frame>
+See exactly how information moves through your workflow:
+- Data being passed between steps
+- API responses and extracted information
+- How information transforms as it moves through your workflow
+- Processed results and final outputs
+
+### Integration activity
+<Frame>
+  <img src="/lindy-brand-assets/Triggers_10.png" alt="Integration monitoring" />
+</Frame>
+Watch your Lindy interact with external applications:
+- Successful connections to Gmail, Slack, Google Docs, etc.
+- Integration issues and API call monitoring
+- Response times and connection status
+- Authentication and permission verification
+
+## Task monitoring benefits
+
+### Proactive problem solving
+<Frame>
+  <img src="/lindy-brand-assets/Triggers_13.png" alt="Proactive monitoring" />
+</Frame>
+Stay ahead of issues with:
+- Immediate error detection and notifications
+- Email alerts when errors occur
+- Detailed error information for quick fixes
+- Prevention of workflow failures
+
+### Workflow optimization
+Improve your automation performance by:
+- Identifying bottlenecks and slow steps
+- Monitoring execution times and performance
+- Optimizing flows based on actual execution data
+- Streamlining complex workflows
+
+### Confidence and control
+<Frame>
+  <img src="/lindy-brand-assets/Triggers_15.png" alt="Workflow control dashboard" />
+</Frame>
+Maintain complete oversight with:
+- Complete audit trail of all activities
+- Verification that automations work as expected
+- Real-time visibility into Lindy's operations
+- Historical record of all executions
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Understanding Actions"
+    icon="play"
+    href="/fundamentals/lindy-101/actions"
+  >
+    Learn what your agents can do
+  </Card>
+  <Card
+    title="Testing Your Agent"
+    icon="flask"
+    href="/testing/test-mode"
+  >
+    Test workflows before deployment
+  </Card>
+</CardGroup>
+
+<Note>
+  **Need help troubleshooting a specific task?**
+  
+  Check out our [debugging guide](/testing/debugging) for detailed troubleshooting steps and common solutions.
+</Note>
