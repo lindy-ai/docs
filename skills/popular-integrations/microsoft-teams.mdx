@@ -2,13 +2,13 @@
 title: 'Microsoft Teams'
 icon: 'users'
 sidebarTitle: 'Microsoft Teams'
+description: 'Integrate with Microsoft Teams for channel management, messaging, and team collaboration automation'
 ---
-
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/microsoft-teams.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +18,145 @@ sidebarTitle: 'Microsoft Teams'
     />
   </div>
 </div>
+
+## Overview
+
+Microsoft Teams integration enables seamless automation for team collaboration, channel management, and messaging workflows. Streamline your Teams workspace with automated notifications, message distribution, and team administration.
+
+## Getting Started
+
+Configure triggers to monitor Teams activity in real-time. Set up automated responses to new channels, messages, team changes, and member additions. Choose specific teams and channels to monitor for targeted automation.
+
+<Frame>
+  <img src="/lindy-brand-assets/microsoft-teams-triggers.png" alt="Microsoft Teams triggers showing channel, message, and team monitoring options [[memory:2619471]]" />
+</Frame>
+
+## Available Actions
+
+<Frame>
+  <img src="/lindy-brand-assets/microsoft-teams-actions.png" alt="Microsoft Teams actions for channel management and messaging [[memory:2619471]]" />
+</Frame>
+
+### Messaging & Communication
+
+<AccordionGroup>
+  <Accordion title="Send Channel Message">
+    Send a message to a Microsoft Teams channel.
+    
+    **Input:** Team ID, channel ID, message content
+  </Accordion>
+  
+  <Accordion title="Send Chat Message">
+    Send a message to a Microsoft Teams chat.
+    
+    **Input:** Chat ID, message content
+  </Accordion>
+</AccordionGroup>
+
+### Channel Management
+
+<AccordionGroup>
+  <Accordion title="Create Channel">
+    Create a new channel within a Microsoft Teams team.
+    
+    **Input:** Team ID, channel name, description, privacy settings
+  </Accordion>
+  
+  <Accordion title="List Channels">
+    Get a list of all channels within a specified Microsoft Teams team.
+    
+    **Input:** Team ID
+  </Accordion>
+</AccordionGroup>
+
+### Team Operations
+
+<AccordionGroup>
+  <Accordion title="List Shifts">
+    Get a list of shifts for a Microsoft Teams team.
+    
+    **Input:** Team ID, date range (optional)
+  </Accordion>
+</AccordionGroup>
+
+## Triggers
+
+<AccordionGroup>
+  <Accordion title="New Channel">
+    Triggers when a new channel is created in a Microsoft Teams team.
+  </Accordion>
+  
+  <Accordion title="New Channel Message">
+    Triggers when a new message is posted to a Microsoft Teams channel.
+  </Accordion>
+  
+  <Accordion title="New Chat">
+    Triggers when a new chat message is received in Microsoft Teams.
+  </Accordion>
+  
+  <Accordion title="New Chat Message">
+    Trigger when new messages are received in a selected Microsoft Teams chat.
+  </Accordion>
+  
+  <Accordion title="New Team">
+    Triggers when a new team is created in Microsoft Teams.
+  </Accordion>
+  
+  <Accordion title="New Team Member">
+    Triggers when a new member is added to a Microsoft Teams team.
+  </Accordion>
+</AccordionGroup>
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Notification Hub" icon="bell">
+    Broadcast important updates across multiple Teams channels
+  </Card>
+  
+  <Card title="Workflow Automation" icon="gear">
+    Trigger processes based on Teams messages and activities
+  </Card>
+  
+  <Card title="Cross-Platform Sync" icon="arrows-rotate">
+    Sync Teams conversations with other communication tools
+  </Card>
+  
+  <Card title="Team Onboarding" icon="user-plus">
+    Automate welcome messages and channel assignments for new members
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<Note>
+**Message Formatting:** Teams supports rich text formatting, mentions, and attachments. Use these features to enhance message clarity and engagement.
+</Note>
+
+- Monitor specific channels to avoid information overload
+- Use channel messages for team-wide communications
+- Leverage chat messages for direct, targeted communications
+- Implement error handling for API rate limits
+- Test automations in dedicated test channels first
+
+<Tip>
+Microsoft Teams actions integrate seamlessly with Office 365 tools, making it perfect for organizations already using the Microsoft ecosystem.
+</Tip>
+
+## Common Automation Examples
+
+- **Daily Standup Reminders:** Send scheduled messages to team channels
+- **Issue Escalation:** Forward critical messages to management channels
+- **Cross-Tool Updates:** Post Jira/GitHub updates to project channels
+- **Meeting Summaries:** Automatically share meeting notes in relevant channels
+
+## Related Resources
+
+<CardGroup cols={2}>
+  <Card title="Slack Bot" href="/tutorials/beginner/slack-bot" icon="slack">
+    Similar messaging automation for Slack
+  </Card>
+  <Card title="Email Assistant" href="/tutorials/beginner/email-assistant" icon="envelope">
+    Combine Teams with email automation
+  </Card>
+</CardGroup>
