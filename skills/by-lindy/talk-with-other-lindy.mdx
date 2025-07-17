@@ -26,7 +26,7 @@ Enable Lindys to interact and collaborate with each other through direct messagi
 - `Agent Message Received` trigger listens for messages from other Lindys and determines how to handle them
 - `Send Message` action allows one Lindy to send messages to another Lindy with the appropriate trigger
 
-## Agent Message Receive Trigger
+## Agent Message Received Trigger
 
 - **What it does**: Triggers when another Lindy sends a message to this Lindy - perfect for building collaborative multi-agent workflows.
 
@@ -53,6 +53,12 @@ This follow-up behavior works very similar to email and other stateful triggers.
 <Frame>
   <img src="/lindy-brand-assets/talk-with-lindy-send.png" alt="Send Message action configuration" />
 </Frame>
+
+<Hint>
+  Important: Before you can select an agent to delegate to, you need to have the `Agent Message Received Trigger` set up and saved in the other agent. This trigger allows the other agent to receive and process messages from your current agent.
+</Hint>
+
+
 
 ### Inputs
 - **Target Lindy**: Choose which Lindy you're sending the message to
