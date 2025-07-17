@@ -20,22 +20,21 @@ sidebarTitle: 'Triggers'
 
 ## Quick Overview
 
-Triggers are events that "wake up" a Lindy and start a workflow. These can include time-based triggers (e.g., every weekday at 9 am), chat-based triggers (when a user starts a new chat), or event-based triggers (e.g., when you receive an email).
+Triggers are events that "wake up" an agent and start a workflow. These can include time-based triggers (e.g., every weekday at 9 am), chat-based triggers (when a user starts a new chat), or event-based triggers (e.g., when you receive an email).
 
-A single Lindy can have multiple triggers, either managing different workflows or acting as entry points into the same workflow.
+A single Lindy agent can have multiple triggers, either managing different workflows or acting as entry points into the same workflow.
 
 Key benefits of using triggers:
 - **Automated kickoff** – Start workflows the moment something important happens
 - **Flexible scheduling** – Run tasks at specific times or on recurring schedules
 - **Real-time responsiveness** – React instantly to new emails, calendar events, webhooks, and more
 - **Multi-entry workflows** – Allow several different triggers to feed into the same automation
-- **Hands-free operations** – Eliminate manual starts and speed up processes
 
 ## How to add a trigger
 
 <Steps>
   <Step title="Create a new Lindy">
-    Click the plus sign beside Lindies, then click "Start from scratch" to create a new Lindy
+    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" from the pop-up menu 
     <Frame>
   <img src="/lindy-brand-assets/Triggers_5.png" alt="Calendar + Chat multi-trigger workflow" />
 </Frame>
@@ -85,6 +84,9 @@ Starts the workflow when a specific event occurs. Examples include:
 - New row added to Google Sheets
 - Webhook received
 
+<Tip>
+  Use triggers together with `conditions` to route workflows intelligently based on context.
+</Tip>
 
 
 ## Trigger filters
@@ -94,12 +96,8 @@ A trigger filter allows you to set conditional logic to filter which events will
 You can enable trigger filters at the bottom of the trigger configuration settings. This means you do not have to add additional steps to filter out triggering events from your workflow.
 
 
-### Example: Calendar trigger setup
-If you want Lindy to join your interview calls, select the Calendar Event Started trigger. This will wake Lindy up when a calendar event starts, assuming there is a meeting on your calendar.
-
-<Tip>
-  Use triggers together with <strong>conditions</strong> to route workflows intelligently based on context.
-</Tip>
+### Example: Email received trigger setup
+If you want your agent to process only emails with a specific label, you can configure the Email Received trigger to filter by label. This way, Lindy will only wake up and run the workflow when an email with that label arrives.
 
 
 <Frame>
@@ -116,19 +114,21 @@ In the example below, Lindy will only trigger if:
 - The Calendar Event name contains "Interview" AND the location contains "1841 Market Street"
 - OR the Calendar Event description contains "In-Person Interview"
 
-<Frame>
-  <video 
-    controls 
-    src="/lindy-brand-assets/Triggers_09.mp4"
-    title="Using the dropdown to reference previous step data"
-    style={{ width: '100%', borderRadius: '8px', border: '1px solid #e5e7eb' }}
-  >
-    Your browser does not support the video tag.
-  </video>
-</Frame>
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/Triggers_09.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
-
-### Minutes offset
+### Setting an Offset
 <Frame>
   <img src="/lindy-brand-assets/Triggers_10.png" alt="Calendar + Chat multi-trigger workflow" />
 </Frame>
@@ -201,5 +201,5 @@ This example outlines two workflows with different triggers:
 <Note>
   **Need help with a specific trigger?**
   
-  Check out our integration guides for detailed setup instructions for Gmail, Calendar, Google Sheets, and more.
+  Check out our [integration guides](/skills/popular-integrations) for detailed setup instructions for Gmail, Calendar, Google Sheets, and more.
 </Note> 
