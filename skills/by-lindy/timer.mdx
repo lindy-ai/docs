@@ -2,12 +2,13 @@
 title: 'Timer'
 icon: 'stopwatch'
 sidebarTitle: 'Timer'
+description: 'Schedule workflows and add delays with precision timing controls'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/timer-demo.mp4"
       width="600"
       autoPlay
       muted
@@ -17,3 +18,217 @@ sidebarTitle: 'Timer'
     />
   </div>
 </div>
+
+## Overview
+
+Timer provides precise scheduling and delay capabilities for your Lindy workflows. Whether you need to run tasks on a recurring schedule, trigger at specific times, or add intelligent delays between actions, Timer gives you complete control over workflow timing.
+
+<Note>
+Timer is essential for creating time-based automations, scheduled reports, follow-up sequences, and any workflow requiring precise timing control.
+</Note>
+
+## Timer as a Trigger
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-timer-add-trigger.png" alt="Add Trigger menu showing Timer in the popular section [[memory:2619471]]" />
+</Frame>
+
+Timer appears in the "Popular" triggers section, offering two powerful scheduling options:
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-timer-trgger-options.png" alt="Timer trigger options showing On Recurring Schedule and On Specific Time [[memory:2619471]]" />
+</Frame>
+
+### On Recurring Schedule
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-timer-recurring-schedule-trigger.png" alt="Recurring schedule configuration with preset intervals and next run times [[memory:2619471]]" />
+</Frame>
+
+Create workflows that run automatically on a repeating schedule:
+
+**Preset intervals:**
+- Every hour
+- Every hour on weekdays
+- Every 2, 4, 6, or 8 hours
+- Custom schedules (e.g., "Every Monday at 9am")
+
+**Perfect for:**
+- Daily reports
+- Regular data syncs
+- Scheduled maintenance tasks
+- Recurring notifications
+
+<Tip>
+The interface shows when each schedule will next run, helping you verify your timing is correct before activating.
+</Tip>
+
+### On Specific Time
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-timer-on-specific-time-trigger.png" alt="Specific time trigger with calendar date picker and time selector [[memory:2619471]]" />
+</Frame>
+
+Trigger workflows at an exact date and time:
+
+**Configuration:**
+- Visual calendar picker
+- Precise time selection (hour/minute)
+- AM/PM format
+- Clear date display (mm/dd/yyyy)
+
+**Ideal for:**
+- One-time events
+- Deadline reminders
+- Scheduled launches
+- Time-sensitive notifications
+
+## Timer as an Action
+
+### Set Timer
+
+Add intelligent delays to your workflows with flexible timing options.
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-timer-avaialble-actions.png" alt="Timer actions menu showing Cancel Timers and Set Timer options [[memory:2619471]]" />
+</Frame>
+
+Timer provides two essential actions for controlling workflow timing:
+
+#### Wait Until Specific Time
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-timer-set-timer-until-actions.png" alt="Set Timer action configured to wait until a specific date and time [[memory:2619471]]" />
+</Frame>
+
+Pause your workflow until an exact moment:
+- Select specific date with calendar picker
+- Choose precise time
+- Workflow resumes automatically at the specified time
+
+**Use cases:**
+- Wait until business hours to send emails
+- Delay actions until after an event
+- Coordinate with external schedules
+
+#### Wait For Duration
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-timer-set-timer-for-actions.png" alt="Set Timer action configured to wait for a specified number of minutes [[memory:2619471]]" />
+</Frame>
+
+Add a relative delay to your workflow:
+- Specify duration in minutes
+- Simple numeric input
+- Workflow continues after the delay
+
+**Common durations:**
+- 5 minutes - Brief pause between actions
+- 60 minutes - Hourly intervals
+- 1440 minutes - Daily delays
+- Custom - Any duration you need
+
+#### AI-Powered Timing
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-timer-set-timer-actions-ai-prompt.png" alt="Set Timer with Prompt AI mode for intelligent timing decisions [[memory:2619471]]" />
+</Frame>
+
+Let AI determine the optimal wait time:
+- Switch to "Prompt AI" mode
+- Describe your timing needs in natural language
+- AI calculates appropriate delays based on context
+
+**Example prompts:**
+- "Wait 2 hours after sending the initial email"
+- "Delay until next business day at 9 AM"
+- "Pause for the time specified in the response"
+
+### Cancel Timers
+
+<Frame>
+  <img src="/lindy-brand-assets/lindy-timer-cancel-timer-action.png" alt="Cancel Timers action to stop all active timers [[memory:2619471]]" />
+</Frame>
+
+Stop all active timers in your workflow:
+- Cancels any pending timer delays
+- Useful for conditional flow changes
+- Prevents queued actions from executing
+
+**When to use:**
+- User responds before timer expires
+- Conditions change requiring immediate action
+- Error handling to stop scheduled tasks
+
+## Workflow Continuity
+
+Both Timer triggers and actions show clear connection points:
+- **After wait begins** - Continue parallel tasks
+- **After wait elapsed** - Resume sequential flow
+
+This enables sophisticated patterns like:
+- Starting multiple timers simultaneously
+- Running actions while waiting
+- Coordinating complex timing sequences
+
+## Common Patterns
+
+<AccordionGroup>
+  <Accordion title="Follow-Up Sequences">
+    ```
+    1. Send initial email
+    2. Set Timer → For 3 days
+    3. Check if replied (condition)
+    4. If no reply → Send follow-up
+    5. Set Timer → For 7 days
+    6. Final follow-up or close
+    ```
+  </Accordion>
+  
+  <Accordion title="Business Hours Scheduling">
+    ```
+    1. Receive request
+    2. Check current time
+    3. If outside hours → Set Timer → Until 9 AM
+    4. Process request
+    5. Send notification
+    ```
+  </Accordion>
+  
+  <Accordion title="Recurring Reports">
+    ```
+    Trigger: On Recurring Schedule → Every Monday 9 AM
+    1. Gather data from last week
+    2. Generate report
+    3. Send to stakeholders
+    4. Archive report
+    ```
+  </Accordion>
+  
+  <Accordion title="Deadline Management">
+    ```
+    1. Create task with deadline
+    2. Set Timer → Until (deadline - 1 day)
+    3. Send reminder
+    4. Set Timer → Until deadline
+    5. Escalate if not complete
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Related Resources
+
+<CardGroup cols={2}>
+  <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="code-branch">
+    Combine timers with conditional logic
+  </Card>
+  <Card title="Loops" href="/fundamentals/lindy-101/loops" icon="repeat">
+    Process timed batches of data
+  </Card>
+  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="database">
+    Store timing preferences
+  </Card>
+  <Card title="Human in the Loop" href="/testing/human-in-the-loop" icon="user-check">
+    Add approval steps with timeouts
+  </Card>
+</CardGroup>
