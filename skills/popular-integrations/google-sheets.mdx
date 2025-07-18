@@ -4,11 +4,10 @@ icon: 'table'
 sidebarTitle: 'Google Sheets'
 ---
 
-
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/google_calendar_0.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +17,383 @@ sidebarTitle: 'Google Sheets'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Google Sheets integration is one of Lindy's most powerful data management capabilities, enabling your AI agents to act as sophisticated spreadsheet assistants and data processors. The integration provides both Triggers (what can start a Lindy workflow) and Actions (what Lindy can do).
+
+This comprehensive integration transforms Lindy into a powerful data automation platform, capable of handling everything from simple data entry to complex multi-spreadsheet workflows and real-time data processing.
+
+Key benefits of Google Sheets integration:
+- **Comprehensive data management** – 25 actions for complete spreadsheet control
+- **Real-time data monitoring** – 4 triggers for instant workflow activation
+- **Stateful tool support** – Advanced row-based workflows with data persistence
+- **Dynamic field loading** – Automatic spreadsheet and column discovery
+
+## How to set up Google Sheets
+
+<Steps>
+  <Step title="Add Google Sheets to your workflow">
+    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "Google Sheets"
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_1.png" alt="Add Google Sheets to workflow" />
+    </Frame>
+  </Step>
+  <Step title="Connect and Configure your Google Sheets">
+    Click on "Add Account" and authorize your Google Sheets for Lindy's integrations by granting permissions for Sheets and Drive access. Choose which spreadsheets you want this Lindy to access.
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_2.png" alt="Google Sheets connection" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Google Sheets Triggers
+
+#### New Row Added
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_3.png" alt="New Row Added trigger" />
+</Frame>
+Triggers when a new row is added to the bottom of a sheet:
+- **Real-time processing** - Near real-time activation (up to 2-minute delay possible)
+- **Stateful object creation** - Creates googleSheetsRow object containing all row data
+- **Dynamic configuration** - Spreadsheet ID/URL with optional sheet title selection
+- Perfect for processing form submissions, new signups, project entries, data validation
+
+#### New Comment (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_4.png" alt="New Comment trigger" />
+</Frame>
+Triggers when someone adds a comment to any cell in the spreadsheet:
+- **Collaboration monitoring** - Track team feedback and communication
+- **Configurable polling** - Push notification renewal schedule in seconds
+- **Drive scope selection** - My Drive or Shared Drive targeting
+- Ideal for team notifications, follow-up task creation, collaboration tracking
+
+#### New Updates (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_5.png" alt="New Updates trigger" />
+</Frame>
+Triggers when any cell content is modified in specified worksheets:
+- **Granular monitoring** - Specific worksheet targeting for focused tracking
+- **Change detection** - Monitors all cell content modifications
+- **Audit capabilities** - Track data changes with user information
+- Perfect for audit trails, system synchronization, stakeholder notifications
+
+#### New Worksheet (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_6.png" alt="New Worksheet trigger" />
+</Frame>
+Triggers when a new worksheet/tab is created within a spreadsheet:
+- **Structure monitoring** - Detect new worksheet creation instantly
+- **Template automation** - Auto-format and initialize new sheets
+- **Project phase tracking** - Monitor workflow progression through new tabs
+- Great for worksheet templating, team notifications, workflow initialization
+
+<Tip>
+  Use the "New Row Added" trigger with stateful googleSheetsRow objects for the most powerful data processing workflows.
+</Tip>
+
+## Google Sheets Actions
+
+### Data Entry & Management
+
+#### Append Row
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_8.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Adds a new row to the bottom of a spreadsheet:
+- **Dynamic field generation** - Automatically creates inputs based on spreadsheet headers
+- **Real-time data entry** - Immediate row creation with full data validation
+- **Stateful output** - Returns created row data for downstream processing
+- Perfect for form submissions, survey responses, lead capture
+
+#### Append Rows
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_9.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Adds multiple rows in a single operation:
+- **Bulk processing** - Handle arrays of data efficiently
+- **Performance optimization** - Single API call for multiple rows
+- **Batch validation** - Process multiple records with consistent structure
+- Ideal for bulk data imports, batch processing results, data migration
+
+#### Update Row
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_10.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Modifies existing row data or creates new row if not found:
+- **Intelligent lookup** - Uses specified column for row identification
+- **Upsert behavior** - Can append new row if no matching row exists
+- **Data integrity** - Maintains relationships while updating records
+- Perfect for customer data updates, inventory management, status tracking
+
+### Data Retrieval & Search
+
+#### Get Spreadsheet
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_7.png" alt="Get Spreadsheet action" />
+</Frame>
+Retrieves all rows from a spreadsheet:
+- **Complete dataset access** - Returns full spreadsheet as array of arrays
+- **Bulk data processing** - Handle entire datasets for analysis
+- **Structured output** - Organized data ready for downstream processing
+- Essential for data analysis, reporting, full dataset processing
+
+#### Find Row
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_8.png" alt="Find Row action" />
+</Frame>
+Searches for rows matching specific criteria:
+- **Precise lookup** - Configurable lookup column and search value
+- **Smart output** - Returns matching row data and row number (-1 if not found)
+- **Data validation** - Verify record existence before processing
+- Perfect for customer lookups, inventory checks, data validation
+
+#### Get Cell (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_9.png" alt="Get Cell action" />
+</Frame>
+Retrieves value from a specific cell:
+- **Precise targeting** - Cell reference in A1 notation
+- **Status monitoring** - Check specific values like counters or flags
+- **Configuration data** - Access settings stored in specific cells
+- Great for status checks, counter values, configuration management
+
+### Structure Management
+
+#### Create Spreadsheet
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_11.png" alt="Create Spreadsheet action" />
+</Frame>
+Creates a new Google Sheets file:
+- **Dynamic initialization** - Set title, initial sheets with headers and data
+- **Template creation** - At least one sheet required for structure
+- **Full output** - Returns spreadsheet ID, URL, first sheet ID
+- Perfect for dynamic report generation, project templates, data collection setup
+
+#### Create Worksheet (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_12.png" alt="Create Worksheet action" />
+</Frame>
+Adds a new worksheet/tab to existing spreadsheet:
+- **Structure expansion** - Add new tabs for data segmentation
+- **Custom configuration** - Worksheet name, dimensions, formatting options
+- **Organization tools** - Create monthly reports, project phases
+- Ideal for data segmentation, project organization, template systems
+
+### Example data processing workflow
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_12.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+### Data Cleanup & Maintenance
+
+#### Delete Row
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_14.png" alt="Delete Row action" />
+</Frame>
+Removes a row matching specific lookup criteria:
+- **Safe deletion** - Lookup column and value matching for precision
+- **Status feedback** - Returns success/failure status for error handling
+- **Data cleanup** - Remove completed items, archived records
+- Essential for data maintenance, removing completed items, archiving
+
+#### Clear Cell (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_15.png" alt="Clear Cell action" />
+</Frame>
+Removes content from a specific cell while preserving formatting:
+- **Selective clearing** - Content removal without structure loss
+- **Format preservation** - Maintains cell formatting and styling
+- **Precise control** - Target specific cells for content reset
+- Perfect for resetting values, clearing temporary data, template preparation
+
+## Practical Implementation Scenarios
+
+<AccordionGroup>
+  <Accordion title="Lead Management System">
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_16.png" alt="Lead Management workflow" />
+    </Frame>
+    Transform Lindy into a comprehensive CRM system:
+    - New Row Added trigger processes incoming leads automatically
+    - Find Row action checks for existing customers to prevent duplicates
+    - Update Row action enriches lead data with external API information
+    - Append Row creates follow-up tasks and scheduled activities
+  </Accordion>
+  
+  <Accordion title="Inventory Management">
+    Automate your entire inventory lifecycle:
+    - New Row Added monitors incoming inventory shipments
+    - Update Row tracks stock levels and product information
+    - Find Row verifies product availability for order processing
+    - Delete Row removes discontinued or out-of-stock items
+  </Accordion>
+  
+  <Accordion title="Data Processing Pipeline">
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_17.png" alt="Data Processing Pipeline" />
+    </Frame>
+    Create sophisticated data transformation workflows:
+    - Get Spreadsheet retrieves raw data for processing
+    - AI-powered data cleaning and validation
+    - Append Rows writes processed results to destination sheets
+    - Create Worksheet organizes results by category or time period
+  </Accordion>
+</AccordionGroup>
+
+## Advanced Features & Capabilities
+
+<AccordionGroup>
+  <Accordion title="Stateful Tool Integration">
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_18.png" alt="Stateful Tool Integration" />
+    </Frame>
+    Leverage powerful stateful object capabilities:
+    - **Row Data Access** - Direct access to all column values through workflow
+    - **Row Identification** - Automatic row number tracking for precise operations
+    - **Column Headers** - Dynamic field mapping based on spreadsheet structure
+    - **Workflow Persistence** - Maintain data context across multiple actions
+  </Accordion>
+  
+  <Accordion title="Dynamic Field Loading">
+    Intelligent spreadsheet discovery and mapping:
+    - **Available Spreadsheets** - Automatic discovery from your Google Drive
+    - **Worksheet Names** - Dynamic loading within selected spreadsheets
+    - **Column Headers** - Automatic field mapping for seamless data operations
+    - **Lookup Columns** - Smart column identification for search and update operations
+  </Accordion>
+  
+  <Accordion title="Bulk Operations">
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_19.png" alt="Bulk Operations" />
+    </Frame>
+    Optimize performance with batch processing:
+    - **Append Rows** - Process multiple records simultaneously
+    - **Update Column** - Apply changes to entire columns at once
+    - **Delete Rows** - Remove multiple rows in one operation
+    - **Cross-Spreadsheet Operations** - Move and copy data between files
+  </Accordion>
+</AccordionGroup>
+
+## Configuration Best Practices
+
+<AccordionGroup>
+  <Accordion title="For Data Entry Workflows">
+    Optimize your data processing pipelines:
+    - Use "New Row Added" trigger for real-time processing
+    - Implement data validation before processing
+    - Set up error handling for malformed data
+    - Use lookup columns for maintaining data relationships
+  </Accordion>
+  
+  <Accordion title="For Data Management">
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_20.png" alt="Data Management Best Practices" />
+    </Frame>
+    Set up robust data management systems:
+    - Use "Find Row" before "Update Row" for data integrity
+    - Implement backup strategies before bulk operations
+    - Use clear naming conventions for worksheets
+    - Set up proper access controls and permissions
+  </Accordion>
+  
+  <Accordion title="For Performance Optimization">
+    Create efficient high-volume workflows:
+    - Batch operations when possible (use "Append Rows" vs multiple "Append Row")
+    - Use specific worksheet targeting to reduce trigger noise
+    - Implement rate limiting for high-volume operations
+    - Use range operations for bulk data retrieval
+  </Accordion>
+</AccordionGroup>
+
+## Limitations & Considerations
+
+<AccordionGroup>
+  <Accordion title="API Limitations">
+    - **Rate Limits**: Google Sheets API allows 100 requests per 100 seconds per user
+    - **Data Size**: Maximum 10 million cells per spreadsheet
+    - **Cell Limits**: Individual cell limit of 50,000 characters
+    - **Batch Recommendations**: 1000 rows maximum for optimal performance
+  </Accordion>
+  
+  <Accordion title="Trigger Considerations">
+    - **New Row Added**: Up to 2-minute delay possible for activation
+    - **Premium Triggers**: Configurable polling with minimum 30-second intervals
+    - **Real-time Needs**: Consider webhook alternatives for immediate response requirements
+  </Accordion>
+  
+  <Accordion title="Authentication & Permissions">
+    - **Required Scopes**: spreadsheets, drive.readonly, drive.file
+    - **Shared Drives**: Service account must have appropriate permissions
+    - **Access Control**: Implement proper spreadsheet-level security
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Google Drive Integration"
+    icon="folder"
+    href="/skills/popular-integrations/google-drive"
+  >
+    Manage files and folders alongside spreadsheets
+  </Card>
+  <Card
+    title="Google Docs Integration"
+    icon="file"
+    href="/skills/popular-integrations/google-docs"
+  >
+    Combine spreadsheet data with document automation
+  </Card>
+</CardGroup>
+
+<Note>
+  **Need help with spreadsheet automation?**
+  
+  Check out our [data management tutorial](/tutorials/intermediate/spreadsheet-automation) for step-by-step instructions on building Google Sheets workflows.
+</Note>

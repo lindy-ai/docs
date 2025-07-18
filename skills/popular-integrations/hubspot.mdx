@@ -4,11 +4,10 @@ icon: 'users-rectangle'
 sidebarTitle: 'HubSpot'
 ---
 
-
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/google_calendar_0.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +17,386 @@ sidebarTitle: 'HubSpot'
     />
   </div>
 </div>
+
+## Quick Overview
+
+HubSpot integration is one of Lindy's most comprehensive CRM capabilities, enabling your AI agents to act as sophisticated sales, marketing, and customer service assistants. The integration provides both Triggers (what can start a Lindy workflow) and Actions (what Lindy can do).
+
+This comprehensive integration transforms Lindy into a powerful CRM automation platform, capable of handling everything from lead qualification and deal pipeline management to customer service and marketing attribution.
+
+Key benefits of HubSpot integration:
+- **Comprehensive CRM management** – 11 actions for complete sales and marketing control
+- **Real-time CRM monitoring** – 23 triggers for instant workflow activation
+- **Dynamic field loading** – Automatic property and object discovery
+- **Premium automation features** – Advanced capabilities for sophisticated workflows
+
+## How to set up HubSpot
+
+<Steps>
+  <Step title="Add HubSpot to your workflow">
+    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "HubSpot"
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_1.png" alt="Add HubSpot to workflow" />
+    </Frame>
+  </Step>
+  <Step title="Connect and Configure your HubSpot">
+    Click on "Add Account" and authorize your HubSpot for Lindy's integrations by granting permissions for CRM access and management. Choose which objects and properties you want this Lindy to access.
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_2.png" alt="HubSpot connection" />
+    </Frame>
+  </Step>
+</Steps>
+
+## HubSpot Triggers
+
+### Contact Management Triggers
+
+#### New Or Updated Contact (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_3.png" alt="New Contact trigger" />
+</Frame>
+Monitors for new contacts or changes to existing contact records:
+- **Configurable polling** - Default 15-minute intervals (900 seconds) with customization
+- **Property selection** - Dynamic selection of additional properties to retrieve
+- **List filtering** - Optional monitoring of specific contact lists
+- Perfect for welcome sequences, data enrichment workflows, CRM synchronization
+
+#### New Contact Property Change (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_4.png" alt="Contact Property Change trigger" />
+</Frame>
+Triggers when specific contact properties are modified:
+- **Dynamic property selection** - Choose from all contact properties
+- **Real-time monitoring** - Track critical field changes instantly
+- **Workflow activation** - Trigger based on property-specific changes
+- Ideal for lead stage progression, data validation, automated follow-up
+
+### Deal Management Triggers
+
+#### New Or Updated Deal (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_5.png" alt="New Deal trigger" />
+</Frame>
+Monitors for new deals or changes to existing deal records:
+- **Pipeline filtering** - Optional filtering by specific sales pipelines
+- **Stage filtering** - Target specific deal stages for monitoring
+- **Property retrieval** - Additional deal properties for comprehensive data
+- Perfect for sales pipeline automation, deal progression notifications, revenue forecasting
+
+#### New Deal In Stage (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_6.png" alt="Deal Stage trigger" />
+</Frame>
+Triggers when deals enter specific pipeline stages:
+- **Pipeline selection** - Dynamic list of all available pipelines
+- **Stage targeting** - Dependent stage selection based on chosen pipeline
+- **Stage-specific automation** - Customized workflows for each deal stage
+- Great for contract generation, sales manager notifications, follow-up task creation
+
+### Marketing & Lead Generation Triggers
+
+#### New Form Submission (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_7.png" alt="Form Submission trigger" />
+</Frame>
+Triggers when forms are submitted on your website:
+- **Form selection** - Dynamic list of all HubSpot forms
+- **Instant activation** - Real-time response to form submissions
+- **Lead qualification** - Immediate processing of new leads
+- Essential for lead qualification, instant follow-up sequences, multi-channel nurturing
+
+<Tip>
+  Use "New Deal In Stage" triggers combined with "Update Deal" actions for the most powerful sales pipeline automation workflows.
+</Tip>
+
+## HubSpot Actions
+
+### Contact Management Actions
+
+#### Create Contact
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_8.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Creates new contact records in HubSpot:
+- **Dynamic property mapping** - Based on HubSpot schema for complete data capture
+- **Automatic duplicate detection** - Prevents duplicate contact creation
+- **Custom property population** - Support for all standard and custom fields
+- Perfect for lead capture, data import, contact creation from forms
+
+#### Update Contact
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_9.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Modifies existing contact information:
+- **Property-specific updates** - Target individual fields for precise changes
+- **Bulk modifications** - Update multiple properties simultaneously
+- **Conditional updates** - Changes based on existing data conditions
+- Ideal for data enrichment, lead scoring updates, contact segmentation
+
+#### Search Contacts
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_10.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Advanced contact search with multiple criteria:
+- **Advanced filtering** - Up to 3 conditions with multiple operators
+- **Property selection** - Choose specific properties for results
+- **Sort and limit options** - Organized results with max 100 records
+- Perfect for segmentation, targeted campaigns, data analysis
+
+### List & Workflow Management Actions
+
+#### Add Contact To List (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_11.png" alt="Add to List action" />
+</Frame>
+Adds contacts to static HubSpot lists:
+- **Email identification** - Uses email address for contact targeting
+- **List building** - Dynamic list management capabilities
+- **Segmentation tools** - Organize contacts for targeted campaigns
+- Essential for list building, segmentation, campaign targeting
+
+#### Enroll Contact Into Workflow (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_12.png" alt="Workflow Enrollment action" />
+</Frame>
+Triggers HubSpot workflow enrollment:
+- **Email-based enrollment** - Target contacts by email address
+- **Automated nurturing** - Trigger sophisticated nurture sequences
+- **Lifecycle management** - Progress contacts through defined stages
+- Perfect for automated nurturing, follow-up sequences, lifecycle management
+
+### Example CRM workflow
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_12.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+### Deal Management Actions
+
+#### Update Deal (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_13.png" alt="Update Deal action" />
+</Frame>
+Modifies deal properties and stages:
+- **Stage progression** - Move deals through pipeline stages automatically
+- **Property updates** - Modify deal values, close dates, and custom fields
+- **Pipeline management** - Handle multiple sales pipelines efficiently
+- Great for deal progression, value updates, status changes
+
+### Advanced CRM Actions
+
+#### Create Associations (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_14.png" alt="Create Associations action" />
+</Frame>
+Links different HubSpot objects together:
+- **Contact-to-company associations** - Build organizational relationships
+- **Deal-to-contact relationships** - Connect deals with stakeholders
+- **Custom object associations** - Link industry-specific objects
+- Essential for relationship mapping, data organization, CRM structure
+
+#### Create Communication (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_15.png" alt="Create Communication action" />
+</Frame>
+Logs communication records in HubSpot:
+- **Email logging** - Track email interactions automatically
+- **Call records** - Document phone conversations
+- **Meeting notes** - Log meeting outcomes and action items
+- Perfect for activity tracking, communication history, sales process documentation
+
+## Practical Implementation Scenarios
+
+<AccordionGroup>
+  <Accordion title="Lead Qualification & Routing">
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_16.png" alt="Lead Qualification workflow" />
+    </Frame>
+    Transform Lindy into an intelligent lead qualification system:
+    - New Form Submission trigger captures leads instantly
+    - Search Contacts action checks for existing records to prevent duplicates
+    - Create Contact action adds new qualified leads to CRM
+    - Add Contact To List action segments leads for targeted campaigns
+  </Accordion>
+  
+  <Accordion title="Deal Pipeline Automation">
+    Automate your entire sales process:
+    - New Deal In Stage trigger activates stage-specific workflows
+    - Update Deal action progresses deals through pipeline stages
+    - Create Communication action logs sales activities automatically
+    - Create Associations action links deals with relevant contacts and companies
+  </Accordion>
+  
+  <Accordion title="Customer Onboarding">
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_17.png" alt="Customer Onboarding workflow" />
+    </Frame>
+    Streamline customer success processes:
+    - New Or Updated Deal trigger detects closed-won deals
+    - Enroll Contact Into Workflow action starts onboarding sequences
+    - Create Communication action logs onboarding activities
+    - Update Contact action tracks onboarding progress and milestones
+  </Accordion>
+</AccordionGroup>
+
+## Advanced Features & Capabilities
+
+<AccordionGroup>
+  <Accordion title="Dynamic Property Loading">
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_18.png" alt="Dynamic Property Loading" />
+    </Frame>
+    Intelligent HubSpot schema discovery:
+    - **Contact Properties** - All standard and custom contact fields
+    - **Deal Properties** - Pipeline-specific and custom deal fields
+    - **Company Properties** - Organization-specific data fields
+    - **Custom Object Properties** - Industry-specific custom fields
+  </Accordion>
+  
+  <Accordion title="Comprehensive Filtering Options">
+    Advanced search and trigger capabilities:
+    - **Property-based Filtering** - Filter by any HubSpot property
+    - **List-based Filtering** - Monitor specific contact lists
+    - **Pipeline/Stage Filtering** - Deal-specific monitoring
+    - **Multi-condition Logic** - Complex filtering combinations
+  </Accordion>
+  
+  <Accordion title="Polling vs Real-time Considerations">
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_19.png" alt="Polling Configuration" />
+    </Frame>
+    Optimize performance with intelligent polling:
+    - **Default Polling** - 15-minute intervals (900 seconds)
+    - **Customizable Intervals** - Adjustable based on business needs
+    - **Rate Limit Protection** - Built-in protection against API limits
+    - **Batch Processing** - Efficient handling of multiple records
+  </Accordion>
+</AccordionGroup>
+
+## Configuration Best Practices
+
+<AccordionGroup>
+  <Accordion title="For Sales Automation">
+    Optimize your sales process workflows:
+    - Use "New Deal In Stage" for stage-specific automation
+    - Implement lead scoring with property change triggers
+    - Set up automated follow-up sequences
+    - Create deal progression notifications
+    - Use associations to maintain relationship data
+  </Accordion>
+  
+  <Accordion title="For Marketing Automation">
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_20.png" alt="Marketing Automation Best Practices" />
+    </Frame>
+    Set up powerful marketing workflows:
+    - Use form submission triggers for immediate lead response
+    - Implement email engagement tracking
+    - Set up list-based segmentation
+    - Create lifecycle stage progression workflows
+    - Use batch operations for bulk updates
+  </Accordion>
+  
+  <Accordion title="For Customer Service">
+    Create efficient support workflows:
+    - Use ticket triggers for automated routing
+    - Implement escalation based on property changes
+    - Set up customer satisfaction workflows
+    - Create internal notification systems
+    - Use communication logging for activity tracking
+  </Accordion>
+</AccordionGroup>
+
+## Limitations & Considerations
+
+<AccordionGroup>
+  <Accordion title="API Rate Limits">
+    - **Professional Tier**: 40,000 requests/day
+    - **Enterprise Tier**: 160,000 requests/day
+    - **Batch Operations**: More efficient than individual calls
+    - **Polling Strategy**: Balance responsiveness with API usage
+  </Accordion>
+  
+  <Accordion title="Authentication Scopes">
+    Required scopes for full functionality:
+    - **crm.lists.write**: List management operations
+    - **crm.objects.contacts.read/write**: Contact operations
+    - **crm.objects.deals.read/write**: Deal operations
+    - **forms**: Form submission access
+    - **tickets**: Support ticket access
+  </Accordion>
+  
+  <Accordion title="Premium Feature Requirements">
+    - Many advanced triggers require Premium subscription
+    - Batch operations are Premium-only
+    - Advanced filtering options may be Premium
+    - Workflow enrollment requires Premium features
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Salesforce Integration"
+    icon="cloud"
+    href="/skills/popular-integrations/salesforce"
+  >
+    Compare CRM automation capabilities
+  </Card>
+  <Card
+    title="Gmail Integration"
+    icon="envelope"
+    href="/skills/popular-integrations/gmail"
+  >
+    Combine CRM with email automation
+  </Card>
+</CardGroup>
+
+<Note>
+  **Need help with CRM automation?**
+  
+  Check out our [sales automation tutorial](/tutorials/intermediate/crm-automation) for step-by-step instructions on building HubSpot workflows.
+</Note>
