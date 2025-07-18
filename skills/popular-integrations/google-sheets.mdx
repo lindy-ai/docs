@@ -59,7 +59,7 @@ Triggers when a new row is added to the bottom of a sheet:
 - **Dynamic configuration** - Spreadsheet ID/URL with optional sheet title selection
 - Perfect for processing form submissions, new signups, project entries, data validation
 
-#### New Comment (Premium)
+#### New Comment 
 <Frame>
   <img src="/lindy-brand-assets/google_calendar_4.png" alt="New Comment trigger" />
 </Frame>
@@ -69,7 +69,8 @@ Triggers when someone adds a comment to any cell in the spreadsheet:
 - **Drive scope selection** - My Drive or Shared Drive targeting
 - Ideal for team notifications, follow-up task creation, collaboration tracking
 
-#### New Updates (Premium)
+#### New Updates 
+
 <Frame>
   <img src="/lindy-brand-assets/google_calendar_5.png" alt="New Updates trigger" />
 </Frame>
@@ -79,7 +80,7 @@ Triggers when any cell content is modified in specified worksheets:
 - **Audit capabilities** - Track data changes with user information
 - Perfect for audit trails, system synchronization, stakeholder notifications
 
-#### New Worksheet (Premium)
+#### New Worksheet 
 <Frame>
   <img src="/lindy-brand-assets/google_calendar_6.png" alt="New Worksheet trigger" />
 </Frame>
@@ -94,8 +95,6 @@ Triggers when a new worksheet/tab is created within a spreadsheet:
 </Tip>
 
 ## Google Sheets Actions
-
-### Data Entry & Management
 
 #### Append Row
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -160,8 +159,6 @@ Modifies existing row data or creates new row if not found:
 - **Data integrity** - Maintains relationships while updating records
 - Perfect for customer data updates, inventory management, status tracking
 
-### Data Retrieval & Search
-
 #### Get Spreadsheet
 <Frame>
   <img src="/lindy-brand-assets/google_calendar_7.png" alt="Get Spreadsheet action" />
@@ -182,7 +179,7 @@ Searches for rows matching specific criteria:
 - **Data validation** - Verify record existence before processing
 - Perfect for customer lookups, inventory checks, data validation
 
-#### Get Cell (Premium)
+#### Get Cell 
 <Frame>
   <img src="/lindy-brand-assets/google_calendar_9.png" alt="Get Cell action" />
 </Frame>
@@ -191,8 +188,6 @@ Retrieves value from a specific cell:
 - **Status monitoring** - Check specific values like counters or flags
 - **Configuration data** - Access settings stored in specific cells
 - Great for status checks, counter values, configuration management
-
-### Structure Management
 
 #### Create Spreadsheet
 <Frame>
@@ -214,7 +209,27 @@ Adds a new worksheet/tab to existing spreadsheet:
 - **Organization tools** - Create monthly reports, project phases
 - Ideal for data segmentation, project organization, template systems
 
-### Example data processing workflow
+#### Delete Row
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_14.png" alt="Delete Row action" />
+</Frame>
+Removes a row matching specific lookup criteria:
+- **Safe deletion** - Lookup column and value matching for precision
+- **Status feedback** - Returns success/failure status for error handling
+- **Data cleanup** - Remove completed items, archived records
+- Essential for data maintenance, removing completed items, archiving
+
+#### Clear Cell 
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_15.png" alt="Clear Cell action" />
+</Frame>
+Removes content from a specific cell while preserving formatting:
+- **Selective clearing** - Content removal without structure loss
+- **Format preservation** - Maintains cell formatting and styling
+- **Precise control** - Target specific cells for content reset
+- Perfect for resetting values, clearing temporary data, template preparation
+
+## Example data processing workflow
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
@@ -228,28 +243,6 @@ Adds a new worksheet/tab to existing spreadsheet:
     />
   </div>
 </div>
-
-### Data Cleanup & Maintenance
-
-#### Delete Row
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_14.png" alt="Delete Row action" />
-</Frame>
-Removes a row matching specific lookup criteria:
-- **Safe deletion** - Lookup column and value matching for precision
-- **Status feedback** - Returns success/failure status for error handling
-- **Data cleanup** - Remove completed items, archived records
-- Essential for data maintenance, removing completed items, archiving
-
-#### Clear Cell (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_15.png" alt="Clear Cell action" />
-</Frame>
-Removes content from a specific cell while preserving formatting:
-- **Selective clearing** - Content removal without structure loss
-- **Format preservation** - Maintains cell formatting and styling
-- **Precise control** - Target specific cells for content reset
-- Perfect for resetting values, clearing temporary data, template preparation
 
 ## Practical Implementation Scenarios
 
