@@ -2,13 +2,13 @@
 title: 'Microsoft Outlook'
 icon: 'mailbox'
 sidebarTitle: 'Microsoft Outlook'
+description: 'Email and calendar integration for Microsoft users with comprehensive contact and task management'
 ---
-
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/microsoft-outlook.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +18,216 @@ sidebarTitle: 'Microsoft Outlook'
     />
   </div>
 </div>
+
+## Overview
+
+Microsoft Outlook integration provides comprehensive email, calendar, and contact management for Microsoft 365 users. Automate email workflows, sync calendar events, manage contacts, and streamline task management within the Microsoft ecosystem.
+
+## Authentication Setup
+
+Connect your Microsoft Outlook account securely through OAuth authentication. Lindy supports both personal Microsoft accounts and organizational Microsoft 365 accounts.
+
+<Frame>
+  <img src="/lindy-brand-assets/microsoft-outlook-auth.png" alt="Microsoft Outlook authentication connection screen showing account setup [[memory:2619471]]" />
+</Frame>
+
+### Sign-In Process
+
+<Frame>
+  <img src="/lindy-brand-assets/microsoft-outlook-auth-once-you-sign-in.png" alt="Microsoft Outlook post-authentication interface showing connected account status [[memory:2619471]]" width="400" height ="200" />
+</Frame>
+
+Once authenticated, you'll have access to all Outlook features including email, calendar, contacts, and tasks. The connection is secure and follows Microsoft's security standards.
+
+## Triggers
+
+<Frame>
+  <img src="/lindy-brand-assets/microsoft-outlook-triggers.png" alt="Microsoft Outlook triggers showing Email Received and New Contact Event options [[memory:2619471]]" />
+</Frame>
+
+<AccordionGroup>
+  <Accordion title="Email Received">
+    Triggered when a new email is received in your Microsoft Outlook account.
+  </Accordion>
+  
+  <Accordion title="New Contact Event">
+    Triggers when a new contact is created in Microsoft Outlook.
+  </Accordion>
+</AccordionGroup>
+
+## Available Actions
+
+<Frame>
+  <img src="/lindy-brand-assets/microsoft-outlook-actions.png" alt="Microsoft Outlook actions showing comprehensive email, contact, and calendar management features [[memory:2619471]]" />
+</Frame>
+
+### Email Operations
+
+<AccordionGroup>
+  <Accordion title="Send Email">
+    Send an email using Microsoft Outlook with full formatting and attachment support.
+  </Accordion>
+  
+  <Accordion title="Reply To Email">
+    Reply to an email in Microsoft Outlook with thread continuity.
+  </Accordion>
+  
+  <Accordion title="Create Draft Email">
+    Create a draft email in Microsoft Outlook with optional attachments and recipients.
+  </Accordion>
+  
+  <Accordion title="Find Email">
+    Search for emails in Microsoft Outlook using filters and limits.
+  </Accordion>
+  
+  <Accordion title="Add Label To Email">
+    Add a category or label to an Outlook email message.
+  </Accordion>
+  
+  <Accordion title="Remove Label From Email">
+    Remove a label or category from a specific email message in Outlook.
+  </Accordion>
+  
+  <Accordion title="Move Email To Folder">
+    Move an email message to a different folder in Outlook.
+  </Accordion>
+  
+  <Accordion title="Approve Workflow">
+    Send an approval workflow email to specified recipients with a custom subject.
+  </Accordion>
+</AccordionGroup>
+
+### Email Configuration
+
+<Frame>
+  <img src="/lindy-brand-assets/micrsoft-outlook-send-email.png" alt="Microsoft Outlook email composition interface showing stateful email workflows and reply monitoring [[memory:2619471]]" />
+</Frame>
+
+Microsoft Outlook emails support stateful workflows with "After email sent" and "After reply received" triggers, enabling sophisticated email sequences and automated follow-ups.
+
+### Contact Management
+
+<AccordionGroup>
+  <Accordion title="Create Contact">
+    Create a new contact in Microsoft Outlook with personal and business information.
+  </Accordion>
+  
+  <Accordion title="Update Contact">
+    Update contact information in Microsoft Outlook with specified details.
+  </Accordion>
+  
+  <Accordion title="Find Contacts">
+    Search for Outlook contacts using names or email addresses.
+  </Accordion>
+  
+  <Accordion title="List Contacts">
+    Get a list of your Outlook contacts with optional email address filtering.
+  </Accordion>
+</AccordionGroup>
+
+### Calendar Integration
+
+<Frame>
+  <img src="/lindy-brand-assets/microsoft-outlook-calendar-event.png" alt="Microsoft Outlook calendar event creation showing comprehensive scheduling options [[memory:2619471]]" />
+</Frame>
+
+<AccordionGroup>
+  <Accordion title="Create Calendar Event">
+    Create and schedule a new event in your Outlook calendar with attendees, time zones, and detailed scheduling options.
+  </Accordion>
+</AccordionGroup>
+
+The calendar integration supports:
+- **Multi-timezone scheduling** with automatic conversion
+- **Attendee management** with automatic invitations
+- **Recurring events** and complex scheduling patterns
+- **Rich event details** including locations and descriptions
+
+### Organization & Management
+
+<AccordionGroup>
+  <Accordion title="List Folders">
+    Retrieve a list of folders from your Microsoft Outlook account.
+  </Accordion>
+  
+  <Accordion title="List Labels">
+    Retrieve a list of all labels (categories) from your Microsoft Outlook account.
+  </Accordion>
+</AccordionGroup>
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Email Automation" icon="robot">
+    Automated email responses and workflow approvals
+  </Card>
+  
+  <Card title="Calendar Sync" icon="calendar">
+    Meeting scheduling and event management automation
+  </Card>
+  
+  <Card title="Contact Sync" icon="address-book">
+    CRM integration and contact data management
+  </Card>
+  
+  <Card title="Task Integration" icon="list-check">
+    Workflow automation with email and calendar triggers
+  </Card>
+</CardGroup>
+
+## Advanced Features
+
+### Stateful Email Workflows
+
+Microsoft Outlook actions support sophisticated email sequences:
+- **Email tracking**: Monitor when emails are sent and received
+- **Automated follow-ups**: Trigger actions based on reply status
+- **Thread management**: Maintain conversation context across workflows
+
+### Enterprise Integration
+
+<Note>
+Enterprise Ready: Microsoft Outlook integration supports both personal Microsoft accounts and enterprise Microsoft 365 environments with full security compliance.
+</Note>
+
+- **OAuth 2.0 authentication** for secure access
+- **SOC2 compliant** data handling
+- **Enterprise permissions** respect organizational policies
+
+
+### Rich Content Support
+
+- **HTML email formatting** with rich text and images
+- **File attachments** with multiple format support
+- **Email signatures** and corporate branding
+- **Calendar invitations** with meeting details and locations
+
+## Best Practices
+
+- Use email filters to target specific messages and avoid overwhelming automation
+- Leverage calendar integration for meeting scheduling and attendee management
+- Sync contacts with CRM systems for unified customer data
+- Implement approval workflows for business process automation
+- Test authentication with your organization's security policies
+
+<Tip>
+Microsoft Outlook integration works seamlessly with other Microsoft 365 tools, making it perfect for organizations already using the Microsoft ecosystem.
+</Tip>
+
+## Common Automation Examples
+
+- **Meeting Follow-ups**: Automatically send recap emails after calendar events
+- **Contact Sync**: Sync new Outlook contacts with CRM systems
+- **Email Triage**: Automatically categorize and route incoming emails
+- **Approval Workflows**: Route documents and requests through approval chains
+
+## Related Resources
+
+<CardGroup cols={2}>
+  <Card title="Gmail Integration" href="/skills/popular-integrations/gmail" icon="envelope">
+    Compare with Gmail automation features
+  </Card>
+  <Card title="Microsoft Teams" href="/skills/popular-integrations/microsoft-teams" icon="users">
+    Integrate with Microsoft Teams workflows
+  </Card>
+</CardGroup>

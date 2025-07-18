@@ -2,13 +2,13 @@
 title: 'Gmail'
 icon: 'envelope'
 sidebarTitle: 'Gmail'
+description: 'Complete email automation with sending, receiving, thread management, and stateful workflows'
 ---
-
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/gmail.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +18,244 @@ sidebarTitle: 'Gmail'
     />
   </div>
 </div>
+
+## Overview
+
+Gmail integration provides comprehensive email automation for sending, receiving, organizing, and managing email workflows. Create sophisticated email sequences with stateful actions and thread-aware responses.
+
+## Getting Started
+
+Connect your Gmail account to enable powerful email automation. Set up triggers to respond to incoming emails, sent messages, attachments, and label changes. Use filters to target specific emails and avoid information overload.
+
+<Frame>
+  <img src="/lindy-brand-assets/gmail-available-triggers.png" alt="Gmail triggers showing Email Received, Email Sent, New Attachment, and label-based triggers [[memory:2619471]]" />
+</Frame>
+
+## Available Actions
+
+<div style={{ display: 'flex', gap: '1rem', margin: '2rem 0' }}>
+  <Frame style={{ flex: 1 }}>
+    <img src="/lindy-brand-assets/gmail-avail-actions-1.png" alt="Gmail actions part 1 showing email management and organization features [[memory:2619471]]" />
+  </Frame>
+  <Frame style={{ flex: 1 }}>
+    <img src="/lindy-brand-assets/gmail-eval-actions-2.png" alt="Gmail actions part 2 showing search, send, and advanced email operations [[memory:2619471]]" />
+  </Frame>
+</div>
+
+### Core Email Actions
+
+<AccordionGroup>
+  <Accordion title="Send Email">
+    Send an email using your Gmail account with full formatting support.
+  </Accordion>
+  
+  <Accordion title="Send Reply">
+    Draft or send a reply to an email with conversation threading.
+  </Accordion>
+  
+  <Accordion title="Draft Email">
+    Saves an email as a draft for later editing or sending.
+  </Accordion>
+  
+  <Accordion title="Edit Draft">
+    Edits an existing draft email with new content.
+  </Accordion>
+</AccordionGroup>
+
+### Email Management
+
+<AccordionGroup>
+  <Accordion title="Add Label to Email">
+    Adds a label to one or more emails for organization.
+  </Accordion>
+  
+  <Accordion title="Remove Label from Email">
+    Removes a label from one or more emails by message IDs and label ID or name.
+  </Accordion>
+  
+  <Accordion title="Delete Label">
+    Deletes a Gmail label entirely.
+  </Accordion>
+  
+  <Accordion title="Archive">
+    Archives an email to remove it from the inbox.
+  </Accordion>
+  
+  <Accordion title="Unarchive">
+    Unarchives an email by ID to restore it to the inbox.
+  </Accordion>
+</AccordionGroup>
+
+### Email Status Management
+
+<AccordionGroup>
+  <Accordion title="Mark Email as Read">
+    Marks an email as read.
+  </Accordion>
+  
+  <Accordion title="Mark Email as Unread">
+    Marks an email as unread by ID.
+  </Accordion>
+  
+  <Accordion title="Mark Email as Important">
+    Marks an email as important by ID.
+  </Accordion>
+  
+  <Accordion title="Mark Email as Unimportant">
+    Marks an email as unimportant by ID.
+  </Accordion>
+  
+  <Accordion title="Move Email to Trash">
+    Moves an email to the trash.
+  </Accordion>
+  
+  <Accordion title="Move Email Out of Trash">
+    Moves an email out of the trash by ID.
+  </Accordion>
+</AccordionGroup>
+
+### Search & Retrieval
+
+<AccordionGroup>
+  <Accordion title="Find Email">
+    Search and retrieve messages from Gmail using filters and labels.
+  </Accordion>
+  
+  <Accordion title="Search Emails">
+    Search for emails in your Gmail account matching specific filters.
+  </Accordion>
+  
+  <Accordion title="Get Email">
+    Gets the specified email by ID with full content and metadata.
+  </Accordion>
+  
+  <Accordion title="Find Email Address By Person">
+    Given a person's name, try to find their email address from your contacts.
+  </Accordion>
+</AccordionGroup>
+
+## Triggers
+
+<AccordionGroup>
+  <Accordion title="Email Received">
+    Triggers when new emails are received in Gmail. **Most popular trigger - use filters to target specific emails!**
+  </Accordion>
+  
+  <Accordion title="Email Sent">
+    Triggers when emails are sent from your Gmail account.
+  </Accordion>
+  
+  <Accordion title="New Attachment Received">
+    Trigger when new email attachments are received in Gmail.
+  </Accordion>
+  
+  <Accordion title="New Email Matching Search">
+    Triggers when new emails match specified Gmail search criteria and labels.
+  </Accordion>
+  
+  <Accordion title="New Labeled Email">
+    Triggers when new emails with specified Gmail labels are received.
+  </Accordion>
+</AccordionGroup>
+
+## Stateful Actions & Email Sequences
+
+<Frame>
+  <img src="/lindy-brand-assets/gmail-stateful-actions.png" alt="Gmail stateful actions showing automated follow-up sequences after email sending [[memory:2619471]]" />
+</Frame>
+
+Gmail actions are stateful, meaning after you send an email, Lindy can automatically monitor and respond to replies or take follow-up actions. This creates powerful email sequences:
+
+- **After email sent**: Automatically monitor for replies, set reminders, or trigger follow-up actions
+- **After reply received**: Process responses, extract information, or escalate conversations
+
+## Linked Actions & Thread Management
+
+<Frame>
+  <img src="/lindy-brand-assets/gmail-linked-actions.png" alt="Gmail linked actions showing Observe thread and Send Reply capabilities [[memory:2619471]]" />
+</Frame>
+
+### Special Linked Actions
+
+<AccordionGroup>
+  <Accordion title="Observe Thread">
+    Observe the user's inbox for matching new emails. The system will send you a message when new email(s) are received. This action anchors a new monitoring point for ongoing email surveillance.
+  </Accordion>
+  
+  <Accordion title="Send Reply (Linked)">
+    Draft or send a reply to an email within the context of a monitored thread.
+  </Accordion>
+</AccordionGroup>
+
+### Thread Assignment for Multiple Workflows
+
+<Frame>
+  <img src="/lindy-brand-assets/gmail-multiple-stateful-assign-thread.png" alt="Gmail thread assignment interface for managing multiple concurrent email workflows [[memory:2619471]]" />
+</Frame>
+
+When running multiple stateful email workflows simultaneously, you must assign the proper thread to ensure actions target the correct conversation. This prevents cross-contamination between different email sequences.
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Email Sequences" icon="paper-plane">
+    Automated follow-up campaigns with reply monitoring
+  </Card>
+  
+  <Card title="Customer Support" icon="headset">
+    Intelligent email triage and response automation
+  </Card>
+  
+  <Card title="Lead Management" icon="chart-line">
+    Qualify and nurture leads through email workflows
+  </Card>
+  
+  <Card title="Email Organization" icon="folder">
+    Automatic labeling, archiving, and inbox management
+  </Card>
+</CardGroup>
+
+## Advanced Features & Tips
+
+### HTML Email Signatures
+
+<Tip>
+Pro Tip: In the signature field, you can include HTML email signatures for rich formatting, images, and professional branding!
+</Tip>
+
+### Email Filtering Best Practices
+
+<Note>
+Important: When using the "Email Received" trigger, always use filters to target specific emails. Without filters, you'll receive notifications for every email, which can overwhelm your automation.
+</Note>
+
+- Use sender filters: `from:specific@email.com`
+- Subject line filters: `subject:urgent OR subject:important`
+- Label-based triggers for pre-organized emails
+- Attachment filters for document processing workflows
+
+### Thread Management
+
+- **Single workflow**: Thread assignment happens automatically
+- **Multiple workflows**: Manually assign threads to prevent conflicts
+- **Observe actions**: Create new monitoring anchors for ongoing surveillance
+- **Stateful sequences**: Plan your email journey from send to final resolution
+
+## Best Practices
+
+- Start with simple send/receive automation before building complex sequences
+- Test email filters thoroughly to avoid missing important messages
+- Use draft actions for human review before sending sensitive emails
+- Implement proper error handling for failed email deliveries
+- Monitor thread assignments in multi-workflow scenarios
+
+## Related Resources
+
+<CardGroup cols={2}>
+  <Card title="Email Assistant Tutorial" href="/tutorials/beginner/email-assistant" icon="graduation-cap">
+    Step-by-step email automation guide
+  </Card>
+  <Card title="Email Triage Workflow" href="/use-cases/popular-workflows/email-triage" icon="filter">
+    Automated email organization system
+  </Card>
+</CardGroup>
