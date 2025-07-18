@@ -4,11 +4,10 @@ icon: 'comment-lines'
 sidebarTitle: 'Telegram'
 ---
 
-
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/google_calendar_0.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +17,554 @@ sidebarTitle: 'Telegram'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Telegram integration is one of Lindy's most powerful messaging automation capabilities, enabling your AI agents to act as sophisticated Telegram bots for customer support, community management, and business automation. The integration provides both Triggers (what can start a Lindy workflow) and Actions (what Lindy can do).
+
+This comprehensive integration transforms Telegram into an intelligent automation platform, capable of handling everything from simple message responses to complex multi-step operations, group chat management, and rich media distribution.
+
+Key benefits of Telegram integration:
+- **Bidirectional communication** – Both receive and send messages through Telegram
+- **Group chat management** – Full support for Telegram group chats and channels
+- **Rich media support** – Handle text, photos, videos, documents, and more
+- **Real-time automation** – Instant responses and workflow execution
+
+## How to set up Telegram
+
+<Steps>
+  <Step title="Create Your Lindy Agent">
+    Click the plus sign beside Lindies to start building, select "Start from scratch", then choose "Select Trigger"
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_1.png" alt="Create Lindy Agent" />
+    </Frame>
+  </Step>
+  <Step title="Set Up Telegram Bot via BotFather">
+    Open BotFather on Telegram, send /newbot command, choose a name and username for your bot, then copy the HTTP API token provided
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_2.png" alt="BotFather setup" />
+    </Frame>
+  </Step>
+  <Step title="Connect to Lindy">
+    In Lindy, add the "Message Received" trigger, click "Add account", paste your BotFather token, and click "Connect"
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_3.png" alt="Connect Telegram to Lindy" />
+    </Frame>
+  </Step>
+  <Step title="Group Chat Setup (Optional)">
+    Invite your Lindy bot to the group chat, go to group Info → Edit → Administrators, and add your bot as an admin with full permissions
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_4.png" alt="Group chat setup" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Telegram Triggers
+
+#### Message Received
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_5.png" alt="Message Received trigger" />
+</Frame>
+Triggers when you receive a new Telegram message:
+- **Customer support automation** - Automatically respond to customer inquiries
+- **Personal assistant responses** - Handle personal requests and tasks
+- **Lead qualification** - Process and qualify leads from direct messages
+- Perfect for customer support, personal automation, lead generation
+
+#### New Bot Command Received
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_6.png" alt="New Bot Command Received trigger" />
+</Frame>
+Triggers when specific Telegram bot commands are received (e.g., /start, /help):
+- **Command-based workflows** - Execute specific actions based on commands
+- **Menu-driven interactions** - Create structured bot conversations
+- **User onboarding sequences** - Guide new users through setup
+- Essential for structured interactions, user onboarding, command-based automation
+
+#### New Channel Updates
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_7.png" alt="New Channel Updates trigger" />
+</Frame>
+Triggers when there are new updates or posts in a Telegram channel:
+- **Content monitoring** - Track and analyze channel content
+- **Cross-platform syndication** - Distribute content across platforms
+- **News aggregation** - Process and aggregate news updates
+- Perfect for content monitoring, news aggregation, cross-platform distribution
+
+#### New Message Updates
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_8.png" alt="New Message Updates trigger" />
+</Frame>
+Triggers when new messages are received by your Telegram bot:
+- **Advanced message processing** - Handle complex message workflows
+- **Multi-bot coordination** - Coordinate between multiple bots
+- **Message analytics** - Track and analyze message patterns
+- Essential for advanced automation, analytics, multi-bot systems
+
+#### New Updates
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_9.png" alt="New Updates trigger" />
+</Frame>
+Triggers when new updates occur in your Telegram bot across selected update types:
+- **Comprehensive bot monitoring** - Monitor all bot activities
+- **Multi-event handling** - Handle multiple types of events
+- **System-wide notifications** - Get notified of all bot activities
+- Perfect for comprehensive monitoring, multi-event workflows, system analytics
+
+<Tip>
+  Use "Message Received" triggers combined with "Send Message" actions for the most powerful two-way Telegram automation workflows.
+</Tip>
+
+## Telegram Actions
+
+#### Send Message
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_8.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Send a message to a Telegram chat:
+- **Automated responses** - Send automatic replies to messages
+- **Notifications and alerts** - Send important notifications
+- **Customer communication** - Communicate with customers automatically
+- Perfect for automated responses, notifications, customer communication
+
+#### Send A Text Message Or Reply
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_9.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Send text messages to Telegram chats with optional captions and formatting:
+- **Threaded conversations** - Create organized conversation threads
+- **Formatted responses** - Use markdown formatting for rich text
+- **Quote replies and mentions** - Reply to specific messages and mention users
+- Essential for structured conversations, formatted messaging, interactive communication
+
+#### Send A Document/Image
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_10.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Send documents or images to Telegram chats with optional captions:
+- **Report generation** - Automatically generate and send reports
+- **File sharing automation** - Share files based on triggers
+- **Visual content distribution** - Distribute images and documents
+- Perfect for report delivery, file automation, visual content sharing
+
+#### Send A Photo
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_11.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Send photos to Telegram chats with optional captions and formatting:
+- **Visual reporting** - Send visual reports and dashboards
+- **Product showcases** - Share product images automatically
+- **Automated screenshots** - Send screenshots of systems or data
+- Essential for visual reporting, product marketing, automated documentation
+
+#### Send A Sticker
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_12.png" alt="Send A Sticker action" />
+</Frame>
+Send stickers to Telegram chats using sticker set API:
+- **Fun interactions** - Add personality to bot conversations
+- **Emotional responses** - Express emotions through stickers
+- **Brand engagement** - Use custom stickers for brand engagement
+- Perfect for engaging conversations, brand personality, emotional communication
+
+#### Send A Video
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_13.png" alt="Send A Video action" />
+</Frame>
+Send videos to Telegram chats with optional captions and formatting:
+- **Video content distribution** - Share video content automatically
+- **Tutorial delivery** - Send instructional videos
+- **Marketing campaigns** - Distribute marketing video content
+- Essential for video marketing, education, content distribution
+
+#### Send A Video Note
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_14.png" alt="Send A Video Note action" />
+</Frame>
+Send video notes (circular video messages) to Telegram chats:
+- **Personal video messages** - Send personalized video responses
+- **Quick video updates** - Share quick video status updates
+- **Interactive communications** - Create engaging video interactions
+- Perfect for personal communication, quick updates, interactive messaging
+
+#### Send A Voice Message
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_15.png" alt="Send A Voice Message action" />
+</Frame>
+Send voice messages to Telegram chats or channels:
+- **Audio notifications** - Send voice-based notifications
+- **Voice-based responses** - Provide audio responses to messages
+- **Personal touch** - Add human-like voice communication
+- Essential for audio communication, accessibility, personal touch
+
+#### Send An Album
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_16.png" alt="Send An Album action" />
+</Frame>
+Send a group of photos and videos as an album to a Telegram chat:
+- **Multi-image reports** - Send comprehensive visual reports
+- **Product galleries** - Share product image collections
+- **Event photo sharing** - Share event photos as albums
+- Perfect for comprehensive visual content, product showcases, event documentation
+
+#### Send An Audio File
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_17.png" alt="Send An Audio File action" />
+</Frame>
+Send audio files to Telegram chats with optional caption and metadata:
+- **Podcast distribution** - Distribute podcast episodes
+- **Music sharing** - Share music files automatically
+- **Audio reports** - Send audio-based reports and updates
+- Essential for audio content distribution, music sharing, audio reporting
+
+#### Send Media By URL or Id
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_18.png" alt="Send Media By URL or Id action" />
+</Frame>
+Send media files to Telegram by URL or file ID:
+- **Dynamic media sharing** - Share media based on URLs
+- **External content integration** - Integrate content from external sources
+- **Cached media reuse** - Reuse previously uploaded media
+- Perfect for dynamic content sharing, external integrations, media optimization
+
+#### Create Chat Invite Link
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_19.png" alt="Create Chat Invite Link action" />
+</Frame>
+Create invite links for Telegram chats and channels:
+- **Dynamic group invitations** - Create invitations based on conditions
+- **Temporary access links** - Generate time-limited access links
+- **Event-based group access** - Provide access for specific events
+- Essential for group management, event access, automated invitations
+
+#### Delete A Message
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_20.png" alt="Delete A Message action" />
+</Frame>
+Delete a specific message from a Telegram chat:
+- **Content moderation** - Remove inappropriate content automatically
+- **Error correction** - Delete messages with errors
+- **Spam removal** - Remove spam messages automatically
+- Perfect for content moderation, error correction, spam management
+
+#### Edit A Media Message
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_16.png" alt="Edit A Media Message action" />
+</Frame>
+Edit media content of an existing Telegram message:
+- **Content updates** - Update media content dynamically
+- **Error corrections** - Fix media errors in messages
+- **Real-time updates** - Update media based on changing data
+- Essential for dynamic content management, error correction, real-time updates
+
+#### Edit A Text Message
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_17.png" alt="Edit A Text Message action" />
+</Frame>
+Edit the text content of an existing Telegram message:
+- **Live updates** - Update message content in real-time
+- **Status corrections** - Correct status information
+- **Dynamic information display** - Show changing information
+- Perfect for live updates, status tracking, dynamic content
+
+#### Export Chat Invite Link
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_18.png" alt="Export Chat Invite Link action" />
+</Frame>
+Generate a new invite link for Telegram chats and channels:
+- **Link rotation** - Rotate invite links for security
+- **Event-specific invitations** - Create links for specific events
+- **Automated access management** - Manage group access automatically
+- Essential for security management, event access, automated group administration
+
+#### Forward A Message
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_19.png" alt="Forward A Message action" />
+</Frame>
+Forward messages between Telegram chats and channels:
+- **Content syndication** - Distribute content across multiple channels
+- **Message routing** - Route messages to appropriate channels
+- **Cross-group communication** - Share messages between groups
+- Perfect for content distribution, message routing, cross-platform communication
+
+#### Get The Number Of Members In A Chat
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_20.png" alt="Get The Number Of Members In A Chat action" />
+</Frame>
+Get the total member count of a Telegram chat or channel:
+- **Analytics and reporting** - Track membership growth
+- **Growth tracking** - Monitor community growth
+- **Membership monitoring** - Keep track of member counts
+- Essential for analytics, growth tracking, community insights
+
+#### Kick A Chat Member
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_16.png" alt="Kick A Chat Member action" />
+</Frame>
+Remove a member from a Telegram chat or channel:
+- **Automated moderation** - Remove problematic members automatically
+- **Rule enforcement** - Enforce community rules
+- **Spam prevention** - Remove spam accounts
+- Perfect for community moderation, rule enforcement, spam management
+
+#### List Administrators In Chat
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_17.png" alt="List Administrators In Chat action" />
+</Frame>
+Get a list of administrators in a Telegram chat:
+- **Admin management** - Track and manage administrators
+- **Permission auditing** - Audit administrative permissions
+- **Role verification** - Verify user roles and permissions
+- Essential for admin management, permission auditing, role verification
+
+#### List Chats
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_18.png" alt="List Chats action" />
+</Frame>
+List recent updates and messages from your Telegram bot:
+- **Chat monitoring** - Monitor all active chats
+- **Activity tracking** - Track chat activity and engagement
+- **Multi-chat management** - Manage multiple chats simultaneously
+- Perfect for chat monitoring, activity tracking, multi-chat management
+
+#### List Updates
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_19.png" alt="List Updates action" />
+</Frame>
+List recent updates and messages from your Telegram bot:
+- **Bot activity monitoring** - Monitor all bot activities
+- **Update processing** - Process and analyze bot updates
+- **System diagnostics** - Diagnose bot performance and issues
+- Essential for bot monitoring, update processing, system diagnostics
+
+#### Pin A Message
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_20.png" alt="Pin A Message action" />
+</Frame>
+Pin a message in a Telegram chat or channel to keep it at the top:
+- **Important announcements** - Pin important messages
+- **Persistent information** - Keep important information visible
+- **Group guidelines** - Pin group rules and guidelines
+- Perfect for announcements, important information, group management
+
+#### Promote A Chat Member
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_16.png" alt="Promote A Chat Member action" />
+</Frame>
+Promote a chat member to administrator with configurable permissions:
+- **Automated role management** - Promote members based on criteria
+- **Merit-based promotions** - Promote based on contributions
+- **Dynamic permission assignment** - Assign permissions dynamically
+- Essential for role management, merit-based promotion, community governance
+
+#### Restrict A Chat Member
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_17.png" alt="Restrict A Chat Member action" />
+</Frame>
+Restrict permissions for a member in a Telegram chat:
+- **Temporary restrictions** - Apply temporary restrictions
+- **Behavior modification** - Modify member behavior through restrictions
+- **Graduated moderation** - Apply graduated moderation policies
+- Perfect for behavior management, temporary restrictions, graduated moderation
+
+#### Set Chat Permissions
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_18.png" alt="Set Chat Permissions action" />
+</Frame>
+Set default permissions for all members in a Telegram chat or group:
+- **Group policy enforcement** - Enforce group-wide policies
+- **Bulk permission management** - Manage permissions for all members
+- **Community guidelines** - Implement community guidelines
+- Essential for group policy management, bulk operations, community governance
+
+#### Unpin A Message
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_19.png" alt="Unpin A Message action" />
+</Frame>
+Remove a pinned message from a Telegram chat or channel:
+- **Content rotation** - Rotate pinned content regularly
+- **Temporary announcements** - Remove temporary announcements
+- **Dynamic information management** - Manage pinned information dynamically
+- Perfect for content management, temporary announcements, dynamic information
+
+## Example Telegram workflow
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_12.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+## Practical Implementation Scenarios
+
+<AccordionGroup>
+  <Accordion title="Customer Support Automation">
+    Transform Lindy into a comprehensive customer support assistant:
+    - Message received → Analyze inquiry → Search knowledge base → Send appropriate response → Escalate to human if needed → Track resolution
+  </Accordion>
+  
+  <Accordion title="Community Management">
+    Build sophisticated community management workflows:
+    - New message → Content moderation → Auto-kick spammers → Send warnings → Generate reports → Update community guidelines
+  </Accordion>
+  
+  <Accordion title="Content Distribution Network">
+    Create advanced content distribution systems:
+    - New channel update → Process content → Cross-post to multiple channels → Track engagement → Generate analytics reports
+  </Accordion>
+</AccordionGroup>
+
+## Advanced Features & Capabilities
+
+<AccordionGroup>
+  <Accordion title="Rich Media Communication">
+    Comprehensive media handling and distribution capabilities:
+    - **Text and Formatting** - Rich text with markdown formatting support
+    - **Media Files** - Photos, videos, documents, audio files, and stickers
+    - **Interactive Elements** - Buttons, keyboards, and command-based interactions
+    - **Album Support** - Group multiple media files into albums
+  </Accordion>
+  
+  <Accordion title="Group and Channel Management">
+    Advanced group administration and community management features:
+    - **Member Management** - Add, remove, promote, and restrict members
+    - **Permission Control** - Granular permission management for groups
+    - **Content Moderation** - Automated content moderation and spam prevention
+    - **Analytics and Insights** - Member counts, activity tracking, and engagement metrics
+  </Accordion>
+  
+  <Accordion title="Bot API Integration">
+    Powerful bot automation through Telegram's robust Bot API:
+    - **Command Processing** - Handle bot commands and structured interactions
+    - **Real-time Updates** - Instant message processing and responses
+    - **Multi-chat Support** - Manage multiple chats and channels simultaneously
+    - **Error Handling** - Robust error handling and retry mechanisms
+  </Accordion>
+</AccordionGroup>
+
+## Configuration Best Practices
+
+<AccordionGroup>
+  <Accordion title="For Customer Support">
+    Optimize your customer support workflows:
+    - Use "Message Received" triggers for immediate customer response
+    - Implement intelligent routing based on inquiry type and keywords
+    - Set up automated responses for common questions with "Send Message"
+    - Use "Send A Document/Image" for sending helpful resources
+    - Implement escalation to human agents for complex issues
+  </Accordion>
+  
+  <Accordion title="For Community Management">
+    Set up powerful community management workflows:
+    - Use "New Message Updates" for comprehensive message monitoring
+    - Implement "Kick A Chat Member" for automated spam prevention
+    - Set up "Pin A Message" for important announcements
+    - Use "Set Chat Permissions" for group-wide policy enforcement
+    - Create automated reporting with member count tracking
+  </Accordion>
+  
+  <Accordion title="For Content Distribution">
+    Create effective content distribution workflows:
+    - Use "New Channel Updates" for content monitoring
+    - Implement "Forward A Message" for cross-platform distribution
+    - Set up "Send An Album" for comprehensive visual content
+    - Use "Create Chat Invite Link" for event-based access
+    - Create analytics workflows with engagement tracking
+  </Accordion>
+</AccordionGroup>
+
+## Limitations & Considerations
+
+<AccordionGroup>
+  <Accordion title="API Limitations">
+    - **Rate Limits**: Telegram enforces rate limits to prevent spam
+    - **Bot Restrictions**: Bots can only message users who have initiated contact first
+    - **File Size Limits**: Maximum file size limits for different media types
+    - **Permission Requirements**: Admin permissions required for group management actions
+  </Accordion>
+  
+  <Accordion title="Security Considerations">
+    - **Token Security**: Never share bot tokens publicly or in code repositories
+    - **User Privacy**: Respect user privacy and data protection regulations
+    - **Content Policies**: Ensure all content complies with Telegram's terms of service
+    - **Access Control**: Implement proper access controls for sensitive operations
+  </Accordion>
+  
+  <Accordion title="Best Practices">
+    - **Error Handling**: Implement robust error handling for failed operations
+    - **Testing**: Test thoroughly in private chats before deploying to groups
+    - **Monitoring**: Set up monitoring for bot performance and user engagement
+    - **Documentation**: Document bot commands and features for users
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="WhatsApp Integration"
+    icon="mobile"
+    href="/skills/popular-integrations/whatsapp"
+  >
+    Expand messaging automation to WhatsApp
+  </Card>
+  <Card
+    title="Slack Integration"
+    icon="slack"
+    href="/skills/popular-integrations/slack"
+  >
+    Connect Telegram workflows with team communication
+  </Card>
+</CardGroup>
+
