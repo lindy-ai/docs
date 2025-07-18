@@ -34,7 +34,7 @@ A single workflow can contain multiple actions that execute sequentially or in p
 ## How to add an action
 <Steps>
   <Step title="Click the plus button">
-    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add action" from the pop-up menu 
+    Click on the `+` sign at the bottom or right-click anywhere on the canvas and select "Add action" from the pop-up menu 
     <Frame>
       <img src="/lindy-brand-assets/actions_1.png" alt="Adding actions interface" />
     </Frame>
@@ -69,26 +69,42 @@ AI Agent actions offer more powerful capabilities with complex reasoning and ada
 <Frame>
   <img src="/lindy-brand-assets/actions_6.png" alt="Stateful actions workflow example" />
 </Frame>
-Stateful actions maintain context and state from a previous step in your workflow. They're designed to work with data or connections established earlier.
+Stateful actions create persistent contexts that can both execute operations and listen for future events. They show different execution paths that you can choose from based on your workflow needs.
 
-**Key example: Email Reply Actions**
-- When you have an "Email Received" trigger, it creates a stateful email context
-- You can then use stateful actions like "Send Reply" that automatically:
-  - Reply to the original sender
-  - Keep the same subject line (with "Re:")
-  - Maintain the email thread
-  - Reference the original message context
+**How stateful actions work:**
+- **Choose your paths**: Select which execution paths you need - you can choose one or both
+- **Execute normally**: "After email sent" path continues your workflow immediately after sending
+- **Listen for events**: "After reply received" path adds listening capability to wake up your agent when replies arrive
+- **Maintain context**: When the agent wakes up from listening, it has full context of the original interaction
 
-Other examples include calendar event responses, Slack thread replies, and document editing.
+**Key example: Email Actions**
+- Send an email and choose your paths
+- "After email sent" → workflow continues normally  
+- "After reply received" → agent listens and wakes up when replies arrive with full thread context
+- You'll see linked actions available in your action selector for stateful operations
 
-### Multi-thread actions
+This enables reactive workflows where agents can handle both proactive tasks and responsive interactions seamlessly.
+
+### Multi-threaded actions
 <Frame>
   <img src="/lindy-brand-assets/actions_5.png" alt="Stateful actions workflow example" />
 </Frame>
-**Single-threaded vs Multi-threaded:**
-- **Single-threaded**: Each email reply creates a completely new workflow execution with no connection between different emails in the same conversation if you choose a different thread.
-- **Multi-threaded**: Multiple emails in the same conversation thread are handled as part of the same workflow context, maintaining conversation history across multiple back-and-forth exchanges
-This enables more sophisticated conversational flows where Lindy remembers the conversation context.
+Multi-threaded actions occur when you have multiple stateful actions running simultaneously, each maintaining their own conversation threads and contexts.
+
+**How multi-threading works:**
+- **Multiple conversations**: If you send two emails that are both stateful, you now have two separate listening threads
+- **Thread selection**: When responding, you must choose which specific conversation thread you're replying to
+- **Independent contexts**: Each thread maintains its own state and conversation history
+- **Parallel processing**: Multiple stateful actions can listen and respond independently
+
+**Example scenario:**
+- Send Email A to Customer 1 (stateful)
+- Send Email B to Customer 2 (stateful)  
+- Both customers reply
+- Agent wakes up twice with separate contexts
+- Each response is handled within its specific conversation thread
+
+This enables sophisticated multi-conversation management where a single agent can handle numerous ongoing interactions simultaneously.
 
 
 ## Action configuration

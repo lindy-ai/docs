@@ -2,6 +2,7 @@
 title: 'Talk with Other Lindy'
 icon: 'robot'
 sidebarTitle: 'Talk with Other Lindy'
+description: 'Enable Lindys to communicate and collaborate with each other using message triggers and actions for multi-agent workflows'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -17,3 +18,95 @@ sidebarTitle: 'Talk with Other Lindy'
     />
   </div>
 </div>
+
+## Overview
+
+Enable Lindys to interact and collaborate with each other through direct messaging. There are two key components for Lindy-to-Lindy communication:
+
+- `Agent Message Received` trigger listens for messages from other Lindys and determines how to handle them
+- `Send Message` action allows one Lindy to send messages to another Lindy with the appropriate trigger
+
+## Agent Message Receive Trigger
+
+- **What it does**: Triggers when another Lindy sends a message to this Lindy - perfect for building collaborative multi-agent workflows.
+
+<Frame>
+  <img src="/lindy-brand-assets/talk-with-lindy-received.png" alt="Agent Message Receive Trigger setup" />
+</Frame>
+
+### Inputs
+- **Follow-up Message Behavior**: Choose how to handle subsequent messages:
+  - **"Handle in same task"** - Process new messages within the same ongoing task
+  - **"Create new task"** - Start a fresh task for each new message
+  - **"Ignore"** - Only respond to the first message, ignore follow-ups
+
+<Note>
+This follow-up behavior works very similar to email and other stateful triggers.
+</Note>
+
+---
+
+## Send Message Action
+
+- **What it does**: Sends a message from this Lindy to another Lindy that has the Agent Message Receive trigger configured.
+
+<Frame>
+  <img src="/lindy-brand-assets/talk-with-lindy-send.png" alt="Send Message action configuration" />
+</Frame>
+
+### Inputs
+- **Target Lindy**: Choose which Lindy you're sending the message to
+- **Text**: The message content you want to pass to the receiving Lindy
+
+### Requirements
+- The target Lindy must have the "Agent Message Received" trigger configured
+- You can only send messages to Lindys that are set up to receive them
+
+<Tip>
+Send structured data and let the receiving Lindy know that structured data is coming in. The receiving Lindy won't include all the context it needs, so be explicit about what information you're passing along.
+</Tip>
+
+---
+
+## Use Cases
+
+| Scenario | How it works |
+|----------|-------------|
+| **Workflow Handoffs** | One Lindy completes initial processing, then hands off to a specialist Lindy |
+| **Task Distribution** | A coordinator Lindy distributes different types of work to specialized agents |
+| **Review Processes** | One Lindy drafts content, sends to another Lindy for review and approval |
+| **Multi-step Analysis** | Chain multiple Lindys together for complex, multi-stage analysis |
+| **Escalation Workflows** | Basic Lindy handles routine tasks, escalates complex cases to advanced Lindy |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Message Behavior Selection">
+    Choose the right follow-up behavior based on your workflow needs - use "handle and save task" for ongoing conversations, "create new task" for independent requests, and "ignore" for one-time handoffs.
+  </Accordion>
+  
+  <Accordion title="Clear Communication">
+    Structure messages clearly with context and specific instructions. Include relevant data and clear expectations for what the receiving Lindy should do.
+  </Accordion>
+  
+  <Accordion title="Workflow Design">
+    Design clear handoff points between Lindys. Avoid circular communication loops and establish clear ownership of different workflow stages.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Agent Settings" href="/building-agents/agent-basics/agent-settings" icon="robot">
+    Configure your Lindys for optimal communication
+  </Card>
+  <Card title="Creating Agents" href="/building-agents/agent-basics/creating-agents" icon="wand-magic-sparkles">
+    Build specialized Lindys for different workflow stages
+  </Card>
+  <Card title="Context Management" href="/skills/lindy-utilities/context" icon="list">
+    Share data effectively between communicating Lindys
+  </Card>
+  <Card title="Set Variables" href="/skills/lindy-utilities/set-variables" icon="memory">
+    Pass information between Lindys in workflows
+  </Card>
+</CardGroup>

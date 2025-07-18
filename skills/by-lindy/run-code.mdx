@@ -79,6 +79,9 @@ The results of your code action can be used in subsequent steps with three outpu
 - **text** - Any text printed during execution (stdout)
 - **stderr** - Standard error buffer for debugging
 
+<Tip>
+If you want to see what the example code output looks like within the test panel or task view, you can click into the code action and see the JSON for all the outputs, so you can use them appropriately.
+</Tip>
 
 ## Available Libraries
 
@@ -160,6 +163,28 @@ The results of your code action can be used in subsequent steps with three outpu
 
 ## Best Practices
 
+<AccordionGroup>
+  <Accordion title="Error Handling">
+    Use try-catch blocks to handle potential failures and return meaningful error messages
+  </Accordion>
+  
+  <Accordion title="Variable Validation">
+    Check variable types and values before processing to avoid runtime errors
+  </Accordion>
+  
+  <Accordion title="Efficient Code">
+    Optimize for performance, especially with large datasets to avoid timeouts
+  </Accordion>
+  
+  <Accordion title="Clear Returns">
+    Return structured data that's easy to use in subsequent workflow steps
+  </Accordion>
+  
+  <Accordion title="Documentation">
+    Comment your code for future maintenance and debugging
+  </Accordion>
+</AccordionGroup>
+
 <Tip>
 Always handle errors gracefully in your code. Use try-catch blocks and return meaningful error messages.
 </Tip>
@@ -167,12 +192,6 @@ Always handle errors gracefully in your code. Use try-catch blocks and return me
 <Warning>
 Code execution has timeouts. Keep your code efficient and avoid infinite loops or very long-running operations.
 </Warning>
-
-- **Error handling** - Use try-catch blocks to handle potential failures
-- **Variable validation** - Check variable types and values before processing
-- **Efficient code** - Optimize for performance, especially with large datasets
-- **Clear returns** - Return structured data that's easy to use in subsequent steps
-- **Documentation** - Comment your code for future maintenance
 
 ## Next Steps
 

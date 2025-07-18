@@ -4,11 +4,10 @@ icon: 'calendar-range'
 sidebarTitle: 'Google Calendar'
 ---
 
-
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Calendar.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +17,286 @@ sidebarTitle: 'Google Calendar'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Google Calendar integration is one of Lindy's most powerful features, enabling your AI agents to act as sophisticated scheduling assistants and calendar managers. The integration provides both Triggers (what can start a Lindy workflow) and  Actions (what Lindy can do).
+
+This comprehensive integration makes Lindy one of the most powerful calendar management AI assistants available, capable of handling everything from simple event creation to complex multi-party scheduling coordination and intelligent calendar optimization.
+
+Key benefits of Google Calendar integration:
+- **Intelligent scheduling** – Find optimal meeting times across multiple calendars
+- **Real-time automation** – Trigger workflows when events start, end, or change
+- **Multi-calendar support** – Work across personal, work, and shared calendars seamlessly
+- **Timezone intelligence** – Automatic timezone detection and conversion
+
+## How to set up Google Calendar
+
+<Steps>
+  <Step title="Add Google Calendar to your workflow">
+    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "Google Calendar"
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_1.png" alt="Add Google Calendar to workflow" />
+    </Frame>
+  </Step>
+  <Step title="Connect and Configure your Google Calendar">
+    Click on "Add Account" and authorize your Google Calendar for Lindy's integrations by granting permissions for calendar access and management. Choose which particular calendar you want this Lindy to access.
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_2.png" alt="Google Calendar connection" />
+    </Frame>
+  </Step>
+</Steps>
+
+
+## Google Calendar Triggers
+
+### Event Lifecycle Triggers
+
+#### Calendar Event Created
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_3.png" alt="Event Created trigger" />
+</Frame>
+Activates when new events are added to calendars:
+- Provides full event details, attendee information, timing
+- Perfect for welcome sequences for new meetings, automatic preparation workflows
+
+#### Calendar Event Updated
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_4.png" alt="Event Updated trigger" />
+</Frame>
+Triggers when existing events are modified:
+- Provides both old and new event details for comparison
+- Ideal for notification of changes, rescheduling workflows, attendee updates
+
+#### Calendar Event Started
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_5.png" alt="Event Started trigger" />
+</Frame>
+Triggers when events begin (at start time):
+- Activates precisely at either the event start time, or you can configure it to start before/after a specific time from the meeting
+- Ability to implement filters for the worklow based on the type of attendee
+- Perfect for meeting join automation, preparation reminders, status updates
+
+#### Calendar Event Ended
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_6.png" alt="Event Ended trigger" />
+</Frame>
+Activates when events conclude:
+- Triggers at event end time with completed event details
+- Ideal for follow-up actions, meeting summaries, next steps scheduling
+
+
+#### New Event Matching A Search 
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_7.png" alt="Event Search trigger" />
+</Frame>
+Triggers only for events matching specific criteria:
+- **Polling schedule configuration** - Set how often to check for new events (configurable interval in seconds)
+- **Query-based filtering** - Free text search terms to find events that match these terms in any field, except for extended properties
+- Perfect for targeted workflows, specific meeting types, filtered processing based on event content
+
+## Google Calendar Actions
+
+### Event Creation & Management
+
+#### Create Event
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="lindy-brand-assets/google_calendar_8.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Creates new Google Calendar events with full customization:
+- Complete event creation with title, description, date/time, location, attendees
+- Supports recurring events, timezone handling, custom notifications
+- Perfect for scheduling meetings, blocking time for tasks, creating reminders
+
+#### Add Quick Event (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/calendar_5.png" alt="Quick Event creation" />
+</Frame>
+Rapidly create events using natural language descriptions:
+- Parses natural language like "Meeting with John tomorrow at 2pm"
+- Faster than structured event creation for simple events
+- Ideal for quick event creation from emails, chat messages, or voice commands
+
+#### Update Event
+<Frame>
+  <img src="/lindy-brand-assets/calendar_6.png" alt="Update Event action" />
+</Frame>
+Modifies existing calendar events:
+- Change any event property (time, attendees, location, description)
+- Handles partial updates without affecting unchanged properties
+- Perfect for rescheduling meetings, updating attendee lists, changing locations
+
+### Availability & Scheduling Intelligence
+
+#### Check Availability
+<Frame>
+  <img src="/lindy-brand-assets/calendar_7.png" alt="Check Availability action" />
+</Frame>
+Verifies if users/attendees are free during specific time windows:
+- Multi-person availability checking with conflict detection
+- Returns detailed availability windows, considers multiple calendars
+- Essential for pre-meeting scheduling validation and avoiding double-booking
+
+#### Find Available Times
+<Frame>
+  <img src="/lindy-brand-assets/calendar_8.png" alt="Find Available Times action" />
+</Frame>
+Intelligently finds optimal meeting times with advanced capabilities:
+- Analyzes multiple calendars simultaneously
+- Considers user preferences (working hours, preferred days)
+- Accounts for meeting buffers and daily meeting limits
+- Handles timezone differences automatically
+
+### Example scheduling workflow
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/calendar_workflow.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+### Calendar Information Retrieval
+
+#### Get Event Details
+<Frame>
+  <img src="/lindy-brand-assets/calendar_9.png" alt="Get Event Details action" />
+</Frame>
+Retrieves comprehensive information about specific events:
+- Returns all event metadata (attendees, location, description, etc.)
+- Perfect for event information lookup, meeting preparation, status checking
+
+#### View Events
+<Frame>
+  <img src="/lindy-brand-assets/calendar_10.png" alt="View Events action" />
+</Frame>
+Lists events from calendars with optional filtering:
+- Search by date range, keywords, attendee, or other criteria
+- Supports complex search queries and date range filtering
+- Ideal for calendar overview, finding specific meetings, schedule analysis
+
+<Tip>
+  Use the "Find Available Times" action combined with "Check Availability" for the most intelligent scheduling workflows.
+</Tip>
+
+
+## Practical Implementation Scenarios
+
+### Executive Assistant Workflows
+<Frame>
+  <img src="/lindy-brand-assets/calendar_16.png" alt="Executive Assistant workflow" />
+</Frame>
+Transform Lindy into a sophisticated scheduling assistant:
+- Email-triggered scheduling: CC Lindy in emails to automatically find and propose meeting times
+- Multi-party coordination: Check availability across multiple attendees and calendars
+- Preference-aware scheduling: Respect working hours, meeting limits, and buffer times
+
+### Meeting Management Automation
+Automate your entire meeting lifecycle:
+- Pre-meeting preparation: Trigger workflows when events are created
+- Real-time meeting assistance: Join calls automatically when events start
+- Post-meeting follow-up: Schedule action items and next steps when events end
+
+### Calendar Intelligence & Analytics
+<Frame>
+  <img src="/lindy-brand-assets/calendar_17.png" alt="Calendar Analytics" />
+</Frame>
+Optimize your schedule with intelligent insights:
+- Schedule optimization: Analyze meeting patterns and suggest improvements
+- Availability management: Automatically block time for focused work
+- Conflict resolution: Detect and resolve scheduling conflicts proactively
+
+## Advanced Features & Capabilities
+
+### Multi-Calendar Support
+<Frame>
+  <img src="/lindy-brand-assets/calendar_18.png" alt="Multi-Calendar Support" />
+</Frame>
+Work seamlessly across multiple calendars:
+- Work across multiple Google Calendars simultaneously
+- Respect different calendar permissions and sharing settings
+- Handle personal, work, and shared calendars seamlessly
+
+### Timezone Intelligence
+Handle global scheduling with ease:
+- Automatic timezone detection and conversion
+- Multi-timezone meeting coordination
+- Daylight saving time handling
+
+### Natural Language Processing
+<Frame>
+  <img src="/lindy-brand-assets/calendar_19.png" alt="Natural Language Processing" />
+</Frame>
+Understand and process scheduling requests naturally:
+- Parse meeting requests from emails and messages
+- Understand context and intent for smart scheduling
+- Generate human-like responses for scheduling communications
+
+## Configuration Best Practices
+
+### For Scheduling Agents
+Optimize your scheduling workflows:
+- Configure working hours and preferred meeting times
+- Set appropriate meeting buffers and daily meeting limits
+- Define multiple calendars to check for conflicts
+- Customize response templates for different scenarios
+
+### For Event Monitoring
+<Frame>
+  <img src="/lindy-brand-assets/calendar_20.png" alt="Event Monitoring Best Practices" />
+</Frame>
+Set up robust event monitoring:
+- Use specific triggers rather than general ones when possible
+- Implement proper error handling for failed operations
+- Consider rate limits for high-volume calendar operations
+- Set up appropriate filtering to avoid unnecessary triggers
+
+### For Integration Workflows
+Create reliable calendar integrations:
+- Plan for timezone differences in global organizations
+- Implement proper attendee management and notification systems
+- Create fallback mechanisms for scheduling conflicts
+- Design workflows that respect calendar permissions and privacy
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Gmail Integration"
+    icon="envelope"
+    href="/integrations/popular/gmail"
+  >
+    Combine calendar with email automation
+  </Card>
+  <Card
+    title="Slack Integration"
+    icon="slack"
+    href="/integrations/popular/slack"
+  >
+    Connect calendar events to team communication
+  </Card>
+</CardGroup>
+
+<Note>
+  **Need help with calendar automation?**
+  
+  Check out our [meeting scheduler tutorial](/tutorials/beginner/meeting-scheduler) for step-by-step instructions on building calendar-based workflows.
+</Note>

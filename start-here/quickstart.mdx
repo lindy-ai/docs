@@ -19,34 +19,50 @@ icon: 'rocket'
 </div>
 
 <Note>
-  **Time to complete:** 5 minutes  
-  **Difficulty:** Beginner  
-  **What you'll build:** An AI email assistant that automatically responds to inquiries
+  Time to complete: 5 minutes  
+  Difficulty: Beginner  
+  What you'll build: An AI email assistant that automatically responds to inquiries
 </Note>
-
-## What is a Lindy?
-
-Lindy is a no-code platform that allows you to build your own AI agents to automate business workflows.
-
-Triggered by specific events, Lindy's AI agents connect your favorite apps and communicate with you through almost any platform to complete tasks.
-
-AI agents can respond to emails, schedule meetings, assist with sales, take meeting notes, handle data entry, and provide customer support, helping you automate entire business workflows.
 
 ## Building Your First Lindy
 
-Welcome to Lindy! 
-
 In this guide, you'll learn how to build your first AI email assistant. This will take less than five minutes, and after you're done, you'll have an email responder (because no one loves to answer emails themselves).
+
+You'll create an AI agent that:
+1. **Monitors your Gmail** for incoming emails
+2. **Filters emails intelligently** using conditions to identify business inquiries
+3. **Searches your knowledge base** (your website) for relevant information
+4. **Automatically responds** with helpful, accurate information
+5. **Keeps you in the loop** by BCC'ing you on all responses
+
+## Overview
+
+Here's exactly what we'll do:
+
+<Steps>
+  <Step title="Create agent & add trigger">
+    Create a new Lindy agent and add a Gmail trigger to monitor incoming emails
+  </Step>
+  <Step title="Add condition">
+    Add a condition to filter for business inquiries
+  </Step>
+  <Step title="Add knowledge base & actions">
+    Add your website as a knowledge base and configure Gmail actions for automated replies
+  </Step>
+  <Step title="Test & monitor">
+    Test your agent with a real email and monitor its performance
+  </Step>
+</Steps>
 
 Let's get started!
 
-## Step 1: Create a New Lindy
+## Step 1: Create a New Lindy & Add a Trigger
 
 Click the "New Lindy" button below Home in the top left of your workspace to begin building your AI agent.
 
 <Frame>
   <img 
-    src="/lindy-brand-assets/create_new_lindy.avif" 
+    src="/lindy-brand-assets/new-lindy-agent.png" 
     alt="Create a new Lindy" 
   />
 </Frame>
@@ -55,74 +71,61 @@ Click "Start from scratch" to create a new AI agent.
 
 <Frame>
   <img 
-    src="/lindy-brand-assets/start_from_scratch.avif" 
+    src="/lindy-brand-assets/start-from-scratch.png" 
     alt="Start from scratch option" 
   />
 </Frame>
 
-## Step 2: Add a Trigger
+Now let's add the trigger.
+Triggers wake up your AI agent when something happens, like getting a new email. [Learn more about triggers](/core-concepts/triggers).
 
-<Info>
-**What are triggers?**
-
-[Triggers](/core-concepts/triggers) are events that "wake up" an AI agent. Examples include time-based triggers (e.g., every weekday at 9 am) or event-based triggers (e.g., when you receive an email).
-
-A single AI agent can have multiple triggers, either managing different workflows, or acting as entry points into the same workflow.
-</Info>
-
-You can apply filters to your triggers to reduce costs and ensure all workflows are initiated by desired events. [Learn more about using Filters](/core-concepts/conditions).
+<Tip>
+Use filters to make your triggers more specific and reduce costs. [Learn about cost optimization](https://docs.lindy.ai/account-billing/credit-optimizations).
+</Tip>
 
 ### Setting up the Email Trigger
 
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/select-gmail-trigger.mp4" 
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+**Steps:**
 1. Click **"Select Trigger"**
 2. Click **Gmail** 
 3. Add the **Email Received** trigger
+4. Connect the Gmail account you want your AI agent to monitor
 
-<Frame>
-  <img 
-    src="/lindy-brand-assets/select_trigger.avif" 
-    alt="Select trigger interface" 
-  />
-</Frame>
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/gmail_select_trigger.avif" 
-    alt="Gmail trigger selection" 
-  />
-</Frame>
-
-Connect the Gmail account you want your AI agent to monitor.
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/connect_gmail.avif" 
-    alt="Connect Gmail account" 
-  />
-</Frame>
-
-## Step 3: Add a Condition
+## Step 2: Add a Condition
 
 <Info>
-**What are conditions?**
-
+What are conditions?
 [Conditions](/core-concepts/conditions) let you define different paths in your automation based on specific criteria. They help your AI agent make smart decisions about which emails to respond to.
 </Info>
 
 Now that your AI agent wakes up with every email, let's set a condition to define which emails deserve a response.
 
-Click the "Condition" step under "Perform an action" and "Search knowledge base."
+Click the `Condition` step under `Perform an action` and `Search knowledge base.`
 
 <Frame>
   <img 
-    src="/lindy-brand-assets/conditions.avif" 
+    src="/lindy-brand-assets/add-condition.png" 
     alt="Add condition step" 
   />
 </Frame>
 
 ### Configure Your Condition
 
-Lindy will only proceed to the next step if the condition is met. Each condition begins with "Go down this path if..."
+Lindy will only proceed to the next step if the condition is met. Each condition begins with `Go down this path if...`
 
 Set your condition prompt to:
 
@@ -134,55 +137,44 @@ With this prompt, your AI agent will only continue if it receives relevant busin
 
 <Frame>
   <img 
-    src="/lindy-brand-assets/conditions_prompt.avif" 
+    src="/lindy-brand-assets/configure-condition.png" 
     alt="Condition prompt configuration" 
   />
 </Frame>
 
-## Step 4: Add a Knowledge Base
+## Step 4: Add a Knowledge Base & Actions
 
 <Info>
-**What is a knowledge base?**
-
-The [knowledge base](/core-concepts/knowledge-base) is a repository of data from which your AI agent retrieves information. AI agents search through knowledge bases semantically, finding results whose meaning is similar, even if the exact text doesn't match.
+The [Knowledge Base](/core-concepts/knowledge-base) is a repository of data from which your AI agent retrieves information. AI agents search through knowledge bases semantically, finding results whose meaning is similar, even if the exact text doesn't match.
 
 For example, searching for "refunds" will also find entries related to "returns."
 </Info>
 
 Now we'll give your AI agent knowledge about your business so it knows how to respond accurately.
 
-Click "Add step" and select "Search knowledge base."
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/add-kb.mp4" 
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
-<Frame>
-  <img 
-    src="/lindy-brand-assets/knowledge_base.avif" 
-    alt="Add knowledge base step" 
-  />
-</Frame>
+1. Click "Add step" and select "Search knowledge base"
+2. Click "Website" 
+3. Enter your company website URL and click "Crawl"
 
-Click "Website" to add your company website as a knowledge source.
+Your agent will now have access to all your website content to answer questions accurately.
 
-<Frame>
-  <img 
-    src="/lindy-brand-assets/select_knowledge_base.png" 
-    alt="Select knowledge base type" 
-  />
-</Frame>
-
-Insert your personal or company website URL and click "crawl" to index all pages linked from your site. You'll have the option to remove specific pages later if needed.
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/website_add_to_knowledge_base.avif" 
-    alt="Add website to knowledge base" 
-  />
-</Frame>
-
-## Step 5: Add an Action
+### Add an Action
 
 <Info>
-**What are actions?**
-
 [Actions](/core-concepts/actions) are tasks your AI agent performs, such as replying to emails, updating a HubSpot CRM, or creating a Notion page.
 </Info>
 
@@ -192,28 +184,27 @@ Click "Add step" (the blue plus sign beneath the Knowledge Base) and select "Per
 
 <Frame>
   <img 
-    src="/lindy-brand-assets/perform_action.avif" 
+    src="/lindy-brand-assets/perform-action.png" 
     alt="Add action step" 
   />
 </Frame>
 
-Click the Gmail action in the "Recommended" section to ensure your AI agent responds in the same email thread.
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/add_gmail_action.avif" 
-    alt="Select Gmail action" 
-  />
-</Frame>
-
+Click the Gmail action in the ´Linked Actions´ section to ensure your AI agent responds in the same email thread.
 Select "Gmail Send Reply" to configure your response action.
 
-<Frame>
-  <img 
-    src="/lindy-brand-assets/gmail_send_reply.avif" 
-    alt="Gmail send reply action" 
-  />
-</Frame>
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/send-reply.mp4" 
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
 ### Configure Your Response
 
@@ -233,36 +224,22 @@ The "Reply To" field defaults to "All," ensuring your AI agent responds to the s
 
 <Frame>
   <img 
-    src="/lindy-brand-assets/gmail_send_reply_prompt_usage.avif" 
+    src="/lindy-brand-assets/email-prompt.png" 
     alt="Gmail reply configuration" 
   />
 </Frame>
 
 <Tip>
-**Pro tip:** BCC yourself on responses to monitor your AI agent's performance.
+Pro tip: BCC yourself on responses to monitor your AI agent's performance.
 
 Set the BCC field to "Set Manually" and enter your email address. This gives you visibility into all responses without cluttering the recipient's inbox.
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/bcc_email_for_agent_responses.avif" 
-    alt="BCC configuration" 
-  />
-</Frame>
 </Tip>
 
 ## Step 6: Test Your Agent
 
 Time to see your AI agent in action!
 
-1. Click the "Save" button to save your workflow
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/save_flow_email.avif" 
-    alt="Save your workflow" 
-  />
-</Frame>
+1. Click the `Save` button to save your workflow
 
 2. Send yourself a test email from a different address (personal email works great) with a question about your business
 
@@ -270,7 +247,7 @@ Time to see your AI agent in action!
 
 <Frame>
   <img 
-    src="/lindy-brand-assets/test_flow_email.avif" 
+    src="/lindy-brand-assets/test-gmail.png" 
     alt="Test mode interface" 
   />
 </Frame>
@@ -279,30 +256,34 @@ Time to see your AI agent in action!
 
 <Frame>
   <img 
-    src="/lindy-brand-assets/condition_path_agent_takes_email.avif" 
+    src="/lindy-brand-assets/test-gmail-result.png" 
     alt="Test results showing condition path" 
   />
 </Frame>
 
-## Step 7: Name and Monitor Your Agent
+<Note>
+Remember: Your agent improves over time! Review its responses regularly and adjust the prompt to better match your communication style.
+</Note>
+
+## Bonus Step: Name and Monitor Your Agent
 
 Give your AI agent a memorable name that reflects its purpose.
 
-<Frame>
-  <img 
-    src="/lindy-brand-assets/rename_your_lindy_email.avif" 
-    alt="Rename your agent" 
-  />
-</Frame>
-
 Once enabled, click "Tasks" to view your AI agent's activity history and monitor its performance.
 
-<Frame>
-  <img 
-    src="/lindy-brand-assets/view_task_history_email.avif" 
-    alt="View task history" 
-  />
-</Frame>
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/rename-tasks.mp4" 
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
 ## Congratulations!
 
@@ -360,6 +341,4 @@ Your email assistant is just the beginning. Lindy's AI agents can triage emails,
   </Card>
 </CardGroup>
 
-<Note>
-**Remember:** Your agent improves over time! Review its responses regularly and adjust the prompt to better match your communication style [[memory:2619471]].
-</Note>
+

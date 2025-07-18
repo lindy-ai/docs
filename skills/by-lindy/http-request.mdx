@@ -5,20 +5,6 @@ sidebarTitle: 'HTTP Request'
 description: 'Execute custom API calls and webhooks directly from your Lindy workflows'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/http-request-demo.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
 ## Overview
 
 The HTTP Request action enables your Lindy agents to interact with any API or webhook endpoint. Whether you're fetching data, updating records, or triggering external workflows, HTTP Request provides complete control over your API interactions.
@@ -38,20 +24,6 @@ Find HTTP Request in two places:
 - **By Lindy** → **All By Lindy** section
 
 ## Configuration Fields
-
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/lindy-http-fields-video.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 ### URL (Required)
 The complete endpoint URL for your API call.
@@ -239,23 +211,20 @@ Use these in subsequent steps to:
 
 ## Best Practices
 
-<CardGroup cols={2}>
-  <Card title="Use Variables" icon="brackets-curly">
-    Reference data from previous steps using `{{variable_name}}` syntax
-  </Card>
+<AccordionGroup>
+  <Accordion title="Use Variables">
+    Reference data from previous steps using `{{variable_name}}` syntax to create dynamic, data-driven API calls
+  </Accordion>
   
-  <Card title="Test First" icon="flask">
-    Use webhook.site or similar tools to test your requests before going live
-  </Card>
+  <Accordion title="Test First">
+    Use postman or similar tools to test your requests before going live to avoid issues in production
+  </Accordion>
   
-  <Card title="Handle Errors" icon="shield-exclamation">
-    Always add error handling conditions after API calls
-  </Card>
+  <Accordion title="Handle Errors">
+    Always add error handling conditions after API calls to gracefully manage failures and unexpected responses
+  </Accordion>
   
-  <Card title="Secure Secrets" icon="key">
-    Store API keys in Lindy's secure credential manager, not in plain text
-  </Card>
-</CardGroup>
+</AccordionGroup>
 
 ## Next Steps
 
