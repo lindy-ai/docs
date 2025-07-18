@@ -4,11 +4,10 @@ icon: 'cloud'
 sidebarTitle: 'Salesforce'
 ---
 
-
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/google_calendar_0.mp4"
       width="600"
       autoPlay
       muted
@@ -18,3 +17,570 @@ sidebarTitle: 'Salesforce'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Salesforce integration is one of Lindy's most powerful CRM capabilities, enabling your AI agents to act as sophisticated sales, marketing, and customer success assistants. The integration provides both Triggers (what can start a Lindy workflow) and Actions (what Lindy can do).
+
+This comprehensive integration transforms Lindy into a powerful CRM automation platform, capable of handling everything from lead qualification and deal pipeline management to customer service and marketing attribution.
+
+Key benefits of Salesforce integration:
+- **Comprehensive CRM management** – 24 actions for complete sales and marketing control
+- **Real-time CRM monitoring** – 8 triggers for instant workflow activation
+- **Advanced data operations** – SOQL queries, SOSL search, and complex data processing
+- **Enterprise-grade automation** – Scalable workflows for revenue operations
+
+## How to set up Salesforce
+
+<Steps>
+  <Step title="Add Salesforce to your workflow">
+    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "Salesforce"
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_1.png" alt="Add Salesforce to workflow" />
+    </Frame>
+  </Step>
+  <Step title="Connect and Configure your Salesforce">
+    Click on "Add Account" and authorize your Salesforce for Lindy's integrations by granting permissions for CRM access and management. Choose which objects and fields you want this Lindy to access.
+    <Frame>
+      <img src="/lindy-brand-assets/salesforce_setup.png" alt="Salesforce connection" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Salesforce Triggers
+
+#### New Deleted Record
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_3.png" alt="New Deleted Record trigger" />
+</Frame>
+Triggers when a record is deleted in Salesforce:
+- **Data cleanup workflows** - Automatically clean up related records in other systems
+- **Audit trail creation** - Log deleted records in external audit systems for compliance
+- **Notification systems** - Alert team members when critical records are deleted
+- Perfect for data maintenance, compliance tracking, integration synchronization
+
+#### New Outbound Message
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_4.png" alt="New Outbound Message trigger" />
+</Frame>
+Receive outbound messages from Salesforce when specific events occur:
+- **Real-time event processing** - React immediately to Salesforce workflow rules
+- **Custom integration triggers** - Handle complex business logic requiring immediate updates
+- **Compliance workflows** - Trigger compliance checks when specific changes occur
+- Ideal for advanced automation, complex business rules, real-time processing
+
+#### New Salesforce Contact
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_5.png" alt="New Contact trigger" />
+</Frame>
+Triggers when a new contact is created in Salesforce:
+- **Welcome sequences** - Automatically enroll new contacts in onboarding sequences
+- **Lead scoring** - Calculate initial scores and route to appropriate sales reps
+- **Data enrichment** - Enhance contact records with external data sources
+- Perfect for contact onboarding, lead qualification, multi-system synchronization
+
+#### New Salesforce Lead
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_6.png" alt="New Lead trigger" />
+</Frame>
+Triggers when a new lead is created in Salesforce:
+- **Lead qualification** - Automatically score and qualify new leads
+- **Assignment automation** - Route leads to appropriate sales reps
+- **Immediate follow-up** - Send personalized welcome emails or schedule tasks
+- Essential for lead processing, territory management, marketing attribution
+
+#### New Salesforce Record
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_7.png" alt="New Record trigger" />
+</Frame>
+Triggers when a new selected record is created in Salesforce:
+- **Universal record processing** - Handle creation of any Salesforce object type
+- **Cross-object workflows** - Trigger actions when related records are created
+- **Flexible automation** - Create workflows that adapt to different record types
+- Great for comprehensive auditing, dynamic routing, universal automation
+
+#### Updated Salesforce Contact
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_8.png" alt="Updated Contact trigger" />
+</Frame>
+Triggers when a contact is updated in Salesforce:
+- **Lifecycle management** - Move contacts through different marketing stages
+- **Data synchronization** - Keep contact information consistent across systems
+- **Behavioral triggers** - React to field changes indicating buying intent
+- Perfect for contact lifecycle management, data hygiene, relationship mapping
+
+#### Updated Salesforce Lead
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_9.png" alt="Updated Lead trigger" />
+</Frame>
+Triggers when a lead is updated in Salesforce:
+- **Lead progression tracking** - Monitor lead movement through qualification stages
+- **Score-based actions** - Trigger different actions based on score changes
+- **Status change management** - Handle lead status changes and assignments
+- Ideal for lead progression, scoring automation, engagement tracking
+
+#### Updated Salesforce Record
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_10.png" alt="Updated Record trigger" />
+</Frame>
+Triggers when a selected record is updated in Salesforce:
+- **Universal change management** - React to updates across any Salesforce object
+- **Approval workflows** - Trigger approval processes when fields are updated
+- **Escalation management** - Escalate records when conditions are met
+- Essential for change tracking, integration sync, audit and compliance
+
+<Tip>
+  Use "New Salesforce Record" and "Updated Salesforce Record" triggers for the most flexible and comprehensive automation workflows.
+</Tip>
+
+## Salesforce Actions
+
+#### Add a Contact to a Campaign
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_8.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Add an existing contact to an existing campaign:
+- **Multi-touch campaigns** - Add contacts to nurture campaigns based on behavior
+- **Event marketing** - Add attendees to post-event follow-up campaigns
+- **Segmentation** - Add contacts to targeted campaigns based on demographics
+- Perfect for lead nurturing, event follow-up, re-engagement campaigns
+
+#### Add a Lead to a Campaign
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_9.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Add an existing lead to an existing campaign:
+- **Lead nurturing** - Enroll new leads in appropriate nurture sequences
+- **Source tracking** - Add leads to campaigns based on acquisition source
+- **Qualification workflows** - Move leads through qualification campaigns
+- Ideal for lead management, source attribution, industry-specific campaigns
+
+#### Convert Soap XML Object to JSON
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_11.png" alt="Convert XML to JSON action" />
+</Frame>
+Convert Salesforce SOAP XML data to JSON format:
+- **API integration** - Convert data for consumption by modern REST APIs
+- **Data transformation** - Prepare data for external analytics platforms
+- **Legacy system integration** - Bridge Salesforce with older systems
+- Essential for modern integrations, data transformation, custom reporting
+
+#### Create a Contact
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_10.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Create a new contact in Salesforce:
+- **Lead conversion** - Create contacts from qualified leads
+- **Data import** - Bulk create contacts from external data sources
+- **Event registration** - Create contacts from event registration systems
+- Perfect for lead conversion, data import, partner integration
+
+#### Create a Lead
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_11.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Create a new lead in Salesforce:
+- **Multi-channel lead capture** - Create leads from various sources
+- **Lead import** - Bulk import leads from external systems
+- **Referral processing** - Create leads from referral programs
+- Essential for lead capture, marketing integration, referral management
+
+#### Create Attachment
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_12.png" alt="Create Attachment action" />
+</Frame>
+Create and attach files to Salesforce records:
+- **Document management** - Attach contracts, proposals, and agreements
+- **Compliance documentation** - Attach required compliance documents
+- **Communication records** - Attach email threads and call recordings
+- Perfect for document management, compliance, communication tracking
+
+#### Create Case Comment
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_13.png" alt="Create Case Comment action" />
+</Frame>
+Add a comment to an existing Salesforce case:
+- **Customer communication** - Log customer interactions and responses
+- **Internal collaboration** - Add internal notes for team collaboration
+- **Escalation documentation** - Document escalation reasons and actions
+- Essential for case management, team collaboration, resolution tracking
+
+#### Create Content Note
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_14.png" alt="Create Content Note action" />
+</Frame>
+Create and manage content notes with customizable permissions:
+- **Meeting notes** - Create detailed meeting notes linked to records
+- **Project documentation** - Document project progress and milestones
+- **Knowledge sharing** - Create searchable content for team knowledge
+- Perfect for meeting documentation, project tracking, knowledge management
+
+#### Create Note
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_15.png" alt="Create Note action" />
+</Frame>
+Create a new note and associate it with a Salesforce record:
+- **Call logging** - Document phone conversations and outcomes
+- **Meeting minutes** - Record meeting discussions and action items
+- **Research notes** - Document prospect research and insights
+- Ideal for activity logging, meeting documentation, follow-up tracking
+
+#### Delete Opportunity
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_16.png" alt="Delete Opportunity action" />
+</Frame>
+Delete a Salesforce opportunity record using its ID:
+- **Data cleanup** - Remove duplicate or invalid opportunities
+- **Pipeline management** - Clean up stale opportunities
+- **Compliance** - Remove opportunities violating data retention policies
+- Essential for data maintenance, pipeline hygiene, compliance management
+
+#### Delete Record
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_17.png" alt="Delete Record action" />
+</Frame>
+Delete a record from Salesforce by specifying object type and ID:
+- **Bulk data cleanup** - Remove outdated or duplicate records
+- **Compliance management** - Delete records for data retention compliance
+- **Process optimization** - Remove records no longer meeting criteria
+- Perfect for data cleanup, compliance, integration maintenance
+
+#### Find Records
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_18.png" alt="Find Records action" />
+</Frame>
+Find and retrieve Salesforce records based on object type and fields:
+- **Duplicate detection** - Find potential duplicates before creating new ones
+- **Data validation** - Verify record existence before performing operations
+- **Relationship mapping** - Find related records across different objects
+- Essential for data quality, validation, relationship management
+
+#### Get All Accounts
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_19.png" alt="Get All Accounts action" />
+</Frame>
+Retrieve all accounts from Salesforce:
+- **Account analysis** - Get all accounts for comprehensive analysis
+- **Territory planning** - Get account lists for territory assignment
+- **Marketing campaigns** - Retrieve accounts for targeted marketing
+- Perfect for account management, territory planning, data export
+
+#### Get All Contacts
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_20.png" alt="Get All Contacts action" />
+</Frame>
+Retrieve all contacts from Salesforce:
+- **Contact management** - Get all contacts for database management
+- **Marketing lists** - Get contact lists for email marketing campaigns
+- **Data synchronization** - Sync contacts with external platforms
+- Essential for contact management, marketing, compliance audits
+
+#### Get an Account
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_16.png" alt="Get Account action" />
+</Frame>
+Retrieve a specific account from Salesforce:
+- **Account lookup** - Get specific account details for processing
+- **Data enrichment** - Get account information to enrich other records
+- **Relationship analysis** - Analyze account relationships and hierarchies
+- Perfect for account lookup, data enrichment, custom workflows
+
+#### Insert Blob Data
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_17.png" alt="Insert Blob Data action" />
+</Frame>
+Insert binary data and attachments with Salesforce objects:
+- **Document storage** - Store contracts, images, and other binary files
+- **Media management** - Attach photos, videos, and audio files
+- **Backup systems** - Store backup copies of important documents
+- Essential for document storage, media management, backup systems
+
+#### Post a Message to Chatter Feed
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_18.png" alt="Post to Chatter action" />
+</Frame>
+Post messages to Salesforce Chatter feeds for specific records:
+- **Team collaboration** - Share updates and insights with team members
+- **Process notifications** - Notify teams about important milestones
+- **Customer updates** - Share customer interaction updates
+- Perfect for team collaboration, process notifications, project communication
+
+#### Search for a Contact
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_19.png" alt="Search Contact action" />
+</Frame>
+Search for a specific contact in Salesforce:
+- **Contact lookup** - Find contacts before creating or updating records
+- **Duplicate prevention** - Check for existing contacts before import
+- **Relationship mapping** - Find contacts related to specific records
+- Essential for contact lookup, duplicate prevention, data validation
+
+#### Search for an Opportunity
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_20.png" alt="Search Opportunity action" />
+</Frame>
+Search for a specific opportunity in Salesforce:
+- **Pipeline analysis** - Find opportunities meeting specific criteria
+- **Forecasting** - Retrieve opportunities for forecast calculations
+- **Performance tracking** - Find opportunities for performance analysis
+- Perfect for pipeline analysis, forecasting, performance tracking
+
+#### Search Object Records
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_16.png" alt="Search Object Records action" />
+</Frame>
+Search Salesforce records across specified object types:
+- **Universal search** - Search across multiple object types simultaneously
+- **Data discovery** - Find records containing specific information
+- **Relationship analysis** - Discover connections between record types
+- Essential for universal search, data discovery, comprehensive reporting
+
+#### SOQL Query
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_17.png" alt="SOQL Query action" />
+</Frame>
+Execute custom SOQL queries against your Salesforce data:
+- **Complex reporting** - Create sophisticated reports with custom logic
+- **Data analysis** - Perform advanced data analysis with custom queries
+- **Integration logic** - Retrieve specific data sets for external integration
+- Perfect for complex reporting, data analysis, performance optimization
+
+#### SOSL Search
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_18.png" alt="SOSL Search action" />
+</Frame>
+Search Salesforce records using SOSL query syntax:
+- **Full-text search** - Search across multiple fields and objects
+- **Fuzzy matching** - Find records with similar but not exact matches
+- **Content discovery** - Search within text fields, documents, and attachments
+- Essential for full-text search, fuzzy matching, advanced filtering
+
+#### Update a Contact
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_12.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Update an existing contact in Salesforce:
+- **Data maintenance** - Keep contact information current and accurate
+- **Lifecycle management** - Update contact stages and statuses
+- **Preference management** - Update communication preferences
+- Perfect for data maintenance, lifecycle management, enrichment updates
+
+#### Update a Lead
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_13.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Update an existing lead in Salesforce:
+- **Lead scoring** - Update lead scores based on behavior and engagement
+- **Status management** - Change lead status as they progress through qualification
+- **Assignment updates** - Reassign leads to different sales representatives
+- Essential for lead scoring, status management, data enrichment
+
+## Example CRM workflow
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_12.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+## Practical Implementation Scenarios
+
+<AccordionGroup>
+  <Accordion title="Revenue Operations Automation">
+    Transform Lindy into a comprehensive revenue operations platform:
+    - Lead-to-cash automation: New lead → Score and qualify → Create opportunity → Update forecasts
+    - Customer success workflows: Account update → Analyze health score → Trigger renewal processes
+    - Sales performance tracking: Opportunity updates → Calculate rep performance → Update dashboards
+  </Accordion>
+  
+  <Accordion title="Customer Experience Orchestration">
+    Create seamless customer experiences across touchpoints:
+    - Onboarding automation: New customer → Create success plan → Schedule check-ins → Track milestones
+    - Support escalation: Case creation → Route by priority → Escalate if needed → Update customer
+    - Renewal management: Account analysis → Predict renewal risk → Trigger retention campaigns
+  </Accordion>
+  
+  <Accordion title="Marketing and Sales Alignment">
+    Bridge marketing and sales activities through automated workflows:
+    - Lead handoff: Marketing qualified lead → Sales notification → Automatic assignment → Follow-up tracking
+    - Campaign attribution: Opportunity creation → Track campaign influence → Update attribution models
+    - Content personalization: Contact updates → Analyze preferences → Personalize content → Track engagement
+  </Accordion>
+</AccordionGroup>
+
+## Advanced Features & Capabilities
+
+<AccordionGroup>
+  <Accordion title="Advanced Data Operations">
+    Powerful data processing and analysis capabilities:
+    - **SOQL Queries** - Execute complex database queries for custom reporting
+    - **SOSL Search** - Full-text search across multiple objects and fields
+    - **Data Transformation** - Convert between XML and JSON formats
+    - **Bulk Operations** - Handle high-volume data processing efficiently
+  </Accordion>
+  
+  <Accordion title="Enterprise Integration">
+    Seamless integration with enterprise systems and workflows:
+    - **Multi-object Workflows** - Work across contacts, leads, opportunities, and custom objects
+    - **Approval Processes** - Automate approval workflows and escalations
+    - **Compliance Management** - Maintain audit trails and compliance documentation
+    - **Security Controls** - Respect Salesforce permissions and security models
+  </Accordion>
+  
+  <Accordion title="Real-time Automation">
+    Instant response to Salesforce events and changes:
+    - **Event-driven Triggers** - React immediately to record changes and deletions
+    - **Outbound Messages** - Handle complex business logic with custom triggers
+    - **Cross-system Sync** - Keep external systems synchronized with Salesforce
+    - **Intelligent Routing** - Route records and tasks based on business rules
+  </Accordion>
+</AccordionGroup>
+
+## Configuration Best Practices
+
+<AccordionGroup>
+  <Accordion title="For Sales Automation">
+    Optimize your sales process workflows:
+    - Use "New Salesforce Lead" triggers for immediate lead processing
+    - Implement lead scoring with "Updated Salesforce Lead" triggers
+    - Set up automated follow-up sequences with campaign actions
+    - Create deal progression notifications with opportunity triggers
+    - Use SOQL queries for complex data analysis and reporting
+  </Accordion>
+  
+  <Accordion title="For Marketing Automation">
+    Set up powerful marketing workflows:
+    - Use form submission triggers for immediate lead response
+    - Implement email engagement tracking with contact updates
+    - Set up campaign-based segmentation and nurturing
+    - Create lifecycle stage progression workflows
+    - Use bulk operations for high-volume data processing
+  </Accordion>
+  
+  <Accordion title="For Customer Service">
+    Create efficient support workflows:
+    - Use case triggers for automated routing and escalation
+    - Implement SLA monitoring with time-based automation
+    - Set up customer satisfaction workflows and surveys
+    - Create internal notification systems for critical issues
+    - Use Chatter integration for team collaboration
+  </Accordion>
+</AccordionGroup>
+
+## Limitations & Considerations
+
+<AccordionGroup>
+  <Accordion title="API Limitations">
+    - **Rate Limits**: Salesforce API has rate limits for high-volume operations
+    - **Query Limits**: SOQL and SOSL queries have execution time and record limits
+    - **Bulk Operations**: Large data operations require special handling
+    - **Real-time Processing**: Some operations may have slight delays
+  </Accordion>
+  
+  <Accordion title="Security & Permissions">
+    - **Access Control**: Lindy respects Salesforce user permissions and field-level security
+    - **Data Encryption**: All data transfers use encrypted connections
+    - **Audit Logging**: Maintain comprehensive logs of all automated activities
+    - **Permission Auditing**: Regularly review access permissions and security settings
+  </Accordion>
+  
+  <Accordion title="Premium Feature Requirements">
+    - Many advanced triggers require Premium subscription
+    - Advanced query operations (SOQL/SOSL) are Premium-only
+    - Bulk operations and data transformation require Premium
+    - Complex filtering and search options may be Premium features
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="HubSpot Integration"
+    icon="users-rectangle"
+    href="/skills/popular-integrations/hubspot"
+  >
+    Compare CRM automation capabilities
+  </Card>
+  <Card
+    title="Gmail Integration"
+    icon="envelope"
+    href="/skills/popular-integrations/gmail"
+  >
+    Combine CRM with email automation
+  </Card>
+</CardGroup>
+
