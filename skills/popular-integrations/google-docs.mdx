@@ -7,7 +7,7 @@ sidebarTitle: 'Google Docs'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/google_docs_0.mp4"
       width="600"
       autoPlay
       muted
@@ -17,3 +17,320 @@ sidebarTitle: 'Google Docs'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Google Docs integration with Lindy enables your AI agents to become sophisticated document management assistants. The integration provides both Triggers (what can start a Lindy workflow) and Actions (what Lindy can do), making it perfect for automating document creation, editing, approval workflows, and content management.
+
+This comprehensive integration transforms Lindy into a powerful document automation platform, capable of handling everything from simple document creation to complex template merging and dynamic content management.
+
+Key benefits of Google Docs integration:
+- **Automated document creation** – Generate docs from templates with dynamic data
+- **Real-time content management** – Update and edit documents automatically
+- **AI-driven editing** – Intelligent text processing and formatting
+- **Approval workflows** – Streamlined document review and approval processes
+
+## How to set up Google Docs
+
+<Steps>
+  <Step title="Add Google Docs to your workflow">
+    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "Google Docs"
+    <Frame>
+      <img src="/lindy-brand-assets/google_docs_1.png" alt="Add Google Docs to workflow" />
+    </Frame>
+  </Step>
+  <Step title="Connect and Configure your Google Docs">
+    Click on "Add Account" and authorize your Google Docs for Lindy's integrations by granting permissions for Drive and Docs access. Choose which folders you want this Lindy to access.
+    <Frame>
+      <img src="/lindy-brand-assets/google_docs_2.png" alt="Google Docs connection" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Google Docs Triggers
+
+#### New Document Created (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_docs_3.png" alt="Document Created trigger" />
+</Frame>
+Fires the moment a brand-new Google Doc appears in a chosen folder:
+- **Folder filtering** - Optionally select specific folder, defaults to watching entire Drive
+- **Dynamic payload** - Provides title, url, documentId, createdTime, creatorEmail, parentFolders
+- Perfect for auto-formatting new docs, posting Slack notifications, kickoff approval workflows
+
+#### New or Updated Document (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_docs_4.png" alt="Document Updated trigger" />
+</Frame>
+Fires on both creations and any subsequent modifications:
+- **Real-time monitoring** - Detects text edits, images, style changes, etc.
+- **Enhanced payload** - Includes lastModifiedTime, lastModifyingUser information
+- Ideal for change-log summaries, content sync to CMS, maintaining documentation repos
+
+<Tip>
+  Google push notifications are near-real-time (5-15 seconds). For large organizations, segment by folder to avoid hitting daily push quotas.
+</Tip>
+
+## Google Docs Actions
+
+### Document Creation & Management
+
+#### Create Document
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_docs_5.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Creates new Google Docs with customizable settings:
+- Complete document creation with title and folder selection
+- Returns documentId, url for downstream actions
+- Perfect for generating weekly report shells, customer proposal skeletons
+
+#### Create Document from Template
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_docs_6.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Rapidly create documents using template merge:
+- Pick any Google Doc as template with `{{mergeField}}` placeholders
+- Auto-generates input fields for each detected placeholder
+- Ideal for contracts, offer letters, invoices, personalized onboarding guides
+
+#### Create PDF
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_docs_7.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Converts documents to PDF format:
+- Source document selection with destination folder
+- Returns Drive-hosted PDF link and file ID
+- Perfect for auto-emailing signed PDFs, uploading to e-signature tools
+
+### Document Content Management
+
+#### Get Document
+<Frame>
+  <img src="/lindy-brand-assets/google_docs_8.png" alt="Get Document action" />
+</Frame>
+Retrieves comprehensive document information:
+- Fuzzy search by ID, Name, or URL
+- Returns full plain-text body plus metadata
+- Essential for feeding content into AI summarizers, content comparison
+
+#### Update Document
+<Frame>
+  <img src="/lindy-brand-assets/google_docs_9.png" alt="Update Document action" />
+</Frame>
+Modifies existing document content:
+- Multiple modes: append, prepend, replace
+- Supports markdown, plain text, or HTML-like content
+- Perfect for appending meeting minutes, adding notices, content revisions
+
+#### Append Text (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_docs_10.png" alt="Append Text action" />
+</Frame>
+Lightweight content addition optimized for speed:
+- Choose start or end of document placement
+- Optimized for streaming from AI-generated content
+- Ideal for progressive content building
+
+### Advanced Content Operations
+
+#### Replace Text (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_docs_11.png" alt="Replace Text action" />
+</Frame>
+Powerful text search and replacement:
+- Regex support for complex pattern matching
+- Match case sensitivity and replace all options
+- Perfect for bulk redaction, brand-name swaps, token replacement
+
+#### Append Image (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_docs_12.png" alt="Append Image action" />
+</Frame>
+Add images to documents automatically:
+- Image URL input with position control (start/end)
+- Proxy fetch and embed for external images
+- Great for automated report generation with charts/diagrams
+
+#### Find Document (Premium)
+<Frame>
+  <img src="/lindy-brand-assets/google_docs_13.png" alt="Find Document action" />
+</Frame>
+Search and locate documents intelligently:
+- Name-based search with folder scoping
+- Returns array of matches with IDs, titles, links
+- Essential for version control, avoiding duplicates, routing workflows
+
+## Example document workflow
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_docs_14.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+## Practical Implementation Scenarios
+
+<AccordionGroup>
+  <Accordion title="Instant Meeting Minutes Automation">
+    Transform meeting recordings into structured documents:
+    - Calendar Event Ended trigger activates workflow
+    - AI generates meeting summary and action items
+    - Create Document with structured format
+    - Share link automatically via Slack or email
+  </Accordion>
+  
+  <Accordion title="Contract Generation Pipeline">
+    Streamline legal document creation:
+    - Email trigger detects contract requests
+    - Parse variables (Company, Fee, Terms) from email
+    - Create Document from Template with merged data
+    - Generate PDF and send to requester automatically
+  </Accordion>
+  
+  <Accordion title="Living SOP Library Management">
+    Maintain up-to-date standard operating procedures:
+    - New Document Created trigger monitors SOP drafts folder
+    - AI validates content against style checklist
+    - Approved documents move to official SOP library
+    - Failed validation triggers author notification with feedback
+  </Accordion>
+</AccordionGroup>
+
+## Advanced Features & Capabilities
+
+<AccordionGroup>
+  <Accordion title="AI-Driven Content Processing">
+    Intelligent document enhancement and automation:
+    - Chain Get Document → AI processing → Update Document
+    - Content rewriting using house style guidelines
+    - Conditional processing based on word count or content type
+    - Dynamic content generation from data sources
+  </Accordion>
+  
+  <Accordion title="Template-Based Automation">
+    Powerful document generation from templates:
+    - Dynamic field replacement with `{{mergeField}}` syntax
+    - Bulk generation through Google Sheets integration
+    - Personalized content creation at scale
+    - Multi-format output (Doc, PDF, shared links)
+  </Accordion>
+  
+  <Accordion title="Approval Workflow Integration">
+    Streamlined document review processes:
+    - Human-in-the-loop approval gates
+    - Conditional routing based on document type
+    - Status tracking and notification systems
+    - Exit conditions for automated approval
+  </Accordion>
+</AccordionGroup>
+
+## Configuration Best Practices
+
+<AccordionGroup>
+  <Accordion title="For Document Creation">
+    Optimize your document generation workflows:
+    - Begin complex flows with Get Document to confirm correct file
+    - Use template-based creation for consistent formatting
+    - Implement proper folder organization and naming conventions
+    - Store document URLs (not IDs) for human accessibility
+  </Accordion>
+  
+  <Accordion title="For Content Management">
+    Set up robust document processing:
+    - Combine Append, Replace, and Update actions thoughtfully
+    - Use Conditions on triggers to route by document type
+    - Insert delays for high-volume operations to respect quotas
+    - Pre-cache images in Drive for faster replacement operations
+  </Accordion>
+  
+  <Accordion title="For Integration Workflows">
+    Create reliable document automation:
+    - Plan for Google API rate limits (100 writes/min per user)
+    - Ensure proper Drive permissions for Shared Drives
+    - Implement error handling for document size limits (1.02M characters)
+    - Use organization-managed Google Workspace for compliance
+  </Accordion>
+</AccordionGroup>
+
+## Limits & Security Considerations
+
+<AccordionGroup>
+  <Accordion title="API Limitations">
+    - **Rate Limits**: ~100 writes/minute per user before exponential back-off
+    - **Document Size**: 1.02 million character maximum
+    - **Image Requirements**: External URLs must be publicly accessible
+    - **Trigger Quotas**: Google's daily push notification caps
+  </Accordion>
+  
+  <Accordion title="Security & Compliance">
+    - **Authentication**: OAuth2 with Drive + Docs scopes required
+    - **Permissions**: Content manager access needed for Shared Drives
+    - **Data Handling**: Lindy processes content transiently during execution
+    - **Compliance**: HIPAA/SOC 2 compatible with managed Google Workspace
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Google Drive Integration"
+    icon="folder"
+    href="/skills/popular-integrations/google-drive"
+  >
+    Manage files and folders alongside documents
+  </Card>
+  <Card
+    title="Gmail Integration"
+    icon="envelope"
+    href="/skills/popular-integrations/gmail"
+  >
+    Combine document automation with email workflows
+  </Card>
+</CardGroup>
+
+<Note>
+  **Need help with document automation?**
+  
+  Check out our [document management tutorial](/tutorials/intermediate/document-automation) for step-by-step instructions on building Google Docs workflows.
+</Note>
