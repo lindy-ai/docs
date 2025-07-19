@@ -50,28 +50,15 @@ Key benefits of Google Docs integration:
 ## Google Docs Triggers
 
 #### New Document Created 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/docs_4.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
+<Frame>
+  <img src="/lindy-brand-assets/docs_3.png" alt="Google Docs connection" />
+</Frame>
 Fires the moment a brand-new Google Doc appears in a chosen folder:
 - **Folder filtering** - Optionally select specific folder, defaults to watching entire Drive
 - **Dynamic payload** - Provides title, url, documentId, createdTime, creatorEmail, parentFolders
 - Perfect for auto-formatting new docs, posting Slack notifications, kickoff approval workflows
 
 #### New or Updated Document
-<Frame>
-  <img src="/lindy-brand-assets/google_docs_4.png" alt="Document Updated trigger" />
-</Frame>
 Fires on both creations and any subsequent modifications:
 - **Real-time monitoring** - Detects text edits, images, style changes, etc.
 - **Enhanced payload** - Includes lastModifiedTime, lastModifyingUser information
@@ -85,19 +72,6 @@ Fires on both creations and any subsequent modifications:
 
 
 #### Create Document
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_docs_5.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Creates new Google Docs with customizable settings:
 - Complete document creation with title and folder selection
@@ -105,19 +79,6 @@ Creates new Google Docs with customizable settings:
 - Perfect for generating weekly report shells, customer proposal skeletons
 
 #### Create Document from Template
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_docs_6.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Rapidly create documents using template merge:
 - Pick any Google Doc as template with `{{mergeField}}` placeholders
@@ -125,19 +86,6 @@ Rapidly create documents using template merge:
 - Ideal for contracts, offer letters, invoices, personalized onboarding guides
 
 #### Create PDF
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_docs_7.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Converts documents to PDF format:
 - Source document selection with destination folder
@@ -146,27 +94,18 @@ Converts documents to PDF format:
 
 
 #### Get Document
-<Frame>
-  <img src="/lindy-brand-assets/google_docs_8.png" alt="Get Document action" />
-</Frame>
 Retrieves comprehensive document information:
 - Fuzzy search by ID, Name, or URL
 - Returns full plain-text body plus metadata
 - Essential for feeding content into AI summarizers, content comparison
 
 #### Update Document
-<Frame>
-  <img src="/lindy-brand-assets/google_docs_9.png" alt="Update Document action" />
-</Frame>
 Modifies existing document content:
 - Multiple modes: append, prepend, replace
 - Supports markdown, plain text, or HTML-like content
 - Perfect for appending meeting minutes, adding notices, content revisions
 
 #### Append Text (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_docs_10.png" alt="Append Text action" />
-</Frame>
 Lightweight content addition optimized for speed:
 - Choose start or end of document placement
 - Optimized for streaming from AI-generated content
@@ -174,46 +113,23 @@ Lightweight content addition optimized for speed:
 
 
 #### Replace Text (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_docs_11.png" alt="Replace Text action" />
-</Frame>
 Powerful text search and replacement:
 - Regex support for complex pattern matching
 - Match case sensitivity and replace all options
 - Perfect for bulk redaction, brand-name swaps, token replacement
 
 #### Append Image (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_docs_12.png" alt="Append Image action" />
-</Frame>
 Add images to documents automatically:
 - Image URL input with position control (start/end)
 - Proxy fetch and embed for external images
 - Great for automated report generation with charts/diagrams
 
 #### Find Document (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_docs_13.png" alt="Find Document action" />
-</Frame>
 Search and locate documents intelligently:
 - Name-based search with folder scoping
 - Returns array of matches with IDs, titles, links
 - Essential for version control, avoiding duplicates, routing workflows
 
-## Example document workflow
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_docs_14.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 ## Practical Implementation Scenarios
 

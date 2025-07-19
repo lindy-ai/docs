@@ -7,7 +7,7 @@ sidebarTitle: 'Google Sheets'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="/lindy-brand-assets/google_calendar_0.mp4"
+      src="/lindy-brand-assets/sheets_0.mp4"
       width="600"
       autoPlay
       muted
@@ -34,15 +34,15 @@ Key benefits of Google Sheets integration:
 
 <Steps>
   <Step title="Add Google Sheets to your workflow">
-    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "Google Sheets"
+    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "Google Sheets." Once added, choose the spreadsheet from the drop-down menu or paste in the link.
     <Frame>
-      <img src="/lindy-brand-assets/google_calendar_1.png" alt="Add Google Sheets to workflow" />
+      <img src="/lindy-brand-assets/sheets_1.png" alt="Add Google Sheets to workflow" />
     </Frame>
   </Step>
   <Step title="Connect and Configure your Google Sheets">
     Click on "Add Account" and authorize your Google Sheets for Lindy's integrations by granting permissions for Sheets and Drive access. Choose which spreadsheets you want this Lindy to access.
     <Frame>
-      <img src="/lindy-brand-assets/google_calendar_2.png" alt="Google Sheets connection" />
+      <img src="/lindy-brand-assets/sheets_2.png" alt="Google Sheets connection" />
     </Frame>
   </Step>
 </Steps>
@@ -60,9 +60,6 @@ Triggers when a new row is added to the bottom of a sheet:
 - Perfect for processing form submissions, new signups, project entries, data validation
 
 #### New Comment 
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_4.png" alt="New Comment trigger" />
-</Frame>
 Triggers when someone adds a comment to any cell in the spreadsheet:
 - **Collaboration monitoring** - Track team feedback and communication
 - **Configurable polling** - Push notification renewal schedule in seconds
@@ -70,10 +67,6 @@ Triggers when someone adds a comment to any cell in the spreadsheet:
 - Ideal for team notifications, follow-up task creation, collaboration tracking
 
 #### New Updates 
-
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_5.png" alt="New Updates trigger" />
-</Frame>
 Triggers when any cell content is modified in specified worksheets:
 - **Granular monitoring** - Specific worksheet targeting for focused tracking
 - **Change detection** - Monitors all cell content modifications
@@ -81,9 +74,6 @@ Triggers when any cell content is modified in specified worksheets:
 - Perfect for audit trails, system synchronization, stakeholder notifications
 
 #### New Worksheet 
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_6.png" alt="New Worksheet trigger" />
-</Frame>
 Triggers when a new worksheet/tab is created within a spreadsheet:
 - **Structure monitoring** - Detect new worksheet creation instantly
 - **Template automation** - Auto-format and initialize new sheets
@@ -97,20 +87,6 @@ Triggers when a new worksheet/tab is created within a spreadsheet:
 ## Google Sheets Actions
 
 #### Append Row
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_8.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
 Adds a new row to the bottom of a spreadsheet:
 - **Dynamic field generation** - Automatically creates inputs based on spreadsheet headers
 - **Real-time data entry** - Immediate row creation with full data validation
@@ -118,20 +94,6 @@ Adds a new row to the bottom of a spreadsheet:
 - Perfect for form submissions, survey responses, lead capture
 
 #### Append Rows
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_9.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
 Adds multiple rows in a single operation:
 - **Bulk processing** - Handle arrays of data efficiently
 - **Performance optimization** - Single API call for multiple rows
@@ -139,20 +101,6 @@ Adds multiple rows in a single operation:
 - Ideal for bulk data imports, batch processing results, data migration
 
 #### Update Row
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_10.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
 Modifies existing row data or creates new row if not found:
 - **Intelligent lookup** - Uses specified column for row identification
 - **Upsert behavior** - Can append new row if no matching row exists
@@ -160,9 +108,6 @@ Modifies existing row data or creates new row if not found:
 - Perfect for customer data updates, inventory management, status tracking
 
 #### Get Spreadsheet
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_7.png" alt="Get Spreadsheet action" />
-</Frame>
 Retrieves all rows from a spreadsheet:
 - **Complete dataset access** - Returns full spreadsheet as array of arrays
 - **Bulk data processing** - Handle entire datasets for analysis
@@ -170,9 +115,6 @@ Retrieves all rows from a spreadsheet:
 - Essential for data analysis, reporting, full dataset processing
 
 #### Find Row
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_8.png" alt="Find Row action" />
-</Frame>
 Searches for rows matching specific criteria:
 - **Precise lookup** - Configurable lookup column and search value
 - **Smart output** - Returns matching row data and row number (-1 if not found)
@@ -180,9 +122,6 @@ Searches for rows matching specific criteria:
 - Perfect for customer lookups, inventory checks, data validation
 
 #### Get Cell 
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_9.png" alt="Get Cell action" />
-</Frame>
 Retrieves value from a specific cell:
 - **Precise targeting** - Cell reference in A1 notation
 - **Status monitoring** - Check specific values like counters or flags
@@ -190,19 +129,13 @@ Retrieves value from a specific cell:
 - Great for status checks, counter values, configuration management
 
 #### Create Spreadsheet
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_11.png" alt="Create Spreadsheet action" />
-</Frame>
 Creates a new Google Sheets file:
 - **Dynamic initialization** - Set title, initial sheets with headers and data
 - **Template creation** - At least one sheet required for structure
 - **Full output** - Returns spreadsheet ID, URL, first sheet ID
 - Perfect for dynamic report generation, project templates, data collection setup
 
-#### Create Worksheet (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_12.png" alt="Create Worksheet action" />
-</Frame>
+#### Create Worksheet
 Adds a new worksheet/tab to existing spreadsheet:
 - **Structure expansion** - Add new tabs for data segmentation
 - **Custom configuration** - Worksheet name, dimensions, formatting options
@@ -210,9 +143,6 @@ Adds a new worksheet/tab to existing spreadsheet:
 - Ideal for data segmentation, project organization, template systems
 
 #### Delete Row
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_14.png" alt="Delete Row action" />
-</Frame>
 Removes a row matching specific lookup criteria:
 - **Safe deletion** - Lookup column and value matching for precision
 - **Status feedback** - Returns success/failure status for error handling
@@ -220,9 +150,6 @@ Removes a row matching specific lookup criteria:
 - Essential for data maintenance, removing completed items, archiving
 
 #### Clear Cell 
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_15.png" alt="Clear Cell action" />
-</Frame>
 Removes content from a specific cell while preserving formatting:
 - **Selective clearing** - Content removal without structure loss
 - **Format preservation** - Maintains cell formatting and styling
@@ -233,7 +160,7 @@ Removes content from a specific cell while preserving formatting:
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="/lindy-brand-assets/google_calendar_12.mp4"
+      src="/lindy-brand-assets/sheets_3.mp4"
       width="600"
       autoPlay
       muted

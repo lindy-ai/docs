@@ -7,7 +7,7 @@ sidebarTitle: 'Airtable'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
+      src="/lindy-brand-assets/airtable_0.mp4"
       width="600"
       autoPlay
       muted
@@ -17,3 +17,474 @@ sidebarTitle: 'Airtable'
     />
   </div>
 </div>
+
+## Quick Overview
+
+Airtable integration is one of Lindy's most powerful database automation capabilities, enabling your AI agents to act as sophisticated database assistants and data processors. The integration provides both Triggers (what can start a Lindy workflow) and Actions (what Lindy can do).
+
+This comprehensive integration transforms Airtable from a static database into a dynamic, reactive system that can automatically respond to data changes, trigger complex workflows, and maintain data integrity across multiple platforms.
+
+Key benefits of Airtable integration:
+- **Real-time data reactivity** – Instant responses to database changes with webhook-based triggers
+- **Bi-directional data flow** – Both read from and write to Airtable with full CRUD operations
+- **Schema management** – Dynamic field and table creation/modification capabilities
+- **Multi-base support** – Work across multiple Airtable bases simultaneously
+
+## How to set up Airtable
+
+<Steps>
+  <Step title="Add Airtable to your workflow">
+    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "Airtable"
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_1.png" alt="Add Airtable to workflow" />
+    </Frame>
+  </Step>
+  <Step title="Connect and Authorize your Airtable">
+    Click on "Add Account" and authorize your Airtable for Lindy's integrations using OAuth 2.0. Grant read access to base schemas and read/write access to records.
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_2.png" alt="Airtable connection" />
+    </Frame>
+  </Step>
+  <Step title="Configure Base Access">
+    Choose which bases Lindy can access, configure table-specific permissions, and set up view-level access controls for your automation workflows.
+    <Frame>
+      <img src="/lindy-brand-assets/google_calendar_3.png" alt="Airtable base configuration" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Airtable Triggers
+
+#### New Record(s) Created
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_4.png" alt="New Record Created trigger" />
+</Frame>
+Triggers when a new record is created in an Airtable base:
+- **Real-time activation** - Webhook-based trigger for instant response
+- **Source filtering** - Monitor changes from specific sources (web, API, forms, automation)
+- **Multi-level filtering** - Base, table, and view-specific monitoring
+- Perfect for lead processing, order fulfillment, content moderation, team notifications
+
+#### New Records In View
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_5.png" alt="New Records In View trigger" />
+</Frame>
+Triggers when new records are added to a specified Airtable view:
+- **View-specific monitoring** - Focus on filtered data sets
+- **Formula filtering** - Advanced Airtable formula-based filtering
+- **Customizable polling** - Configurable intervals (minimum 15 minutes)
+- Essential for status-based workflows, priority queues, approval processes, targeted reporting
+
+#### New Or Modified Records
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_6.png" alt="New Or Modified Records trigger" />
+</Frame>
+Triggers when records in an Airtable base are created or modified:
+- **Real-time webhooks** - Instant response to data changes
+- **Change type detection** - Distinguish between creates and updates
+- **Field-specific monitoring** - Watch only specific fields for changes
+- Perfect for data synchronization, audit trails, notification systems, workflow progression
+
+#### New Or Modified Records In View
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_7.png" alt="New Or Modified Records In View trigger" />
+</Frame>
+Triggers when records are created or modified in an Airtable view:
+- **View-focused monitoring** - React to changes in specific filtered views
+- **Conditional automation** - Trigger only when records meet complex criteria
+- **Team-specific workflows** - Different actions for different team views
+- Ideal for stage-based processing, conditional automation, performance monitoring
+
+#### New Or Modified Field
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_8.png" alt="New Or Modified Field trigger" />
+</Frame>
+Triggers when a field's schema is created or modified in an Airtable base:
+- **Schema change detection** - Monitor field creation, modification, and deletion
+- **Real-time notifications** - Instant alerts for schema changes
+- **Source tracking** - Track schema changes by origin
+- Essential for schema management, documentation updates, integration maintenance, compliance tracking
+
+#### New, Modified Or Deleted Records
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_9.png" alt="New Modified Or Deleted Records trigger" />
+</Frame>
+Comprehensive trigger for all record lifecycle events:
+- **Complete lifecycle monitoring** - Handle all record states (create/update/delete)
+- **Advanced filtering** - Formula-based record filtering
+- **Configurable polling** - Customizable monitoring intervals
+- Perfect for data lifecycle management, backup systems, compliance auditing, external system sync
+
+#### New Record Created, Updated Or Deleted
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_10.png" alt="New Record Lifecycle trigger" />
+</Frame>
+Real-time trigger for all record lifecycle events:
+- **Real-time webhooks** - Instant response to all record changes
+- **Event type selection** - Choose specific event types (add/update/remove)
+- **Multi-level filtering** - Base, table, and view scoping
+- Ideal for real-time data pipelines, live dashboards, instant notifications, event sourcing
+
+#### New Field Created
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_11.png" alt="New Field Created trigger" />
+</Frame>
+Triggers when a new field is created in an Airtable base:
+- **Schema evolution tracking** - Monitor database schema changes
+- **Field type filtering** - React to specific field types
+- **Real-time notifications** - Instant alerts for new fields
+- Perfect for dynamic form generation, schema documentation, integration updates, template management
+
+<Tip>
+  Use "New Record(s) Created" triggers combined with "Create Record" actions for the most powerful database automation workflows.
+</Tip>
+
+## Airtable Actions
+
+#### Create Record
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_8.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Create a new record in an Airtable table:
+- **Dynamic field mapping** - Automatic field discovery and mapping
+- **Data validation** - Built-in validation for proper data entry
+- **Flexible creation** - Support for all Airtable field types
+- Perfect for lead capture, order creation, task management, contact creation
+
+#### Get Record
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_9.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Retrieve a specific record by its ID:
+- **Complete data access** - Full record data or null if not found
+- **Record validation** - Verify record existence before processing
+- **Reference lookups** - Access related data and attachments
+- Essential for record validation, data enrichment, status checking, reference lookups
+
+#### Update Record
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_10.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Modify an existing record in Airtable:
+- **Field-specific updates** - Target individual fields for precise changes
+- **Lookup capabilities** - Find and update records based on criteria
+- **Data integrity** - Maintain relationships while updating records
+- Perfect for status updates, data enrichment, progress tracking, information correction
+
+#### Delete Record
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_11.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+Remove a record from Airtable:
+- **Safe deletion** - Returns deleted record data for verification
+- **Data cleanup** - Remove outdated or invalid records
+- **Workflow completion** - Clean up after process completion
+- Essential for data cleanup, record archival, compliance deletion, workflow completion
+
+#### Find Record
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_12.png" alt="Find Record action" />
+</Frame>
+Search for a single record based on field criteria:
+- **Dynamic lookup** - Field selection and value matching
+- **Duplicate detection** - Prevent duplicate record creation
+- **Data validation** - Verify record existence before operations
+- Perfect for duplicate detection, record verification, data validation, reference resolution
+
+#### Find Many Records
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_13.png" alt="Find Many Records action" />
+</Frame>
+Search for multiple records matching criteria:
+- **Bulk data access** - Retrieve multiple matching records
+- **Advanced filtering** - Complex search criteria support
+- **Batch processing** - Process multiple records efficiently
+- Essential for bulk data processing, report generation, data analysis, batch operations
+
+#### Create Multiple Records
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_14.png" alt="Create Multiple Records action" />
+</Frame>
+Create multiple records simultaneously in an Airtable table:
+- **Bulk operations** - Improved performance for multiple record creation
+- **Batch validation** - Validate multiple records in single operation
+- **Data import** - Efficient bulk data import capabilities
+- Perfect for bulk data import, batch processing, data migration, mass record creation
+
+#### List Records
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_15.png" alt="List Records action" />
+</Frame>
+Retrieve and filter records from an Airtable table:
+- **Advanced filtering** - Complex filtering and sorting options
+- **Data export** - Export data for external processing
+- **Report generation** - Generate comprehensive reports
+- Essential for data export, report generation, analytics processing, data synchronization
+
+#### List Records In View
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_16.png" alt="List Records In View action" />
+</Frame>
+Retrieve records from a specific view with view-specific filtering:
+- **View-based logic** - Leverage Airtable's view filtering
+- **Team-specific data** - Access data filtered for specific teams
+- **Conditional processing** - Process only records meeting view criteria
+- Perfect for view-based reporting, filtered data export, conditional processing, team-specific access
+
+#### Create Table
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_17.png" alt="Create Table action" />
+</Frame>
+Create a new table in an Airtable base with specified fields and settings:
+- **Full schema definition** - Define complete table structure
+- **Dynamic database creation** - Create tables based on requirements
+- **Template instantiation** - Create tables from predefined templates
+- Essential for dynamic database creation, template instantiation, project setup automation, schema replication
+
+#### Update Table
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_18.png" alt="Update Table action" />
+</Frame>
+Modify the name or description of an existing Airtable table:
+- **Table metadata management** - Update table information
+- **Documentation updates** - Maintain current table descriptions
+- **Naming standardization** - Ensure consistent table naming
+- Perfect for table organization, documentation updates, naming standardization, metadata management
+
+#### Create Field
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_19.png" alt="Create Field action" />
+</Frame>
+Create a new field in an Airtable base with specified type and settings:
+- **Dynamic schema evolution** - Add fields based on changing requirements
+- **All field types** - Support for all Airtable field types
+- **Custom configuration** - Set field properties and validations
+- Essential for dynamic schema evolution, custom field creation, template expansion, data model adaptation
+
+#### Update Field
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_20.png" alt="Update Field action" />
+</Frame>
+Modify field properties in an Airtable table:
+- **Field optimization** - Update field types and configurations
+- **Schema maintenance** - Keep fields current and optimized
+- **Data type corrections** - Fix field type mismatches
+- Perfect for schema maintenance, field optimization, data type corrections, configuration updates
+
+#### Create Comment
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_16.png" alt="Create Comment action" />
+</Frame>
+Add a text comment to a specific record in an Airtable base:
+- **Rich text commenting** - Add detailed comments to records
+- **Workflow annotations** - Document process steps and decisions
+- **Team communication** - Facilitate collaboration through comments
+- Essential for workflow annotations, review processes, team communication, audit trails
+
+#### Update Comment
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_17.png" alt="Update Comment action" />
+</Frame>
+Modify an existing comment on a record:
+- **Comment editing** - Update and correct existing comments
+- **Information updates** - Keep comments current and accurate
+- **Content management** - Manage comment content effectively
+- Perfect for comment corrections, information updates, review modifications, content management
+
+#### List Bases
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_18.png" alt="List Bases action" />
+</Frame>
+Get the list of bases that can be accessed:
+- **Base discovery** - Find all accessible Airtable bases
+- **Access auditing** - Verify permissions and access levels
+- **Multi-base workflows** - Work across multiple bases
+- Essential for base discovery, access auditing, multi-base workflows, permission verification
+
+#### List Tables
+<Frame>
+  <img src="/lindy-brand-assets/google_calendar_19.png" alt="List Tables action" />
+</Frame>
+Get a list of tables in the selected base:
+- **Schema discovery** - Understand base structure dynamically
+- **Table enumeration** - List all available tables
+- **Structure analysis** - Analyze database structure
+- Perfect for schema discovery, table enumeration, structure analysis, dynamic configuration
+
+## Example database workflow
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/google_calendar_12.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+## Practical Implementation Scenarios
+
+<AccordionGroup>
+  <Accordion title="Complete CRM Automation">
+    Transform Lindy into a comprehensive CRM automation platform:
+    - New Record Created → Lead scoring and qualification → Assignment to sales reps → Follow-up task creation → Status tracking → Deal progression → Revenue forecasting
+  </Accordion>
+  
+  <Accordion title="E-commerce Order Processing">
+    Build sophisticated order management workflows:
+    - New order record → Inventory verification → Payment processing → Fulfillment routing → Shipping tracking → Customer notifications → Post-sale follow-up
+  </Accordion>
+  
+  <Accordion title="Content Management Pipeline">
+    Create advanced content workflow automation:
+    - Content submission → Quality review → Editorial approval → Publishing schedule → Distribution tracking → Performance analysis → Archive management
+  </Accordion>
+</AccordionGroup>
+
+## Advanced Features & Capabilities
+
+<AccordionGroup>
+  <Accordion title="Real-time Data Reactivity">
+    Powerful webhook-based automation capabilities:
+    - **Instant Triggers** - Real-time response to data changes with webhook technology
+    - **Event Sourcing** - Complete audit trail of all database events
+    - **Live Dashboards** - Update visualizations and reports in real-time
+    - **Multi-source Monitoring** - Track changes from web, API, forms, and automation
+  </Accordion>
+  
+  <Accordion title="Schema Management">
+    Dynamic database structure management and evolution:
+    - **Dynamic Field Creation** - Add fields based on changing business requirements
+    - **Table Management** - Create and modify tables programmatically
+    - **Schema Evolution** - Adapt database structure to evolving needs
+    - **Template Systems** - Replicate successful database structures
+  </Accordion>
+  
+  <Accordion title="Advanced Filtering and Views">
+    Sophisticated data filtering and view-based automation:
+    - **View-specific Triggers** - React to changes in filtered data sets
+    - **Formula Filtering** - Use Airtable's formula engine for complex conditions
+    - **Multi-level Filtering** - Base, table, and view-specific monitoring
+    - **Conditional Logic** - Execute different workflows based on data conditions
+  </Accordion>
+</AccordionGroup>
+
+## Configuration Best Practices
+
+<AccordionGroup>
+  <Accordion title="For Database Automation">
+    Optimize your database workflow performance:
+    - Use view-specific triggers when possible to reduce noise
+    - Implement field-specific monitoring to avoid unnecessary triggers
+    - Choose appropriate polling intervals for non-real-time triggers
+    - Batch operations when creating multiple records to improve performance
+  </Accordion>
+  
+  <Accordion title="For Data Quality Management">
+    Set up robust data quality and integrity workflows:
+    - Use "Find Record" before "Create Record" to prevent duplicates
+    - Implement validation rules in automation workflows
+    - Set up error handling for authentication and API failures
+    - Use transactions for multi-step operations to maintain consistency
+  </Accordion>
+  
+  <Accordion title="For Security and Permissions">
+    Create secure and well-governed database automation:
+    - Use least-privilege access principles for base permissions
+    - Regularly audit connected bases and access permissions
+    - Monitor API usage and rate limits to prevent service disruption
+    - Implement proper error handling for authentication failures
+  </Accordion>
+</AccordionGroup>
+
+## Limitations & Considerations
+
+<AccordionGroup>
+  <Accordion title="API Limitations">
+    - **Rate Limits**: Airtable API has rate limits for high-volume operations
+    - **Record Limits**: Maximum 1,200 records per API request
+    - **Field Limits**: Maximum 50 fields per table
+    - **Base Limits**: API access limited to authorized bases only
+  </Accordion>
+  
+  <Accordion title="Authentication Requirements">
+    - **OAuth Scopes**: Requires schema.bases:read, data.records:read, data.records:write
+    - **Webhook Permissions**: Real-time triggers require webhook creation permissions
+    - **Base Access**: Must explicitly grant access to each base
+    - **API Keys**: Personal access tokens supported for enhanced security
+  </Accordion>
+  
+  <Accordion title="Performance Considerations">
+    - **Real-time vs Polling**: Choose appropriate trigger types based on urgency needs
+    - **Batch Operations**: Use bulk actions for improved performance
+    - **View Optimization**: Use specific views to reduce data processing overhead
+    - **Field Monitoring**: Monitor only necessary fields to reduce trigger frequency
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Google Sheets Integration"
+    icon="table"
+    href="/skills/popular-integrations/google-sheets"
+  >
+    Compare database automation capabilities
+  </Card>
+  <Card
+    title="Notion Integration"
+    icon="note"
+    href="/skills/popular-integrations/notion"
+  >
+    Combine Airtable with knowledge management
+  </Card>
+</CardGroup>

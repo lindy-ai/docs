@@ -7,7 +7,7 @@ sidebarTitle: 'HubSpot'
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="/lindy-brand-assets/google_calendar_0.mp4"
+      src="/lindy-brand-assets/hubspot_0.mp4"
       width="600"
       autoPlay
       muted
@@ -34,15 +34,15 @@ Key benefits of HubSpot integration:
 
 <Steps>
   <Step title="Add HubSpot to your workflow">
-    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "HubSpot"
+    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "HubSpot." Click on connect to configure your account.
     <Frame>
-      <img src="/lindy-brand-assets/google_calendar_1.png" alt="Add HubSpot to workflow" />
+      <img src="/lindy-brand-assets/hubspot_1.png" alt="Add HubSpot to workflow" />
     </Frame>
   </Step>
   <Step title="Connect and Configure your HubSpot">
     Click on "Add Account" and authorize your HubSpot for Lindy's integrations by granting permissions for CRM access and management. Choose which objects and properties you want this Lindy to access.
     <Frame>
-      <img src="/lindy-brand-assets/google_calendar_2.png" alt="HubSpot connection" />
+      <img src="/lindy-brand-assets/hubspot_2.png" alt="HubSpot connection" />
     </Frame>
   </Step>
 </Steps>
@@ -50,10 +50,7 @@ Key benefits of HubSpot integration:
 ## HubSpot Triggers
 
 
-#### New Or Updated Contact (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_3.png" alt="New Contact trigger" />
-</Frame>
+#### New Or Updated Contact 
 Monitors for new contacts or changes to existing contact records:
 - **Configurable polling** - Default 15-minute intervals (900 seconds) with customization
 - **Property selection** - Dynamic selection of additional properties to retrieve
@@ -61,9 +58,7 @@ Monitors for new contacts or changes to existing contact records:
 - Perfect for welcome sequences, data enrichment workflows, CRM synchronization
 
 #### New Contact Property Change 
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_4.png" alt="Contact Property Change trigger" />
-</Frame>
+
 Triggers when specific contact properties are modified:
 - **Dynamic property selection** - Choose from all contact properties
 - **Real-time monitoring** - Track critical field changes instantly
@@ -72,9 +67,7 @@ Triggers when specific contact properties are modified:
 
 
 #### New Or Updated Deal 
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_5.png" alt="New Deal trigger" />
-</Frame>
+
 Monitors for new deals or changes to existing deal records:
 - **Pipeline filtering** - Optional filtering by specific sales pipelines
 - **Stage filtering** - Target specific deal stages for monitoring
@@ -82,9 +75,7 @@ Monitors for new deals or changes to existing deal records:
 - Perfect for sales pipeline automation, deal progression notifications, revenue forecasting
 
 #### New Deal In Stage 
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_6.png" alt="Deal Stage trigger" />
-</Frame>
+
 Triggers when deals enter specific pipeline stages:
 - **Pipeline selection** - Dynamic list of all available pipelines
 - **Stage targeting** - Dependent stage selection based on chosen pipeline
@@ -93,9 +84,7 @@ Triggers when deals enter specific pipeline stages:
 
 
 #### New Form Submission 
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_7.png" alt="Form Submission trigger" />
-</Frame>
+
 Triggers when forms are submitted on your website:
 - **Form selection** - Dynamic list of all HubSpot forms
 - **Instant activation** - Real-time response to form submissions
@@ -109,19 +98,6 @@ Triggers when forms are submitted on your website:
 ## HubSpot Actions
 
 #### Create Contact
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_8.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Creates new contact records in HubSpot:
 - **Dynamic property mapping** - Based on HubSpot schema for complete data capture
@@ -130,19 +106,6 @@ Creates new contact records in HubSpot:
 - Perfect for lead capture, data import, contact creation from forms
 
 #### Update Contact
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_9.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Modifies existing contact information:
 - **Property-specific updates** - Target individual fields for precise changes
@@ -151,19 +114,6 @@ Modifies existing contact information:
 - Ideal for data enrichment, lead scoring updates, contact segmentation
 
 #### Search Contacts
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_10.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Advanced contact search with multiple criteria:
 - **Advanced filtering** - Up to 3 conditions with multiple operators
@@ -172,69 +122,39 @@ Advanced contact search with multiple criteria:
 - Perfect for segmentation, targeted campaigns, data analysis
 
 
-#### Add Contact To List (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_11.png" alt="Add to List action" />
-</Frame>
+#### Add Contact To List 
+
 Adds contacts to static HubSpot lists:
 - **Email identification** - Uses email address for contact targeting
 - **List building** - Dynamic list management capabilities
 - **Segmentation tools** - Organize contacts for targeted campaigns
 - Essential for list building, segmentation, campaign targeting
 
-#### Enroll Contact Into Workflow (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_12.png" alt="Workflow Enrollment action" />
-</Frame>
+#### Enroll Contact Into Workflow
 Triggers HubSpot workflow enrollment:
 - **Email-based enrollment** - Target contacts by email address
 - **Automated nurturing** - Trigger sophisticated nurture sequences
 - **Lifecycle management** - Progress contacts through defined stages
 - Perfect for automated nurturing, follow-up sequences, lifecycle management
 
-### Example CRM workflow
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_12.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
-### Deal Management Actions
-
-#### Update Deal (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_13.png" alt="Update Deal action" />
-</Frame>
+#### Update Deal 
 Modifies deal properties and stages:
 - **Stage progression** - Move deals through pipeline stages automatically
 - **Property updates** - Modify deal values, close dates, and custom fields
 - **Pipeline management** - Handle multiple sales pipelines efficiently
 - Great for deal progression, value updates, status changes
 
-### Advanced CRM Actions
 
-#### Create Associations (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_14.png" alt="Create Associations action" />
-</Frame>
+#### Create Associations 
+
 Links different HubSpot objects together:
 - **Contact-to-company associations** - Build organizational relationships
 - **Deal-to-contact relationships** - Connect deals with stakeholders
 - **Custom object associations** - Link industry-specific objects
 - Essential for relationship mapping, data organization, CRM structure
 
-#### Create Communication (Premium)
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_15.png" alt="Create Communication action" />
-</Frame>
+#### Create Communication 
 Logs communication records in HubSpot:
 - **Email logging** - Track email interactions automatically
 - **Call records** - Document phone conversations
@@ -245,7 +165,7 @@ Logs communication records in HubSpot:
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
-      src="/lindy-brand-assets/google_calendar_12.mp4"
+      src="/lindy-brand-assets/hubspot_4.mp4"
       width="600"
       autoPlay
       muted
