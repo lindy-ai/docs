@@ -21,257 +21,103 @@ description: 'File storage and management integration with comprehensive search,
 
 ## Overview
 
-Google Drive integration provides comprehensive file storage and management capabilities. Automate file operations, manage folders, control permissions, and implement powerful search functionality across your Google Drive ecosystem.
+Google Drive integration provides file storage and management capabilities. Automate file operations, manage folders, control permissions, and implement powerful search functionality across your Google Drive ecosystem.
 
 ## Authentication & Permissions
 
 Secure authentication with granular permission controls ensures your Google Drive integration operates safely within your organization's security policies.
 
-<Frame>
-  <img src="/lindy-brand-assets/google-drive-auth-perm.png" alt="Google Drive authentication permissions screen showing Pipedream access controls [[memory:2619471]]" />
-</Frame>
-
-When you connect Google Drive, Lindy requests comprehensive permissions to:
+When you connect Google Drive, Lindy requests permissions to:
 - **See, edit, create, and delete** all Google Drive files
 - **Access shared drives** and team folders
 - **Manage file permissions** and sharing settings
 - **Monitor file changes** and folder modifications
 
+<Tip>
+Lindy only uses these permissions to access files and folders you specifically configure in your workflows. This access is required by Google's API to work properly, but Lindy will only interact with the files you direct it to.
+</Tip>
+
 ## Triggers
 
-<Frame>
-  <img src="/lindy-brand-assets/google-drive-triggers.png" alt="Google Drive triggers showing file monitoring and change detection options [[memory:2619471]]" />
-</Frame>
-
-<AccordionGroup>
-  <Accordion title="Changes To Specific Files">
-    Monitors and alerts you when specific files in Google Drive are modified.
-  </Accordion>
-  
-  <Accordion title="New Files">
-    Triggers when new files are added to specified Google Drive folders or drives.
-  </Accordion>
-  
-  <Accordion title="New Or Modified Comments">
-    Triggers when new comments are added or existing comments are modified in a Google Drive file.
-  </Accordion>
-  
-  <Accordion title="New Or Modified Files">
-    Triggers when files are created or modified in Google Drive folders.
-  </Accordion>
-  
-  <Accordion title="New Or Modified Folders">
-    Triggers when folders are created or modified in Google Drive.
-  </Accordion>
-  
-  <Accordion title="New Presentation">
-    Triggers when a new Google Slides presentation is created in specified Drive locations.
-  </Accordion>
-  
-  <Accordion title="New Shared Drive">
-    Triggers when a new shared drive is created in Google Drive.
-  </Accordion>
-  
-  <Accordion title="New Spreadsheet">
-    Triggers when a new spreadsheet is created in Google Drive or specified folders.
-  </Accordion>
-</AccordionGroup>
+- **Changes To Specific Files**: Monitors and alerts you when specific files in Google Drive are modified.
+- **New Files**: Triggers when new files are added to specified Google Drive folders or drives.
+- **New Or Modified Comments**: Triggers when new comments are added or existing comments are modified in a Google Drive file.
+- **New Or Modified Files**: Triggers when files are created or modified in Google Drive folders.
+- **New Or Modified Folders**: Triggers when folders are created or modified in Google Drive.
+- **New Presentation**: Triggers when a new Google Slides presentation is created in specified Drive locations.
+- **New Shared Drive**: Triggers when a new shared drive is created in Google Drive.
+- **New Spreadsheet**: Triggers when a new spreadsheet is created in Google Drive or specified folders.
 
 ## Available Actions
 
-<Frame>
-  <img src="/lindy-brand-assets/google-drive-actions.png" alt="Google Drive actions showing comprehensive file and folder management capabilities [[memory:2619471]]" />
-</Frame>
-
 ### File Operations
 
-<AccordionGroup>
-  <Accordion title="Copy File">
-    Copy a Google Drive file to another location with customizable settings.
-  </Accordion>
-  
-  <Accordion title="Create New File From Template">
-    Create new files from Google Drive templates with customizable text placeholders.
-  </Accordion>
-  
-  <Accordion title="Create New File From Text">
-    Create a new text-based file in Google Drive from provided content.
-  </Accordion>
-  
-  <Accordion title="Delete File">
-    Delete a file or folder from Google Drive permanently.
-  </Accordion>
-  
-  <Accordion title="Download File">
-    Download files from Google Drive and save them to a specified location.
-  </Accordion>
-  
-  <Accordion title="Move File">
-    Move a file to a different folder in Google Drive.
-  </Accordion>
-  
-  <Accordion title="Move File To Trash">
-    Move a file or folder to the Google Drive trash bin.
-  </Accordion>
-  
-  <Accordion title="Read File">
-    Read a file from Google Drive into this Lindy's context.
-  </Accordion>
-  
-  <Accordion title="Upload File">
-    Upload a file to Google Drive in a specified location.
-  </Accordion>
-  
-  <Accordion title="Upload Files">
-    Upload multiple files to Google Drive simultaneously.
-  </Accordion>
-</AccordionGroup>
+- **Copy File**: Copy a Google Drive file to another location with customizable settings.
+- **Create New File From Template**: Create new files from Google Drive templates with customizable text placeholders.
+- **Create New File From Text**: Create a new text-based file in Google Drive from provided content.
+- **Delete File**: Delete a file or folder from Google Drive permanently.
+- **Download File**: Download files from Google Drive and save them to a specified location.
+- **Move File**: Move a file to a different folder in Google Drive.
+- **Move File To Trash**: Move a file or folder to the Google Drive trash bin.
+- **Read File**: Read a file from Google Drive into this Lindy's context.
+- **Upload File**: Upload a file to Google Drive in a specified location.
+- **Upload Files**: Upload multiple files to Google Drive simultaneously.
 
 ### Search & Discovery
 
-<Frame>
-  <img src="/lindy-brand-assets/google-drive-find-file-choose-which-drive.png" alt="Google Drive file search interface showing drive selection and search functionality [[memory:2619471]]" />
-</Frame>
+- **Find File**: Search for files in Google Drive using name or custom query parameters. Choose between My Drive or Shared Drives for targeted searches.
+- **Find Folder**: Search for folders in Google Drive by name, including options for Shared Drives.
+- **Find Forms**: Search for Google Forms in your Google Drive folders.
+- **Find Spreadsheets**: Search and locate spreadsheet files in Google Drive by name, folder, or custom query.
+- **Get File By Id**: Retrieve detailed information about a specific file in Google Drive using its unique ID.
+- **Search For Shared Drives**: Find shared drives in Google Drive using custom search criteria.
 
-<AccordionGroup>
-  <Accordion title="Find File">
-    Search for files in Google Drive using name or custom query parameters. Choose between My Drive or Shared Drives for targeted searches.
-  </Accordion>
-  
-  <Accordion title="Find Folder">
-    Search for folders in Google Drive by name, including options for Shared Drives.
-  </Accordion>
-  
-  <Accordion title="Find Forms">
-    Search for Google Forms in your Google Drive folders.
-  </Accordion>
-  
-  <Accordion title="Find Spreadsheets">
-    Search and locate spreadsheet files in Google Drive by name, folder, or custom query.
-  </Accordion>
-  
-  <Accordion title="Get File By Id">
-    Retrieve detailed information about a specific file in Google Drive using its unique ID.
-  </Accordion>
-  
-  <Accordion title="Search For Shared Drives">
-    Find shared drives in Google Drive using custom search criteria.
-  </Accordion>
-</AccordionGroup>
-
-The Find File action provides powerful search capabilities with:
-- **Drive Selection**: Choose between "My Drive" and shared drives
-- **Custom Queries**: Use Google Drive's search operators
-- **Folder Filtering**: Target specific directories
-- **File Type Filtering**: Search by document type
+The Find File action provides powerful search capabilities with drive selection, custom queries, folder filtering, and file type filtering.
 
 ### Folder Management
 
-<AccordionGroup>
-  <Accordion title="Create Folder">
-    Create a new folder in Google Drive with specified name and location.
-  </Accordion>
-  
-  <Accordion title="Get Folder Id For A Path">
-    Get the ID of a Google Drive folder using its file path.
-  </Accordion>
-  
-  <Accordion title="List Drive Files">
-    List files in Google Drive, optionally given a search query and folder.
-  </Accordion>
-  
-  <Accordion title="List Drive Folders">
-    List folders in Google Drive, optionally given a search query.
-  </Accordion>
-</AccordionGroup>
+- **Create Folder**: Create a new folder in Google Drive with specified name and location.
+- **Get Folder Id For A Path**: Get the ID of a Google Drive folder using its file path.
+- **List Drive Files**: List files in Google Drive, optionally given a search query and folder.
+- **List Drive Folders**: List folders in Google Drive, optionally given a search query.
 
 ### Sharing & Permissions
 
-<AccordionGroup>
-  <Accordion title="Create Shared Drive">
-    Create a new shared drive in Google Drive for team collaboration.
-  </Accordion>
-  
-  <Accordion title="Delete Shared Drive">
-    Delete a shared drive from Google Drive.
-  </Accordion>
-  
-  <Accordion title="Get Shared Drive">
-    Retrieve details about a specific shared drive or list all available shared drives.
-  </Accordion>
-  
-  <Accordion title="Update Shared Drive">
-    Modify appearance and settings of a Google Shared Drive.
-  </Accordion>
-</AccordionGroup>
-
-## Use Cases
-
-<CardGroup cols={2}>
-  <Card title="Document Management" icon="file-text">
-    Automated file organization and document processing workflows
-  </Card>
-  
-  <Card title="Team Collaboration" icon="users">
-    Shared drive management and permission automation
-  </Card>
-  
-  <Card title="Content Processing" icon="gear">
-    Extract and process file content for analysis or automation
-  </Card>
-  
-  <Card title="Backup & Archive" icon="archive">
-    Automated file backup and archival systems
-  </Card>
-</CardGroup>
-
-## Advanced Features
-
-### Intelligent File Discovery
-
-Google Drive's search functionality supports advanced operators:
-- **File type filtering**: `type:pdf`, `type:document`, `type:spreadsheet`
-- **Date ranges**: `created:2024-01-01..2024-12-31`
-- **Owner filtering**: `owner:email@domain.com`
-- **Sharing status**: `is:shared`, `is:private`
-
-### Permission Management
-
-<Note>
-Security First: Google Drive integration respects your organization's sharing policies and security settings. All operations maintain existing permission structures unless explicitly modified.
-</Note>
-
-- **Granular access control** with role-based permissions
-- **Shared drive management** for team collaboration
-- **External sharing controls** with domain restrictions
-- **Audit trail maintenance** for compliance requirements
-
-### Workflow Integration
-
-- **File monitoring**: Track changes across multiple files and folders
-- **Automated organization**: Sort files based on content, type, or metadata
-- **Content extraction**: Process document content for downstream automation
-- **Template management**: Standardize document creation across teams
+- **Create Shared Drive**: Create a new shared drive in Google Drive for team collaboration.
+- **Delete Shared Drive**: Delete a shared drive from Google Drive.
+- **Get Shared Drive**: Retrieve details about a specific shared drive or list all available shared drives.
+- **Update Shared Drive**: Modify appearance and settings of a Google Shared Drive.
 
 ## Best Practices
 
-- Use specific folder paths and file names for reliable automation
-- Implement proper error handling for permission-related failures
-- Leverage shared drives for team-based automation workflows
-- Monitor file changes with targeted triggers to avoid overwhelming automation
-- Use search operators to efficiently locate files in large Drive structures
+<AccordionGroup>
+  <Accordion title="File Organization & Management">
+    Structure your Drive automation effectively:
+    - Use specific folder paths and file names for reliable automation
+    - Implement proper error handling for permission-related failures
+    - Monitor file changes with targeted triggers to avoid overwhelming automation
+  </Accordion>
+  
+  <Accordion title="Intelligent File Discovery">
+    Use Google Drive's advanced search capabilities:
+    - File type filtering: `type:pdf`, `type:document`, `type:spreadsheet`
+    - Date ranges: `created:2024-01-01..2024-12-31`
+    - Owner filtering: `owner:email@domain.com`
+    - Sharing status: `is:shared`, `is:private`
+  </Accordion>
+  
+  <Accordion title="Permission Management">
+    Maintain security while automating:
+    - Google Drive integration respects your organization's sharing policies and security settings
+    - All operations maintain existing permission structures unless explicitly modified
+    - Use granular access control with role-based permissions
+    - Leverage shared drives for team-based automation workflows
+  </Accordion>
+</AccordionGroup>
 
 <Tip>
 Google Drive's powerful search capabilities combined with Lindy's automation create efficient document management workflows that scale with your organization's needs.
 </Tip>
-
-## Common Automation Examples
-
-- **Document Processing**: Extract data from uploaded PDFs and spreadsheets
-- **File Organization**: Automatically sort files into folders based on content
-- **Template Distribution**: Create standardized documents from templates
-- **Collaboration Workflows**: Notify teams when shared files are modified
-- **Backup Systems**: Automatically copy important files to backup locations
 
 ## Related Resources
 
