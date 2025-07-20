@@ -5,20 +5,6 @@ sidebarTitle: 'Webhooks'
 description: 'Trigger Lindy workflows with custom API calls from any external system'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/webhook-demo.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
 ## Overview
 
 While Lindy supports over 5,000 integrations out of the box, webhooks provide the ultimate flexibility for custom integrations. Use webhooks to trigger Lindy workflows from any system that can make HTTP requests - your own applications, third-party services, or custom scripts.
@@ -57,11 +43,11 @@ Choose an existing webhook or create a new one. Each webhook has its own unique 
 
 Configure how Lindy processes webhook requests:
 
-| Option | Description | Use Case |
-|--------|-------------|----------|
-| **Handle in same task** | Process immediately in the current workflow | Real-time responses, synchronous processing |
-| **Create new task** | Spawn a new task for each webhook call | Async processing, heavy workloads |
-| **Ignore** | Acknowledge receipt without processing | Testing, selective processing |
+| Option | Description |
+|--------|-------------|
+| **Handle in same task** | Process follow-up requests in the same workflow |
+| **Create new task** | Spawn a new task for each follow-up webhook call |
+| **Ignore** | Ignore follow-up webhook requests  |
 
 ## Creating a New Webhook
 
@@ -139,16 +125,13 @@ After your webhook trigger, add an AI Agent to:
 
 ## Working with Webhook Data
 
-Access webhook data in your workflow through:
+Access webhook data from the trigger in any subsequent step using the following variables:
 
-### Request Body
-Reference the complete payload: `{{webhook_received.request.body}}`
-
-### Headers
-Access request headers: `{{webhook_received.request.headers}}`
-
-### Query Parameters
-Use URL parameters: `{{webhook_received.request.query}}`
+| Data Source      | Variable Reference                          | Description                                |
+| ---------------- | ------------------------------------------- | ------------------------------------------ |
+| **Request Body** | `{{webhook_received.request.body}}`         | The full JSON payload from the request.    |
+| **Headers**      | `{{webhook_received.request.headers}}`      | All request headers.                       |
+| **Query Params** | `{{webhook_received.request.query}}`        | Any parameters from the webhook URL.       |
 
 <Tip>
 Use AI Prompt mode in action fields to intelligently extract and use specific fields from your webhook payload.
@@ -178,31 +161,18 @@ Use AI Prompt mode in action fields to intelligently extract and use specific fi
 
 ## Best Practices
 
-<CardGroup cols={2}>
-  <Card title="Secure Your Webhooks" icon="shield-halved">
-    Always use secret keys and validate incoming requests
-  </Card>
-  
-  <Card title="Handle Errors Gracefully" icon="triangle-exclamation">
-    Add error handling conditions after webhook processing
-  </Card>
-  
-  <Card title="Test Thoroughly" icon="vial">
-    Use tools like Postman or curl to test webhook endpoints
-  </Card>
-  
-  <Card title="Monitor Usage" icon="chart-line">
-    Track webhook calls in your task history for debugging
-  </Card>
-</CardGroup>
+<AccordionGroup>
+  <Accordion title="Secure Your Webhooks">
+    Always use secret keys and validate incoming requests to protect your workflows from unauthorized access.
+  </Accordion>
+  <Accordion title="Handle Errors Gracefully">
+    Add error handling conditions after webhook processing to manage unexpected issues and ensure reliability.
+  </Accordion>
+  <Accordion title="Test Thoroughly">
+    Use tools like Postman to test your webhook endpoints with different scenarios before deploying to production.
+  </Accordion>
+</AccordionGroup>
 
-## Common Use Cases
-
-- **Form Submissions** - Process data from web forms
-- **Payment Events** - Handle payment provider notifications
-- **IoT Sensors** - React to device data streams
-- **CI/CD Pipelines** - Trigger workflows from build systems
-- **Custom Integrations** - Bridge any system with Lindy
 
 ## Related Resources
 
