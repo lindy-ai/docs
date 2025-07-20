@@ -22,92 +22,46 @@ description: 'Enrich person and company data using professional information data
 
 People Data Labs provides professional data enrichment for individuals and companies, enabling you to enhance profiles, improve lead scoring, and personalize outreach.
 
-<Frame>
-  <img src="/lindy-brand-assets/people-data-labs-initial.png" alt="People Data Labs available actions showing person and company enrichment options [[memory:2619471]]" />
-</Frame>
-
 ## Available Actions
 
 ### Person Enrichment
 
-<AccordionGroup>
-  <Accordion title="Enrich A Person">
-    Enrich person profiles with additional data using identifiable information.
-    
-    Input: Email, name, phone, or LinkedIn URL
-    
-    Returns: Full profile including job title, company, social profiles, and more
-  </Accordion>
-  
-  <Accordion title="Search for People">
-    Find people by broad criteria like:
-    - "data scientists in San Francisco"
-    - "people with @company.com email"
-    
-    Note: Avoid using to find specific person. Default to 5 results unless specified otherwise.
-  </Accordion>
-  
-  <Accordion title="Find Person by Social Network">
-    Find a person by a social network URL. A social network URL may match multiple people. The most relevant people are returned first.
-    
-    Input: LinkedIn, Twitter, or other social profile URLs
-  </Accordion>
-  
-  <Accordion title="Find Person By Phone">
-    Find a person by phone number.
-    
-    Example: +1 555-234-1234
-    
-    Note: A phone number exactly identifies one person.
-  </Accordion>
-</AccordionGroup>
+- **Enrich A Person**: Enrich person profiles with additional data using identifiable information. Input email, name, phone, or LinkedIn URL. Returns full profile including job title, company, social profiles, and more.
+- **Search for People**: Find people by broad criteria like "data scientists in San Francisco" or "people with @company.com email". Avoid using to find specific person. Default to 5 results unless specified otherwise.
+- **Find Person by Social Network**: Find a person by a social network URL using LinkedIn, Twitter, or other social profile URLs. A social network URL may match multiple people. The most relevant people are returned first.
+- **Find Person By Phone**: Find a person by phone number (example: +1 555-234-1234). A phone number exactly identifies one person.
 
 ### Company Enrichment
 
-<AccordionGroup>
-  <Accordion title="Enrich A Company">
-    Retrieve detailed company information using various identifiers and parameters.
-    
-    Input: Company name, domain, or other identifiers
-    
-    Returns: Company size, industry, location, and more
-  </Accordion>
-  
-  <Accordion title="Search for Companies">
-    Find companies by broad criteria like:
-    - "tech startups in San Francisco"
-    - "companies with over 1000 employees"
-    
-    Note: Avoid using to find specific company. Default to 5 results unless specified otherwise.
-  </Accordion>
-</AccordionGroup>
+- **Enrich A Company**: Retrieve detailed company information using various identifiers and parameters. Input company name, domain, or other identifiers. Returns company size, industry, location, and more.
+- **Search for Companies**: Find companies by broad criteria like "tech startups in San Francisco" or "companies with over 1000 employees". Avoid using to find specific company. Default to 5 results unless specified otherwise.
 
 ## Common Use Cases
 
-<CardGroup cols={2}>
-  <Card title="CRM Enrichment" icon="database">
-    Automatically enrich new leads with professional data
-  </Card>
-  
-  <Card title="Lead Scoring" icon="chart-line">
-    Enhance lead profiles for better qualification
-  </Card>
-  
-  <Card title="Personalization" icon="user-check">
-    Gather data for personalized outreach campaigns
-  </Card>
-  
-  <Card title="Research" icon="magnifying-glass">
-    Find prospects matching specific criteria
-  </Card>
-</CardGroup>
+- **CRM Enrichment**: Automatically enrich new leads with professional data
+- **Lead Scoring**: Enhance lead profiles for better qualification
+- **Personalization**: Gather data for personalized outreach campaigns
+- **Research**: Find prospects matching specific criteria
 
 ## Best Practices
 
-- Use specific identifiers (email, phone) for individual lookups
-- Use broad criteria for discovering new prospects
-- Combine person and company data for complete profiles
-- Respect data privacy regulations when using enriched data
+<AccordionGroup>
+  <Accordion title="Data Enrichment Strategy">
+    Optimize your data enrichment workflows:
+    - Use specific identifiers (email, phone) for individual lookups
+    - Use broad criteria for discovering new prospects
+    - Combine person and company data for complete profiles
+    - Start with email or LinkedIn URL for best person enrichment results
+  </Accordion>
+  
+  <Accordion title="Compliance & Privacy">
+    Handle enriched data responsibly:
+    - Respect data privacy regulations when using enriched data
+    - Only enrich data for legitimate business purposes
+    - Store enriched data securely and limit access
+    - Keep enriched data up-to-date and remove outdated information
+  </Accordion>
+</AccordionGroup>
 
 <Tip>
 People Data Labs actions work great with CRM integrations, email automation, and sales workflows to create data-driven processes.
