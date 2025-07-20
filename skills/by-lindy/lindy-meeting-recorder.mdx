@@ -5,20 +5,6 @@ sidebarTitle: 'Lindy Meeting Recorder'
 description: 'Automatically record, transcribe, and follow up on your meetings'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/meeting-recorder-demo.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
 ## Overview
 
 Lindy Meeting Recorder joins your meetings, records them, transcribes conversations, and sends you comprehensive notes with action items - all automatically.
@@ -29,88 +15,40 @@ Lindy Meeting Recorder joins your meetings, records them, transcribes conversati
 
 ## How It Works
 
+The input is a virtual meeting link. When set to auto, it'll join automatically when any Google Meet or Zoom link is in its context. Below is how a Lindy with the `Meeting Recorder` is usually structured:
+
 ### 1. Calendar Event Trigger
-- Activates 1 minute before scheduled meetings
-- Checks if event contains a meeting link
+- Activates before scheduled meetings
 - Filters for specific meeting types (optional)
 
-### 2. Core Recording Actions
-**Record Meeting**
-- Joins with customizable message
-- Records audio/video and generates real-time transcription
-- Appears as "Lindy Meeting Notetaker"
+<Tip>
+Typically used with this trigger to get calendar links for automatic meeting access.
+</Tip>
 
-**Get Task URL**
-- Captures link to recording and transcript
-- Enables sharing in emails and messages
+### 2. Record Meeting Action
+When it finds a virtual meeting link, Lindy automatically joins and you'll see two execution paths:
+- **After meeting starts:** Immediate actions during the meeting
+- **After meeting ends:** Post-meeting processing with full transcript access
 
-### 3. Smart Email Delivery
-Sends comprehensive meeting notes including:
-- Action items and deadlines
-- Meeting summary
-- Direct link to recording/transcript
-- Reply-to-email support for follow-up questions
+Lindy joins as "Lindy Meeting Notetaker" and records everything with real-time transcription.
 
-### 4. AI Follow-Up Assistant
-**Be Helpful via Chat**
-- Notifies you can ask questions about the meeting
-- Provides ongoing support through chat
+### 3. Post-Meeting Actions
+After the meeting ends, you can:
+- Send a summary via Slack or email
+- Set up an AI follow-up assistant to answer questions
+- Save recordings and transcripts wherever you want
+- Click into your task to view the recording and transcript
 
-**Answer Follow-up Questions**
-- AI agent responds to queries about meeting content
-- Clarifies discussed topics
-- Helps with action items
-
-## Key Features
-
-<CardGroup cols={2}>
-  <Card title="Virtual Meeting?" icon="video">
-    Additional option for handling ad-hoc meeting links
-  </Card>
-  
-  <Card title="Email User Notes" icon="envelope">
-    Customizable email templates with smart recipient detection
-  </Card>
-  
-  <Card title="After Recording" icon="clock">
-    Automated post-meeting workflow continues seamlessly
-  </Card>
-  
-  <Card title="After Reply Received" icon="reply">
-    Handles follow-up questions via email responses
-  </Card>
-</CardGroup>
-
-## Quick Setup
-
-<Steps>
-  <Step title="Connect Calendar">
-    Link your Google Calendar to trigger on events
-  </Step>
-  
-  <Step title="Customize Messages">
-    Set your join message and bot name
-  </Step>
-  
-  <Step title="Configure Email">
-    Set recipient and email template preferences
-  </Step>
-  
-  <Step title="Activate">
-    Turn on and let Lindy handle your meetings
-  </Step>
-</Steps>
+<Tip>
+Use conditions to perform different actions depending on the type of meeting
+</Tip>
 
 ## Common Use Cases
 
-- **Sales Calls** - Capture MEDDPICC notes and CRM updates
+- **Sales Calls** - Capture notes and CRM updates
 - **Recruiting** - Document interviews and candidate feedback  
 - **Team Meetings** - Track action items and decisions
 - **Client Meetings** - Generate professional summaries
-
-<Tip>
-Add trigger filters to control which meetings Lindy joins - perfect for excluding internal standups or focusing on external calls.
-</Tip>
 
 ## Related Resources
 

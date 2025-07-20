@@ -356,7 +356,12 @@ a.button:hover {
 
 [data-theme="dark"] code:not(pre code),
 :root[data-theme="dark"] code:not(pre code) {
-  color: var(--color-primary) !important;
+  color: #f1f5f9 !important; /* Bright light grey for better visibility */
+}
+
+/* Inline code text contrast for .dark class */
+.dark code:not(pre code) {
+  color: #f1f5f9 !important;
 }
 
 /* Remove the gradient fill on cards while keeping all text underline effects */
@@ -1320,4 +1325,10 @@ div[style*="display: flex; justify-content: center"] video {
 /* Ensure video elements have no baseline spacing */
 video {
   vertical-align: top !important; /* Remove baseline spacing */
+}
+
+/* Ensure inline code in mdx content is bright in dark mode */
+.dark .mdx-content code:not(pre code),
+.dark .prose code:not(pre code) {
+  color: #f1f5f9 !important;
 }
