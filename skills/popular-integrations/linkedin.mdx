@@ -23,229 +23,50 @@ description: 'Automate LinkedIn activities including posts, comments, profile ma
 
 LinkedIn integration enables comprehensive automation for professional networking, content management, and organization administration. Streamline your LinkedIn presence with automated posting, engagement tracking, and profile enrichment.
 
-## Getting Started
-
-Connect your LinkedIn account to unlock powerful automation capabilities. Configure triggers to respond to specific LinkedIn events like new posts, comments, or profile updates. Set up your preferred polling schedule and organization settings to tailor the integration to your workflow needs.
-
-<Frame>
-  <img src="/lindy-brand-assets/linkedin-trigger-fields.png" alt="LinkedIn trigger configuration fields for automated workflows [[memory:2619471]]" />
-</Frame>
-
 ## Available Actions
-
-<Frame>
-  <img src="/lindy-brand-assets/linkedin-actions.png" alt="LinkedIn available actions showing all posting, profile, and organization management options [[memory:2619471]]" />
-</Frame>
 
 ### Content Creation & Management
 
-<AccordionGroup>
-  <Accordion title="Create A Simple Post">
-    Create and share a text post on LinkedIn with optional article URL.
-    
-    **Input:** Post text, optional article URL
-    
-    **Returns:** Post ID and engagement metrics
-  </Accordion>
-  
-  <Accordion title="Create an Organization Post">
-    Create a text post on LinkedIn for your organization.
-    
-    **Input:** Organization ID, post content
-    
-    **Returns:** Organization post ID and visibility settings
-  </Accordion>
-  
-  <Accordion title="Create Image Post">
-    Create a LinkedIn post with an image and text with specified visibility settings.
-    
-    **Input:** Image file, post text, visibility options
-    
-    **Returns:** Image post ID and media URLs
-  </Accordion>
-  
-  <Accordion title="Create Comment">
-    Add a comment to a LinkedIn post or respond to an existing comment.
-    
-    **Input:** Post/comment ID, comment text
-    
-    **Returns:** Comment ID and thread information
-  </Accordion>
-  
-  <Accordion title="Delete Post">
-    Delete a post from your LinkedIn profile.
-    
-    **Input:** Post ID
-    
-    **Returns:** Deletion confirmation
-  </Accordion>
-</AccordionGroup>
+- **Create A Simple Post**: Create and share a text post on LinkedIn with optional article URL. Returns post ID and engagement metrics.
+- **Create an Organization Post**: Create a text post on LinkedIn for your organization. Returns organization post ID and visibility settings.
+- **Create Image Post**: Create a LinkedIn post with an image and text with specified visibility settings. Returns image post ID and media URLs.
+- **Create Comment**: Add a comment to a LinkedIn post or respond to an existing comment. Returns comment ID and thread information.
+- **Delete Post**: Delete a post from your LinkedIn profile. Returns deletion confirmation.
 
 ### Profile & Member Data
 
-<AccordionGroup>
-  <Accordion title="Get Current Member Profile">
-    Retrieve the profile information of the currently authenticated LinkedIn user.
-    
-    **Returns:** Full profile data including headline, summary, and connections
-  </Accordion>
-  
-  <Accordion title="Get Member Profile">
-    Retrieve a LinkedIn member's profile information using their unique identifier.
-    
-    **Input:** Member ID or profile URL
-    
-    **Returns:** Public profile information and professional details
-  </Accordion>
-  
-  <Accordion title="Get Multiple Member Profiles">
-    Retrieve basic profile information for multiple LinkedIn members using their unique identifiers.
-    
-    **Input:** Array of member IDs
-    
-    **Returns:** Batch profile data for efficiency
-  </Accordion>
-  
-  <Accordion title="Get Member's Organization Access Control Information">
-    Retrieve organization access control details for a LinkedIn member's roles and permissions.
-    
-    **Input:** Member ID
-    
-    **Returns:** Organization roles and permission levels
-  </Accordion>
-</AccordionGroup>
+- **Get Current Member Profile**: Retrieve the profile information of the currently authenticated LinkedIn user. Returns full profile data including headline, summary, and connections.
+- **Get Member Profile**: Retrieve a LinkedIn member's profile information using their unique identifier. Returns public profile information and professional details.
+- **Get Multiple Member Profiles**: Retrieve basic profile information for multiple LinkedIn members using their unique identifiers. Returns batch profile data for efficiency.
+- **Get Member's Organization Access Control Information**: Retrieve organization access control details for a LinkedIn member's roles and permissions. Returns organization roles and permission levels.
 
 ### Organization Administration
 
-<AccordionGroup>
-  <Accordion title="Get Organization Administrators">
-    Retrieve administrators associated with a specified LinkedIn organization.
-    
-    **Input:** Organization ID
-    
-    **Returns:** List of admin profiles and roles
-  </Accordion>
-  
-  <Accordion title="Gets Organization Access Control">
-    Retrieve access control settings for a LinkedIn organization.
-    
-    **Input:** Organization ID
-    
-    **Returns:** Permission levels and access policies
-  </Accordion>
-  
-  <Accordion title="Search Organization">
-    Search for LinkedIn organizations using their vanity name or email domain.
-    
-    **Input:** Organization name or email domain
-    
-    **Returns:** Matching organizations with details
-  </Accordion>
-</AccordionGroup>
+- **Get Organization Administrators**: Retrieve administrators associated with a specified LinkedIn organization. Returns list of admin profiles and roles.
+- **Gets Organization Access Control**: Retrieve access control settings for a LinkedIn organization. Returns permission levels and access policies.
+- **Search Organization**: Search for LinkedIn organizations using their vanity name or email domain. Returns matching organizations with details.
 
 ### Data Collection & Scraping
 
-<AccordionGroup>
-  <Accordion title="LinkedIn companies by URL">
-    Collect LinkedIn companies by company URL.
-    
-    **Input:** Company LinkedIn URL
-    
-    **Returns:** Company size, industry, specialties, and employee data
-  </Accordion>
-  
-  <Accordion title="LinkedIn job listings by URL">
-    Collect LinkedIn job listings by listing URL.
-    
-    **Input:** Job listing URL
-    
-    **Returns:** Job details, requirements, and application information
-  </Accordion>
-  
-  <Accordion title="LinkedIn posts by URL">
-    Collect LinkedIn posts by post URL.
-    
-    **Input:** Post URL
-    
-    **Returns:** Post content, engagement metrics, and author information
-  </Accordion>
-  
-  <Accordion title="LinkedIn profiles by URL">
-    Collect LinkedIn profiles by profile URL.
-    
-    **Input:** Profile URL
-    
-    **Returns:** Professional history, skills, and recommendations
-  </Accordion>
-</AccordionGroup>
+- **LinkedIn companies by URL**: Collect LinkedIn companies by company URL. Returns company size, industry, specialties, and employee data.
+- **LinkedIn job listings by URL**: Collect LinkedIn job listings by listing URL. Returns job details, requirements, and application information.
+- **LinkedIn posts by URL**: Collect LinkedIn posts by post URL. Returns post content, engagement metrics, and author information.
+- **LinkedIn profiles by URL**: Collect LinkedIn profiles by profile URL. Returns professional history, skills, and recommendations.
 
 ### Engagement & Analytics
 
-<AccordionGroup>
-  <Accordion title="Create Like On Share">
-    Like content shared on LinkedIn using entity URNs.
-    
-    **Input:** Share URN
-    
-    **Returns:** Like confirmation and engagement count
-  </Accordion>
-  
-  <Accordion title="Retrieve Comments On Shares">
-    Get comments from a specific LinkedIn share or post.
-    
-    **Input:** Share ID
-    
-    **Returns:** Comment threads with author details
-  </Accordion>
-  
-  <Accordion title="Retrieves Comments On Comments">
-    Retrieve replies to comments on LinkedIn posts.
-    
-    **Input:** Comment ID
-    
-    **Returns:** Nested comment threads
-  </Accordion>
-  
-  <Accordion title="Fetch Ad Account">
-    Retrieve detailed information about a specific LinkedIn advertising account.
-    
-    **Input:** Ad account ID
-    
-    **Returns:** Ad account details and campaign performance
-  </Accordion>
-</AccordionGroup>
+- **Create Like On Share**: Like content shared on LinkedIn using entity URNs. Returns like confirmation and engagement count.
+- **Retrieve Comments On Shares**: Get comments from a specific LinkedIn share or post. Returns comment threads with author details.
+- **Retrieves Comments On Comments**: Retrieve replies to comments on LinkedIn posts. Returns nested comment threads.
+- **Fetch Ad Account**: Retrieve detailed information about a specific LinkedIn advertising account. Returns ad account details and campaign performance.
 
 ## Use Cases
 
-<CardGroup cols={2}>
-  <Card title="Content Automation" icon="robot">
-    Schedule and publish posts across personal and company profiles
-  </Card>
-  
-  <Card title="Lead Generation" icon="chart-line">
-    Collect profile data and enrich CRM records
-  </Card>
-  
-  <Card title="Social Listening" icon="ear-listen">
-    Monitor comments and engagement on relevant posts
-  </Card>
-  
-  <Card title="Recruitment" icon="user-plus">
-    Automate job posting and candidate profile collection
-  </Card>
-</CardGroup>
+- **Content Automation**: Schedule and publish posts across personal and company profiles
+- **Lead Generation**: Collect profile data and enrich CRM records
+- **Social Listening**: Monitor comments and engagement on relevant posts
+- **Recruitment**: Automate job posting and candidate profile collection
 
-## Best Practices
-
-<Note>
-**Rate Limits:** LinkedIn has strict API rate limits. Space out your requests to avoid hitting limits.
-</Note>
-
-- Respect LinkedIn's terms of service and automation policies
-- Use organization posts for company-related content
-- Leverage profile enrichment for personalized outreach
-- Monitor engagement metrics to optimize posting times
-- Combine with CRM integrations for comprehensive lead management
 
 <Tip>
 LinkedIn actions work seamlessly with email automation, CRM systems, and scheduling tools to create comprehensive professional networking workflows.
