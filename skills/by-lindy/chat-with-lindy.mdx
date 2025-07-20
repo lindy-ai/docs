@@ -2,22 +2,50 @@
 title: 'Chat with Lindy'
 icon: 'messages'
 sidebarTitle: 'Chat with Lindy'
+description: 'Build interactive workflows using chat as a trigger and an action.'
 ---
 
+## Overview
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
+Chat with Lindy allows you to build interactive workflows that can be triggered by incoming messages and respond in real-time. This skill is perfect for creating conversational agents, custom commands, and workflows that require direct user interaction. You can start a chat from your [Tasks menu](/skills/lindy-utilities/get-task), making it incredibly easy to kick off an automation.
+
+## Trigger: Message Received
+
+The `Message Received` trigger is the starting point for any chat-based workflow. When Lindy receives a message in the chat interface that matches your trigger conditions, it will automatically start the corresponding agent.
+
+<Frame>
+  <img src="/lindy-brand-assets/chat-with-lindy-task.png" alt="Message Received Trigger" />
+</Frame>
+
+This trigger will remember the conversation context and can be re-triggered by new messages in the same chat thread.
+
+<Frame>
+  <img src="/lindy-brand-assets/chat-with-lindy-trigger.png" alt="Message Received Trigger" />
+</Frame>
+
+## Actions
+
+There are two primary actions you can use to interact with the chat.
+
+<Frame>
+  <img src="/lindy-brand-assets/chat-with-lindy-actions.png" alt="Message Received Trigger" />
+</Frame>
+
+### Send Message
+
+The `Send Message` action allows your agent to send a message back to the chat. This is how your agent communicates with you or your users. You can use Markdown to format your messages, allowing you to create rich, interactive responses.
+
+### Observe Message
+
+The `Observe Message` action allows the agent to "listen" for new messages in the chat without being the active trigger. This is useful for workflows where you need to monitor a conversation and take action later in the flow. While `Message Received` is also listening, `Observe Message` gives you more granular control over when and where you listen for new messages.
+
+## AI Agent Integration
+
+The AI Agent is a powerful tool that can be used to create intelligent, conversational workflows. When you use the AI Agent in a chat-based workflow, it can read the incoming messages, understand the user's intent, and then decide which actions to take. The AI Agent can also send messages back to the chat, allowing you to create a natural, back-and-forth conversation.
+
+<Tip>
+The AI Agent always has access to the "Send Message" action, so you don't need to add it explicitly. It can read and send messages in the Lindy chat natively.
+</Tip>
 
 ## Next Steps
 
