@@ -31,74 +31,46 @@ Key benefits of GitHub + Lindy:
 
 ## Available Triggers
 
-<Frame>
-  <img src="/lindy-brand-assets/available-github-triggers.png" alt="GitHub repository triggers showing new repository, new star, and security alert options" />
-</Frame>
-
 ### Repository Activity Triggers
 
-New Repository: Automatically respond when new repositories are created in your GitHub account or organization.
-
-New Star By User: Track when specific users star repositories to monitor engagement and adoption.
-
-New Security Alert: Get immediate notifications about security vulnerabilities in your repositories.
+- **New Repository**: Automatically respond when new repositories are created in your GitHub account or organization.
+- **New Star By User**: Track when specific users star repositories to monitor engagement and adoption.
+- **New Security Alert**: Get immediate notifications about security vulnerabilities in your repositories.
 
 ### Collaboration Triggers
 
-New Review Request: Get notified when someone requests a code review on pull requests.
-
-New Mention: Trigger workflows when you're mentioned in comments, issues, or pull requests.
-
-Pull Request Opened: Respond to new pull requests with automated workflows.
+- **New Review Request**: Get notified when someone requests a code review on pull requests.
+- **New Mention**: Trigger workflows when you're mentioned in comments, issues, or pull requests.
+- **Pull Request Opened**: Respond to new pull requests with automated workflows.
 
 ### Organizational Triggers
 
-New Team: Monitor when new teams are created in your GitHub organization.
-
-New Organization: Track the creation of new GitHub organizations.
-
-New Notification: Process GitHub notifications as they arrive.
+- **New Team**: Monitor when new teams are created in your GitHub organization.
+- **New Organization**: Track the creation of new GitHub organizations.
+- **New Notification**: Process GitHub notifications as they arrive.
 
 ## Available Actions
 
-<div style={{ display: 'flex', gap: '1rem', margin: '1rem 0' }}>
-  <Frame style={{ flex: 1 }}>
-    <img src="/lindy-brand-assets/avaialble-github-actions1.png" alt="GitHub actions part 1 - repository and issue management" />
-  </Frame>
-  <Frame style={{ flex: 1 }}>
-    <img src="/lindy-brand-assets/avaialbe-github-actions-2.png" alt="GitHub actions part 2 - workflow and project management" />
-  </Frame>
-</div>
-
 ### Repository Management
 
-Create Repository: Set up new repositories with customizable settings and features.
-
-Create Or Update File Contents: Modify repository files programmatically.
-
-Get Repository Content: Retrieve files and contents from repositories.
-
-Enable/Disable Workflow: Control GitHub Actions workflows remotely.
+- **Create Repository**: Set up new repositories with customizable settings and features.
+- **Create Or Update File Contents**: Modify repository files programmatically.
+- **Get Repository Content**: Retrieve files and contents from repositories.
+- **Enable/Disable Workflow**: Control GitHub Actions workflows remotely.
 
 ### Issue and PR Management
 
-Create Issue: Automatically create GitHub issues based on triggers.
-
-Update Issue: Modify issue details, labels, and assignments.
-
-Create Issue Comment: Add comments to issues and pull requests.
-
-Search Issues And Pull Requests: Find specific issues and PRs using keywords and qualifiers.
-
-Create Pull Request: Generate pull requests automatically.
+- **Create Issue**: Automatically create GitHub issues based on triggers.
+- **Update Issue**: Modify issue details, labels, and assignments.
+- **Create Issue Comment**: Add comments to issues and pull requests.
+- **Search Issues And Pull Requests**: Find specific issues and PRs using keywords and qualifiers.
+- **Create Pull Request**: Generate pull requests automatically.
 
 ### Project Tracking
 
-Update Project Item Status: Manage GitHub Project (V2) item statuses.
-
-List Issues: Retrieve lists of repository issues.
-
-Get Issue Assignees: Find users assigned to specific issues.
+- **Update Project Item Status**: Manage GitHub Project (V2) item statuses.
+- **List Issues**: Retrieve lists of repository issues.
+- **Get Issue Assignees**: Find users assigned to specific issues.
 
 ## Example: Daily Engineering Digest
 
@@ -110,15 +82,11 @@ This automated workflow demonstrates how to create comprehensive engineering rep
 
 ### Workflow Components
 
-Scheduled Trigger: Runs daily to generate consistent reporting.
-
-Repository Loop: Iterates through a list of repositories to gather comprehensive data.
-
-Issue Analysis: Collects both open and closed issues to track progress and workload.
-
-Code Analysis: Processes repository activity and generates insights.
-
-Team Notification: Sends formatted digest to Slack channels.
+- **Scheduled Trigger**: Runs daily to generate consistent reporting.
+- **Repository Loop**: Iterates through a list of repositories to gather comprehensive data.
+- **Issue Analysis**: Collects both open and closed issues to track progress and workload.
+- **Code Analysis**: Processes repository activity and generates insights.
+- **Team Notification**: Sends formatted digest to Slack channels.
 
 ### Setup Process
 
@@ -196,51 +164,17 @@ Team Notification: Sends formatted digest to Slack channels.
   <Accordion title="Workflow Organization">
     Structure your GitHub automations for maximum efficiency and clarity.
     
-    **Repository Grouping**: Organize repositories by team, project, or importance for targeted monitoring.
-    
-    **Notification Routing**: Send different types of notifications to appropriate channels or team members.
-    
-    **Frequency Management**: Balance between staying informed and avoiding notification fatigue.
+    - Repository Grouping: Organize repositories by team, project, or importance for targeted monitoring.
+    - Notification Routing: Send different types of notifications to appropriate channels or team members.
+    - Frequency Management: Balance between staying informed and avoiding notification fatigue.
   </Accordion>
   
   <Accordion title="Security Considerations">
     Maintain security best practices when integrating GitHub with automation workflows.
     
-    **Webhook Security**: Use secure webhook configurations for sensitive repositories.
-    
-    **Access Control**: Limit Lindy's repository access to necessary permissions only.
-    
-    **Sensitive Data**: Avoid exposing sensitive information in automated messages.
-  </Accordion>
-  
-  <Accordion title="Performance Optimization">
-    Optimize your GitHub workflows for better performance and reliability.
-    
-    **Rate Limiting**: Respect GitHub API rate limits, especially with high-frequency workflows.
-    
-    **Batch Processing**: Group related operations to improve efficiency.
-    
-    **Selective Monitoring**: Focus on active repositories to reduce unnecessary processing.
-  </Accordion>
-</AccordionGroup>
-
-## Troubleshooting
-
-<Warning>
-  Always test GitHub workflows with low-frequency triggers first to avoid hitting API rate limits during development.
-</Warning>
-
-<AccordionGroup>
-  <Accordion title="Common Issues & Solutions">
-    Resolve the most frequent GitHub integration problems with these targeted solutions.
-    
-    **Authentication Issues**: Ensure GitHub integration is properly connected and has necessary permissions.
-    
-    **Rate Limiting**: If workflows fail due to rate limits, consider reducing frequency or batching operations.
-    
-    **Webhook Delivery**: Check webhook configurations if triggers aren't firing consistently.
-    
-    **Data Accuracy**: Verify repository permissions if certain data isn't accessible.
+    - Webhook Security: Use secure webhook configurations for sensitive repositories.
+    - Access Control: Limit Lindy's repository access to necessary permissions only.
+    - Sensitive Data: Avoid exposing sensitive information in automated messages.
   </Accordion>
 </AccordionGroup>
 
