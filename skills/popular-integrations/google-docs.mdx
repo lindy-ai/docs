@@ -20,9 +20,7 @@ sidebarTitle: 'Google Docs'
 
 ## Quick Overview
 
-Google Docs integration with Lindy enables your AI agents to become sophisticated document management assistants. The integration provides both Triggers (what can start a Lindy workflow) and Actions (what Lindy can do), making it perfect for automating document creation, editing, approval workflows, and content management.
-
-This comprehensive integration transforms Lindy into a powerful document automation platform, capable of handling everything from simple document creation to complex template merging and dynamic content management.
+Google Docs integration enables your AI agents to become document management assistants. Create, edit, and manage documents automatically with both triggers and actions for complete document workflow automation.
 
 Key benefits of Google Docs integration:
 - **Automated document creation** – Generate docs from templates with dynamic data
@@ -94,7 +92,7 @@ Converts documents to PDF format:
 
 
 #### Get Document
-Retrieves comprehensive document information:
+Retrieves document information:
 - Fuzzy search by ID, Name, or URL
 - Returns full plain-text body plus metadata
 - Essential for feeding content into AI summarizers, content comparison
@@ -159,77 +157,33 @@ Search and locate documents intelligently:
   </Accordion>
 </AccordionGroup>
 
-## Advanced Features & Capabilities
+## Best Practices
 
 <AccordionGroup>
-  <Accordion title="AI-Driven Content Processing">
-    Intelligent document enhancement and automation:
-    - Chain Get Document → AI processing → Update Document
-    - Content rewriting using house style guidelines
-    - Conditional processing based on word count or content type
-    - Dynamic content generation from data sources
-  </Accordion>
-  
-  <Accordion title="Template-Based Automation">
-    Powerful document generation from templates:
-    - Dynamic field replacement with `{{mergeField}}` syntax
-    - Bulk generation through Google Sheets integration
-    - Personalized content creation at scale
-    - Multi-format output (Doc, PDF, shared links)
-  </Accordion>
-  
-  <Accordion title="Approval Workflow Integration">
-    Streamlined document review processes:
-    - Human-in-the-loop approval gates
-    - Conditional routing based on document type
-    - Status tracking and notification systems
-    - Exit conditions for automated approval
-  </Accordion>
-</AccordionGroup>
-
-## Configuration Best Practices
-
-<AccordionGroup>
-  <Accordion title="For Document Creation">
+  <Accordion title="Document Creation & Templates">
     Optimize your document generation workflows:
-    - Begin complex flows with Get Document to confirm correct file
     - Use template-based creation for consistent formatting
+    - Begin complex flows with Get Document to confirm you have the correct file
+    - Store document URLs (not IDs) for easier human access
+  </Accordion>
+  
+  <Accordion title="Content Management">
+    Handle document updates effectively:
+    - Combine Append, Replace, and Update actions thoughtfully for best results
+    - Use Get Document to feed content into AI for intelligent processing and rewriting
+  </Accordion>
+  
+  <Accordion title="Folder Organization">
+    Structure your documents for automation success:
     - Implement proper folder organization and naming conventions
-    - Store document URLs (not IDs) for human accessibility
+    - Use folder filtering on triggers to avoid unnecessary workflow activations
   </Accordion>
   
-  <Accordion title="For Content Management">
-    Set up robust document processing:
-    - Combine Append, Replace, and Update actions thoughtfully
-    - Use Conditions on triggers to route by document type
-    - Insert delays for high-volume operations to respect quotas
-    - Pre-cache images in Drive for faster replacement operations
-  </Accordion>
-  
-  <Accordion title="For Integration Workflows">
-    Create reliable document automation:
-    - Plan for Google API rate limits (100 writes/min per user)
-    - Ensure proper Drive permissions for Shared Drives
-    - Implement error handling for document size limits (1.02M characters)
-    - Use organization-managed Google Workspace for compliance
-  </Accordion>
-</AccordionGroup>
-
-## Limits & Security Considerations
-
-<AccordionGroup>
-  <Accordion title="API Limitations">
-    - **Rate Limits**: ~100 writes/minute per user before exponential back-off
-    - **Document Size**: 1.02 million character maximum
-    - **Image Requirements**: External URLs must be publicly accessible
-    - **Trigger Quotas**: Google's daily push notification caps
-  </Accordion>
-  
-  <Accordion title="Security & Compliance">
-    - **Authentication**: OAuth2 with Drive + Docs scopes required
-    - **Permissions**: Content manager access needed for Shared Drives
-    - **Data Handling**: Lindy processes content transiently during execution
-    - **Compliance**: HIPAA/SOC 2 compatible with managed Google Workspace
+  <Accordion title="Workflow Integration">
+    Connect documents with other tools seamlessly:
+    - Use Conditions on triggers to route workflows by document type
+    - Chain document actions with Gmail for automated sharing and notifications
+    - Integrate with approval workflows using human-in-the-loop gates
   </Accordion>
 </AccordionGroup>
 
