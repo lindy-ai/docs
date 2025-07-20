@@ -23,133 +23,51 @@ description: 'Scrape and collect Instagram data including profiles, posts, reels
 
 Instagram integration enables comprehensive data collection from Instagram profiles, posts, reels, and comments. Perfect for social media monitoring, content analysis, and competitor research.
 
-<Frame>
-  <img src="/lindy-brand-assets/instagram-actions.png" alt="Instagram available actions showing all scraping and collection options [[memory:2619471]]" />
-</Frame>
-
 ## Available Actions
 
 ### Content Collection by URL
 
-<AccordionGroup>
-  <Accordion title="Instagram reels by URL">
-    Collect Instagram reels by reel URL
-    
-    Input: Direct reel URL
-    
-    Returns: Reel metadata, captions, engagement metrics, and video details
-  </Accordion>
-  
-  <Accordion title="Instagram posts by URL">
-    Collect Instagram posts by post URL
-    
-    Input: Direct post URL
-    
-    Returns: Post content, captions, hashtags, engagement data, and media files
-  </Accordion>
-  
-  <Accordion title="Instagram comments by URL">
-    Collect Instagram comments by post URL
-    
-    Input: Post or reel URL
-    
-    Returns: All comments with usernames, timestamps, and engagement metrics
-  </Accordion>
-  
-  <Accordion title="Instagram accounts by URL">
-    Collect Instagram accounts by account URL
-    
-    <Frame>
-      <img src="/lindy-brand-assets/instagrab-accounts-by-url-example.png" alt="Instagram accounts action showing configuration with auto-fill and workflow integration [[memory:2619471]]" />
-    </Frame>
-    
-    Input: Instagram profile URL
-    
-    Returns: Complete profile data including bio, follower counts, and recent posts
-  </Accordion>
-</AccordionGroup>
+- **Instagram reels by URL**: Collect Instagram reels by reel URL. Returns reel metadata, captions, engagement metrics, and video details.
+- **Instagram posts by URL**: Collect Instagram posts by post URL. Returns post content, captions, hashtags, engagement data, and media files.
+- **Instagram comments by URL**: Collect Instagram comments by post URL. Returns all comments with usernames, timestamps, and engagement metrics.
+- **Instagram accounts by URL**: Collect Instagram accounts by account URL. Returns complete profile data including bio, follower counts, and recent posts.
 
 ### Advanced Profile Scrapers
 
-<AccordionGroup>
-  <Accordion title="Instagram Profile Scraper">
-    Scrape all Instagram profile info. Just add one or more Instagram usernames and extract number of followers&follows, URLs, bio, posts, likes, counts, related profiles, captions, highlight reels. Export scraped data, run the scraper via API, schedule and monitor runs or integrate with other tools.
-    
-    Input: Instagram usernames (one or multiple)
-    
-    Returns: Comprehensive profile analysis including:
-    - Follower and following counts
-    - Bio and profile URLs
-    - Post counts and engagement metrics
-    - Related profiles and connections
-    - Highlight reel data
-  </Accordion>
-  
-  <Accordion title="Instagram Post Scraper">
-    Scrape Instagram posts. Just add one or more Instagram usernames and get your data in seconds including text, hashtags, mentions, comments, images, URLs, likes, locations, and metadata. Export scraped data, run the scraper via API, schedule and monitor runs or integrate with other tools.
-    
-    Input: Instagram usernames
-    
-    Returns: Detailed post analysis including:
-    - Text content and hashtags
-    - Mentions and comments
-    - Images and media URLs
-    - Location data and metadata
-    - Engagement metrics
-  </Accordion>
-  
-  <Accordion title="Instagram Comments Scraper">
-    Scrape Instagram comments from posts or reels. Just add one or more Instagram post URLs to get comment text, post IDs, position, timestamp, owner ids, usernames, profile pics, and URLs. Export scraped datasets, run the scraper via API, schedule and monitor runs or integrate with other tools.
-    
-    Input: Instagram post URLs
-    
-    Returns: Comprehensive comment data including:
-    - Comment text and timestamps
-    - User information and profile pictures
-    - Post IDs and positioning data
-    - Owner details and URLs
-  </Accordion>
-</AccordionGroup>
-
-## Workflow Integration
-
-The Instagram actions integrate seamlessly with Lindy's AI capabilities:
-
-- **Auto Mode**: AI automatically fills fields based on workflow context
-- **Search Integration**: Results trigger subsequent workflow steps
-- **Data Processing**: Combine with other actions for comprehensive analysis
+- **Instagram Profile Scraper**: Scrape all Instagram profile info from one or more usernames. Returns comprehensive profile analysis including follower and following counts, bio and profile URLs, post counts and engagement metrics, related profiles and connections, and highlight reel data.
+- **Instagram Post Scraper**: Scrape Instagram posts from one or more usernames. Returns detailed post analysis including text content and hashtags, mentions and comments, images and media URLs, location data and metadata, and engagement metrics.
+- **Instagram Comments Scraper**: Scrape Instagram comments from posts or reels using post URLs. Returns comprehensive comment data including comment text and timestamps, user information and profile pictures, post IDs and positioning data, and owner details and URLs.
 
 ## Common Use Cases
 
-<CardGroup cols={2}>
-  <Card title="Competitor Analysis" icon="chart-line">
-    Monitor competitor posts, engagement, and content strategies
-  </Card>
-  
-  <Card title="Influencer Research" icon="users">
-    Analyze influencer profiles, engagement rates, and audience data
-  </Card>
-  
-  <Card title="Content Monitoring" icon="eye">
-    Track mentions, hashtags, and brand-related content
-  </Card>
-  
-  <Card title="Trend Analysis" icon="trending-up">
-    Identify trending content, hashtags, and engagement patterns
-  </Card>
-</CardGroup>
-
-
-## Best Practices
-
-- Use specific URLs for targeted data collection
-- Combine multiple actions for comprehensive analysis
-- Respect Instagram's terms of service and rate limits
-- Schedule regular monitoring for trend analysis
+- **Competitor Analysis**: Monitor competitor posts, engagement, and content strategies
+- **Influencer Research**: Analyze influencer profiles, engagement rates, and audience data
+- **Content Monitoring**: Track mentions, hashtags, and brand-related content
+- **Trend Analysis**: Identify trending content, hashtags, and engagement patterns
 
 <Tip>
 Instagram actions work great with content analysis workflows, social media reporting, and competitive intelligence systems.
 </Tip>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Data Collection Strategy">
+    Optimize your Instagram data gathering:
+    - Use specific URLs for targeted data collection instead of broad searches
+    - Combine multiple actions for comprehensive analysis (profile + posts + comments)
+    - Start with single profiles before scaling to multiple accounts
+  </Accordion>
+  
+  <Accordion title="Workflow Efficiency">
+    Structure your Instagram workflows effectively:
+    - Schedule regular monitoring for trend analysis rather than constant scraping
+    - Use Auto Mode to let AI fill fields based on previous steps
+    - Combine with content analysis actions for deeper insights
+  </Accordion>
+</AccordionGroup>
+
+
 
 ## Related Resources
 
