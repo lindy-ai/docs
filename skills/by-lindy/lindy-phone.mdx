@@ -21,42 +21,41 @@ description: 'Build AI-powered voice agents that can handle complex phone conver
 
 ## Overview
 
-Lindy Phone transforms voice interactions into powerful automated workflows. Unlike traditional IVR systems, Lindy Phone seamlessly connects to AI agents that can access your entire integration ecosystem - making API calls, searching the web, updating databases, and more - all during a live conversation.
+Lindy Phone transforms voice interactions into powerful automated workflows. Unlike traditional phone trees, Lindy Phone seamlessly connects to AI agents that can access your entire integration ecosystem - making API calls, searching the web, updating databases, and more - all during a live conversation.
 
 <Note>
-**Key insight:** Every phone call in Lindy is automatically followed by an AI Agent node, enabling sophisticated tool integrations and dynamic responses based on the conversation.
+Every phone call in Lindy is automatically followed by an AI Agent node, enabling sophisticated tool integrations and dynamic responses based on the conversation.
 </Note>
 
 ## How Lindy Phone Works
 
 <Frame>
-  <img src="/lindy-brand-assets/lindy-utilities-lindy-phone.png" alt="Phone call workflow showing call received trigger followed by AI agent node [[memory:2619471]]" />
+  <img src="/lindy-brand-assets/lindy-utilities-lindy-phone.png" alt="Phone call workflow showing call received trigger followed by AI agent node" />
 </Frame>
 
-The magic happens through this workflow pattern:
+This is how you interact with Lindy Phone:
 1. **Phone trigger** (inbound) or **action** (outbound) initiates the call
-2. **AI Agent node** automatically follows, providing access to:
-   - All Lindy integrations (Gmail, Slack, CRMs, etc.)
+2. **AI Agent node** automatically follows with phone agent skills. The prompt dictates the behavior, and you can optionally add other skills like:
+   - Lindy integrations (Gmail, Slack, CRMs, etc.)
    - Web browsing and search capabilities
    - API connections
    - Database operations
-   - Custom code execution
 
-This means your voice agent isn't just talking - it's actively working across your entire tech stack in real-time.
+This means your voice agent can work across your tech stack during conversations.
+
+<Tip>
+Pro tip: Use "After Call Ends" path to perform any logging or post-call actions instead of trying to do things during the live conversation.
+</Tip>
 
 ## Setting Up Your AI-Powered Voice Agent
 
 ### Step 1: Configure the AI Agent
 
-After adding your phone trigger/action, the AI agent node appears automatically:
-
-<Frame>
-  <img src="/lindy-brand-assets/lindy-phone-ai-agent-setup.png" alt="AI agent configuration showing prompt field and model selection [[memory:2619471]]" />
-</Frame>
+After adding your phone trigger/action, the AI agent node appears automatically. Your prompt is the instruction for the phone agent, as that's dictating the behavior on the phone.
 
 **Essential configuration:**
 - **Prompt**: Define your agent's personality, objectives, and conversation guidelines
-- **Model**: GPT-4o mini for simple flows, GPT-4 Turbo for complex conversations
+- **Model**: We recommend Gemini Flash for simple calls and Claude Sonnet for complex conversations
 - **Skills**: Add any Lindy action as a skill your agent can use
 
 <Tip>
@@ -68,63 +67,93 @@ Pro tip: Start your prompt with clear role definition: "You are a [role] for [co
 Your voice agent can perform any action available in Lindy:
 
 <Frame>
-  <img src="/lindy-brand-assets/lindy-phone-ai-agent-skills.png" alt="AI agent skills panel showing phone-specific actions and other integrations [[memory:2619471]]" />
+  <img src="/lindy-brand-assets/lindy-phone-ai-agent-skills.png" alt="AI agent skills panel showing phone-specific actions and other integrations" />
 </Frame>
 
 **Phone-specific skills:**
 - **End Call** - Gracefully terminate conversations
-- **Press Numbers** - Navigate phone trees (IVR systems)
+- **Press Numbers** - Navigate phone trees
 - **Transfer Call** - Route to humans or departments
 
-**Power-user skills to add:**
-- **Search Internet** - Look up information mid-call
-- **HTTP Request** - Query APIs for real-time data
-- **Update Spreadsheet** - Log call details instantly
-- **Send Email/SMS** - Follow up automatically
-- **Create Calendar Event** - Book appointments
-- **Search Knowledge Base** - Access company information
+You can add any skills, but keep in mind that if Lindy uses non-phone skills it will increase latency and this is a conversation.
 
-## Real-World Examples
+## Real Example Prompts
 
 <AccordionGroup>
   <Accordion title="Smart Customer Support Agent">
     ```
-    Prompt: You are a technical support agent for TechCorp. 
-    Help customers troubleshoot issues and create tickets when needed.
-    
-    Skills:
-    - Search Knowledge Base (find solutions)
-    - Create Ticket in Zendesk (log issues)
-    - Send SMS (confirmation texts)
-    - Transfer Call (escalate to human)
+    You are on a phone call with a customer needing technical support.
+
+    **Follow these conversation steps:**
+
+    1. Introduce yourself briefly:
+    "Hi there, I'm your technical support assistant. Can I please get your name?"
+
+    2. [Instruction]: WAIT FOR THE OTHER PERSON TO RESPOND BEFORE CONTINUING.
+
+    3. Ask how you can help them today with their technical issue.
+
+    *** Anytime you receive a question, move to the "support question" state ***
+
+    4. Respond to technical questions concisely using your knowledge base. 
+    Try to keep responses 1-2 sentences. If you cannot answer the question, 
+    search the knowledge base or create a support ticket.
+
+    5. If the user indicates the issue is resolved or conversation is over, 
+    say thank you and goodbye then end the call.
+
+    Skills: Search Knowledge Base, Create Zendesk Ticket, Send SMS, Transfer Call
     ```
   </Accordion>
   
   <Accordion title="AI Sales Assistant">
     ```
-    Prompt: You qualify leads and schedule demos for our sales team.
-    Gather company size, budget, and timeline information.
-    
-    Skills:
-    - Search Internet (research company)
-    - Check Calendar (find open slots)
-    - Create Calendar Event (book demos)
-    - Update CRM (log lead data)
-    - Send Email (confirmation + materials)
+    You are on a phone call with a potential customer interested in our services.
+
+    **Follow these conversation steps:**
+
+    1. Introduce yourself briefly:
+    "Hi there, I'm calling from [Company]. Can I please get your name?"
+
+    2. [Instruction]: WAIT FOR THE OTHER PERSON TO RESPOND BEFORE CONTINUING.
+
+    3. Ask how you can help them learn about our services today.
+
+    *** Anytime you receive a question, move to the "sales question" state ***
+
+    4. Respond to questions about our services concisely. Gather company size, 
+    budget, and timeline information. Try to keep responses 1-2 sentences. 
+    If they're qualified, offer to schedule a demo.
+
+    5. If they want to schedule a demo or the conversation is over, 
+    say thank you and goodbye then end the call.
+
+    Skills: Search Internet, Check Calendar, Create Calendar Event, Update CRM, Send Email
     ```
   </Accordion>
   
   <Accordion title="Appointment Scheduler">
     ```
-    Prompt: You handle appointment booking for our medical practice.
-    Verify insurance and find suitable time slots.
-    
-    Skills:
-    - Query API (verify insurance)
-    - Search Calendar (check availability)
-    - Create Event (book appointment)
-    - Send SMS (reminders)
-    - Update Database (patient records)
+    You are on a phone call with someone wanting to schedule an appointment.
+
+    **Follow these conversation steps:**
+
+    1. Introduce yourself briefly:
+    "Hi there, I'm calling to help you schedule an appointment. Can I please get your name?"
+
+    2. [Instruction]: WAIT FOR THE OTHER PERSON TO RESPOND BEFORE CONTINUING.
+
+    3. Ask what type of appointment they need and their preferred date/time.
+
+    *** Anytime you receive a question, move to the "scheduling question" state ***
+
+    4. Check availability and verify insurance if needed. Try to keep responses 
+    1-2 sentences. If you cannot find suitable times, offer alternatives.
+
+    5. Once appointment is booked or if conversation is over, 
+    say thank you and goodbye then end the call.
+
+    Skills: Query API, Search Calendar, Create Event, Send SMS, Update Database
     ```
   </Accordion>
 </AccordionGroup>
@@ -175,18 +204,11 @@ Your voice agent can perform any action available in Lindy:
     - Monitor usage patterns
   </Accordion>
   
-  <Accordion title="Error Handling">
-    - Always include transfer option
-    - Handle API failures gracefully
-    - Provide clear error messages
-    - Log issues for review
-  </Accordion>
-  
-  <Accordion title="Performance">
-    - Use appropriate AI models
-    - Minimize API call latency
-    - Cache frequently used data
-    - Monitor call duration
+  <Accordion title="Logging & Post-Call Actions">
+    - Use "After Call Ends" trigger to perform any logging or post-call actions
+    - Avoid trying to log or update records during the live conversation
+    - Set up follow-up emails or notifications after the call completes
+    - Process call transcripts and summaries post-call for better performance
   </Accordion>
 </AccordionGroup>
 
