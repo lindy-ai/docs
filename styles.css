@@ -150,15 +150,25 @@ pre {
   background-color: var(--color-dark-bg);
   border-radius: 8px;
   padding: 1.25rem;
-  overflow-x: auto;
+  overflow-wrap: break-word !important; /* Break long words */
+  word-wrap: break-word !important; /* Legacy support */
+  overflow-x: hidden !important; /* Remove horizontal scroll */
   margin: var(--spacing-xl) 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  white-space: pre-wrap !important; /* Force text wrapping in code blocks */
+  max-width: 100% !important; /* Ensure container doesn't exceed parent */
+  box-sizing: border-box !important; /* Include padding in width calculation */
 }
 
 pre code {
   background-color: transparent;
   padding: 0;
   color: #FFFFFF;
+  white-space: pre-wrap !important; /* Force text wrapping */
+  overflow-wrap: break-word !important; /* Break long words */
+  word-wrap: break-word !important; /* Legacy support */
+  max-width: 100% !important; /* Ensure code doesn't exceed container */
+  display: block !important; /* Ensure block-level behavior */
 }
 /* Buttons */
 .button, 
