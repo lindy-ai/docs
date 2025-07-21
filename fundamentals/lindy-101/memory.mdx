@@ -20,34 +20,38 @@ sidebarTitle: 'Memory'
 
 ## Quick Overview
 
-Memory and Context work together to give your agents consistent knowledge and behavior. While Context provides fixed instructions, Memory allows dynamic information that can be updated during execution. Both are injected into every AI call your agent makes, ensuring consistent behavior throughout workflows.
+Context and Memory ensure your agents have the right information to make correct decisions. They work together to provide both immediate task awareness and long-term knowledge retention.
 
-Key concepts:
-- **Context** — Fixed instructions that guide overall behavior
-- **Memory** — Dynamic information that persists across executions
-- **Always available** - Both are included in every AI decision
-- **Complementary systems** - Context sets the rules, Memory can be used to store learnings
-- **Workflow persistence** - Information carries across multiple runs
+There are different forms of context and memory that help your agent during individual task runs and across multiple runs. This system lets your agent stay informed about current work while building on past experiences.
+
+<Tip>
+What makes Lindy special is automatic context accrual - your agent is aware of everything that happens during a task run. As your agent takes actions, all the data and results automatically become part of the context for future decisions within that task.
+</Tip>
 
 
 ## Understanding Memory vs Context
 
 ### Context
-Overarching instructions that remain constant throughout your automation. Think of Context as your agent's personality and core directives - it defines WHO your agent is and HOW it should behave.
+There are two types of context that inform your agent's decisions:
 
-Examples:
-- "You are a customer support agent for Acme Corp. Always be professional and empathetic."
-- "You handle financial data. Never share account numbers in full, always mask them."
-- "You're a technical recruiter focusing on senior engineering roles."
+- **Context that accrues per task run**: Lindy automatically builds context as your agent works, including all actions, data, and results from the current task. This helps your agent make informed decisions based on what's happened so far in the workflow.
+- **Context you set in settings**: Personality and core directives that guide your agent's behavior across all tasks. This defines who your agent is and how it should consistently behave.
+
+<Note>
+Key difference: Per-run context is unique to each task and resets when a new task starts. Settings context is used every time and remains consistent across all task runs.
+</Note>
 
 ### Memory
-Dynamic information that your agent can read and update during execution. Memory allows your agent to learn and adapt based on interactions, storing information that persists across different runs.
+Memories are little snippets of information that you can save to Lindy's memory, which gets added into the context and persists across all task runs. They're a really helpful tool for you to build self-improving Lindys.
 
 Examples:
 - "Don't schedule meetings before 11am for this user"
 - "Customer prefers email communication over phone calls"
 - "Last outreach to this lead was on March 15th about pricing"
 
+<Note>
+Memories persist across all future task runs. When your agent creates or updates a memory during a workflow, that information becomes part of the context for all subsequent tasks.
+</Note>
 
 ## Configuring Memory and Context
 
@@ -108,42 +112,23 @@ This ensures consistent behavior aligned with both fixed rules and learned prefe
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion title="Keep Context Focused">
-    Context should define the role and core behavior. Avoid cluttering with information that might change - use Memory for that instead.
+  <Accordion title="Use Context Settings for Consistent Behavior">
+    Set clear personality and behavioral guidelines in context settings that should apply to every task. This defines who your agent is across all interactions.
   </Accordion>
   
-  <Accordion title="Structure Memories Clearly">
-    Use consistent formats like "Preference: value" or "Rule: description" to make memories easy to parse and update.
+  <Accordion title="Leverage Memories for Self-Improvement">
+    Use memories to store learnings that help your agent get better over time. Save user preferences, successful strategies, and important discoveries that should influence future behavior.
   </Accordion>
   
-  <Accordion title="Regular Memory Cleanup">
-    Implement workflows to review and clean outdated memories. Information can become stale over time.
+  <Accordion title="Monitor Context Length">
+    Long context accrual can increase costs. If tasks get expensive, consider using memory actions to store key information and clear context, or break complex workflows into smaller tasks.
   </Accordion>
   
-  <Accordion title="Test Memory Updates">
-    When agents update memories, verify the changes align with your intentions. Add validation steps if needed.
+  <Accordion title="Choose the Right Tool">
+    Use context settings for unchanging rules and personality. Use memories for dynamic learnings that should persist. Let context accrual happen automatically - don't try to manage it manually.
   </Accordion>
 </AccordionGroup>
 
-
-## Additional Settings
-
-### Default Model
-Select the AI model used throughout your workflow. This can be overridden on specific steps if needed:
-- **Fast models** - For simple decisions and quick responses
-- **Balanced models** - For most use cases
-- **Advanced models** - For complex reasoning and nuanced tasks
-
-### Safe Mode
-When enabled, your agent requests confirmation before actions with external effects:
-- Sending emails
-- Creating calendar events  
-- Updating databases
-- Making API calls
-
-<Tip>
-Enable Safe Mode during testing or for sensitive workflows where human oversight is crucial.
-</Tip>
 
 
 ## Next Steps
