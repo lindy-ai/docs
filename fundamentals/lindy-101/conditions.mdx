@@ -20,14 +20,11 @@ sidebarTitle: 'Conditions'
 
 ## Quick Overview
 
-Conditions let you create branching logic in your workflows. They evaluate specific criteria and direct your agent down different paths based on the results. Think of them as "if-then" statements that make your automations smarter and more responsive to different scenarios.
+Conditions let your agent make smart decisions about which path to take in a workflow. Instead of rigid rules like "if field equals X", you write natural language prompts like "if the customer seems angry" or "if this email needs a response".
 
-Key benefits of using conditions:
-- **Smart routing** - Direct workflows down different paths based on content, context, or criteria
-- **Dynamic responses** - Handle multiple scenarios within a single workflow
-- **Intelligent filtering** - Process only relevant items or data that meet specific requirements
-- **Automated decision-making** - Let your agent choose the best action without manual intervention
-- **Workflow efficiency** - Avoid unnecessary steps by branching only when conditions are met
+Your AI agent evaluates these conditions by understanding context, sentiment, and meaning — not just exact matches. This means you can handle complex scenarios that would be impossible with traditional automation tools.
+
+Use conditions to route different types of requests, filter content intelligently, or handle multiple scenarios within a single workflow. Your agent chooses the best path based on what it actually understands from the data.
 
 
 ## Creating Your First Condition
@@ -101,10 +98,6 @@ Click on the condition title (e.g., "Condition 1") and replace it with a meaning
     Consider what happens when conditions overlap or when none match. Use the test panel to verify behavior.
   </Accordion>
   
-  <Accordion title="Order Matters">
-    Your agent evaluates conditions in order and takes the first matching path. Place more specific conditions before general ones.
-  </Accordion>
-  
   <Accordion title="Add Examples">
     Include examples in your condition prompts to improve accuracy: "the email asks about pricing (e.g., 'how much does it cost', 'what are your rates')".
   </Accordion>
@@ -123,7 +116,6 @@ Click on the condition title (e.g., "Condition 1") and replace it with a meaning
 
 2. **Wrong path is chosen**
    - Review and refine your condition prompts
-   - Check the order of conditions
    - Add more specific examples
 
 3. **Conditions overlap**
