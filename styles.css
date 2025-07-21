@@ -534,7 +534,6 @@ li[aria-expanded="true"] > div.group svg:last-child {
   background-color: var(--color-bg-code); /* Same soft yellow as active */
   border-radius: 0.75rem !important; /* More rounded corners */
   width: 100%; /* Ensure full-width highlight */
-  font-weight: 550; /* Slightly bold */
 }
 
 /* Active navigation items - keep original text color with bold weight */
@@ -1115,13 +1114,11 @@ html:not(.dark) .text-gray-400 {
   background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow for better visibility */
   border-radius: 0.75rem !important;
   opacity: 0.85 !important; /* Slightly increased opacity */
-  font-weight: 500 !important; /* Slightly less bold than before */
 }
 
 /* Dark mode: Remove the overly bright hover from existing styles */
 .dark #sidebar-content .group:hover {
   background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow, override any existing bright hover */
-  font-weight: 500 !important;
 }
 
 /* Dark mode: Ensure active states keep their intended styling */
