@@ -20,14 +20,11 @@ sidebarTitle: 'Agent Steps'
 
 ## Quick Overview
 
-AI Agents are autonomous components that can make decisions and execute skills based on guidelines you provide. Unlike fixed workflows, they adapt to uncertain situations by choosing which actions to take and when. While powerful, they're more expensive and introduce variability compared to standard actions and conditions.
+Agent steps let your AI make autonomous decisions about how to complete complex tasks. Instead of following fixed workflows, they work from guidelines you provide and choose which skills to use based on the situation.
 
-Key characteristics:
-- **Autonomous decision-making** - Agents decide which skills to use and when
-- **Flexible execution** - Adapt to unexpected scenarios and data
-- **Skill-based actions** - Execute multiple capabilities as needed
-- **Guideline-driven** - Follow broad instructions rather than rigid steps
-- **Loop until complete** - Continue working until exit conditions are met
+Think of them as hiring a smart assistant who can adapt to unexpected scenarios. They'll keep working until they meet your exit conditions, using whatever combination of skills they need to get the job done.
+
+Agent steps are powerful but more expensive than standard actions. Use them only when the next steps are genuinely uncertain and you need intelligent decision-making.
 
 <Warning>
 AI Agents are powerful but more expensive and potentially less reliable than standard actions. Use them only when the next steps are truly uncertain. When possible, use actions and conditions instead.
@@ -36,28 +33,18 @@ AI Agents are powerful but more expensive and potentially less reliable than sta
 
 ## Understanding AI Agent Components
 
-AI Agents consist of five essential parts that work together:
+AI Agents consist of four essential parts that work together:
 
-### 1. Prompt
-The core instructions that guide your agent's behavior. Think of this as the agent's mission statement - what it should accomplish and how.
-
-### 2. Model
-The AI model (e.g., GPT-4, Claude) that powers the agent's decision-making capabilities.
-
-### 3. Ask for Confirmation
-Optional human-in-the-loop feature that requires approval before the agent executes certain actions.
-
-### 4. Skills
-The actions and capabilities available to the agent. These are the tools it can use to accomplish its goals.
-
-### 5. Exit Conditions
-Criteria that tell the agent when its task is complete and it should proceed to the next workflow step.
+- **Prompt**: The core instructions that guide your agent's behavior. Think of this as the agent's mission statement - what it should accomplish and how.
+- **Model**: The AI model (e.g., GPT-4, Claude) that powers the agent's decision-making capabilities.
+- **Skills**: The actions and capabilities available to the agent. These are the tools it can use to accomplish its goals.
+- **Exit Conditions**: Criteria that tell the agent when its task is complete and it should proceed to the next workflow step.
 
 
 ## Adding an AI Agent
 
 <Frame>
-  <img src="/lindy-brand-assets/enter_ai_agent.png" alt="IMAGE NEEDED: Screenshot of clicking 'Enter AI agent' option when adding a step" />
+  <img src="/lindy-brand-assets/enter-ai-agent2.png" alt="IMAGE NEEDED: Screenshot of clicking 'Enter AI agent' option when adding a step" />
 </Frame>
 
 Click the plus button in your workflow and select "Enter AI agent" to add the AI Agent step.
@@ -68,24 +55,55 @@ Click the plus button in your workflow and select "Enter AI agent" to add the AI
 ### Setting the Agent Prompt
 
 <Frame>
-  <img src="/lindy-brand-assets/ai-agent-prompt-field.png" alt="IMAGE NEEDED: Screenshot of AI Agent configuration panel showing the prompt field" />
+  <img src="/lindy-brand-assets/ai-agent-config.png" alt="IMAGE NEEDED: Screenshot of AI Agent configuration panel showing the prompt field" />
 </Frame>
 
-Add clear instructions for your agent. Example prompt:
+Write clear, detailed instructions that define your agent's role, approach, and expectations. A good prompt should establish the agent's identity, explain available tools, and set quality standards.
+
+**Example research agent prompt:**
 
 ```
-Use what you know about the emailer to find their:
-- Company name
-- Company founding date
-- Company headcount
-- LinkedIn profile URL
+You are a professional research assistant specializing in company intelligence gathering. Your role is to thoroughly research companies and compile accurate, up-to-date information.
 
-Research thoroughly using web searches and compile accurate information.
+RESEARCH TARGETS:
+For each company, find and verify:
+- Official company name and any aliases
+- Founding date and brief history
+- Current employee headcount (approximate range is acceptable)
+- Primary business focus and industry
+- LinkedIn company profile URL
+- Website URL
+
+RESEARCH APPROACH:
+1. Start with web searches using company name and variations
+2. Cross-reference information across multiple sources
+3. Prioritize official sources (company websites, LinkedIn, Crunchbase)
+4. When exact data isn't available, note "approximately" or "estimated"
+5. If you can't find specific information, clearly state "not found"
+
+QUALITY STANDARDS:
+- Verify information across 2+ sources when possible
+- Include confidence level for uncertain data
+- Organize findings in a clear, structured format
+- Note your research methodology for transparency
+
+EXIT CONDITIONS:
+Stop your research when you meet any of these criteria:
+1. You have successfully found and verified all required company information
+2. You have conducted thorough research using multiple strategies and documented what you found, clearly noting any unavailable data
+3. You have performed at least 8 research actions and gathered substantial information
 ```
+
+**Key elements of effective agent prompts:**
+- **Role definition**: Who is the agent and what's their expertise?
+- **Clear objectives**: What specific outcomes do you need?
+- **Process guidance**: How should they approach the task?
+- **Quality standards**: What level of accuracy and detail is expected?
+- **Exit conditions**: When is the task complete?
 
 ### Adding Skills
 
-Skills are the actions your agent can perform. Click the plus button beside "Skills" to add capabilities.
+Skills are the tools and actions your agent can use to accomplish its goals. Think of them as giving your agent specific capabilities — like the ability to search the web, send emails, or analyze data.
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
@@ -101,17 +119,27 @@ Skills are the actions your agent can perform. Click the plus button beside "Ski
   </div>
 </div>
 
-For our research agent, add:
-- **Web Search** - Find relevant pages
-- **Website Content Crawler** - Crawl websites and extract text content to feed AI models, LLM applications, and RAG pipelines
+**How skills work:**
+- Your agent can use skills multiple times and in different combinations
+- Skills can be used in sequence (search, then crawl results) or iteratively (search → analyze → search more if needed)
+- The agent will explain its reasoning for using specific skills
+
+**For our research agent example, add these complementary skills:**
+
+- **Web Search**: Finds relevant web pages, articles, and resources across the internet. Your agent will craft search queries, evaluate results, and follow promising leads.
+- **Website Content Crawler**: Extracts and analyzes content from web pages. Once the agent finds relevant sites through search, it can crawl them to gather detailed information about companies, verify facts, and extract structured data.
 
 <Tip>
-Give your agent complementary skills. For research tasks, combining search and content extraction provides comprehensive capabilities.
+Choose skills that work well together. For research tasks, pairing search capabilities with content extraction lets your agent both find and thoroughly analyze information sources.
 </Tip>
+
+**Skill selection guidelines:**
+- Start with 2-4 essential skills rather than overloading with options
+- Consider how skills complement each other in your workflow
 
 ### Defining Exit Conditions
 
-Exit conditions tell your agent when to stop and proceed to the next workflow step.
+Exit conditions tell your agent when its work is complete and it should move to the next step in your workflow. Think of them as success criteria that define "done" for your agent's task.
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
@@ -127,60 +155,58 @@ Exit conditions tell your agent when to stop and proceed to the next workflow st
   </div>
 </div>
 
-The agent will continue researching until this condition is met.
+**How exit conditions work:**
+- Your agent will keep working until at least one exit condition is satisfied
+- You can have multiple exit conditions — the agent stops when ANY of them is met
+- Exit conditions should be specific and measurable
+- The agent evaluates conditions after each action it takes
+
+**Example exit conditions for our research agent:**
+
+1. **Primary success condition:**
+   ```
+   You have successfully found and verified all required company information: company name, founding date, headcount, business focus, LinkedIn URL, and website URL.
+   ```
+
+2. **Fallback condition:**
+   ```
+   You have conducted thorough research using multiple search strategies and documented what information you were able to find, clearly noting any data that remains unavailable after extensive searching.
+   ```
+
+3. **Time/effort limit:**
+   ```
+   You have performed at least 8 research actions (searches and crawls) and gathered substantial information even if some details remain incomplete.
+   ```
+
+**Best practices for exit conditions:**
+- Include a fallback option for when perfect results aren't achievable
+- Be specific about what constitutes "completion"
+- Consider both ideal outcomes and acceptable partial results
+- Use measurable criteria when possible (e.g., "found at least 80% of required data")
 
 
 
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion title="Use AI Agents Sparingly">
-    Only use AI Agents when the next steps are genuinely uncertain. For predictable workflows, use standard actions and conditions for better reliability and lower costs.
+  <Accordion title="Use Agent Steps Only When Necessary">
+    Only use agent steps when the next actions are genuinely uncertain. For predictable workflows, use standard actions and conditions for better reliability and lower costs.
   </Accordion>
   
-  <Accordion title="Write Clear, Specific Prompts">
-    Provide detailed instructions about what information to find, how to evaluate it, and what constitutes success. Vague prompts lead to inconsistent results.
+  <Accordion title="Write Comprehensive Prompts">
+    Include all five key elements: role definition, clear objectives, process guidance, quality standards, and exit conditions. Structure your prompt with clear sections like the research agent example.
   </Accordion>
   
-  <Accordion title="Choose Appropriate Skills">
-    Give your agent only the skills it needs. Too many options can lead to confusion; too few limit effectiveness.
+  <Accordion title="Choose Complementary Skills">
+    Start with 2-4 essential skills that work well together. For research tasks, pair search with content extraction. Avoid overloading with too many options.
   </Accordion>
   
-  <Accordion title="Define Clear Exit Conditions">
-    Be specific about when the agent should stop. Ambiguous exit conditions can cause infinite loops or premature exits.
+  <Accordion title="Include Multiple Exit Conditions">
+    Always provide a primary success condition and a fallback option. Be specific about what constitutes completion and use measurable criteria when possible.
   </Accordion>
 
-  <Accordion title="Test Thoroughly">
-    AI Agents introduce variability. Test with diverse inputs to ensure consistent performance across scenarios.
-  </Accordion>
-</AccordionGroup>
-
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Agent Stuck in Loop">
-    - Check if exit conditions are achievable
-    - Ensure skills can gather required information
-    - Add iteration limits to the prompt
-  </Accordion>
-  
-  <Accordion title="Inconsistent Results">
-    - Add specific examples to prompts
-    - Use more deterministic models
-    - Add validation after completion
-  </Accordion>
-  
-  <Accordion title="High Costs">
-    - Verify AI Agent is necessary
-    - Limit skills to essentials only
-    - Consider using conditions instead
-  </Accordion>
-  
-  <Accordion title="Skills Not Being Used">
-    - Check skill permissions
-    - Clarify in prompt when to use each skill
-    - Test skills individually first
+  <Accordion title="Test with Diverse Scenarios">
+    Agent steps introduce variability. Test with different inputs to ensure consistent performance and adjust prompts based on results.
   </Accordion>
 </AccordionGroup>
 
