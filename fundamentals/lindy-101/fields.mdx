@@ -22,15 +22,15 @@ sidebarTitle: 'Field Configuration'
 
 When you add any action, you'll see fields to configure. Unlike other automation platforms, Lindy gives you three intelligent ways to fill each field, making your workflows both powerful and flexible.
 
-<Frame>
-  <img src="/lindy-brand-assets/field-all-3-modes.png" alt="Three field configuration modes in Lindy - Auto, AI Prompt, and Set Manually" />
-</Frame>
-
 - **Auto**: Let your agent intelligently determine the best value based on all previous data
 - **AI Prompt**: Give natural language instructions for dynamic content generation  
 - **Set Manually**: Enter exact values or reference specific data from previous steps
 
 Each mode serves different purposes and choosing the right one makes your workflows more efficient and reliable.
+
+<Frame>
+  <img src="/lindy-brand-assets/field-all-3-modes.png" alt="Three field configuration modes in Lindy - Auto, AI Prompt, and Set Manually" />
+</Frame>
 
 
 ## Auto Mode
@@ -100,18 +100,19 @@ The key to AI Prompt mode is clear, specific instructions:
     style={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
   />
 </Frame>
-<p style={{ textAlign: 'center', fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
-  💡 Learn more about [writing effective prompts](/fundamentals/lindy-101/prompt-guide)
-</p>
+
 
 ```
 ✅ Good: "Write a friendly 2-line thank you mentioning the product name"
 ❌ Avoid: "Write something nice"
 ```
 
+
 <Tip>
 To reference data from previous steps, click the dropdown button and select from available outputs. The video below shows how this works - no need to type brackets manually!
 </Tip>
+
+
 
 ### When to Use AI Prompt Mode
 
@@ -120,6 +121,9 @@ Choose AI Prompt for:
 - **Content generation**: Summaries, descriptions, social posts
 - **Data transformation**: Reformatting dates, combining fields creatively
 - **Conditional text**: Different messages based on context
+<p style={{ textAlign: 'center', fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+  💡 Learn more about [writing effective prompts](/fundamentals/lindy-101/prompt-guide)
+</p>
 
 ### Using References in AI Prompts
 
@@ -210,7 +214,7 @@ References behave differently in each mode:
 
 | Mode | Reference Behavior | Example |
 |------|-------------------|---------|
-| **Auto** | Considered alongside all context | Lindy intelligently uses available data |
+| **Auto** | Considers all context | Lindy intelligently uses available data |
 | **AI Prompt** | Part of instructions | `Summarize [Search: Results]` → AI summary |
 | **Set Manually** | Exact value insertion | `Order #[Form: ID]` → `Order #12345` |
 
