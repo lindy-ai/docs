@@ -916,6 +916,40 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
   color: #d1d5db !important;
 }
 
+/* Light mode: Make all "On this page" sidebar text gray by default */
+:root:not(.dark) #on-this-page a,
+:root:not(.dark) .toc a,
+:root:not(.dark) .table-of-contents a,
+html:not(.dark) #on-this-page a,
+html:not(.dark) .toc a,
+html:not(.dark) .table-of-contents a {
+  color: #6b7280 !important; /* Same gray as left sidebar buttons */
+  font-weight: 400 !important; /* Normal weight by default */
+}
+
+/* Light mode: Override yellow highlighting with gray + slight font weight for active sections */
+:root:not(.dark) #on-this-page .text-primary,
+:root:not(.dark) .toc .text-primary,
+:root:not(.dark) .table-of-contents .text-primary,
+:root:not(.dark) #on-this-page [class*="active"],
+:root:not(.dark) .toc [class*="active"],
+:root:not(.dark) .table-of-contents [class*="active"],
+:root:not(.dark) #on-this-page [aria-current],
+:root:not(.dark) .toc [aria-current],
+:root:not(.dark) .table-of-contents [aria-current],
+html:not(.dark) #on-this-page .text-primary,
+html:not(.dark) .toc .text-primary,
+html:not(.dark) .table-of-contents .text-primary,
+html:not(.dark) #on-this-page [class*="active"],
+html:not(.dark) .toc [class*="active"],
+html:not(.dark) .table-of-contents [class*="active"],
+html:not(.dark) #on-this-page [aria-current],
+html:not(.dark) .toc [aria-current],
+html:not(.dark) .table-of-contents [aria-current] {
+  color: #6b7280 !important; /* Keep gray instead of yellow */
+  font-weight: 550 !important; /* Slight weight increase for active sections */
+}
+
 /* Ensure light mode stays unchanged by being more specific with light mode rules */
 :root:not(.dark) .text-gray-600,
 :root:not(.dark) .text-gray-500,
