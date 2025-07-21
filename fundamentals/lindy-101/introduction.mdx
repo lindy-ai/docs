@@ -21,7 +21,7 @@ Lindy is built around a few key concepts that work together:
     <div className="flex items-center justify-between mb-6">
       <div className="flex items-center gap-3">
         <img src="/lindy-brand-assets/256-2.png" alt="Lindy" style={{ maxHeight: '20px', maxWidth: '20px' }} />
-        <span className="font-medium text-gray-900 dark:text-white">Lindy</span>
+        <span className="font-medium text-lg text-gray-900 dark:text-white">Lindy</span>
       </div>
       <span className="text-sm text-gray-600 dark:text-slate-300">Orchestrates all your agents and workflows</span>
     </div>
@@ -30,7 +30,7 @@ Lindy is built around a few key concepts that work together:
     <div className="bg-gray-50 dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg p-6">
       <div className="flex items-center gap-3 mb-6">
         <Icon icon="users" className="text-yellow-600 dark:text-yellow-400" />
-        <span className="font-medium text-lg text-gray-900 dark:text-white">Agents</span>
+        <span className="font-medium text-base text-gray-900 dark:text-white">Agents</span>
         <span className="text-sm text-gray-600 dark:text-slate-300 ml-auto">Individual workers that execute tasks</span>
       </div>
       
@@ -40,7 +40,7 @@ Lindy is built around a few key concepts that work together:
           <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg p-4">
             <div className="flex items-center gap-2 mb-4">
               <Icon icon="sitemap" className="text-gray-600 dark:text-slate-400" />
-              <span className="font-medium text-gray-900 dark:text-white">Workflows</span>
+              <span className="font-medium text-sm text-gray-900 dark:text-white">Workflows</span>
             </div>
             
             {/* Steps Container */}
@@ -50,29 +50,53 @@ Lindy is built around a few key concepts that work together:
                 <span className="text-sm font-medium text-gray-900 dark:text-white">Steps</span>
               </div>
               <div className="grid grid-cols-3 gap-3">
-                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg p-3 text-center">
-                  <Icon icon="bolt" className="mx-auto mb-2 text-gray-600 dark:text-slate-400" />
-                  <p className="text-xs font-medium text-gray-900 dark:text-white">Triggers</p>
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg flex flex-col items-center text-center h-20">
+                  <div className="flex-1 flex items-end pb-1">
+                    <Icon icon="bolt" className="text-gray-600 dark:text-slate-400" />
+                  </div>
+                  <div className="flex-1 flex items-start pt-1">
+                    <p className="text-xs font-medium text-gray-900 dark:text-white">Triggers</p>
+                  </div>
                 </div>
-                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg p-3 text-center">
-                  <Icon icon="arrow-pointer" className="mx-auto mb-2 text-gray-600 dark:text-slate-400" />
-                  <p className="text-xs font-medium text-gray-900 dark:text-white">Actions</p>
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg flex flex-col items-center text-center h-20">
+                  <div className="flex-1 flex items-end pb-1">
+                    <Icon icon="arrow-pointer" className="text-gray-600 dark:text-slate-400" />
+                  </div>
+                  <div className="flex-1 flex items-start pt-1">
+                    <p className="text-xs font-medium text-gray-900 dark:text-white">Actions</p>
+                  </div>
                 </div>
-                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg p-3 text-center">
-                  <Icon icon="brain-circuit" className="mx-auto mb-2 text-gray-600 dark:text-slate-400" />
-                  <p className="text-xs font-medium text-gray-900 dark:text-white">Agent Steps</p>
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg flex flex-col items-center text-center h-20">
+                  <div className="flex-1 flex items-end pb-1">
+                    <Icon icon="brain-circuit" className="text-gray-600 dark:text-slate-400" />
+                  </div>
+                  <div className="flex-1 flex items-start pt-1">
+                    <p className="text-xs font-medium text-gray-900 dark:text-white">Agent Steps</p>
+                  </div>
                 </div>
-                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg p-3 text-center">
-                  <Icon icon="plug" className="mx-auto mb-2 text-gray-600 dark:text-slate-400" />
-                  <p className="text-xs font-medium text-gray-900 dark:text-white">Integrations</p>
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg flex flex-col items-center text-center h-20">
+                  <div className="flex-1 flex items-end pb-1">
+                    <Icon icon="plug" className="text-gray-600 dark:text-slate-400" />
+                  </div>
+                  <div className="flex-1 flex items-start pt-1">
+                    <p className="text-xs font-medium text-gray-900 dark:text-white">Integrations</p>
+                  </div>
                 </div>
-                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg p-3 text-center">
-                  <Icon icon="network-wired" className="mx-auto mb-2 text-gray-600 dark:text-slate-400" />
-                  <p className="text-xs font-medium text-gray-900 dark:text-white">Conditions</p>
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg flex flex-col items-center text-center h-20">
+                  <div className="flex-1 flex items-end pb-1">
+                    <Icon icon="network-wired" className="text-gray-600 dark:text-slate-400" />
+                  </div>
+                  <div className="flex-1 flex items-start pt-1">
+                    <p className="text-xs font-medium text-gray-900 dark:text-white">Conditions</p>
+                  </div>
                 </div>
-                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg p-3 text-center">
-                  <Icon icon="arrows-repeat" className="mx-auto mb-2 text-gray-600 dark:text-slate-400" />
-                  <p className="text-xs font-medium text-gray-900 dark:text-white">Looping</p>
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg flex flex-col items-center text-center h-20">
+                  <div className="flex-1 flex items-end pb-1">
+                    <Icon icon="arrows-repeat" className="text-gray-600 dark:text-slate-400" />
+                  </div>
+                  <div className="flex-1 flex items-start pt-1">
+                    <p className="text-xs font-medium text-gray-900 dark:text-white">Looping</p>
+                  </div>
                 </div>
               </div>
             </div>
