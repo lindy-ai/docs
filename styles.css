@@ -1184,6 +1184,12 @@ html:not(.dark) .text-gray-400 {
   background-color: #FEF9F0 !important; /* Specified cream background */
 }
 
+/* Note callouts - identical styling to Info */
+.callout[data-callout-type="note"] {
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
+}
+
 /* Warning callouts - identical styling to Info */
 .callout[data-callout-type="warning"] {
   border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
@@ -1261,7 +1267,15 @@ html:not(.dark) .text-gray-400 {
   color: #a855f7 !important; /* Lighter purple icon for dark mode */
 }
 
-/* Light mode callout text - use default colors (no overrides) */
+/* Light mode: Ensure Info/Note/Warning callouts use default text colors */
+:root:not(.dark) .callout[data-callout-type="info"] .prose,
+:root:not(.dark) .callout[data-callout-type="note"] .prose,
+:root:not(.dark) .callout[data-callout-type="warning"] .prose,
+html:not(.dark) .callout[data-callout-type="info"] .prose,
+html:not(.dark) .callout[data-callout-type="note"] .prose,
+html:not(.dark) .callout[data-callout-type="warning"] .prose {
+  color: inherit !important; /* Use default text colors in light mode */
+}
 
 /* Tip callout text colors */
 .callout[data-callout-type="tip"] .prose {
