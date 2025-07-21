@@ -52,6 +52,11 @@ A task is everything Lindy does after being triggered by an event or user messag
 
 Track credit usage through Lindy's task view and sidebar gauge:
 
+### Task View
+1. **Click your Lindy** in the sidebar and select "Tasks"
+2. **Access a task** from the task list
+3. **Hover over each step** to see credits used for that specific step
+
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
@@ -66,10 +71,9 @@ Track credit usage through Lindy's task view and sidebar gauge:
   </div>
 </div>
 
-### Task View
-1. **Click your Lindy** in the sidebar and select "Tasks"
-2. **Access a task** from the task list
-3. **Hover over each step** to see credits used for that specific step
+### Total Usage
+- **Bottom left gauge** shows billing credit consumption for current cycle
+- **Hover for details** to see when credit balance resets for next billing cycle
 
 <Frame>
   <img 
@@ -77,11 +81,6 @@ Track credit usage through Lindy's task view and sidebar gauge:
     alt="Lindy credits usage example showing credit consumption breakdown in the UI" 
   />
 </Frame>
-
-
-### Total Usage
-- **Bottom left gauge** shows billing credit consumption for current cycle
-- **Hover for details** to see when credit balance resets for next billing cycle
 
 <Warning>
 Credits do not roll over between billing cycles. When you run out of credits, Lindy pauses operations and new tasks are put on hold.
