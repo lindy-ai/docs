@@ -15,6 +15,90 @@ Lindy is an AI agent platform that helps you automate complex workflows by conne
 
 Lindy is built around a few key concepts that work together:
 
+<div className="not-prose my-8">
+  <div className="text-center space-y-4">
+    {/* Lindy - Top Level */}
+    <div className="inline-flex items-center gap-3 px-6 py-4 bg-white dark:bg-slate-800 border border-yellow-400 dark:border-yellow-500 rounded-lg">
+      <img src="/lindy-brand-assets/256-2.png" alt="Lindy" style={{ maxHeight: '30px', maxWidth: '30px' }} />
+      <span className="font-medium text-lg text-gray-900 dark:text-white">Lindy</span>
+    </div>
+    <p className="text-sm text-gray-600 dark:text-slate-300">Orchestrates all your agents and workflows</p>
+    
+    {/* Agents Container with connected line */}
+    <div className="relative max-w-4xl mx-auto">
+      {/* Line that connects directly to the box */}
+      <div className="w-px h-8 bg-yellow-400 dark:bg-yellow-500 mx-auto"></div>
+      {/* Container starts exactly where line ends */}
+      <div className="bg-gray-50 dark:bg-slate-700 border border-yellow-400 dark:border-yellow-500 rounded-lg p-6 transition-all duration-300 hover:shadow-yellow-400/20 hover:shadow-lg">
+      <div className="flex items-center gap-3 mb-6">
+        <Icon icon="users" />
+        <span className="font-medium text-lg text-gray-900 dark:text-white">Agents</span>
+        <span className="text-sm text-gray-600 dark:text-slate-300 ml-auto">Individual workers that execute tasks</span>
+      </div>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        {/* Workflows Section */}
+        <div className="lg:col-span-2">
+          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg p-4">
+            <div className="flex items-center gap-2 mb-4">
+              <Icon icon="sitemap" />
+              <span className="font-medium text-gray-900 dark:text-white">Workflows</span>
+            </div>
+            
+            {/* Steps Container */}
+            <div className="bg-yellow-50 dark:bg-yellow-900/30 border border-gray-200 dark:border-slate-600 rounded-lg p-3">
+              <div className="flex items-center gap-2 mb-3">
+                <Icon icon="forward-step" />
+                <span className="text-sm font-medium text-gray-900 dark:text-white">Steps</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-md p-2 text-center">
+                  <Icon icon="bolt" className="mx-auto mb-1 text-gray-700 dark:text-slate-300" />
+                  <p className="text-xs text-gray-600 dark:text-slate-300">Triggers</p>
+                </div>
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-md p-2 text-center">
+                  <Icon icon="arrow-pointer" className="mx-auto mb-1 text-gray-700 dark:text-slate-300" />
+                  <p className="text-xs text-gray-600 dark:text-slate-300">Actions</p>
+                </div>
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-md p-2 text-center">
+                  <Icon icon="brain-circuit" className="mx-auto mb-1 text-gray-700 dark:text-slate-300" />
+                  <p className="text-xs text-gray-600 dark:text-slate-300">Agent Steps</p>
+                </div>
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-md p-2 text-center">
+                  <Icon icon="plug" className="mx-auto mb-1 text-gray-700 dark:text-slate-300" />
+                  <p className="text-xs text-gray-600 dark:text-slate-300">Integrations</p>
+                </div>
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-md p-2 text-center">
+                  <Icon icon="network-wired" className="mx-auto mb-1 text-gray-700 dark:text-slate-300" />
+                  <p className="text-xs text-gray-600 dark:text-slate-300">Conditions</p>
+                </div>
+                <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-md p-2 text-center">
+                  <Icon icon="arrows-repeat" className="mx-auto mb-1 text-gray-700 dark:text-slate-300" />
+                  <p className="text-xs text-gray-600 dark:text-slate-300">Looping</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Memory Section */}
+        <div>
+          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg p-4 h-full">
+            <div className="flex flex-col items-center justify-center h-full gap-3">
+              <Icon icon="database" className="text-gray-700 dark:text-slate-300" />
+              <div className="text-center">
+                <div className="font-medium text-gray-900 dark:text-white">Memory</div>
+                <p className="text-xs text-gray-600 dark:text-slate-300 mt-1">Contextual understanding</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
 ### **Lindy**
 Lindy orchestrates all your agents and workflows. It understands what you need and helps you build, manage, and run the right agents for your work.
 
@@ -31,6 +115,7 @@ Individual building blocks that make up a workflow. There are many different typ
 - **[Agent Steps](/fundamentals/lindy-101/ai-agents)**: Give agents more autonomy to handle uncertain tasks with skill-based execution
 - **[Integrations](/skills/popular-integrations)**: Connect your agent to external systems and tools
 - **[Conditions](/fundamentals/lindy-101/conditions)**: Define logic for when agents should take certain actions
+- **[Looping](/fundamentals/lindy-101/looping)**: Process lists of items in parallel for efficient bulk operations
 
 ### **Memory**
 You can configure agents to remember conversations and context, making them more helpful over time.
