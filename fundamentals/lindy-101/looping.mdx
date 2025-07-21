@@ -20,54 +20,26 @@ sidebarTitle: 'Looping'
 
 ## Quick Overview
 
-Looping allows you to efficiently process lists of items in parallel, similar to a 'for' loop in programming but with the power of concurrent execution. Instead of handling items one at a time, loops let you process multiple items simultaneously, dramatically increasing efficiency.
+Looping lets you process lists of items in parallel rather than one at a time. Think of it like a 'for' loop in programming, but with the power to handle multiple agentic workflows simultaneously.
 
-Key benefits:
-- **Parallel processing** - Execute multiple tasks concurrently, not sequentially
-- **Batch operations** - Process hundreds of items in the time it takes to process a few
-- **Scalable workflows** - Handle varying list sizes without workflow changes
-- **Aggregated outputs** - Collect and summarize results from all iterations
-- **Resource efficiency** - Complete bulk tasks in minutes instead of hours
+Instead of processing 100 emails sequentially (which could take hours), loops can handle them all at once. You define what happens to each item, and your agent executes those actions across the entire list concurrently.
+
+This is essential for bulk operations like lead enrichment, content processing, or research tasks. The loop collects results from all iterations and passes a summary to the next step in your workflow.
 
 
-## Understanding Loop Components
-
-### Key Concepts
-
-- **Loop cycle** - A single execution for one item in your list
-- **Output** - The data passed from the loop to subsequent steps (only the output leaves the loop)
-- **Max cycles** - Safety limit to prevent infinite loops or excessive processing
-- **Items to loop through** - The list of data that drives each iteration
-
-<Note>
-The loop output is the ONLY information that passes from inside the loop to outside steps. Configure it carefully to include all data you'll need later.
-</Note>
 
 ## Loop Configuration Fields
 
 When setting up your loop, you'll configure several key fields:
 
-### Items to Loop Through
-The list of data that drives each loop iteration.
+- **Items to Loop Through**: The list of data that drives each loop iteration
+- **Max Cycles**: The maximum number of loop iterations that will run. This controls resource usage. Set this based on your expected list size plus a safety buffer (e.g., if you expect 50 items, set to 100)
+- **Max Concurrent**: The maximum number of loop cycles that can run simultaneously in parallel. Choose "Auto" for optimization or set manually for rate-limited APIs. Lower this if hitting rate limits on external services
+- **Output**: The information passed from inside the loop to subsequent steps. This is the **only** data that survives the loop completion. Use "Auto mode" for AI summaries or "AI prompt" to specify exactly what data you need
 
-### Max Cycles
-The maximum number of loop iterations that will run. This controls resource usage. Set this based on your expected list size plus a safety buffer.
-
-**Example:** If you expect 50 items, set Max Cycles to 100 to allow for growth while preventing runaway loops.
-
-### Max Concurrent
-The maximum number of loop cycles that can run simultaneously in parallel. Higher numbers mean faster processing.
-
-- **Auto** — Lindy optimizes based on the context
-- **Manual** - Set a specific limit (useful for rate-limited APIs or resource constraints)
-
-**When to adjust:** Lower this if you're hitting rate limits on external services, or if parallel execution is causing issues.
-
-### Output
-The information passed from inside the loop to subsequent steps. This is the **only** data that survives the loop completion.
-
-- **Auto mode** - AI generates a summary of loop results
-- **AI prompt** - Specify exactly what data you need
+<Tip>
+When you pass a list variable in Manual Mode, the loop automatically processes each item individually. For example, passing Google Sheet Rows output reference will process each row separately.
+</Tip>
 
 <Warning>
 Any data not included in the loop output won't be available to the outside of the loop. Be specific about what information you'll need after the loop completes.
@@ -137,8 +109,6 @@ Without a defined output, the loop will only provide a basic summary. Always spe
 
 ## Building Inside the Loop
 
-Actions inside the loop execute for each item in parallel.
-
 ### Adding Loop Actions
 
 For our research example:
@@ -165,11 +135,6 @@ For our research example:
   <Accordion title="Set Reasonable Limits">
     Use Max Cycles to prevent runaway loops. Start conservative and increase as needed.
   </Accordion>
-  
-  <Accordion title="Optimize for Parallel">
-    Avoid dependencies between items. Each cycle should be independent for maximum parallelization.
-  </Accordion>
-
   <Accordion title="Test with Small Lists">
     Debug with 3-5 items before processing hundreds. It's easier to spot issues in smaller batches.
   </Accordion>
@@ -181,7 +146,7 @@ For our research example:
 <AccordionGroup>
   <Accordion title="Loop Not Processing All Items">
     - Check Max Cycles setting
-    - Verify item list format
+    - Check your loop input configuration
     - Look for rate limit errors
   </Accordion>
   
