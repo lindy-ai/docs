@@ -51,6 +51,10 @@ Every condition prompt starts with **"Go down this path if..."** followed by you
 - `the email contains a 6 digit user ID number`
 - `the user asked for a refund or seems angry`
 
+<Tip>
+  For best results, include examples in each condition prompt.
+</Tip>
+
 ### Adding Multiple Condition Paths
 
 You can create multiple branches to handle different scenarios. Click "+ Add Condition" to create alternate paths.
@@ -60,7 +64,7 @@ You can create multiple branches to handle different scenarios. Click "+ Add Con
 </Frame>
 
 <Note>
-  Each condition branch should have a clear, distinct criteria. Your agent will evaluate all conditions and follow the first matching path.
+  Each condition branch should have a clear, distinct criteria. Your agent will evaluate all conditions and follow the path the model deems "most true".
 </Note>
 
 ## Advanced Configuration
