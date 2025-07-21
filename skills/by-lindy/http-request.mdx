@@ -2,12 +2,12 @@
 title: 'HTTP Request'
 icon: 'globe'
 sidebarTitle: 'HTTP Request'
-description: 'Execute custom API calls and webhooks directly from your Lindy workflows'
+description: 'Execute custom API calls and webhooks directly from your agent workflows'
 ---
 
 ## Overview
 
-The HTTP Request action enables your Lindy agents to interact with any API or webhook endpoint. Whether you're fetching data, updating records, or triggering external workflows, HTTP Request provides complete control over your API interactions.
+The HTTP Request action enables your agents to interact with any API or webhook endpoint. Whether you're fetching data, updating records, or triggering external workflows, HTTP Request provides complete control over your API interactions.
 
 <Note>
 HTTP Request is one of the most popular Lindy actions, giving you access to thousands of APIs that don't have native Lindy integrations yet.
@@ -88,11 +88,11 @@ If you specify a Content-Type header, it will override the content type field se
 
 Tells the server what format your request body is in:
 
-- **application/json** - Most common for modern APIs (default)
-- **application/xml** - For XML-based APIs
-- **application/x-www-form-urlencoded** - For form submissions
-- **multipart/form-data** - For file uploads
-- **text/plain** - For plain text data
+- **application/json** — Most common for modern APIs (default)
+- **application/xml** — For XML-based APIs
+- **application/x-www-form-urlencoded** — For form submissions
+- **multipart/form-data** — For file uploads
+- **text/plain** — For plain text data
 
 ### Body
 
@@ -109,7 +109,7 @@ The request body contains the data you're sending to the API. Lindy offers two p
     - Available variables from previous steps
     - Common patterns for the API endpoint
     
-    Simply leave it blank and Lindy will intelligently fill in the appropriate data.
+    Simply leave it blank and your agent will intelligently fill in the appropriate data.
   </Tab>
   
   <Tab title="Prompt AI Mode">
@@ -135,7 +135,7 @@ The request body contains the data you're sending to the API. Lindy offers two p
     WE MUST GET WORK EMAIL FROM THIS
     ```
     
-    Lindy will generate the exact JSON structure based on your instructions and available data.
+    Your agent will generate the exact JSON structure based on your instructions and available data.
   </Tab>
 </Tabs>
 

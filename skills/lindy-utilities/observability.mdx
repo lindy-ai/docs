@@ -28,7 +28,7 @@ Monitor and analyze agent performance with detailed task execution data. There a
 
 ## Agent Task Change Trigger
 
-- **What it does**: Triggers when another Lindy agent performs specific actions - perfect for monitoring agent activity and building reactive workflows.
+- **What it does**: Triggers when another Lindy agent performs specific actions — perfect for monitoring agent activity and building reactive workflows.
 
 <Frame>
   <img src="/lindy-brand-assets/observability-trigger.png" alt="Agent Task Change Trigger setup" />
@@ -42,7 +42,7 @@ Monitor and analyze agent performance with detailed task execution data. There a
   - Task is working
   - Task was canceled
   - Task failed
-- **Filter by subtask title**: Optional - monitor specific subtasks only
+- **Filter by subtask title**: Optional — monitor specific subtasks only
 
 ### Common Examples
 - **Error Alerts**: Trigger on "Task failed" → Send email with failure details
@@ -62,7 +62,7 @@ Monitor and analyze agent performance with detailed task execution data. There a
 ### Inputs
 - **Agent**: Select the agent to analyze
 - **Sub Task** (required): ID of the specific task/subtask to examine
-- **Max Number of Blocks**: Recommended to set high - controls how much execution history to retrieve
+- **Max Number of Blocks**: Recommended to set high — controls how much execution history to retrieve
 
 <Tip>
 Usually you want to use this action after an "Agent Task Change" trigger and you can leave the fields on "Auto" to pull in the correct agent & task ID.
@@ -98,7 +98,7 @@ These actions are designed to work together for complete agent observability:
 
 `Agent Task Change` triggers when something happens → `Get Task Details` analyzes exactly what occurred
 
-This gives you full visibility into your agents - you'll know when they run, how they perform, and exactly what they do at every step.
+This gives you full visibility into your agents — you'll know when they run, how they perform, and exactly what they do at every step.
 
 ## Advanced Features
 
@@ -114,7 +114,7 @@ This gives you full visibility into your agents - you'll know when they run, how
 
 <AccordionGroup>
   <Accordion title="Choose the Right Events">
-    Focus on the most actionable events - usually "Task Failed" for debugging and "Task Succeeded" for performance tracking.
+    Focus on the most actionable events — usually "Task Failed" for debugging and "Task Succeeded" for performance tracking.
   </Accordion>
   
   <Accordion title="Set High Block Limits">
@@ -122,7 +122,7 @@ This gives you full visibility into your agents - you'll know when they run, how
   </Accordion>
   
   <Accordion title="Feed Data to AI">
-    Use LLM Call to analyze task details - AI can spot patterns humans miss in execution data.
+    Use LLM Call to analyze task details — AI can spot patterns humans miss in execution data.
   </Accordion>
   
   <Accordion title="Build Evaluation Tools">

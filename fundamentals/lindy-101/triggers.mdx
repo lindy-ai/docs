@@ -22,7 +22,7 @@ sidebarTitle: 'Triggers'
 
 Triggers are events that "wake up" an agent and start a workflow. These can include time-based triggers (e.g., every weekday at 9 am), chat-based triggers (when a user starts a new chat), or event-based triggers (e.g., when you receive an email).
 
-A single Lindy agent can have multiple triggers, either managing different workflows or acting as entry points into the same workflow.
+A single agent can have multiple triggers, either managing different workflows or acting as entry points into the same workflow.
 
 Key benefits of using triggers:
 - **Automated kickoff** – Start workflows the moment something important happens
@@ -70,7 +70,7 @@ Starts the workflow at a set or recurring time. Examples include:
 <Frame>
   <img src="/lindy-brand-assets/Triggers_4.png" alt="Calendar + Chat multi-trigger workflow" />
 </Frame>
-Starts the workflow when a user initiates a chat. This allows users to interact directly with your Lindy through the chat interface.
+Starts the workflow when a user initiates a chat. This allows users to interact directly with your agent through the chat interface.
 
 ### Event-based triggers
 <Frame>
@@ -91,13 +91,13 @@ Starts the workflow when a specific event occurs. Examples include:
 
 ## Trigger filters
 
-A trigger filter allows you to set conditional logic to filter which events will cause Lindy to wake up and execute the workflow.
+A trigger filter allows you to set conditional logic to filter which events will cause your agent to wake up and execute the workflow.
 
 You can enable trigger filters at the bottom of the trigger configuration settings. This means you do not have to add additional steps to filter out triggering events from your workflow.
 
 
 ### Example: Email received trigger setup
-If you want your agent to process only emails with a specific label, you can configure the Email Received trigger to filter by label. This way, Lindy will only wake up and run the workflow when an email with that label arrives.
+If you want your agent to process only emails with a specific label, you can configure the Email Received trigger to filter by label. This way, your agent will only wake up and run the workflow when an email with that label arrives.
 
 
 <Frame>
@@ -110,7 +110,7 @@ If you want your agent to process only emails with a specific label, you can con
 - Condition Groups allow you to build more complex, nested filtering logic
 
 ### Example filter
-In the example below, Lindy will only trigger if:
+In the example below, your agent will only trigger if:
 - The Calendar Event name contains "Interview" AND the location contains "1841 Market Street"
 - OR the Calendar Event description contains "In-Person Interview"
 

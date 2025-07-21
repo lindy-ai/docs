@@ -2,7 +2,7 @@
 title: 'Step by Step Onboarding'
 icon: 'memo-circle-check'
 sidebarTitle: 'Step by Step Onboarding'
-description: 'Create form-style onboarding flows that make your Lindy templates easy to configure and use.'
+description: 'Create form-style onboarding flows that make your agent templates easy to configure and use.'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -21,7 +21,7 @@ description: 'Create form-style onboarding flows that make your Lindy templates 
 
 ## Quick Overview
 
-Step-by-Step Onboarding enables you to easily onboard others to a Lindy template. Instead of requiring template users to navigate a complex flow editor, build a simple form-style onboarding that allows your template users to easily configure and start using the Lindy!
+Step-by-Step Onboarding enables you to easily onboard others to an agent template. Instead of requiring template users to navigate a complex flow editor, build a simple form-style onboarding that allows your template users to easily configure and start using the agent!
 
 <Tip>
 Try it yourself: [Meeting Notetaker Step by Step Onboarding template](https://chat.lindy.ai/home?templateId=670444478279e010c572da9a)
@@ -32,11 +32,11 @@ Try it yourself: [Meeting Notetaker Step by Step Onboarding template](https://ch
 </Frame>
 
 Key benefits:
-- **Simplified setup** - Form-style interface instead of complex flow editor
-- **Guided configuration** - Step users through only the essential settings
-- **Professional experience** - Clean, intuitive onboarding flow
-- **Automatic auth handling** - User authorizations collected automatically
-- **Template sharing** - Easy distribution with built-in onboarding
+- **Simplified setup** — Form-style interface instead of complex flow editor
+- **Guided configuration** — Step users through only the essential settings
+- **Professional experience** — Clean, intuitive onboarding flow
+- **Automatic auth handling** — User authorizations collected automatically
+- **Template sharing** — Easy distribution with built-in onboarding
 
 ## Creating a Step by Step Onboarding
 
@@ -45,7 +45,7 @@ This is the high-level process for creating a Step by Step Onboarding:
 ### Step 1: Plan Your Requirements
 
 **Input Collection**
-Figure out what input you need to collect from your users to configure the Lindy template.
+Figure out what input you need to collect from your users to configure the agent template.
 
 *Example: Meeting Notetaker Template*
 - Required: Calendar selection (required field)
@@ -60,8 +60,8 @@ Determine what output you need to show users so they can use the template.
 ### Step 2: Build the Onboarding Flow
 
 Build the onboarding flow in the Flow Editor using:
-- **Form Actions** - Show information and collect input
-- **Lindy Configuration Actions** - Configure template steps
+- **Form Actions** — Show information and collect input
+- **Lindy Configuration Actions** — Configure template steps
 
 <Note>
 All Step by Step Onboardings start with an `Onboarding trigger` from Lindy Configuration Actions (located under `Lindy Utilities`).
@@ -149,7 +149,7 @@ Gets a user's information, including:
 </div>
 
 - **Incomplete onboarding**: Users who click out without completing will land on the Flow Editor for the template and can resume onboarding
-- **Completed onboarding**: Users are redirected to the Task View for the Lindy they just configured
+- **Completed onboarding**: Users are redirected to the Task View for the agent they just configured
 
 ### Harmonious Experience
 To ensure a smooth experience, add a `Message Received trigger` to your template with a greeting message that introduces your user to the Lindy.
@@ -158,11 +158,11 @@ To ensure a smooth experience, add a `Message Received trigger` to your template
 
 <AccordionGroup>
   <Accordion title="Start with Introduction">
-    Begin with an Info Step introducing your user to the Lindy they will be onboarded to and what it does.
+    Begin with an Info Step introducing your user to the agent they will be onboarded to and what it does.
   </Accordion>
   
   <Accordion title="End with Next Steps">
-    In the last step, let the user know that the Lindy can be configured further in the Flow Editor.
+    In the last step, let the user know that the agent can be configured further in the Flow Editor.
   </Accordion>
   
   <Accordion title="Add Welcome Message">
@@ -170,11 +170,11 @@ To ensure a smooth experience, add a `Message Received trigger` to your template
   </Accordion>
   
   <Accordion title="Consider Simple Templates">
-    If the Lindy consists of only a Message Received trigger and an agent state, onboarding may not be needed. Consider using a Show Info step to tell the user how to use the Lindy.
+    If the agent consists of only a Message Received trigger and an agent state, onboarding may not be needed. Consider using a Show Info step to tell the user how to use the agent.
   </Accordion>
   
   <Accordion title="Focus on Essentials">
-    When thinking of inputs and outputs, consider what is required for the user to configure to ensure the Lindy can run, and critical steps that the user might want to configure.
+    When thinking of inputs and outputs, consider what is required for the user to configure to ensure the agent can run, and critical steps that the user might want to configure.
   </Accordion>
 </AccordionGroup>
 

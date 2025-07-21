@@ -23,19 +23,19 @@ description: 'Learn strategies to reduce credit consumption while maintaining au
 
 We want to make using Lindy as efficient and affordable as possible. This guide explains how to cut costs while maintaining automation quality. Perfect for:
 
-- **Cost reduction** - significantly lower credit consumption without sacrificing performance
-- **Smart filtering** - only run automations when they're actually needed
-- **Model optimization** - choose the right balance of capability and cost
+- **Cost reduction** — significantly lower credit consumption without sacrificing performance
+- **Smart filtering** — only run automations when they're actually needed
+- **Model optimization** — choose the right balance of capability and cost
 
-Many expensive operations happen because Lindy manages memory and context throughout workflows. Using strategic memory management can dramatically reduce costs while keeping what matters.
+Many expensive operations happen because your agent manages memory and context throughout workflows. Using strategic memory management can dramatically reduce costs while keeping what matters.
 
 ## How to Cut Costs
 
 ### 1. Filter High-Volume Triggers
 
-One of the most effective ways to save money is by filtering frequently occurring triggers, such as new incoming emails. Not every email or event needs to trigger a Lindy action.
+One of the most effective ways to save money is by filtering frequently occurring triggers, such as new incoming emails. Not every email or event needs to trigger an agent action.
 
-- **Example**: If you work at Acme and want Lindy to label emails from your team with "Acme", apply a filter to only trigger when the email is from an address containing `acme.com`.
+- **Example**: If you work at Acme and want your agent to label emails from your team with "Acme", apply a filter to only trigger when the email is from an address containing `acme.com`.
 - **Benefits**:
     - Prevents unnecessary task runs on irrelevant events
     - Reduces credit consumption from high-volume triggers
@@ -53,10 +53,10 @@ Lindy offers a range of language models from basic to advanced. While advanced m
 
 ### 3. Clear Context to Reduce Credit Usage
 
-Every time Lindy processes a task, it carries forward conversation history as context. This quickly increases credit consumption, especially when analyzing large amounts of data like webpage contents or spreadsheet processing.
+Every time your agent processes a task, it carries forward conversation history as context. This quickly increases credit consumption, especially when analyzing large amounts of data like webpage contents or spreadsheet processing.
 
-- **The Problem**: Expensive operations often happen because Lindy manages memory and context throughout the entire workflow, carrying unnecessary historical data.
-- **The Solution**: Add `Clear Task Context` actions in your workflows after significant data processing steps. This resets conversation memory, ensuring Lindy only carries forward relevant information.
+- **The Problem**: Expensive operations often happen because your agent manages memory and context throughout the entire workflow, carrying unnecessary historical data.
+- **The Solution**: Add `Clear Task Context` actions in your workflows after significant data processing steps. This resets conversation memory, ensuring your agent only carries forward relevant information.
 
 **When to Use Clear Context:**
 - After extracting webpage contents

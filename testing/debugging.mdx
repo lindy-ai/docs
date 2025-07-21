@@ -23,15 +23,15 @@ description: 'Learn how to troubleshoot errors in Lindy, fix common workflow iss
 
 Lindy makes building agents easy, but occasional errors can occur. This guide helps you quickly identify, understand, and resolve common issues. Perfect for:
 
-- **Error identification** - spot problems in task history and flow editor
-- **Quick fixes** - resolve common setup mistakes and configuration issues  
-- **HTTP troubleshooting** - understand external service connection errors
+- **Error identification** — spot problems in task history and flow editor
+- **Quick fixes** — resolve common setup mistakes and configuration issues  
+- **HTTP troubleshooting** — understand external service connection errors
 
 Most agent errors come down to simple setup mistakes—missing skills, unclear prompts, or undefined exit conditions. It's rarely a system issue. Before assuming something's broken, double-check your configuration—the fix is usually right there.
 
 ## How to Identify an Error
 
-When an error occurs, Lindy notifies you directly within your Task History, Flow Editor, and via email, so you can address issues immediately.
+When an error occurs, your agent notifies you directly within your Task History, Flow Editor, and via email, so you can address issues immediately.
 
 ### Review Errors in Flow Editor Using Test Mode
 1. **Open the workflow** - Go to your workflow in the editor
@@ -42,12 +42,12 @@ When an error occurs, Lindy notifies you directly within your Task History, Flow
   <img src="/lindy-brand-assets/debugging5.png" />
 </Frame>
 
-Lindy will usually tell you where and why it got stuck. In this case, we offer an "Edit action configuration" button that opens the erroring step.
+Your agent will usually tell you where and why it got stuck. In this case, we offer an "Edit action configuration" button that opens the erroring step.
 
 ### Review Errors in Task History
 1. **Go to Tasks View** - Navigate to the Tasks section
 2. **Look for errored tasks** - Find tasks marked as "Errored"
-3. **Click for details** - Review exactly what Lindy executed before the failure and see suggested fixes
+3. **Click for details** — Review exactly what your agent executed before the failure and see suggested fixes
 
 <Frame>
   <img src="/lindy-brand-assets/debugging1.png" />
@@ -56,7 +56,7 @@ Lindy will usually tell you where and why it got stuck. In this case, we offer a
 This is the primary place to identify what went wrong. If available, use the provided button to configure the action step or trigger that failed.
 
 <Tip>
-When an error occurs, Lindy emails you with details about the issue and possible troubleshooting steps.
+When an error occurs, your agent emails you with details about the issue and possible troubleshooting steps.
 </Tip>
 
 ## General Troubleshooting Steps
@@ -68,7 +68,7 @@ When an error occurs, Lindy emails you with details about the issue and possible
  - Ensure all triggers and action steps are set up correctly. Check that the correct inputs, conditions, and dependencies are in place.
 
 3. **Monitor Outages** 
- - If an integrated app is down, Lindy will notify you. You can also check the app's status page for real-time updates.
+ - If an integrated app is down, your agent will notify you. You can also check the app's status page for real-time updates.
 
 ## Common Errors and Fixes
 
@@ -122,8 +122,8 @@ This error typically indicates a misconfiguration in the trigger:
 - **Fix**: Use a different email address to test the trigger
 
 ### "Task Stopped Due to Insufficient Credits"
-- If a Lindy task stops because of credit limits, it won't automatically restart.
-- **Fix**: Go to your Lindy → Task View, find the incomplete task, and click "Retry" to continue from where it stopped
+- If an agent task stops because of credit limits, it won't automatically restart.
+- **Fix**: Go to your agent → Task View, find the incomplete task, and click "Retry" to continue from where it stopped
 
 ## HTTP Status Codes
 
@@ -140,12 +140,12 @@ Lindy interacts with various external services, and sometimes errors come from t
 | **500** | Internal Server Error | Something went wrong on the external service's end |
 
 <Warning>
-Some HTTP errors in Lindy originate from third-party services, meaning the issue is often outside Lindy's control. While some errors can be fixed by adjusting your configuration, others may require checking the third-party provider's documentation.
+Some HTTP errors originate from third-party services, meaning the issue is often outside your agent's control. While some errors can be fixed by adjusting your configuration, others may require checking the third-party provider's documentation.
 </Warning>
 
 ## How to Report a Bug
 
-If you suspect a bug or need help with Lindy, report it through these channels:
+If you suspect a bug or need help with your agent, report it through these channels:
 
 - **Email**: Send an email to support@lindy.ai
 - **Slack Community**: [Join and post in the Lindy Community](https://community.lindy.ai/join)
@@ -154,7 +154,7 @@ If you suspect a bug or need help with Lindy, report it through these channels:
 
 Providing the task URL helps us look directly into the issue:
 
-1. **Click your Lindy agent** → click "Tasks"
+1. **Click your agent** → click "Tasks"
 2. **Find the task** you need help with
 3. **Click the specific task** (you should see the full execution)
 4. **Copy that page URL** from your browser
@@ -206,7 +206,7 @@ The URL should include "conversationID" followed by a number. Screenshots are al
     Add oversight for critical workflows
   </Card>
   
-  <Card title="AI Agents Guide" icon="brain-circuit" href="/fundamentals/lindy-101/ai-agents">
+  <Card title="Agent Steps Guide" icon="brain-circuit" href="/fundamentals/lindy-101/ai-agents">
     Understand how to configure agents properly
   </Card>
 </CardGroup>
