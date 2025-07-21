@@ -1261,20 +1261,7 @@ html:not(.dark) .text-gray-400 {
   color: #a855f7 !important; /* Lighter purple icon for dark mode */
 }
 
-/* Info callout text colors */
-.callout[data-callout-type="info"] .prose {
-  color: #92400e !important; /* Dark yellow/brown text for light mode */
-}
-
-/* Note callout text colors */
-.callout[data-callout-type="note"] .prose {
-  color: #92400e !important; /* Dark yellow/brown text for light mode */
-}
-
-/* Warning callout text colors */
-.callout[data-callout-type="warning"] .prose {
-  color: #92400e !important; /* Dark yellow/brown text for light mode */
-}
+/* Light mode callout text - use default colors (no overrides) */
 
 /* Tip callout text colors */
 .callout[data-callout-type="tip"] .prose {
