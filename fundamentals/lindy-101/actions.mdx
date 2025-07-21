@@ -19,16 +19,9 @@ sidebarTitle: 'Actions'
 
 ## Quick Overview
 
-Actions are the building blocks of your Lindy workflows — specific operations that your AI agent can perform to complete tasks. From sending emails and creating calendar events to complex data processing and multi-step reasoning, actions transform your Lindy from a simple chatbot into a powerful automation engine.
-A single workflow can contain multiple actions that execute sequentially or in parallel, creating sophisticated automations that handle everything from customer support to lead qualification.
+Actions are the specific operations your AI agent performs to complete tasks. Think of them as the building blocks of your workflows — each one handles a particular job like sending an email, updating a spreadsheet, or processing data.
 
-## Key benefits of using actions:
-
-- Automated task execution – Perform complex operations without manual intervention
-- Seamless integrations – Connect with hundreds of third-party applications
-- AI-powered intelligence – Adapt behavior based on context and data
-- Scalable operations – Handle single tasks or process thousands of items in parallel
-- Reliable workflows – Constrained AI ensures predictable, business-ready automation
+Your workflows can combine multiple actions that run one after another or at the same time. Actions range from simple operations that take one step to complete, to complex AI-powered processes that can reason through problems and adapt based on what they find.
 
 
 ## How to add an action
@@ -62,44 +55,45 @@ Basic actions provide straightforward, single-purpose operations that are quick 
 - Create Calendar Event
 - Update Spreadsheet
 - Send Slack Message
-### Complex actions
 
-AI Agent actions offer more powerful capabilities with complex reasoning and adaptive behavior. These actions can continue "looping" until exit conditions are met and adapt to context dynamically. They consume more credits but provide sophisticated decision-making for multi-step processes.
-### Stateful actions
+### Linked actions
 <Frame>
-  <img src="/lindy-brand-assets/actions_6.png" alt="Stateful actions workflow example" />
+  <img src="/lindy-brand-assets/actions_6.png" alt="Linked actions workflow example" />
 </Frame>
-Stateful actions create persistent contexts that can both execute operations and listen for future events. They show different execution paths that you can choose from based on your workflow needs.
+Linked actions create additional actions that are connected to the original action. They show different execution paths that you can choose from based on your workflow needs.
 
-**How stateful actions work:**
+**Two types of linked actions:**
+- **Standard linked actions**: Create downstream actions for continued operations
+- **Channels**: Listen for future events like email replies, Slack messages, or Telegram messages
+
+**How linked actions work:**
 - **Choose your paths**: Select which execution paths you need - you can choose one or both
 - **Execute normally**: "After email sent" path continues your workflow immediately after sending
-- **Listen for events**: "After reply received" path adds listening capability to wake up your agent when replies arrive
+- **Listen for events** (channels only): "After reply received" path adds listening capability to wake up your agent when replies arrive
 - **Maintain context**: When the agent wakes up from listening, it has full context of the original interaction
 
 **Key example: Email Actions**
 - Send an email and choose your paths
 - "After email sent" → workflow continues normally  
 - "After reply received" → agent listens and wakes up when replies arrive with full thread context
-- You'll see linked actions available in your action selector for stateful operations
+- You'll see linked actions available in your action selector for these operations
 
 This enables reactive workflows where agents can handle both proactive tasks and responsive interactions seamlessly.
 
-### Multi-threaded actions
+### Using multiple channels
 <Frame>
-  <img src="/lindy-brand-assets/actions_5.png" alt="Stateful actions workflow example" />
+  <img src="/lindy-brand-assets/actions_5.png" alt="Multiple channels workflow example" />
 </Frame>
-Multi-threaded actions occur when you have multiple stateful actions running simultaneously, each maintaining their own conversation threads and contexts.
+When you use multiple channels in a single agent, each channel maintains its own conversation thread for listening and responding to future events.
 
-**How multi-threading works:**
-- **Multiple conversations**: If you send two emails that are both stateful, you now have two separate listening threads
+**How multiple channels work:**
+- **Multiple conversations**: If you send two emails that both use channels, you now have two separate listening threads
 - **Thread selection**: When responding, you must choose which specific conversation thread you're replying to
-- **Independent contexts**: Each thread maintains its own state and conversation history
-- **Parallel processing**: Multiple stateful actions can listen and respond independently
+- **Parallel processing**: Multiple channels can listen and respond independently
 
 **Example scenario:**
-- Send Email A to Customer 1 (stateful)
-- Send Email B to Customer 2 (stateful)  
+- Send Email A to Customer 1 (with channel)
+- Send Email B to Customer 2 (with channel)  
 - Both customers reply
 - Agent wakes up twice with separate contexts
 - Each response is handled within its specific conversation thread
@@ -114,26 +108,11 @@ Every action in Lindy offers several configuration options to customize its beha
   <img src="/lindy-brand-assets/actions_7.png" alt="Account selection interface" />
 </Frame>
 Choose which connected account the action should use. If you authorize your company Gmail account, Lindy will only access your company email. You can authorize multiple accounts for a given application, but each action will only use one account.
-### Model selection
+### Model labels
 <Frame>
-  <img src="/lindy-brand-assets/actions_8.png" alt="Model selection interface" />
+  <img src="/lindy-brand-assets/actions_8.png" alt="Model labels interface" />
 </Frame>
 Select the AI model to be used for the action. The model completes the parameters using context from the workflow and data from prior steps. Bigger models are smarter but more expensive — Lindy provides top AI models ready to use out of the box.
-
-## Best practices
-<Tip>
-  Start with simple actions and gradually add complexity. Test each action individually before building complex workflows.
-</Tip>
-
-### Optimization strategies
-- **Model Selection**: Begin with powerful models to get workflows right, then optimize costs by switching to smaller models once workflows are proven
-- **Credit Management**: Basic automations use 1 credit minimum while complex tasks consume more. Use "Set Manually" mode for direct data transfer to reduce credit consumption
-- **Error Prevention**: Test workflows thoroughly and set up proper error notifications
-
-### Security considerations
-- **Data Protection**: All actions use encryption at rest and in transit, with account isolation and granular permission management
-- **Access Control**: Each action only accesses the specific accounts you authorize, with secure OAuth authentication
-- **Audit Trails**: Complete logging of all action executions provides full visibility into what your Lindy is doing
 
 ## Next steps
 
