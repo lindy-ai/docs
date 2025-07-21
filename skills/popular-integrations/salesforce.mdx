@@ -34,25 +34,18 @@ Key benefits of Salesforce integration:
 
 <Steps>
   <Step title="Add Salesforce to your workflow">
-    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "Salesforce"
+    Click on the plus sign at the bottom or right-click anywhere on the canvas and select "Add Trigger" or "Add Action" from the pop-up menu and choose "Salesforce." Once added to the canvas, click on it again and from the right tab, choose connect. You will now be redirected to the saleforce website to authorize your account.
     <Frame>
-      <img src="/lindy-brand-assets/google_calendar_1.png" alt="Add Salesforce to workflow" />
-    </Frame>
-  </Step>
-  <Step title="Connect and Configure your Salesforce">
-    Click on "Add Account" and authorize your Salesforce for Lindy's integrations by granting permissions for CRM access and management. Choose which objects and fields you want this Lindy to access.
-    <Frame>
-      <img src="/lindy-brand-assets/salesforce_setup.png" alt="Salesforce connection" />
+      <img src="/lindy-brand-assets/salesforce_1.png" alt="Add WhatsApp to workflow" />
     </Frame>
   </Step>
 </Steps>
 
+
 ## Salesforce Triggers
 
 #### New Deleted Record
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_3.png" alt="New Deleted Record trigger" />
-</Frame>
+
 Triggers when a record is deleted in Salesforce:
 - **Data cleanup workflows** - Automatically clean up related records in other systems
 - **Audit trail creation** - Log deleted records in external audit systems for compliance
@@ -60,9 +53,7 @@ Triggers when a record is deleted in Salesforce:
 - Perfect for data maintenance, compliance tracking, integration synchronization
 
 #### New Outbound Message
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_4.png" alt="New Outbound Message trigger" />
-</Frame>
+
 Receive outbound messages from Salesforce when specific events occur:
 - **Real-time event processing** - React immediately to Salesforce workflow rules
 - **Custom integration triggers** - Handle complex business logic requiring immediate updates
@@ -70,9 +61,6 @@ Receive outbound messages from Salesforce when specific events occur:
 - Ideal for advanced automation, complex business rules, real-time processing
 
 #### New Salesforce Contact
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_5.png" alt="New Contact trigger" />
-</Frame>
 Triggers when a new contact is created in Salesforce:
 - **Welcome sequences** - Automatically enroll new contacts in onboarding sequences
 - **Lead scoring** - Calculate initial scores and route to appropriate sales reps
@@ -80,9 +68,6 @@ Triggers when a new contact is created in Salesforce:
 - Perfect for contact onboarding, lead qualification, multi-system synchronization
 
 #### New Salesforce Lead
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_6.png" alt="New Lead trigger" />
-</Frame>
 Triggers when a new lead is created in Salesforce:
 - **Lead qualification** - Automatically score and qualify new leads
 - **Assignment automation** - Route leads to appropriate sales reps
@@ -90,9 +75,6 @@ Triggers when a new lead is created in Salesforce:
 - Essential for lead processing, territory management, marketing attribution
 
 #### New Salesforce Record
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_7.png" alt="New Record trigger" />
-</Frame>
 Triggers when a new selected record is created in Salesforce:
 - **Universal record processing** - Handle creation of any Salesforce object type
 - **Cross-object workflows** - Trigger actions when related records are created
@@ -100,9 +82,7 @@ Triggers when a new selected record is created in Salesforce:
 - Great for comprehensive auditing, dynamic routing, universal automation
 
 #### Updated Salesforce Contact
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_8.png" alt="Updated Contact trigger" />
-</Frame>
+
 Triggers when a contact is updated in Salesforce:
 - **Lifecycle management** - Move contacts through different marketing stages
 - **Data synchronization** - Keep contact information consistent across systems
@@ -110,9 +90,6 @@ Triggers when a contact is updated in Salesforce:
 - Perfect for contact lifecycle management, data hygiene, relationship mapping
 
 #### Updated Salesforce Lead
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_9.png" alt="Updated Lead trigger" />
-</Frame>
 Triggers when a lead is updated in Salesforce:
 - **Lead progression tracking** - Monitor lead movement through qualification stages
 - **Score-based actions** - Trigger different actions based on score changes
@@ -120,9 +97,6 @@ Triggers when a lead is updated in Salesforce:
 - Ideal for lead progression, scoring automation, engagement tracking
 
 #### Updated Salesforce Record
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_10.png" alt="Updated Record trigger" />
-</Frame>
 Triggers when a selected record is updated in Salesforce:
 - **Universal change management** - React to updates across any Salesforce object
 - **Approval workflows** - Trigger approval processes when fields are updated
@@ -136,19 +110,6 @@ Triggers when a selected record is updated in Salesforce:
 ## Salesforce Actions
 
 #### Add a Contact to a Campaign
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_8.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Add an existing contact to an existing campaign:
 - **Multi-touch campaigns** - Add contacts to nurture campaigns based on behavior
@@ -157,19 +118,6 @@ Add an existing contact to an existing campaign:
 - Perfect for lead nurturing, event follow-up, re-engagement campaigns
 
 #### Add a Lead to a Campaign
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_9.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Add an existing lead to an existing campaign:
 - **Lead nurturing** - Enroll new leads in appropriate nurture sequences
@@ -178,9 +126,6 @@ Add an existing lead to an existing campaign:
 - Ideal for lead management, source attribution, industry-specific campaigns
 
 #### Convert Soap XML Object to JSON
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_11.png" alt="Convert XML to JSON action" />
-</Frame>
 Convert Salesforce SOAP XML data to JSON format:
 - **API integration** - Convert data for consumption by modern REST APIs
 - **Data transformation** - Prepare data for external analytics platforms
@@ -188,19 +133,6 @@ Convert Salesforce SOAP XML data to JSON format:
 - Essential for modern integrations, data transformation, custom reporting
 
 #### Create a Contact
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_10.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Create a new contact in Salesforce:
 - **Lead conversion** - Create contacts from qualified leads
@@ -209,19 +141,6 @@ Create a new contact in Salesforce:
 - Perfect for lead conversion, data import, partner integration
 
 #### Create a Lead
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_11.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Create a new lead in Salesforce:
 - **Multi-channel lead capture** - Create leads from various sources
@@ -230,9 +149,6 @@ Create a new lead in Salesforce:
 - Essential for lead capture, marketing integration, referral management
 
 #### Create Attachment
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_12.png" alt="Create Attachment action" />
-</Frame>
 Create and attach files to Salesforce records:
 - **Document management** - Attach contracts, proposals, and agreements
 - **Compliance documentation** - Attach required compliance documents
@@ -240,9 +156,6 @@ Create and attach files to Salesforce records:
 - Perfect for document management, compliance, communication tracking
 
 #### Create Case Comment
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_13.png" alt="Create Case Comment action" />
-</Frame>
 Add a comment to an existing Salesforce case:
 - **Customer communication** - Log customer interactions and responses
 - **Internal collaboration** - Add internal notes for team collaboration
@@ -250,9 +163,6 @@ Add a comment to an existing Salesforce case:
 - Essential for case management, team collaboration, resolution tracking
 
 #### Create Content Note
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_14.png" alt="Create Content Note action" />
-</Frame>
 Create and manage content notes with customizable permissions:
 - **Meeting notes** - Create detailed meeting notes linked to records
 - **Project documentation** - Document project progress and milestones
@@ -260,9 +170,6 @@ Create and manage content notes with customizable permissions:
 - Perfect for meeting documentation, project tracking, knowledge management
 
 #### Create Note
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_15.png" alt="Create Note action" />
-</Frame>
 Create a new note and associate it with a Salesforce record:
 - **Call logging** - Document phone conversations and outcomes
 - **Meeting minutes** - Record meeting discussions and action items
@@ -270,9 +177,6 @@ Create a new note and associate it with a Salesforce record:
 - Ideal for activity logging, meeting documentation, follow-up tracking
 
 #### Delete Opportunity
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_16.png" alt="Delete Opportunity action" />
-</Frame>
 Delete a Salesforce opportunity record using its ID:
 - **Data cleanup** - Remove duplicate or invalid opportunities
 - **Pipeline management** - Clean up stale opportunities
@@ -280,9 +184,6 @@ Delete a Salesforce opportunity record using its ID:
 - Essential for data maintenance, pipeline hygiene, compliance management
 
 #### Delete Record
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_17.png" alt="Delete Record action" />
-</Frame>
 Delete a record from Salesforce by specifying object type and ID:
 - **Bulk data cleanup** - Remove outdated or duplicate records
 - **Compliance management** - Delete records for data retention compliance
@@ -290,9 +191,6 @@ Delete a record from Salesforce by specifying object type and ID:
 - Perfect for data cleanup, compliance, integration maintenance
 
 #### Find Records
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_18.png" alt="Find Records action" />
-</Frame>
 Find and retrieve Salesforce records based on object type and fields:
 - **Duplicate detection** - Find potential duplicates before creating new ones
 - **Data validation** - Verify record existence before performing operations
@@ -300,9 +198,6 @@ Find and retrieve Salesforce records based on object type and fields:
 - Essential for data quality, validation, relationship management
 
 #### Get All Accounts
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_19.png" alt="Get All Accounts action" />
-</Frame>
 Retrieve all accounts from Salesforce:
 - **Account analysis** - Get all accounts for comprehensive analysis
 - **Territory planning** - Get account lists for territory assignment
@@ -310,9 +205,6 @@ Retrieve all accounts from Salesforce:
 - Perfect for account management, territory planning, data export
 
 #### Get All Contacts
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_20.png" alt="Get All Contacts action" />
-</Frame>
 Retrieve all contacts from Salesforce:
 - **Contact management** - Get all contacts for database management
 - **Marketing lists** - Get contact lists for email marketing campaigns
@@ -320,9 +212,6 @@ Retrieve all contacts from Salesforce:
 - Essential for contact management, marketing, compliance audits
 
 #### Get an Account
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_16.png" alt="Get Account action" />
-</Frame>
 Retrieve a specific account from Salesforce:
 - **Account lookup** - Get specific account details for processing
 - **Data enrichment** - Get account information to enrich other records
@@ -330,9 +219,6 @@ Retrieve a specific account from Salesforce:
 - Perfect for account lookup, data enrichment, custom workflows
 
 #### Insert Blob Data
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_17.png" alt="Insert Blob Data action" />
-</Frame>
 Insert binary data and attachments with Salesforce objects:
 - **Document storage** - Store contracts, images, and other binary files
 - **Media management** - Attach photos, videos, and audio files
@@ -340,9 +226,6 @@ Insert binary data and attachments with Salesforce objects:
 - Essential for document storage, media management, backup systems
 
 #### Post a Message to Chatter Feed
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_18.png" alt="Post to Chatter action" />
-</Frame>
 Post messages to Salesforce Chatter feeds for specific records:
 - **Team collaboration** - Share updates and insights with team members
 - **Process notifications** - Notify teams about important milestones
@@ -350,9 +233,6 @@ Post messages to Salesforce Chatter feeds for specific records:
 - Perfect for team collaboration, process notifications, project communication
 
 #### Search for a Contact
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_19.png" alt="Search Contact action" />
-</Frame>
 Search for a specific contact in Salesforce:
 - **Contact lookup** - Find contacts before creating or updating records
 - **Duplicate prevention** - Check for existing contacts before import
@@ -360,9 +240,6 @@ Search for a specific contact in Salesforce:
 - Essential for contact lookup, duplicate prevention, data validation
 
 #### Search for an Opportunity
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_20.png" alt="Search Opportunity action" />
-</Frame>
 Search for a specific opportunity in Salesforce:
 - **Pipeline analysis** - Find opportunities meeting specific criteria
 - **Forecasting** - Retrieve opportunities for forecast calculations
@@ -370,9 +247,6 @@ Search for a specific opportunity in Salesforce:
 - Perfect for pipeline analysis, forecasting, performance tracking
 
 #### Search Object Records
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_16.png" alt="Search Object Records action" />
-</Frame>
 Search Salesforce records across specified object types:
 - **Universal search** - Search across multiple object types simultaneously
 - **Data discovery** - Find records containing specific information
@@ -380,9 +254,6 @@ Search Salesforce records across specified object types:
 - Essential for universal search, data discovery, comprehensive reporting
 
 #### SOQL Query
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_17.png" alt="SOQL Query action" />
-</Frame>
 Execute custom SOQL queries against your Salesforce data:
 - **Complex reporting** - Create sophisticated reports with custom logic
 - **Data analysis** - Perform advanced data analysis with custom queries
@@ -390,9 +261,6 @@ Execute custom SOQL queries against your Salesforce data:
 - Perfect for complex reporting, data analysis, performance optimization
 
 #### SOSL Search
-<Frame>
-  <img src="/lindy-brand-assets/google_calendar_18.png" alt="SOSL Search action" />
-</Frame>
 Search Salesforce records using SOSL query syntax:
 - **Full-text search** - Search across multiple fields and objects
 - **Fuzzy matching** - Find records with similar but not exact matches
@@ -400,19 +268,6 @@ Search Salesforce records using SOSL query syntax:
 - Essential for full-text search, fuzzy matching, advanced filtering
 
 #### Update a Contact
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_12.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Update an existing contact in Salesforce:
 - **Data maintenance** - Keep contact information current and accurate
@@ -421,19 +276,6 @@ Update an existing contact in Salesforce:
 - Perfect for data maintenance, lifecycle management, enrichment updates
 
 #### Update a Lead
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_13.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 Update an existing lead in Salesforce:
 - **Lead scoring** - Update lead scores based on behavior and engagement
@@ -441,20 +283,6 @@ Update an existing lead in Salesforce:
 - **Assignment updates** - Reassign leads to different sales representatives
 - Essential for lead scoring, status management, data enrichment
 
-## Example CRM workflow
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/google_calendar_12.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
 
 ## Practical Implementation Scenarios
 
