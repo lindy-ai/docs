@@ -1172,6 +1172,24 @@ html:not(.dark) .text-gray-400 {
 }
 
 /* ============== CALLOUT THEME FIXES ============== */
+/* Info callouts - yellow theme to match Lindy branding */
+.callout[data-callout-type="info"] {
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
+}
+
+/* Note callouts - identical styling to Info */
+.callout[data-callout-type="note"] {
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
+}
+
+/* Warning callouts - identical styling to Info */
+.callout[data-callout-type="warning"] {
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
+}
+
 /* Override green emerald colors with PURPLE theme colors for tips */
 
 /* Tip callouts - replace emerald with PURPLE */
@@ -1180,10 +1198,43 @@ html:not(.dark) .text-gray-400 {
   background-color: rgba(147, 51, 234, 0.1) !important; /* Purple background instead of emerald */
 }
 
+/* Dark mode info callouts - enhanced visibility */
+.dark .callout[data-callout-type="info"] {
+  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
+  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
+}
+
+/* Dark mode note callouts - enhanced visibility */
+.dark .callout[data-callout-type="note"] {
+  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
+  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
+}
+
+/* Dark mode warning callouts - enhanced visibility */
+.dark .callout[data-callout-type="warning"] {
+  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
+  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
+}
+
 /* Dark mode tip callouts */
 .dark .callout[data-callout-type="tip"] {
   border-color: rgba(147, 51, 234, 0.3) !important; /* Darker purple border for dark mode */
   background-color: rgba(147, 51, 234, 0.15) !important; /* Darker purple background for dark mode */
+}
+
+/* Info callout icon color */
+.callout[data-callout-type="info"] svg {
+  color: #E6C147 !important; /* Yellow icon to match theme */
+}
+
+/* Note callout icon color */
+.callout[data-callout-type="note"] svg {
+  color: #E6C147 !important; /* Yellow icon to match theme */
+}
+
+/* Warning callout icon color */
+.callout[data-callout-type="warning"] svg {
+  color: #E6C147 !important; /* Yellow icon to match theme */
 }
 
 /* Tip callout icon color */
@@ -1191,13 +1242,58 @@ html:not(.dark) .text-gray-400 {
   color: #7c3aed !important; /* Purple icon instead of emerald */
 }
 
+/* Dark mode info callouts */
+.dark .callout[data-callout-type="info"] svg {
+  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
+}
+
+/* Dark mode note callouts */
+.dark .callout[data-callout-type="note"] svg {
+  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
+}
+
+/* Dark mode warning callouts */
+.dark .callout[data-callout-type="warning"] svg {
+  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
+}
+
 .dark .callout[data-callout-type="tip"] svg {
   color: #a855f7 !important; /* Lighter purple icon for dark mode */
+}
+
+/* Info callout text colors */
+.callout[data-callout-type="info"] .prose {
+  color: #92400e !important; /* Dark yellow/brown text for light mode */
+}
+
+/* Note callout text colors */
+.callout[data-callout-type="note"] .prose {
+  color: #92400e !important; /* Dark yellow/brown text for light mode */
+}
+
+/* Warning callout text colors */
+.callout[data-callout-type="warning"] .prose {
+  color: #92400e !important; /* Dark yellow/brown text for light mode */
 }
 
 /* Tip callout text colors */
 .callout[data-callout-type="tip"] .prose {
   color: #5b21b6 !important; /* Dark purple text for light mode */
+}
+
+/* Dark mode info callout text */
+.dark .callout[data-callout-type="info"] .prose {
+  color: #fcd34d !important; /* Light yellow text for dark mode */
+}
+
+/* Dark mode note callout text */
+.dark .callout[data-callout-type="note"] .prose {
+  color: #fcd34d !important; /* Light yellow text for dark mode */
+}
+
+/* Dark mode warning callout text */
+.dark .callout[data-callout-type="warning"] .prose {
+  color: #fcd34d !important; /* Light yellow text for dark mode */
 }
 
 .dark .callout[data-callout-type="tip"] .prose {
