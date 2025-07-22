@@ -32,10 +32,20 @@ This is essential for bulk operations like lead enrichment, content processing, 
 
 When setting up your loop, you'll configure several key fields:
 
-- **Items to Loop Through**: The list of data that drives each loop iteration
+- **Items to Loop Through**: The list of data that drives each loop iteration. This can be a static list, a reference to dynamic data from previous steps, or an **AI prompt** that generates the list for you.
+
+  For example, you can use an AI prompt to extract items dynamically:
+  ```text
+  the different interesting areas of research you identified in this document
+  ```
 - **Max Cycles**: The maximum number of loop iterations that will run. This controls resource usage. Set this based on your expected list size plus a safety buffer (e.g., if you expect 50 items, set to 100)
-- **Max Concurrent**: The maximum number of loop cycles that can run simultaneously in parallel. Choose "Auto" for optimization or set manually for rate-limited APIs. Lower this if hitting rate limits on external services
-- **Output**: The information passed from inside the loop to subsequent steps. This is the **only** data that survives the loop completion. Use "Auto mode" for AI summaries or "AI prompt" to specify exactly what data you need
+- **Max Concurrent**: The maximum number of loop cycles that can run simultaneously in parallel. Choose "Auto" for optimization, or set a specific number.
+
+<Tip>
+Set **Max Concurrent** to `1` if you want to process items strictly one after another—great for chaining outputs between cycles, or when you need to avoid parallel execution due to dependencies or external rate limits.
+</Tip>
+
+- **Output**: The information passed from inside the loop to subsequent steps. This is the **only** data that survives the loop completion. Use "Auto mode" for AI summaries, "AI prompt" to specify exactly what data you need, or set to manual to select an output reference from inside the loop to expose to the outside.
 
 <Tip>
 When you pass a list variable in Manual Mode, the loop automatically processes each item individually. For example, passing Google Sheet Rows output reference will process each row separately.
@@ -124,17 +134,6 @@ For our research example:
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion title="Design Efficient Loops">
-    Start with a clear output definition. The loop output is your only bridge between the loop and subsequent steps - make it comprehensive.
-  </Accordion>
-  
-  <Accordion title="Handle Errors Gracefully">
-    Not every item might process successfully. Design your output to handle partial failures without breaking the workflow.
-  </Accordion>
-  
-  <Accordion title="Set Reasonable Limits">
-    Use Max Cycles to prevent runaway loops. Start conservative and increase as needed.
-  </Accordion>
   <Accordion title="Test with Small Lists">
     Debug with 3-5 items before processing hundreds. It's easier to spot issues in smaller batches.
   </Accordion>
@@ -152,14 +151,13 @@ For our research example:
   
   <Accordion title="Missing Data After Loop">
     - Review output configuration
-    - Ensure output captures needed data
+    - Configure the loop "Output" field to include all data you'll need in subsequent steps
     - Check if actions inside loop are completing
   </Accordion>
   
   <Accordion title="Slow Performance">
     - Reduce actions inside loop
     - Check for rate-limited services
-    - Consider breaking into multiple smaller loops
   </Accordion>
   
   <Accordion title="Errors in Specific Items">
