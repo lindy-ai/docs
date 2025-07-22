@@ -4,8 +4,6 @@ icon: 'pen-to-square'
 sidebarTitle: 'Prompt Guide'
 ---
 
-Master the art of crafting effective prompts to create powerful, reliable AI agents with clear instructions and optimal performance.
-
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
     <video
@@ -22,14 +20,9 @@ Master the art of crafting effective prompts to create powerful, reliable AI age
 
 ## Quick Overview
 
-Effective prompting is the foundation of building successful agents. Well-crafted prompts ensure your agents understand their tasks, execute actions accurately, and maintain consistency across all interactions.
+Prompts are instructions you give to control how AI behaves and what it produces. Every time you use "AI Prompt" mode in field configuration or set up agent steps, you're writing prompts that tell Lindy exactly what to do.
 
-Key benefits of mastering prompts:
-- **Precise execution** — Agents perform exactly what you intend with clear, unambiguous instructions
-- **Consistent behavior** — Maintain reliable performance across different scenarios and contexts
-- **Efficient processing** — Reduce errors and iterations with well-structured prompts
-- **Better outputs** — Get formatted, relevant responses that meet your exact requirements
-- **Scalable automation** — Build agents that handle edge cases and complex workflows
+Good prompts make the difference between agents that work reliably and ones that produce unpredictable results. You'll use them throughout Lindy - from simple field instructions like "write a friendly email subject line" to complex agent behaviors like "analyze customer sentiment and route to the appropriate department."
 
 
 ## Where to Prompt in Lindy
@@ -88,15 +81,19 @@ appropriate skill based on the customer's needs.
 Skip pleasantries and ambiguous language. Your agent executes direct commands most effectively.
 
 <Tabs>
+  <Tab title="✅ Effective">
+    ```
+    Extract the customer email address from the message body. 
+    
+    Format as: email@domain.com
+    
+    If no email found, return: "NO_EMAIL_FOUND"
+    ```
+  </Tab>
   <Tab title="❌ Ineffective">
     ```
     Could you please try to find the customer's email address 
     somewhere in the message if possible?
-    ```
-  </Tab>
-  <Tab title="✅ Effective">
-    ```
-    Extract the customer email address from the message body.
     ```
   </Tab>
 </Tabs>
@@ -106,16 +103,25 @@ Skip pleasantries and ambiguous language. Your agent executes direct commands mo
 Prefer imperative verbs ("do") over passive suggestions ("don't").
 
 <Tabs>
+  <Tab title="✅ Active">
+    ```
+    Write a customer response following these requirements:
+    
+    Length: Maximum 100 words
+    Tone: Friendly and professional
+    Language: Simple terms, avoid technical jargon
+    Structure: 
+    1. Acknowledge their concern
+    2. Provide clear solution steps
+    3. Offer additional help
+    
+    End with: "Let me know if you need anything else!"
+    ```
+  </Tab>
   <Tab title="❌ Passive">
     ```
     The response shouldn't be too long and try not to include 
     technical jargon that might confuse the customer.
-    ```
-  </Tab>
-  <Tab title="✅ Active">
-    ```
-    Write a concise response under 100 words. Use simple, 
-    non-technical language.
     ```
   </Tab>
 </Tabs>
@@ -308,42 +314,34 @@ When responding to customer support tickets, consider:
 Every word matters! Proofread your prompts for grammar, punctuation, and vocabulary to ensure they are clear and consistent. Ambiguity can lead to unexpected results.
 
 <Tabs>
+  <Tab title="✅ Clear">
+    ```
+    Analyze the incoming data and route it based on these rules:
+    
+    SALES DATA (keywords: lead, prospect, demo, pricing, quote):
+    → Send to HubSpot CRM with tag "new_lead"
+    
+    SUPPORT REQUESTS (keywords: help, issue, bug, problem, broken):
+    → Send to Zendesk with priority level based on urgency
+    
+    BILLING INQUIRIES (keywords: invoice, payment, refund, billing, charge):
+    → Send to Finance team email with subject prefix "[BILLING]"
+    
+    UNKNOWN CATEGORY:
+    → Send to general inbox for manual review
+    
+    Always include the original sender and timestamp in the routing.
+    ```
+  </Tab>
   <Tab title="❌ Ambiguous">
     ```
     Process the data and send it to the right place based on what 
     type it is and who needs it
     ```
   </Tab>
-  <Tab title="✅ Clear">
-    ```
-    Categorize incoming data by type (sales/support/billing). 
-    Route sales data to CRM, support tickets to helpdesk, and 
-    billing queries to finance team.
-    ```
-  </Tab>
 </Tabs>
 
 
-## Common Patterns
-
-### The CLEAR Framework
-
-- **Context**: Set the scene and role
-- **Length**: Specify output constraints
-- **Examples**: Show desired format
-- **Action**: Define specific task
-- **Rules**: List must-follow guidelines
-
-### The SPECIFIC Method
-
-- **Situation**: Describe the scenario
-- **Persona**: Define who Lindy represents
-- **Explicit Instructions**: Clear step-by-step actions
-- **Constraints**: What NOT to do
-- **Input Format**: Expected data structure
-- **Format Output**: Desired response structure
-- **Include Examples**: Show ideal outcomes
-- **Conditions**: If-then scenarios
 
 
 ## Best Practices
@@ -367,10 +365,6 @@ Every word matters! Proofread your prompts for grammar, punctuation, and vocabul
   
   <Accordion title="Version and document changes">
     Keep track of prompt iterations and why changes were made. This helps troubleshooting and team collaboration.
-  </Accordion>
-  
-  <Accordion title="Balance specificity with flexibility">
-    Be specific enough to get consistent results but flexible enough to handle variations in input.
   </Accordion>
 </AccordionGroup>
 
