@@ -32,20 +32,10 @@ Use looping whenever you need to process multiple items with the same workflow. 
 
 **Perfect for:**
 
-<CardGroup cols={2}>
-  <Card title="Lead Research" icon="chart-line">
-    Enrich hundreds of leads from your CRM or spreadsheet simultaneously
-  </Card>
-  <Card title="Content Creation" icon="file-lines">
-    Generate social posts, emails, or descriptions for multiple products at once
-  </Card>
-  <Card title="Data Processing" icon="table">
-    Update spreadsheet rows, validate entries, or send bulk notifications
-  </Card>
-  <Card title="Research Tasks" icon="users">
-    Gather information on candidates, companies, or competitors in parallel
-  </Card>
-</CardGroup>
+- **Lead Research**: Enrich dozens of leads from your CRM or spreadsheet simultaneously
+- **Content Creation**: Generate social posts, emails, or descriptions for multiple products at once
+- **Data Processing**: Update spreadsheet rows, validate entries, or send bulk notifications
+- **Research Tasks**: Gather information on candidates, companies, or competitors in parallel
 
 <Tip>
 Simple test: If you're doing the same task repeatedly for different items, loop it instead.
@@ -60,11 +50,9 @@ When setting up your loop, you'll configure several key fields:
 
   For example, you can use an AI prompt to extract items dynamically:
   <Frame>
-    <img src="/lindy-brand-assets/looping-prompt.png" alt="Example of AI prompt for looping items" />
+    <img src="/lindy-brand-assets/looping-prompt1.png" alt="Example of AI prompt for looping items" />
   </Frame>
-  ```text
-  the different interesting areas of research you identified in this document
-  ```
+
 - **Max Cycles**: The maximum number of loop iterations that will run. This controls resource usage. Set this based on your expected list size plus a safety buffer (e.g., if you expect 50 items, set to 100)
 - **Max Concurrent**: The maximum number of loop cycles that can run simultaneously in parallel. Choose "Auto" for optimization, or set a specific number.
 
