@@ -30,6 +30,8 @@ Key capabilities:
 - **Concurrent calls** - Handle multiple calls simultaneously
 - **100+ countries** - Global reach with competitive pricing
 
+Want to learn more about how to use Lindy Phone or see example prompts? Check out our [Lindy Phone guide](/skills/by-lindy/lindy-phone) for detailed setup instructions and practical examples.
+
 <Note>
 Phone calls are available on Pro, Business, and Enterprise plans. Pro plans are limited to 30 calls/month, English only, and one call at a time. Business and Enterprise plans offer unlimited concurrent calls and support all languages.
 </Note>
@@ -61,7 +63,7 @@ Uses the "Make Phone Call" action to initiate calls.
 - Follow-up campaigns
 
 <Tip>
-Currently, we recommend using GPT-4o mini for phone actions inside AI agent nodes and GPT-4 Turbo for standalone phone workflows. These recommendations may change as new models emerge.
+We recommend using Gemini Flash for simple phone actions or simple phone calls, and Claude Sonnet for more advanced phone behavior. These recommendations may change as new models emerge.
 </Tip>
 
 
@@ -206,42 +208,6 @@ Forwarded calls stop charging for LLM usage once connected to a human.
 </Note>
 
 
-## Plan Comparison
-
-<CardGroup cols={3}>
-  <Card title="Pro" icon="rocket-launch">
-    
-    • 30 calls/month  
-
-    • English only  
-
-    • Basic voice
-
-    • Non-concurrent calls only
-  </Card>
-  
-  <Card title="Business" icon="briefcase">
-    
-    • Unlimited calls  
-
-    • 30+ languages  
-
-    • Call transfers
-  </Card>
-  
-  <Card title="Enterprise" icon="building-columns">
-    
-    • Business features  
-
-    • Custom voices  
-    
-    • Support unlimited concurrent calls
-
-  </Card>
-</CardGroup>
-
-
-
 ## Best Practices
 
 - **Test thoroughly** - Always test with real calls before going live
@@ -250,43 +216,13 @@ Forwarded calls stop charging for LLM usage once connected to a human.
 - **Monitor performance** - Review call logs and adjust prompts
 - **Set expectations** - Let callers know they're speaking with AI when appropriate
 
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Poor Audio Quality">
-    - Check phone line quality and signal strength
-    - Verify language settings match caller's language
-    - Test with different phone providers
-  </Accordion>
-  
-  <Accordion title="Agent Not Understanding">
-    - Review and simplify prompts
-    - Add more context about expected questions
-    - Consider using more advanced model
-  </Accordion>
-  
-  <Accordion title="Calls Not Connecting">
-    - Verify phone number is active
-    - Check workflow is saved and enabled
-    - Confirm billing is current
-  </Accordion>
-  
-  <Accordion title="Transfer Issues">
-    - Ensure destination number includes country code
-    - Test transfer number is reachable
-    - Check transfer conditions are clear
-  </Accordion>
-</AccordionGroup>
-
-
 ## Next Steps
 
 Enhance your phone agents with these advanced features:
 
 <CardGroup cols={2}>
-  <Card title="Knowledge Base" href="/fundamentals/lindy-101/knowledge-base" icon="database">
-    Give agents access to company information
+  <Card title="Lindy Phone Guide" href="/skills/by-lindy/lindy-phone" icon="phone">
+    Detailed examples and advanced phone setup
   </Card>
   <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="network-wired">
     Route calls based on caller data or time
@@ -294,7 +230,7 @@ Enhance your phone agents with these advanced features:
   <Card title="Agent Steps" href="/fundamentals/lindy-101/ai-agents" icon="brain-circuit">
     Build complex conversational flows
   </Card>
-  <Card title="Human in the Loop" href="/testing/human-in-the-loop" icon="square-user">
-    Add approval steps for sensitive actions
+  <Card title="Voice Support" href="/use-cases/customer success/voice-support" icon="headset">
+    Build AI-powered customer support phone agents
   </Card>
 </CardGroup>
