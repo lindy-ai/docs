@@ -26,6 +26,30 @@ Instead of processing 100 emails sequentially (which could take hours), loops ca
 
 This is essential for bulk operations like lead enrichment, content processing, or research tasks. The loop collects results from all iterations and passes a summary to the next step in your workflow.
 
+## When Should You Use Looping?
+
+Use looping whenever you need to process multiple items with the same workflow. The key benefit: parallel processing means faster results.
+
+**Perfect for:**
+
+<CardGroup cols={2}>
+  <Card title="Lead Research" icon="chart-line">
+    Enrich hundreds of leads from your CRM or spreadsheet simultaneously
+  </Card>
+  <Card title="Content Creation" icon="file-lines">
+    Generate social posts, emails, or descriptions for multiple products at once
+  </Card>
+  <Card title="Data Processing" icon="table">
+    Update spreadsheet rows, validate entries, or send bulk notifications
+  </Card>
+  <Card title="Research Tasks" icon="users">
+    Gather information on candidates, companies, or competitors in parallel
+  </Card>
+</CardGroup>
+
+<Tip>
+Simple test: If you're doing the same task repeatedly for different items, loop it instead.
+</Tip>
 
 
 ## Loop Configuration Fields
@@ -35,6 +59,9 @@ When setting up your loop, you'll configure several key fields:
 - **Items to Loop Through**: The list of data that drives each loop iteration. This can be a static list, a reference to dynamic data from previous steps, or an **AI prompt** that generates the list for you.
 
   For example, you can use an AI prompt to extract items dynamically:
+  <Frame>
+    <img src="/lindy-brand-assets/looping-prompt.png" alt="Example of AI prompt for looping items" />
+  </Frame>
   ```text
   the different interesting areas of research you identified in this document
   ```
