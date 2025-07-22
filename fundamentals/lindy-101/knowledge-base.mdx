@@ -19,14 +19,9 @@ sidebarTitle: 'Knowledge Base'
 
 ## Quick Overview
 
-A Knowledge Base is a repository that enables your agent to reference and retrieve data from multiple sources. Using hybrid semantic and keyword search, your agent intelligently queries your content to find relevant information for any task.
+Knowledge bases let your agents access information from multiple sources like files, websites, and cloud storage. When your agent needs information, it searches through all your content using both semantic understanding and keyword matching to find relevant answers.
 
-Key capabilities:
-- **Semantic search** — Finds content by meaning, not just keywords
-- **Multiple sources** — Files, websites, cloud storage, and text
-- **Auto-refresh** — Content updates automatically every 24 hours
-- **Flexible search** - Adjust between semantic and keyword matching
-- **Scalable storage** - Up to 20M characters for Pro users
+This is perfect for customer support bots that need to reference documentation, or any workflow where your agent needs to pull information from a large collection of content.
 
 <Note>
 For small datasets (single Google Doc or Sheet), use direct actions like Get Document or Get Spreadsheet for better performance.
@@ -51,7 +46,7 @@ Matches exact words in your query. Useful for precise matching of specific terms
 Click the plus button in your workflow and select "Search knowledge base".
 
 <Frame>
-  <img src="/lindy-brand-assets/kb-add-search-knowledge-base.png" alt="IMAGE NEEDED: Screenshot showing the Add Step menu with 'Search knowledge base' option highlighted" />
+  <img src="/lindy-brand-assets/add-KB.png" alt="IMAGE NEEDED: Screenshot showing the Add Step menu with 'Search knowledge base' option highlighted" />
 </Frame>
 
 ### Selecting Content Sources
@@ -118,13 +113,10 @@ Keep fuzziness at 100 to avoid the 1,500 file limit. Lower values restrict searc
 
 ## Managing Your Knowledge Base
 
-### Automatic Updates
-Content refreshes every 24 hours automatically.
+Your knowledge base stays current through automatic and manual updates:
 
-### Manual Updates
-For immediate updates, use these actions:
-- **Resync Knowledge Base** - Updates entire knowledge base
-- **Resync Knowledge Base Entry** - Refreshes specific entries
+- **Automatic updates**: Content refreshes every 24 hours automatically
+- **Manual updates**: For immediate updates, use Resync Knowledge Base actions to update the entire knowledge base or specific entries when needed
 
 <Frame>
   <img src="/lindy-brand-assets/kb-resync-actions.png" alt="IMAGE NEEDED: Screenshot showing Resync Knowledge Base actions in the action menu" />
