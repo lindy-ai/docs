@@ -23,6 +23,13 @@
   },
   "navigation": [
     {
+      "group": "",
+      "pages": [
+        "export-full-docs",
+        "join-community"
+      ]
+    },
+    {
       "group": "Start Here",
       "pages": [
         "start-here/what-is-lindy",
