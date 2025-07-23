@@ -970,6 +970,16 @@ html:not(.dark) .text-gray-400 {
   /* Let original Tailwind classes handle light mode - no overrides needed */
 }
 
+/* ============== ICON COLOR FIXES FOR INTRODUCTION DIAGRAM ============== */
+/* Force yellow icons in the introduction diagram */
+.not-prose .icon.inline {
+  background-color: #E6C147 !important;
+}
+
+.dark .not-prose .icon.inline {
+  background-color: #E6C147 !important;
+}
+
 /* ============== ADDITIONAL DARK MODE FIXES ============== */
 /* Catch remaining hard-to-read text elements */
 
