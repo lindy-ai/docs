@@ -11,6 +11,9 @@
     "light": "#F5E198",
     "dark": "#D4A514"
   },
+  "icons": {
+    "library": "fontawesome"
+  },
   "topbarLinks": [
     {
       "name": "Support",
