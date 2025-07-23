@@ -21,17 +21,18 @@
     "name": "Dashboard",
     "url": "https://chat.lindy.ai"
   },
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/start-here/what-is-lindy"
-    }
-  ],
   "navigation": [
+    {
+      "group": "",
+      "pages": [
+        "export-full-docs",
+        "join-community"
+      ]
+    },
     {
       "group": "Start Here",
       "pages": [
-        "start-here/what-is-lindy",
+        "index",
         "start-here/quickstart"
       ]
     },
