@@ -54,6 +54,7 @@
             "fundamentals/lindy-101/ai-agents",
             "fundamentals/lindy-101/looping",
             "fundamentals/lindy-101/memory",
+            "fundamentals/lindy-101/computer-use",
             "fundamentals/lindy-101/phone-calls",
             "fundamentals/lindy-101/knowledge-base",
             "fundamentals/lindy-101/prompt-guide",
@@ -73,7 +74,7 @@
         {
           "group": "Accounts & Billing",
           "pages": [
-            "account-billing/workspaces",
+            "account-billing/teams-collaboration",
             "account-billing/credits",
             "account-billing/credit-optimizations"
           ]
@@ -149,6 +150,7 @@
             "skills/by-lindy/lindy-phone",
             "skills/by-lindy/lindy-embed",
             "skills/by-lindy/lindy-mail",
+            "skills/by-lindy/computer-use",
             "skills/by-lindy/run-code",
             "skills/by-lindy/http-request",
             "skills/by-lindy/webhooks",
