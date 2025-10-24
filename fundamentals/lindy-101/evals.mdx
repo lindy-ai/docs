@@ -1,0 +1,92 @@
+---
+title: "Evals"
+description: "In this guide, you will learn how to set up offline evals for your agents."
+---
+
+## What is an Eval?
+
+An eval is a way of measuring how well your agent is performing against a set of criteria. There are 2 types of evals:
+
+- Offline evals use historical data to assess agent performance. It helps prevent regressions when an agent is edited. 
+- Online evals use real-time data to assess agent performance. It helps monitor real-world performance and outputs of your agent. 
+
+Currently, Lindy **only supports offline evals** for your agents, meaning you can monitor historical tasks that you specify and if they pass. Tasks will not be scored in real time. 
+
+## Key Terminology
+
+In Lindy, an **eval** is a reference task combined with a set of **scorers**. Typically, this is a task that has been performed well, so you can prevent regressions. Think of them as tests that you want to pass every time you deploy a new iteration of an agent. 
+
+A **scorer** defines how the eval should be scored. 
+
+## Creating an Eval
+
+To create an offline eval, click on the test tube icon under any step 
+
+<Frame>
+  <img
+    src="/CleanShot2025-10-22at12.11.48@2x.png"
+    alt="Auto mode intelligently filling email fields based on previous workflow data"
+    style={{ borderRadius:"8px",border:"1px solid #e5e7eb" }}
+    title=""
+  />
+</Frame>
+
+This will transition you to eval creation mode, where you can add scorers at the step level and the task level.
+
+<Frame>
+  <img
+    src="/CleanShot2025-10-22at12.13.39@2x.png"
+    alt="Auto mode intelligently filling email fields based on previous workflow data"
+    style={{ borderRadius:"8px",border:"1px solid #e5e7eb" }}
+    title=""
+  />
+</Frame>
+
+Create a scorer by clicking New Scorer. We only support LLM as a judge as a scoring mechanism, so to construct your scorer, simply tell the LLM how you want the step to be evaluated. 
+
+<Frame>
+  <img
+    src="/CleanShot2025-10-22at12.25.25@2x.png"
+    alt="Auto mode intelligently filling email fields based on previous workflow data"
+    style={{ borderRadius:"8px",border:"1px solid #e5e7eb" }}
+    title=""
+  />
+</Frame>
+
+After setting up the scorer prompt, you’ll want to test the scorer to see the score this step would have received using your prompt.  You can adjust your prompt or the model if necessary to ensure the score aligns with your expectations. 
+
+## Monitoring and Running your Evals
+
+To monitor and run your evals, go to the evals tab. 
+
+<Frame>
+  <img
+    src="/CleanShot2025-10-23at16.50.49@2x.png"
+    alt="Auto mode intelligently filling email fields based on previous workflow data"
+    style={{ borderRadius:"8px",border:"1px solid #e5e7eb" }}
+    title=""
+  />
+</Frame>
+
+Here, can see a summary of all of your eval runs and the changes from the previous run. You can also see views for evals that have regressed (the score decreased) or have improved (score increased. 
+
+<Info>
+  Running an eval simply simulates how the run would behave with the current version of the agent. It will not execute actions. 
+</Info>
+
+<Info>
+  Eval runs consume credits from your account.
+</Info>
+
+## Running your evals on a recurring schedule
+
+The \*\*Run All Evals \*\*action enables you to build an agent that runs all your evals on a recurring schedule. Below is a simple agent that wakes up at a certain time, runs all your evals, and sends you an email summarizing the results. 
+
+<Frame>
+  <img
+    src="/CleanShot2025-10-23at17.29.30@2x.png"
+    alt="Auto mode intelligently filling email fields based on previous workflow data"
+    style={{ borderRadius:"8px",border:"1px solid #e5e7eb" }}
+    title=""
+  />
+</Frame>
