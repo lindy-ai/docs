@@ -170,6 +170,7 @@
         {
           "group": "Popular Integrations",
           "pages": [
+            "integrations/slack-bot-landing",
             "skills/popular-integrations/airtable",
             "skills/popular-integrations/github",
             "skills/popular-integrations/gmail",
