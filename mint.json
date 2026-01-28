@@ -183,7 +183,7 @@
         {
           "group": "Popular Integrations",
           "pages": [
-            "integrations/slack-bot-landing",
+            "bot-for-slack",
             "skills/popular-integrations/airtable",
             "skills/popular-integrations/github",
             "skills/popular-integrations/gmail",
