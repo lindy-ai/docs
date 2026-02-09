@@ -1,347 +1,119 @@
 ---
 title: 'Quickstart'
-description: 'Build your first AI email assistant in under 5 minutes'
+description: 'Set up the AI that runs your work life in 2 minutes'
 icon: 'rocket'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="https://lindy-docs-content.nyc3.digitaloceanspaces.com/Human%20in%20Loop.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
 <Note>
-Time to complete: `5 minutes`  
-Difficulty: `Beginner`  
-What you'll build: `An AI email assistant that automatically responds to inquiries`
+Time to complete: **2 minutes**
+What you'll get: **One AI assistant that runs your inbox, meetings, and calendar**
 </Note>
 
-## Building Your First Agent
+## Get Started
 
-In this guide, you'll learn how to build your first AI email assistant. This will take less than five minutes, and after you're done, you'll have an email responder (because no one loves to answer emails themselves).
+Lindy is the AI that runs your work life. Once you're set up, Lindy autonomously handles your inbox, preps you for meetings, takes notes, sends follow-ups, and keeps your calendar under control. You don't have to ask.
 
-You'll create an AI agent that:
-1. **Monitors your Gmail** for incoming emails
-2. **Filters emails intelligently** using conditions to identify business inquiries
-3. **Searches your knowledge base** (your website) for relevant information
-4. **Automatically responds** with helpful, accurate information
-5. **Keeps you in the loop** by BCC'ing you on all responses
-
-## Overview
-
-Here's exactly what we'll do:
+<Frame caption="TODO: Video of full onboarding flow (signup to first message)">
+  <img src="/lindy-brand-assets/what-is-lindy-banner.jpg" alt="Placeholder" />
+</Frame>
 
 <Steps>
-  <Step title="Create agent & add trigger">
-    Create a new Lindy agent and add a Gmail trigger to monitor incoming emails
+  <Step title="Create your account">
+    Go to [lindy.ai](https://lindy.ai) and click **Try for Free**.
+
+    On the Get Started page, choose how to sign in. We recommend **Google** since it connects your email and calendar in one step.
   </Step>
-  <Step title="Add condition">
-    Add a condition to filter for business inquiries
+
+  <Step title="Add your phone number">
+    After signing in, you'll be prompted to add your phone number. This is optional but highly recommended. It unlocks **iMessage and SMS**, so you can text Lindy like you'd text a friend.
+
+    Enter your number, then verify with the code Lindy sends you.
+
+    <Tip>
+    Adding your phone number means Lindy can text you meeting prep, urgent email alerts, and daily briefings right to your phone.
+    </Tip>
   </Step>
-  <Step title="Add knowledge base & actions">
-    Add your website as a knowledge base and configure Gmail actions for automated replies
+
+  <Step title="Connect your email and calendar">
+    Lindy will ask you to connect your Google account so it can run your inbox and calendar. Click **Connect**, review the permissions, and allow access.
+
+    This gives Lindy the ability to:
+    - Triage and prioritize your emails
+    - Draft replies in your voice
+    - Read your calendar and prep you for meetings
+    - Join and record your meetings
+
+    <Frame caption="TODO: Screenshot of Google permissions screen">
+      <img src="/lindy-brand-assets/what-is-lindy-banner.jpg" alt="Placeholder" />
+    </Frame>
+
+    <Note>
+    Your data is encrypted (AES-256), never sold, and never used to train models. Lindy is SOC 2 Type II, HIPAA, and GDPR compliant. [Learn more about security](/resources/security).
+    </Note>
   </Step>
-  <Step title="Test & monitor">
-    Test your agent with a real email and monitor its performance
+
+  <Step title="Start your free trial">
+    You'll see the free trial screen. Lindy offers a **7-day free trial** with full Pro features. Enter your payment info to get started. You can cancel anytime before the trial ends.
+
+    See [lindy.ai/pricing](https://lindy.ai/pricing) for current plans.
+  </Step>
+
+  <Step title="Say hello to Lindy">
+    That's it. Once you're in, two things happen:
+
+    1. **Lindy texts you.** If you added your phone number, you'll receive your first iMessage or SMS from Lindy. It's already personalized: Lindy knows about your upcoming meetings, your inbox, and your schedule from your connected accounts.
+
+    2. **You land on the Lindy homepage.** From here you can interact with Lindy through the web app or simply text back on your phone.
+
+    <Frame caption="TODO: Screenshot of first iMessage from Lindy">
+      <img src="/lindy-brand-assets/what-is-lindy-banner.jpg" alt="Placeholder" />
+    </Frame>
+
+    <Tip>
+    We recommend starting with **texting Lindy**. Just reply to the message and put Lindy to work. It already has context on your email, calendar, and meetings.
+    </Tip>
   </Step>
 </Steps>
 
-Let's get started!
+## What Lindy Does Automatically
 
-## Step 1: Create a New Lindy & Add a Trigger
+Once you're set up, Lindy starts working right away. No configuration needed. One assistant replaces your entire work stack.
 
-Click the "New Lindy" button below Home in the top left of your workspace to begin building your AI agent.
+| Feature | What Lindy Does |
+|---------|----------------|
+| **Inbox Management** | Triages, prioritizes, drafts, and sends replies in your voice. Autonomously. |
+| **Meeting Prep** | Researches attendees and delivers a briefing before every meeting. |
+| **Meeting Notes** | Joins your meetings, records them, and generates interactive, searchable summaries. |
+| **Follow-ups** | Tracks action items and sends follow-up emails to attendees. |
+| **Daily Briefings** | Sends you a morning briefing with your calendar, important emails, and news. |
 
-<Frame>
-  <img 
-    src="/lindy-brand-assets/new-lindy-agent.png" 
-    alt="Create a new Lindy" 
-  />
-</Frame>
+You can customize all of these in your settings at [chat.lindy.ai](https://chat.lindy.ai). Adjust what Lindy labels, how it drafts emails, when you get meeting prep, and more.
 
-Click "Start from scratch" to create a new AI agent.
+Lindy is also available on **Slack**. Add Lindy to your workspace to ask questions, get updates, and delegate tasks without leaving Slack.
 
-<Frame>
-  <img 
-    src="/lindy-brand-assets/start-from-scratch.png" 
-    alt="Start from scratch option" 
-  />
-</Frame>
+## What to Try First
 
-Now let's add the trigger.
-Triggers wake up your AI agent when something happens, like getting a new email. [Learn more about triggers](https://docs.lindy.ai/fundamentals/lindy-101/triggers).
+Here are a few things you can delegate to Lindy right now via text, Slack, or the web app at [chat.lindy.ai](https://chat.lindy.ai):
 
-<Tip>
-Use filters to make your triggers more specific and reduce costs. [Learn about cost optimization](https://docs.lindy.ai/fundamentals/account-billing/credit-optimizations).
-</Tip>
+- **"Prep me for my next meeting"**: Get attendee research and past meeting context
+- **"What's on my calendar today?"**: Get a quick rundown of your day
+- **"Draft a reply to [name]'s email"**: Lindy drafts a response in your tone
+- **"Schedule a meeting with [name] next week"**: Lindy coordinates calendars and books it
+- **"Summarize yesterday's meeting with [name]"**: Get key decisions and action items
 
-### Setting up the Email Trigger
-
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/select-gmail-trigger.mp4" 
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
-**Steps:**
-1. Click **"Select Trigger"**
-2. Click **Gmail** 
-3. Add the **Email Received** trigger
-4. Connect the Gmail account you want your AI agent to monitor
-
-## Step 2: Add a Condition
-
-<Info>
-What are conditions?
-[Conditions](https://docs.lindy.ai/fundamentals/lindy-101/conditions) let you define different paths in your automation based on specific criteria. They help your AI agent make smart decisions about which emails to respond to.
-</Info>
-
-Now that your AI agent wakes up with every email, let's set a condition to define which emails deserve a response.
-
-Click the `Condition` step under `Perform an action` and `Search knowledge base.`
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/add-condition.png" 
-    alt="Add condition step" 
-  />
-</Frame>
-
-### Configure Your Condition
-
-Lindy will only proceed to the next step if the condition is met. Each condition begins with `Go down this path if...`
-
-Set your condition prompt to:
-
-```text
-the emailer is asking a question about my service, product, or company
-```
-
-With this prompt, your AI agent will only continue if it receives relevant business inquiries.
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/configure-condition.png" 
-    alt="Condition prompt configuration" 
-  />
-</Frame>
-
-## Step 4: Add a Knowledge Base & Actions
-
-<Info>
-The [Knowledge Base](https://docs.lindy.ai/fundamentals/lindy-101/knowledge-base) is a repository of data from which your AI agent retrieves information. AI agents search through knowledge bases semantically, finding results whose meaning is similar, even if the exact text doesn't match.
-
-For example, searching for "refunds" will also find entries related to "returns."
-</Info>
-
-Now we'll give your AI agent knowledge about your business so it knows how to respond accurately.
-
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/add-kb.mp4" 
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
-1. Click "Add step" and select "Search knowledge base"
-2. Click "Website" 
-3. Enter your company website URL and click "Crawl"
-
-Your agent will now have access to all your website content to answer questions accurately.
-
-### Add an Action
-
-<Info>
-[Actions](/core-concepts/actions) are tasks your AI agent performs, such as replying to emails, updating a HubSpot CRM, or creating a Notion page.
-</Info>
-
-Your AI agent now receives emails and searches your website for relevant information. The final step is configuring how it responds.
-
-Click "Add step" (the blue plus sign beneath the Knowledge Base) and select "Perform an action."
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/perform-action.png" 
-    alt="Add action step" 
-  />
-</Frame>
-
-Click the Gmail action in the ´Linked Actions´ section to ensure your AI agent responds in the same email thread.
-Select "Gmail Send Reply" to configure your response action.
-
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/send-reply.mp4" 
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
-### Configure Your Response
-
-Now customize how your AI agent crafts responses using your knowledge base.
-
-1. Ensure the **Body** field is set to **"Prompt AI"**
-2. Add this prompt to instruct your AI agent:
-
-```
-You are a competent email responder that will use context from a knowledge base 
-
-to succinctly respond to emailers' questions about my service, product, or company. 
-
-ONLY respond with exact information extracted from the knowledge base and keep 
-
-emails friendly and informative. Never more than 3 sentences.
-```
-
-The "Reply To" field defaults to "All," ensuring your AI agent responds to the sender and anyone else included in the email thread.
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/email-prompt.png" 
-    alt="Gmail reply configuration" 
-  />
-</Frame>
-
-<Tip>
-Pro tip: BCC yourself on responses to monitor your AI agent's performance.
-
-Set the BCC field to "Set Manually" and enter your email address. This gives you visibility into all responses without cluttering the recipient's inbox.
-</Tip>
-
-## Step 6: Test Your Agent
-
-Time to see your AI agent in action!
-
-1. Click the `Save` button to save your workflow
-
-2. Send yourself a test email from a different address (personal email works great) with a question about your business
-
-3. Click "Test Mode" and select your test email
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/test-gmail.png" 
-    alt="Test mode interface" 
-  />
-</Frame>
-
-4. Watch as your AI agent processes the email and generates a response
-
-<Frame>
-  <img 
-    src="/lindy-brand-assets/test-gmail-result.png" 
-    alt="Test results showing condition path" 
-  />
-</Frame>
-
-<Note>
-Remember: Improve your agent over time by reviewing its responses regularly and adjust the prompt to better match your communication style.
-</Note>
-
-## Bonus Step: Name and Monitor Your Agent
-
-Give your AI agent a memorable name that reflects its purpose.
-
-Once enabled, click "Tasks" to view your AI agent's activity history and monitor its performance.
-
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/rename-tasks.mp4" 
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
-## Congratulations!
-
-You've successfully built your first AI agent! Here's what you accomplished:
-
-- ✅ Created an AI agent from scratch
-- ✅ Connected it to your Gmail account
-- ✅ Set up intelligent email filtering with conditions
-- ✅ Added a knowledge base for accurate responses
-- ✅ Configured automated email responses
-- ✅ Tested it with real data
-
-## Take It Further
-
-Your email assistant is just the beginning. AI agents can triage emails, pre-draft responses, alert you on Slack, create reminders, send follow-ups, and much more.
-
-<CardGroup cols={3}>
-  <Card
-    title="Email Assistant"
-    icon="envelope"
-    href="/use-cases/popular-workflows/email-triage"
-  >
-    Advanced email automation with triage and smart responses
-  </Card>
-  <Card
-    title="Meeting Scheduler"
-    icon="calendar"
-    href="/use-cases/popular-workflows/meeting-assistant"
-  >
-    Automate meeting coordination and calendar management
-  </Card>
-  <Card
-    title="Customer Support"
-    icon="headset"
-    href="/use-cases/customer%20success/smart-support-agent"
-  >
-    Build a complete support ticket system
-  </Card>
-</CardGroup>
+## Explore More
 
 <CardGroup cols={2}>
-  <Card
-    title="Explore All Tutorials"
-    icon="book-open"
-    href="https://chat.lindy.ai/home"
-  >
-    Discover 15+ step-by-step guides for common use cases
+  <Card title="Inbox Management" icon="inbox" href="/features/inbox-management/email-triage">
+    See how Lindy runs your inbox autonomously
   </Card>
-  <Card
-    title="Join the Community"
-    icon="users"
-    href="https://community.lindy.ai/join"
-  >
-    Get help, share ideas, and learn from other Lindy users
+  <Card title="Meeting Assistant" icon="video" href="/features/meeting-assistant/meeting-prep">
+    Meeting prep, notes, and automatic follow-ups
+  </Card>
+  <Card title="iMessage & SMS" icon="message" href="/features/imessage-sms">
+    Delegate to Lindy from your phone
+  </Card>
+  <Card title="Ad Hoc Tasks" icon="wand-magic-sparkles" href="/features/ad-hoc-tasks">
+    Research, knowledge bank, and on-demand tasks
   </Card>
 </CardGroup>
-
-

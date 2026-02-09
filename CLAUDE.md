@@ -109,13 +109,24 @@ docs/
 │   ├── ChatIcon.jsx
 │   └── ZapIcon.jsx
 │
-├── index.mdx                      ← Homepage
+├── index.mdx                      ← Homepage ("What is Lindy?")
 ├── export-full-docs.mdx           ← Export utility page
 ├── join-community.mdx             ← Community page
 │
 ├── start-here/                    ← Getting started docs
 │   └── quickstart.mdx
-├── fundamentals/                  ← Core concepts
+├── features/                      ← Core feature pages (NEW - pivot branch)
+│   ├── imessage-sms.mdx           ← iMessage & SMS guide
+│   ├── ad-hoc-tasks.mdx           ← Research & on-demand tasks
+│   ├── inbox-management/
+│   │   ├── email-triage.mdx       ← Email labeling & prioritization
+│   │   └── email-drafting.mdx     ← AI-drafted replies
+│   └── meeting-assistant/
+│       ├── meeting-prep.mdx       ← Pre-meeting briefings
+│       ├── meeting-notes.mdx      ← Recording & summaries
+│       ├── follow-ups.mdx         ← Automatic follow-up emails
+│       └── scheduling.mdx         ← Smart scheduling
+├── fundamentals/                  ← Core concepts (legacy workflow builder docs)
 │   ├── lindy-101/                 ← 15 workflow builder pages
 │   ├── testing/                   ← 5 testing pages
 │   └── account-billing/           ← 5 account pages
@@ -157,17 +168,20 @@ docs/
 - Technical/developer audience
 
 **New Positioning** (pivot branch - in development):
-- "AI assistant for professionals that saves 2 hours/day"
-- Proactive assistant focus
-- Business user audience
-- Core features: Inbox, Meetings, Calendar
+- "The AI that runs your work life. 10+ hours back every week."
+- "Lindy doesn't assist. It acts. Autonomously."
+- Business user audience (professionals, not developers)
+- Core features: Inbox Management, Meeting Assistant, iMessage & SMS, Ad Hoc Tasks
+- Key language: "delegate" (not "ask"), "runs" (not "manages"), "text like a friend"
+- See `internal-ref-docs/messaging_positioning_frameworks.md` for authoritative messaging
 
 **Current Navigation Structure** (in `mint.json`):
-1. **Start Here** - Homepage, Quickstart
-2. **Fundamentals** - Lindy 101 (15 pages), Testing (5 pages), Accounts & Billing (3 pages)
-3. **Use Cases** - Popular Workflows, Sales, Operations, Finance, Customer Success, Marketing, HR
-4. **Skills** - By Lindy, Lindy Utilities, Web Scraping, Popular Integrations
-5. **Resources** - Security, Changelog
+1. **Start Here** - What is Lindy? (homepage), Quickstart
+2. **Texting & Tasks** - iMessage & SMS, Ad Hoc Tasks
+3. **Inbox Management** - Email Triage, Email Drafting
+4. **Meeting Assistant** - Meeting Prep, Meeting Notes, Follow-ups, Smart Scheduling
+5. **Advanced** (nested sub-groups) - Lindy 101, Testing, Accounts & Billing, Use Cases, Skills, Utilities, Web Scraping, Integrations
+6. **Resources** - Security, Changelog
 
 ## Key Files
 
@@ -191,10 +205,10 @@ docs/
 
 ### Internal Reference Docs (in `internal-ref-docs/`)
 - **README.md** - Guide to using internal reference documents
-- **lifecycle_comms.md** - Official tone, voice, and messaging patterns from lifecycle emails
-- **messaging_positioning_frameworks.md** - Product positioning and messaging frameworks
+- **lifecycle_comms.md** - Tone, voice, and messaging patterns from lifecycle emails (by David Henry, Jan 22, 2026)
+- **messaging_positioning_frameworks.md** - **Authoritative positioning doc** (by Everett Butler, Feb 9, 2026). All pivot docs pages are aligned to this. Contains core positioning, ICPs, differentiators, value pillars, brand narrative, feature descriptions, objection handling.
 - These files are excluded from Mintlify builds (see `mint.json` ignore config)
-- Use for reference when writing documentation content
+- **Always check these before writing new content** to ensure messaging alignment
 
 ### Custom Components (in `components/`)
 - **ChatIcon.jsx** - Custom chat icon component for MDX
@@ -264,30 +278,34 @@ mintlify validate
 - **Screenshots** - Heavy visual documentation
 - **Concise** - 1-2 sentence paragraphs
 
-### New Positioning Language
+### New Positioning Language (from messaging doc, Feb 2026)
+
+**Core positioning**: "The AI that runs your work life. 10+ hours back every week."
+**Key line**: "Lindy doesn't assist. It acts. Autonomously."
+**Stack replacement**: "One tool, not five" (do NOT name competitors in docs)
 
 **Use** (AI Assistant):
-- "Lindy automatically..."
-- "Your assistant will..."
-- "Enable [feature]"
-- "Save [X hours/week]"
-- "Lindy just does it"
+- "Lindy runs your inbox / meetings / calendar"
+- "Delegate to Lindy" (not "ask Lindy")
+- "Text Lindy like a friend" (not "like a colleague")
+- "10+ hours back every week"
 - "You don't have to ask"
 - "Nothing falls through the cracks"
+- "One assistant replaces your entire work stack"
 
 **Avoid** (Automation Platform):
-- "Build a workflow"
-- "Configure triggers"
-- "Deploy your agent"
-- "Step 1: Add action"
+- "Build a workflow" / "Configure triggers" / "Deploy your agent"
+- "Actions" / "Automations" (use "Quick Tasks" / "Standing instructions")
+- "Interact with" (use "delegate to")
+- "Manages your" (use "runs your")
+- Naming specific competitors (Superhuman, Calendly, Granola, Fyxer)
+- Em dashes (use colons for **Bold**: description patterns)
 
 ### Tone & Voice Reference
 
-See **`internal-ref-docs/lifecycle_comms.md`** for:
-- Official messaging patterns and language
-- Tone examples from lifecycle emails
-- Key phrases to use/avoid
-- Problem → Solution → Value structure
+**Primary source**: `internal-ref-docs/messaging_positioning_frameworks.md` (Feb 9, 2026 by Everett Butler) - authoritative messaging, positioning, differentiators, and feature descriptions.
+
+**Secondary source**: `internal-ref-docs/lifecycle_comms.md` - tone examples from lifecycle emails, key phrases, Problem/Solution/Value structure.
 
 See **`internal-ref-docs/README.md`** for guidance on using reference materials.
 

@@ -15,7 +15,6 @@
     "library": "fontawesome"
   },
   "ignore": [
-    "internal-ref-docs/**",
     "CLAUDE.md",
     "WORKFLOW.md"
   ],
@@ -45,7 +44,30 @@
       ]
     },
     {
-      "group": "Fundamentals",
+      "group": "Texting & Tasks",
+      "pages": [
+        "features/imessage-sms",
+        "features/ad-hoc-tasks"
+      ]
+    },
+    {
+      "group": "Inbox Management",
+      "pages": [
+        "features/inbox-management/email-triage",
+        "features/inbox-management/email-drafting"
+      ]
+    },
+    {
+      "group": "Meeting Assistant",
+      "pages": [
+        "features/meeting-assistant/meeting-prep",
+        "features/meeting-assistant/meeting-notes",
+        "features/meeting-assistant/follow-ups",
+        "features/meeting-assistant/scheduling"
+      ]
+    },
+    {
+      "group": "Advanced",
       "pages": [
         {
           "group": "Lindy 101",
@@ -84,72 +106,32 @@
             "account-billing/credits",
             "account-billing/credit-optimizations"
           ]
-        }
-      ]
-    },
-    {
-      "group": "Use Cases",
-      "pages": [
+        },
         {
-          "group": "Popular Workflows",
+          "group": "Use Cases",
           "pages": [
             "use-cases/popular-workflows/meeting-assistant",
             "use-cases/popular-workflows/email-triage",
             "use-cases/popular-workflows/calendar-prep",
-            "use-cases/popular-workflows/scheduling-assistant"
-          ]
-        },
-        {
-          "group": "Sales",
-          "pages": [
+            "use-cases/popular-workflows/scheduling-assistant",
             "use-cases/sales/lead-enrichment",
             "use-cases/sales/multi-channel-outbound",
-            "use-cases/sales/email-negotiation"
-          ]
-        },
-        {
-          "group": "Operations",
-          "pages": [
-            "use-cases/operations/document-processing"
-          ]
-        },
-        {
-          "group": "Finance",
-          "pages": [
+            "use-cases/sales/email-negotiation",
+            "use-cases/operations/document-processing",
             "use-cases/finance/invoice-processing",
-            "use-cases/finance/memo-generation"
-          ]
-        },
-        {
-          "group": "Customer Success",
-          "pages": [
+            "use-cases/finance/memo-generation",
             "use-cases/customer success/smart-support-agent",
             "use-cases/customer success/report-generator",
-            "use-cases/customer success/voice-support"
-          ]
-        },
-        {
-          "group": "Marketing",
-          "pages": [
+            "use-cases/customer success/voice-support",
             "use-cases/marketing/competitive-content-analysis",
-            "use-cases/marketing/focus-group-simulator"
-          ]
-        },
-        {
-          "group": "HR",
-          "pages": [
+            "use-cases/marketing/focus-group-simulator",
             "use-cases/hr/employee-feedback-collector",
             "use-cases/hr/resume-screening",
             "use-cases/hr/employee-help-desk"
           ]
-        }
-      ]
-    },
-    {
-      "group": "Skills",
-      "pages": [
+        },
         {
-          "group": "By Lindy",
+          "group": "Skills",
           "pages": [
             "skills/by-lindy/chat-with-lindy",
             "skills/by-lindy/lindy-meeting-recorder",
@@ -166,7 +148,7 @@
           ]
         },
         {
-          "group": "Lindy Utilities",
+          "group": "Utilities",
           "pages": [
             "skills/lindy-utilities/observability",
             "skills/lindy-utilities/llm-call",
@@ -186,7 +168,7 @@
           ]
         },
         {
-          "group": "Popular Integrations",
+          "group": "Integrations",
           "pages": [
             "bot-for-slack",
             "skills/popular-integrations/airtable",
