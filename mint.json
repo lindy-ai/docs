@@ -102,9 +102,9 @@
         {
           "group": "Accounts & Billing",
           "pages": [
+            "account-billing/usage",
             "account-billing/teams-collaboration",
-            "account-billing/credits",
-            "account-billing/credit-optimizations"
+            "account-billing/credits"
           ]
         },
         {
