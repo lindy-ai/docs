@@ -1,12 +1,16 @@
-# Documentation Workflow - Pivot Branch
+# Documentation Workflow
 
-## ⚠️ CRITICAL: DO NOT PUSH TO MAIN
+## Branch Strategy
 
-The `main` branch is the **live production site**. It is protected and should never be modified directly.
+- **`main`** = Live production site + Mintlify search index (deployed automatically)
+- **`pivot`** = Working branch for all development
+- **Personal branches** (`pivot-yourname`) = Your working branches
 
-### 🛡️ Automatic Protection
+**Daily work happens on `pivot`.** Merge `pivot` → `main` to deploy and enable search indexing.
 
-This repository has a **Claude Code hook** that automatically blocks git commits/pushes on the `main` branch. If you accidentally try to commit on main, you'll see an error message telling you to switch to `pivot` or your personal branch.
+### Automatic Protection
+
+This repository has a Claude Code hook that blocks git commits and pushes on the `main` branch. Merging to main is allowed (used for deployment).
 
 **The hook is already active** if you're using Claude Code - no setup needed!
 
@@ -147,15 +151,35 @@ git pull origin pivot
 git rebase pivot  # or git merge pivot
 ```
 
+## Deploying to Production
+
+When changes on `pivot` are ready to go live and be searchable:
+
+```bash
+# Switch to main and pull latest
+git checkout main
+git pull origin main
+
+# Merge pivot into main
+git merge pivot
+
+# Push to trigger Mintlify deployment
+git push origin main
+
+# Switch back to pivot for continued work
+git checkout pivot
+```
+
+**Why this matters**: Mintlify only indexes the production branch (`main`) for search and AI assistant. Content on `pivot` renders but is NOT searchable until merged to `main`.
+
 ## Branch Structure
 
 ```
-main (PROTECTED - live site)
-  └── pivot (integration branch)
+main (production - deployed, search-indexed)
+  └── pivot (working branch)
        ├── pivot-marvin
        ├── pivot-inaan
-       ├── pivot-david
-       └── pivot-michelle
+       └── ...
 ```
 
 ## Safety Checks
@@ -165,7 +189,7 @@ Before pushing, always check your branch:
 git branch --show-current
 ```
 
-If it says `main`, STOP! Switch to pivot first.
+If it says `main` and you're NOT deploying, switch to pivot first.
 
 Or use the safety check alias:
 ```bash
