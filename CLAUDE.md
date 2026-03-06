@@ -4,19 +4,19 @@ This file provides guidance to Claude Code when working with the Lindy documenta
 
 ## CRITICAL: Branch Strategy
 
-**NEVER WORK ON OR PUSH TO `main` BRANCH**
+**Work on `pivot`, merge to `main` for deployment.**
 
-- **`main`** = Live production documentation site (PROTECTED)
-- **`pivot`** = Integration branch for documentation restructure (March 2, 2026 launch)
+- **`main`** = Live production site + Mintlify search index (auto-deployed on push)
+- **`pivot`** = Working branch for all development
 - **Personal branches** (`pivot-yourname`) = Your working branches
 
-**Always work on the `pivot` branch or a personal branch off `pivot`.**
+**Daily work happens on `pivot`.** Merge `pivot` → `main` to deploy and enable search indexing.
 
 ### 🛡️ Branch Protection Hook
 
 This repository has a **Claude Code hook** that automatically prevents git operations on the `main` branch:
 - **Automatically active** when you clone this repo (no setup needed)
-- **Blocks**: `git commit`, `git push`, `git reset`, `git rebase`, `git merge` on main
+- **Blocks**: `git commit`, `git push`, `git reset`, `git rebase` on main (`git merge` allowed for deployment)
 - **Performance**: Exits immediately for non-git commands (no overhead)
 - **Location**: `.claude/hooks/branch-safety.sh`
 - **Configuration**: `.claude/settings.json`
@@ -30,7 +30,7 @@ See **`WORKFLOW.md`** for detailed git workflow and safety checks.
 
 This is the **Lindy documentation repository** built with **Mintlify** (a modern documentation framework that renders MDX files).
 
-**Current Project**: Complete documentation restructure from "automation platform" to "AI assistant for professionals" positioning. Launch date: March 2, 2026.
+**Current Project**: Lindy documentation site. Restructure from "automation platform" to "AI assistant" positioning launched March 2, 2026.
 
 **Repository Stats**:
 - ~100+ MDX documentation pages
@@ -160,14 +160,7 @@ docs/
     └── light.svg
 ```
 
-## Current Documentation State
-
-**Old Positioning** (main branch - live site):
-- "Build AI agents that automate work"
-- Workflow builder focus
-- Technical/developer audience
-
-**New Positioning** (pivot branch - in development):
+## Current Positioning (live)
 - "The AI that runs your work life. 10+ hours back every week."
 - "Lindy doesn't assist. It acts. Autonomously."
 - Business user audience (professionals, not developers)
@@ -200,6 +193,7 @@ docs/
   title: 'Page Title'
   icon: 'icon-name'
   description: 'SEO description'
+  keywords: ['search term 1', 'search term 2']
   ---
   ```
 
@@ -267,6 +261,30 @@ mintlify broken-links
 
 # Verify mint.json is valid
 mintlify validate
+```
+
+## Mintlify Search & Indexing
+
+Mintlify only indexes the **production branch** (`main`) for search and AI assistant. Content on `pivot` renders in preview but is NOT searchable.
+
+### Frontmatter for search
+Every page should include `keywords` (invisible search terms that help users discover the page):
+```mdx
+keywords: ['term1', 'term2', 'synonym', 'related concept']
+```
+
+### AI Assistant
+- Configuration: `.mintlify/Assistant.md` (provides product context and terminology mappings)
+- The AI assistant must be enabled in the Mintlify dashboard (Pro/Enterprise plans)
+- It auto-indexes published content on the production branch
+
+### Deploying for search
+After pushing to `pivot`, merge to `main` for search indexing:
+```bash
+git checkout main && git pull origin main
+git merge pivot
+git push origin main
+git checkout pivot
 ```
 
 ## Content Writing Guidelines
@@ -416,9 +434,9 @@ mintlify dev
 
 **Why**: Product pivot to Executive Assistant (EA) positioning - focusing on inbox, meetings, calendar management
 
-**When**: Launch March 2, 2026 (aligned with EA product launch)
+**Launched**: March 2, 2026 (aligned with EA product launch)
 
-**Branch**: All work happens on `pivot` branch, launches to `main` on March 2
+**Branch**: Work on `pivot`, merge to `main` for deployment
 
 **Team**:
 - Marvin + Inaan: Content writing
@@ -456,7 +474,7 @@ mintlify broken-links
 
 ## Remember
 
-- ⚠️ **NEVER push to `main`** - it's the live production site
+- ⚠️ **Work on `pivot`**, merge to `main` only for deployment
 - ✅ **Always work on `pivot`** or personal branches
 - 🔍 **Always verify branch** before committing
 - 👀 **Preview locally** before pushing

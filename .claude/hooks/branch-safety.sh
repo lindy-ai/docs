@@ -13,7 +13,8 @@ if ! echo "$command" | grep -q "^git "; then
 fi
 
 # Only check git commands that modify the repository
-if ! echo "$command" | grep -qE "git (commit|push|reset|rebase|merge|cherry-pick|am|apply)"; then
+# Note: git merge is allowed on main (used for deploying pivot → main)
+if ! echo "$command" | grep -qE "git (commit|push|reset|rebase|cherry-pick|am|apply)"; then
   exit 0
 fi
 
