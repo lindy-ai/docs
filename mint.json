@@ -188,7 +188,8 @@
             "skills/popular-integrations/slack",
             "skills/popular-integrations/telegram",
             "skills/popular-integrations/twilio",
-            "skills/popular-integrations/youtube"
+            "skills/popular-integrations/youtube",
+            "skills/popular-integrations/zoom"
           ]
         }
       ]
