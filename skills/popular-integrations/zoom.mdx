@@ -2,24 +2,24 @@
 title: 'Zoom'
 icon: 'video'
 sidebarTitle: 'Zoom'
-description: 'Lindy joins your Zoom meetings, records them, and delivers AI-powered summaries with action items'
+description: 'Lindy joins your Zoom meetings, records them, and delivers summaries with decisions and action items'
 keywords: ['zoom', 'meeting recording', 'transcription', 'meeting notes', 'video conferencing', 'meeting summary']
 ---
 
 ## Overview
 
-Lindy integrates with Zoom to automatically join your meetings, record them, and deliver structured summaries with action items. No manual note-taking required.
+Lindy joins your Zoom meetings, records them, and delivers a summary with decisions and action items afterwards.
 
 With the Zoom integration, Lindy can:
 
 - **Join your Zoom meetings automatically** based on your connected calendar
-- **Record and transcribe** the full conversation in real time
-- **Generate AI summaries** with key decisions, action items, and highlights
+- **Record and transcribe** the full conversation
+- **Deliver summaries** with key decisions, action items, and highlights
 - **Send follow-up emails** to attendees with a summary and next steps
 
 ## Prerequisites
 
-Before using Lindy with Zoom, make sure you have:
+You'll need:
 
 - A [Lindy account](https://lindy.ai) (free or paid plan)
 - A connected calendar (Google Calendar or Microsoft Outlook) in Lindy
@@ -43,7 +43,7 @@ Before using Lindy with Zoom, make sure you have:
     - **External only**: record client and prospect calls, skip internal syncs
     - **Specific meetings**: choose exactly which meetings Lindy should join
 
-    Lindy automatically detects the Zoom link on your calendar events and joins at the scheduled time. No additional Zoom-side configuration is required.
+    Lindy detects the Zoom link on your calendar events and joins at the scheduled time. Nothing to configure on the Zoom side.
   </Step>
 </Steps>
 
@@ -53,19 +53,19 @@ Before using Lindy with Zoom, make sure you have:
 
 ## How Lindy Works with Zoom
 
-Once enabled, Lindy handles everything automatically:
+Here's what happens for each meeting:
 
 1. **Before the meeting**: Lindy detects the Zoom link on your calendar event and prepares to join.
-2. **During the meeting**: Lindy joins the call as **Lindy Meeting Notetaker**, a visible participant. It records audio and transcribes the conversation in real time.
+2. **During the meeting**: Lindy joins the call as **Lindy Meeting Notetaker**, a visible participant. It records and transcribes the conversation as it happens.
 3. **After the meeting**: Lindy generates a structured summary and sends it to your inbox with a link to the full recording and transcript.
 
 <Note>
-  Lindy joins as a visible participant named "Lindy Meeting Notetaker" so all attendees are aware the meeting is being recorded. This supports recording consent best practices.
+  Lindy joins as a visible participant named "Lindy Meeting Notetaker" so everyone on the call knows it's being recorded.
 </Note>
 
 ### Meeting Summaries
 
-Lindy's AI-powered summaries include:
+Each summary includes:
 
 - **High-level summary**: the top bullet points covering key outcomes
 - **Detailed notes**: in-depth coverage of the full discussion
@@ -85,11 +85,11 @@ All meetings are saved to your Lindy dashboard. You can:
 
 ### Follow-Up Emails
 
-Lindy can automatically send follow-up emails after each meeting with a summary and action items. You can configure this to:
+Lindy can send follow-up emails after each meeting with a summary and action items. You choose who gets them:
 
-- Send to all attendees
-- Send only to yourself
-- Disable follow-ups entirely
+- **All participants**: everyone on the invite
+- **Internal only**: just your team
+- **Specific people**: customize per your preferences
 
 Learn more about [automatic follow-ups](/features/meeting-assistant/follow-ups).
 
@@ -160,7 +160,7 @@ To fully remove Lindy from your Zoom account:
   </Accordion>
 
   <Accordion title="Participants see 'Lindy Meeting Notetaker' joining">
-    This is expected behavior. Lindy joins as a visible participant so all attendees know the meeting is being recorded. This ensures transparency and supports recording consent requirements.
+    That's by design. Lindy shows up as a named participant so everyone on the call knows it's being recorded.
   </Accordion>
 
   <Accordion title="Recording quality issues">
