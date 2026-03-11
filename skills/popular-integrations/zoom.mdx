@@ -1,0 +1,224 @@
+---
+title: 'Zoom'
+icon: 'video'
+sidebarTitle: 'Zoom'
+description: 'Lindy joins your Zoom meetings, records them, and delivers AI-powered summaries with action items'
+keywords: ['zoom', 'meeting recording', 'transcription', 'meeting notes', 'video conferencing', 'meeting summary']
+---
+
+## Overview
+
+Lindy integrates with Zoom to automatically join your meetings, record them, and deliver structured summaries with action items. No manual note-taking required.
+
+With the Zoom integration, Lindy can:
+
+- **Join your Zoom meetings automatically** based on your connected calendar
+- **Record and transcribe** the full conversation in real time
+- **Generate AI summaries** with key decisions, action items, and highlights
+- **Send follow-up emails** to attendees with a summary and next steps
+
+## Prerequisites
+
+Before using Lindy with Zoom, make sure you have:
+
+- A [Lindy account](https://app.lindy.ai) (free or paid plan)
+- A connected calendar (Google Calendar or Microsoft Outlook) in Lindy
+- Zoom meetings with a join link on your calendar events
+
+## Adding the Zoom Integration
+
+<Steps>
+  <Step title="Sign in to Lindy">
+    Go to [chat.lindy.ai](https://chat.lindy.ai) and sign in to your Lindy account. If you don't have one yet, create a free account.
+  </Step>
+  <Step title="Connect your calendar">
+    In your Lindy settings, connect your Google Calendar or Microsoft Outlook calendar. Lindy uses your calendar to detect upcoming Zoom meetings.
+  </Step>
+  <Step title="Enable meeting recording">
+    In the settings panel, find **Meeting recording** and toggle it on.
+  </Step>
+  <Step title="Choose which meetings to record">
+    Select your recording scope:
+    - **All meetings**: Lindy joins every meeting on your calendar
+    - **External only**: record client and prospect calls, skip internal syncs
+    - **Specific meetings**: choose exactly which meetings Lindy should join
+
+    Lindy automatically detects the Zoom link on your calendar events and joins at the scheduled time. No additional Zoom-side configuration is required.
+  </Step>
+</Steps>
+
+<Tip>
+  If you only want Lindy to join certain meetings, start with **External only** or **Specific meetings** and expand from there.
+</Tip>
+
+## How Lindy Works with Zoom
+
+Once enabled, Lindy handles everything automatically:
+
+1. **Before the meeting**: Lindy detects the Zoom link on your calendar event and prepares to join.
+2. **During the meeting**: Lindy joins the call as **Lindy Meeting Notetaker**, a visible participant. It records audio and transcribes the conversation in real time.
+3. **After the meeting**: Lindy generates a structured summary and sends it to your inbox with a link to the full recording and transcript.
+
+<Note>
+  Lindy joins as a visible participant named "Lindy Meeting Notetaker" so all attendees are aware the meeting is being recorded. This supports recording consent best practices.
+</Note>
+
+### Meeting Summaries
+
+Lindy's AI-powered summaries include:
+
+- **High-level summary**: the top bullet points covering key outcomes
+- **Detailed notes**: in-depth coverage of the full discussion
+- **Action items**: who needs to do what, with clear ownership
+- **Full transcript**: searchable, timestamped transcript of the entire meeting
+- **Recording link**: direct link to replay the meeting
+
+You can customize the summary format, tone, and level of detail in your Lindy settings under **Summarization Instructions**.
+
+### Searching Past Meetings
+
+All meetings are saved to your Lindy dashboard. You can:
+
+- Search across all meetings by keyword, person, or topic
+- Ask Lindy about any past meeting in plain language (e.g., "What did we decide in last week's Zoom with Sarah?")
+- Access full transcripts and recordings at any time
+
+### Follow-Up Emails
+
+Lindy can automatically send follow-up emails after each meeting with a summary and action items. You can configure this to:
+
+- Send to all attendees
+- Send only to yourself
+- Disable follow-ups entirely
+
+Learn more about [automatic follow-ups](/features/meeting-assistant/follow-ups).
+
+## What Data Lindy Accesses
+
+Lindy's meeting bot joins as a participant and accesses only what is available during the call:
+
+| Data | How it's used |
+|---|---|
+| **Meeting audio** | Transcription and summary generation |
+| **Participant names** | Displayed in summaries and used for follow-ups |
+| **Meeting metadata** | Title, time, and duration (from your calendar event) |
+
+Lindy does **not** access:
+
+- Your Zoom account, settings, or billing information
+- Zoom chat messages
+- Meetings you have not opted in to record
+- Screen shares or shared files
+- Any Zoom data outside of the meetings Lindy joins
+
+All data is processed securely and stored in accordance with Lindy's [security policies](/resources/security).
+
+## Removing the Integration
+
+You can stop Lindy from joining your Zoom meetings at any time.
+
+### Disable meeting recording
+
+1. Go to your settings at [chat.lindy.ai](https://chat.lindy.ai)
+2. Find **Meeting recording** in the settings panel
+3. Toggle it off
+
+Lindy will immediately stop joining new meetings.
+
+### Remove from Zoom Marketplace
+
+To fully remove Lindy from your Zoom account:
+
+1. Sign in to [zoom.us](https://zoom.us)
+2. Go to the **Zoom App Marketplace**
+3. Click **Manage** > **Installed Apps**
+4. Find **Lindy** and click **Uninstall**
+
+### What happens to your data
+
+- Existing meeting recordings, transcripts, and summaries remain in your Lindy dashboard
+- You can delete individual meetings or your entire meeting history from the dashboard at any time
+- After removal, Lindy stops collecting any new data from your Zoom meetings
+- No residual background processes or data collection continue after uninstall
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Lindy didn't join my Zoom meeting">
+    - Confirm your calendar is connected in Lindy settings
+    - Check that meeting recording is toggled on
+    - Verify the calendar event contains a valid Zoom meeting link (e.g., `https://zoom.us/j/...`)
+    - If using **Specific meetings** mode, confirm you selected this meeting for recording
+    - Make sure the meeting wasn't cancelled or rescheduled after Lindy checked your calendar
+  </Accordion>
+
+  <Accordion title="I don't see a summary after the meeting">
+    - Summaries are typically delivered within a few minutes after the meeting ends
+    - Check your email inbox, including spam and promotions folders
+    - For longer meetings (90+ minutes), processing may take slightly longer
+    - Verify that Lindy successfully joined the meeting (check your Lindy dashboard)
+  </Accordion>
+
+  <Accordion title="Participants see 'Lindy Meeting Notetaker' joining">
+    This is expected behavior. Lindy joins as a visible participant so all attendees know the meeting is being recorded. This ensures transparency and supports recording consent requirements.
+  </Accordion>
+
+  <Accordion title="Recording quality issues">
+    - Lindy records audio from the Zoom call directly, so audio quality depends on participants' connections
+    - If transcription seems inaccurate, check that participants have clear audio and minimal background noise
+    - Summaries are generated from the transcript, so clearer audio produces better results
+  </Accordion>
+</AccordionGroup>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do I need a paid Zoom plan?">
+    No. Lindy works with any Zoom plan, including the free tier. As long as your calendar event has a valid Zoom meeting link, Lindy can join.
+  </Accordion>
+
+  <Accordion title="Can I record only specific meetings?">
+    Yes. In your Lindy settings, choose **Specific meetings** under the recording scope to select exactly which meetings Lindy should join.
+  </Accordion>
+
+  <Accordion title="Is the recording visible to other participants?">
+    Yes. Lindy joins as a participant named "Lindy Meeting Notetaker" so all attendees are aware the meeting is being recorded.
+  </Accordion>
+
+  <Accordion title="How long are recordings stored?">
+    Recordings and transcripts are stored in your Lindy dashboard for as long as your account is active. You can delete individual meetings at any time.
+  </Accordion>
+
+  <Accordion title="Does Lindy work with Google Meet too?">
+    Yes. Lindy supports both Zoom and Google Meet. The same meeting recording settings apply to both platforms.
+  </Accordion>
+
+  <Accordion title="Can I customize what the summary includes?">
+    Yes. Go to your Lindy settings and edit the **Summarization Instructions** to adjust the format, tone, and level of detail.
+  </Accordion>
+</AccordionGroup>
+
+## Support
+
+If you need help with the Zoom integration:
+
+- **Chat with Lindy**: Ask Lindy directly at [chat.lindy.ai](https://chat.lindy.ai)
+- **Email**: [support@lindy.ai](mailto:support@lindy.ai)
+- **Security**: See Lindy's [security and privacy policies](/resources/security)
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Meeting Notes" icon="microphone" href="/features/meeting-assistant/meeting-notes">
+    Learn more about Lindy's meeting summaries and transcripts
+  </Card>
+  <Card title="Follow-Ups" icon="paper-plane" href="/features/meeting-assistant/follow-ups">
+    Automatic follow-up emails after every meeting
+  </Card>
+  <Card title="Meeting Prep" icon="clipboard-list" href="/features/meeting-assistant/meeting-prep">
+    Get context on attendees before every meeting
+  </Card>
+  <Card title="Google Calendar" icon="calendar-range" href="/skills/popular-integrations/google-calendar">
+    Calendar integration for scheduling and automation
+  </Card>
+</CardGroup>
