@@ -74,6 +74,7 @@
           "group": "Custom Agents 101",
           "pages": [
             "fundamentals/lindy-101/introduction",
+            "fundamentals/lindy-101/create-agent",
             "fundamentals/lindy-101/fields",
             "fundamentals/lindy-101/triggers",
             "fundamentals/lindy-101/actions",
