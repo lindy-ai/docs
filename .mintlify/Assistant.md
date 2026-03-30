@@ -22,4 +22,4 @@ Lindy is a personalized AI assistant that autonomously runs your inbox, meetings
 - "meeting" / "notes" / "recording" → Meeting Notes (features/meeting-assistant/meeting-notes)
 - "schedule" / "calendar" / "book" → Scheduling (features/meeting-assistant/scheduling)
 - "text" / "sms" / "imessage" → iMessage & SMS (features/imessage-sms)
-- "create agent" / "new agent" / "build agent" / "new workflow" / "custom agent" → Create a Custom Agent (fundamentals/lindy-101/create-agent)
+- "create agent" / "new agent" / "build agent" / "new workflow" / "custom workflow" / "create workflow" → Create a Workflow (fundamentals/lindy-101/create-agent)
