@@ -2,13 +2,15 @@
 title: 'Create a Workflow'
 icon: 'plus'
 sidebarTitle: 'Create a Workflow'
-description: 'Build a custom workflow to automate anything in Lindy'
-keywords: ['create workflow', 'new workflow', 'custom workflow', 'create agent', 'build agent', 'custom agent', 'flow editor', 'automation']
+description: 'Build a custom workflow in Lindy using triggers, actions, and conditions.'
+keywords: ['create workflow', 'new workflow', 'custom workflow', 'create agent', 'build agent', 'custom agent', 'flow editor', 'workflow builder']
 ---
 
 ## What is a Workflow?
 
-Lindy's assistant handles your inbox, meetings, and calendar out of the box. Workflows go further: you build your own automations for anything else, like lead enrichment, support bots, document processing, and more.
+Workflows are how you tell a custom agent what to do. In the flow editor, you define the trigger, steps, logic, and integrations that run the job from start to finish.
+
+Use workflows when you want Lindy to handle a repeatable process with your own rules, like lead enrichment, support routing, document processing, or follow-up logic.
 
 ## How to Create a Workflow
 
@@ -44,11 +46,11 @@ Lindy's assistant handles your inbox, meetings, and calendar out of the box. Wor
   </Step>
 
   <Step title="Add actions and configure your workflow">
-    After your trigger, add [actions](/fundamentals/lindy-101/actions): the steps your agent takes in response. Connect integrations, add [conditions](/fundamentals/lindy-101/conditions) for branching logic, or use [agent steps](/fundamentals/lindy-101/ai-agents) for tasks that need AI reasoning.
+    After your trigger, add [actions](/fundamentals/lindy-101/actions): the steps your workflow takes after it starts. Connect integrations, add [conditions](/fundamentals/lindy-101/conditions) for branching logic, or use [agent steps](/fundamentals/lindy-101/ai-agents) when the next step depends on AI reasoning.
   </Step>
 
   <Step title="Activate your workflow">
-    Once your workflow is ready, toggle it on. It will start running automatically whenever the trigger fires. You can monitor runs in the [Tasks view](/testing/monitoring-your-agents).
+    Once your workflow is ready, toggle it on. It will start running automatically whenever the trigger fires. You can monitor task runs in the [Tasks view](/testing/monitoring-your-agents).
   </Step>
 </Steps>
 
@@ -59,7 +61,7 @@ Lindy's assistant handles your inbox, meetings, and calendar out of the box. Wor
     Learn about all the events that can start a workflow
   </Card>
   <Card title="Actions" href="/fundamentals/lindy-101/actions" icon="arrow-pointer">
-    Discover what your agents can do
+    Explore what actions can do in a workflow
   </Card>
   <Card title="Conditions" href="/fundamentals/lindy-101/conditions" icon="network-wired">
     Add branching logic to your workflows
