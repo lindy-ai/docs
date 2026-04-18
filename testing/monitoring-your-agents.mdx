@@ -2,7 +2,7 @@
 title: 'Monitor Your Agents'
 icon: 'magnifying-glass'
 sidebarTitle: 'Monitor Your Agents'
-description: 'Track your agent performance and task execution with built-in monitoring and observability tools'
+description: 'Track workflow runs, task history, and execution details with built-in monitoring and observability tools.'
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -21,22 +21,22 @@ description: 'Track your agent performance and task execution with built-in moni
 
 ## Overview
 
-Monitoring your agents helps you track performance, identify issues, and ensure your workflows are running smoothly. Perfect for:
+Monitoring helps you track task runs, identify issues, and understand how your custom workflows behave over time. Use it to:
 
-- **Performance tracking** — see how your agents are performing over time
-- **Issue identification** — quickly spot and diagnose problems
-- **Usage analysis** — understand how often and when your agents run
+- **Track performance**: See how workflow runs perform over time
+- **Spot issues**: Quickly identify failures and diagnose problems
+- **Understand usage**: See how often workflows run and when they fire
 
-We'll show you how to access your task history and view things manually, plus our observability tools to help you monitor your agents more autonomously.
+We'll show you how to access task history and use observability tools so you can inspect runs manually or build workflow-based monitoring.
 
 ## Accessing Task History
 
-To view all your agent task runs:
+To view task runs for a custom agent:
 
-1. **Select the agent** — Choose the specific agent you want to monitor
-2. **Click Tasks** — In the top right of your task or flow editor, click on "Tasks"
-3. **View all runs** — Within the task history, you can see all task runs across agents
-4. **Review execution** — Examine each run individually to see what happened step-by-step
+1. **Select the agent**: Choose the specific custom agent you want to monitor
+2. **Click Tasks**: In the top right of your task or flow editor, click on "Tasks"
+3. **View all runs**: Within task history, you can review past runs for that agent
+4. **Review execution**: Open any run to see what happened step-by-step
 
 <Frame>
   <img src="/lindy-brand-assets/task-menu-monitor.png" alt="Task history access" />
@@ -48,14 +48,14 @@ You can use the "Set task title" action to improve the task titling in run histo
 
 ## Observability Tools
 
-Monitor and analyze agent performance with detailed task execution data. There are two key actions for full observability into your agents:
+Monitor and analyze task execution with detailed run data. There are two key building blocks for observability in custom agents:
 
-- `Agent Task Change` trigger wakes up when another Lindy agent performs specific actions (errors, starts, finishes, etc.)
-- `Get Task Details` action reads and analyzes everything an agent did during task execution, showing you block-by-block inputs, outputs, and performance data.
+- `Agent Task Change` trigger wakes up when another Lindy agent hits specific task events such as errors, starts, or completions
+- `Get Task Details` action reads and analyzes a task run, showing block-by-block inputs, outputs, and performance data
 
 ### Agent Task Change Trigger
 
-- **What it does**: Triggers when another agent performs specific actions — perfect for monitoring agent activity and building reactive workflows.
+- **What it does**: Triggers when another agent performs specific task events. It's useful for monitoring activity and building reactive workflows.
 
 <Frame>
   <img src="/lindy-brand-assets/observability-trigger.png" alt="Agent Task Change Trigger setup" />
@@ -78,7 +78,7 @@ Monitor and analyze agent performance with detailed task execution data. There a
 
 ### Get Task Details
 
-- **What it does**: Reads and analyzes everything an agent did during task execution. Shows you block-by-block inputs, outputs, and performance data for complete observability.
+- **What it does**: Reads and analyzes everything an agent did during task execution. Shows block-by-block inputs, outputs, and performance data for complete observability.
 
 <Frame>
   <img src="/lindy-brand-assets/observability-get-task-details.png" alt="Get Task Details action configuration" />
@@ -121,30 +121,30 @@ These actions are designed to work together for complete agent observability:
 
 `Agent Task Change` triggers when something happens → `Get Task Details` analyzes exactly what occurred
 
-This gives you full visibility into your agents - you'll know when they run, how they perform, and exactly what they do at every step.
+This gives you full visibility into workflow runs. You'll know when they start, how they perform, and exactly what happened at each step.
 
 ### Advanced Features
 
 | Feature | What it does |
 |---------|--------------|
 | Multi-Agent Monitoring | Track multiple agents from one observability workflow |
-| Performance Benchmarking | Compare agent execution times and success rates over time |
+| Performance Benchmarking | Compare run times and success rates over time |
 | Error Pattern Analysis | Identify common failure points across different agents |
 | Custom Alert Routing | Send different types of failures to different teams or channels |
-| Quality Score Tracking | Build evaluation systems that score agent performance automatically |
+| Quality Score Tracking | Build evaluation systems that score workflow quality automatically |
 
 ## What to Monitor
 
 <AccordionGroup>
   <Accordion title="Task Execution">
-    - Success vs failure rates across your agents
+    - Success vs failure rates across workflow runs
     - Execution times to identify performance bottlenecks
     - Error patterns to spot recurring issues
     - Trigger frequency to understand usage patterns
   </Accordion>
 
   <Accordion title="Agent Performance">
-    - Which agents run most frequently
+    - Which custom agents run most frequently
     - Average completion times for different workflows
     - Resource usage and costs per agent
     - Success rates for different types of tasks
@@ -177,10 +177,10 @@ This gives you full visibility into your agents - you'll know when they run, how
   </Card>
   
   <Card title="Human in the Loop" icon="square-user" href="/testing/human-in-the-loop">
-    Add oversight for critical agent actions
+    Add oversight for critical workflow actions
   </Card>
   
   <Card title="Test Panel" icon="play" href="/testing/test-panel">
-    Test agents after making monitoring-based improvements
+    Test workflows after making monitoring-based improvements
   </Card>
 </CardGroup>

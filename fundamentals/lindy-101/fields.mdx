@@ -2,6 +2,8 @@
 title: 'Field Configuration'
 icon: 'input-text'
 sidebarTitle: 'Field Configuration'
+description: 'Choose how each action field should be filled: Auto, AI Prompt, or Set Manually.'
+keywords: ['field configuration', 'auto mode', 'ai prompt mode', 'set manually', 'workflow fields']
 ---
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
@@ -20,7 +22,7 @@ sidebarTitle: 'Field Configuration'
 
 ## Quick Overview
 
-When you add any action, you'll see fields to configure. Unlike other automation platforms, Lindy gives you three intelligent ways to fill each field, making your workflows both powerful and flexible.
+When you add an action, you'll see fields to configure. Lindy gives you three ways to fill each field depending on how much control you want and how dynamic the value should be.
 
 - **Auto**: Let your agent intelligently determine the best value based on all previous data
 - **AI Prompt**: Give natural language instructions for dynamic content generation  
@@ -45,7 +47,7 @@ When set to Auto, your agent:
 3. Infers the best value based on context and field type
 
 <Info>
-Unlike traditional automation tools, Lindy's Auto mode sees everything — form submissions, API responses, search results, and more. It's like having an assistant who remembers every detail.
+Lindy's Auto mode can pull from form submissions, API responses, search results, and other data from earlier steps. It's useful when the right value depends on context.
 </Info>
 
 ### When to Use Auto Mode
@@ -158,14 +160,14 @@ The dropdown shows all available data from previous steps. In AI Prompt mode, th
 In this example, the AI Prompt intelligently combines:
 - **Reference to previous data**: `bodyAsText` pulls in the actual content from a previous step (like an email or document)
 - **Contextual analysis**: Your agent reads and understands the referenced content to determine if the person is new or returning
-- **Dynamic decision-making**: Based on what she finds in the data, she generates different personalized offers
+- **Dynamic decision-making**: Based on what it finds in the data, it generates different personalized offers
 
-This showcases the power of AI Prompt mode — instead of rigid rules, your agent analyzes the actual context from previous steps to generate the most appropriate response. The reference acts as a variable that gets replaced with real data at runtime, which your agent then uses to make intelligent decisions.
+This showcases the power of AI Prompt mode. Instead of rigid rules, your agent analyzes the actual context from previous steps to generate the most appropriate response. The reference acts as a variable that gets replaced with real data at runtime, which your agent then uses to make intelligent decisions.
 
 
 ## "Set Manually" Mode
 
-Set Manually mode gives you complete control — what you type is exactly what appears. Perfect for fixed values and precise data references.
+Set Manually mode gives you complete control: what you type is exactly what appears. Perfect for fixed values and precise data references.
 
 ### Direct Value Entry
 
@@ -206,7 +208,7 @@ Perfect for:
 
 ## Using Output References
 
-The field configuration dropdown gives you instant access to ALL data from previous steps - forms, API responses, search results, and more. This powerful feature lets you connect any piece of information across your workflow.
+The field configuration dropdown gives you instant access to data from previous steps: forms, API responses, search results, and more. This lets you connect information across your workflow without retyping it.
 
 ### Reference Behavior by Mode
 

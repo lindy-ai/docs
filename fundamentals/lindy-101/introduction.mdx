@@ -2,18 +2,22 @@
 title: 'Introduction'
 icon: 'graduation-cap'
 sidebarTitle: 'Introduction'
+description: 'Understand how custom agents, workflows, steps, and memory fit together before you build.'
+keywords: ['lindy 101', 'custom agents', 'workflow basics', 'triggers', 'actions', 'memory']
 ---
 <Frame>
   <img src="/lindy-brand-assets/intro.jpg" alt="Lindy Introduction" />
 </Frame>
 
-## Welcome to Lindy
+## How Custom Agents Work
 
-Lindy is an AI agent platform that helps you automate complex workflows by connecting AI agents to your tools and data. Think of Lindy as your AI teammate that can handle tasks across your entire tech stack.
+This page is your mental model for Lindy's workflow builder. If you're creating a custom agent, start here.
 
-## Core Concepts
+A custom agent is made up of workflows, steps, integrations, and memory that work together to run a job automatically. Once these pieces click, the rest of `Custom Agents 101` will make a lot more sense.
 
-Lindy is built around a few key concepts that work together:
+## The Core Concepts
+
+These are the building blocks behind every custom agent:
 
 <div className="not-prose my-8">
   <div className="max-w-4xl mx-auto border border-yellow-400 dark:border-yellow-500 rounded-xl p-6">
@@ -23,7 +27,7 @@ Lindy is built around a few key concepts that work together:
         <img src="/lindy-brand-assets/256-2.png" alt="Lindy" style={{ maxHeight: '20px', maxWidth: '20px' }} />
         <span className="font-medium text-lg text-gray-900 dark:text-white">Lindy</span>
       </div>
-      <span className="text-sm text-gray-600 dark:text-slate-300">Orchestrates all your agents and workflows</span>
+      <span className="text-sm text-gray-600 dark:text-slate-300">Runs and coordinates your custom workflows</span>
     </div>
     
     {/* Agents Container */}
@@ -121,13 +125,13 @@ Lindy is built around a few key concepts that work together:
 </div>
 
 ### **Lindy**
-Lindy orchestrates all your agents and workflows. It understands what you need and helps you build, manage, and run the right agents for your work. Lindy can also help you run simple tasks.
+Lindy is the system that runs your custom agents. It keeps the logic, tools, context, and execution connected in one place.
 
 ### **Agents**
-Individual workers that understand context, make decisions, and execute actions. You configure agents to follow specific workflows.
+Agents are the workers you configure to handle a job. They follow the workflow you set up, use the tools you give them, and act on the instructions you define.
 
 ### **Workflows**
-Configured in the flow editor to define the specific steps your agent takes. Agents can have multiple workflow steps.
+Workflows define how the job gets done in the flow editor. They tell your agent what should happen, in what order, and under what conditions.
 
 ### **Steps**
 Individual building blocks that make up a workflow. There are many different types of steps, such as:
@@ -136,14 +140,14 @@ Individual building blocks that make up a workflow. There are many different typ
 - **[Agent Steps](/fundamentals/lindy-101/ai-agents)**: Give agents more autonomy to handle uncertain tasks with skill-based execution
 - **[Integrations](/skills/popular-integrations)**: Connect your agent to external systems and tools
 - **[Conditions](/fundamentals/lindy-101/conditions)**: Define logic for when agents should take certain actions
-- **[Looping](/fundamentals/lindy-101/looping)**: Execute agentic tasks in parallel for efficient bulk operations
+- **[Looping](/fundamentals/lindy-101/looping)**: Run tasks in parallel for efficient bulk operations
 
 ### **Memory**
-You can configure agents to remember conversations and context, making them more helpful over time.
+Memory lets your agent keep track of past context, preferences, and conversation history when the job depends on continuity.
 
 ## Quick Start
 
-Ready to build your first Lindy? Here's how to get started:
+Ready to create your first custom workflow? Here's how to get started:
 
 <Steps>
   <Step title="Try a template">
@@ -167,7 +171,7 @@ Ready to build your first Lindy? Here's how to get started:
     Learn how to start workflows automatically
   </Card>
   <Card title="Actions" href="/fundamentals/lindy-101/actions" icon="arrow-pointer">
-    Discover what your agents can do
+    Explore what actions can do in a workflow
   </Card>
   <Card title="Agent Steps" href="/fundamentals/lindy-101/ai-agents" icon="brain-circuit">
     Understand how Agent Steps work
@@ -175,5 +179,5 @@ Ready to build your first Lindy? Here's how to get started:
 </CardGroup>
 
 <Card title="Community" href="https://community.lindy.ai/join" icon="users">
-  Connect with other builders, ask questions, and share your Lindy creations
+  Connect with other advanced users, ask questions, and share what you've built with Lindy
 </Card>
