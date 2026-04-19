@@ -41,7 +41,8 @@
       "pages": [
         "index",
         "pricing",
-        "start-here/quickstart"
+        "start-here/quickstart",
+        "start-here/best-practices"
       ]
     },
     {
