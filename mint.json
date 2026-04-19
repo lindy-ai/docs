@@ -106,7 +106,8 @@
           "pages": [
             "account-billing/usage",
             "account-billing/teams-collaboration",
-            "account-billing/credits"
+            "account-billing/credits",
+            "account-billing/multi-account"
           ]
         },
         {
