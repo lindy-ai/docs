@@ -174,7 +174,6 @@
         {
           "group": "Integrations",
           "pages": [
-            "skills/popular-integrations/how-to-connect",
             "bot-for-slack",
             "skills/popular-integrations/airtable",
             "skills/popular-integrations/github",
