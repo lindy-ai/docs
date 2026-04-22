@@ -170,6 +170,32 @@
             "skills/web-browsing/perplexity",
             "skills/web-browsing/web-browser"
           ]
+        },
+        {
+          "group": "Integrations",
+          "pages": [
+            "skills/popular-integrations/how-to-connect",
+            "bot-for-slack",
+            "skills/popular-integrations/airtable",
+            "skills/popular-integrations/github",
+            "skills/popular-integrations/gmail",
+            "skills/popular-integrations/google-calendar",
+            "skills/popular-integrations/google-docs",
+            "skills/popular-integrations/google-drive",
+            "skills/popular-integrations/google-sheets",
+            "skills/popular-integrations/hubspot",
+            "skills/popular-integrations/linkedin",
+            "skills/popular-integrations/microsoft-outlook",
+            "skills/popular-integrations/microsoft-teams",
+            "skills/popular-integrations/notion",
+            "skills/popular-integrations/people-data-labs",
+            "skills/popular-integrations/salesforce",
+            "skills/popular-integrations/slack",
+            "skills/popular-integrations/telegram",
+            "skills/popular-integrations/twilio",
+            "skills/popular-integrations/youtube",
+            "skills/popular-integrations/zoom"
+          ]
         }
       ]
     },
