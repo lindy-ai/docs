@@ -174,7 +174,7 @@
         {
           "group": "Integrations",
           "pages": [
-            "bot-for-slack",
+            "integrations/slack-bot-landing",
             "skills/popular-integrations/airtable",
             "skills/popular-integrations/github",
             "skills/popular-integrations/gmail",
