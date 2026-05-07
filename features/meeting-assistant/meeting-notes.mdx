@@ -1,17 +1,21 @@
 ---
 title: 'Meeting Notes'
-description: 'Lindy records your calls and delivers searchable summaries with decisions, action items, and a full transcript'
+description: 'Lindy joins, records, and transcribes your meetings, delivers structured summaries, and saves everything to a searchable library you can query in plain language'
 icon: 'microphone'
-keywords: ['meeting notes', 'transcript', 'summary', 'recording', 'minutes']
+keywords: ['meeting notes', 'transcript', 'summary', 'recording', 'minutes', 'meeting recording', 'meeting library', 'chat with meetings', 'notetaker', 'action items', 'search meetings']
 ---
 
-## Focus on the Meeting, Not the Notes
+## Enable Recording
 
-Lindy automatically joins your meetings, records them, and delivers a structured summary afterwards. You get the key decisions, action items, and a full transcript without typing a single note.
+Turn on recording from **Meetings → Settings → Meeting recording**. Supported on Google Meet and Zoom.
+
+<Frame>
+  <img src="/lindy-brand-assets/enable%20meetings.png" alt="Enable meeting recording in Lindy settings" />
+</Frame>
+
+Set your notetaker display name, who receives the post-meeting summary, and your preferred summarization format.
 
 ## How It Works
-
-Enable meeting recording in your settings at [chat.lindy.ai](https://chat.lindy.ai). Look for **Meeting recording** in the settings panel. Once enabled:
 
 1. **Lindy joins automatically**: no need to invite a bot or share a link. Lindy shows up to your meetings based on your calendar.
 2. **Records and transcribes**: Lindy captures the full conversation.
@@ -25,30 +29,54 @@ You control which meetings Lindy records:
 - **External only**: record client and prospect calls, skip internal syncs
 - **Specific meetings**: choose exactly which meetings to record
 
-## Summary Structure
+## What You Get
 
-Lindy's meeting summaries follow a clear structure that you can customize:
+After every meeting, Lindy delivers:
 
-- **High-level summary**: max 3 bullet points with bolded key words and phrases
-- **Detailed summary**: in-depth bullet points covering the full discussion
-- **Action items**: who needs to do what, with clear ownership
-- **Link to recording**: direct link to the full transcript and recording
+| Section | What You Get |
+|---|---|
+| **High-level summary** | Top-line outcomes and key decisions |
+| **Detailed notes** | In-depth bullet points from the full discussion |
+| **Action items** | Who needs to do what, with clear ownership |
+| **Full transcript** | Searchable, timestamped transcript |
+| **Recording link** | Direct link to replay the session |
 
 <Frame>
   <img src="/lindy-brand-assets/meeting-summary-instructions.jpg" alt="Meeting summary instruction settings in Lindy" />
 </Frame>
 
-You can edit the **Summarization Instructions** in your settings to match your preferred format, tone, and level of detail.
+Edit **Summarization Instructions** in your settings to control the format, tone, and level of detail on every future meeting.
 
-## Your Meetings, Always Searchable
+## Library
 
-Every meeting is saved to your Lindy dashboard with the full transcript, recording, and summary. You can search across all your meetings by keyword, person, or topic.
+Every recorded meeting is saved to your Lindy dashboard automatically.
 
-You can also ask Lindy about any past meeting in plain language. [Text Lindy](/features/imessage-sms) something like "What did we decide in last week's meeting with Sarah?" and Lindy pulls up the relevant notes instantly.
+<Frame>
+  <img src="/lindy-brand-assets/Meetings V2 arrow.png" alt="Meeting library in Lindy dashboard" width="700" />
+</Frame>
 
-## Next Steps
+Open any meeting to view the recording and transcript, copy or download it, delete individual entries or your full history, and search across all meetings by keyword, person, or topic.
 
-Lindy can also send follow-up emails with action items to attendees automatically after each meeting.
+## Chat
+
+Your meeting library becomes a knowledge base you can query in plain language — via iMessage, SMS, or directly in the dashboard.
+
+- "What did we decide in last week's meeting with Sarah?"
+- "What were the action items from Tuesday's standup?"
+- "What did [name] say about pricing in our last call?"
+- "What did I commit to sending [name]?"
+
+The more meetings you record, the richer the context Lindy can draw on.
+
+## Quick Setup
+
+1. Go to [chat.lindy.ai](https://chat.lindy.ai) → **Meetings → Settings**
+2. Toggle on **Meeting recording**
+3. Connect your Google Calendar or Microsoft Outlook calendar
+4. Set your notetaker display name and summarization instructions
+5. Lindy joins and records from your next scheduled meeting
+
+## Relevant Docs
 
 <CardGroup cols={2}>
   <Card title="Follow-ups" icon="paper-plane" href="/features/meeting-assistant/follow-ups">
@@ -56,5 +84,11 @@ Lindy can also send follow-up emails with action items to attendees automaticall
   </Card>
   <Card title="Meeting Prep" icon="clipboard-list" href="/features/meeting-assistant/meeting-prep">
     Get context before every meeting
+  </Card>
+  <Card title="Smart Scheduling" icon="calendar" href="/features/meeting-assistant/scheduling">
+    Lindy proposes times and books meetings for you
+  </Card>
+  <Card title="iMessage & SMS" icon="message" href="/features/imessage-sms">
+    Text Lindy to query your meeting history
   </Card>
 </CardGroup>
