@@ -115,10 +115,6 @@
         {
           "group": "Use Cases",
           "pages": [
-            "use-cases/popular-workflows/meeting-assistant",
-            "use-cases/popular-workflows/email-triage",
-            "use-cases/popular-workflows/calendar-prep",
-            "use-cases/popular-workflows/scheduling-assistant",
             "use-cases/sales/lead-enrichment",
             "use-cases/sales/multi-channel-outbound",
             "use-cases/sales/email-negotiation",
