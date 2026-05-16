@@ -21,11 +21,19 @@
       {
         "label": "Support",
         "href": "mailto:support@lindy.ai"
+      },
+      {
+        "label": "Export Docs for LLM",
+        "href": "/export-full-docs"
+      },
+      {
+        "label": "Community",
+        "href": "/join-community"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
+      "label": "Go to app",
       "href": "https://chat.lindy.ai"
     }
   },
@@ -41,9 +49,7 @@
               "pricing",
               "start-here/quickstart",
               "start-here/best-practices",
-              "account-billing/multi-account",
-              "export-full-docs",
-              "join-community"
+              "account-billing/multi-account"
             ]
           },
           {
