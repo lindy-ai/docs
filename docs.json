@@ -33,10 +33,6 @@
     "tabs": [
       {
         "tab": "Documentation",
-        "pages": [
-          "export-full-docs",
-          "join-community"
-        ],
         "groups": [
           {
             "group": "Start Here",
@@ -45,7 +41,9 @@
               "pricing",
               "start-here/quickstart",
               "start-here/best-practices",
-              "account-billing/multi-account"
+              "account-billing/multi-account",
+              "export-full-docs",
+              "join-community"
             ]
           },
           {
