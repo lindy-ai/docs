@@ -21,19 +21,11 @@
       {
         "label": "Support",
         "href": "mailto:support@lindy.ai"
-      },
-      {
-        "label": "Export Docs for LLM",
-        "href": "/export-full-docs"
-      },
-      {
-        "label": "Community",
-        "href": "/join-community"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Go to app",
+      "label": "Go to App",
       "href": "https://chat.lindy.ai"
     }
   },
@@ -80,7 +72,8 @@
             "group": "Resources",
             "pages": [
               "resources/security",
-              "resources/changelog"
+              "resources/changelog",
+              "export-full-docs"
             ]
           }
         ]
@@ -131,10 +124,6 @@
           {
             "group": "Use Cases",
             "pages": [
-              "use-cases/popular-workflows/meeting-assistant",
-              "use-cases/popular-workflows/email-triage",
-              "use-cases/popular-workflows/calendar-prep",
-              "use-cases/popular-workflows/scheduling-assistant",
               "use-cases/sales/lead-enrichment",
               "use-cases/sales/multi-channel-outbound",
               "use-cases/sales/email-negotiation",
