@@ -64,8 +64,7 @@
               "features/meeting-assistant/meeting-prep",
               "features/meeting-assistant/meeting-notes",
               "features/meeting-assistant/follow-ups",
-              "features/meeting-assistant/scheduling",
-              "features/meeting-assistant/recording-library"
+              "features/meeting-assistant/scheduling"
             ]
           },
           {
