@@ -42,7 +42,8 @@
         "index",
         "pricing",
         "start-here/quickstart",
-        "start-here/best-practices"
+        "start-here/best-practices",
+        "account-billing/multi-account"
       ]
     },
     {
@@ -174,7 +175,6 @@
         {
           "group": "Integrations",
           "pages": [
-            "integrations/slack-bot-landing",
             "skills/popular-integrations/airtable",
             "skills/popular-integrations/github",
             "skills/popular-integrations/gmail",
