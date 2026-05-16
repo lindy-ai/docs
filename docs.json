@@ -71,7 +71,6 @@
             "group": "Accounts & Billing",
             "pages": [
               "account-billing/usage",
-              "account-billing/teams-collaboration",
               "account-billing/credits",
               "account-billing/multi-account"
             ]
@@ -118,6 +117,15 @@
               "testing/debugging",
               "testing/monitoring-your-agents",
               "testing/version-history"
+            ]
+          },
+          {
+            "group": "Accounts & Billing",
+            "pages": [
+              "account-billing/usage",
+              "account-billing/teams-collaboration",
+              "account-billing/credits",
+              "account-billing/multi-account"
             ]
           },
           {
