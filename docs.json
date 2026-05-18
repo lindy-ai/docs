@@ -61,6 +61,7 @@
           {
             "group": "Meeting Assistant",
             "pages": [
+              "features/meeting-assistant/daily-brief",
               "features/meeting-assistant/meeting-prep",
               "features/meeting-assistant/meeting-notes",
               "features/meeting-assistant/follow-ups",
