@@ -6,11 +6,11 @@ This file provides guidance to Claude Code when working with the Lindy documenta
 
 **Work on `pivot`, merge to `main` for deployment.**
 
-- **`main`** = Live production site + Mintlify search index (auto-deployed on push)
+- **`main`** = Live production site + Mintlify search index. **GitHub branch-protected** — you cannot push directly; changes land via an approved PR. Deploy is **not fully automatic** (see Deploying below).
 - **`pivot`** = Working branch for all development
 - **Personal branches** (`pivot-yourname`) = Your working branches
 
-**Daily work happens on `pivot`.** Merge `pivot` → `main` to deploy and enable search indexing.
+**Daily work happens on `pivot`.** When `pivot` is ready to go live, open a PR `pivot` → `main`, get it approved, merge, then trigger the deploy.
 
 ### 🛡️ Branch Protection Hook
 
@@ -23,6 +23,13 @@ This repository has a **Claude Code hook** that automatically prevents git opera
 - **Documentation**: See `.claude/README.md` for details
 
 If blocked, you'll see an error message with instructions to switch to `pivot` or your personal branch.
+
+### 🔒 GitHub Branch Protection on `main`
+
+Separate from the local hook, GitHub itself protects `main`:
+- **Direct pushes to `main` are rejected.** All changes reach `main` through a Pull Request.
+- **A PR into `main` requires one approving review.** The PR author **cannot self-approve** — a teammate must approve it.
+- To deploy, open a PR `pivot` → `main` and request review. An admin merge (`gh pr merge <n> --admin --merge`) can bypass the approval gate, but **only do this with explicit authorization from the docs owner**.
 
 See **`WORKFLOW.md`** for detailed git workflow and safety checks.
 
@@ -89,7 +96,7 @@ git push -u origin pivot-yourname
 docs/
 ├── WORKFLOW.md                    ← Git workflow and safety guidelines
 ├── CLAUDE.md                      ← This file (for Claude Code)
-├── mint.json                      ← Mintlify config (navigation, branding)
+├── docs.json                      ← Mintlify config (navigation, branding)
 ├── styles.css                     ← Custom styling
 ├── favicon.png                    ← Site favicon
 ├── .gitignore                     ← Git ignore rules
@@ -168,18 +175,19 @@ docs/
 - Key language: "delegate" (not "ask"), "runs" (not "manages"), "text like a friend"
 - See `internal-ref-docs/messaging_positioning_frameworks.md` for authoritative messaging
 
-**Current Navigation Structure** (in `mint.json`):
-1. **Start Here** - What is Lindy? (homepage), Quickstart
-2. **Texting & Tasks** - iMessage & SMS, Ad Hoc Tasks
-3. **Inbox Management** - Email Triage, Email Drafting
-4. **Meeting Assistant** - Meeting Prep, Meeting Notes, Follow-ups, Smart Scheduling
-5. **Advanced** (nested sub-groups) - Lindy 101, Testing, Accounts & Billing, Use Cases, Skills, Utilities, Web Scraping, Integrations
-6. **Resources** - Security, Changelog
+**Current Navigation Structure** (in `docs.json`):
+
+The repo migrated from the legacy `mint.json` to Mintlify's current **`docs.json`** schema (2026-05-16). The site theme is `maple`. Navigation is split into **two tabs**:
+
+1. **Documentation** — user-facing pages: Start Here, Inbox Management, Meeting Assistant, iMessage & SMS, Ad Hoc Tasks, Accounts & Billing, Resources
+2. **Workflows** — the former "Advanced" section: Custom Agents 101, Testing, Use Cases, Skills, Integrations
+
+New pages must be registered under the correct tab's `navigation` in `docs.json` or they will not appear on the site.
 
 ## Key Files
 
 ### Configuration
-- **`mint.json`** - Navigation, metadata, branding
+- **`docs.json`** - Navigation, metadata, branding
   - All pages MUST be registered here to appear in nav
   - Branding colors: `#E6C147` (yellow/gold)
   - Icons: FontAwesome library
@@ -201,7 +209,7 @@ docs/
 - **README.md** - Guide to using internal reference documents
 - **lifecycle_comms.md** - Tone, voice, and messaging patterns from lifecycle emails (by David Henry, Jan 22, 2026)
 - **messaging_positioning_frameworks.md** - **Authoritative positioning doc** (by Everett Butler, Feb 9, 2026). All pivot docs pages are aligned to this. Contains core positioning, ICPs, differentiators, value pillars, brand narrative, feature descriptions, objection handling.
-- These files are excluded from Mintlify builds (see `mint.json` ignore config)
+- These files are excluded from Mintlify builds (see `docs.json` ignore config)
 - **Always check these before writing new content** to ensure messaging alignment
 
 ### Custom Components (in `components/`)
@@ -215,7 +223,7 @@ docs/
 1. Create `.mdx` file in appropriate directory
 2. Add frontmatter (title, icon, description)
 3. Write content using MDX
-4. Register page in `mint.json` navigation
+4. Register page in `docs.json` navigation
 5. Test locally: `mintlify dev`
 6. Commit and push to your branch
 7. Create PR to `pivot`
@@ -240,7 +248,7 @@ docs/
   ```
 
 ### Updating Navigation
-Edit `mint.json` → `navigation` array:
+Edit `docs.json` → `navigation` array:
 ```json
 {
   "group": "Section Name",
@@ -259,7 +267,7 @@ mintlify dev
 # Check for broken links
 mintlify broken-links
 
-# Verify mint.json is valid
+# Verify docs.json is valid
 mintlify validate
 ```
 
@@ -278,14 +286,18 @@ keywords: ['term1', 'term2', 'synonym', 'related concept']
 - The AI assistant must be enabled in the Mintlify dashboard (Pro/Enterprise plans)
 - It auto-indexes published content on the production branch
 
-### Deploying for search
-After pushing to `pivot`, merge to `main` for search indexing:
+### Deploying to production (and for search)
+
+`main` is branch-protected — you **cannot** `git push origin main`. Deploy with a PR:
+
 ```bash
-git checkout main && git pull origin main
-git merge pivot
-git push origin main
-git checkout pivot
+# From pivot (or after merging your work into pivot):
+gh pr create --base main --head pivot --title "Deploy: <summary>" --fill
+# Get a teammate to approve the PR (you cannot self-approve), then:
+gh pr merge <number> --merge
 ```
+
+**⚠️ Deploy is not fully automatic.** Mintlify's GitHub auto-deploy on merge-to-`main` has been firing unreliably. After the PR merges, confirm the site updated — if it didn't, **manually trigger an update in the Mintlify dashboard** (dashboard.mintlify.com). Mintlify only indexes `main` for search and the AI assistant; content on `pivot` renders in preview but is not searchable until merged.
 
 ## Content Writing Guidelines
 
@@ -419,7 +431,7 @@ mintlify dev
 - Check console for errors
 
 ### Page Not Appearing in Navigation
-- Verify page is registered in `mint.json`
+- Verify page is registered in `docs.json`
 - Check path is correct (without `.mdx` extension)
 - Restart dev server
 
