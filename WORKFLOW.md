@@ -2,7 +2,7 @@
 
 ## Branch Strategy
 
-- **`main`** = Live production site + Mintlify search index (deployed automatically)
+- **`main`** = Live production site + Mintlify search index. GitHub branch-protected — no direct pushes; changes land via an approved PR.
 - **`pivot`** = Working branch for all development
 - **Personal branches** (`pivot-yourname`) = Your working branches
 
@@ -65,7 +65,7 @@ mintlify dev
 
 The preview will be available at: **http://localhost:3000**
 
-The server will automatically reload when you make changes to `.mdx` files or `mint.json`.
+The server will automatically reload when you make changes to `.mdx` files or `docs.json`.
 
 ### Stop the Preview Server
 
@@ -142,6 +142,8 @@ git push -u origin pivot-your-name
 3. Request review (optional but recommended)
 4. Merge when approved
 
+> PRs into `pivot` are low-stakes and can be self-merged. PRs into `main` are different — see Deploying to Production below.
+
 ### Step 6: Keep Your Branch Updated
 
 ```bash
@@ -153,24 +155,39 @@ git rebase pivot  # or git merge pivot
 
 ## Deploying to Production
 
-When changes on `pivot` are ready to go live and be searchable:
+`main` is GitHub branch-protected. You **cannot** `git push origin main` directly — the push will be rejected. Deploying happens through a Pull Request.
+
+### Step 1: Open a deploy PR
+
+When changes on `pivot` are ready to go live:
 
 ```bash
-# Switch to main and pull latest
-git checkout main
-git pull origin main
-
-# Merge pivot into main
-git merge pivot
-
-# Push to trigger Mintlify deployment
-git push origin main
-
-# Switch back to pivot for continued work
 git checkout pivot
+git pull origin pivot
+gh pr create --base main --head pivot --title "Deploy: <summary>" --fill
 ```
 
-**Why this matters**: Mintlify only indexes the production branch (`main`) for search and AI assistant. Content on `pivot` renders but is NOT searchable until merged to `main`.
+### Step 2: Get approval
+
+A PR into `main` **requires one approving review**, and the PR author **cannot approve their own PR**. Ask a teammate to review and approve.
+
+> If you have explicit authorization from the docs owner, an admin merge can bypass the approval gate:
+> `gh pr merge <number> --admin --merge`. Do not do this on your own.
+
+### Step 3: Merge
+
+```bash
+gh pr merge <number> --merge
+```
+
+### Step 4: Confirm the deploy actually happened
+
+**Mintlify's auto-deploy on merge-to-`main` has been unreliable.** After merging:
+
+1. Wait a few minutes, then check the live site for your change.
+2. If it hasn't updated, **manually trigger an update in the Mintlify dashboard** (dashboard.mintlify.com).
+
+**Why this matters**: Mintlify only indexes the production branch (`main`) for search and the AI assistant. Content on `pivot` renders in preview but is NOT searchable until merged to `main` and deployed.
 
 ## Branch Structure
 
