@@ -42,6 +42,7 @@
               "pricing",
               "start-here/quickstart",
               "start-here/best-practices",
+              "start-here/team-setup",
               "account-billing/multi-account"
             ]
           },
@@ -152,7 +153,6 @@
             "group": "Skills",
             "pages": [
               "skills/by-lindy/chat-with-lindy",
-              "skills/by-lindy/lindy-meeting-recorder",
               "skills/by-lindy/lindy-phone",
               "skills/by-lindy/lindy-embed",
               "skills/by-lindy/lindy-mail",
