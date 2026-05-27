@@ -7,7 +7,7 @@ Lindy is a personalized AI assistant that autonomously runs your inbox, meetings
 
 ## Documentation Structure
 - **Features** (features/): Core assistant capabilities — iMessage & SMS, ad hoc tasks, inbox management (email triage + drafting), meeting assistant (prep, notes, follow-ups, scheduling)
-- **Skills** (skills/by-lindy/): Lindy-built features — Lindy Embed (website chatbot widget), Lindy Phone, Lindy Mail, Meeting Recorder, Chat, Computer Use, Run Code, HTTP Request, Webhooks, Timer
+- **Skills** (skills/by-lindy/): Lindy-built features — Lindy Embed (website chatbot widget), Lindy Phone, Lindy Mail, Chat, Computer Use, Run Code, HTTP Request, Webhooks, Timer
 - **Utilities** (skills/lindy-utilities/): Internal tools — Observability, LLM Call, Context, Memories, Set Variables
 - **Web Scraping** (skills/web-browsing/): Web data extraction tools
 - **Integrations** (skills/popular-integrations/): Third-party service connections (Gmail, Slack, HubSpot, Salesforce, etc.)
