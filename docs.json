@@ -42,8 +42,7 @@
               "pricing",
               "start-here/quickstart",
               "start-here/best-practices",
-              "start-here/team-setup",
-              "account-billing/multi-account"
+              "start-here/team-setup"
             ]
           },
           {
@@ -124,10 +123,8 @@
           {
             "group": "Accounts & Billing",
             "pages": [
-              "account-billing/usage",
               "account-billing/teams-collaboration",
-              "account-billing/credits",
-              "account-billing/multi-account"
+              "account-billing/credits"
             ]
           },
           {
