@@ -594,8 +594,9 @@ video {
   width: 100%;
   height: auto;
   max-height: 350px; /* 50px smaller */
-  border-radius: 16px; /* round edges */
+  border-radius: 16px;
   overflow: hidden;
+  clip-path: inset(0 round 16px);
 }
 
 /* -------- Video Card Highlight -------- */
