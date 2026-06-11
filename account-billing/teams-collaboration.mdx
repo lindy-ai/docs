@@ -16,122 +16,77 @@ sidebarTitle: 'Teams Collaboration'
       style={{ display: 'block', width: '100%', borderRadius: '16px' }}
     />
   </div>
-</div>  
+</div>
 <br />
 
-
-In this guide, you will learn how to empower your whole team with AI agents.
+In this guide, you'll learn how to set up and run a Lindy workspace for your team.
 
 ## Lindy for Teams
 
-Our teams features allow users to invite, share, and collaborate on different agents, unlocking centralized, sharable, and company-maintained agents (e.g. employee support, on-brand copywriting, data science, etc.)
+Lindy for Teams lets you **invite people to your workspace** and **share billing** across the team. Each member runs their own Lindy on a Plus, Pro, or Max plan, billed centrally to the workspace.
 
-With our teams features, you can:
-- Add users to your workspace
-- Share billing
-- Share edit access to your agents
-- Share user access to your agents
-- Migrate your agents between workspaces
+## Inviting Members
 
-<Info>
-Enterprise Plan Required: Teams features are only available on Enterprise plans. You'll need to upgrade to invite team members and share agents.
-</Info>
+To invite someone new, click your **workspace name in the top-left**. Just below your name, choose **Invite a member**.
+
+In the invite dialog you can:
+
+- Enter one or more **email addresses** (separate multiple emails with spaces)
+- Pick a **role**: Member or Admin
+- Pick a **plan**: Plus, Pro, or Max
+- Click **Send invite**
+
+As soon as you invite someone, their plan is added to the workspace and your workspace credits increase to reflect the additional plan. Your existing members and permissions stay the same.
+
+<Frame>
+  <img src="/lindy-brand-assets/invite members june 11.png" alt="Invite members dialog with Email addresses, Role, and Plan dropdown showing Plus, Pro, and Max options with prices" />
+</Frame>
 
 ## Workspace Settings
 
-To access your workspace settings, click on your Workspace name in the top left and choose `Settings` in the dropdown. Here, you can:
-- Change your workspace name, URL, and logo
-- Manage your shared billing
-- Manage your team members and permissions
+To manage settings, click your **workspace name in the top-left → Settings**. The settings page has three tabs under **Workspace**:
 
-## Members and Permissions
-
-In your workspace settings, you can invite members to your workspace and assign permissions to team members. We have 3 different account-level permissions:
-
-- **Owner**: Has full control over the workspace including deleting it, updating payment methods, changing team settings, transferring ownership, and managing all aspects of the subscription
-- **Admin**: Can manage team members, upgrade/manage subscription, inspect spend allocation, create agents, and use agents, but cannot delete the workspace or transfer ownership
-- **Team member**: Can create and use agents, but has limited administrative privileges and cannot manage billing or team settings
+- **Settings** — workspace name, URL, and logo
+- **Billing** — payment method, subscription, and team spend
+- **Members and Groups** — add members, modify roles, and set credit allocations per teammate
 
 <Frame>
-  <img src="/lindy-brand-assets/teams1.png" alt="Team permission levels and settings" />
+  <img src="/lindy-brand-assets/Members and groups in settings june 11.png" alt="Workspace settings sidebar showing Settings, Billing, and Members and groups under the Workspace section" />
 </Frame>
 
-To invite members or edit permissions, navigate to 'Members' in your workspace settings.
+## Roles and Permissions
 
-<Frame>
-  <img src="/lindy-brand-assets/teams2.png" alt="Inviting members and editing permissions interface" />
-</Frame>
+There are three workspace roles:
 
-## Workspace Billing
-
-How billing works depends on how your team is set up:
-
-- **Individual subscriptions**: Each team member has their own Lindy plan with their own usage allowance. Members manage their own billing.
-- **Centralized workspace billing**: The workspace owner pays for all team activity. Owners can update the payment method; owners and admins can manage the subscription and view team spend.
-
-<Tip>
-Not sure which model your team uses? Check your workspace settings or contact [support@lindy.ai](mailto:support@lindy.ai).
-</Tip>
-
-## Sharing Agents
-
-To share an agent, click on the Share button in the top right of your agent's flow editor or tasks view.
-
-You are able to share edit access, user access, or as a template:
-
-- **Edit access**: Those with edit access can edit the agent, and see all tasks for that agent
-- **User access**: Those with user access can use the agent and run tasks. They'll only be able to see their own tasks. Only agents that have a Lindy Chat Message Received trigger or no trigger are eligible to be shared with the "user access" permission.
-- **Template**: Sharing as a template allows others to make a copy of your agent into their own accounts.
-
-## Migrating Agents
-
-You can migrate your agents from one workspace to another. Simply select the agents you want to move, and the workspace you want to move them to:
-
-<Frame>
-  <img src="/lindy-brand-assets/teams3.png" alt="Agent migration interface showing workspace selection" />
-</Frame>
-
-<Note>
-Agents with webhooks, Lindymail, and phone numbers will need to be reconfigured after the agent is migrated.
-</Note>
-
-## Sharing Connections
-
-Sharing connections allows others to run workflows using your existing auth. You can share connections from your connections settings.
-
-<Frame>
-  <img src="/lindy-brand-assets/teams1.1.png" alt="Sharing connections interface" />
-</Frame>
+- **Owner**: Full control over the workspace — manage the payment method, change settings, transfer ownership, and delete the workspace
+- **Admin**: Manage team members, the subscription, and spend allocation — cannot delete the workspace or transfer ownership
+- **Member**: Standard workspace access — cannot manage billing or team settings
 
 ## Allocating Credits
 
-<Note>
-Credit allocation applies to centralized workspace billing, where the workspace owner manages usage for all team members. If your team uses individual Pro subscriptions, each member manages their own usage allowance and this section does not apply.
-</Note>
-
-Admins and owners of workspaces can set credit limits for teammates, which limits the amount of monthly credits a teammate can use.
+Admins and owners can set credit limits for each teammate, capping how many credits they can use each month. Manage allocations in **Workspace name → Settings → Members and Groups**.
 
 <Note>
-We can only limit credit usage after credit limit has been breached, but not as soon as the limit has been reached. For example, if your credit limit is 100 and you have spent 90 credits already, and you run a task that took 50 credits, we cannot prevent that task from running as we do not know, but credit use will be stopped for any tasks afterwards.
+We can only stop credit usage after the limit has been exceeded, not at the exact threshold. For example, if a teammate's limit is 100 credits and they've used 90, a task that costs 50 credits will still run to completion — but no further credit usage will be allowed afterward.
 </Note>
 
 <Frame>
-  <img src="/lindy-brand-assets/teams2.1.png" alt="Credit allocation settings interface" />
+  <img src="/lindy-brand-assets/edit credit limit june 11.png" alt="Members table in Members and Groups with per-row menu showing 'Edit credit limit' and 'Deactivate membership' options" />
 </Frame>
 
 ## Transferring Workspace Ownership
 
-Owners of a workspace are the only ones able to manage the payment method, change the workspace name and logo, and delete the workspace. Workspace owners can transfer ownership by clicking on the role dropdown next to a member's or admin's name and changing their role to owner.
+Owners are the only ones who can manage the payment method, change the workspace name and logo, and delete the workspace. Owners can transfer ownership by clicking the role dropdown next to a member's or admin's name and changing their role to **Owner**.
 
 <Frame>
   <img src="/lindy-brand-assets/teams3.1.png" alt="Transferring workspace ownership interface" />
 </Frame>
 
-If the workspace owner leaves the workspace, they will be asked to transfer their ownership, connections, and agents to a new owner.
+If the workspace owner leaves the workspace, they'll be asked to transfer ownership to a new owner first.
 
 ## Leaving a Workspace
 
-You can leave a workspace by clicking on the … menu next to a workspace in the top left-hand dropdown.
+You can leave a workspace by clicking the **…** menu next to a workspace in the top-left dropdown.
 
 <Frame>
   <img src="/lindy-brand-assets/teams4.png" alt="Leaving workspace from dropdown menu" width="200" />
@@ -139,51 +94,17 @@ You can leave a workspace by clicking on the … menu next to a workspace in the
 
 You can also leave a workspace from your workspace settings.
 
-If a user leaves the workspace, they can transfer ownership of their agents and connections to someone else to ensure tasks don't get disrupted.
-
 <Frame>
   <img src="/lindy-brand-assets/teams5.png" alt="Leaving workspace from settings" />
-</Frame>
-
-## Sharing Folders
-
-<Frame>
-  <img src="/lindy-brand-assets/teams6.png" alt="Sharing folders interface" />
-</Frame>
-
-You can share folders with your team by right-clicking on the folder and clicking "Share Folder".
-
-You can move agents into a folder by right-clicking on the agent or selecting the agent and moving it from the bottom menu.
-
-<Frame>
-  <img src="/lindy-brand-assets/teams7.png" alt="Moving agents into folders" />
-</Frame>
-
-Only the owner of the agent can move the agent into a folder.
-
-## Creating a Workspace
-
-You can create a workspace by clicking New workspace in the top left-hand dropdown.
-
-<Frame>
-  <img src="/lindy-brand-assets/teams8.png" alt="Creating a new workspace interface" />
 </Frame>
 
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card title="Lindy 101: Introduction" icon="graduation-cap" href="/fundamentals/lindy-101/introduction">
-    Get started with the fundamentals of building AI agents
-  </Card>
-  
   <Card title="Credits" icon="coins" href="/account-billing/credits">
     Understand how credits work across team workspaces
   </Card>
-  
-  <Card title="Agent Templates" icon="clipboard-list" href="/fundamentals/lindy-101/templates">
-    Master templates for sharing agents with your team
-  </Card>
-  
+
   <Card title="Credit Optimization" icon="badge-percent" href="/account-billing/credit-optimizations">
     Optimize credit usage across your team workspaces
   </Card>
