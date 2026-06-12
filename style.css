@@ -1485,11 +1485,15 @@ video {
 }
 
 /* ============== SIDEBAR GROUP SPACING ============== */
-/* Tighten the vertical gap between sidebar groups (Start Here, Texting & Tasks, etc.) */
-/* Tailwind utility `mt-8` (2rem) on the group containers was creating very large gaps */
+/* Tighten the vertical gap between sidebar groups (Start Here, Texting & Tasks, etc.)
+   Tailwind utility `mt-8` (2rem) on the group containers was creating very large gaps.
+   The first group wraps in `ul.list-none.mt-8`; subsequent groups wrap in
+   `div.mt-6.lg:mt-8`, so we need both selectors. */
 #sidebar-content ul.list-none.mt-8,
-#sidebar-content ul[class*="mt-8"] {
-  margin-top: 1.25rem !important;
+#sidebar-content ul[class*="mt-8"],
+#sidebar-content div[class*="mt-6"][class*="mt-8"],
+#sidebar-content div[class*="lg:mt-8"] {
+  margin-top: 1rem !important;
 }
 
 /* Slightly tighten the header-to-list gap within a group */
@@ -1502,12 +1506,12 @@ video {
    the right-side "On this page" title, blowing it up to body-heading size. */
 #table-of-contents h2,
 #table-of-contents-layout h2 {
-  font-size: 0.8125rem !important;
+  font-size: 0.95rem !important;
   font-weight: 600 !important;
   line-height: 1.4 !important;
   margin: 0 !important;
   padding: 0 !important;
-  letter-spacing: 0.02em !important;
+  letter-spacing: 0.01em !important;
 }
 
 /* Hide the global h1::after underline indicator if it ever cascades into the TOC */
