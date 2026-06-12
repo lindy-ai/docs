@@ -1483,3 +1483,45 @@ video {
 .dark .prose code:not(pre code) {
   color: #f1f5f9 !important;
 }
+
+/* ============== SIDEBAR GROUP SPACING ============== */
+/* Tighten the vertical gap between sidebar groups (Start Here, Texting & Tasks, etc.) */
+/* Tailwind utility `mt-8` (2rem) on the group containers was creating very large gaps */
+#sidebar-content ul.list-none.mt-8,
+#sidebar-content ul[class*="mt-8"] {
+  margin-top: 1.25rem !important;
+}
+
+/* Slightly tighten the header-to-list gap within a group */
+#sidebar-content .sidebar-group-header {
+  margin-bottom: 0.5rem !important;
+}
+
+/* ============== "ON THIS PAGE" TOC TITLE ============== */
+/* The global h2 rule (font-size: 2rem, margin-top: 2.5rem) was getting applied to
+   the right-side "On this page" title, blowing it up to body-heading size. */
+#table-of-contents h2,
+#table-of-contents-layout h2 {
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Hide the global h1::after underline indicator if it ever cascades into the TOC */
+#table-of-contents h2::after,
+#table-of-contents-layout h2::after {
+  display: none !important;
+}
+
+/* Add breathing room between the "On this page" title and the link list */
+#table-of-contents nav,
+#table-of-contents-layout nav {
+  margin-bottom: 0.875rem !important;
+}
+
+#table-of-contents-content {
+  margin-top: 0.5rem !important;
+}
