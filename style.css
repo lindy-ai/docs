@@ -1484,46 +1484,6 @@ video {
   color: #f1f5f9 !important;
 }
 
-/* ============== PURPLE FEATURE CARDS ============== */
-/* Used by the 'What Lindy Does Automatically' CardGroup on the quickstart page.
-   Wraps the CardGroup in a div.purple-feature-cards so we can override the default
-   yellow card hover/border accents with the Lindy purple (#7c3aed). */
-.purple-feature-cards .card {
-  border-color: rgba(124, 58, 237, 0.1) !important;
-  background-color: transparent !important;
-  transition: all 0.2s ease !important;
-  padding: 1rem 1.25rem !important;
-  border-radius: 12px !important;
-}
-
-.purple-feature-cards .card:hover {
-  border-color: rgba(124, 58, 237, 0.22) !important;
-  background-color: rgba(124, 58, 237, 0.025) !important;
-  box-shadow: 0 3px 12px rgba(124, 58, 237, 0.08) !important;
-  transform: none !important;
-}
-
-.purple-feature-cards .card:hover h2,
-.purple-feature-cards .card:hover h3,
-.purple-feature-cards .card:hover h4,
-.purple-feature-cards .card:hover .card-title {
-  text-decoration: underline !important;
-  text-decoration-color: #a78bfa !important;
-  text-decoration-thickness: 1.5px !important;
-  text-underline-offset: 2px !important;
-}
-
-/* Dark-mode tuning so the purple still reads on the dark surface */
-.dark .purple-feature-cards .card {
-  background-color: transparent !important;
-  border-color: rgba(167, 139, 250, 0.22) !important;
-}
-
-.dark .purple-feature-cards .card:hover {
-  background-color: rgba(167, 139, 250, 0.06) !important;
-  border-color: rgba(167, 139, 250, 0.4) !important;
-  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.18) !important;
-}
 
 /* ============== SIDEBAR GROUP SPACING ============== */
 /* Tighten the vertical gap between sidebar groups (Start Here, Texting & Tasks, etc.)
