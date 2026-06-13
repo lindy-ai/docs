@@ -1514,6 +1514,30 @@ video {
   margin-bottom: 1.25rem !important;
 }
 
+/* Give paragraphs inside an info-card real breathing room */
+.info-card p {
+  margin-bottom: 1.5rem !important;
+}
+
+.info-card p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Tighten the gap inside the same paragraph after a block-display strong label */
+.info-card p strong,
+.info-card p b {
+  margin-top: 0 !important;
+}
+
+/* List items inside info-cards: a bit more spacing too */
+.info-card li {
+  margin-bottom: 0.75rem;
+}
+
+.info-card li:last-child {
+  margin-bottom: 0;
+}
+
 /* Dark-mode tuning */
 .dark .info-card {
   border-color: rgba(245, 225, 152, 0.2);
