@@ -1484,6 +1484,36 @@ video {
   color: #f1f5f9 !important;
 }
 
+/* ============== INFO CARDS ============== */
+/* Bordered card-style containers for long-form sub-sections that would otherwise
+   blend into the rest of the page (Start Here, Daily Basics, All About You on
+   the best-practices page). */
+.info-card {
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 12px;
+  padding: 1.25rem 1.75rem;
+  margin: 1.5rem 0;
+  background-color: rgba(240, 195, 65, 0.04);
+}
+
+.info-card > h3:first-child,
+.info-card > h2:first-child,
+.info-card > :first-child {
+  margin-top: 0 !important;
+}
+
+.info-card > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Dark-mode tuning */
+.dark .info-card {
+  border-color: rgba(245, 225, 152, 0.18);
+  border-left-color: #F5E198;
+  background-color: rgba(245, 225, 152, 0.05);
+}
+
 
 /* ============== SIDEBAR GROUP SPACING ============== */
 /* Tighten the vertical gap between sidebar groups (Start Here, Texting & Tasks, etc.)
