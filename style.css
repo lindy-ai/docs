@@ -1484,6 +1484,69 @@ video {
   color: #f1f5f9 !important;
 }
 
+/* ============== INFO CARDS ============== */
+/* Bordered card-style containers for long-form sub-sections that would otherwise
+   blend into the rest of the page (Start Here, Daily Basics, All About You on
+   the best-practices page). */
+.info-card {
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  margin: 1.75rem 0;
+  background-color: rgba(240, 195, 65, 0.05);
+  box-shadow: 0 2px 10px rgba(240, 195, 65, 0.08);
+}
+
+.info-card > h3:first-child,
+.info-card > h2:first-child,
+.info-card > :first-child {
+  margin-top: 0 !important;
+}
+
+.info-card > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Make the heading inside an info-card bigger and tighter to the content below */
+.info-card h3 {
+  font-size: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Give paragraphs inside an info-card real breathing room */
+.info-card p {
+  margin-bottom: 1.5rem !important;
+}
+
+.info-card p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Tighten the gap inside the same paragraph after a block-display strong label */
+.info-card p strong,
+.info-card p b {
+  margin-top: 0 !important;
+}
+
+/* List items inside info-cards: a bit more spacing too */
+.info-card li {
+  margin-bottom: 0.75rem;
+}
+
+.info-card li:last-child {
+  margin-bottom: 0;
+}
+
+/* Dark-mode tuning */
+.dark .info-card {
+  border-color: rgba(245, 225, 152, 0.2);
+  border-left-color: #F5E198;
+  background-color: rgba(245, 225, 152, 0.07);
+  box-shadow: 0 4px 16px rgba(245, 225, 152, 0.08);
+}
+
+
 /* ============== SIDEBAR GROUP SPACING ============== */
 /* Tighten the vertical gap between sidebar groups (Start Here, Texting & Tasks, etc.)
    Tailwind utility `mt-8` (2rem) on the group containers was creating very large gaps.
