@@ -2,7 +2,7 @@
 title: 'Smart Scheduling'
 description: 'Find times, send invites, and lock in meetings. No more back-and-forth.'
 icon: 'calendar'
-keywords: ['scheduling', 'calendar', 'book meeting', 'availability', 'schedule', 'auto draft', 'ad hoc', 'rescheduling']
+keywords: ['scheduling', 'calendar', 'book meeting', 'availability', 'schedule', 'cc lindy', 'cc-based scheduling', 'auto draft', 'ad hoc', 'rescheduling']
 ---
 
 ## Let Lindy Handle Scheduling
@@ -22,6 +22,36 @@ keywords: ['scheduling', 'calendar', 'book meeting', 'availability', 'schedule',
 </div>
 
 You say who and when. Lindy finds the time, sends the invite, and puts it on your calendar. No scheduling links, no back-and-forth emails.
+
+## CC-Based Scheduling
+
+CC your Lindy email address on any thread where you're trying to find time, and Lindy takes over as your scheduling assistant. It reads the thread, checks your calendar, and handles the rest: no questions, no back-and-forth.
+
+<Steps>
+  <Step title="CC Lindy on a scheduling thread">
+    Add your Lindy email address to the **CC line** of an email where you and the other person are trying to find a time. The CC is the signal for Lindy to step in.
+  </Step>
+  <Step title="Lindy reads the thread and takes over">
+    Lindy pulls the details from the thread (duration, date range, time of day, attendees, timezone) and fills any gaps with sensible defaults. If you've already agreed on a time, it books it. If not, it replies once with 3 open slots as clickable links.
+  </Step>
+  <Step title="The meeting gets booked">
+    The meeting books automatically on your calendar with invites sent, exactly like Smart Scheduling above.
+  </Step>
+</Steps>
+
+### Two ways it plays out
+
+**When the time's already agreed**: The thread lands on a time, like "Hey, are you free at 2pm on Tuesday?" and you reply "Yep, I'm free. Adding Lindy to get it on the books!" Lindy reads the thread, sees the time you both settled on, and books it: invite sent, both calendars updated, done.
+
+**When you still need to find time**: The thread opens with intent but no time, like "Hey, we should connect about our new marketing launch," and you reply "Yes, let's connect next week. Adding Lindy to help us find time." Lindy pulls three open slots that fit your calendar and pops back into the thread with bookable links to organize and schedule.
+
+<Note>
+Lindy only acts when **both** are true: your Lindy email is on the CC line, **and** the thread shows scheduling intent ("let's find time", "can we grab 30 min?"). CC without a scheduling ask, or a scheduling ask without the CC, won't trigger it.
+</Note>
+
+<Tip>
+Want to constrain the options? Just say so in the thread ("mornings only", "next week", "30 min"). Otherwise Lindy uses your standard meeting length, working hours, and buffers.
+</Tip>
 
 ## Auto Drafting
 
@@ -102,30 +132,6 @@ Lindy can check any teammate's calendar that's shared with your workspace, so yo
 
 <Tip>
 Scheduling over text is the fastest option. Lindy already knows your calendar and preferences, so a simple text is all it takes.
-</Tip>
-
-## CC-Based Scheduling
-
-CC your Lindy email address on any thread where you're trying to find time, and Lindy takes over as your scheduling assistant. It reads the thread, checks your calendar, and replies with 3 bookable times: no questions, no back-and-forth.
-
-<Steps>
-  <Step title="CC Lindy on a scheduling thread">
-    Add your Lindy email address to the **CC line** of an email where you and the other person are trying to find a time. The CC is the signal for Lindy to step in.
-  </Step>
-  <Step title="Lindy reads the thread and proposes 3 times">
-    Lindy pulls the details from the thread (duration, date range, time of day, attendees, timezone) and fills any gaps with sensible defaults. It then replies once on the same thread with 3 open slots as clickable links.
-  </Step>
-  <Step title="They click a time and it's booked">
-    The recipient clicks a slot and the meeting books automatically on your calendar with invites sent, exactly like Smart Scheduling above.
-  </Step>
-</Steps>
-
-<Note>
-Lindy only acts when **both** are true: your Lindy email is on the CC line, **and** the thread shows scheduling intent ("let's find time", "can we grab 30 min?"). CC without a scheduling ask, or a scheduling ask without the CC, won't trigger it.
-</Note>
-
-<Tip>
-Want to constrain the options? Just say so in the thread ("mornings only", "next week", "30 min"). Otherwise Lindy uses your standard meeting length, working hours, and buffers.
 </Tip>
 
 ## Next Steps
