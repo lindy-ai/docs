@@ -60,6 +60,12 @@
             ]
           },
           {
+            "group": "Chrome Extension",
+            "pages": [
+              "features/chrome-extension"
+            ]
+          },
+          {
             "group": "Meeting Assistant",
             "pages": [
               "features/meeting-assistant/daily-brief",
