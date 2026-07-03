@@ -2,7 +2,7 @@
 title: 'Smart Scheduling'
 description: 'Find times, send invites, and lock in meetings. No more back-and-forth.'
 icon: 'calendar'
-keywords: ['scheduling', 'calendar', 'book meeting', 'availability', 'schedule', 'auto draft', 'ad hoc', 'rescheduling']
+keywords: ['scheduling', 'calendar', 'book meeting', 'availability', 'schedule', 'cc lindy', 'cc-based scheduling', 'auto draft', 'ad hoc', 'rescheduling']
 ---
 
 ## Let Lindy Handle Scheduling
@@ -21,7 +21,67 @@ keywords: ['scheduling', 'calendar', 'book meeting', 'availability', 'schedule',
   </div>
 </div>
 
-You say who and when. Lindy finds the time, sends the invite, and puts it on your calendar. No scheduling links, no back-and-forth emails.
+Just delegate the meeting. Lindy finds the time, sends the invite, and puts it on your calendar. No scheduling links, no back-and-forth emails.
+
+## CC-Based Scheduling (Coming Soon)
+
+CC your Lindy assistant's email address on any thread where you're trying to find time, and Lindy takes over as your scheduling assistant. It reads the thread, checks your calendar, and handles the rest: no questions, no back-and-forth.
+
+<Steps>
+  <Step title="CC Lindy on a scheduling thread">
+    Add your Lindy email address to the **CC line** of an email where you and the other person are trying to find a time. The CC is the signal for Lindy to step in.
+  </Step>
+  <Step title="Lindy reads the thread and takes over">
+    Lindy pulls the details from the thread (duration, date range, time of day, attendees, timezone) and fills any gaps with sensible defaults. If you've already agreed on a time, it books it. If not, it replies once with 3 open slots as clickable links.
+  </Step>
+  <Step title="The meeting gets booked">
+    The meeting books automatically on your calendar with invites sent, exactly like Smart Scheduling above.
+  </Step>
+</Steps>
+
+### Two ways it plays out
+
+**When the time's already agreed**, Lindy books it. **When you still need a time**, Lindy proposes three slots. Either way, the Cc is all it takes.
+
+<div style={{ maxWidth: '640px', margin: '1.5rem auto 0.5rem' }}>
+  <div style={{ fontSize: '17px', fontWeight: 700, color: '#92740f', marginBottom: '0.75rem' }}>The time's already agreed</div>
+
+  <Steps>
+    <Step title="James suggests a specific time">
+      <img src="/lindy-brand-assets/option1a.png" alt="James Smith emails: are you free at 2:00 PM on Tuesday? Would love to catch up." style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
+    </Step>
+    <Step title="You reply and add Lindy to the thread">
+      <img src="/lindy-brand-assets/option1b.png" alt="You reply with assistant@lindy.ai on the Cc line: Yep, I'm free! Adding Lindy to get it on the books." style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
+    </Step>
+    <Step title="Lindy books it and sends the invite">
+      <img src="/lindy-brand-assets/option1c.png" alt="Lindy Assistant replies confirming the meeting is booked on both calendars for Tuesday 2:00 to 2:30 PM EDT and the invite is on its way to James" style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
+    </Step>
+  </Steps>
+</div>
+
+<div style={{ maxWidth: '640px', margin: '2.25rem auto 0.5rem' }}>
+  <div style={{ fontSize: '17px', fontWeight: 700, color: '#92740f', marginBottom: '0.75rem' }}>You still need to find time</div>
+
+  <Steps>
+    <Step title="James asks to find time next week">
+      <img src="/lindy-brand-assets/option2a.png" alt="James Smith emails: we should connect next week to go over our new marketing launch" style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
+    </Step>
+    <Step title="You reply and add Lindy to the thread">
+      <img src="/lindy-brand-assets/option2b.png" alt="You reply with assistant@lindy.ai on the Cc line: Yes, let's connect next week. Adding Lindy to help us find time." style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
+    </Step>
+    <Step title="Lindy checks your calendar and offers three times">
+      <img src="/lindy-brand-assets/option2c.png" alt="Lindy Assistant replies: Happy to help! Here are three options that work for Alon, with three bookable time slots as bullet points" style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
+    </Step>
+  </Steps>
+</div>
+
+<Note>
+Lindy only acts when **both** are true: your Lindy email is on the CC line, **and** the thread shows scheduling intent ("let's find time", "can we grab 30 min?"). CC without a scheduling ask, or a scheduling ask without the CC, won't trigger it.
+</Note>
+
+<Tip>
+Want to constrain the options? Just say so in the thread ("mornings only", "next week", "30 min"). Otherwise Lindy uses your standard meeting length, working hours, and buffers.
+</Tip>
 
 ## Auto Drafting
 
