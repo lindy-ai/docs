@@ -23,13 +23,40 @@ keywords: ['scheduling', 'calendar', 'book meeting', 'availability', 'schedule',
 
 Just delegate the meeting. Lindy finds the time, sends the invite, and puts it on your calendar. No scheduling links, no back-and-forth emails.
 
-## CC-Based Scheduling (Coming Soon)
+## Three Ways to Schedule
+
+However a meeting comes up, Lindy can handle it. Pick whichever fits the moment:
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', margin: '1.5rem 0' }}>
+  <a href="#1-cc-based-scheduling-coming-soon" className="schedule-pill">
+    <Icon icon="envelope" size={17} color="#3A60FF" />
+    <span>CC-based scheduling</span>
+  </a>
+  <a href="#2-drafting-scheduling" className="schedule-pill">
+    <Icon icon="pen" size={17} color="#3A60FF" />
+    <span>Drafting scheduling</span>
+  </a>
+  <a href="#3-ad-hoc-scheduling" className="schedule-pill">
+    <Icon icon="comments" size={17} color="#3A60FF" />
+    <span>Ad hoc scheduling</span>
+  </a>
+</div>
+
+## Set Your Availability
+
+Lindy books only within the availability you set, so every option below lands on a time that actually works for you. Set your rules in plain language: preferred hours, buffers between meetings, blocked times, default meeting length, and meeting types. Update them anytime, and they apply to all three ways to schedule.
+
+<Note>
+  Open Lindy, click your **workspace name** in the top-left, and choose **Settings**. In the left sidebar, click **Scheduling** to set your hours, buffers, and calendar rules.
+</Note>
+
+## 1. CC-Based Scheduling (Coming Soon)
 
 CC your Lindy assistant's email address on any thread where you're trying to find time, and Lindy takes over as your scheduling assistant. It reads the thread, checks your calendar, and handles the rest: no questions, no back-and-forth.
 
-<div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexWrap: 'wrap', maxWidth: '640px', margin: '1.5rem 0', padding: '1rem 1.25rem', background: 'rgba(230, 193, 71, 0.12)', border: '1px solid rgba(230, 193, 71, 0.5)', borderLeft: '4px solid #E6C147', borderRadius: '12px' }}>
+<div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexWrap: 'wrap', maxWidth: '640px', margin: '1.5rem 0', padding: '1rem 1.25rem', background: 'rgba(247, 184, 68, 0.12)', border: '1px solid rgba(247, 184, 68, 0.5)', borderLeft: '4px solid #F7B844', borderRadius: '12px' }}>
   <span style={{ fontSize: '15px', fontWeight: 600, color: 'inherit' }}>Your Lindy assistant email is</span>
-  <a href="mailto:lindy@lindy.ai" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '16px', fontWeight: 700, color: '#92740f', background: 'rgba(230, 193, 71, 0.22)', padding: '0.3rem 0.7rem', borderRadius: '8px', textDecoration: 'none' }}>lindy@lindy.ai</a>
+  <a href="mailto:lindy@lindy.ai" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '16px', fontWeight: 700, color: '#DA920A', background: 'rgba(247, 184, 68, 0.22)', padding: '0.3rem 0.7rem', borderRadius: '8px', textDecoration: 'none' }}>lindy@lindy.ai</a>
 </div>
 
 <Steps>
@@ -44,44 +71,20 @@ CC your Lindy assistant's email address on any thread where you're trying to fin
   </Step>
 </Steps>
 
-<Note>
-  Lindy only books within the availability you set. When you CC [lindy@lindy.ai](mailto:lindy@lindy.ai), it follows the working hours, buffers, and calendar rules from your [Scheduling settings](https://chat.lindy.ai/team-lindys-workspace/settings/scheduling). Set or update your availability there anytime under **Settings → Scheduling**.
-</Note>
-
 ### Two ways it plays out
 
 **When the time's already agreed**, Lindy books it. **When you still need a time**, Lindy proposes three slots. Either way, the Cc is all it takes.
 
 <div style={{ maxWidth: '640px', margin: '1.5rem auto 0.5rem' }}>
-  <div style={{ fontSize: '17px', fontWeight: 700, color: '#92740f', marginBottom: '0.75rem' }}>The time's already agreed</div>
+  <div style={{ fontSize: '17px', fontWeight: 700, color: '#DA920A', marginBottom: '0.75rem' }}>The time's already agreed</div>
 
-  <Steps>
-    <Step title="James suggests a specific time">
-      <img src="/lindy-brand-assets/option1a.png" alt="James Smith emails: are you free at 2:00 PM on Tuesday? Would love to catch up." style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
-    </Step>
-    <Step title="You reply and add Lindy to the thread">
-      <img src="/lindy-brand-assets/option1b.png" alt="You reply with lindy@lindy.ai on the Cc line: Yep, I'm free! Adding Lindy to get it on the books." style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
-    </Step>
-    <Step title="Lindy books it and sends the invite">
-      <img src="/lindy-brand-assets/option1c.png" alt="Lindy Assistant replies confirming the meeting is booked on both calendars for Tuesday 2:00 to 2:30 PM EDT and the invite is on its way to James" style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
-    </Step>
-  </Steps>
+  <img src="/lindy-brand-assets/cc-scheduling-agreed.png" alt="Three steps of CC-based scheduling: James emails suggesting a specific time, you reply with lindy@lindy.ai on the Cc line, and Lindy replies confirming it booked the meeting and sent the invite" style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
 </div>
 
 <div style={{ maxWidth: '640px', margin: '2.25rem auto 0.5rem' }}>
-  <div style={{ fontSize: '17px', fontWeight: 700, color: '#92740f', marginBottom: '0.75rem' }}>You still need to find time</div>
+  <div style={{ fontSize: '17px', fontWeight: 700, color: '#DA920A', marginBottom: '0.75rem' }}>You still need to find time</div>
 
-  <Steps>
-    <Step title="James asks to find time next week">
-      <img src="/lindy-brand-assets/option2a.png" alt="James Smith emails: we should connect next week to go over our new marketing launch" style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
-    </Step>
-    <Step title="You reply and add Lindy to the thread">
-      <img src="/lindy-brand-assets/option2b.png" alt="You reply with lindy@lindy.ai on the Cc line: Yes, let's connect next week. Adding Lindy to help us find time." style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
-    </Step>
-    <Step title="Lindy checks your calendar and offers three times">
-      <img src="/lindy-brand-assets/option2c.png" alt="Lindy Assistant replies: Happy to help! Here are three options that work for Alon, with three bookable time slots as bullet points" style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
-    </Step>
-  </Steps>
+  <img src="/lindy-brand-assets/cc-scheduling-find-time.png" alt="Three steps of CC-based scheduling: James emails asking to find time next week, you reply with lindy@lindy.ai on the Cc line, and Lindy replies offering three available times" style={{ display: 'block', width: '100%', borderRadius: '12px' }} />
 </div>
 
 <Note>
@@ -92,17 +95,17 @@ Lindy only acts when **both** are true: your Lindy email is on the CC line, **an
 Want to constrain the options? Just say so in the thread ("mornings only", "next week", "30 min"). Otherwise Lindy uses your standard meeting length, working hours, and buffers.
 </Tip>
 
-## Auto Drafting
+## 2. Drafting Scheduling
 
 When someone emails you about scheduling a meeting, Lindy detects the request and offers times in a draft reply on your behalf. Your recipient picks one in a single click and the meeting drops onto both calendars.
 
 - When someone emails to schedule, Lindy offers times in a draft reply
-- Recipients book a slot in one click — no back-and-forth
+- Recipients book a slot in one click, with no back-and-forth
 - Save ~3 minutes per invite
 
 <Steps>
   <Step title="Someone emails you asking for a time to meet">
-    Lindy detects the scheduling request and takes over — no action needed from you.
+    Lindy detects the scheduling request and takes over, with no action needed from you.
 
     <img src="/lindy-brand-assets/chatv1.png" alt="Incoming email requesting a meeting" style={{ display: 'block', width: '100%', maxWidth: 'none', maxHeight: 'none', borderRadius: '12px' }} />
   </Step>
@@ -118,11 +121,7 @@ When someone emails you about scheduling a meeting, Lindy detects the request an
   </Step>
 </Steps>
 
-### Custom Scheduling Rules
-
-Set your scheduling rules in **Settings → Scheduling** in natural language — preferred hours, buffers, blocked times, meeting types, anything that should apply to every auto-drafted reply.
-
-## Ad Hoc Scheduling
+## 3. Ad Hoc Scheduling
 
 When you want Lindy to handle scheduling on your behalf, just ask. Text or message her and she'll find the time, reach out, and lock it in.
 
@@ -164,7 +163,7 @@ Lindy can check any teammate's calendar that's shared with your workspace, so yo
   <img src="/lindy-brand-assets/scheduling-find-internal.png" alt="Texting Lindy 'help me find 15 to meet with Alice' and getting back an 'Added Thursday' card with a Proposal follow up event Thursday 10:30 - 10:45 AM, You + Alice, created by Lindy" />
 </Frame>
 
-## How to Delegate
+### How to Delegate
 
 - **iMessage / SMS**: "Book a call with Sarah next Tuesday afternoon"
 - **Web app**: chat at [chat.lindy.ai](https://chat.lindy.ai)
