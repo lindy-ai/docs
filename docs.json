@@ -94,6 +94,17 @@
               "resources/changelog",
               "export-full-docs"
             ]
+          },
+          {
+            "group": "Coming Soon",
+            "pages": [
+              "coming-soon/home",
+              "coming-soon/lindy-teammate",
+              "coming-soon/lindy-teammate-billing",
+              "coming-soon/routines",
+              "coming-soon/files",
+              "coming-soon/meeting-library"
+            ]
           }
         ]
       },
