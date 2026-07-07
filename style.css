@@ -951,6 +951,12 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
   color: #C4D0DC !important;
 }
 
+/* Don't fake-bold the selected top nav tab (Mintlify thickens it with a text-shadow) */
+.nav-tabs-item[data-active="true"],
+a.nav-tabs-item[data-active="true"] {
+  text-shadow: none !important;
+}
+
 /* Dark mode: Tab content text */
 .dark .tabs .text-gray-600,
 .dark .tabs .text-gray-500,
@@ -1321,9 +1327,10 @@ figure {
   line-height: 0; /* Remove line-height spacing */
 }
 
-/* Even vertical spacing around top-level frames (image had margin:0, so gaps were uneven) */
+/* Even vertical spacing around top-level frames. Frame is not-prose so it's excluded
+   from Mintlify's ~2em prose flow rhythm; match that 2em so gaps above/below are even. */
 .frame {
-  margin: 1.5rem 0 !important;
+  margin: 2em 0 !important;
 }
 
 /* Ensure images fill their containers completely */
