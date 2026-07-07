@@ -9,8 +9,8 @@
   --color-primary: #F7B844;
   --color-primary-light: #F5EFE8;
   --color-primary-lighter: #FDE9B0;
-  --color-link: #1F3047;
-  --color-link-hover: #3A60FF;
+  --color-link: #D4920A;
+  --color-link-hover: #F7B844;
   --color-text-primary: #1F3047;
   --color-text-secondary: #344D63;
   --color-text-muted: #8EA8C0;
@@ -133,14 +133,20 @@ a {
 
 a:hover {
   color: var(--color-link-hover);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
-/* Kill Mintlify's default prose-link underline (border-bottom) */
+/* No underline at rest; single underline on hover. Kill Mintlify's border-bottom so it never doubles. */
 .prose a,
 .prose :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   border-bottom: none !important;
   text-decoration: none !important;
+}
+.prose a:hover,
+.prose :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)):hover {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 2px !important;
 }
 
 /* Code styling */
@@ -853,6 +859,12 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
   color: #C4D0DC !important;
 }
 
+/* Dark mode: card surface — elevated dark, not the light-mode white */
+.dark .card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
 /* Dark mode: Card content text */
 .dark .card .text-gray-600,
 .dark .card .text-gray-500,
@@ -879,13 +891,16 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
   color: #8EA8C0 !important; /* Slightly more muted for disclaimers */
 }
 
-/* Sidebar group labels (eyebrow) — pin to small size; a broad rule was inflating them */
+/* Sidebar group labels (eyebrow) — EXACT same size/font as the nav items, just bolded.
+   Inherit the sidebar's base size instead of pinning a value, so they always match. */
 .eyebrow,
 #sidebar-content .eyebrow {
-  font-size: 0.75rem !important;
-  line-height: 1.25 !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.02em !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  font-weight: 700 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  color: #1F3047 !important;
 }
 
 /* Dark mode: Meta information (breadcrumbs, timestamps, etc.) */
@@ -1304,6 +1319,11 @@ figure {
   margin: 0 !important;
   padding: 0 !important;
   line-height: 0; /* Remove line-height spacing */
+}
+
+/* Even vertical spacing around top-level frames (image had margin:0, so gaps were uneven) */
+.frame {
+  margin: 1.5rem 0 !important;
 }
 
 /* Ensure images fill their containers completely */
