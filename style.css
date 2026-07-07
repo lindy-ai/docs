@@ -6,25 +6,25 @@
   --font-sans: inherit;
   
   /* Colors */
-  --color-primary: #F0C341;
-  --color-primary-light: #F5E1C3;
-  --color-primary-lighter: #F5DDB5;
-  --color-link: #E6C147;
-  --color-link-hover: #D4A73A;
-  --color-text-primary: #1A1A1A;
-  --color-text-secondary: #4A4A4A;
-  --color-text-muted: #B0B0B0;
-  --color-border: #E5E5E5;
-  --color-bg-light: #f8f9fa;
-  --color-bg-code: #FEF9F0;
-  --color-code: #C9A342;
+  --color-primary: #F7B844;
+  --color-primary-light: #F5EFE8;
+  --color-primary-lighter: #FDE9B0;
+  --color-link: #1F3047;
+  --color-link-hover: #3A60FF;
+  --color-text-primary: #1F3047;
+  --color-text-secondary: #344D63;
+  --color-text-muted: #8EA8C0;
+  --color-border: #C4D0DC;
+  --color-bg-light: #FCF9F8;
+  --color-bg-code: #FCF9F8;
+  --color-code: #DA920A;
   
   /* Dark mode colors */
-  --color-dark-bg: #1A1A1A;
-  --color-dark-surface: #2A2A2A;
-  --color-dark-border: #3A3A3A;
-  --color-dark-accent: #4A4A4A;
-  --color-dark-text: #E0E0E0;
+  --color-dark-bg: #1F3047;
+  --color-dark-surface: #1F3047;
+  --color-dark-border: #1F3047;
+  --color-dark-accent: #344D63;
+  --color-dark-text: #C4D0DC;
   
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 50%, var(--color-primary-lighter) 100%);
@@ -54,7 +54,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 1.875rem;
   margin-bottom: var(--spacing-xl);
   position: relative;
   display: inline-block;
@@ -72,21 +72,21 @@ h1::after {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.375rem;
   line-height: 1.3;
   margin-top: 2.5rem;
   margin-bottom: 1.25rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   line-height: 1.4;
   margin-top: var(--spacing-2xl);
   margin-bottom: var(--spacing-lg);
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
   margin-top: var(--spacing-xl);
@@ -124,7 +124,7 @@ li {
   color: var(--color-text-secondary);
 }
 
-/* Links */
+/* Links — color only, no underlines */
 a {
   color: var(--color-link);
   text-decoration: none;
@@ -133,7 +133,14 @@ a {
 
 a:hover {
   color: var(--color-link-hover);
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+/* Kill Mintlify's default prose-link underline (border-bottom) */
+.prose a,
+.prose :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  border-bottom: none !important;
+  text-decoration: none !important;
 }
 
 /* Code styling */
@@ -181,7 +188,7 @@ a.button {
   text-decoration: none;
   display: inline-block;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(240, 195, 65, 0.25);
+  box-shadow: 0 4px 12px rgba(247, 184, 68, 0.25);
   position: relative;
   overflow: hidden;
 }
@@ -206,7 +213,7 @@ a.button:hover::before {
 .button:hover,
 a.button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(240, 195, 65, 0.35);
+  box-shadow: 0 6px 20px rgba(247, 184, 68, 0.35);
 }
 
 /* Navigation items */
@@ -270,7 +277,7 @@ a.button:hover {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(240, 195, 65, 0.12);
+  box-shadow: 0 8px 24px rgba(247, 184, 68, 0.12);
   border-color: transparent;
 }
 
@@ -279,16 +286,12 @@ a.button:hover {
 }
 
 /* Gradient backgrounds - consolidated */
-[style*="background: linear-gradient"],
-[style*="#F0C341"], [style*="#F5E1C3"], [style*="#F5DDB5"],
-[style*="#FDD656"], [style*="#FEF4D3"], [style*="#FDF1DD"] {
+[style*="background: linear-gradient"] {
   position: relative;
   color: var(--color-text-primary) !important;
 }
 
-[style*="background: linear-gradient"] *,
-[style*="#F0C341"] *, [style*="#F5E1C3"] *, [style*="#F5DDB5"] *,
-[style*="#FDD656"] *, [style*="#FEF4D3"] *, [style*="#FDF1DD"] * {
+[style*="background: linear-gradient"] * {
   position: relative;
   z-index: 1;
 }
@@ -309,9 +312,7 @@ a.button:hover {
 }
 
 /* Gradient overlay for contrast */
-[style*="background: linear-gradient"]::after,
-[style*="#F0C341"]::before, [style*="#F5E1C3"]::before, [style*="#F5DDB5"]::before,
-[style*="#FDD656"]::before, [style*="#FEF4D3"]::before, [style*="#FDF1DD"]::before {
+[style*="background: linear-gradient"]::after {
   content: '';
   position: absolute;
   top: 0;
@@ -345,7 +346,7 @@ a.button:hover {
 :root:not([data-theme="dark"]) pre code,
 :root:not([data-theme="dark"]) .code-block,
 :root:not([data-theme="dark"]) [class*="CodeBlock"] {
-  color: #2d3748 !important; /* Dark gray for better readability */
+  color: #1F3047 !important; /* Dark gray for better readability */
 }
 
 /* Dark mode code blocks */
@@ -355,23 +356,23 @@ a.button:hover {
 :root[data-theme="dark"] pre code,
 :root[data-theme="dark"] .code-block,
 :root[data-theme="dark"] [class*="CodeBlock"] {
-  color: #e2e8f0 !important; /* Light gray for dark mode */
+  color: #C4D0DC !important; /* Light gray for dark mode */
 }
 
 /* Inline code text contrast */
 [data-theme="light"] code:not(pre code),
 :root:not([data-theme="dark"]) code:not(pre code) {
-  color: #2d3748 !important;
+  color: #1F3047 !important;
 }
 
 [data-theme="dark"] code:not(pre code),
 :root[data-theme="dark"] code:not(pre code) {
-  color: #f1f5f9 !important; /* Bright light grey for better visibility */
+  color: #EBEDF2 !important; /* Bright light grey for better visibility */
 }
 
 /* Inline code text contrast for .dark class */
 .dark code:not(pre code) {
-  color: #f1f5f9 !important;
+  color: #EBEDF2 !important;
 }
 
 /* Remove the gradient fill on cards while keeping all text underline effects */
@@ -382,7 +383,7 @@ a.button:hover {
 /* Keep the card hover animation and shadow, but no background fill */
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(240, 195, 65, 0.16);
+  box-shadow: 0 8px 24px rgba(247, 184, 68, 0.16);
   border-color: var(--color-border); /* Keep the normal border */
   text-decoration: none !important; /* Remove default underline on entire card */
 }
@@ -396,6 +397,19 @@ a.button:hover {
   text-decoration-color: var(--color-primary);
   text-decoration-thickness: 1.5px;
   text-underline-offset: 2px;
+}
+
+/* Card titles: pin to intended size. The global unlayered `h2 { font-size: 2rem }`
+   otherwise beats Mintlify's layered `text-base` utility and blows card titles up to h1. */
+[data-component-part="card-title"],
+.card h2,
+.card h3,
+.card .card-title {
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+  font-weight: 600 !important;
+  margin-top: 1rem !important;
+  margin-bottom: 0.25rem !important;
 }
 
 
@@ -583,7 +597,7 @@ li[aria-expanded="true"] > div.group svg:last-child {
 }
 
 .frame:hover {
-  box-shadow: 0 6px 20px rgba(240, 195, 65, 0.25);
+  box-shadow: 0 6px 20px rgba(247, 184, 68, 0.25);
 }
 
 /* Generic video styling */
@@ -610,7 +624,7 @@ video {
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07); /* subtle shadow */
 }
 .video-card:hover {
-  box-shadow: 0 8px 28px rgba(240, 195, 65, 0.18); /* yellow glow */
+  box-shadow: 0 8px 28px rgba(247, 184, 68, 0.18); /* yellow glow */
 }
 
 .video-card video {
@@ -666,7 +680,7 @@ a[href^="mailto:support@lindy.ai"] {
 
 /* Dashboard CTA → use custom light background */
 #topbar-cta-button > a > span.absolute {
-  background: #fdf8ee !important;
+  background: #FCF9F8 !important;
 }
 
 /* Dashboard text and arrow → use secondary text color */
@@ -697,21 +711,21 @@ a[href^="mailto:support@lindy.ai"] {
 
 /* Dark mode: Dashboard button background */
 .dark #topbar-cta-button > a > span.absolute {
-  background: rgba(240, 195, 65, 0.15) !important; /* Subtle dark mode yellow background */
+  background: rgba(247, 184, 68, 0.15) !important; /* Subtle dark mode yellow background */
 }
 
 /* Dark mode: Dashboard text and arrow colors */
 .dark #topbar-cta-button .z-10 {
-  color: #f3f4f6 !important; /* Light text for better contrast */
+  color: #EBEDF2 !important; /* Light text for better contrast */
 }
 
 .dark #topbar-cta-button svg {
-  color: #f3f4f6 !important; /* Light arrow color */
+  color: #EBEDF2 !important; /* Light arrow color */
 }
 
 /* Dark mode: Dashboard button hover state */
 .dark #topbar-cta-button > a:hover > span.absolute {
-  background: rgba(240, 195, 65, 0.25) !important; /* Slightly more prominent on hover */
+  background: rgba(247, 184, 68, 0.25) !important; /* Slightly more prominent on hover */
   opacity: 1 !important; /* Override the opacity rule */
 }
 
@@ -730,71 +744,71 @@ a[href^="mailto:support@lindy.ai"] {
 .dark [class*="text-amber"],
 .dark .gradient-text,
 .dark .text-link,
-.dark a[style*="color: #F0C341"],
-.dark a[style*="color: #E6C147"],
-.dark span[style*="color: #F0C341"],
-.dark span[style*="color: #E6C147"] {
-  color: #F5E198 !important; /* Lighter, consistent yellow for all text */
+.dark a[style*="color: #F7B844"],
+.dark a[style*="color: #F7B844"],
+.dark span[style*="color: #F7B844"],
+.dark span[style*="color: #F7B844"] {
+  color: #FDE9B0 !important; /* Lighter, consistent yellow for all text */
 }
 
 /* Dark mode: Standardize all yellow backgrounds */
-.dark [style*="background: #F0C341"],
-.dark [style*="background: #E6C147"],
-.dark [style*="background-color: #F0C341"],
-.dark [style*="background-color: #E6C147"],
+.dark [style*="background: #F7B844"],
+.dark [style*="background: #F7B844"],
+.dark [style*="background-color: #F7B844"],
+.dark [style*="background-color: #F7B844"],
 .dark .bg-primary,
 .dark .bg-primary-light {
-  background-color: #F5E198 !important; /* Lighter yellow for backgrounds */
+  background-color: #FDE9B0 !important; /* Lighter yellow for backgrounds */
 }
 
 /* Dark mode: Standardize yellow borders */
-.dark [style*="border-color: #F0C341"],
-.dark [style*="border-color: #E6C147"],
+.dark [style*="border-color: #F7B844"],
+.dark [style*="border-color: #F7B844"],
 .dark .border-primary,
 .dark .border-primary-light {
-  border-color: #F5E198 !important; /* Lighter yellow for borders */
+  border-color: #FDE9B0 !important; /* Lighter yellow for borders */
 }
 
 /* Dark mode: Override any CSS custom properties for yellow */
 .dark {
-  --color-primary: #F5E198 !important;
-  --color-primary-light: #F5E198 !important;
-  --color-link: #F5E198 !important;
-  --color-link-hover: #F3D773 !important; /* Slightly darker for hover */
+  --color-primary: #FDE9B0 !important;
+  --color-primary-light: #FDE9B0 !important;
+  --color-link: #FDE9B0 !important;
+  --color-link-hover: #FAC775 !important; /* Slightly darker for hover */
 }
 
 /* Dark mode: Nav items and links using yellow */
 .dark .nav-item:hover,
 .dark .nav-item.active,
 .dark a:hover {
-  color: #F5E198 !important;
+  color: #FDE9B0 !important;
 }
 
 /* Dark mode: Any remaining yellow elements */
 .dark .yellow,
 .dark .primary-color,
 .dark [class*="primary"] {
-  color: #F5E198 !important;
+  color: #FDE9B0 !important;
 }
 
 /* Dark mode: Underlines and decorations */
 .dark .text-decoration-yellow,
 .dark [style*="text-decoration-color"],
 .dark .underline-yellow {
-  text-decoration-color: #F5E198 !important;
+  text-decoration-color: #FDE9B0 !important;
 }
 
 /* Dark mode: Sidebar "On this page" yellow text */
 .dark #on-this-page .text-primary,
 .dark .toc .text-primary,
 .dark .table-of-contents .text-primary {
-  color: #F5E198 !important;
+  color: #FDE9B0 !important;
 }
 
 /* Light mode: Keep existing light styling unchanged */
 :root:not(.dark) #topbar-cta-button > a > span.absolute,
 html:not(.dark) #topbar-cta-button > a > span.absolute {
-  background: #fdf8ee !important; /* Keep original light background */
+  background: #FCF9F8 !important; /* Keep original light background */
 }
 
 /* ============== DARK MODE TEXT CONTRAST FIXES ============== */
@@ -807,7 +821,7 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
 .dark .text-gray-600,
 .dark .text-gray-500,
 .dark .text-gray-400 {
-  color: #d1d5db !important; /* Much lighter grey for better readability */
+  color: #C4D0DC !important; /* Much lighter grey for better readability */
 }
 
 /* Dark mode: Improve prose text contrast */
@@ -816,7 +830,7 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
 .dark .prose .text-gray-400,
 .dark .prose p,
 .dark .prose .leading-6 {
-  color: #d1d5db !important; /* Better contrast for body text */
+  color: #C4D0DC !important; /* Better contrast for body text */
 }
 
 /* Dark mode: Fix small text elements */
@@ -826,7 +840,7 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
 .dark .text-xs.text-gray-600,
 .dark .text-xs.text-gray-500,
 .dark .text-xs.text-gray-400 {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Navigation and sidebar improvements */
@@ -836,7 +850,7 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
 .dark .sidebar-link .text-gray-600,
 .dark .sidebar-link .text-gray-500,
 .dark .sidebar-link .text-gray-400 {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Card content text */
@@ -844,7 +858,7 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
 .dark .card .text-gray-500,
 .dark .card .text-gray-400,
 .dark .card .prose {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Table of contents and on-page navigation */
@@ -854,7 +868,7 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
 .dark #on-this-page .text-gray-600,
 .dark #on-this-page .text-gray-500,
 .dark #on-this-page .text-gray-400 {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Footer and disclaimer text */
@@ -862,7 +876,16 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
 .dark footer .text-gray-500,
 .dark footer .text-gray-400,
 .dark .chat-assistant-disclaimer-text {
-  color: #9ca3af !important; /* Slightly more muted for disclaimers */
+  color: #8EA8C0 !important; /* Slightly more muted for disclaimers */
+}
+
+/* Sidebar group labels (eyebrow) — pin to small size; a broad rule was inflating them */
+.eyebrow,
+#sidebar-content .eyebrow {
+  font-size: 0.75rem !important;
+  line-height: 1.25 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
 }
 
 /* Dark mode: Meta information (breadcrumbs, timestamps, etc.) */
@@ -871,60 +894,60 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
 .dark .text-gray-600.text-sm,
 .dark .text-gray-500.text-sm,
 .dark .text-gray-400.text-sm {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Assistant chat interface text improvements */
 .dark .chat-assistant-sheet .text-gray-600,
 .dark .chat-assistant-sheet .text-gray-500,
 .dark .chat-assistant-sheet .text-gray-400 {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Ensure headings maintain good contrast */
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-  color: #f9fafb !important; /* Very light for headings */
+  color: #EBEDF2 !important; /* Very light for headings */
 }
 
 /* Dark mode: Link text improvements */
 .dark a.text-gray-600,
 .dark a.text-gray-500,
 .dark a.text-gray-400 {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 .dark a.text-gray-600:hover,
 .dark a.text-gray-500:hover,
 .dark a.text-gray-400:hover {
-  color: #f3f4f6 !important;
+  color: #EBEDF2 !important;
 }
 
 /* Dark mode: Step component text */
 .dark .step .text-gray-600,
 .dark .step .text-gray-500,
 .dark .step .text-gray-400 {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Callout content text */
 .dark .callout .text-gray-600,
 .dark .callout .text-gray-500,
 .dark .callout .text-gray-400 {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Tab content text */
 .dark .tabs .text-gray-600,
 .dark .tabs .text-gray-500,
 .dark .tabs .text-gray-400 {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Override any remaining low-contrast text */
 .dark [class*="text-gray-6"],
 .dark [class*="text-gray-5"],
 .dark [class*="text-gray-4"] {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Light mode: Make all "On this page" sidebar text gray by default */
@@ -934,7 +957,7 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
 html:not(.dark) #on-this-page a,
 html:not(.dark) .toc a,
 html:not(.dark) .table-of-contents a {
-  color: #6b7280 !important; /* Same gray as left sidebar buttons */
+  color: #506880 !important; /* Same gray as left sidebar buttons */
   font-weight: 400 !important; /* Normal weight by default */
 }
 
@@ -957,7 +980,7 @@ html:not(.dark) .table-of-contents [class*="active"],
 html:not(.dark) #on-this-page [aria-current],
 html:not(.dark) .toc [aria-current],
 html:not(.dark) .table-of-contents [aria-current] {
-  color: #6b7280 !important; /* Keep gray instead of yellow */
+  color: #506880 !important; /* Keep gray instead of yellow */
   font-weight: 550 !important; /* Slight weight increase for active sections */
 }
 
@@ -974,11 +997,11 @@ html:not(.dark) .text-gray-400 {
 /* ============== ICON COLOR FIXES FOR INTRODUCTION DIAGRAM ============== */
 /* Force yellow icons in the introduction diagram */
 .not-prose .icon.inline {
-  background-color: #E6C147 !important;
+  background-color: #F7B844 !important;
 }
 
 .dark .not-prose .icon.inline {
-  background-color: #E6C147 !important;
+  background-color: #F7B844 !important;
 }
 
 /* ============== ADDITIONAL DARK MODE FIXES ============== */
@@ -991,7 +1014,7 @@ html:not(.dark) .text-gray-400 {
 .dark #sidebar-content .flex-1,
 .dark .sidebar-item,
 .dark .nav-link {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Sidebar group headers and navigation items */
@@ -999,7 +1022,7 @@ html:not(.dark) .text-gray-400 {
 .dark #sidebar-content .text-sm,
 .dark #sidebar-content .leading-6,
 .dark .sidebar-group-header {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Main content body text improvements */
@@ -1007,7 +1030,7 @@ html:not(.dark) .text-gray-400 {
 .dark .prose-gray p,
 .dark .prose-invert p,
 .dark .mt-2.text-lg.prose p {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: List item descriptions and bullet points */
@@ -1015,7 +1038,7 @@ html:not(.dark) .text-gray-400 {
 .dark ol li,
 .dark .prose ul li,
 .dark .prose ol li {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Step descriptions and numbered lists */
@@ -1023,14 +1046,14 @@ html:not(.dark) .text-gray-400 {
 .dark .steps p,
 .dark [data-component-part="step-content"] p,
 .dark [role="listitem"] p {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Tab content and descriptions */
 .dark .tab-content p,
 .dark [data-component-part="tab-content"] p,
 .dark .prose.dark\:prose-dark p {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Generic paragraph and text improvements */
@@ -1038,14 +1061,14 @@ html:not(.dark) .text-gray-400 {
 .dark .text-sm.leading-6,
 .dark .font-normal.text-sm.leading-6,
 .dark .mt-1.font-normal.text-sm.leading-6 {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Catch any remaining grey text variants */
 .dark [class*="text-gray"],
 .dark .text-muted,
 .dark .text-secondary {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Override Tailwind's prose component specifically */
@@ -1053,8 +1076,8 @@ html:not(.dark) .text-gray-400 {
 .dark .prose p,
 .dark .prose-gray,
 .dark .prose-invert {
-  --tw-prose-body: #d1d5db !important;
-  color: #d1d5db !important;
+  --tw-prose-body: #C4D0DC !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Navigation and menu items */
@@ -1063,7 +1086,7 @@ html:not(.dark) .text-gray-400 {
 .dark nav div,
 .dark .navigation-item,
 .dark .menu-item {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Override any remaining low contrast elements */
@@ -1085,7 +1108,7 @@ html:not(.dark) .text-gray-400 {
 .dark .content p,
 .dark .main p,
 .dark .section p {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* ============== HIGHLY SPECIFIC SCREENSHOT FIXES ============== */
@@ -1097,7 +1120,7 @@ html:not(.dark) .text-gray-400 {
 .dark #sidebar-content .group a,
 .dark #sidebar-content .group div,
 .dark #sidebar-content .group span {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Main content descriptions like "on CRM updates and follow-up emails" */
@@ -1105,7 +1128,7 @@ html:not(.dark) .text-gray-400 {
 .dark .mdx-content p:not(strong):not(b),
 .dark .text-lg p,
 .dark .mt-2 p {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Concept descriptions ("Your AI workers...", "Events that start...", etc.) */
@@ -1114,7 +1137,7 @@ html:not(.dark) .text-gray-400 {
 .dark ol p,
 .dark .list-item p,
 .dark .concept-description {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Step component text like "No credit card required" and "Build your first agent" */
@@ -1123,12 +1146,12 @@ html:not(.dark) .text-gray-400 {
 .dark [role="listitem"] div p,
 .dark [data-component-part="step-content"],
 .dark [data-component-part="step-content"] p {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Catch all paragraph text that might be using default colors */
 .dark p {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Override any element with low opacity that makes text hard to read */
@@ -1139,17 +1162,17 @@ html:not(.dark) .text-gray-400 {
 .dark p,
 .dark span:not([class*="bg-"]):not([style*="background"]),
 .dark div:not([class*="bg-"]):not([style*="background"]) {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Dark mode: Ensure sidebar items have proper contrast */
 .dark #sidebar-content * {
-  color: #d1d5db !important;
+  color: #C4D0DC !important;
 }
 
 /* Exception: Keep headings bright white */
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-  color: #f9fafb !important;
+  color: #EBEDF2 !important;
 }
 
 /* Exception: Keep primary colored elements as intended */
@@ -1166,14 +1189,14 @@ html:not(.dark) .text-gray-400 {
 /* Dark mode: Subtle hover state for sidebar items */
 .dark #sidebar-content a.group:hover,
 .dark #sidebar-content div.group:hover {
-  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow for better visibility */
+  background-color: rgba(247, 184, 68, 0.3) !important; /* Darker yellow for better visibility */
   border-radius: 0.75rem !important;
   opacity: 0.85 !important; /* Slightly increased opacity */
 }
 
 /* Dark mode: Remove the overly bright hover from existing styles */
 .dark #sidebar-content .group:hover {
-  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow, override any existing bright hover */
+  background-color: rgba(247, 184, 68, 0.3) !important; /* Darker yellow, override any existing bright hover */
 }
 
 /* Dark mode: Ensure active states keep their intended styling */
@@ -1181,7 +1204,7 @@ html:not(.dark) .text-gray-400 {
 .dark #sidebar-content li[style*="background"] div.group,
 .dark #sidebar-content a[style*="background"].group,
 .dark #sidebar-content div[style*="background"].group {
-  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow for active state */
+  background-color: rgba(247, 184, 68, 0.3) !important; /* Darker yellow for active state */
   opacity: 1 !important; /* Full opacity for active items */
   font-weight: 550 !important; /* Keep active items slightly bolder */
 }
@@ -1193,99 +1216,38 @@ html:not(.dark) .text-gray-400 {
 }
 
 /* ============== CALLOUT THEME FIXES ============== */
-/* Info callouts - yellow theme to match Lindy branding */
-.callout[data-callout-type="info"] {
-  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
-  background-color: #FEF9F0 !important; /* Specified cream background */
-}
-
-/* Note callouts - identical styling to Info */
-.callout[data-callout-type="note"] {
-  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
-  background-color: #FEF9F0 !important; /* Specified cream background */
-}
-
-/* Note callouts - identical styling to Info */
-.callout[data-callout-type="note"] {
-  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
-  background-color: #FEF9F0 !important; /* Specified cream background */
-}
-
-/* Warning callouts - identical styling to Info */
-.callout[data-callout-type="warning"] {
-  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
-  background-color: #FEF9F0 !important; /* Specified cream background */
-}
-
-/* Override green emerald colors with PURPLE theme colors for tips */
-
-/* Tip callouts - replace emerald with PURPLE */
+/* Callouts - blue theme so they stand out (Info/Note/Warning/Tip all blue) */
+.callout[data-callout-type="info"],
+.callout[data-callout-type="note"],
+.callout[data-callout-type="warning"],
 .callout[data-callout-type="tip"] {
-  border-color: rgba(147, 51, 234, 0.2) !important; /* Purple border instead of emerald */
-  background-color: rgba(147, 51, 234, 0.1) !important; /* Purple background instead of emerald */
+  border-color: rgba(58, 96, 255, 0.3) !important; /* Blue border */
+  background-color: rgba(58, 96, 255, 0.06) !important; /* Subtle blue background */
 }
 
-/* Dark mode info callouts - enhanced visibility */
-.dark .callout[data-callout-type="info"] {
-  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
-  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
-}
-
-/* Dark mode note callouts - enhanced visibility */
-.dark .callout[data-callout-type="note"] {
-  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
-  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
-}
-
-/* Dark mode warning callouts - enhanced visibility */
-.dark .callout[data-callout-type="warning"] {
-  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
-  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
-}
-
-/* Dark mode tip callouts */
+/* Dark mode - all callouts blue, enhanced visibility */
+.dark .callout[data-callout-type="info"],
+.dark .callout[data-callout-type="note"],
+.dark .callout[data-callout-type="warning"],
 .dark .callout[data-callout-type="tip"] {
-  border-color: rgba(147, 51, 234, 0.3) !important; /* Darker purple border for dark mode */
-  background-color: rgba(147, 51, 234, 0.15) !important; /* Darker purple background for dark mode */
+  border-color: rgba(58, 96, 255, 0.5) !important;
+  background-color: rgba(58, 96, 255, 0.15) !important;
 }
 
-/* Info callout icon color */
-.callout[data-callout-type="info"] svg {
-  color: #E6C147 !important; /* Yellow icon to match theme */
-}
-
-/* Note callout icon color */
-.callout[data-callout-type="note"] svg {
-  color: #E6C147 !important; /* Yellow icon to match theme */
-}
-
-/* Warning callout icon color */
-.callout[data-callout-type="warning"] svg {
-  color: #E6C147 !important; /* Yellow icon to match theme */
-}
-
-/* Tip callout icon color */
+/* Callout icon color - blue */
+.callout[data-callout-type="info"] svg,
+.callout[data-callout-type="note"] svg,
+.callout[data-callout-type="warning"] svg,
 .callout[data-callout-type="tip"] svg {
-  color: #7c3aed !important; /* Purple icon instead of emerald */
+  color: #3A60FF !important;
 }
 
-/* Dark mode info callouts */
-.dark .callout[data-callout-type="info"] svg {
-  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
-}
-
-/* Dark mode note callouts */
-.dark .callout[data-callout-type="note"] svg {
-  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
-}
-
-/* Dark mode warning callouts */
-.dark .callout[data-callout-type="warning"] svg {
-  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
-}
-
+/* Dark mode callout icons - light blue for contrast */
+.dark .callout[data-callout-type="info"] svg,
+.dark .callout[data-callout-type="note"] svg,
+.dark .callout[data-callout-type="warning"] svg,
 .dark .callout[data-callout-type="tip"] svg {
-  color: #a855f7 !important; /* Lighter purple icon for dark mode */
+  color: #94BCF5 !important;
 }
 
 /* Light mode: Ensure Info/Note/Warning/Tip callouts use default text colors */
@@ -1300,38 +1262,25 @@ html:not(.dark) .callout[data-callout-type="tip"] .prose {
   color: inherit !important; /* Use default text colors in light mode */
 }
 
-/* Tip callout text colors */
-.callout[data-callout-type="tip"] .prose {
-  color: #5b21b6 !important; /* Dark purple text for light mode */
-}
-
-/* Dark mode info callout text */
-.dark .callout[data-callout-type="info"] .prose {
-  color: #fcd34d !important; /* Light yellow text for dark mode */
-}
-
-/* Dark mode note callout text */
-.dark .callout[data-callout-type="note"] .prose {
-  color: #fcd34d !important; /* Light yellow text for dark mode */
-}
-
-/* Dark mode warning callout text */
+/* Dark mode callout text - light blue for all types */
+.dark .callout[data-callout-type="info"] .prose,
+.dark .callout[data-callout-type="note"] .prose,
 .dark .callout[data-callout-type="warning"] .prose {
-  color: #fcd34d !important; /* Light yellow text for dark mode */
+  color: #C8DEFA !important; /* Light blue text for dark mode */
 }
 
 .dark .callout[data-callout-type="tip"] .prose {
-  color: #c4b5fd !important; /* Light purple text for dark mode */
+  color: #C8DEFA !important; /* Light blue text for dark mode */
 }
 
 /* Override any specific emerald classes with PURPLE */
 .callout[data-callout-type="tip"] .text-emerald-600 {
-  color: #7c3aed !important; /* Override emerald text with purple */
+  color: #3A60FF !important; /* Override emerald text with purple */
 }
 
 .dark .callout[data-callout-type="tip"] .text-emerald-400,
 .dark .callout[data-callout-type="tip"] .text-emerald-200 {
-  color: #c4b5fd !important; /* Override dark mode emerald text with light purple */
+  color: #C8DEFA !important; /* Override dark mode emerald text with light purple */
 }
 
 /* ============== IMAGE BUFFER/PADDING FIXES ============== */
@@ -1481,7 +1430,7 @@ video {
 /* Ensure inline code in mdx content is bright in dark mode */
 .dark .mdx-content code:not(pre code),
 .dark .prose code:not(pre code) {
-  color: #f1f5f9 !important;
+  color: #EBEDF2 !important;
 }
 
 /* ============== INFO CARDS ============== */
@@ -1494,8 +1443,8 @@ video {
   border-radius: 14px;
   padding: 1.5rem 1.75rem;
   margin: 1.75rem 0;
-  background-color: rgba(240, 195, 65, 0.05);
-  box-shadow: 0 2px 10px rgba(240, 195, 65, 0.08);
+  background-color: rgba(247, 184, 68, 0.05);
+  box-shadow: 0 2px 10px rgba(247, 184, 68, 0.08);
 }
 
 .info-card > h3:first-child,
@@ -1540,10 +1489,10 @@ video {
 
 /* Dark-mode tuning */
 .dark .info-card {
-  border-color: rgba(245, 225, 152, 0.2);
-  border-left-color: #F5E198;
-  background-color: rgba(245, 225, 152, 0.07);
-  box-shadow: 0 4px 16px rgba(245, 225, 152, 0.08);
+  border-color: rgba(253, 233, 176, 0.2);
+  border-left-color: #FDE9B0;
+  background-color: rgba(253, 233, 176, 0.07);
+  box-shadow: 0 4px 16px rgba(253, 233, 176, 0.08);
 }
 
 
@@ -1591,4 +1540,38 @@ video {
 
 #table-of-contents-content {
   margin-top: 0.5rem !important;
+}
+
+/* Three Ways to Schedule — clickable pills */
+.schedule-pill {
+  display: flex !important;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid rgba(58, 96, 255, 0.35) !important;
+  border-radius: 12px;
+  background: rgba(58, 96, 255, 0.08);
+  text-decoration: none !important;
+  color: #1F3047 !important;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.2;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.schedule-pill span {
+  color: #1F3047 !important;
+}
+.schedule-pill:hover {
+  border-color: rgba(58, 96, 255, 0.8) !important;
+  background: rgba(58, 96, 255, 0.14);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(58, 96, 255, 0.16);
+}
+.schedule-pill:hover span,
+.schedule-pill:hover {
+  color: #3A60FF !important;
+}
+.schedule-pill svg {
+  flex-shrink: 0;
+  color: #3A60FF !important;
 }

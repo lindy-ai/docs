@@ -7,9 +7,9 @@
     { "source": "/WORKFLOW", "destination": "/", "permanent": true }
   ],
   "colors": {
-    "primary": "#E6C147",
-    "light": "#F5E198",
-    "dark": "#D4A514"
+    "primary": "#F7B844",
+    "light": "#FDE9B0",
+    "dark": "#DA920A"
   },
   "favicon": "/favicon.png",
   "logo": {
@@ -65,7 +65,12 @@
               "features/meeting-assistant/daily-brief",
               "features/meeting-assistant/meeting-prep",
               "features/meeting-assistant/meeting-notes",
-              "features/meeting-assistant/follow-ups",
+              "features/meeting-assistant/follow-ups"
+            ]
+          },
+          {
+            "group": "Scheduling Assistant",
+            "pages": [
               "features/meeting-assistant/scheduling"
             ]
           },
