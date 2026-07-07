@@ -1321,6 +1321,11 @@ figure {
   line-height: 0; /* Remove line-height spacing */
 }
 
+/* Even vertical spacing around top-level frames (image had margin:0, so gaps were uneven) */
+.frame {
+  margin: 1.5rem 0 !important;
+}
+
 /* Ensure images fill their containers completely */
 .frame img,
 .image-container img,
