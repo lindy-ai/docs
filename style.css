@@ -54,7 +54,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 1.875rem;
+  font-size: 1.35rem;
   margin-bottom: var(--spacing-xl);
   position: relative;
   display: inline-block;
@@ -72,21 +72,21 @@ h1::after {
 }
 
 h2 {
-  font-size: 1.375rem;
+  font-size: 1.15rem;
   line-height: 1.3;
   margin-top: 2.5rem;
   margin-bottom: 1.25rem;
 }
 
 h3 {
-  font-size: 1.15rem;
+  font-size: 1rem;
   line-height: 1.4;
   margin-top: var(--spacing-2xl);
   margin-bottom: var(--spacing-lg);
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   line-height: 1.5;
   margin-top: var(--spacing-xl);
