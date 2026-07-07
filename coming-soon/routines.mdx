@@ -1,0 +1,81 @@
+---
+title: "Routines"
+sidebarTitle: "Routines"
+description: "Save an instruction once and your assistant runs it on a schedule: a morning brief, a weekly summary, a Monday check-in."
+icon: "bolt"
+---
+
+A routine is a standing instruction your assistant runs on its own. Set the schedule and the prompt once, and Lindy handles the rest: every weekday at 9, every Monday morning, the first of the month. Each run lands in the routine's history, so you can see exactly what happened.
+
+{/* TODO: screenshot of the Routines page */}
+
+## How to Set It Up
+
+<Note>
+  Find your routines in the left sidebar under **Routines**. Toggle between your **Personal** routines and your team's at the top of the page.
+</Note>
+
+## The routines page
+
+You'll find four kinds of routines:
+
+<CardGroup cols={2}>
+  <Card title="Built-in" icon="wand-magic-sparkles">
+    Your assistant's everyday jobs: briefs, email, meetings, follow-ups. Toggle any on or off.
+  </Card>
+  <Card title="Custom" icon="sliders">
+    Routines you write yourself, or create by asking Lindy in chat.
+  </Card>
+  <Card title="Library" icon="books">
+    Ready-made templates: follow-ups, channel briefs, a weekly goals check-in.
+  </Card>
+  <Card title="Team Routines" icon="users">
+    Shared across your workspace, run for the whole team. Coming soon.
+  </Card>
+</CardGroup>
+
+## Create a routine
+
+<Tabs>
+  <Tab title="On the Routines page">
+    Click **New routine**. You've got two ways to set it up:
+
+    - **Describe it**: write it in plain language, like *"Every weekday at 9, summarize my unread email and Slack mentions."* Lindy reads that and fills in the name and schedule for you.
+    - **Set it up yourself**: pick the **name**, the **schedule** (daily, weekly, or monthly, plus a time), and the **prompt**.
+
+    Click **Create routine**. New routines start on.
+  </Tab>
+  <Tab title="In chat">
+    Tell your assistant what to do and when, and it makes the routine for you. It shows up under **Custom**.
+  </Tab>
+</Tabs>
+
+## Manage a routine
+
+Open any custom routine to edit its name, schedule, and prompt, or to see its history. Each card shows a status:
+
+| Status | What it means |
+| --- | --- |
+| **On** | Running on schedule |
+| **Paused** | Off for now, won't run until you turn it back on |
+| **Connect account** | Needs a connected account first |
+| **Needs setup** | Missing a step before it can run |
+
+To **pause** a routine, flip its toggle. To **delete** one, open it and click **Delete**. Open any routine to see its recent runs, each with a link to the task it kicked off.
+
+## Good to know
+
+- Routines run on a **schedule** today. Triggers that fire on an event, like a new email landing, are on the way.
+- **Team routines** are created and edited by workspace admins. Everyone else can see them.
+- A routine needs its connected accounts and a way to reach you. Until it has both, it shows **Needs setup** instead of turning on.
+
+## Relevant Docs
+
+<CardGroup cols={2}>
+  <Card title="Daily Briefings" icon="newspaper" href="/features/meeting-assistant/daily-brief">
+    The morning brief, one of your built-in routines
+  </Card>
+  <Card title="Ad Hoc Tasks" icon="wand-magic-sparkles" href="/features/ad-hoc-tasks">
+    One-off jobs you hand to Lindy on the spot
+  </Card>
+</CardGroup>
