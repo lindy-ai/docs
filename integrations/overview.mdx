@@ -1,0 +1,95 @@
+---
+title: 'Integrations'
+sidebarTitle: 'Integrations'
+description: 'Connect Lindy to the tools your team already uses, and control what it can do with guardrails.'
+icon: 'plug'
+---
+
+Integrations connect Lindy to the tools and accounts it works with: Gmail, Slack, Notion, Google Drive, and more.
+
+<Frame>
+  <img src="/lindy-brand-assets/integrations/integrations-panel.png" alt="The Integrations page: tools grouped by category, connected accounts, and a guardrail dropdown" />
+</Frame>
+
+## Where to find it
+
+Integrations is a top-level item in the left sidebar, moved out of Settings. Click it to land on the main Integrations page, which shows every available tool grouped by category.
+
+## How it works
+
+Each integration shows as a row with a status dot:
+
+- **Green dot**: connected and healthy.
+- **Red dot**: needs reconnect, usually an expired token.
+- **Gray dot**: not connected yet.
+
+Click a row to expand it and see the connected accounts underneath. Each account row shows the email or label, who connected it, and its health status.
+
+## Personal vs team
+
+Two tabs sit at the top: **Personal** and **Team**.
+
+- **Personal**: your own connections, private to you. Your Lindy uses them for your personal workflows, DMs, and the web app.
+- **Team**: connections shared with the workspace. An owner or admin designates one of their personal connections as a team resource. Team members' Lindy then reads the tool as that account, and actions use that account's permissions.
+
+Only workspace owners and admins can share a connection to the team. Members can see team connections but cannot change them.
+
+## Add an integration
+
+Click **Add integration** and search by tool name. When you find what you need, click **Connect**:
+
+<Steps>
+  <Step title="Set up access">
+    Complete the OAuth or API key setup for the tool.
+  </Step>
+  <Step title="Actions enable automatically">
+    Every action for that tool turns on right away. There is no action-picking step.
+  </Step>
+  <Step title="It joins your list">
+    The integration appears in your list with a green dot.
+  </Step>
+</Steps>
+
+For tools that support multiple accounts, like Gmail, add another by clicking **Add account** under that integration's row.
+
+## Guardrails
+
+Guardrails are the permission controls, and they are the big one for Teammate. Each integration has a guardrail dropdown with three options:
+
+| Setting | What it means |
+| --- | --- |
+| **Always allow** | Lindy performs write actions without asking. |
+| **Require approval** | Lindy asks for confirmation in Slack before a write. |
+| **Don't offer** | Lindy never suggests or performs writes with this tool. |
+
+Guardrails only apply in **shared Slack threads**. They do not apply in your personal web app chat, Slack DMs with Lindy, or iMessage and SMS. Read actions like checking your calendar or searching email are never guarded. Only writes are.
+
+## How approvals work in Slack
+
+When Lindy wants to do something that needs approval, it posts a message in the Slack thread with **Approve** and **Deny** buttons.
+
+- The **requester** can always approve their own request.
+- A **workspace owner or admin** can also approve.
+- Anyone else gets a private note to ask the requester or an admin.
+
+**Approve** allows the action one time only and does not change the guardrail. **Always allow**, clicked by an owner or admin, changes the workspace setting for that tool. Clicked by a member, it sets a personal override that applies only to them.
+
+## Manage connections
+
+Each account row has a three-dot menu:
+
+- **Manage**: view details and rename the label.
+- **Share with workspace**: designate the connection as a team resource. Owners and admins only.
+- **Disconnect**: remove the account.
+
+If you remove the last account of an integration, the integration itself leaves your list.
+
+<Note>
+  Coming soon: per-account guardrails. Today a guardrail applies to every account under an integration. A future version will let you set a different guardrail per account, like work Gmail always allowed and personal Gmail requires approval.
+</Note>
+
+## Quick tips
+
+- **Connect your most-used integrations first**: the ones you will lean on most in Slack.
+- **Set guardrails to match your comfort level**: you can always change them later.
+- **Use a dedicated account for shared Notion**: if you don't want your personal Notion shared with the whole team.

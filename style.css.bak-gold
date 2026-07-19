@@ -6,18 +6,18 @@
   --font-sans: inherit;
   
   /* Colors */
-  --color-primary: #1A1A1A;
-  --color-primary-light: #EFEEEC;
-  --color-primary-lighter: #EFEEEC;
-  --color-link: #1A1A1A;
-  --color-link-hover: #000000;
+  --color-primary: #F0C341;
+  --color-primary-light: #F5E1C3;
+  --color-primary-lighter: #F5DDB5;
+  --color-link: #E6C147;
+  --color-link-hover: #D4A73A;
   --color-text-primary: #1A1A1A;
   --color-text-secondary: #4A4A4A;
   --color-text-muted: #B0B0B0;
   --color-border: #E5E5E5;
   --color-bg-light: #f8f9fa;
-  --color-bg-code: #F6F5F3;
-  --color-code: #1A1A1A;
+  --color-bg-code: #FEF9F0;
+  --color-code: #C9A342;
   
   /* Dark mode colors */
   --color-dark-bg: #1A1A1A;
@@ -133,7 +133,7 @@ a {
 
 a:hover {
   color: var(--color-link-hover);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* Code styling */
@@ -181,7 +181,7 @@ a.button {
   text-decoration: none;
   display: inline-block;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(120, 118, 114, 0.25);
+  box-shadow: 0 4px 12px rgba(240, 195, 65, 0.25);
   position: relative;
   overflow: hidden;
 }
@@ -206,7 +206,7 @@ a.button:hover::before {
 .button:hover,
 a.button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(120, 118, 114, 0.35);
+  box-shadow: 0 6px 20px rgba(240, 195, 65, 0.35);
 }
 
 /* Navigation items */
@@ -270,7 +270,7 @@ a.button:hover {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(120, 118, 114, 0.12);
+  box-shadow: 0 8px 24px rgba(240, 195, 65, 0.12);
   border-color: transparent;
 }
 
@@ -280,14 +280,14 @@ a.button:hover {
 
 /* Gradient backgrounds - consolidated */
 [style*="background: linear-gradient"],
-[style*="#1A1A1A"], [style*="#EFEEEC"], [style*="#EFEEEC"],
+[style*="#F0C341"], [style*="#F5E1C3"], [style*="#F5DDB5"],
 [style*="#FDD656"], [style*="#FEF4D3"], [style*="#FDF1DD"] {
   position: relative;
   color: var(--color-text-primary) !important;
 }
 
 [style*="background: linear-gradient"] *,
-[style*="#1A1A1A"] *, [style*="#EFEEEC"] *, [style*="#EFEEEC"] *,
+[style*="#F0C341"] *, [style*="#F5E1C3"] *, [style*="#F5DDB5"] *,
 [style*="#FDD656"] *, [style*="#FEF4D3"] *, [style*="#FDF1DD"] * {
   position: relative;
   z-index: 1;
@@ -310,7 +310,7 @@ a.button:hover {
 
 /* Gradient overlay for contrast */
 [style*="background: linear-gradient"]::after,
-[style*="#1A1A1A"]::before, [style*="#EFEEEC"]::before, [style*="#EFEEEC"]::before,
+[style*="#F0C341"]::before, [style*="#F5E1C3"]::before, [style*="#F5DDB5"]::before,
 [style*="#FDD656"]::before, [style*="#FEF4D3"]::before, [style*="#FDF1DD"]::before {
   content: '';
   position: absolute;
@@ -382,7 +382,7 @@ a.button:hover {
 /* Keep the card hover animation and shadow, but no background fill */
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(120, 118, 114, 0.16);
+  box-shadow: 0 8px 24px rgba(240, 195, 65, 0.16);
   border-color: var(--color-border); /* Keep the normal border */
   text-decoration: none !important; /* Remove default underline on entire card */
 }
@@ -583,7 +583,7 @@ li[aria-expanded="true"] > div.group svg:last-child {
 }
 
 .frame:hover {
-  box-shadow: 0 6px 20px rgba(120, 118, 114, 0.25);
+  box-shadow: 0 6px 20px rgba(240, 195, 65, 0.25);
 }
 
 /* Generic video styling */
@@ -610,7 +610,7 @@ video {
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07); /* subtle shadow */
 }
 .video-card:hover {
-  box-shadow: 0 8px 28px rgba(120, 118, 114, 0.18); /* yellow glow */
+  box-shadow: 0 8px 28px rgba(240, 195, 65, 0.18); /* yellow glow */
 }
 
 .video-card video {
@@ -697,7 +697,7 @@ a[href^="mailto:support@lindy.ai"] {
 
 /* Dark mode: Dashboard button background */
 .dark #topbar-cta-button > a > span.absolute {
-  background: rgba(120, 118, 114, 0.15) !important; /* Subtle dark mode yellow background */
+  background: rgba(240, 195, 65, 0.15) !important; /* Subtle dark mode yellow background */
 }
 
 /* Dark mode: Dashboard text and arrow colors */
@@ -711,7 +711,7 @@ a[href^="mailto:support@lindy.ai"] {
 
 /* Dark mode: Dashboard button hover state */
 .dark #topbar-cta-button > a:hover > span.absolute {
-  background: rgba(120, 118, 114, 0.25) !important; /* Slightly more prominent on hover */
+  background: rgba(240, 195, 65, 0.25) !important; /* Slightly more prominent on hover */
   opacity: 1 !important; /* Override the opacity rule */
 }
 
@@ -730,36 +730,36 @@ a[href^="mailto:support@lindy.ai"] {
 .dark [class*="text-amber"],
 .dark .gradient-text,
 .dark .text-link,
-.dark a[style*="color: #1A1A1A"],
-.dark a[style*="color: #1A1A1A"],
-.dark span[style*="color: #1A1A1A"],
-.dark span[style*="color: #1A1A1A"] {
-  color: #E5E4E1 !important; /* Lighter, consistent yellow for all text */
+.dark a[style*="color: #F0C341"],
+.dark a[style*="color: #E6C147"],
+.dark span[style*="color: #F0C341"],
+.dark span[style*="color: #E6C147"] {
+  color: #F5E198 !important; /* Lighter, consistent yellow for all text */
 }
 
 /* Dark mode: Standardize all yellow backgrounds */
-.dark [style*="background: #1A1A1A"],
-.dark [style*="background: #1A1A1A"],
-.dark [style*="background-color: #1A1A1A"],
-.dark [style*="background-color: #1A1A1A"],
+.dark [style*="background: #F0C341"],
+.dark [style*="background: #E6C147"],
+.dark [style*="background-color: #F0C341"],
+.dark [style*="background-color: #E6C147"],
 .dark .bg-primary,
 .dark .bg-primary-light {
-  background-color: #E5E4E1 !important; /* Lighter yellow for backgrounds */
+  background-color: #F5E198 !important; /* Lighter yellow for backgrounds */
 }
 
 /* Dark mode: Standardize yellow borders */
-.dark [style*="border-color: #1A1A1A"],
-.dark [style*="border-color: #1A1A1A"],
+.dark [style*="border-color: #F0C341"],
+.dark [style*="border-color: #E6C147"],
 .dark .border-primary,
 .dark .border-primary-light {
-  border-color: #E5E4E1 !important; /* Lighter yellow for borders */
+  border-color: #F5E198 !important; /* Lighter yellow for borders */
 }
 
 /* Dark mode: Override any CSS custom properties for yellow */
 .dark {
-  --color-primary: #E5E4E1 !important;
-  --color-primary-light: #E5E4E1 !important;
-  --color-link: #E5E4E1 !important;
+  --color-primary: #F5E198 !important;
+  --color-primary-light: #F5E198 !important;
+  --color-link: #F5E198 !important;
   --color-link-hover: #F3D773 !important; /* Slightly darker for hover */
 }
 
@@ -767,28 +767,28 @@ a[href^="mailto:support@lindy.ai"] {
 .dark .nav-item:hover,
 .dark .nav-item.active,
 .dark a:hover {
-  color: #E5E4E1 !important;
+  color: #F5E198 !important;
 }
 
 /* Dark mode: Any remaining yellow elements */
 .dark .yellow,
 .dark .primary-color,
 .dark [class*="primary"] {
-  color: #E5E4E1 !important;
+  color: #F5E198 !important;
 }
 
 /* Dark mode: Underlines and decorations */
 .dark .text-decoration-yellow,
 .dark [style*="text-decoration-color"],
 .dark .underline-yellow {
-  text-decoration-color: #E5E4E1 !important;
+  text-decoration-color: #F5E198 !important;
 }
 
 /* Dark mode: Sidebar "On this page" yellow text */
 .dark #on-this-page .text-primary,
 .dark .toc .text-primary,
 .dark .table-of-contents .text-primary {
-  color: #E5E4E1 !important;
+  color: #F5E198 !important;
 }
 
 /* Light mode: Keep existing light styling unchanged */
@@ -981,11 +981,11 @@ html:not(.dark) .text-gray-400 {
 /* ============== ICON COLOR FIXES FOR INTRODUCTION DIAGRAM ============== */
 /* Force yellow icons in the introduction diagram */
 .not-prose .icon.inline {
-  background-color: #1A1A1A !important;
+  background-color: #E6C147 !important;
 }
 
 .dark .not-prose .icon.inline {
-  background-color: #1A1A1A !important;
+  background-color: #E6C147 !important;
 }
 
 /* ============== ADDITIONAL DARK MODE FIXES ============== */
@@ -1173,14 +1173,14 @@ html:not(.dark) .text-gray-400 {
 /* Dark mode: Subtle hover state for sidebar items */
 .dark #sidebar-content a.group:hover,
 .dark #sidebar-content div.group:hover {
-  background-color: rgba(120, 118, 114, 0.3) !important; /* Darker yellow for better visibility */
+  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow for better visibility */
   border-radius: 0.75rem !important;
   opacity: 0.85 !important; /* Slightly increased opacity */
 }
 
 /* Dark mode: Remove the overly bright hover from existing styles */
 .dark #sidebar-content .group:hover {
-  background-color: rgba(120, 118, 114, 0.3) !important; /* Darker yellow, override any existing bright hover */
+  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow, override any existing bright hover */
 }
 
 /* Dark mode: Ensure active states keep their intended styling */
@@ -1188,7 +1188,7 @@ html:not(.dark) .text-gray-400 {
 .dark #sidebar-content li[style*="background"] div.group,
 .dark #sidebar-content a[style*="background"].group,
 .dark #sidebar-content div[style*="background"].group {
-  background-color: rgba(120, 118, 114, 0.3) !important; /* Darker yellow for active state */
+  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow for active state */
   opacity: 1 !important; /* Full opacity for active items */
   font-weight: 550 !important; /* Keep active items slightly bolder */
 }
@@ -1202,108 +1202,93 @@ html:not(.dark) .text-gray-400 {
 /* ============== CALLOUT THEME FIXES ============== */
 /* Info callouts - yellow theme to match Lindy branding */
 .callout[data-callout-type="info"] {
-  border-color: rgba(120, 118, 114, 0.3) !important; /* Yellow border */
-  background-color: #F6F5F3 !important; /* Specified cream background */
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
 }
 
 /* Note callouts - identical styling to Info */
 .callout[data-callout-type="note"] {
-  border-color: rgba(120, 118, 114, 0.3) !important; /* Yellow border */
-  background-color: #F6F5F3 !important; /* Specified cream background */
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
 }
 
 /* Note callouts - identical styling to Info */
 .callout[data-callout-type="note"] {
-  border-color: rgba(120, 118, 114, 0.3) !important; /* Yellow border */
-  background-color: #F6F5F3 !important; /* Specified cream background */
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
 }
 
 /* Warning callouts - identical styling to Info */
 .callout[data-callout-type="warning"] {
-  border-color: rgba(120, 118, 114, 0.3) !important; /* Yellow border */
-  background-color: #F6F5F3 !important; /* Specified cream background */
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
 }
 
 /* Override green emerald colors with PURPLE theme colors for tips */
 
 /* Tip callouts - replace emerald with PURPLE */
 .callout[data-callout-type="tip"] {
-  border-color: rgba(120, 118, 114, 0.2) !important; /* Purple border instead of emerald */
-  background-color: rgba(120, 118, 114, 0.1) !important; /* Purple background instead of emerald */
-}
-
-/* Check callouts - filled green box (matches the dark-mode green).
-   Extra specificity to beat the html:not(.dark) [data-callout-type] white fill. */
-html:not(.dark) .callout[data-callout-type="check"],
-:root:not(.dark) .callout[data-callout-type="check"] {
-  border-color: #C3E0C9 !important;
-  background-color: #E7F3E9 !important;
-}
-html:not(.dark) .callout[data-callout-type="check"] svg {
-  color: #16A34A !important;
-}
-.dark .callout[data-callout-type="check"] {
-  border-color: rgba(34, 197, 94, 0.4) !important;
-  background-color: rgba(34, 197, 94, 0.12) !important;
+  border-color: rgba(147, 51, 234, 0.2) !important; /* Purple border instead of emerald */
+  background-color: rgba(147, 51, 234, 0.1) !important; /* Purple background instead of emerald */
 }
 
 /* Dark mode info callouts - enhanced visibility */
 .dark .callout[data-callout-type="info"] {
-  border-color: rgba(120, 118, 114, 0.5) !important; /* Stronger yellow border for better visibility */
-  background-color: rgba(120, 118, 114, 0.15) !important; /* More prominent yellow background for dark mode */
+  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
+  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
 }
 
 /* Dark mode note callouts - enhanced visibility */
 .dark .callout[data-callout-type="note"] {
-  border-color: rgba(120, 118, 114, 0.5) !important; /* Stronger yellow border for better visibility */
-  background-color: rgba(120, 118, 114, 0.15) !important; /* More prominent yellow background for dark mode */
+  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
+  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
 }
 
 /* Dark mode warning callouts - enhanced visibility */
 .dark .callout[data-callout-type="warning"] {
-  border-color: rgba(120, 118, 114, 0.5) !important; /* Stronger yellow border for better visibility */
-  background-color: rgba(120, 118, 114, 0.15) !important; /* More prominent yellow background for dark mode */
+  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
+  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
 }
 
 /* Dark mode tip callouts */
 .dark .callout[data-callout-type="tip"] {
-  border-color: rgba(120, 118, 114, 0.3) !important; /* Darker purple border for dark mode */
-  background-color: rgba(120, 118, 114, 0.15) !important; /* Darker purple background for dark mode */
+  border-color: rgba(147, 51, 234, 0.3) !important; /* Darker purple border for dark mode */
+  background-color: rgba(147, 51, 234, 0.15) !important; /* Darker purple background for dark mode */
 }
 
 /* Info callout icon color */
 .callout[data-callout-type="info"] svg {
-  color: #1A1A1A !important; /* Yellow icon to match theme */
+  color: #E6C147 !important; /* Yellow icon to match theme */
 }
 
 /* Note callout icon color */
 .callout[data-callout-type="note"] svg {
-  color: #1A1A1A !important; /* Yellow icon to match theme */
+  color: #E6C147 !important; /* Yellow icon to match theme */
 }
 
 /* Warning callout icon color */
 .callout[data-callout-type="warning"] svg {
-  color: #1A1A1A !important; /* Yellow icon to match theme */
+  color: #E6C147 !important; /* Yellow icon to match theme */
 }
 
 /* Tip callout icon color */
 .callout[data-callout-type="tip"] svg {
-  color: #1A1A1A !important; /* Purple icon instead of emerald */
+  color: #7c3aed !important; /* Purple icon instead of emerald */
 }
 
 /* Dark mode info callouts */
 .dark .callout[data-callout-type="info"] svg {
-  color: #E5E4E1 !important; /* Lighter yellow icon for dark mode */
+  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
 }
 
 /* Dark mode note callouts */
 .dark .callout[data-callout-type="note"] svg {
-  color: #E5E4E1 !important; /* Lighter yellow icon for dark mode */
+  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
 }
 
 /* Dark mode warning callouts */
 .dark .callout[data-callout-type="warning"] svg {
-  color: #E5E4E1 !important; /* Lighter yellow icon for dark mode */
+  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
 }
 
 .dark .callout[data-callout-type="tip"] svg {
@@ -1348,7 +1333,7 @@ html:not(.dark) .callout[data-callout-type="tip"] .prose {
 
 /* Override any specific emerald classes with PURPLE */
 .callout[data-callout-type="tip"] .text-emerald-600 {
-  color: #1A1A1A !important; /* Override emerald text with purple */
+  color: #7c3aed !important; /* Override emerald text with purple */
 }
 
 .dark .callout[data-callout-type="tip"] .text-emerald-400,
@@ -1516,8 +1501,8 @@ video {
   border-radius: 14px;
   padding: 1.5rem 1.75rem;
   margin: 1.75rem 0;
-  background-color: rgba(120, 118, 114, 0.05);
-  box-shadow: 0 2px 10px rgba(120, 118, 114, 0.08);
+  background-color: rgba(240, 195, 65, 0.05);
+  box-shadow: 0 2px 10px rgba(240, 195, 65, 0.08);
 }
 
 .info-card > h3:first-child,
@@ -1563,7 +1548,7 @@ video {
 /* Dark-mode tuning */
 .dark .info-card {
   border-color: rgba(245, 225, 152, 0.2);
-  border-left-color: #E5E4E1;
+  border-left-color: #F5E198;
   background-color: rgba(245, 225, 152, 0.07);
   box-shadow: 0 4px 16px rgba(245, 225, 152, 0.08);
 }
@@ -1613,476 +1598,4 @@ video {
 
 #table-of-contents-content {
   margin-top: 0.5rem !important;
-}
-
-/* ===================================================================== */
-/* Lindy 2026 palette: WHITE background, #EFEEEC accent surface (app look) */
-/* ===================================================================== */
-html:not(.dark),
-html:not(.dark) body,
-html:not(.dark) #sidebar,
-html:not(.dark) #navbar,
-html:not(.dark) header#header,
-html:not(.dark) #topbar {
-  background-color: #FFFFFF !important;
-}
-
-/* #EFEEEC as the selected / hover surface, echoing the app sidebar */
-html:not(.dark) #sidebar a:hover,
-html:not(.dark) #sidebar li[data-active="true"] > a,
-html:not(.dark) #sidebar a[aria-current="page"],
-html:not(.dark) #navigation-items a:hover {
-  background-color: #EFEEEC !important;
-  border-radius: 8px;
-}
-
-/* ===================================================================== */
-/* Subtle, compact cards — no lift, small titles, tight padding          */
-/* ===================================================================== */
-.card {
-  padding: 1rem 1.25rem !important;
-  border-radius: 12px !important;
-  box-shadow: none !important;
-  border: 1px solid #ECECEC !important;
-}
-.card:hover {
-  transform: none !important;
-  box-shadow: none !important;
-  border-color: #DEDEDE !important;
-}
-.card h2,
-.card h3,
-.card h4,
-.card .card-title {
-  font-size: 1rem !important;
-  font-weight: 600 !important;
-  line-height: 1.3 !important;
-  margin: 0.35rem 0 0.2rem !important;
-}
-.card p {
-  font-size: 0.9rem !important;
-  line-height: 1.5 !important;
-  margin: 0 !important;
-}
-.card svg,
-.card .icon {
-  width: 1.05rem !important;
-  height: 1.05rem !important;
-}
-/* no gold/underline flourish on hover — keep it flat */
-.card:hover h2,
-.card:hover h3,
-.card:hover h4,
-.card:hover .card-title {
-  text-decoration: none !important;
-}
-
-/* ===================================================================== */
-/* Lindy 2026 refinements: blue accent, no H1, edgeless callouts          */
-/* ===================================================================== */
-
-/* Never render a page H1 title */
-h1 { display: none !important; }
-
-/* Blue is the single accent */
-:root:not(.dark) {
-  --color-primary: #1A1A1A !important;
-  --color-link: #1A1A1A !important;
-  --color-link-hover: #1A1A1A !important;
-}
-:root:not(.dark) a:hover { color: #1A1A1A !important; }
-
-/* Sidebar: blue on hover, blue active label, soft gray selected pill */
-html:not(.dark) #sidebar a:hover,
-html:not(.dark) #navigation-items a:hover {
-  color: #1A1A1A !important;
-  background-color: transparent !important;
-}
-html:not(.dark) #sidebar a[aria-current="page"],
-html:not(.dark) #sidebar li[data-active="true"] > a {
-  color: #1A1A1A !important;
-  background-color: #F2F3F5 !important;
-}
-
-/* Callouts: no edge, subtle neutral fill, gray icon */
-html:not(.dark) .callout,
-html:not(.dark) [data-callout-type],
-html:not(.dark) [class*="callout"] {
-  border: none !important;
-  box-shadow: none !important;
-  background-color: #F7F7F6 !important;
-}
-html:not(.dark) .callout svg,
-html:not(.dark) [data-callout-type] svg { color: #6B7280 !important; }
-
-/* Card titles stay small however Mintlify renders them */
-.card h2, .card h3, .card h4,
-.card .card-title,
-.card [class*="font-semibold"],
-.card [class*="text-lg"], .card [class*="text-xl"], .card [class*="text-2xl"] {
-  font-size: 1rem !important;
-  font-weight: 600 !important;
-  line-height: 1.3 !important;
-}
-
-/* FAQ accordion: align the chevron with the title, blue on hover */
-[class*="accordion"] summary,
-[class*="accordion"] button,
-[class*="accordion"] [class*="title"] { align-items: center !important; }
-[class*="accordion"] summary:hover,
-[class*="accordion"] button:hover { color: #1A1A1A !important; }
-
-/* ===================================================================== */
-/* Sidebar: plain text everywhere, understated section labels            */
-/* ===================================================================== */
-.sidebar-group-header,
-#sidebar-content .sidebar-group-header {
-  text-transform: none !important;
-  letter-spacing: normal !important;
-  font-size: 0.75rem !important;
-  font-weight: 600 !important;
-  color: #9A9A9A !important;
-  padding-left: 0.75rem !important;
-}
-/* Nav items: plain, light weight */
-#sidebar-content a.group,
-#sidebar-content div.group {
-  font-weight: 400 !important;
-  font-size: 0.9rem !important;
-}
-
-/* ===================================================================== */
-/* Hide markdown section headings (## and ###).                          */
-/* Targets only anchor-linked content headings (.whitespace-pre-wrap),   */
-/* so card titles (data-component-part), step/accordion titles, and       */
-/* sidebar links (.sidebar-title) all stay visible.                       */
-/* ===================================================================== */
-h2.whitespace-pre-wrap,
-h3.whitespace-pre-wrap {
-  display: none !important;
-}
-
-/* ===================================================================== */
-/* DESIGNER-FINAL: stone background, black text, white callouts, NO blue  */
-/* ===================================================================== */
-
-/* Stone background on page + chrome */
-html:not(.dark),
-html:not(.dark) body,
-html:not(.dark) #sidebar,
-html:not(.dark) #navbar,
-html:not(.dark) header#header,
-html:not(.dark) #topbar {
-  background-color: #EFEEEC !important;
-}
-
-/* Callouts: very white on the stone, no edge */
-html:not(.dark) .callout,
-html:not(.dark) [data-callout-type],
-html:not(.dark) [class*="callout"] {
-  background-color: #FFFFFF !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-html:not(.dark) .callout svg,
-html:not(.dark) [data-callout-type] svg { color: #6B7280 !important; }
-
-/* No blue anywhere — links, hover, active nav are all black */
-:root:not(.dark) {
-  --color-primary: #1A1A1A !important;
-  --color-link: #1A1A1A !important;
-  --color-link-hover: #1A1A1A !important;
-}
-:root:not(.dark) a,
-:root:not(.dark) a:hover { color: #1A1A1A !important; }
-html:not(.dark) #sidebar a:hover,
-html:not(.dark) #navigation-items a:hover {
-  color: #1A1A1A !important;
-  background-color: transparent !important;
-}
-html:not(.dark) #sidebar a[aria-current="page"],
-html:not(.dark) #sidebar li[data-active="true"] > a {
-  color: #1A1A1A !important;
-  background-color: #FFFFFF !important;
-}
-
-/* ===================================================================== */
-/* Refinements v2: hover=blue, white tables, tiny section titles, chevron */
-/* ===================================================================== */
-
-/* Hover is the one place blue is allowed */
-:root:not(.dark) a:hover { color: #2F6FEA !important; }
-#sidebar-content a.group:hover,
-#sidebar-content div.group:hover {
-  background-color: #E7E5E4 !important;
-  color: #2F6FEA !important;
-  border-radius: 0.75rem !important;
-}
-/* Selected item: black on white pill (no blue) */
-html:not(.dark) #sidebar a[aria-current="page"],
-html:not(.dark) #sidebar li[data-active="true"] > a {
-  color: #1A1A1A !important;
-  background-color: #FFFFFF !important;
-}
-
-/* Bring section titles BACK, but tiny (H5-size) so TOC anchors work */
-h2.whitespace-pre-wrap {
-  display: block !important;
-  font-size: 0.9rem !important;
-  font-weight: 600 !important;
-  color: #1A1A1A !important;
-  margin: 1.25rem 0 0.3rem !important;
-}
-h3.whitespace-pre-wrap {
-  display: block !important;
-  font-size: 0.82rem !important;
-  font-weight: 600 !important;
-  color: #4A4A4A !important;
-  margin: 1rem 0 0.25rem !important;
-}
-
-/* Sidebar section labels: small and understated */
-#sidebar-content .sidebar-group-header {
-  font-size: 0.72rem !important;
-  font-weight: 600 !important;
-  color: #9A9A9A !important;
-  text-transform: none !important;
-  letter-spacing: normal !important;
-  margin-bottom: 0.4rem !important;
-}
-
-/* Tables: embedded white blocks on the stone */
-html:not(.dark) table {
-  background-color: #FFFFFF !important;
-  border: 1px solid #E7E5E4 !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
-}
-html:not(.dark) thead,
-html:not(.dark) tbody,
-html:not(.dark) tr,
-html:not(.dark) th,
-html:not(.dark) td {
-  background-color: #FFFFFF !important;
-  border-color: #EFEEEC !important;
-}
-
-/* Sidebar dropdown: align the chevron with the label */
-#sidebar-content div.group {
-  display: flex !important;
-  align-items: center !important;
-}
-#sidebar-content div.group svg:last-child {
-  align-self: center !important;
-  margin-top: 0 !important;
-  flex-shrink: 0 !important;
-}
-
-/* Background updated to #FAFAF9 (page + chrome) */
-html:not(.dark),
-html:not(.dark) body,
-html:not(.dark) #sidebar,
-html:not(.dark) #navbar,
-html:not(.dark) header#header,
-html:not(.dark) #topbar {
-  background-color: #FAFAF9 !important;
-}
-
-/* ===================================================================== */
-/* Embedded white tables (v2): visible card, fit columns, real row lines  */
-/* ===================================================================== */
-html:not(.dark) [data-table-wrapper] {
-  background-color: #FFFFFF !important;
-  border: 1px solid #E7E5E4 !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
-  margin: 1.25em 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-}
-html:not(.dark) [data-table-wrapper] [data-component-part="scroll-area-viewport"] {
-  overflow: hidden !important;
-}
-html:not(.dark) table {
-  background-color: #FFFFFF !important;
-  margin: 0 !important;
-  width: 100% !important;
-}
-html:not(.dark) thead,
-html:not(.dark) tbody,
-html:not(.dark) tr,
-html:not(.dark) th,
-html:not(.dark) td {
-  background-color: #FFFFFF !important;
-}
-/* Fit columns: kill the forced 150px min-width so nothing is cut off */
-html:not(.dark) table th,
-html:not(.dark) table td {
-  min-width: 0 !important;
-  border: none !important;
-  padding: 0.6rem 0.9rem !important;
-  vertical-align: middle !important;
-}
-/* Visible separators */
-html:not(.dark) thead tr { border-bottom: 1px solid #E7E5E4 !important; }
-html:not(.dark) tbody tr + tr { border-top: 1px solid #F0EFED !important; }
-
-/* ===================================================================== */
-/* Accordion: center the caret with the title                            */
-/* ===================================================================== */
-[data-component-part="accordion-button"] {
-  display: flex !important;
-  align-items: center !important;
-}
-[data-component-part="accordion-caret-right"] {
-  display: flex !important;
-  align-items: center !important;
-  align-self: center !important;
-  margin-top: 0 !important;
-}
-[data-component-part="accordion-title"] {
-  font-size: 0.95rem !important;
-  font-weight: 600 !important;
-  line-height: 1.3 !important;
-  margin: 0 !important;
-}
-
-/* Sidebar section labels: slightly larger than body/nav text */
-#sidebar-content .sidebar-group-header {
-  font-size: 1rem !important;
-  font-weight: 600 !important;
-  color: #57534E !important;
-}
-
-/* Background -> #F5F5F4 */
-html:not(.dark),
-html:not(.dark) body,
-html:not(.dark) #sidebar,
-html:not(.dark) #navbar,
-html:not(.dark) header#header,
-html:not(.dark) #topbar {
-  background-color: #F5F5F4 !important;
-}
-
-/* Horizontal pills (force row layout over prose) */
-.lindy-pills {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 0.6rem !important;
-  margin: 0.75rem 0 1.5rem !important;
-}
-.lindy-pills .lindy-pill {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.45rem !important;
-  padding: 0.4rem 0.9rem !important;
-  background: #FFFFFF !important;
-  border: 1px solid #E7E5E4 !important;
-  border-radius: 999px !important;
-  font-size: 0.9rem !important;
-  font-weight: 500 !important;
-  white-space: nowrap !important;
-}
-.lindy-pills .lindy-pill p { margin: 0 !important; display: inline !important; }
-
-/* Callouts: subtle hover lift + shadow */
-html:not(.dark) .callout,
-html:not(.dark) [data-callout-type],
-html:not(.dark) [class*="callout"] {
-  transition: transform 0.18s ease, box-shadow 0.18s ease !important;
-}
-html:not(.dark) .callout:hover,
-html:not(.dark) [data-callout-type]:hover,
-html:not(.dark) [class*="callout"]:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
-}
-
-/* Tab panels: white blocks with padding (match the callout/table look) */
-html:not(.dark) [data-component-part="tab-content"],
-html:not(.dark) [role="tabpanel"] {
-  background-color: #FFFFFF !important;
-  border: 1px solid #E7E5E4 !important;
-  border-radius: 12px !important;
-  padding: 1.1rem 1.35rem !important;
-  margin-top: 0.75rem !important;
-}
-
-/* Sequential steps (1,2,3): white block like tables/tabs. Bullets stay plain. */
-html:not(.dark) .steps {
-  background-color: #FFFFFF !important;
-  border: 1px solid #E7E5E4 !important;
-  border-radius: 12px !important;
-  padding: 1.35rem 1.5rem 1.1rem !important;
-  margin: 1.25em 0 !important;
-}
-
-/* ===================================================================== */
-/* Sidebar polish: hover pill, remove left rail, bigger section titles    */
-/* ===================================================================== */
-
-/* Remove the faint left rail line on nav items */
-#sidebar-content a.group,
-#sidebar-content div.group {
-  border-left-color: transparent !important;
-}
-
-/* Visible hover: subtle gray pill (higher specificity than the transparent rule) */
-html:not(.dark) #sidebar-content a.group:hover,
-html:not(.dark) #sidebar-content div.group:hover {
-  background-color: #ECEBE9 !important;
-  border-radius: 0.6rem !important;
-  border-left-color: transparent !important;
-}
-
-/* Content section titles: bigger */
-h2.whitespace-pre-wrap {
-  display: block !important;
-  font-size: 1.2rem !important;
-  font-weight: 600 !important;
-  color: #1A1A1A !important;
-  margin: 1.5rem 0 0.4rem !important;
-}
-h3.whitespace-pre-wrap {
-  display: block !important;
-  font-size: 1.05rem !important;
-  font-weight: 600 !important;
-  color: #2A2A2A !important;
-  margin: 1.1rem 0 0.3rem !important;
-}
-
-/* ===================================================================== */
-/* App layout: WHITE sidebar + STONE content, gray pills, card shadow     */
-/* ===================================================================== */
-
-/* Stone content stays on body; sidebar becomes white */
-html:not(.dark) #sidebar,
-html:not(.dark) #sidebar-content {
-  background-color: #FFFFFF !important;
-}
-
-/* Active nav item: light gray pill (visible on the white sidebar) */
-html:not(.dark) #sidebar a[aria-current="page"],
-html:not(.dark) #sidebar li[data-active="true"] > a,
-html:not(.dark) #sidebar-content a.group[aria-current="page"] {
-  background-color: #E8E6E3 !important;
-  color: #1A1A1A !important;
-}
-/* Hover: lighter gray pill */
-html:not(.dark) #sidebar-content a.group:hover,
-html:not(.dark) #sidebar-content div.group:hover {
-  background-color: #F3F2F0 !important;
-  border-radius: 0.6rem !important;
-  border-left-color: transparent !important;
-}
-
-/* Action cards: hover = soft lift + shadow (no bleh black border/ring) */
-html:not(.dark) .card {
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease !important;
-}
-html:not(.dark) .card:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
-  border-color: #E7E5E4 !important;
-  --tw-ring-color: transparent !important;
 }

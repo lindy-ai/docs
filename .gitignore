@@ -1,1 +1,4 @@
 .DS_Store
+
+# Internal RFC / eng source material — never commit to the docs repo
+RFCs and lindy eng agent break down/

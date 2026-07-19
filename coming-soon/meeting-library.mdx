@@ -1,0 +1,107 @@
+---
+title: "Meetings"
+sidebarTitle: "Meetings"
+description: "Every meeting your team has ever had, in one place you can just ask. Lindy records, transcribes, and summarizes every call, and shared folders make that knowledge team-accessible."
+icon: "video"
+---
+
+Every meeting your team has ever had, in one place you can just ask. No more *"how'd the call go?"* or hunting for a recording. Lindy records, transcribes, and summarizes every meeting you attend, and shared folders make that knowledge available to the whole team.
+
+## How meetings work
+
+When Lindy joins a meeting on Google Meet, Zoom, or Teams, it records the full transcript and writes a summary with action items, decisions, and key quotes. Every finished meeting lands in your personal meeting library at [chat.lindy.ai/meetings](https://chat.lindy.ai/meetings).
+
+You can find any meeting by title, participant, or date range, or just ask Lindy about it.
+
+## Shared meeting folders
+
+A folder is a collection of meetings that a group of people can all see and query. Think **Sales calls**, **Customer feedback**, or **Acme onboarding**. One meeting can live in several folders at once.
+
+### Create a folder
+
+<Steps>
+  <Step title="Create the folder">
+    Go to the **Meetings** page and click **Create folder**. Give it a name.
+  </Step>
+  <Step title="Set who can see it">
+    Choose the visibility: just you, specific people, or your whole team.
+  </Step>
+  <Step title="Describe what belongs">
+    Instead of dragging meetings in by hand, describe which meetings belong in plain language: *"any sales call,"* *"any meeting where a user shares feedback,"* or *"all calls with Acme."* From then on, every finished meeting is filed into the right folder based on its transcript. No rules, no tags, no upkeep.
+  </Step>
+</Steps>
+
+<Tip>
+  When you create a folder, Lindy suggests meetings to add right away, based on your last ~100 meetings matched against your description.
+</Tip>
+
+### Share a folder
+
+Once a folder exists, share it with specific teammates or make it team-visible. Anyone you add gets an email notification that you shared the folder with them. They open it and can ask their own questions.
+
+| Visibility | Who sees it |
+| --- | --- |
+| **Only you** | Just you |
+| **Specific people** | Only the teammates you add |
+| **Your entire team** | Everyone in your workspace |
+
+### Add or remove meetings
+
+To move a meeting in or out of a folder, open its **⋮** menu and choose **Add or remove from folders**. If you own or attended the meeting, you can also take it out of a shared folder when the folder's policy allows it.
+
+## Chat with a meeting or folder
+
+This is the core interaction.
+
+- **One meeting**: open a meeting and ask about it directly. *"What did we decide?"* *"What were the action items?"* *"What did Sarah say about the timeline?"*
+- **A whole folder**: open a folder and ask across every meeting in it. *"What objections came up this week?"* Lindy pulls the answer together from all the calls in the folder and links you back to the meetings it drew from.
+
+## Ask Lindy in Slack
+
+In any public Slack channel, @mention Lindy and ask about meetings. Lindy can answer from:
+
+- **Team-visible meeting folders**
+- **Meetings shared with you**
+- **Your own personal meetings**, in DMs only
+
+For example: *"@Lindy what did customers say about onboarding last week?"* Lindy searches the relevant folders and answers, with links back to the source meetings.
+
+You can also reference a specific folder by name. Lindy knows which folders you have access to and scopes the answer to just that folder's meetings.
+
+<Note>
+  If answering in a public channel would need private meeting context, Lindy moves that part to a DM or tells you it can only answer privately.
+</Note>
+
+## Act on what was discussed
+
+From a meeting or folder chat, you can ask Lindy to take action on what came up:
+
+- *"Draft a follow-up email to Sarah based on what we agreed."*
+- *"Create a Notion task for the action items."*
+- *"Add these next steps to my Notion tracker."*
+- *"Send a Slack summary to the team."*
+
+Write actions always ask for confirmation before they run, so nothing happens silently.
+
+### Update Notion from a meeting
+
+If you have Notion connected, say something like *"add the action items from this meeting to my project tracker"* and Lindy creates the page or updates the database entry. It is meant to feel like a natural extension of the meeting, not a separate step.
+
+## Privacy
+
+A meeting belongs to its participants first, not to the workspace admin.
+
+- Your personal meetings stay private unless you share them or opt into a folder's auto-add.
+- Workspace admins can configure team-visible sources and rules, but they cannot silently push your private meetings into shared visibility.
+- If Lindy needs private context to answer a question in a public channel, it moves to a DM.
+
+## Relevant Docs
+
+<CardGroup cols={2}>
+  <Card title="Meeting Notes" icon="microphone" href="/features/meeting-assistant/meeting-notes">
+    How Lindy records and summarizes your meetings
+  </Card>
+  <Card title="Follow-ups" icon="paper-plane" href="/features/meeting-assistant/follow-ups">
+    Automatic follow-up emails after meetings
+  </Card>
+</CardGroup>

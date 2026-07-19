@@ -1,0 +1,66 @@
+---
+title: "Skills"
+sidebarTitle: "Skills"
+description: "Teach your assistant how you work: reusable playbooks it picks up on its own when a request calls for them."
+icon: "graduation-cap"
+---
+
+A skill is a playbook you teach your assistant: a named set of instructions for a procedure you repeat, like *how I write my weekly report*, *how I triage my inbox*, or *how I prep for a customer call*. Describe the process once, and from then on your assistant picks the right skill whenever a request calls for it. You never have to remember to invoke one.
+
+Think of skills as everything your assistant can do, plus what it can learn from you.
+
+{/* TODO: screenshot of the Skills page */}
+
+## How to Set It Up
+
+<Note>
+  Open **Skills** from the left sidebar to see every skill your assistant has, create new ones, edit their instructions, and turn them on or off.
+</Note>
+
+## Create a skill
+
+<Tabs>
+  <Tab title="In chat">
+    Tell your assistant how you want something handled, like *"When I ask for my weekly report, pull the numbers from the dashboard, lead with the top three changes, and keep it under a page."* It saves the process as a skill and uses it from then on.
+  </Tab>
+  <Tab title="On the Skills page">
+    Click **New skill**, give it a name and a description, and write the instructions. The description matters: it's how your assistant decides when the skill applies.
+  </Tab>
+</Tabs>
+
+## Three kinds of skills
+
+<CardGroup cols={1}>
+  <Card title="Your skills" icon="user">
+    Personal to you. Your assistant uses them only for your requests.
+  </Card>
+  <Card title="Team skills" icon="users">
+    Shared across your workspace, so everyone's assistant works the same way. Managed by workspace admins.
+  </Card>
+  <Card title="Built-in skills" icon="wand-magic-sparkles">
+    Ready to use out of the box. Browse the library and install the ones you want.
+  </Card>
+</CardGroup>
+
+You can customize any built-in skill by making your own version, then editing it like a skill you wrote yourself.
+
+## How your assistant picks a skill
+
+Your assistant always sees the list of available skills, just their names and descriptions. It loads a skill's full instructions only when the skill is actually relevant to what you asked. That way it has the right expertise on hand without slowing anything down.
+
+## Good to know
+
+- **Early access**: Skills is rolling out gradually behind feature flags, and isn't available to everyone yet.
+- **Turn skills off, don't delete them**: flip a skill off on the Skills page when you want your assistant to stop using it but might want it back.
+- **Descriptions do the routing**: if your assistant isn't picking a skill when you expect, make its description more specific about when it applies.
+
+## Relevant Docs
+
+<CardGroup cols={2}>
+  <Card title="Routines" icon="bolt" href="/coming-soon/routines">
+    Standing instructions that run on a schedule
+  </Card>
+  <Card title="Ad Hoc Tasks" icon="wand-magic-sparkles" href="/features/ad-hoc-tasks">
+    One-off jobs you hand to Lindy on the spot
+  </Card>
+</CardGroup>
