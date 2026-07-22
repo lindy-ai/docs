@@ -2108,3 +2108,29 @@ html:not(.dark) .card:hover {
   border-color: #E7E5E4 !important;
   --tw-ring-color: transparent !important;
 }
+
+/* Scheduling "Three Ways" pills (from main; missing on this branch's CSS) */
+.schedule-pill {
+  display: flex !important;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid rgba(58, 96, 255, 0.35) !important;
+  border-radius: 12px;
+  background: rgba(58, 96, 255, 0.08);
+  text-decoration: none !important;
+  color: #1F3047 !important;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.2;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.schedule-pill span { color: #1F3047 !important; }
+.schedule-pill:hover {
+  border-color: rgba(58, 96, 255, 0.8) !important;
+  background: rgba(58, 96, 255, 0.14);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(58, 96, 255, 0.16);
+}
+.schedule-pill:hover span, .schedule-pill:hover { color: #3A60FF !important; }
+.schedule-pill svg { flex-shrink: 0; color: #3A60FF !important; }
