@@ -1,107 +1,110 @@
 ---
 title: "Meetings"
 sidebarTitle: "Meetings"
-description: "Every meeting your team has ever had, in one place you can just ask. Lindy records, transcribes, and summarizes every call, and shared folders make that knowledge team-accessible."
+description: "Lindy records, transcribes, and summarizes your calls, files them into shared folders, and lets you ask questions across every meeting."
 icon: "video"
 ---
 
-Every meeting your team has ever had, in one place you can just ask. No more *"how'd the call go?"* or hunting for a recording. Lindy records, transcribes, and summarizes every meeting you attend, and shared folders make that knowledge available to the whole team.
+Every meeting your team has, in one place you can just ask. No more *"how'd the call go?"* or hunting for a recording. Lindy records, transcribes, and summarizes the meetings you attend, files them into folders, and shared folders make that knowledge available to the whole team.
 
-## How meetings work
+## How recording works
 
-When Lindy joins a meeting on Google Meet, Zoom, or Teams, it records the full transcript and writes a summary with action items, decisions, and key quotes. Every finished meeting lands in your personal meeting library at [chat.lindy.ai/meetings](https://chat.lindy.ai/meetings).
+When recording is on, Lindy sends a notetaker to your Google Meet, Zoom, or Teams calls. It joins **visibly, as a named participant** (you choose the display name), records the call, and writes a transcript and a summary with action items, decisions, and key quotes.
 
-You can find any meeting by title, participant, or date range, or just ask Lindy about it.
+The video link expires after about a day. The transcript and summary stay for good.
 
-## Shared meeting folders
+<Note>
+  Because the notetaker joins visibly, everyone on the call can see it's there. Still let participants know they're being recorded, as your local laws require.
+</Note>
 
-A folder is a collection of meetings that a group of people can all see and query. Think **Sales calls**, **Customer feedback**, or **Acme onboarding**. One meeting can live in several folders at once.
+## Recording settings
 
-### Create a folder
+Control recording from the **Meeting recording** card:
+
+- **Turn recording on or off.** A workspace admin can turn it off for everyone.
+- **Which meetings Lindy joins automatically:** all meetings, internal only, or external only.
+- **The notetaker's display name.**
+- **The recap email, and who gets it:** all participants, internal people only, or just you.
+- **How the summary reads:** free-text instructions to shape its tone and structure.
+- **Where the recap is delivered:** email, SMS, Slack DM, or Lindy chat.
+- **Follow-up actions** in plain English, like *"share the action items in Slack."*
+
+For a one-off call that isn't covered by your auto-join setting, Lindy can send a confirmation link so an attendee approves recording that specific meeting.
+
+## Your meeting library
+
+Every recorded meeting lands in the Meeting Hub at [chat.lindy.ai/meetings](https://chat.lindy.ai/meetings). Browse them as tiles or rows, search by title, participant, or date, and switch between a **Personal** and **Team** view.
+
+Open any meeting for its **Summary**, **Transcript**, **Video**, and a **Chat** scoped to that call, plus rename, copy, download, and share.
+
+## Organize with folders
+
+A folder is a collection of meetings a group can see and query, like **Sales calls**, **Customer feedback**, or **Acme onboarding**. One meeting can live in several folders.
 
 <Steps>
   <Step title="Create the folder">
-    Go to the **Meetings** page and click **Create folder**. Give it a name.
+    On the **Meetings** page, click **Create folder** and give it a name.
   </Step>
   <Step title="Set who can see it">
-    Choose the visibility: just you, specific people, or your whole team.
+    Choose the visibility: only you, specific people, or your entire team.
   </Step>
-  <Step title="Describe what belongs">
-    Instead of dragging meetings in by hand, describe which meetings belong in plain language: *"any sales call,"* *"any meeting where a user shares feedback,"* or *"all calls with Acme."* From then on, every finished meeting is filed into the right folder based on its transcript. No rules, no tags, no upkeep.
+  <Step title="Describe what belongs (optional)">
+    Turn on **Automatically add meetings to this folder** and describe the rule in plain language: *"any sales call,"* *"any meeting with customer feedback,"* or *"all calls with Acme."* Lindy files matching meetings for you, based on the transcript. No tags, no upkeep.
   </Step>
 </Steps>
 
 <Tip>
-  When you create a folder, Lindy suggests meetings to add right away, based on your last ~100 meetings matched against your description.
+  When you create a folder, Lindy suggests meetings to add right away, matched from your recent calls against your description.
 </Tip>
 
-### Share a folder
+### How auto-add respects each person
 
-Once a folder exists, share it with specific teammates or make it team-visible. Anyone you add gets an email notification that you shared the folder with them. They open it and can ask their own questions.
+Auto-add is per person, so a shared folder never pulls in someone else's meetings without their say-so. Each member of a shared folder chooses how the rule applies to their own meetings:
 
-| Visibility | Who sees it |
-| --- | --- |
-| **Only you** | Just you |
-| **Specific people** | Only the teammates you add |
-| **Your entire team** | Everyone in your workspace |
+- **Automatic** — matching meetings are added silently.
+- **Review** — matches show up in a *"Suggested for this folder"* strip to accept or dismiss.
 
-### Add or remove meetings
+If the folder's rule changes, everyone is asked again before their meetings are affected.
 
-To move a meeting in or out of a folder, open its **⋮** menu and choose **Add or remove from folders**. If you own or attended the meeting, you can also take it out of a shared folder when the folder's policy allows it.
+## Ask about your meetings
 
-## Chat with a meeting or folder
+Three ways to ask about past calls:
 
-This is the core interaction.
-
-- **One meeting**: open a meeting and ask about it directly. *"What did we decide?"* *"What were the action items?"* *"What did Sarah say about the timeline?"*
-- **A whole folder**: open a folder and ask across every meeting in it. *"What objections came up this week?"* Lindy pulls the answer together from all the calls in the folder and links you back to the meetings it drew from.
-
-## Ask Lindy in Slack
-
-In any public Slack channel, @mention Lindy and ask about meetings. Lindy can answer from:
-
-- **Team-visible meeting folders**
-- **Meetings shared with you**
-- **Your own personal meetings**, in DMs only
-
-For example: *"@Lindy what did customers say about onboarding last week?"* Lindy searches the relevant folders and answers, with links back to the source meetings.
-
-You can also reference a specific folder by name. Lindy knows which folders you have access to and scopes the answer to just that folder's meetings.
+- **One meeting** — open it and ask directly. *"What did we decide?"* *"What did Sarah say about the timeline?"*
+- **A whole folder** — open the folder for one ongoing chat across every meeting in it. *"What objections came up this week?"* Lindy pulls the answer from all the calls and links you back to them.
+- **Just ask Lindy** — in chat or Slack, ask it to find a meeting by title, people, or date, pull a specific call, or search across a folder. By default it looks at your own meetings, and only widens to shared meetings when a shared folder is involved.
 
 <Note>
-  If answering in a public channel would need private meeting context, Lindy moves that part to a DM or tells you it can only answer privately.
+  If answering in a public Slack channel would need private meeting context, Lindy moves that part to a DM or tells you it can only answer privately.
 </Note>
 
 ## Act on what was discussed
 
-From a meeting or folder chat, you can ask Lindy to take action on what came up:
+From a meeting or folder chat, ask Lindy to take action on what came up:
 
 - *"Draft a follow-up email to Sarah based on what we agreed."*
 - *"Create a Notion task for the action items."*
-- *"Add these next steps to my Notion tracker."*
 - *"Send a Slack summary to the team."*
 
 Write actions always ask for confirmation before they run, so nothing happens silently.
 
-### Update Notion from a meeting
-
-If you have Notion connected, say something like *"add the action items from this meeting to my project tracker"* and Lindy creates the page or updates the database entry. It is meant to feel like a natural extension of the meeting, not a separate step.
-
-## Privacy
+## Privacy and access
 
 A meeting belongs to its participants first, not to the workspace admin.
 
-- Your personal meetings stay private unless you share them or opt into a folder's auto-add.
-- Workspace admins can configure team-visible sources and rules, but they cannot silently push your private meetings into shared visibility.
-- If Lindy needs private context to answer a question in a public channel, it moves to a DM.
+- **Only you** — private to you (and system admins).
+- **Specific people** — only the teammates you add.
+- **Entire team** — everyone in that workspace.
+
+Access means viewing the folder and its meetings and adding or removing meetings. Renaming, editing, or deleting a folder stays with its owner. Meetings inherit their folder's access, and everything is scoped to the workspace the folder lives in, so nothing leaks across workspaces. Your personal meetings stay private unless you share them or opt a meeting into a folder, and admins can't silently push private meetings into shared visibility.
 
 ## Relevant Docs
 
 <CardGroup cols={2}>
-  <Card title="Meeting Notes" icon="microphone" href="/features/meeting-assistant/meeting-notes">
-    How Lindy records and summarizes your meetings
+  <Card title="Files" icon="files" href="/coming-soon/files">
+    The file explorer for everything Lindy uses
   </Card>
-  <Card title="Follow-ups" icon="paper-plane" href="/features/meeting-assistant/follow-ups">
-    Automatic follow-up emails after meetings
+  <Card title="Routines" icon="clock-rotate-left" href="/coming-soon/routines">
+    Recurring work Lindy runs on a schedule
   </Card>
 </CardGroup>

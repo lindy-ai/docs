@@ -1,22 +1,62 @@
 ---
 title: "Set up Lindy"
 sidebarTitle: "Setup"
-description: "Add Lindy to your team's Slack in three steps."
+description: "Get Lindy into your team's Slack, link everyone, and connect your email, calendar, and phone."
 icon: "slack"
 ---
 
-Add Lindy to your team's Slack, connect your tools, and @mention it.
+Setting up Lindy has two parts: an admin adds Lindy to your Slack workspace, then each person links their account and connects their tools.
+
+## 1. Set up your team
 
 <Steps>
-  <Step title="Add it to Slack">
-    Install Lindy from the [Slack marketplace](https://lindy.ai). One click, and the whole team gets Lindy.
+  <Step title="Install Lindy into Slack">
+    From Lindy (signed in), start the install. Slack's standard **Add to Slack** screen opens so you can approve the bot's permissions. As the installer, you're linked to your Lindy account right away, with no extra step.
+
+    Right after install, Lindy sends you a welcome DM confirming it's connected and explaining how to start.
   </Step>
-  <Step title="Connect your tools">
-    Authorize the tools you already use. Lindy sorts out the permissions for you.
-  </Step>
-  <Step title="@mention it">
-    Type `@Lindy` in any channel and ask. It starts working right away.
+  <Step title="Teammates link with one tap">
+    Everyone else links themselves. The first time a teammate DMs or @mentions Lindy, it doesn't start working yet, it sends one DM with a **Connect Slack to Lindy** button. They tap it, confirm while signed into Lindy, and their Slack identity is bound to their Lindy account. The message they sent is replayed automatically once they're linked, so nothing is lost.
   </Step>
 </Steps>
 
-{/* TODO: screenshot or GIF of adding Lindy to Slack */}
+## 2. Set up your Lindy
+
+Once you're linked, connect your own tools so Lindy can work for you:
+
+<Steps>
+  <Step title="Connect email and calendar">
+    Connect your Google or Microsoft account so Lindy can run your inbox and schedule meetings.
+  </Step>
+  <Step title="Add your phone">
+    Add your phone number (or connect Apple Messages) so you can text Lindy. You'll verify with a code.
+  </Step>
+</Steps>
+
+## How to talk to Lindy
+
+- **DM the bot** to start or continue your own rolling task. Replies come back in the DM.
+- **@mention Lindy in a channel or thread** and it replies inside that thread, never as a new top-level message. Invite the bot to the channel first if it isn't there. Once it's replied, a clear follow-up can continue the thread without re-@mentioning.
+- **Slack's AI sidebar** works too; replies stay in that sidebar thread.
+- **Auto-join:** the bot can join public channels when linked teammates join, and leave when the last one does. This is configurable.
+
+## What Lindy can do
+
+- **In shared channels and threads:** web search, image generation, public Slack search, and Notion (if your team has connected it). Lindy keeps answers public-safe: it summarizes rather than pasting private data into a public channel.
+- **In your DMs and your own threads:** the full toolset, including calendar scheduling, email, SMS, reminders, and meeting reads.
+- **Extras:** private summaries when you're pulled into a long thread, and follow-up nudges for asks that haven't gotten a reply.
+
+## Guardrails and approvals
+
+Each connected account has one setting: **Always allow** or **Ask for approval**, applied to every action that writes or sends. Read-only actions never need approval. Approval is enforced in shared Slack threads; your personal DMs keep their existing confirmation behavior.
+
+## Relevant Docs
+
+<CardGroup cols={2}>
+  <Card title="Home" icon="house" href="/coming-soon/home">
+    Where you talk to Lindy and see what it's done
+  </Card>
+  <Card title="Pricing" icon="tag" href="/pricing">
+    Seats, credits, and the shared pool
+  </Card>
+</CardGroup>

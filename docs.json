@@ -36,7 +36,6 @@
         "group": "Start Here",
         "pages": [
           "index",
-          "pricing",
           "start-here/quickstart",
           "start-here/team-setup"
         ]
@@ -93,6 +92,7 @@
       {
         "group": "Accounts & Billing",
         "pages": [
+          "pricing",
           "account-billing/usage",
           "coming-soon/lindy-teammate-billing"
         ]
