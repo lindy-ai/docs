@@ -72,17 +72,26 @@ h1::after {
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   line-height: 1.3;
   margin-top: 2.5rem;
   margin-bottom: 1.25rem;
 }
 
 h3 {
-  font-size: 1.65rem;
+  font-size: 1.5rem;
   line-height: 1.4;
   margin-top: var(--spacing-2xl);
   margin-bottom: var(--spacing-lg);
+}
+
+/* Content section headings only (they carry anchor ids), not sidebar/TOC.
+   Slightly larger so section titles read as headings. */
+h2[id] {
+  font-size: 1.6rem !important;
+}
+h3[id] {
+  font-size: 1.25rem !important;
 }
 
 h4 {

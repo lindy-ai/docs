@@ -4,7 +4,8 @@
   "name": "Lindy Documentation",
   "redirects": [
     { "source": "/CLAUDE", "destination": "/", "permanent": true },
-    { "source": "/WORKFLOW", "destination": "/", "permanent": true }
+    { "source": "/WORKFLOW", "destination": "/", "permanent": true },
+    { "source": "/account-billing/multi-account", "destination": "/features/inbox-management/email-drafting", "permanent": true }
   ],
   "colors": {
     "primary": "#1A1A1A",
@@ -55,25 +56,20 @@
         "group": "Assistant",
         "pages": [
           {
-            "group": "Inbox Management",
-            "pages": [
-              "features/inbox-management/email-triage",
-              "features/inbox-management/email-drafting"
-            ]
-          },
-          {
-            "group": "Meeting Assistant",
+            "group": "Built-in Routines",
             "pages": [
               "features/meeting-assistant/daily-brief",
-              "features/meeting-assistant/meeting-prep",
+              "features/inbox-management/email-drafting",
+              "features/inbox-management/email-triage",
               "features/meeting-assistant/meeting-notes",
-              "features/meeting-assistant/follow-ups"
+              "features/meeting-assistant/meeting-prep",
+              "features/meeting-assistant/scheduling",
+              "features/inbox-management/email-alerting",
+              "features/inbox-management/follow-up-bumps"
             ]
           },
-          "features/meeting-assistant/scheduling",
           "features/imessage-sms",
           "features/ad-hoc-tasks",
-          "account-billing/multi-account",
           "start-here/best-practices"
         ]
       },

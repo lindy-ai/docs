@@ -1,8 +1,8 @@
 ---
-title: 'Email Triage'
-description: 'Lindy automatically sorts, labels, and prioritizes your inbox so you start every day in control'
+title: 'Email Labeling'
+description: 'Lindy automatically labels and sorts your inbox so you start every day in control'
 icon: 'inbox'
-keywords: ['email triage', 'inbox', 'labels', 'prioritize', 'sort', 'categorize']
+keywords: ['email triage', 'inbox', 'labels', 'prioritize', 'sort', 'categorize', 'email labeling', 'routine']
 ---
 
 ## Your Inbox, Handled
@@ -11,41 +11,36 @@ keywords: ['email triage', 'inbox', 'labels', 'prioritize', 'sort', 'categorize'
   <img src="/lindy-brand-assets/your inbox.png" alt="Your inbox handled by Lindy" />
 </Frame>
 
-Lindy automatically labels and sorts every incoming email into categories. Important messages stay front and center. Everything else gets filed away. No rules to write, no filters to manage. The more you use Lindy, the better it gets at understanding what matters to you.
+Lindy reads every incoming email and labels it, archiving what you don't need to see and keeping what matters visible. No rules to write, no filters to manage. Email labeling is a built-in **routine**, so it runs automatically on incoming email.
 
-## How to Set It Up
+## Before you start
 
-<Note>
-  Open Lindy, click your **workspace name** in the top-left, and choose **Settings**. In the left sidebar, click **Emails**, then scroll to **Email labeling**.
-</Note>
+- A connected **Gmail or Outlook** inbox.
+- A plan with Assistant features.
+- Not turned off by your workspace admin. If it is, the card shows **Disabled by admin**.
 
-## Email Labeling
+If no inbox is connected yet, you'll see a **Connect account** prompt first.
 
-Lindy reads every incoming email and assigns it to the right category. Email labeling is **on by default**. You can adjust it anytime in your settings at [chat.lindy.ai](https://chat.lindy.ai).
+## Turn on email labeling
 
-### Categories
+<Steps>
+  <Step title="Open the routine">
+    Go to the **Routines** page. On the **Personal** tab, find the **Email labeling** card ("Keeps your inbox organized"). Its badge shows the current state: **Off**, **On**, or **On for N of M accounts**. Click the card to open its drawer.
+  </Step>
+  <Step title="Flip it on">
+    Use the enable switch in the drawer header, or the toggle on the card. Toggling from the card turns it on across all your connected inboxes at once.
+  </Step>
+</Steps>
 
-Lindy sorts your email into two groups:
+<Warning>
+  Turning it on does nothing until you've created at least one label.
+</Warning>
 
-**Move out of your inbox**: these get archived and labeled so they're out of sight:
-- Calendar invites and updates
-- Promotions and marketing emails
+## Connect and pick your account
 
-**Keep in your inbox**: these stay visible with a label:
+At the top of the drawer, each connected inbox shows as a chip, with a **+ Add account** button beside them. Click **+ Add account**, choose **Google** or **Outlook**, and follow the prompts to link another inbox. Everything you edit applies to the selected account only, so pick the chip first, then edit. **Remove account** turns off every email routine for that inbox.
 
-| Label | What it catches |
-|-------|----------------|
-| **To Respond** | Emails that need a reply from you |
-| **FYI** | Informational, no action needed |
-| **Newsletters** | Subscriptions and recurring content |
-| **Comments** | Mentions, comments, and notifications from tools |
-| **Notifications** | System alerts and automated messages |
-| **Invoices** | Bills, receipts, and payment-related emails |
-| **Lindy** | Messages from Lindy (meeting notes, briefings, etc.) |
-
-You can customize these categories: add new ones, remove existing ones, or reorder them to match how you work.
-
-### Adding a Label
+## Add and edit labels
 
 <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden' }}>
   <video
@@ -58,41 +53,38 @@ You can customize these categories: add new ones, remove existing ones, or reord
   />
 </div>
 
-<Steps>
-  <Step title="Open the Email Labeling section">
-    Navigate to the Email Labeling section in your settings at [chat.lindy.ai](https://chat.lindy.ai).
-  </Step>
-  <Step title="Click the + button">
-    Find the group where you want your new label to live, either **Keep in your inbox** or **Move out of inbox**, and click the **+** button next to it.
+Two drag-and-drop sections, each with a **+** to add a label:
 
-    <Note>Labels in **Move out of inbox** will archive matching emails automatically.</Note>
-  </Step>
-  <Step title="Name your label and set instructions">
-    Enter a label title, then write instructions describing which emails should receive this label.
-  </Step>
-</Steps>
+- **Move these out of my inbox** — Lindy applies the label and archives the email.
+- **Keep these in my inbox** — applies the label but leaves the email in your inbox.
 
-Once created, you can reorder labels at any time by dragging the hamburger icon to the left of the label.
+Drag a label between the two sections anytime to switch that behavior.
 
-<Tip>
-For labels like **To Respond**, toggle on **Remove label after reply** — Lindy will automatically clear the label once you've responded to the email.
-</Tip>
+In the **New label** / **Edit label** dialog:
 
-## Urgent Email Alerts
+- **Name** — the label text. Reserved Gmail names like Inbox, Sent, or Spam are rejected.
+- **Color** — pick a swatch.
+- **Instructions** — the important one: describe when Lindy should apply it, like *"Any email from an investor."* This drives the classification.
+- **Remove on reply** — optionally clear the label once you reply.
 
-Lindy can **text you** when something time-sensitive hits your inbox. Enable "Alert me by text for time-sensitive emails" in your settings and customize what counts as urgent.
+**Create label** / **Update label** saves immediately (Cmd/Ctrl+Enter works too).
 
-<Frame>
-  <img src="/lindy-brand-assets/urgent_email.png" alt="Urgent email alert settings" />
-</Frame>
+### Default labels
 
-- **Time-sensitive meetings**: "Only text me about meetings that are within 30 minutes, or emails that seem extremely urgent"
-- **VIP senders**: "Alert me when I get an email from [VIP client name]"
-- **Specific threads**: "Text me if someone replies to the proposal thread"
+Lindy starts with a set of labels you can keep, edit, or remove:
 
-<Tip>
-This pairs well with [iMessage & SMS](/features/imessage-sms). You get notified on your phone and can respond to Lindy right there.
-</Tip>
+| Label | What it catches |
+|-------|----------------|
+| **To Respond** | Emails that need a reply from you |
+| **FYI** | Informational, no action needed |
+| **Newsletters** | Subscriptions and recurring content |
+| **Comments** | Mentions, comments, and notifications from tools |
+| **Notifications** | System alerts and automated messages |
+| **Invoices** | Bills, receipts, and payment-related emails |
+
+<Note>
+  Email labeling is a **built-in routine**, so it doesn't expose the custom-routine extras (trigger, schedule, delivery channel, smart filter, or run history). It just runs on every incoming email. Its siblings on the Personal tab are **Email drafting**, **Email alerting**, and **Follow-up bumps**.
+</Note>
 
 ## Next Steps
 
@@ -100,7 +92,7 @@ This pairs well with [iMessage & SMS](/features/imessage-sms). You get notified 
   <Card title="Email Drafting" icon="pen" href="/features/inbox-management/email-drafting">
     How Lindy drafts replies in your voice
   </Card>
-  <Card title="iMessage & SMS" icon="message" href="/features/imessage-sms">
-    Get email alerts and respond via text
+  <Card title="Routines" icon="clock-rotate-left" href="/coming-soon/routines">
+    Manage email labeling and your other routines
   </Card>
 </CardGroup>

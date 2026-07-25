@@ -11,9 +11,7 @@ keywords: ['meeting notes', 'transcript', 'summary', 'recording', 'minutes', 'me
 
 ## How to Set It Up
 
-<Note>
-  Open Lindy, click your **workspace name** in the top-left, and choose **Settings**. In the left sidebar, click **Meetings** to toggle recording and adjust your notetaker and summary settings.
-</Note>
+Meeting note-taking is a built-in **routine**. On the **Routines** page, open the **Personal** tab, find the **Meeting note taking** card ("Joins your meetings and takes notes"), and toggle it on. Click the card to set which meetings Lindy joins, the notetaker name, and your summary and recap settings.
 
 ## Supported Platforms
 
@@ -53,7 +51,7 @@ Inside a meeting you can:
 
 ## Updating Your Meeting Settings
 
-To change any meeting recording settings, click your **workspace name in the top-left → Settings → Meetings**.
+To change any recording settings, open the **Meeting note taking** routine on the **Routines** page.
 
 <Frame>
   <img src="/lindy-brand-assets/meeting settings.png" alt="Meetings settings panel with recording toggle, notetaker display name, and summarization instructions" />
@@ -83,10 +81,56 @@ Your meeting library becomes a knowledge base you can query in plain language �
 
 The more meetings you record, the richer the context Lindy can draw on.
 
+## Post-Meeting Follow-ups
+
+After every meeting, Lindy extracts the action items and sends a follow-up email to attendees. Decisions get documented, next steps are clear, and everyone knows what they own.
+
+1. **Meeting ends**: Lindy processes the recording and transcript
+2. **Action items extracted**: Lindy identifies decisions, next steps, and owners
+3. **Follow-up sent**: an email goes out to attendees with the summary and action items
+
+Set who receives it in the **Meeting note taking** routine:
+
+- **All participants**: everyone on the invite
+- **Internal only**: just your team
+- **Specific people**: customize per your preferences
+
+### Custom Follow-up Actions
+
+Beyond email, tell Lindy to take extra actions after meetings. In the **Meeting note taking** routine, use the **Follow-up Actions** field to describe what Lindy should do.
+
+<Note>
+  **Lindy works with your existing tools** — Notion, Slack, Todoist, and hundreds more. Just tell it what to do (*"Add action items to Todoist"*) and it handles the rest. The first time it uses an app, Lindy asks you to connect it.
+</Note>
+
+<Frame>
+  <img src="/lindy-brand-assets/follow-up-actions-settings.jpg" alt="Follow-up actions settings showing custom actions and notification options" />
+</Frame>
+
+A favorite: have Lindy DM you in Slack right after the meeting ends, with the still-outstanding action items and a heads-up on anything that needs your attention.
+
+<div style={{ background: 'rgba(124, 58, 237, 0.08)', border: '1px solid rgba(124, 58, 237, 0.15)', borderRadius: '8px', padding: '14px 18px', color: '#7C3AED', fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, monospace', fontSize: '0.95em', margin: '12px 0 20px' }}>
+Send a Slack DM with action items
+</div>
+
+<Frame>
+  <img src="/lindy-brand-assets/slack-action-items-dm.png" alt="Lindy Slack DM showing 'Action items for your meeting with Matt Pearson' with a 'Still outstanding' checklist and a 'Heads up' note about a reply" />
+</Frame>
+
+Other examples:
+
+- "Update the CRM with notes from every sales call"
+- "Create a Notion page with the meeting summary"
+- "Send action items to the project lead if they weren't on the call"
+
+<Tip>
+This covers post-meeting follow-ups. Lindy can also draft follow-up bumps when someone hasn't replied to an email you sent — see [Follow-up Bumps](/features/inbox-management/follow-up-bumps).
+</Tip>
+
 ## Quick Setup
 
-1. Go to [chat.lindy.ai](https://chat.lindy.ai), click your **workspace name** in the top-left → **Settings → Meetings**
-2. Toggle on **Meeting recording**
+1. On the **Routines** page, open the **Personal** tab and click the **Meeting note taking** card
+2. Toggle the routine on
 3. Connect your Google Calendar or Microsoft Outlook calendar
 4. Set your notetaker display name and summarization instructions
 5. Lindy joins and records from your next scheduled meeting on Google Meet, Zoom, or Microsoft Teams
@@ -94,11 +138,11 @@ The more meetings you record, the richer the context Lindy can draw on.
 ## Relevant Docs
 
 <CardGroup cols={2}>
-  <Card title="Follow-ups" icon="paper-plane" href="/features/meeting-assistant/follow-ups">
-    Automatic follow-up emails after meetings
-  </Card>
   <Card title="Meeting Prep" icon="clipboard-list" href="/features/meeting-assistant/meeting-prep">
     Get context before every meeting
+  </Card>
+  <Card title="Daily Brief" icon="newspaper" href="/features/meeting-assistant/daily-brief">
+    A morning brief on your day and meetings
   </Card>
   <Card title="Smart Scheduling" icon="calendar" href="/features/meeting-assistant/scheduling">
     Lindy proposes times and books meetings for you
