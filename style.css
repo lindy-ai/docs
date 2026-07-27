@@ -2292,3 +2292,24 @@ html:not(.dark) .card:hover {
 .dark .schedule-pill:hover,
 .dark .schedule-pill:hover span { color: #B8C9FF !important; }
 .dark .schedule-pill svg { color: #90A8FF !important; }
+
+/* ===================================================================== */
+/* Dark mode: inline code                                                */
+/*                                                                       */
+/* `code` takes --color-bg-code (#F6F5F3) with no dark-mode guard, while */
+/* the dark rules force its text to #f1f5f9. Near-white on near-white    */
+/* rendered `.skills/`, `SKILL.md` and friends as blank white chips.     */
+/* Give the chip a dark fill so the text reads and still stands out.     */
+/* ===================================================================== */
+.dark code:not(pre code),
+[data-theme="dark"] code:not(pre code),
+:root[data-theme="dark"] code:not(pre code) {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  color: #F1F5F9 !important;
+}
+
+/* Same token drives the sidebar hover fill — give it a dark equivalent */
+.dark #sidebar-content a.group:hover,
+.dark #sidebar-content div.group:hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
