@@ -2313,3 +2313,29 @@ html:not(.dark) .card:hover {
 .dark #sidebar-content div.group:hover {
   background-color: rgba(255, 255, 255, 0.06) !important;
 }
+
+/* ===================================================================== */
+/* Wide media                                                            */
+/*                                                                       */
+/* The prose column is capped at 576px, and inside a <Tab> its padding    */
+/* takes usable width down to ~531px. Detailed UI recordings are hard to  */
+/* read that small. `.wide-media` spills symmetrically into the gutters,  */
+/* but only at >=1440px, where measurement shows ~50px of clearance to   */
+/* the table of contents. Below that it just fills the column as normal. */
+/*                                                                       */
+/* The class is doubled deliberately. The wrapper also matches            */
+/* div[style*="display: flex; justify-content: center"] (line ~1425),     */
+/* which forces `margin: 0 !important` at specificity 0-1-1 — a single    */
+/* class (0-1-0) loses to it no matter where it sits in the file.        */
+/* ===================================================================== */
+.wide-media.wide-media {
+  width: 100% !important;
+}
+@media (min-width: 1440px) {
+  .wide-media.wide-media {
+    width: calc(100% + 128px) !important;
+    max-width: calc(100% + 128px) !important;
+    margin-left: -64px !important;
+    margin-right: -64px !important;
+  }
+}
