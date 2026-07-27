@@ -589,6 +589,9 @@ li[aria-expanded="true"] > div.group svg:last-child {
 .frame {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: box-shadow 0.3s ease;
+  border-radius: 16px;
+  overflow: hidden;
+  clip-path: inset(0 round 16px); /* match the video treatment, no pointy corners */
 }
 
 .frame:hover {
@@ -1399,6 +1402,14 @@ figure img {
   padding: 0 !important;
   border: none !important;
   outline: none !important;
+  border-radius: 16px;
+  clip-path: inset(0 round 16px); /* round the image itself, not just its container */
+}
+
+/* figure is Mintlify's other Frame wrapper: round it the same way */
+figure {
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 /* Remove any wrapper padding that might create buffers */
