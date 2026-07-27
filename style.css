@@ -2205,3 +2205,90 @@ html:not(.dark) .card:hover {
 }
 .schedule-pill:hover span, .schedule-pill:hover { color: #3A60FF !important; }
 .schedule-pill svg { flex-shrink: 0; color: #3A60FF !important; }
+
+/* ===================================================================== */
+/* Dark mode: card-like surfaces                                         */
+/*                                                                       */
+/* Several card components set a white background with no dark-mode      */
+/* guard, while the dark-mode text rules assume a dark surface. The      */
+/* result was light-gray text on white: technically rendered, unreadable */
+/* in practice. Give each one a dark surface and readable foreground.    */
+/* ===================================================================== */
+
+/* Mintlify <Card> / <CardGroup> */
+.dark .card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
+.dark .card:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+.dark .card h2,
+.dark .card h3,
+.dark .card h4,
+.dark .card .card-title,
+.dark .card [class*="font-semibold"] {
+  color: #F4F4F5 !important;
+}
+.dark .card p,
+.dark .card .prose,
+.dark .card .text-gray-600,
+.dark .card .text-gray-500,
+.dark .card .text-gray-400 {
+  color: #A1A1AA !important;
+}
+.dark .card svg,
+.dark .card .icon {
+  color: #A1A1AA !important;
+}
+
+/* Mini cards */
+.dark .mini-cards .mini-card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+}
+.dark .mini-cards a.mini-card:hover {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: none !important;
+}
+.dark .mini-cards .mini-card .mt { color: #F4F4F5 !important; }
+.dark .mini-cards .mini-card .md { color: #A1A1AA !important; }
+
+/* Feature list card */
+.dark .lindy-features {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+}
+.dark .lindy-features .lindy-feature { color: #A1A1AA !important; }
+.dark .lindy-features .lindy-feature .ft { color: #F4F4F5 !important; }
+
+/* Pills */
+.dark .lindy-pills .lindy-pill {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  color: #E4E4E7 !important;
+}
+
+/* Blue-tinted surfaces: keep the accent, lift the text off it */
+.dark .trust-cards .trust-card {
+  background: rgba(58, 96, 255, 0.14) !important;
+  border-color: rgba(58, 96, 255, 0.45) !important;
+}
+.dark .trust-cards .trust-card svg { color: #90A8FF !important; }
+.dark .trust-cards .trust-card .tt { color: #E8EDFF !important; }
+.dark .trust-cards .trust-card .td { color: #B4C4EE !important; }
+
+.dark .schedule-pill {
+  background: rgba(58, 96, 255, 0.14) !important;
+  border-color: rgba(58, 96, 255, 0.45) !important;
+  color: #E8EDFF !important;
+}
+.dark .schedule-pill span { color: #E8EDFF !important; }
+.dark .schedule-pill:hover {
+  background: rgba(58, 96, 255, 0.22) !important;
+  border-color: rgba(58, 96, 255, 0.8) !important;
+}
+.dark .schedule-pill:hover,
+.dark .schedule-pill:hover span { color: #B8C9FF !important; }
+.dark .schedule-pill svg { color: #90A8FF !important; }
