@@ -1398,6 +1398,11 @@ figure {
 figure img {
   width: 100% !important;
   height: auto !important;
+  /* Mintlify bakes the image's width/height attrs into the <img> at build time.
+     When an asset is swapped for one with a different aspect ratio, those attrs
+     go stale and object-contain letterboxes the new image inside the old box.
+     Deriving the ratio from the actual file instead keeps images full-bleed. */
+  aspect-ratio: auto !important;
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
