@@ -1,0 +1,57 @@
+---
+title: "Slack Commands"
+sidebarTitle: "Slack Commands"
+description: "Slash commands for managing your Lindy connection, context, and usage right inside Slack."
+icon: "terminal"
+---
+
+There are two ways to interact with Lindy in Slack: **@mention** her when you want a response, or use a **slash command** to manage your connection.
+
+## @mention Lindy for a response
+
+@mention Lindy in a channel or thread whenever you want an immediate response. She replies right inside that thread.
+
+Once Lindy has replied in a thread, you don't need to keep @mentioning her. Lindy reads the thread and disambiguates whether your next message is aimed at her or at the other people in the conversation, so a natural follow-up keeps the thread going without the extra @mention.
+
+## Slash commands
+
+Run these in any Slack message box to check your connection, tune how much context Lindy reads, or manage your account. Type the command and press enter, the response is only visible to you.
+
+### Admin commands
+
+Workspace admins use these to check the connection and control the **context lookback**, how far back in a conversation Lindy reads for context when it's brought into a channel or thread.
+
+| Command | What it does |
+|---------|--------------|
+| `/lindy admin status` | Show this workspace's connection status. |
+| `/lindy admin convogap status` | Show the current Slack context lookback. |
+| `/lindy admin convogap 10` | Set the Slack context lookback, in minutes (here, 10). |
+| `/lindy admin convogap reset` | Reset the context lookback to the default. |
+
+<Note>
+  A longer lookback gives Lindy more of the preceding conversation as context, at the cost of pulling in older, possibly less relevant messages. `reset` returns to Lindy's default window.
+</Note>
+
+### Personal commands
+
+Anyone can run these for their own account.
+
+| Command | What it does |
+|---------|--------------|
+| `/lindy usage` | Show your Slack diagnostics for the last 7 days. |
+| `/lindy unlink` | Unlink your Slack account from Lindy. |
+
+<Warning>
+  After `/lindy unlink`, Lindy stops responding to your DMs and @mentions until you link again. The next time you message the bot, tap **Connect Slack to Lindy** to reconnect.
+</Warning>
+
+## Relevant Docs
+
+<CardGroup cols={2}>
+  <Card title="Set up Lindy" icon="slack" href="/coming-soon/setup">
+    Add Lindy to Slack and link your account
+  </Card>
+  <Card title="Team Setup" icon="users" href="/start-here/team-setup">
+    Invites, admin controls, and credits
+  </Card>
+</CardGroup>
