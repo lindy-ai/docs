@@ -376,15 +376,11 @@ a.button:hover {
 [data-theme="dark"] code:not(pre code),
 :root[data-theme="dark"] code:not(pre code) {
   color: #f1f5f9 !important; /* Bright light grey for better visibility */
-  background-color: #26292E !important; /* Dark box so light text stays readable */
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 /* Inline code text contrast for .dark class */
 .dark code:not(pre code) {
   color: #f1f5f9 !important;
-  background-color: #26292E !important; /* Dark box so light text stays readable */
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 /* Remove the gradient fill on cards while keeping all text underline effects */
@@ -861,27 +857,6 @@ html:not(.dark) #topbar-cta-button > a > span.absolute {
 .dark .card .text-gray-400,
 .dark .card .prose {
   color: #d1d5db !important;
-}
-
-/* Dark mode: these cards render on a light surface, so use dark text for contrast */
-.dark .card h2,
-.dark .card h3,
-.dark .card h4,
-.dark .card .card-title,
-.dark .card [class*="font-semibold"] {
-  color: #1A1A1A !important;
-}
-.dark .card p,
-.dark .card .prose,
-.dark .card .text-gray-600,
-.dark .card .text-gray-500,
-.dark .card .text-gray-400 {
-  color: #1F2328 !important;
-}
-.dark .card svg,
-.dark .card .icon {
-  color: #2A2F37 !important;
-  opacity: 1 !important;
 }
 
 /* Dark mode: Table of contents and on-page navigation */
@@ -2079,15 +2054,6 @@ html:not(.dark) #topbar {
   font-weight: 700 !important;
   color: #1A1A1A !important;
   margin-right: 0.15rem !important;
-}
-/* Dark mode: card stays white, so keep its text dark */
-.dark .lindy-features .lindy-feature,
-.dark .lindy-features .lindy-feature p,
-.dark .lindy-features .lindy-feature span {
-  color: #3F3F3F !important;
-}
-.dark .lindy-features .lindy-feature .ft {
-  color: #1A1A1A !important;
 }
 
 /* Pills, stacked vertically */
