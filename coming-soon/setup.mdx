@@ -11,23 +11,32 @@ Setting up Lindy has two parts: an admin adds Lindy to your Slack workspace, the
 
 <Steps>
   <Step title="Install Lindy into Slack">
-    From Lindy (signed in), open **Integrations** in the left sidebar and find **Slack** under Popular.
+    From Lindy (signed in), open **Integrations** in the left sidebar. **Set up Lindy Teammate in Slack** sits at the top of the page. Click **Install Slack app**.
 
     <Frame>
-      <img src="/lindy-brand-assets/teammate/slack-find-integration.png" alt="The Integrations page in Lindy, with arrows pointing to the Integrations item in the sidebar and to the Slack card under Popular" />
-    </Frame>
-
-    Open the Slack integration and click **Add account**.
-
-    <Frame>
-      <img src="/lindy-brand-assets/teammate/slack-add-account.png" alt="The Slack integration page in Lindy with the Add account button above the list of Slack actions" />
+      <img src="/lindy-brand-assets/teammate/slack-install-app.png" alt="The Integrations page in Lindy with a Set up Lindy Teammate in Slack card at the top and an arrow pointing to the Install Slack app button" />
     </Frame>
 
     Slack's standard approval screen opens so you can approve the bot's permissions. Pick your workspace, then click **Allow**. As the installer, you're linked to your Lindy account right away, with no extra step.
 
     <Frame>
-      <img src="/lindy-brand-assets/teammate/slack-approve-permissions.png" alt="Slack's Review app permissions screen with an arrow pointing to the Allow button" />
+      <img src="/lindy-brand-assets/teammate/slack-allow-permissions.png" alt="Slack's Allow the Lindy app to access Slack screen, with the workspace picker and an arrow pointing to the Allow button" />
     </Frame>
+
+    Once it's installed, Slack shows under **Enabled** in your Teammate settings. Open it to confirm the workspace and a status of **Installed**, and to control whether Lindy auto-joins public channels.
+
+    <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+      <div className="video-card">
+        <video
+          src="/lindy-brand-assets/teammate/slack-installed-confirmation.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{ display: 'block', width: '100%', borderRadius: '16px', maxHeight: 'none' }}
+        />
+      </div>
+    </div>
 
     Right after install, Lindy sends you a welcome DM confirming it's connected and explaining how to start.
   </Step>
