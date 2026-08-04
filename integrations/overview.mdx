@@ -5,91 +5,52 @@ description: 'Connect Lindy to the tools your team already uses, and control wha
 icon: 'plug'
 ---
 
-Integrations connect Lindy to the tools and accounts it works with: Gmail, Slack, Notion, Google Drive, and more.
-
 <Frame>
   <img src="/lindy-brand-assets/integrations/integrations-panel.png" alt="The Integrations page: tools grouped by category, connected accounts, and a guardrail dropdown" />
 </Frame>
 
-## Where to find it
+Integrations connect Lindy to the tools it works in: Gmail, Slack, Notion, Google Drive, and more. Open **Integrations** to see every tool, grouped by category.
 
-Integrations is a top-level item in the left sidebar, moved out of Settings. Click it to land on the main Integrations page, which shows every available tool grouped by category.
+Two things are worth understanding: whether a connection is yours or the team's, and what Lindy is allowed to do with it.
 
-## How it works
+## Personal and team connections
 
-Each integration shows as a row with a status dot:
+| Scope | Who can use it | Who can change it |
+| --- | --- | --- |
+| **Personal** | Just you | You |
+| **Team** | Everyone in the workspace | Owners and admins |
 
-- **Green dot**: connected and healthy.
-- **Red dot**: needs reconnect, usually an expired token.
-- **Gray dot**: not connected yet.
+A personal connection is private to you. Your Lindy uses it for your own work, your DMs, and the web app.
 
-Click a row to expand it and see the connected accounts underneath. Each account row shows the email or label, who connected it, and its health status.
-
-## Personal vs team
-
-Two tabs sit at the top: **Personal** and **Team**.
-
-- **Personal**: your own connections, private to you. Your Lindy uses them for your personal workflows, DMs, and the web app.
-- **Team**: connections shared with the workspace. An owner or admin designates one of their personal connections as a team resource. Team members' Lindy then reads the tool as that account, and actions use that account's permissions.
-
-Only workspace owners and admins can share a connection to the team. Members can see team connections but cannot change them.
-
-## Add an integration
-
-Click **Add integration** and search by tool name. When you find what you need, click **Connect**:
-
-<Steps>
-  <Step title="Set up access">
-    Complete the OAuth or API key setup for the tool.
-  </Step>
-  <Step title="Actions enable automatically">
-    Every action for that tool turns on right away. There is no action-picking step.
-  </Step>
-  <Step title="It joins your list">
-    The integration appears in your list with a green dot.
-  </Step>
-</Steps>
-
-For tools that support multiple accounts, like Gmail, add another by clicking **Add account** under that integration's row.
+An owner or admin can share one of their personal connections with the whole workspace. From then on, everyone's Lindy reads that tool as that account and acts with its permissions. Members can see team connections but can't change them.
 
 ## Guardrails
 
-Guardrails are the permission controls, and they are the big one for Teammate. Each integration has a guardrail dropdown with three options:
+Guardrails decide what Lindy can do without asking. This is the setting that matters most for Teammate. Each integration has one:
 
-| Setting | What it means |
+| Setting | What Lindy does |
 | --- | --- |
-| **Always allow** | Lindy performs write actions without asking. |
-| **Require approval** | Lindy asks for confirmation in Slack before a write. |
-| **Don't offer** | Lindy never suggests or performs writes with this tool. |
+| **Always allow** | Writes without asking |
+| **Require approval** | Asks in Slack before writing |
+| **Don't offer** | Never writes with this tool |
 
-Guardrails only apply in **shared Slack threads**. They do not apply in your personal web app chat, Slack DMs with Lindy, or iMessage and SMS. Read actions like checking your calendar or searching email are never guarded. Only writes are.
+Two things to know:
 
-## How approvals work in Slack
-
-When Lindy wants to do something that needs approval, it posts a message in the Slack thread with **Approve** and **Deny** buttons.
-
-- The **requester** can always approve their own request.
-- A **workspace owner or admin** can also approve.
-- Anyone else gets a private note to ask the requester or an admin.
-
-**Approve** allows the action one time only and does not change the guardrail. **Always allow**, clicked by an owner or admin, changes the workspace setting for that tool. Clicked by a member, it sets a personal override that applies only to them.
-
-## Manage connections
-
-Each account row has a three-dot menu:
-
-- **Manage**: view details and rename the label.
-- **Share with workspace**: designate the connection as a team resource. Owners and admins only.
-- **Disconnect**: remove the account.
-
-If you remove the last account of an integration, the integration itself leaves your list.
+- **Reads are never guarded.** Checking your calendar or searching your email always just works. Guardrails only cover writes.
+- **Guardrails apply in shared Slack threads only.** Your web app chat, Slack DMs with Lindy, and iMessage and SMS aren't guarded.
 
 <Note>
-  Coming soon: per-account guardrails. Today a guardrail applies to every account under an integration. A future version will let you set a different guardrail per account, like work Gmail always allowed and personal Gmail requires approval.
+  A guardrail covers every account under an integration. You can't yet set one rule for your work Gmail and a different one for your personal Gmail.
 </Note>
 
-## Quick tips
+## Approving a write in Slack
 
-- **Connect your most-used integrations first**: the ones you will lean on most in Slack.
-- **Set guardrails to match your comfort level**: you can always change them later.
-- **Use a dedicated account for shared Notion**: if you don't want your personal Notion shared with the whole team.
+When Lindy needs approval, it posts **Approve** and **Deny** buttons in the thread. The person who asked can approve their own request, and so can any workspace owner or admin. Anyone else gets a private note to ask one of them.
+
+**Approve** allows that one action and changes nothing else. **Always allow** changes the rule going forward: workspace-wide if an owner or admin clicks it, or just for that person if a member does.
+
+## Connecting and managing
+
+Search for the tool you want and connect it with OAuth or an API key. Every action for that tool turns on at once, so there's no action-picking step. For tools that support more than one login, like Gmail, you can add further accounts under the same integration.
+
+Each connection shows whether it's healthy, needs reconnecting (usually an expired token), or isn't set up yet. From a connection you can rename it, share it with the workspace (owners and admins only), or disconnect it. Removing the last account of an integration removes the integration from your list.
