@@ -1,11 +1,20 @@
 ---
 title: 'Team Setup'
-description: 'Invite your team, add shared context, and configure workspace controls'
+description: 'The two ways people join your workspace, plus admin controls, credits, and ownership'
 icon: 'users'
-keywords: ['team', 'invite', 'members', 'workspace', 'admin', 'controls', 'groups', 'roles', 'organization']
+keywords: ['team', 'invite', 'members', 'workspace', 'admin', 'controls', 'groups', 'roles', 'organization', 'slack', 'mention', 'add teammate', 'join workspace', 'seat', 'connect slack to lindy']
 ---
 
-## Inviting Team Members
+## Adding People to Your Workspace
+
+There are two ways someone joins. An admin invites them from team settings, or they add themselves by @mentioning Lindy in Slack. Either way they take a seat on your workspace billing and draw from your shared credit pool.
+
+| How they join | Who starts it | When the seat is billed |
+| --- | --- | --- |
+| **Invite from team settings** | An admin | Right away |
+| **@mention Lindy in Slack** | The person themselves | After a free first week |
+
+### Invite from team settings
 
 <Steps>
   <Step title="Open the invite dialog">
@@ -24,6 +33,28 @@ keywords: ['team', 'invite', 'members', 'workspace', 'admin', 'controls', 'group
     Click **Send invite**. Their plan is added to your workspace billing, and your workspace credits increase to reflect the additional plan. Existing members and permissions stay the same.
   </Step>
 </Steps>
+
+### @mention Lindy in Slack
+
+Once Lindy is installed in your team's Slack, anyone can add themselves just by talking to it. No admin step, and no invite to wait for.
+
+<Steps>
+  <Step title="They @mention Lindy, or send it a DM">
+    The first time, Lindy doesn't answer yet. It replies with a single DM containing a **Connect Slack to Lindy** button.
+  </Step>
+  <Step title="They tap Connect">
+    They confirm while signed in to Lindy, which binds their Slack identity to their Lindy account. If they don't have one, Lindy creates it under your workspace.
+  </Step>
+  <Step title="Their original message runs">
+    The message that started it all is replayed automatically once they're linked, so nothing is lost.
+  </Step>
+</Steps>
+
+<Note>
+  **Admins stay in the loop.** Every admin gets an email when someone joins this way: who they are, that their first week is free, and a one-click link to remove them. If you remove a seat and that person @mentions Lindy again, it tells them it can't help and pings an admin. It won't quietly re-add them.
+</Note>
+
+For how seats and the shared credit pool work, see [Billing](/coming-soon/lindy-teammate-billing). To get Lindy into Slack in the first place, see [Set up Lindy](/coming-soon/setup).
 
 ## Admin Controls
 
