@@ -3,10 +3,71 @@
   "theme": "maple",
   "name": "Lindy Documentation",
   "redirects": [
-    { "source": "/CLAUDE", "destination": "/", "permanent": true },
-    { "source": "/WORKFLOW", "destination": "/", "permanent": true },
-    { "source": "/account-billing/multi-account", "destination": "/features/inbox-management/email-drafting", "permanent": true },
-    { "source": "/features/meeting-assistant/follow-ups", "destination": "/features/inbox-management/follow-up-bumps", "permanent": true }
+    {
+      "source": "/CLAUDE",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/WORKFLOW",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/account-billing/multi-account",
+      "destination": "/features/inbox-management/email-drafting",
+      "permanent": true
+    },
+    {
+      "source": "/features/meeting-assistant/follow-ups",
+      "destination": "/features/inbox-management/follow-up-bumps",
+      "permanent": true
+    },
+    {
+      "source": "/coming-soon/setup",
+      "destination": "/teammate/setup",
+      "permanent": true
+    },
+    {
+      "source": "/coming-soon/home",
+      "destination": "/teammate/home",
+      "permanent": true
+    },
+    {
+      "source": "/coming-soon/meeting-library",
+      "destination": "/teammate/meeting-library",
+      "permanent": true
+    },
+    {
+      "source": "/coming-soon/files",
+      "destination": "/teammate/files",
+      "permanent": true
+    },
+    {
+      "source": "/coming-soon/routines",
+      "destination": "/teammate/routines",
+      "permanent": true
+    },
+    {
+      "source": "/coming-soon/skills",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/coming-soon/slack-commands",
+      "destination": "/teammate/slack-commands",
+      "permanent": true
+    },
+    {
+      "source": "/coming-soon/lindy-teammate",
+      "destination": "/teammate/lindy-teammate",
+      "permanent": true
+    },
+    {
+      "source": "/coming-soon/lindy-teammate-billing",
+      "destination": "/teammate/lindy-teammate-billing",
+      "permanent": true
+    }
   ],
   "colors": {
     "primary": "#1A1A1A",
@@ -45,13 +106,13 @@
       {
         "group": "Lindy Teammate",
         "pages": [
-          "coming-soon/setup",
-          "coming-soon/home",
-          "coming-soon/meeting-library",
-          "coming-soon/files",
-          "coming-soon/routines",
-          "coming-soon/skills",
-          "coming-soon/slack-commands"
+          "teammate/setup",
+          "teammate/home",
+          "teammate/meeting-library",
+          "teammate/files",
+          "teammate/routines",
+          "teammate/skills",
+          "teammate/slack-commands"
         ]
       },
       {
@@ -92,7 +153,7 @@
         "pages": [
           "pricing",
           "account-billing/usage",
-          "coming-soon/lindy-teammate-billing"
+          "teammate/lindy-teammate-billing"
         ]
       },
       {
