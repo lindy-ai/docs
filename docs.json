@@ -5,7 +5,8 @@
   "redirects": [
     { "source": "/CLAUDE", "destination": "/", "permanent": true },
     { "source": "/WORKFLOW", "destination": "/", "permanent": true },
-    { "source": "/account-billing/multi-account", "destination": "/features/inbox-management/email-drafting", "permanent": true }
+    { "source": "/account-billing/multi-account", "destination": "/features/inbox-management/email-drafting", "permanent": true },
+    { "source": "/features/meeting-assistant/follow-ups", "destination": "/features/inbox-management/follow-up-bumps", "permanent": true }
   ],
   "colors": {
     "primary": "#1A1A1A",
