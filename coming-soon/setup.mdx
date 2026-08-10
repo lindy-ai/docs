@@ -1,0 +1,95 @@
+---
+title: "Set up Lindy"
+sidebarTitle: "Setup"
+description: "Get Lindy into your team's Slack, link everyone, and connect your email, calendar, and phone."
+icon: "slack"
+---
+
+<Frame>
+  <img src="/lindy-brand-assets/teammate/setup-investigate-hero.png" alt="Lindy in #growth: asked why signups are down this week, it traces the answer across four tools and finds that Tuesday's CSS change buried the mobile signup button, with mobile down 61 percent" />
+</Frame>
+
+Setting up Lindy has two parts: an admin adds Lindy to your Slack workspace, then each person links their account and connects their tools.
+
+## 1. Set up your team
+
+<Steps>
+  <Step title="Install Lindy into Slack">
+    From Lindy (signed in), open **Integrations** in the left sidebar. **Set up Lindy Teammate in Slack** sits at the top of the page. Click **Install Slack app**.
+
+    <Frame>
+      <img src="/lindy-brand-assets/teammate/slack-install-app.png" alt="The Integrations page in Lindy with a Set up Lindy Teammate in Slack card at the top and an arrow pointing to the Install Slack app button" />
+    </Frame>
+
+    Slack's standard approval screen opens so you can approve the bot's permissions. Pick your workspace, then click **Allow**. As the installer, you're linked to your Lindy account right away, with no extra step.
+
+    <Frame>
+      <img src="/lindy-brand-assets/teammate/slack-allow-permissions.png" alt="Slack's Allow the Lindy app to access Slack screen, with the workspace picker and an arrow pointing to the Allow button" />
+    </Frame>
+
+    Once it's installed, Slack shows under **Enabled** in your Teammate settings. Open it to confirm the workspace and a status of **Installed**, and to control whether Lindy auto-joins public channels.
+
+    <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+      <div className="video-card">
+        <video
+          src="/lindy-brand-assets/teammate/slack-installed-confirmation.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{ display: 'block', width: '100%', borderRadius: '16px', maxHeight: 'none' }}
+        />
+      </div>
+    </div>
+
+    Right after install, Lindy sends you a welcome DM confirming it's connected and explaining how to start.
+  </Step>
+  <Step title="Teammates link with one tap">
+    Everyone else links themselves. The first time a teammate DMs or @mentions Lindy, it doesn't start working yet, it sends one DM with a **Connect Slack to Lindy** button. They tap it, confirm while signed into Lindy, and their Slack identity is bound to their Lindy account. The message they sent is replayed automatically once they're linked, so nothing is lost.
+  </Step>
+</Steps>
+
+## 2. Set up your Lindy
+
+Once you're linked, connect your own tools so Lindy can work for you:
+
+<Steps>
+  <Step title="Connect email and calendar">
+    Connect your Google or Microsoft account so Lindy can run your inbox and schedule meetings.
+  </Step>
+  <Step title="Add your phone">
+    Add your phone number (or connect Apple Messages) so you can text Lindy. You'll verify with a code.
+  </Step>
+</Steps>
+
+## How to talk to Lindy
+
+- **DM the bot** to start or continue your own rolling task. Replies come back in the DM.
+- **@mention Lindy in a channel or thread** and it replies inside that thread, never as a new top-level message. Invite the bot to the channel first if it isn't there. Once it's replied, a clear follow-up can continue the thread without re-@mentioning.
+- **Slack's AI sidebar** works too; replies stay in that sidebar thread.
+- **Auto-join:** the bot can join public channels when linked teammates join, and leave when the last one does. This is configurable.
+
+<Frame>
+  <img src="/lindy-brand-assets/teammate/ask-anything-tight.png" alt="A teammate @mentions Lindy in #sales to ask what customers pushed back on this month, and Lindy replies in the channel with the sources it searched" />
+</Frame>
+
+## What Lindy can do
+
+- **In shared channels and threads:** web search, image generation, public Slack search, and Notion (if your team has connected it). Lindy keeps answers public-safe: it summarizes rather than pasting private data into a public channel.
+- **In your DMs and your own threads:** the full toolset, including calendar scheduling, email, SMS, reminders, and meeting reads.
+- **Extras:** private summaries when you're pulled into a long thread, and follow-up nudges for asks that haven't gotten a reply.
+
+## Guardrails and approvals
+
+Each connected account has one setting: **Always allow** or **Ask for approval**, applied to every action that writes or sends. Read-only actions never need approval. Approval is enforced in shared Slack threads; your personal DMs keep their existing confirmation behavior.
+
+## Relevant Docs
+
+<CardGroup cols={2}>
+  <Card title="Home" icon="house" href="/coming-soon/home">
+    Where you talk to Lindy and see what it's done
+  </Card>
+  <Card title="Pricing" icon="tag" href="/pricing">
+    Seats, credits, and the shared pool
+  </Card>
+</CardGroup>

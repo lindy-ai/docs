@@ -1,82 +1,69 @@
 ---
 title: 'Email Drafting'
-description: 'Lindy drafts replies that land in your drafts folder, ready to review and send'
+description: 'AI-drafted replies that land in your drafts folder, ready to review and send'
 icon: 'pen'
-keywords: ['email draft', 'reply', 'compose', 'write email', 'auto reply']
+keywords: ['email draft', 'reply', 'compose', 'write email', 'auto reply', 'follow-up', 'routine']
 ---
 
 ## Replies That Sound Like You
 
-After [Email Triage](/features/inbox-management/email-triage) sorts your inbox, Lindy drafts replies for emails that need a response. From the day you sign up, it learns how you write, so those drafts sound like you and sharpen over time. Every draft lands in your drafts folder for you to review, edit, and send. Nothing goes out without your approval.
+After [Email Triage](/features/inbox-management/email-triage) sorts your inbox, Lindy drafts replies for emails that need a response. Every draft lands in your drafts folder for you to review, edit, and send. Nothing goes out without your approval.
 
-## How to Set It Up
+## Find it in Routines
 
-<Note>
-  Open Lindy, click your **workspace name** in the top-left, and choose **Settings**. In the left sidebar, click **Emails**, then scroll to **Email drafting**.
-</Note>
+On the **Routines** page, email drafting shows up as two built-in routine cards:
 
-## How It Works
+- **Email drafting** — "Allow Lindy to draft email responses with your tone and voice."
+- **Follow-up bumps** — "Draft a bump when sent emails get no reply."
 
-Enable email drafting in your settings at [chat.lindy.ai](https://chat.lindy.ai). Look for **Email drafting** in the settings panel. Once on, Lindy will:
+If you're coming from the old settings page, you'll hit a *"These settings moved to Routines"* card that links you straight here.
 
-1. Read incoming emails that need a response
-2. Draft a reply based on your drafting instructions and everything it's learned about your style
-3. Save it as a draft in your email client
+## Turn it on
 
-From there, you review, tweak if needed, and hit send.
+Flip the **Email drafting** toggle to enable auto-drafting. While a routine is off, its detail fields are greyed out, so turn it on first, then tune it. Each card also has a **Learn more** link.
 
-## Drafting Instructions
+Once it's on, Lindy reads incoming emails that need a response, drafts a reply in your style, and saves it to your drafts. From there you review, tweak, and send.
 
-Lindy drafts from two sets of instructions, both in **Settings → Emails → Email drafting**. Your own **Drafting instructions** sit at the top, and the **Learned instructions** Lindy builds for you sit below.
+## Tune your drafts
 
-### Drafting instructions
+Click the **Email drafting** card to open it. You'll see:
 
-This is your own field. Paste or write your style rules and Lindy follows them. For example:
-> Match the sender's tone and formality level. Keep responses concise (under 3 sentences if possible). Sign off with 'Best' for professional contacts and 'Thanks' for casual ones. Never draft responses to no-reply emails.
+- **Drafting instructions** — the main box. Describe how you want replies written: tone, formality, length, and when to draft versus skip. Saves automatically when you click out of the field.
+- **Your signature** — your sign-off, shown above the Lindy line. Markdown is supported, so you can paste your Gmail signature or write a new one. Autosaves on blur.
+- **Learned instructions** — the style Lindy has picked up from how you actually write. This one is different: it doesn't autosave. Edit it, then click **Save learned instructions** (the button stays disabled until you make a change).
+- **Include "Sent with Lindy"** — keep or drop the Lindy footer on this inbox. This may not appear, depending on your rollout.
 
-<Frame>
-  <img src="/lindy-brand-assets/drafting-instructions.png" alt="Drafting instructions text field with example tone and style rules" />
-</Frame>
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/email-drafting-settings.mp4"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px', maxHeight: 'none' }}
+    />
+  </div>
+</div>
 
-The more specific you are, the better Lindy's drafts will sound. You can mention:
-- **Tone**: formal, casual, friendly, direct
-- **Length**: short and punchy, or thorough and detailed
-- **Sign-offs**: "Best," "Thanks," "Cheers," your custom signature
-- **Rules**: who to never reply to, what topics to escalate
+The more specific your drafting instructions, the better the drafts. Worth spelling out:
 
-### Learned instructions
+- **Tone**: formal, casual, friendly, direct.
+- **Length**: short and punchy, or thorough.
+- **Sign-offs**: "Best," "Thanks," or your custom signature.
+- **Rules**: who never to reply to, what to escalate instead.
 
-From the day you sign up, Lindy starts learning how you write. It saves what it notices as a memory in the **Learned instructions** field: your common phrases, sign-offs, and habits. It keeps updating that memory as you write and edit more emails, so the drafts get better and better over time. Open it any time to correct or add to what Lindy has learned, then click **Save**.
+Lindy also learns from your edits. Fix a draft before sending and it picks up on the change over time.
 
-<Frame>
-  <img src="/lindy-brand-assets/learned-instructions.png" alt="Learned instructions panel showing common phrases Lindy picked up from the user, with a Save button" />
-</Frame>
+## Follow-up bumps
 
-Your drafting instructions stay exactly as you set them, while your learned instructions keep improving on their own.
+A separate routine drafts a bump when a sent email gets no reply. See [Follow-up Bumps](/features/inbox-management/follow-up-bumps).
 
-## Signature
+## Connect another inbox
 
-Customize what shows up at the bottom of every Lindy draft.
+At the top of the drawer, your connected inbox shows as a chip (like `you@company.com`) with a **+ Add account** button beside it. Click **+ Add account**, choose **Google** or **Outlook**, and follow the prompts to grant access. You can connect as many inboxes as you like, across both providers.
 
-**Your signature** is your standard sign-off, rendered above the Lindy line. Add plain text or markdown — paste in your Gmail signature, or write something new.
-
-**Include Sent with Lindy** adds a small "Sent with Lindy" tagline below your signature. It's on by default — toggle it off in settings if you'd rather not include it.
-
-<Frame>
-  <img src="/lindy-brand-assets/signature.png" alt="Your signature field and Include Sent with Lindy toggle in email drafting settings" />
-</Frame>
-
-## Automatic Follow-ups
-
-Lindy tracks emails you've sent that haven't gotten a reply. After a set number of days (default: **2 days**), Lindy drafts a follow-up and saves it in your drafts for review. Adjust the timing in your settings. You always have the final say before anything sends.
-
-<Frame>
-  <img src="/lindy-brand-assets/auto-follow-ups.jpg" alt="Automatic follow-up drafting settings" />
-</Frame>
-
-<Tip>
-Looking for post-meeting follow-ups? That's a separate feature. See [Meeting Follow-ups](/features/meeting-assistant/follow-ups).
-</Tip>
+Settings are per-inbox, so when you have more than one connected, select the account chip first, then edit. Drafting only works once a Gmail or Outlook account is connected.
 
 ## Next Steps
 
@@ -84,7 +71,7 @@ Looking for post-meeting follow-ups? That's a separate feature. See [Meeting Fol
   <Card title="Email Triage" icon="inbox" href="/features/inbox-management/email-triage">
     How Lindy organizes your inbox
   </Card>
-  <Card title="Meeting Follow-ups" icon="paper-plane" href="/features/meeting-assistant/follow-ups">
-    Automatic follow-ups after meetings
+  <Card title="Routines" icon="clock-rotate-left" href="/coming-soon/routines">
+    Manage drafting, follow-ups, and your other routines
   </Card>
 </CardGroup>

@@ -1,0 +1,56 @@
+---
+title: 'Integrations'
+sidebarTitle: 'Integrations'
+description: 'Connect Lindy to the tools your team already uses, and control what it can do with guardrails.'
+icon: 'plug'
+---
+
+<Frame>
+  <img src="/lindy-brand-assets/integrations/integrations-panel.png" alt="The Integrations page: tools grouped by category, connected accounts, and a guardrail dropdown" />
+</Frame>
+
+Integrations connect Lindy to the tools it works in: Gmail, Slack, Notion, Google Drive, and more. Open **Integrations** to see every tool, grouped by category.
+
+Two things are worth understanding: whether a connection is yours or the team's, and what Lindy is allowed to do with it.
+
+## Personal and team connections
+
+| Scope | Who can use it | Who can change it |
+| --- | --- | --- |
+| **Personal** | Just you | You |
+| **Team** | Everyone in the workspace | Owners and admins |
+
+A personal connection is private to you. Your Lindy uses it for your own work, your DMs, and the web app.
+
+An owner or admin can share one of their personal connections with the whole workspace. From then on, everyone's Lindy reads that tool as that account and acts with its permissions. Members can see team connections but can't change them.
+
+## Guardrails
+
+Guardrails decide what Lindy can do without asking. This is the setting that matters most for Teammate. Each integration has one:
+
+| Setting | What Lindy does |
+| --- | --- |
+| **Always allow** | Writes without asking |
+| **Require approval** | Asks in Slack before writing |
+| **Don't offer** | Never writes with this tool |
+
+Two things to know:
+
+- **Reads are never guarded.** Checking your calendar or searching your email always just works. Guardrails only cover writes.
+- **Guardrails apply in shared Slack threads only.** Your web app chat, Slack DMs with Lindy, and iMessage and SMS aren't guarded.
+
+<Note>
+  A guardrail covers every account under an integration. You can't yet set one rule for your work Gmail and a different one for your personal Gmail.
+</Note>
+
+## Approving a write in Slack
+
+When Lindy needs approval, it posts **Approve** and **Deny** buttons in the thread. The person who asked can approve their own request, and so can any workspace owner or admin. Anyone else gets a private note to ask one of them.
+
+**Approve** allows that one action and changes nothing else. **Always allow** changes the rule going forward: workspace-wide if an owner or admin clicks it, or just for that person if a member does.
+
+## Connecting and managing
+
+Search for the tool you want and connect it with OAuth or an API key. Every action for that tool turns on at once, so there's no action-picking step. For tools that support more than one login, like Gmail, you can add further accounts under the same integration.
+
+Each connection shows whether it's healthy, needs reconnecting (usually an expired token), or isn't set up yet. From a connection you can rename it, share it with the workspace (owners and admins only), or disconnect it. Removing the last account of an integration removes the integration from your list.

@@ -1,0 +1,1601 @@
+/* Lindy AI Custom Styles */
+
+/* CSS Variables for consistency */
+:root {
+  /* Using Mintlify's default font stack */
+  --font-sans: inherit;
+  
+  /* Colors */
+  --color-primary: #F0C341;
+  --color-primary-light: #F5E1C3;
+  --color-primary-lighter: #F5DDB5;
+  --color-link: #E6C147;
+  --color-link-hover: #D4A73A;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #4A4A4A;
+  --color-text-muted: #B0B0B0;
+  --color-border: #E5E5E5;
+  --color-bg-light: #f8f9fa;
+  --color-bg-code: #FEF9F0;
+  --color-code: #C9A342;
+  
+  /* Dark mode colors */
+  --color-dark-bg: #1A1A1A;
+  --color-dark-surface: #2A2A2A;
+  --color-dark-border: #3A3A3A;
+  --color-dark-accent: #4A4A4A;
+  --color-dark-text: #E0E0E0;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 50%, var(--color-primary-lighter) 100%);
+  --gradient-nav: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 50%, var(--color-primary-lighter) 100%);
+  
+  /* Spacing */
+  --spacing-xs: 0.125rem;
+  --spacing-sm: 0.375rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 2rem;
+}
+
+/* Global styles */
+body {
+  /* Using Mintlify's default font - removed font-family override */
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  display: inline-block;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-lg);
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-secondary);
+}
+
+/* Text elements */
+p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-secondary);
+}
+
+p + p {
+  margin-top: var(--spacing-lg);
+}
+
+p strong, 
+p b {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: block;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: var(--spacing-lg);
+  padding-left: var(--spacing-xl);
+}
+
+li {
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary);
+}
+
+/* Links */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* Code styling */
+code {
+  background-color: var(--color-bg-code);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: var(--color-code);
+  /* Using Mintlify's default monospace font */
+}
+
+pre {
+  background-color: var(--color-dark-bg);
+  border-radius: 8px;
+  padding: 1.25rem;
+  overflow-wrap: break-word !important; /* Break long words */
+  word-wrap: break-word !important; /* Legacy support */
+  overflow-x: hidden !important; /* Remove horizontal scroll */
+  margin: var(--spacing-xl) 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  white-space: pre-wrap !important; /* Force text wrapping in code blocks */
+  max-width: 100% !important; /* Ensure container doesn't exceed parent */
+  box-sizing: border-box !important; /* Include padding in width calculation */
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #FFFFFF;
+  white-space: pre-wrap !important; /* Force text wrapping */
+  overflow-wrap: break-word !important; /* Break long words */
+  word-wrap: break-word !important; /* Legacy support */
+  max-width: 100% !important; /* Ensure code doesn't exceed container */
+  display: block !important; /* Ensure block-level behavior */
+}
+/* Buttons */
+.button, 
+a.button {
+  background: var(--gradient-primary);
+  color: var(--color-text-primary);
+  padding: var(--spacing-md) 1.75rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(240, 195, 65, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before,
+a.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.button:hover::before,
+a.button:hover::before {
+  left: 100%;
+}
+
+.button:hover,
+a.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240, 195, 65, 0.35);
+}
+
+/* Navigation items */
+.nav-item {
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.1rem 0;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-nav);
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: var(--color-link);
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+
+.nav-item.active {
+  font-weight: 600;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--gradient-primary);
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(240, 195, 65, 0.12);
+  border-color: transparent;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Gradient backgrounds - consolidated */
+[style*="background: linear-gradient"],
+[style*="#F0C341"], [style*="#F5E1C3"], [style*="#F5DDB5"],
+[style*="#FDD656"], [style*="#FEF4D3"], [style*="#FDF1DD"] {
+  position: relative;
+  color: var(--color-text-primary) !important;
+}
+
+[style*="background: linear-gradient"] *,
+[style*="#F0C341"] *, [style*="#F5E1C3"] *, [style*="#F5DDB5"] *,
+[style*="#FDD656"] *, [style*="#FEF4D3"] *, [style*="#FDF1DD"] * {
+  position: relative;
+  z-index: 1;
+}
+
+[style*="background: linear-gradient"] h3, 
+[style*="background: linear-gradient"] p,
+[style*="background: linear-gradient"] strong {
+  color: var(--color-dark-surface) !important;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* White text override on gradients */
+[style*="background: linear-gradient"] [style*="color: white"],
+[style*="background: linear-gradient"] [style*="color: #fff"],
+[style*="background: linear-gradient"] [style*="color: #ffffff"] {
+  color: var(--color-text-primary) !important;
+}
+
+/* Gradient overlay for contrast */
+[style*="background: linear-gradient"]::after,
+[style*="#F0C341"]::before, [style*="#F5E1C3"]::before, [style*="#F5DDB5"]::before,
+[style*="#FDD656"]::before, [style*="#FEF4D3"]::before, [style*="#FDF1DD"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* Utility classes */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.nav-link, .sidebar-link {
+  text-transform: none !important;
+}
+
+/* Code block text contrast fix for Mintlify */
+/* Light mode code blocks */
+[data-theme="light"] pre code,
+[data-theme="light"] .code-block,
+[data-theme="light"] [class*="CodeBlock"],
+:root:not([data-theme="dark"]) pre code,
+:root:not([data-theme="dark"]) .code-block,
+:root:not([data-theme="dark"]) [class*="CodeBlock"] {
+  color: #2d3748 !important; /* Dark gray for better readability */
+}
+
+/* Dark mode code blocks */
+[data-theme="dark"] pre code,
+[data-theme="dark"] .code-block,
+[data-theme="dark"] [class*="CodeBlock"],
+:root[data-theme="dark"] pre code,
+:root[data-theme="dark"] .code-block,
+:root[data-theme="dark"] [class*="CodeBlock"] {
+  color: #e2e8f0 !important; /* Light gray for dark mode */
+}
+
+/* Inline code text contrast */
+[data-theme="light"] code:not(pre code),
+:root:not([data-theme="dark"]) code:not(pre code) {
+  color: #2d3748 !important;
+}
+
+[data-theme="dark"] code:not(pre code),
+:root[data-theme="dark"] code:not(pre code) {
+  color: #f1f5f9 !important; /* Bright light grey for better visibility */
+}
+
+/* Inline code text contrast for .dark class */
+.dark code:not(pre code) {
+  color: #f1f5f9 !important;
+}
+
+/* Remove the gradient fill on cards while keeping all text underline effects */
+.card::before {
+  display: none !important; /* Removes only the card's gradient background fill */
+}
+
+/* Keep the card hover animation and shadow, but no background fill */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(240, 195, 65, 0.16);
+  border-color: var(--color-border); /* Keep the normal border */
+  text-decoration: none !important; /* Remove default underline on entire card */
+}
+
+/* Add yellow underline to card titles on hover */
+.card:hover h2,
+.card:hover h3,
+.card:hover h4,
+.card:hover .card-title {
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+}
+
+
+
+/* Mintlify Sidebar Alignment - Based on Actual Structure */
+
+/* Ensure sidebar group headers are left-aligned */
+.sidebar-group-header {
+  padding-left: 1rem;
+  text-align: left;
+}
+
+/* Main navigation links - already have inline padding-left:1rem */
+#sidebar-content a.group,
+#sidebar-content div.group {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+/* Reduce icon gap if items appear too spaced */
+#sidebar-content .group {
+  gap: 0.75rem; /* Reduced from gap-x-3 (0.75rem from 1rem) */
+}
+
+/* Optional: Remove or reduce the left padding if you want items more flush */
+#sidebar-content a[style*="padding-left:1rem"],
+#sidebar-content div[style*="padding-left:1rem"] {
+  padding-left: 0.75rem; /* Slightly less padding */
+}
+
+/* For nested items when groups are expanded */
+/* When a group is expanded, nested items should have more padding */
+#sidebar-content li[data-group-tag] + ul a,
+#sidebar-content li[data-group-tag] + ul div.group {
+  padding-left: 2.5rem;
+}
+
+/* Third level nesting */
+#sidebar-content li[data-group-tag] + ul li[data-group-tag] + ul a,
+#sidebar-content li[data-group-tag] + ul li[data-group-tag] + ul div.group {
+  padding-left: 3.5rem;
+}
+
+/* Ensure text doesn't wrap and stays aligned */
+#sidebar-content .flex-1 {
+  text-align: left;
+}
+
+/* If you want ALL items to be more flush to the left edge */
+#sidebar-group {
+  padding-left: 0;
+}
+
+/* Optional: Make the entire sidebar content area use full width */
+#sidebar-content {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* Handle the chevron rotation for expanded groups */
+li[aria-expanded="true"] > div.group svg:last-child {
+  transform: rotate(90deg);
+}
+
+/* Make all navigation items full width */
+#sidebar-content li {
+  width: 100%;
+}
+
+#sidebar-content a.group,
+#sidebar-content div.group {
+  width: 100%;
+  display: flex;
+}
+
+/* Ensure consistent background width for active/hover states */
+#sidebar-content .rounded-xl {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0.75rem !important; /* More rounded corners */
+}
+
+/* Add back some visual padding to the container */
+#sidebar-content ul {
+  padding-right: 0;
+  padding-left: 0; /* New: remove left padding so highlight extends fully */
+}
+
+/* Remove vertical gaps between navigation items for consistent spacing */
+#sidebar-content li {
+  margin: 0; /* New: eliminate default margin to close gaps */
+}
+
+/* Special styling for active/current items - full width background */
+#sidebar-content li[style*="background"],
+#sidebar-content a[style*="background"],
+#sidebar-content div[style*="background"] {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  border-radius: 0.75rem !important; /* More rounded corners */
+}
+
+/* For the yellow highlighted items (like "Input options" and "Overview") */
+#sidebar-content li > div[style*="background"],
+#sidebar-content li > a[style*="background"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0.75rem !important; /* More rounded corners */
+}
+
+/* Ensure icons maintain consistent size */
+#sidebar-content svg:first-child {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Remove any potential center alignment from parent containers */
+#navigation-items > div {
+  text-align: left;
+}
+
+/* Alternative approach - keep design but consistent widths */
+/* Ensure sidebar items stretch properly */
+#sidebar-group {
+  width: 100%;
+}
+
+#sidebar-group > li {
+  width: 100%;
+  padding-right: 0.75rem; /* Match the pr-3 from the links */
+}
+
+/* Make backgrounds consistent width */
+#sidebar-content .group {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sidebar item hover style - match active highlight */
+#sidebar-content a.group:hover,
+#sidebar-content div.group:hover {
+  text-decoration: none !important; /* Remove underline */
+  background-color: var(--color-bg-code); /* Same soft yellow as active */
+  border-radius: 0.75rem !important; /* More rounded corners */
+  width: 100%; /* Ensure full-width highlight */
+}
+
+/* Active navigation items - keep original text color with bold weight */
+#sidebar-content li[style*="background"] a.group,
+#sidebar-content li[style*="background"] div.group,
+#sidebar-content a[style*="background"].group,
+#sidebar-content div[style*="background"].group {
+  font-weight: 550; /* Slightly bold */
+  color: var(--color-text-secondary) !important; /* Keep original dark grey text */
+}
+
+/* Override nav-item color changes for sidebar items specifically */
+#sidebar-content .nav-item:hover,
+#sidebar-content .nav-item.active,
+#sidebar-content .nav-item,
+#sidebar-content a.group,
+#sidebar-content div.group {
+  color: var(--color-text-secondary) !important; /* Force dark text color */
+}
+
+/* Ensure active sidebar items stay dark even with nav-item class */
+#sidebar-content li[style*="background"] .nav-item,
+#sidebar-content [style*="background"] .nav-item {
+  color: var(--color-text-secondary) !important; /* Override nav-item yellow */
+}
+
+/* Add overrides to remove text underline on paragraphs inside cards */
+.card p,
+.card:hover p {
+  text-decoration: none !important;
+}
+
+/* Frames (images in tutorials) */
+.frame {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+}
+
+.frame:hover {
+  box-shadow: 0 6px 20px rgba(240, 195, 65, 0.25);
+}
+
+/* Generic video styling */
+video {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* 50px smaller */
+  border-radius: 16px;
+  overflow: hidden;
+  clip-path: inset(0 round 16px);
+}
+
+/* -------- Video Card Highlight -------- */
+.video-card {
+  display: inline-block; /* shrink to content */
+  background: transparent;
+  border-radius: 16px;
+  overflow: hidden; /* clip any internal overflow */
+  transition: box-shadow 0.25s ease;
+  line-height: 0; /* remove inline spacing */
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07); /* subtle shadow */
+}
+.video-card:hover {
+  box-shadow: 0 8px 28px rgba(240, 195, 65, 0.18); /* yellow glow */
+}
+
+.video-card video {
+  width: auto !important; /* override inline width: 100% */
+  max-width: 100%;
+  height: auto !important; /* ensure height is auto */
+  display: block !important; /* override any inline display */
+  margin: 0 !important; /* remove any margin */
+  padding: 0 !important; /* remove any padding */
+}
+
+/* ---------------- Topbar Customizations ---------------- */
+/* Center the nav horizontally and remove extra spacing */
+.flex-1.relative.hidden.lg\:flex.items-center.ml-auto.justify-end.space-x-4 {
+  justify-content: center !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove padding/margin from nav and ul */
+nav.text-sm {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+ul.flex.space-x-6.items-center {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  gap: 2rem !important; /* Increase spacing between Support and Dashboard */
+}
+
+/* Remove any extra space from the nav items */
+.navbar-link {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Ensure buttons have no extra bottom space */
+#topbar-cta-button {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Keep Support link as gray text (remove any custom styling) */
+a[href^="mailto:support@lindy.ai"] {
+  /* Let it use the default gray styling from the HTML classes */
+}
+
+/* Dashboard CTA → use custom light background */
+#topbar-cta-button > a > span.absolute {
+  background: #fdf8ee !important;
+}
+
+/* Dashboard text and arrow → use secondary text color */
+#topbar-cta-button .z-10 {
+  color: var(--color-text-secondary) !important;
+}
+
+#topbar-cta-button svg {
+  color: var(--color-text-secondary) !important;
+}
+
+/* Remove any underline effects */
+#topbar-cta-button > a {
+  text-decoration: none !important;
+}
+
+#topbar-cta-button > a:hover {
+  text-decoration: none !important;
+}
+
+/* Hover slightly darkens for feedback */
+#topbar-cta-button > a:hover > span.absolute {
+  opacity: 0.9 !important;
+}
+
+/* ============== DARK MODE DASHBOARD BUTTON ============== */
+/* Make Dashboard button fit dark mode theme with appropriate yellow */
+
+/* Dark mode: Dashboard button background */
+.dark #topbar-cta-button > a > span.absolute {
+  background: rgba(240, 195, 65, 0.15) !important; /* Subtle dark mode yellow background */
+}
+
+/* Dark mode: Dashboard text and arrow colors */
+.dark #topbar-cta-button .z-10 {
+  color: #f3f4f6 !important; /* Light text for better contrast */
+}
+
+.dark #topbar-cta-button svg {
+  color: #f3f4f6 !important; /* Light arrow color */
+}
+
+/* Dark mode: Dashboard button hover state */
+.dark #topbar-cta-button > a:hover > span.absolute {
+  background: rgba(240, 195, 65, 0.25) !important; /* Slightly more prominent on hover */
+  opacity: 1 !important; /* Override the opacity rule */
+}
+
+/* Dark mode: Dashboard button smooth transitions */
+.dark #topbar-cta-button > a > span.absolute {
+  transition: background-color 0.2s ease !important;
+}
+
+/* ============== STANDARDIZE ALL YELLOW SHADES IN DARK MODE ============== */
+/* Make all solid yellow instances use the same lighter shade */
+
+/* Dark mode: Standardize all primary/yellow text colors */
+.dark .text-primary,
+.dark .text-primary-light,
+.dark [class*="text-yellow"],
+.dark [class*="text-amber"],
+.dark .gradient-text,
+.dark .text-link,
+.dark a[style*="color: #F0C341"],
+.dark a[style*="color: #E6C147"],
+.dark span[style*="color: #F0C341"],
+.dark span[style*="color: #E6C147"] {
+  color: #F5E198 !important; /* Lighter, consistent yellow for all text */
+}
+
+/* Dark mode: Standardize all yellow backgrounds */
+.dark [style*="background: #F0C341"],
+.dark [style*="background: #E6C147"],
+.dark [style*="background-color: #F0C341"],
+.dark [style*="background-color: #E6C147"],
+.dark .bg-primary,
+.dark .bg-primary-light {
+  background-color: #F5E198 !important; /* Lighter yellow for backgrounds */
+}
+
+/* Dark mode: Standardize yellow borders */
+.dark [style*="border-color: #F0C341"],
+.dark [style*="border-color: #E6C147"],
+.dark .border-primary,
+.dark .border-primary-light {
+  border-color: #F5E198 !important; /* Lighter yellow for borders */
+}
+
+/* Dark mode: Override any CSS custom properties for yellow */
+.dark {
+  --color-primary: #F5E198 !important;
+  --color-primary-light: #F5E198 !important;
+  --color-link: #F5E198 !important;
+  --color-link-hover: #F3D773 !important; /* Slightly darker for hover */
+}
+
+/* Dark mode: Nav items and links using yellow */
+.dark .nav-item:hover,
+.dark .nav-item.active,
+.dark a:hover {
+  color: #F5E198 !important;
+}
+
+/* Dark mode: Any remaining yellow elements */
+.dark .yellow,
+.dark .primary-color,
+.dark [class*="primary"] {
+  color: #F5E198 !important;
+}
+
+/* Dark mode: Underlines and decorations */
+.dark .text-decoration-yellow,
+.dark [style*="text-decoration-color"],
+.dark .underline-yellow {
+  text-decoration-color: #F5E198 !important;
+}
+
+/* Dark mode: Sidebar "On this page" yellow text */
+.dark #on-this-page .text-primary,
+.dark .toc .text-primary,
+.dark .table-of-contents .text-primary {
+  color: #F5E198 !important;
+}
+
+/* Light mode: Keep existing light styling unchanged */
+:root:not(.dark) #topbar-cta-button > a > span.absolute,
+html:not(.dark) #topbar-cta-button > a > span.absolute {
+  background: #fdf8ee !important; /* Keep original light background */
+}
+
+/* ============== DARK MODE TEXT CONTRAST FIXES ============== */
+/* Fix dark mode text readability - keep light mode unchanged */
+
+/* Dark mode: Make sidebar text more readable */
+.dark #sidebar-content .text-gray-600,
+.dark #sidebar-content .text-gray-500,
+.dark #sidebar-content .text-gray-400,
+.dark .text-gray-600,
+.dark .text-gray-500,
+.dark .text-gray-400 {
+  color: #d1d5db !important; /* Much lighter grey for better readability */
+}
+
+/* Dark mode: Improve prose text contrast */
+.dark .prose .text-gray-600,
+.dark .prose .text-gray-500,
+.dark .prose .text-gray-400,
+.dark .prose p,
+.dark .prose .leading-6 {
+  color: #d1d5db !important; /* Better contrast for body text */
+}
+
+/* Dark mode: Fix small text elements */
+.dark .text-sm.text-gray-600,
+.dark .text-sm.text-gray-500,
+.dark .text-sm.text-gray-400,
+.dark .text-xs.text-gray-600,
+.dark .text-xs.text-gray-500,
+.dark .text-xs.text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Navigation and sidebar improvements */
+.dark #navigation-items .text-gray-600,
+.dark #navigation-items .text-gray-500,
+.dark #navigation-items .text-gray-400,
+.dark .sidebar-link .text-gray-600,
+.dark .sidebar-link .text-gray-500,
+.dark .sidebar-link .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Card content text */
+.dark .card .text-gray-600,
+.dark .card .text-gray-500,
+.dark .card .text-gray-400,
+.dark .card .prose {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Table of contents and on-page navigation */
+.dark .toc .text-gray-600,
+.dark .toc .text-gray-500,
+.dark .toc .text-gray-400,
+.dark #on-this-page .text-gray-600,
+.dark #on-this-page .text-gray-500,
+.dark #on-this-page .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Footer and disclaimer text */
+.dark footer .text-gray-600,
+.dark footer .text-gray-500,
+.dark footer .text-gray-400,
+.dark .chat-assistant-disclaimer-text {
+  color: #9ca3af !important; /* Slightly more muted for disclaimers */
+}
+
+/* Dark mode: Meta information (breadcrumbs, timestamps, etc.) */
+.dark .eyebrow,
+.dark .meta-text,
+.dark .text-gray-600.text-sm,
+.dark .text-gray-500.text-sm,
+.dark .text-gray-400.text-sm {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Assistant chat interface text improvements */
+.dark .chat-assistant-sheet .text-gray-600,
+.dark .chat-assistant-sheet .text-gray-500,
+.dark .chat-assistant-sheet .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Ensure headings maintain good contrast */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #f9fafb !important; /* Very light for headings */
+}
+
+/* Dark mode: Link text improvements */
+.dark a.text-gray-600,
+.dark a.text-gray-500,
+.dark a.text-gray-400 {
+  color: #d1d5db !important;
+}
+
+.dark a.text-gray-600:hover,
+.dark a.text-gray-500:hover,
+.dark a.text-gray-400:hover {
+  color: #f3f4f6 !important;
+}
+
+/* Dark mode: Step component text */
+.dark .step .text-gray-600,
+.dark .step .text-gray-500,
+.dark .step .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Callout content text */
+.dark .callout .text-gray-600,
+.dark .callout .text-gray-500,
+.dark .callout .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Tab content text */
+.dark .tabs .text-gray-600,
+.dark .tabs .text-gray-500,
+.dark .tabs .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Remove the horizontal divider line under the tab bar (keep the active-tab underline) */
+.tabs [role="tablist"],
+[role="tablist"] {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Dark mode: Override any remaining low-contrast text */
+.dark [class*="text-gray-6"],
+.dark [class*="text-gray-5"],
+.dark [class*="text-gray-4"] {
+  color: #d1d5db !important;
+}
+
+/* Light mode: Make all "On this page" sidebar text gray by default */
+:root:not(.dark) #on-this-page a,
+:root:not(.dark) .toc a,
+:root:not(.dark) .table-of-contents a,
+html:not(.dark) #on-this-page a,
+html:not(.dark) .toc a,
+html:not(.dark) .table-of-contents a {
+  color: #6b7280 !important; /* Same gray as left sidebar buttons */
+  font-weight: 400 !important; /* Normal weight by default */
+}
+
+/* Light mode: Override yellow highlighting with gray + slight font weight for active sections */
+:root:not(.dark) #on-this-page .text-primary,
+:root:not(.dark) .toc .text-primary,
+:root:not(.dark) .table-of-contents .text-primary,
+:root:not(.dark) #on-this-page [class*="active"],
+:root:not(.dark) .toc [class*="active"],
+:root:not(.dark) .table-of-contents [class*="active"],
+:root:not(.dark) #on-this-page [aria-current],
+:root:not(.dark) .toc [aria-current],
+:root:not(.dark) .table-of-contents [aria-current],
+html:not(.dark) #on-this-page .text-primary,
+html:not(.dark) .toc .text-primary,
+html:not(.dark) .table-of-contents .text-primary,
+html:not(.dark) #on-this-page [class*="active"],
+html:not(.dark) .toc [class*="active"],
+html:not(.dark) .table-of-contents [class*="active"],
+html:not(.dark) #on-this-page [aria-current],
+html:not(.dark) .toc [aria-current],
+html:not(.dark) .table-of-contents [aria-current] {
+  color: #6b7280 !important; /* Keep gray instead of yellow */
+  font-weight: 550 !important; /* Slight weight increase for active sections */
+}
+
+/* Ensure light mode stays unchanged by being more specific with light mode rules */
+:root:not(.dark) .text-gray-600,
+:root:not(.dark) .text-gray-500,
+:root:not(.dark) .text-gray-400,
+html:not(.dark) .text-gray-600,
+html:not(.dark) .text-gray-500,
+html:not(.dark) .text-gray-400 {
+  /* Let original Tailwind classes handle light mode - no overrides needed */
+}
+
+/* ============== ICON COLOR FIXES FOR INTRODUCTION DIAGRAM ============== */
+/* Force yellow icons in the introduction diagram */
+.not-prose .icon.inline {
+  background-color: #E6C147 !important;
+}
+
+.dark .not-prose .icon.inline {
+  background-color: #E6C147 !important;
+}
+
+/* ============== ADDITIONAL DARK MODE FIXES ============== */
+/* Catch remaining hard-to-read text elements */
+
+/* Dark mode: More comprehensive sidebar fixes */
+.dark #sidebar-content a,
+.dark #sidebar-content div,
+.dark #sidebar-content span,
+.dark #sidebar-content .flex-1,
+.dark .sidebar-item,
+.dark .nav-link {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Sidebar group headers and navigation items */
+.dark #sidebar-content .group .flex-1,
+.dark #sidebar-content .text-sm,
+.dark #sidebar-content .leading-6,
+.dark .sidebar-group-header {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Main content body text improvements */
+.dark .mdx-content p,
+.dark .prose-gray p,
+.dark .prose-invert p,
+.dark .mt-2.text-lg.prose p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: List item descriptions and bullet points */
+.dark ul li,
+.dark ol li,
+.dark .prose ul li,
+.dark .prose ol li {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Step descriptions and numbered lists */
+.dark .step-content p,
+.dark .steps p,
+.dark [data-component-part="step-content"] p,
+.dark [role="listitem"] p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Tab content and descriptions */
+.dark .tab-content p,
+.dark [data-component-part="tab-content"] p,
+.dark .prose.dark\:prose-dark p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Generic paragraph and text improvements */
+.dark .text-lg.prose p,
+.dark .text-sm.leading-6,
+.dark .font-normal.text-sm.leading-6,
+.dark .mt-1.font-normal.text-sm.leading-6 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Catch any remaining grey text variants */
+.dark [class*="text-gray"],
+.dark .text-muted,
+.dark .text-secondary {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Override Tailwind's prose component specifically */
+.dark .prose,
+.dark .prose p,
+.dark .prose-gray,
+.dark .prose-invert {
+  --tw-prose-body: #d1d5db !important;
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Navigation and menu items */
+.dark nav a,
+.dark nav span,
+.dark nav div,
+.dark .navigation-item,
+.dark .menu-item {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Override any remaining low contrast elements */
+.dark .opacity-70,
+.dark .opacity-60,
+.dark .opacity-50 {
+  opacity: 0.9 !important;
+}
+
+/* Dark mode: Ensure proper contrast for interactive elements */
+.dark button span,
+.dark a span,
+.dark .clickable span {
+  color: inherit !important;
+}
+
+/* Dark mode: Fix any text inside containers that might be missed */
+.dark .container p,
+.dark .content p,
+.dark .main p,
+.dark .section p {
+  color: #d1d5db !important;
+}
+
+/* ============== HIGHLY SPECIFIC SCREENSHOT FIXES ============== */
+/* Target exact elements visible in the screenshot */
+
+/* Dark mode: Sidebar navigation text (Introduction, Field Configuration, etc.) */
+.dark #sidebar-content a[class*="group"],
+.dark #sidebar-content div[class*="group"],
+.dark #sidebar-content .group a,
+.dark #sidebar-content .group div,
+.dark #sidebar-content .group span {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Main content descriptions like "on CRM updates and follow-up emails" */
+.dark .prose p:not(strong):not(b),
+.dark .mdx-content p:not(strong):not(b),
+.dark .text-lg p,
+.dark .mt-2 p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Concept descriptions ("Your AI workers...", "Events that start...", etc.) */
+.dark li p,
+.dark ul p,
+.dark ol p,
+.dark .list-item p,
+.dark .concept-description {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Step component text like "No credit card required" and "Build your first agent" */
+.dark .step p,
+.dark .steps .step p,
+.dark [role="listitem"] div p,
+.dark [data-component-part="step-content"],
+.dark [data-component-part="step-content"] p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Catch all paragraph text that might be using default colors */
+.dark p {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Override any element with low opacity that makes text hard to read */
+.dark * {
+  /* Only apply to text elements, not backgrounds */
+}
+
+.dark p,
+.dark span:not([class*="bg-"]):not([style*="background"]),
+.dark div:not([class*="bg-"]):not([style*="background"]) {
+  color: #d1d5db !important;
+}
+
+/* Dark mode: Ensure sidebar items have proper contrast */
+.dark #sidebar-content * {
+  color: #d1d5db !important;
+}
+
+/* Exception: Keep headings bright white */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #f9fafb !important;
+}
+
+/* Exception: Keep primary colored elements as intended */
+.dark .text-primary,
+.dark .text-primary-light,
+.dark [class*="text-yellow"],
+.dark [class*="text-amber"] {
+  color: var(--color-primary) !important;
+}
+
+/* ============== DARK MODE SIDEBAR HOVER IMPROVEMENTS ============== */
+/* Make hover state more subtle and match active state styling */
+
+/* Dark mode: Subtle hover state for sidebar items */
+.dark #sidebar-content a.group:hover,
+.dark #sidebar-content div.group:hover {
+  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow for better visibility */
+  border-radius: 0.75rem !important;
+  opacity: 0.85 !important; /* Slightly increased opacity */
+}
+
+/* Dark mode: Remove the overly bright hover from existing styles */
+.dark #sidebar-content .group:hover {
+  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow, override any existing bright hover */
+}
+
+/* Dark mode: Ensure active states keep their intended styling */
+.dark #sidebar-content li[style*="background"] a.group,
+.dark #sidebar-content li[style*="background"] div.group,
+.dark #sidebar-content a[style*="background"].group,
+.dark #sidebar-content div[style*="background"].group {
+  background-color: rgba(240, 195, 65, 0.3) !important; /* Darker yellow for active state */
+  opacity: 1 !important; /* Full opacity for active items */
+  font-weight: 550 !important; /* Keep active items slightly bolder */
+}
+
+/* Dark mode: Smooth transitions for better UX */
+.dark #sidebar-content a.group,
+.dark #sidebar-content div.group {
+  transition: all 0.2s ease !important;
+}
+
+/* ============== CALLOUT THEME FIXES ============== */
+/* Info callouts - yellow theme to match Lindy branding */
+.callout[data-callout-type="info"] {
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
+}
+
+/* Note callouts - identical styling to Info */
+.callout[data-callout-type="note"] {
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
+}
+
+/* Note callouts - identical styling to Info */
+.callout[data-callout-type="note"] {
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
+}
+
+/* Warning callouts - identical styling to Info */
+.callout[data-callout-type="warning"] {
+  border-color: rgba(240, 195, 65, 0.3) !important; /* Yellow border */
+  background-color: #FEF9F0 !important; /* Specified cream background */
+}
+
+/* Override green emerald colors with PURPLE theme colors for tips */
+
+/* Tip callouts - replace emerald with PURPLE */
+.callout[data-callout-type="tip"] {
+  border-color: rgba(147, 51, 234, 0.2) !important; /* Purple border instead of emerald */
+  background-color: rgba(147, 51, 234, 0.1) !important; /* Purple background instead of emerald */
+}
+
+/* Dark mode info callouts - enhanced visibility */
+.dark .callout[data-callout-type="info"] {
+  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
+  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
+}
+
+/* Dark mode note callouts - enhanced visibility */
+.dark .callout[data-callout-type="note"] {
+  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
+  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
+}
+
+/* Dark mode warning callouts - enhanced visibility */
+.dark .callout[data-callout-type="warning"] {
+  border-color: rgba(240, 195, 65, 0.5) !important; /* Stronger yellow border for better visibility */
+  background-color: rgba(240, 195, 65, 0.15) !important; /* More prominent yellow background for dark mode */
+}
+
+/* Dark mode tip callouts */
+.dark .callout[data-callout-type="tip"] {
+  border-color: rgba(147, 51, 234, 0.3) !important; /* Darker purple border for dark mode */
+  background-color: rgba(147, 51, 234, 0.15) !important; /* Darker purple background for dark mode */
+}
+
+/* Info callout icon color */
+.callout[data-callout-type="info"] svg {
+  color: #E6C147 !important; /* Yellow icon to match theme */
+}
+
+/* Note callout icon color */
+.callout[data-callout-type="note"] svg {
+  color: #E6C147 !important; /* Yellow icon to match theme */
+}
+
+/* Warning callout icon color */
+.callout[data-callout-type="warning"] svg {
+  color: #E6C147 !important; /* Yellow icon to match theme */
+}
+
+/* Tip callout icon color */
+.callout[data-callout-type="tip"] svg {
+  color: #7c3aed !important; /* Purple icon instead of emerald */
+}
+
+/* Dark mode info callouts */
+.dark .callout[data-callout-type="info"] svg {
+  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
+}
+
+/* Dark mode note callouts */
+.dark .callout[data-callout-type="note"] svg {
+  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
+}
+
+/* Dark mode warning callouts */
+.dark .callout[data-callout-type="warning"] svg {
+  color: #F5E198 !important; /* Lighter yellow icon for dark mode */
+}
+
+.dark .callout[data-callout-type="tip"] svg {
+  color: #a855f7 !important; /* Lighter purple icon for dark mode */
+}
+
+/* Light mode: Ensure Info/Note/Warning/Tip callouts use default text colors */
+:root:not(.dark) .callout[data-callout-type="info"] .prose,
+:root:not(.dark) .callout[data-callout-type="note"] .prose,
+:root:not(.dark) .callout[data-callout-type="warning"] .prose,
+:root:not(.dark) .callout[data-callout-type="tip"] .prose,
+html:not(.dark) .callout[data-callout-type="info"] .prose,
+html:not(.dark) .callout[data-callout-type="note"] .prose,
+html:not(.dark) .callout[data-callout-type="warning"] .prose,
+html:not(.dark) .callout[data-callout-type="tip"] .prose {
+  color: inherit !important; /* Use default text colors in light mode */
+}
+
+/* Tip callout text colors */
+.callout[data-callout-type="tip"] .prose {
+  color: #5b21b6 !important; /* Dark purple text for light mode */
+}
+
+/* Dark mode info callout text */
+.dark .callout[data-callout-type="info"] .prose {
+  color: #fcd34d !important; /* Light yellow text for dark mode */
+}
+
+/* Dark mode note callout text */
+.dark .callout[data-callout-type="note"] .prose {
+  color: #fcd34d !important; /* Light yellow text for dark mode */
+}
+
+/* Dark mode warning callout text */
+.dark .callout[data-callout-type="warning"] .prose {
+  color: #fcd34d !important; /* Light yellow text for dark mode */
+}
+
+.dark .callout[data-callout-type="tip"] .prose {
+  color: #c4b5fd !important; /* Light purple text for dark mode */
+}
+
+/* Override any specific emerald classes with PURPLE */
+.callout[data-callout-type="tip"] .text-emerald-600 {
+  color: #7c3aed !important; /* Override emerald text with purple */
+}
+
+.dark .callout[data-callout-type="tip"] .text-emerald-400,
+.dark .callout[data-callout-type="tip"] .text-emerald-200 {
+  color: #c4b5fd !important; /* Override dark mode emerald text with light purple */
+}
+
+/* ============== IMAGE BUFFER/PADDING FIXES ============== */
+/* Remove unwanted spacing around images and frames */
+
+/* Remove default margins and padding from images (excluding nav logo) */
+img:not(#topbar-logo):not(.logo):not([class*="logo"]) {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Remove spacing from image containers */
+.frame,
+.image-container,
+.screenshot,
+[class*="image"],
+figure {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0; /* Remove line-height spacing */
+}
+
+/* Ensure images fill their containers completely */
+.frame img,
+.image-container img,
+.screenshot img,
+figure img {
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Remove any wrapper padding that might create buffers */
+div[style*="text-align: center"] img,
+div[style*="justify-content: center"] img,
+.text-center img,
+.flex.justify-center img {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fix centered image containers */
+div[style*="display: flex; justify-content: center"] {
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+}
+
+/* Remove default browser image spacing */
+img {
+  vertical-align: top; /* Remove baseline spacing */
+}
+
+/* Ensure iframe and embedded content fills properly */
+iframe:not([class*="embed"]):not([id*="chat"]) {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  border: none !important;
+}
+
+/* Remove spacing from any wrapper divs around images */
+.mdx-content img,
+.prose img,
+.content img {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ============== VIDEO BUFFER/PADDING FIXES ============== */
+/* Remove unwanted spacing around videos and make them fill containers */
+
+/* Remove default margins and padding from videos */
+video {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Remove spacing from video containers */
+.video-container,
+.video-wrapper,
+[class*="video"],
+.media-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important; /* Remove line-height spacing */
+}
+
+/* Ensure videos in specific containers fill completely */
+.video-card video,
+.frame video,
+.screenshot video,
+figure video,
+.media video {
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Remove wrapper padding that might create buffers around videos */
+div[style*="text-align: center"] video,
+div[style*="justify-content: center"] video,
+.text-center video,
+.flex.justify-center video {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fix centered video containers */
+div[style*="display: flex; justify-content: center"] video {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove spacing from content areas containing videos */
+.mdx-content video,
+.prose video,
+.content video {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Ensure video elements have no baseline spacing */
+video {
+  vertical-align: top !important; /* Remove baseline spacing */
+}
+
+/* Ensure inline code in mdx content is bright in dark mode */
+.dark .mdx-content code:not(pre code),
+.dark .prose code:not(pre code) {
+  color: #f1f5f9 !important;
+}
+
+/* ============== INFO CARDS ============== */
+/* Bordered card-style containers for long-form sub-sections that would otherwise
+   blend into the rest of the page (Start Here, Daily Basics, All About You on
+   the best-practices page). */
+.info-card {
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  margin: 1.75rem 0;
+  background-color: rgba(240, 195, 65, 0.05);
+  box-shadow: 0 2px 10px rgba(240, 195, 65, 0.08);
+}
+
+.info-card > h3:first-child,
+.info-card > h2:first-child,
+.info-card > :first-child {
+  margin-top: 0 !important;
+}
+
+.info-card > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Make the heading inside an info-card bigger and tighter to the content below */
+.info-card h3 {
+  font-size: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Give paragraphs inside an info-card real breathing room */
+.info-card p {
+  margin-bottom: 1.5rem !important;
+}
+
+.info-card p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Tighten the gap inside the same paragraph after a block-display strong label */
+.info-card p strong,
+.info-card p b {
+  margin-top: 0 !important;
+}
+
+/* List items inside info-cards: a bit more spacing too */
+.info-card li {
+  margin-bottom: 0.75rem;
+}
+
+.info-card li:last-child {
+  margin-bottom: 0;
+}
+
+/* Dark-mode tuning */
+.dark .info-card {
+  border-color: rgba(245, 225, 152, 0.2);
+  border-left-color: #F5E198;
+  background-color: rgba(245, 225, 152, 0.07);
+  box-shadow: 0 4px 16px rgba(245, 225, 152, 0.08);
+}
+
+
+/* ============== SIDEBAR GROUP SPACING ============== */
+/* Tighten the vertical gap between sidebar groups (Start Here, Texting & Tasks, etc.)
+   Tailwind utility `mt-8` (2rem) on the group containers was creating very large gaps.
+   The first group wraps in `ul.list-none.mt-8`; subsequent groups wrap in
+   `div.mt-6.lg:mt-8`, so we need both selectors. */
+#sidebar-content ul.list-none.mt-8,
+#sidebar-content ul[class*="mt-8"],
+#sidebar-content div[class*="mt-6"][class*="mt-8"],
+#sidebar-content div[class*="lg:mt-8"] {
+  margin-top: 1rem !important;
+}
+
+/* Slightly tighten the header-to-list gap within a group */
+#sidebar-content .sidebar-group-header {
+  margin-bottom: 0.5rem !important;
+}
+
+/* ============== "ON THIS PAGE" TOC TITLE ============== */
+/* The global h2 rule (font-size: 2rem, margin-top: 2.5rem) was getting applied to
+   the right-side "On this page" title, blowing it up to body-heading size. */
+#table-of-contents h2,
+#table-of-contents-layout h2 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* Hide the global h1::after underline indicator if it ever cascades into the TOC */
+#table-of-contents h2::after,
+#table-of-contents-layout h2::after {
+  display: none !important;
+}
+
+/* Add breathing room between the "On this page" title and the link list */
+#table-of-contents nav,
+#table-of-contents-layout nav {
+  margin-bottom: 0.875rem !important;
+}
+
+#table-of-contents-content {
+  margin-top: 0.5rem !important;
+}

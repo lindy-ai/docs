@@ -4,12 +4,14 @@
   "name": "Lindy Documentation",
   "redirects": [
     { "source": "/CLAUDE", "destination": "/", "permanent": true },
-    { "source": "/WORKFLOW", "destination": "/", "permanent": true }
+    { "source": "/WORKFLOW", "destination": "/", "permanent": true },
+    { "source": "/account-billing/multi-account", "destination": "/features/inbox-management/email-drafting", "permanent": true },
+    { "source": "/features/meeting-assistant/follow-ups", "destination": "/features/inbox-management/follow-up-bumps", "permanent": true }
   ],
   "colors": {
-    "primary": "#F7B844",
-    "light": "#FDE9B0",
-    "dark": "#DA920A"
+    "primary": "#1A1A1A",
+    "light": "#E5E4E1",
+    "dark": "#000000"
   },
   "favicon": "/favicon.png",
   "logo": {
@@ -31,192 +33,74 @@
     }
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Documentation",
-        "groups": [
-          {
-            "group": "Start Here",
-            "pages": [
-              "index",
-              "pricing",
-              "start-here/quickstart",
-              "start-here/best-practices",
-              "start-here/team-setup"
-            ]
-          },
-          {
-            "group": "Texting & Tasks",
-            "pages": [
-              "features/imessage-sms",
-              "features/ad-hoc-tasks"
-            ]
-          },
-          {
-            "group": "Inbox Management",
-            "pages": [
-              "features/inbox-management/email-triage",
-              "features/inbox-management/email-drafting"
-            ]
-          },
-          {
-            "group": "Meeting Assistant",
-            "pages": [
-              "features/meeting-assistant/daily-brief",
-              "features/meeting-assistant/meeting-prep",
-              "features/meeting-assistant/meeting-notes",
-              "features/meeting-assistant/follow-ups"
-            ]
-          },
-          {
-            "group": "Scheduling Assistant",
-            "pages": [
-              "features/meeting-assistant/scheduling"
-            ]
-          },
-          {
-            "group": "Chrome Extension",
-            "pages": [
-              "features/chrome-extension"
-            ]
-          },
-          {
-            "group": "Accounts & Billing",
-            "pages": [
-              "account-billing/usage",
-              "account-billing/multi-account"
-            ]
-          },
-          {
-            "group": "Resources",
-            "pages": [
-              "resources/security",
-              "resources/changelog",
-              "export-full-docs"
-            ]
-          }
+        "group": "Start Here",
+        "pages": [
+          "index",
+          "start-here/quickstart",
+          "start-here/team-setup"
         ]
       },
       {
-        "tab": "Workflows",
-        "groups": [
+        "group": "Lindy Teammate",
+        "pages": [
+          "coming-soon/setup",
+          "coming-soon/home",
+          "coming-soon/meeting-library",
+          "coming-soon/files",
+          "coming-soon/routines",
+          "coming-soon/skills",
+          "coming-soon/slack-commands"
+        ]
+      },
+      {
+        "group": "Assistant",
+        "pages": [
           {
-            "group": "Custom Agents 101",
+            "group": "Built-in Routines",
             "pages": [
-              "fundamentals/lindy-101/introduction",
-              "fundamentals/lindy-101/create-agent",
-              "fundamentals/lindy-101/fields",
-              "fundamentals/lindy-101/triggers",
-              "fundamentals/lindy-101/actions",
-              "fundamentals/lindy-101/tasks",
-              "fundamentals/lindy-101/conditions",
-              "fundamentals/lindy-101/ai-agents",
-              "fundamentals/lindy-101/looping",
-              "fundamentals/lindy-101/memory",
-              "fundamentals/lindy-101/computer-use",
-              "fundamentals/lindy-101/phone-calls",
-              "fundamentals/lindy-101/knowledge-base",
-              "fundamentals/lindy-101/prompt-guide",
-              "fundamentals/lindy-101/templates",
-              "fundamentals/lindy-101/evals"
+              "features/meeting-assistant/daily-brief",
+              "features/inbox-management/email-drafting",
+              "features/inbox-management/email-triage",
+              "features/meeting-assistant/meeting-notes",
+              "features/meeting-assistant/meeting-prep",
+              "features/meeting-assistant/scheduling",
+              "features/inbox-management/email-alerting",
+              "features/inbox-management/follow-up-bumps"
             ]
           },
-          {
-            "group": "Testing",
-            "pages": [
-              "testing/test-panel",
-              "testing/human-in-the-loop",
-              "testing/debugging",
-              "testing/monitoring-your-agents",
-              "testing/version-history"
-            ]
-          },
-          {
-            "group": "Accounts & Billing",
-            "pages": [
-              "account-billing/teams-collaboration",
-              "account-billing/credits"
-            ]
-          },
-          {
-            "group": "Use Cases",
-            "pages": [
-              "use-cases/sales/lead-enrichment",
-              "use-cases/sales/multi-channel-outbound",
-              "use-cases/sales/email-negotiation",
-              "use-cases/operations/document-processing",
-              "use-cases/finance/invoice-processing",
-              "use-cases/finance/memo-generation",
-              "use-cases/customer success/smart-support-agent",
-              "use-cases/customer success/report-generator",
-              "use-cases/customer success/voice-support",
-              "use-cases/marketing/competitive-content-analysis",
-              "use-cases/marketing/focus-group-simulator",
-              "use-cases/hr/employee-feedback-collector",
-              "use-cases/hr/resume-screening",
-              "use-cases/hr/employee-help-desk"
-            ]
-          },
-          {
-            "group": "Skills",
-            "pages": [
-              "skills/by-lindy/chat-with-lindy",
-              "skills/by-lindy/lindy-phone",
-              "skills/by-lindy/lindy-embed",
-              "skills/by-lindy/lindy-mail",
-              "skills/by-lindy/computer-use",
-              "skills/by-lindy/run-code",
-              "skills/by-lindy/http-request",
-              "skills/by-lindy/webhooks",
-              "skills/by-lindy/timer",
-              "skills/by-lindy/talk-with-other-lindy",
-              "skills/by-lindy/step-by-step-onboarding"
-            ]
-          },
-          {
-            "group": "Utilities",
-            "pages": [
-              "skills/lindy-utilities/observability",
-              "skills/lindy-utilities/llm-call",
-              "skills/lindy-utilities/context",
-              "skills/lindy-utilities/memories",
-              "skills/lindy-utilities/set-variables"
-            ]
-          },
-          {
-            "group": "Web Scraping",
-            "pages": [
-              "skills/web-browsing/overview",
-              "skills/web-browsing/apify",
-              "skills/web-browsing/parallel",
-              "skills/web-browsing/perplexity",
-              "skills/web-browsing/web-browser"
-            ]
-          },
-          {
-            "group": "Integrations",
-            "pages": [
-              "skills/popular-integrations/airtable",
-              "skills/popular-integrations/github",
-              "skills/popular-integrations/gmail",
-              "skills/popular-integrations/google-calendar",
-              "skills/popular-integrations/google-docs",
-              "skills/popular-integrations/google-drive",
-              "skills/popular-integrations/google-sheets",
-              "skills/popular-integrations/hubspot",
-              "skills/popular-integrations/linkedin",
-              "skills/popular-integrations/microsoft-outlook",
-              "skills/popular-integrations/microsoft-teams",
-              "skills/popular-integrations/notion",
-              "skills/popular-integrations/people-data-labs",
-              "skills/popular-integrations/salesforce",
-              "skills/popular-integrations/slack",
-              "skills/popular-integrations/telegram",
-              "skills/popular-integrations/twilio",
-              "skills/popular-integrations/youtube",
-              "skills/popular-integrations/zoom"
-            ]
-          }
+          "features/imessage-sms",
+          "features/ad-hoc-tasks",
+          "start-here/best-practices"
+        ]
+      },
+      {
+        "group": "Chrome extension",
+        "pages": [
+          "features/chrome-extension"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
+          "integrations/overview"
+        ]
+      },
+      {
+        "group": "Accounts & Billing",
+        "pages": [
+          "pricing",
+          "account-billing/usage",
+          "coming-soon/lindy-teammate-billing"
+        ]
+      },
+      {
+        "group": "Resources",
+        "pages": [
+          "resources/security",
+          "resources/changelog",
+          "export-full-docs"
         ]
       }
     ]

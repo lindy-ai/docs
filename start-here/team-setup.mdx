@@ -1,11 +1,24 @@
 ---
 title: 'Team Setup'
-description: 'Invite your team, add shared context, and configure workspace controls'
+description: 'The two ways people join your workspace, plus admin controls, credits, and ownership'
 icon: 'users'
-keywords: ['team', 'invite', 'members', 'workspace', 'admin', 'controls', 'groups', 'roles', 'organization']
+keywords: ['team', 'invite', 'members', 'workspace', 'admin', 'controls', 'groups', 'roles', 'organization', 'slack', 'mention', 'add teammate', 'join workspace', 'seat', 'connect slack to lindy']
 ---
 
-## Inviting Team Members
+<Frame>
+  <img src="/lindy-brand-assets/teammate/lindy-for-teams-banner-v2.png" alt="Lindy for Teams: a row of five avatars, four teammates and the Lindy face, with a cursor clicking Lindy" />
+</Frame>
+
+## Adding People to Your Workspace
+
+There are two ways someone joins. An admin invites them from team settings, or they add themselves by @mentioning Lindy in Slack. Either way they take a seat on your workspace billing and draw from your shared credit pool.
+
+| How they join | Who starts it | When the seat is billed |
+| --- | --- | --- |
+| **Invite from team settings** | An admin | Right away |
+| **@mention Lindy in Slack** | The person themselves | After a free first week |
+
+### Invite from team settings
 
 <Steps>
   <Step title="Open the invite dialog">
@@ -16,8 +29,16 @@ keywords: ['team', 'invite', 'members', 'workspace', 'admin', 'controls', 'group
     - Pick a **role**: Member or Admin
     - Pick a **plan**: Plus, Pro, or Max
 
+    | Plan | Price | Credits it adds to the pool |
+    | --- | --- | --- |
+    | **Plus** | $30/mo per user | 3,000 |
+    | **Pro** | $100/mo per user | 15,000 |
+    | **Max** | $200/mo per user | 35,000 |
+
+    Enterprise isn't offered here: it's a custom plan, so [contact us](mailto:support@lindy.ai) instead. See [Pricing](/pricing) for what each plan includes.
+
     <Frame>
-      <img src="/lindy-brand-assets/invite members june 11.png" alt="Invite members dialog with Email addresses, Role, and Plan dropdown showing Plus, Pro, and Max options with prices" />
+      <img src="/lindy-brand-assets/teammate/invite-members.png" alt="Invite members dialog with Email addresses, Role, and a Plan dropdown listing Plus at $30, Pro at $100, and Max at $200 per month per seat" />
     </Frame>
   </Step>
   <Step title="Send the invite">
@@ -25,25 +46,31 @@ keywords: ['team', 'invite', 'members', 'workspace', 'admin', 'controls', 'group
   </Step>
 </Steps>
 
-## Add Workspace Context
+### @mention Lindy in Slack
 
-Workspace context lets admins share information across the entire organization. Every Lindy assistant in your workspace comes pre-equipped with that context, so your team never has to repeat the same background in their own setups.
+Once Lindy is installed in your team's Slack, anyone can add themselves just by talking to it. No admin step, and no invite to wait for.
 
-Go to **Settings** and choose the **Settings** option under Workspace.
+<Steps>
+  <Step title="They @mention Lindy, or send it a DM">
+    The first time, Lindy doesn't answer yet. It replies with a single DM containing a **Connect Slack to Lindy** button.
+  </Step>
+  <Step title="They tap Connect">
+    They confirm while signed in to Lindy, which binds their Slack identity to their Lindy account. If they don't have one, Lindy creates it under your workspace.
+  </Step>
+  <Step title="Their original message runs">
+    The message that started it all is replayed automatically once they're linked, so nothing is lost.
+  </Step>
+</Steps>
 
 <Frame>
-  <img src="/lindy-brand-assets/workspace context v2.png" alt="Workspace context settings" />
+  <img src="/lindy-brand-assets/teammate/connect-slack-to-lindy.png" alt="A Slack DM from Lindy telling Priya she mentioned it in #launch, with a Connect Slack to Lindy button and a note that her original message will run once she's connected" />
 </Frame>
 
-Here's an example of workspace context in action:
+<Note>
+  **Admins stay in the loop.** Every admin gets an email when someone joins this way: who they are, that their first week is free, and a one-click link to remove them. If you remove a seat and that person @mentions Lindy again, it tells them it can't help and pings an admin. It won't quietly re-add them.
+</Note>
 
-<div style={{ borderRadius: '20px', overflow: 'hidden' }}>
-  <video src="/lindy-brand-assets/context2.mp4" autoPlay muted loop playsInline style={{ width: '100%', display: 'block', maxHeight: 'none' }} />
-</div>
-
-<Tip>
-Use workspace context for things like company description, tone guidelines, key contacts, or internal processes — anything your whole team's Lindy should already know.
-</Tip>
+For how seats and the shared credit pool work, see [Billing](/coming-soon/lindy-teammate-billing). To get Lindy into Slack in the first place, see [Set up Lindy](/coming-soon/setup).
 
 ## Admin Controls
 
@@ -62,7 +89,7 @@ Go to **Settings** and choose the **Settings** option under Workspace.
 To manage existing members, click your **workspace name in the top-left → Settings → Members and Groups**.
 
 <Frame>
-  <img src="/lindy-brand-assets/Members and groups in settings june 11.png" alt="Workspace settings sidebar showing Settings, Billing, and Members and groups under the Workspace section" />
+  <img src="/lindy-brand-assets/Members and groups in settings august 4.png" alt="Workspace settings showing Settings, Teammate, and Members and groups under the Workspace section, with an arrow pointing to the selected Members and groups item" />
 </Frame>
 
 ### Allocating Credits
@@ -70,7 +97,7 @@ To manage existing members, click your **workspace name in the top-left → Sett
 Admins and owners can set credit limits for each teammate, capping how many credits they can use each month. Click the **…** menu on a member's row and choose **Edit credit limit**.
 
 <Frame>
-  <img src="/lindy-brand-assets/edit credit limit june 11.png" alt="Members table with per-row menu showing Edit credit limit and Deactivate membership options" />
+  <img src="/lindy-brand-assets/teammate/edit-credit-limit.png" alt="The Members table with a row menu open, showing Edit credit limit and Deactivate membership" />
 </Frame>
 
 <Note>
@@ -82,5 +109,5 @@ We can only stop credit usage after the limit has been exceeded, not at the exac
 Owners are the only ones who can manage the payment method, change the workspace name and logo, and delete the workspace. Owners can transfer ownership by clicking the role dropdown next to a member's or admin's name and changing their role to **Owner**.
 
 <Frame>
-  <img src="/lindy-brand-assets/teams3.1.png" alt="Transferring workspace ownership interface" />
+  <img src="/lindy-brand-assets/teammate/transfer-ownership.png" alt="The Members table with a role dropdown open on a member's row, showing the Member, Admin, and Owner options, where Owner reads Transfer ownership of the workspace" />
 </Frame>
