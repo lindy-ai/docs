@@ -64,7 +64,11 @@ If you're regularly hitting your limit, [reach out](mailto:support@lindy.ai) and
 
 ## Credit Optimization
 
-To reduce credit usage in Lindy, switch the model in your conversations to a more cost-effective option.
+Most users never come close to their limit. If you want to stretch your plan further, these are the levers that make the biggest difference, in rough order of impact.
+
+### Pick the right model
+
+To reduce credit usage in Lindy, switch the model in your conversations to a more cost-effective option. Advanced models earn their cost on hard reasoning and analysis; routine work like summarizing, drafting, and lookups runs well on a cheaper one.
 
 You can set a default model for all conversations:
 
@@ -72,6 +76,59 @@ You can set a default model for all conversations:
 2. Open the model dropdown below the main taskbar
 3. Choose your preferred model
 4. Select **Set as default**
+
+### Habits that stretch your plan
+
+<AccordionGroup>
+  <Accordion title="Start a new chat for a new topic">
+    Every message in a conversation re-reads everything above it, so a long-running thread gets more expensive with each turn.
+
+    Starting a fresh chat for an unrelated topic keeps every conversation lean. You lose nothing by doing it: what Lindy knows from your emails, meetings, and calendar carries across every conversation, so a new chat still knows your context.
+  </Accordion>
+
+  <Accordion title="Batch related asks into one thread">
+    The flip side of the same rule. One thread per topic is the goal, not the fewest threads possible.
+
+    If you have five questions about the same deal, ask them in one conversation instead of opening five. If your next question has nothing to do with the last one, start fresh.
+  </Accordion>
+
+  <Accordion title="Be specific about what you want">
+    Ad hoc research is the one row in the table above whose cost genuinely varies, and vagueness is usually the reason. A precise brief tells Lindy when it's done; an open-ended one doesn't.
+
+    - **Costs more**: "Research Acme."
+    - **Costs less**: "Give me five bullets on Acme's funding history and their last two product launches."
+
+    The same goes for length. If you want a short answer, say so.
+  </Accordion>
+
+  <Accordion title="Turn off routines you aren't using">
+    Routines run on their own schedule whether or not you read the result, and each run uses part of your plan. Daily briefs, email drafting, follow-up bumps, and meeting prep all keep going until you turn them off.
+
+    Open the **Routines** page from the left sidebar and review the **Personal** tab once a month. Flipping a routine off stops it without removing it, so you can turn it back on whenever you want. See [Routines](/coming-soon/routines) for the full list of what ships built in.
+  </Accordion>
+
+  <Accordion title="Record only the meetings you need notes on">
+    Recording and transcribing a meeting is one of the heavier things Lindy does. If it's joining everything on your calendar but you only ever read the notes from client calls, narrow it.
+
+    On the **Routines** page, open the **Personal** tab and click the **Meeting note taking** card. You can have Lindy join **All meetings**, **External only**, or **Specific meetings**.
+  </Accordion>
+
+  <Accordion title="Reconnect integrations that have dropped">
+    When a connection expires, Lindy keeps trying to do the work you asked for, and the failed attempts still use part of your plan. A dropped integration can quietly cost you for weeks.
+
+    Open **Integrations** and check the status on each connection. Anything marked as needing reconnection, usually an expired token, is worth fixing right away. See [Integrations](/integrations/overview).
+  </Accordion>
+
+  <Accordion title="Check your usage weekly">
+    A quick look at **Settings → Billing** once a week turns an end-of-month surprise into a small adjustment you make on a Tuesday. It's also how you notice a routine burning more than you expected.
+
+    Worth knowing: if you go over and have Overages enabled, that usage is charged at **2x** your plan's standard rate.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+You don't have to catch all of this yourself. If a single task starts running unusually heavy, Lindy pauses and checks in before continuing. See [Usage Warning](#usage-warning-why-am-i-seeing-this) above.
+</Tip>
 
 For legacy Lindy workflows, see the [Credit Optimization](/account-billing/credit-optimizations) guide for additional strategies.
 
