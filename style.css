@@ -94,6 +94,21 @@ h3[id] {
   font-size: 1.25rem !important;
 }
 
+/* Section heading rhythm.
+   The bare h2/h3 rules above never take effect: Mintlify renders page content
+   inside Tailwind Typography (.prose), whose :where() heading rules outrank a
+   bare element selector. Scope to .mdx-content so section headings keep clear
+   space from the copy they introduce instead of sitting on top of it. */
+.mdx-content h2[id] {
+  margin-top: 3rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.mdx-content h3[id] {
+  margin-top: 2.25rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
 h4 {
   font-size: 1.25rem;
   font-weight: 500;
