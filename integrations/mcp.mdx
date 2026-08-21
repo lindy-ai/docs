@@ -5,9 +5,19 @@ description: 'Point Lindy at any MCP server with a URL and it picks up every too
 icon: 'server'
 ---
 
-<Frame>
-  <img src="/lindy-brand-assets/integrations/mcp-connections.png" alt="Connected MCP servers, each showing its host and the number of tools it exposes" />
-</Frame>
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/integrations/mcp-connect.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
 
 The [built-in integrations](/integrations/overview) cover the tools most teams use. MCP covers the rest. If a product publishes an MCP server, you can hand Lindy the URL and it gains that product's tools without waiting for a native integration.
 
@@ -15,25 +25,28 @@ You don't pick actions or map fields. Lindy reads the server's tool list on conn
 
 ## Adding an MCP server
 
-All you need is the server's URL. There is nothing else to fill in: no token field, no header configuration, no action picker.
+The only thing you must have is the server's URL. Everything else in the dialog is optional.
 
 <Steps>
   <Step title="Get the server URL">
-    The product you're connecting publishes it, usually in their docs under MCP. It looks like `https://mcp.example.com` or `https://mcp.example.com/sse`.
+    The product you're connecting publishes it, usually in their docs under MCP. It looks like `https://mcp.example.com/mcp`.
   </Step>
-  <Step title="Open Integrations">
-    Go to **Integrations**, then **MCP**, and choose to add a server.
+  <Step title="Open the Add menu">
+    Go to **Integrations**, click **+ Add**, and choose **MCP**. The other option in that menu, **Integration**, is for the built-in tools.
   </Step>
-  <Step title="Paste the URL and connect">
-    Lindy reaches out to the server. If the server requires sign-in, it runs its own authorization flow and you approve access there, the same way an OAuth integration works.
+  <Step title="Fill in the server">
+    In **Connect MCP server**, paste the **Server URL**. Optionally set a **Display name** so it's recognisable later, like `Linear production` rather than a bare hostname.
   </Step>
-  <Step title="Confirm the tools landed">
-    The connection appears in your list with the server's host and its tool count. A tool count of zero means the connection completed but the server exposed nothing, which usually means it wants a different URL.
+  <Step title="Add a token only if the server needs one">
+    Most servers run their own sign-in flow and need nothing here. If yours authenticates with a static token instead, open **Advanced**, leave **Send as** on **Authorization header (Bearer)**, and paste the **Bearer token**.
+  </Step>
+  <Step title="Connect">
+    Click **Connect**. The server appears in your list with its host and tool count. A tool count of zero means the connection completed but the server exposed nothing, which usually means it wants a different URL.
   </Step>
 </Steps>
 
 <Note>
-  Authorization is handled by the MCP server, not by Lindy. Lindy never asks you to paste a token for an MCP connection. If a server needs a key rather than a sign-in flow, that key belongs in [Secrets](/integrations/secrets).
+  A **Display name** is worth setting. Connections are identified by hostname otherwise, and several products serve more than one server from the same host, so two entries can look identical in the list.
 </Note>
 
 ## Personal and team servers
