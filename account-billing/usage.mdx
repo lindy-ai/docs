@@ -2,80 +2,182 @@
 title: 'Understanding Your Usage'
 icon: 'gauge-high'
 sidebarTitle: 'Usage & Limits'
-description: 'Why you saw a usage warning, how your plan works, and what to do if you need more'
-keywords: ['usage', 'limits', 'usage warning', 'plan limits', 'resource usage', 'billing', 'usage limit', 'over limit', 'paused task']
+description: 'How your team shares one pool of credits, why Lindy pauses on a heavy task, and what to do when you need more'
+keywords: ['usage', 'limits', 'usage warning', 'credits', 'shared credit pool', 'spend cap', 'credit limit', 'teammate credits', 'team usage', 'slack', 'billing', 'over limit', 'paused task', 'top-up', 'overages']
 ---
 
 <Frame>
-  <img src="/lindy-brand-assets/usage-warning.webp" alt="Lindy pausing to check in before continuing a resource-heavy task" />
+  <img src="/lindy-brand-assets/teammate/usage-warning-slack.png" alt="Lindy pausing a heavy task in Slack and asking whether to continue" />
 </Frame>
+
+Your whole team draws from **one shared pool of credits**. Every seat adds to it, and every Lindy your team works with spends from it: the shared Lindy out in your channels, and the private Lindy in each person's DMs.
+
+This page covers what actually uses credits, why Lindy sometimes pauses to check in, and what to do if your team needs more. For seats, pricing, and trials, see [Lindy Teammate Billing](/coming-soon/lindy-teammate-billing).
 
 ## Usage Warning: Why Am I Seeing This?
 
-Lindy paused a task because it's using significantly more resources than usual. This is a **protection for you**, not an error.
+Lindy paused a task because it's using significantly more resources than usual. This is a **protection for your team**, not an error.
 
-Every action Lindy takes uses part of your plan. When a task starts using more resources than expected, Lindy pauses to check in before continuing. This is most common with ad hoc research tasks, but can happen with any task.
+When a task starts drawing more from the pool than expected, Lindy stops and checks in before continuing. It asks right where you delegated the work: in the Slack thread if you @mentioned it in a channel, or in your DM if you asked there.
 
-You can **continue** (the task finishes normally) or **stop** (no additional resources are used). If you stop, you can still chat with Lindy in that conversation and resume later.
+You can **continue** (the task finishes normally) or **stop** (no additional credits are used). If you stop, the thread stays open and you can pick it back up later.
 
 <Tip>
-You're not doing anything wrong. The warning just makes sure you stay in control of how your plan is used.
+You're not doing anything wrong. The warning just makes sure your team stays in control of a pool everyone shares.
 </Tip>
 
-## Plan Usage by Feature
+## Credit Usage by Feature
 
-Your Lindy plan covers all features. Here's a general sense of resource usage:
+Every plan covers every feature. Nothing here is gated. What follows is a general sense of what each kind of work draws from your pool.
 
-| What Lindy does | Resource impact |
+### Your team's Lindy, in your channels
+
+Shared with the whole team, drawing on your approved team sources. This is where most of a team's credits go, because everyone @mentions the same Lindy.
+
+| What Lindy does | Credit impact |
 |---|---|
-| Email triage and labeling | Very low |
-| Drafting email replies | Low |
-| Meeting prep briefings | Very low |
-| Meeting recording and notes | Moderate |
-| Scheduling and calendar management | Very low |
-| Follow-up emails | Low |
-| iMessage delegation | Low |
-| Ad hoc research and tasks | **Varies** |
+| Answering a question from approved team sources | Low |
+| Pulling a report or a lookup from a connected tool | Low |
+| Drafting a client update, summary, or document | Moderate |
+| Team routines, priced by how often they run | Moderate |
+| Deep research across channels and Drive folders | **Varies** |
 
-**Most users never come close to their plan's limits.** Your plan resets every billing cycle (monthly from your signup date). Unused resources do not roll over.
+### Your personal Lindy, in your DMs
+
+Private to each person, and much lighter. These run on their own to keep you ahead of your day.
+
+| What Lindy does | Credit impact |
+|---|---|
+| Daily brief | Very low |
+| Email alerts on time-sensitive mail | Very low |
+| Open-loop nudges when an ask goes unanswered | Very low |
+| Meeting prep briefings | Very low |
+| Catch-up summaries when you're @mentioned in a busy channel | Low |
+| Meeting recaps and notes | Low |
+| Ad hoc research you delegate in a DM | **Varies** |
+
+<Note>
+Both Lindys spend from the same pool. A busy channel where the whole team @mentions Lindy will move the number faster than any one person's DMs.
+</Note>
+
+**Most teams never come close to their limit.** Your pool resets every billing cycle, and unused credits do not roll over.
 
 ## Checking your usage
 
-To see your task usage, go to **Settings → Billing**, then scroll down to the usage section.
+To see your workspace's total, go to **Settings → Billing** and scroll to the usage section.
 
-## What Happens When You Hit Your Usage Limit?
+To see it person by person, open **Settings → Members**. The **Credits** column shows what each teammate has drawn this cycle, and sorting by it is the fastest way to find out where your pool is going.
+
+## Spend caps per teammate
+
+Admins can cap how much any one person draws from the shared pool. It's the main tool for keeping one heavy user from spending the team's month.
+
+<Frame>
+  <img src="/lindy-brand-assets/teammate/edit-credit-limit.png" alt="Setting a per-teammate credit limit from the Members table" />
+</Frame>
+
+In **Settings → Members**, click the **⋯** menu on a row and choose **Edit credit limit**. When someone hits their cap, Lindy pauses that person's credit-using actions with a clear message and keeps working for everyone else. Leave a cap unset for unlimited draw.
+
+## What Happens When Your Team Hits the Limit?
 
 1. **Lindy pauses** until your next billing cycle.
-2. **Your data and settings are safe.** Lindy won't automatically restart paused tasks, but nothing is deleted. You can manually restart anything when your plan resets.
-3. **Your plan resets monthly** from your signup date.
+2. **Your data and settings are safe.** Lindy won't automatically restart paused tasks, but nothing is deleted. Anyone can manually restart their own work once the pool resets.
+3. **Your pool resets monthly** from your workspace's signup date.
 
-<Accordion title="What if I need more before my plan resets?">
-You have two options:
+<Accordion title="What if we need more before the pool resets?">
+Admins have three options:
 
-1. **Upgrade your credits**: Go to **Settings → Billing → Upgrade** to move to a higher plan on a month-to-month basis. Note that there is no option to purchase one-off credits.
-2. **Enable Overages**: In **Settings → Billing**, toggle on Overages to let Lindy continue working beyond your plan limit. Note that overage usage is charged at **2x the cost of regular Lindy credits**.
+1. **Buy a top-up**: extra workspace credits at **$10 per 1,000 credits**, in 1,000-credit blocks. Top-ups are a one-time buy and never touch your base plan's credits.
+2. **Upgrade the plan**: go to **Settings → Billing → Upgrade** to move to a higher tier on a month-to-month basis. Every seat on the new tier adds more credits to the pool.
+3. **Enable Overages**: in **Settings → Billing**, toggle on Overages to let Lindy keep working past the limit. Overage usage is charged at **2x the cost of regular Lindy credits**.
 </Accordion>
 
-<Accordion title="Will my paused tasks pick up automatically?">
-No. When your plan resets, you'll need to manually restart any tasks that were paused. Nothing is lost: your conversations, settings, and history are all preserved.
+<Accordion title="Does adding a teammate add credits?">
+Yes. Credits belong to the workspace, not to each person, and every seat adds its tier's allotment to the pool. A Plus seat adds 3,000, a Pro seat 15,000, and so on. Someone who joins by @mentioning Lindy in Slack gets a free first week before their seat converts to paid. See [Lindy Teammate Billing](/coming-soon/lindy-teammate-billing).
 </Accordion>
 
-If you're regularly hitting your limit, [reach out](mailto:support@lindy.ai) and we'll find the right fit.
+<Accordion title="Will paused tasks pick up automatically?">
+No. When the pool resets, each person needs to manually restart anything that was paused. Nothing is lost: conversations, settings, and history are all preserved.
+</Accordion>
+
+If your team is regularly hitting the limit, [reach out](mailto:support@lindy.ai) and we'll find the right fit.
 
 ## Credit Optimization
 
-To reduce credit usage in Lindy, switch the model in your conversations to a more cost-effective option.
+Most teams never come close to their limit. If you want to stretch the pool further, these are the levers that make the biggest difference, in rough order of impact.
 
-You can set a default model for all conversations:
+<AccordionGroup>
+  <Accordion title="Scope your team sources tightly">
+    The shared Lindy searches everything you've approved. Point it at the channels and Drive folders that actually hold your team's answers, not at the whole workspace.
 
-1. Go to [chat.lindy.ai/home](https://chat.lindy.ai/home)
-2. Open the model dropdown below the main taskbar
-3. Choose your preferred model
-4. Select **Set as default**
+    Open **Settings → Lindy Teammate → Team sources** and prune anything stale. A narrower set of sources is cheaper to search and gives better answers, so this is the rare lever that improves quality and cost at once.
+  </Accordion>
 
-For legacy Lindy workflows, see the [Credit Optimization](/account-billing/credit-optimizations) guide for additional strategies.
+  <Accordion title="Review team routines monthly">
+    Team routines run on their own schedule whether or not anyone reads the result, and a workspace-wide routine spends for the whole team every time it fires. They're the easiest thing to set up and forget.
+
+    Open the **Routines** page from the left sidebar and review both the **Team** and **Personal** tabs once a month. Flipping a routine off stops it without removing it, so you can turn it back on whenever you want. See [Routines](/coming-soon/routines).
+  </Accordion>
+
+  <Accordion title="Start a new thread for a new topic">
+    Every message in a thread re-reads everything above it, so a long-running thread gets more expensive with each turn. This matters more in a busy channel than in a DM, because the whole team keeps adding to it.
+
+    Starting a fresh thread for an unrelated topic keeps every conversation lean. You lose nothing: what Lindy knows from your team's sources carries across every thread.
+  </Accordion>
+
+  <Accordion title="Batch related asks into one thread">
+    The flip side of the same rule. One thread per topic is the goal, not the fewest threads possible.
+
+    If your team has five questions about the same account, ask them in one thread instead of opening five. If the next question has nothing to do with the last one, start fresh.
+  </Accordion>
+
+  <Accordion title="Be specific about what you delegate">
+    Deep research is the row in the tables above whose cost genuinely varies, and vagueness is usually the reason. A precise brief tells Lindy when it's done; an open-ended one doesn't.
+
+    - **Costs more**: "@Lindy research Acme."
+    - **Costs less**: "@Lindy give me five bullets on Acme's funding history and their last two product launches."
+
+    The same goes for length. If you want a short answer, say so.
+  </Accordion>
+
+  <Accordion title="Pick the right model">
+    Advanced models earn their cost on hard reasoning and analysis. Routine work like summarizing, drafting, and lookups runs well on a cheaper one.
+
+    Every plan gets every model, trial seats included, so this is purely a cost choice. Switch the model from the dropdown below the taskbar, then select **Set as default** to apply it to new conversations.
+  </Accordion>
+
+  <Accordion title="Remove seats you aren't using">
+    A seat stays billed until an admin removes it, and you keep it through the end of the current cycle with no mid-cycle proration. When someone leaves the team, remove them in **Settings → Members**.
+
+    If a removed person @mentions Lindy again, it tells them it can't help and pings an admin. It won't quietly re-add them.
+  </Accordion>
+
+  <Accordion title="Check usage weekly">
+    A quick look at **Settings → Billing** once a week turns an end-of-month surprise into a small adjustment you make on a Tuesday. Sorting **Settings → Members** by the **Credits** column is how you notice one person or one routine burning more than you expected.
+
+    Worth knowing: if your team goes over and has Overages enabled, that usage is charged at **2x** your plan's standard rate.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+You don't have to catch all of this yourself. If a single task starts running unusually heavy, Lindy pauses and checks in before continuing. See [Usage Warning](#usage-warning-why-am-i-seeing-this) above.
+</Tip>
 
 ## Overages
 
-If you exceed your plan's usage limit, overage usage is charged at **2x your plan's standard rate**.
+If your team exceeds the pool's limit, overage usage is charged at **2x your plan's standard rate**.
 
+## Relevant Docs
+
+<CardGroup cols={2}>
+  <Card title="Lindy Teammate Billing" icon="credit-card" href="/coming-soon/lindy-teammate-billing">
+    Seats, trials, top-ups, and your shared credit pool
+  </Card>
+  <Card title="Lindy Teammate" icon="slack" href="/coming-soon/lindy-teammate">
+    What Lindy does in your team's Slack, per person and per team
+  </Card>
+</CardGroup>
+
+<Note>
+Running legacy Lindy workflows? See the [Credit Optimization](/account-billing/credit-optimizations) guide for strategies specific to those.
+</Note>
