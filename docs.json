@@ -82,10 +82,10 @@
         ]
       },
       {
-        "group": "Integrations, Secrets, and MCP",
+        "group": "Integrations, Credentials, and MCP",
         "pages": [
           "integrations/overview",
-          "integrations/secrets",
+          "integrations/credentials",
           "integrations/mcp"
         ]
       },
