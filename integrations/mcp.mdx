@@ -63,6 +63,10 @@ Three cards sit below.
 
 **Availability** decides who the connection serves.
 
+<Frame>
+  <img src="/lindy-brand-assets/integrations/mcp-availability.png" alt="A connected MCP server's Availability dropdown, open on Only you and Your workspace" />
+</Frame>
+
 | Setting | Who can use its tools |
 | --- | --- |
 | **Only you** | Your Lindy alone. Every new connection starts here. |
@@ -99,16 +103,6 @@ Sharing is the connection owner's call. Workspace owners and admins set team pol
 | Reconnect the credential | Yes | No | No |
 
 Guardrails are the exception: that setting is per person, so anyone using a shared server picks their own.
-
-## Keeping a connection healthy
-
-Every connection reports a status. A healthy one reads **Active**.
-
-MCP connections expire the same way any other connection does, usually when the server's token is revoked or times out. When that happens the connection stops reporting Active and its tools stop working. Reconnect from **Integrations** to run the server's authorization flow again. Only the credential owner can do that.
-
-<Warning>
-  Reconnecting clears workspace-wide sharing. Once the connection is Active again the owner has to set **Availability** back to **Your workspace**, or the team's tools stay missing. And a stale team connection breaks for everyone at once, so check its status before assuming the server is down.
-</Warning>
 
 ## Turning a server off
 
