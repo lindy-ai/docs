@@ -1,7 +1,7 @@
 ---
 title: 'MCP servers'
 sidebarTitle: 'MCP'
-description: 'Point Lindy at any MCP server with a URL and it picks up every tool that server offers.'
+description: 'Point Lindy at a hosted MCP server and it builds actions from the tools that server publishes.'
 icon: 'server'
 ---
 
@@ -21,7 +21,7 @@ icon: 'server'
 
 The [built-in integrations](/integrations/overview) cover the tools most teams use. MCP covers the rest. If a product publishes an MCP server, you can hand Lindy the URL and it gains that product's tools without waiting for a native integration.
 
-You don't pick actions or map fields. Lindy reads the server's tool list on connect and takes all of it. A small server might add three tools; a large one adds well over a hundred.
+Lindy connects to hosted servers that expose a public HTTPS streamable-HTTP endpoint. On connect it reads the server's tool catalog and creates an action for every tool whose schema it supports. You never pick actions or map fields. A small server might add three tools; a large one adds well over a hundred.
 
 ## Adding an MCP server
 
@@ -29,36 +29,44 @@ The only thing you must have is the server's URL. Everything else in the dialog 
 
 <Steps>
   <Step title="Get the server URL">
-    The product you're connecting publishes it, usually in their docs under MCP. It looks like `https://mcp.example.com/mcp`.
+    The product you're connecting publishes it, usually in their docs under MCP. It looks like `https://mcp.example.com/mcp`, and it has to be reachable over public HTTPS.
   </Step>
   <Step title="Open the Add menu">
     Go to **Integrations**, click **+ Add**, and choose **MCP**. The other option in that menu, **Integration**, is for the built-in tools.
   </Step>
   <Step title="Fill in the server">
-    In **Connect MCP server**, paste the **Server URL**. Optionally set a **Display name** so it's recognisable later, like `Linear production` rather than a bare hostname.
+    In **Connect MCP server**, paste the **Server URL** and set a **Display name**.
   </Step>
-  <Step title="Add a token only if the server needs one">
-    Most servers run their own sign-in flow and need nothing here. If yours authenticates with a static token instead, open **Advanced**, leave **Send as** on **Authorization header (Bearer)**, and paste the **Bearer token**.
+  <Step title="Add a credential only if the server needs one">
+    Servers that allow anonymous access, and servers that run their own OAuth flow, need nothing here. If yours authenticates with a static credential instead, open **Advanced** and send it as an **Authorization** bearer token, a custom header, or a query parameter.
   </Step>
   <Step title="Connect">
-    Click **Connect**. The server appears in your list with its host and tool count. A tool count of zero means the connection completed but the server exposed nothing, which usually means it wants a different URL.
+    Click **Connect**. The server appears in your list with its host and its tool counts.
   </Step>
 </Steps>
 
+<Tip>
+  A **Display name** is worth setting. Connections are identified by hostname otherwise, and several products serve more than one server from the same host, so two entries can look identical in the list. `Linear production` beats a bare hostname.
+</Tip>
+
 <Note>
-  A **Display name** is worth setting. Connections are identified by hostname otherwise, and several products serve more than one server from the same host, so two entries can look identical in the list.
+  Lindy shows two numbers: the tools the server reports, and the tools available in Lindy. They differ when a server publishes tools whose schemas Lindy doesn't support. Zero available means the endpoint is wrong, the catalog is empty, or none of the tool definitions are compatible.
 </Note>
 
 ## Personal and team servers
 
-An MCP server you add starts as **your** connection, exactly like a personal integration. Your Lindy can use it. Nobody else's can.
+An MCP server you add starts as **your** connection and runs on your account. Only your Lindy can use it.
 
-An owner or admin can share it with the workspace. From then on it appears as a team connection and everyone's Lindy can call its tools, acting as the account that authorized it.
+You can share it workspace-wide. Its supported tools then become available to your teammates and to Lindy Teammate, still acting as the account that authorized the connection and still subject to the workspace's action policies.
 
-| Scope | Who can use its tools | Who can change it |
-| --- | --- | --- |
-| **Personal** | Just you | You |
-| **Team** | Everyone in the workspace | Owners and admins |
+Sharing is the credential owner's call. Workspace owners and admins set team policy and can revoke sharing, but they cannot grant it or reconnect the credential on your behalf.
+
+| | Credential owner | Workspace owner or admin | Other members |
+| --- | --- | --- | --- |
+| Use the tools | Yes | Once shared | Once shared |
+| Share workspace-wide | Yes | No | No |
+| Revoke sharing, set policy | Yes | Yes | No |
+| Reconnect the credential | Yes | No | No |
 
 Sharing does not duplicate the connection. It is still one authorization, still tied to whoever set it up, now pointed at the whole team.
 
@@ -66,16 +74,18 @@ Sharing does not duplicate the connection. It is still one authorization, still 
 
 Every connection reports a status. A healthy one reads **Active**.
 
-MCP connections expire the same way any other connection does, usually when the server's token is revoked or times out. When that happens the connection stops reporting Active and its tools stop working. Reconnect from the connection itself to run the server's authorization flow again.
+MCP connections expire the same way any other connection does, usually when the server's token is revoked or times out. When that happens the connection stops reporting Active and its tools stop working. Reconnect from **Integrations** to run the server's authorization flow again. Only the credential owner can do that.
 
 <Warning>
-  A team connection that goes stale breaks for everyone at once, not just the person who set it up. If a shared server's tools stop working across the workspace, check its status before assuming the server is down.
+  Reconnecting clears workspace-wide sharing. Once the connection is Active again the owner has to share it a second time, or the team's tools stay missing. And a stale team connection breaks for everyone at once, so check its status before assuming the server is down.
 </Warning>
 
 ## Turning a server off
 
-Disabling a team connection removes its tools from everyone's Lindy in that workspace. Do this rather than leaving a server connected but unused: every tool a server exposes is a tool Lindy has to consider, and a hundred unused tools is noise.
+Disabling a team connection unshares it from that workspace and removes its tools from everyone's Lindy there. The owner's personal connection survives, and the same connection shared into a different workspace is unaffected.
 
-## Servers with native support
+Do this rather than leaving a server connected but unused: every tool a server exposes is a tool Lindy has to consider, and a hundred unused tools is noise.
 
-A few products ship as first-class MCP integrations rather than a URL you paste. Notion is one. These show up alongside your other integrations and connect with a normal sign-in, with no URL step. If you see the product in the integrations list already, connect it there instead of adding its MCP URL by hand.
+## Servers with a dedicated entry
+
+Some products have their own MCP entry or preset in the Integrations catalog. Use that when it exists. Authentication varies by provider: Notion, for example, has a dedicated sign-in flow with no URL to paste. If you see the product in the catalog already, connect it there instead of adding its MCP URL by hand.
