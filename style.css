@@ -2333,33 +2333,3 @@ html:not(.dark) .card:hover {
 .dark #sidebar-content div.group:hover {
   background-color: rgba(255, 255, 255, 0.06) !important;
 }
-
-/* ===================================================================== */
-/* Wide screenshots                                                       */
-/* ===================================================================== */
-/* A dense screenshot (a settings panel, a full table) is unreadable when
-   it's capped at the prose column. .wide-shot lets one break out past that
-   column on desktop and snap back to full width once the column is narrow.
-   The negative margin has to live on this wrapper, not on the <img>: the
-   global `img { margin: 0 !important }` rule above would kill it there. */
-.wide-shot {
-  width: 126%;
-  margin: 2rem 0 2rem -13%;
-  border-radius: 16px;
-  overflow: hidden; /* clip the image to the rounded corners */
-  line-height: 0;   /* no inline gap under the image */
-}
-
-.wide-shot img {
-  width: 100%;
-  height: auto;
-  border-radius: 0; /* the wrapper does the rounding */
-}
-
-@media (max-width: 1280px) {
-  .wide-shot {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
