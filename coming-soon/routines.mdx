@@ -101,6 +101,26 @@ You can also just ask Lindy in chat: *"Every Monday at 9, check my inbox for ema
   Defaults: new routines run **daily at 9:00 AM** until you change it, and deliver to your default proactive channel. Team routines default to a Slack thread reply, and scheduled team digests must target a channel.
 </Note>
 
+## Run this as a script
+
+A normal routine is an alarm that wakes Lindy up to think through your instructions again on every trigger. **Run this as a script** turns those instructions into Python that runs instead.
+
+Click **Convert** and Lindy writes a script from the routine's current instructions, then switches the routine off so you can inspect and test it. Turn it back on and every trigger runs the script first.
+
+From there, each run can:
+
+- **Finish on its own** — the run ends without waking Lindy: faster, cheaper, predictable.
+- **Leave Lindy a note** — Lindy wakes up, reads the original instructions plus the note, and handles the part that needs AI or tools.
+- **Crash** — Lindy wakes up to repair and test the script, instead of blindly redoing the routine's work.
+
+**Works well:** *"Check this public status page every 5 minutes and alert me only when it changes."* The script checks the page and remembers the last value, so most runs end quietly and Lindy only wakes when something changed.
+
+**Doesn't:** *"Summarize my unread Gmail."* Scripts don't carry your Lindy credentials or reach your connected Gmail, Slack, or Calendar accounts, so this one would wake Lindy every time anyway.
+
+<Note>
+  Available for personal routines only, not workspace routines.
+</Note>
+
 ## Edit and manage
 
 Tune a routine from the Routines page, or just ask Lindy:
