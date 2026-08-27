@@ -121,6 +121,42 @@ From there, each run can:
   Available for personal routines only, not workspace routines.
 </Note>
 
+## Test with a dry run
+
+A dry run fires a routine end to end on your real data and shows you exactly what it would have done, without doing it. Real triggers, real reads, real judgment, and nothing sent, posted, or written. Use it before you trust a routine to run unattended.
+
+Ask Lindy in chat:
+
+- *"Dry-run my morning briefing."*
+- *"Test my promise tracker before I turn it on."*
+
+A dry run tells you three things a glance at the setup can't:
+
+- **The trigger matches what you meant.** Event triggers and Smart Filters are easy to write too broadly. A dry run shows you what actually fired.
+- **The judgment is right.** Read the classifications and drafts, not just the summary. A routine that picks the wrong emails will keep picking the wrong emails, quietly.
+- **Quiet days behave.** Narrow the window to a period with nothing in it and confirm the routine stays silent instead of inventing filler.
+
+<Note>
+  If a routine remembers things between runs, dry-run it twice. The second run has to behave sensibly reading what the first one left behind.
+</Note>
+
+### What a dry run can't cover
+
+The delivery step itself. Sending the email, posting to the channel, or writing to a shared sheet are the actions a dry run exists to suppress, so it can't prove they work.
+
+When you want that leg tested too, point it somewhere safe:
+
+- **Deliver it to yourself** instead of the real recipient.
+- **Write to a copy** or a sheet only you use.
+- **Read the payload** Lindy would have sent, and approve it without sending.
+
+### Script routines
+
+A routine you converted with **Run this as a script** has two layers, and each is tested separately.
+
+- **The script** runs on its own with sends switched off. It does the real reads and the real LLM steps, then prints what it would have delivered. When something is wrong here, the fix belongs in the script, then run it dry again.
+- **The routine around it** is what a dry run covers: the trigger firing on schedule and the instructions handing off to the script correctly. The script can look perfect and still never fire.
+
 ## Edit and manage
 
 Tune a routine from the Routines page, or just ask Lindy:
