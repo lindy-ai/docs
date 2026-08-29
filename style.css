@@ -604,9 +604,9 @@ li[aria-expanded="true"] > div.group svg:last-child {
 .frame {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: box-shadow 0.3s ease;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  clip-path: inset(0 round 16px); /* match the video treatment, no pointy corners */
+  clip-path: inset(0 round 20px); /* match the video treatment, no pointy corners */
 }
 
 .frame:hover {
@@ -1420,15 +1420,17 @@ figure img {
   aspect-ratio: auto !important;
   margin: 0 !important;
   padding: 0 !important;
-  border: none !important;
+  /* Hairline so screenshots with light app chrome don't dissolve into the page.
+     Kept to 1px: enough to hold an edge, not a frame around the content. */
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
   outline: none !important;
-  border-radius: 16px;
-  clip-path: inset(0 round 16px); /* round the image itself, not just its container */
+  border-radius: 20px;
+  clip-path: inset(0 round 20px); /* round the image itself, not just its container */
 }
 
 /* figure is Mintlify's other Frame wrapper: round it the same way */
 figure {
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
 }
 
