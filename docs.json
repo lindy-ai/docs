@@ -24,6 +24,11 @@
       "permanent": true
     },
     {
+      "source": "/features/meeting-assistant/meeting-notes",
+      "destination": "/teammate/meeting-library",
+      "permanent": true
+    },
+    {
       "source": "/coming-soon/setup",
       "destination": "/teammate/setup",
       "permanent": true
@@ -124,7 +129,7 @@
               "features/meeting-assistant/daily-brief",
               "features/inbox-management/email-drafting",
               "features/inbox-management/email-triage",
-              "features/meeting-assistant/meeting-notes",
+              "features/meeting-assistant/meeting-recording",
               "features/meeting-assistant/meeting-prep",
               "features/meeting-assistant/scheduling",
               "features/inbox-management/email-alerting",

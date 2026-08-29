@@ -1,8 +1,9 @@
 ---
 title: "Meetings"
 sidebarTitle: "Meetings"
-description: "Lindy records, transcribes, and summarizes your calls, files them into shared folders, and lets you ask questions across every meeting."
+description: "Lindy records and transcribes your meetings on Google Meet, Zoom, and Teams, and delivers custom summaries to a searchable library. Share folders with your team, have Lindy organize and sort your meetings, and set custom follow-up actions so nothing falls through the cracks."
 icon: "video"
+keywords: ['meeting notes', 'transcript', 'summary', 'recording', 'minutes', 'meeting recording', 'meeting library', 'chat with meetings', 'notetaker', 'action items', 'search meetings', 'shared folders', 'google meet', 'zoom', 'microsoft teams']
 ---
 
 <Frame>
@@ -24,6 +25,16 @@ Open a folder to your team and every call inside it becomes something anyone can
 
 A folder set to **Only you** is an archive. A folder set to **Entire team** is how the rest of the company stops asking you what happened on the call.
 
+## Turn on recording
+
+Recording is a built-in **routine**. On the **Routines** page, open the **Personal** tab, find the **Meeting Recording** card, and toggle it on.
+
+<Frame>
+  <img src="/lindy-brand-assets/meeting-recording-routine.png" alt="Routines page, Personal tab, with the Meeting Recording card highlighted among the built-in routines" />
+</Frame>
+
+Connect your Google Calendar or Microsoft Outlook calendar, set your notetaker display name and summarization instructions, and Lindy records from your next scheduled call.
+
 ## How recording works
 
 When recording is on, Lindy sends a notetaker to your Google Meet, Zoom, or Teams calls. It joins **visibly, as a named participant** (you choose the display name), records the call, and writes a transcript and a summary with action items, decisions, and key quotes.
@@ -34,7 +45,7 @@ When recording is on, Lindy sends a notetaker to your Google Meet, Zoom, or Team
 
 ## Recording settings
 
-Control recording from the **Meeting recording** card:
+Control recording from the **Meeting Recording** card:
 
 - **Turn recording on or off.** A workspace admin can turn it off for everyone.
 - **Which meetings Lindy joins automatically:** all meetings, internal only, or external only.
@@ -45,6 +56,44 @@ Control recording from the **Meeting recording** card:
 - **Follow-up actions** in plain English, like *"share the action items in Slack."*
 
 For a one-off call that isn't covered by your auto-join setting, Lindy can send a confirmation link so an attendee approves recording that specific meeting.
+
+## Post-meeting follow-ups
+
+After every meeting, Lindy extracts the action items and sends a follow-up email. Decisions get documented, next steps are clear, and everyone knows what they own.
+
+1. **Meeting ends**: Lindy processes the recording and transcript
+2. **Action items extracted**: Lindy identifies decisions, next steps, and owners
+3. **Follow-up sent**: an email goes out with the summary and action items
+
+Set who receives it in the **Meeting Recording** routine: all participants, internal people only, or just you.
+
+### Custom follow-up actions
+
+Beyond email, tell Lindy to take extra actions after meetings. In the **Meeting Recording** routine, use the **Follow-up Actions** field to describe what Lindy should do.
+
+<Note>
+  **Lindy works with your existing tools** — Notion, Slack, Todoist, and hundreds more. Just tell it what to do (*"Add action items to Todoist"*) and it handles the rest. The first time it uses an app, Lindy asks you to connect it.
+</Note>
+
+<Frame>
+  <img src="/lindy-brand-assets/follow-up-actions-settings.png" alt="Meeting Recording settings with the Follow up actions field highlighted, showing a custom action and the field for adding another" />
+</Frame>
+
+A favorite: have Lindy DM you in Slack right after the meeting ends, with the still-outstanding action items and a heads-up on anything that needs your attention.
+
+<div style={{ background: 'rgba(124, 58, 237, 0.08)', border: '1px solid rgba(124, 58, 237, 0.15)', borderRadius: '8px', padding: '14px 18px', color: '#7C3AED', fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, monospace', fontSize: '0.95em', margin: '12px 0 20px' }}>
+Send a Slack DM with action items
+</div>
+
+Other examples:
+
+- "Update the CRM with notes from every sales call"
+- "Create a Notion page with the meeting summary"
+- "Send action items to the project lead if they weren't on the call"
+
+<Tip>
+This covers post-meeting follow-ups. Lindy can also draft follow-up bumps when someone hasn't replied to an email you sent — see [Follow-up Bumps](/features/inbox-management/follow-up-bumps).
+</Tip>
 
 ## Your meeting library
 
@@ -110,7 +159,7 @@ You don't have to be on the Meetings page to use what was said on a call. Ask fr
 By default Lindy looks at your own meetings, and only widens to shared ones when a shared folder is involved.
 
 <Frame>
-  <img src="/lindy-brand-assets/teammate/ask-meeting-in-slack.png" alt="A Slack thread in #team-sales: a teammate asks Lindy to summarize the key decisions and next steps from a call, and Lindy replies in the thread with an SSO and enterprise setup rundown" />
+  <img src="/lindy-brand-assets/teammate/ask-meeting-in-slack.png" alt="A Slack thread in #team-sales: a teammate asks Lindy to summarize the key decisions and next steps from a call, and Lindy replies in the thread with a rundown covering SSO setup, the contract, and the product preview" />
 </Frame>
 
 Open any call and **Chat with this meeting** sits right under the recording, with a few starting points if you don't know what to ask.
@@ -166,6 +215,12 @@ Access means viewing the folder and its meetings and adding or removing meetings
 ## Relevant Docs
 
 <CardGroup cols={2}>
+  <Card title="Meeting Prep" icon="clipboard-list" href="/features/meeting-assistant/meeting-prep">
+    Get context before every meeting
+  </Card>
+  <Card title="Smart Scheduling" icon="calendar" href="/features/meeting-assistant/scheduling">
+    Lindy proposes times and books meetings for you
+  </Card>
   <Card title="Files" icon="files" href="/teammate/files">
     The file explorer for everything Lindy uses
   </Card>

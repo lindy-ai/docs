@@ -1405,11 +1405,9 @@ figure img {
   aspect-ratio: auto !important;
   margin: 0 !important;
   padding: 0 !important;
-  /* Screenshots with light app chrome blend into the page background without an
-     edge. A thick mat (~0.25cm) separates the image from the page and reads as a
-     deliberate frame rather than a hairline that vanishes at these tones.
-     Navy is a deliberate brand colour, so it carries into dark mode unchanged. */
-  border: 10px solid #1F3047 !important;
+  /* Hairline so screenshots with light app chrome don't dissolve into the page.
+     Kept to 1px: enough to hold an edge, not a frame around the content. */
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
   outline: none !important;
   border-radius: 20px;
   clip-path: inset(0 round 20px); /* round the image itself, not just its container */
