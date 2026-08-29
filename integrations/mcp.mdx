@@ -1,0 +1,113 @@
+---
+title: 'MCP servers'
+sidebarTitle: 'MCP'
+description: 'Point Lindy at a hosted MCP server and it builds actions from the tools that server publishes.'
+icon: 'server'
+---
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+  <div className="video-card">
+    <video
+      src="/lindy-brand-assets/integrations/mcp-connect.mp4"
+      width="600"
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
+    />
+  </div>
+</div>
+
+The [built-in integrations](/integrations/overview) cover the tools most teams use. MCP covers the rest. If a product publishes an MCP server, you can hand Lindy the URL and it gains that product's tools without waiting for a native integration.
+
+Lindy connects to hosted servers that expose a public HTTPS streamable-HTTP endpoint. On connect it reads the server's tool catalog and creates an action for every tool whose schema it supports. There is no action-picking or field-mapping step: everything supported arrives switched on, and you turn off what you don't want afterwards. A small server might add three tools; a large one adds well over a hundred.
+
+## Adding an MCP server
+
+The only thing you must have is the server's URL. Everything else in the dialog is optional.
+
+<Steps>
+  <Step title="Get the server URL">
+    The product you're connecting publishes it, usually in their docs under MCP. It looks like `https://mcp.example.com/mcp`, and it has to be reachable over public HTTPS.
+  </Step>
+  <Step title="Open the Add menu">
+    Go to **Integrations**, click **+ Add**, and choose **MCP**. The other option in that menu, **Integration**, is for the built-in tools.
+  </Step>
+  <Step title="Fill in the server">
+    In **Connect MCP server**, paste the **Server URL** and set a **Display name**.
+  </Step>
+  <Step title="Add a credential only if the server needs one">
+    Servers that allow anonymous access, and servers that run their own OAuth flow, need nothing here. If yours authenticates with a static credential instead, open **Advanced** and send it as an **Authorization** bearer token, a custom header, or a query parameter.
+  </Step>
+  <Step title="Connect">
+    Click **Connect**. The server appears in your list with its host and its tool counts.
+  </Step>
+</Steps>
+
+<Tip>
+  A **Display name** is worth setting. Connections are identified by hostname otherwise, and several products serve more than one server from the same host, so two entries can look identical in the list. `Linear production` beats a bare hostname.
+</Tip>
+
+<Note>
+  Lindy shows two numbers: the tools the server reports, and the tools available in Lindy. They differ when a server publishes tools whose schemas Lindy doesn't support. Zero available means the endpoint is wrong, the catalog is empty, or none of the tool definitions are compatible.
+</Note>
+
+## After you connect
+
+Open the server from **Integrations** to reach its settings. Every connection you hold to that server appears as a chip across the top, so one product can carry more than one: a personal connection and a shared one, each with its own settings. A chip marked with a people icon is shared with the workspace. Its **...** menu is where you rename or remove that connection.
+
+Three cards sit below.
+
+### Availability
+
+**Availability** decides who the connection serves.
+
+<Frame>
+  <img src="/lindy-brand-assets/integrations/mcp-availability.png" alt="A connected MCP server's Availability dropdown, open on Only you and Your workspace" />
+</Frame>
+
+| Setting | Who can use its tools |
+| --- | --- |
+| **Only you** | Your Lindy alone. Every new connection starts here. |
+| **Your workspace** | Everyone in the workspace, and Lindy Teammate |
+
+### Guardrails
+
+**Guardrails** decide whether Lindy asks before it uses the server.
+
+<Frame>
+  <img src="/lindy-brand-assets/integrations/mcp-guardrails.png" alt="A connected MCP server's Guardrails dropdown, open on Always allow and Ask for approval" />
+</Frame>
+
+| Setting | What Lindy does |
+| --- | --- |
+| **Always allow** | Calls the server's tools without asking |
+| **Ask for approval** | Asks first |
+
+This one is personal. Your choice affects only you, and it overrides whatever the workspace has set as its default, so two people on the same shared server can run it differently.
+
+### Actions
+
+**Actions** lists every tool Lindy built from the server's catalog, each with the description the server publishes and a toggle. They all arrive on.
+
+Turn off the ones you don't need. **Disable all** clears the list in one click, which is the fast way to keep two tools out of a hundred. This is worth doing on a large server: every enabled tool is a tool Lindy has to consider on every task, and a hundred unused ones are noise.
+
+## Who can change what
+
+Sharing is the connection owner's call. Workspace owners and admins set team policy and can revoke sharing, but they cannot grant it or reconnect the credential on your behalf.
+
+| | Connection owner | Workspace owner or admin | Other members |
+| --- | --- | --- | --- |
+| Use the tools | Yes | Once shared | Once shared |
+| Set Availability to the workspace | Yes | No | No |
+| Revoke sharing, set policy | Yes | Yes | No |
+| Reconnect the credential | Yes | No | No |
+
+Guardrails are the exception: that setting is per person, so anyone using a shared server picks their own.
+
+## Turning a server off
+
+Setting a shared connection's **Availability** back to **Only you** removes its tools from everyone else's Lindy in that workspace. The connection itself survives and keeps working for you, and the same server connected separately elsewhere is unaffected.
+
+Reach for the **Actions** toggles first if the problem is noise rather than access. Dropping to **Only you**, or removing the connection from its **...** menu, is for when the team should not be calling that server at all.

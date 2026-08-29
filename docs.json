@@ -148,9 +148,11 @@
         ]
       },
       {
-        "group": "Integrations",
+        "group": "Integrations, Credentials, and MCP",
         "pages": [
-          "integrations/overview"
+          "integrations/overview",
+          "integrations/credentials",
+          "integrations/mcp"
         ]
       },
       {
