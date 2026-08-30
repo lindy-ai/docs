@@ -187,9 +187,9 @@ The repo migrated from the legacy `mint.json` to Mintlify's current **`docs.json
 
 New pages must be registered in `docs.json` under `navigation.groups` or they will not appear on the site. A group's `pages` array accepts only page paths and nested groups — **it cannot hold a bare link**, so a nav entry that should send readers elsewhere needs a real stub page.
 
-<!-- Known IA debt: the "Lindy Teammate" and "Assistant" groups read as two products, while the
-     content says "same Lindy, two surfaces." A restructure to mirror the adoption path
-     (personal surface -> team surface -> what the team shares) is planned but not started. -->
+**Known IA debt.** The "Lindy Teammate" and "Assistant" groups read as two products, while the content says "same Lindy, two surfaces." A restructure to mirror the adoption path (personal surface, then team surface, then what the team shares) is planned but not started.
+
+Note that this file **is** parsed by Mintlify's build, despite not being a nav page. Do not use HTML comments in it: MDX rejects `<!-- -->`. Use `{/* */}` or plain prose.
 
 ## Verify before you trust this file
 
