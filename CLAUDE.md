@@ -171,7 +171,7 @@ docs/
 
 - **Promise**: "The AI teammate that makes the whole team better." It lives in Slack, knows what the company knows, and does the actual work.
 - **Two surfaces, one Lindy**: everyone gets a private Lindy in their DMs; the whole team shares one in channels. These are surfaces of one product, never two SKUs.
-- **What it does**: Ask (answers from your tools and every meeting) · Act (multi-step work start to finish) · Create (real artifacts: decks, sheets, reports).
+- **What it does**: finished work, not just an answer. Name the tool and the outcome ("updates the forecast tab", "files the notes where the team already looks"), not the capability. The homepage retired the abstract Ask/Act/Create triad for exactly this reason.
 - **Why it compounds**: skills, routines, files, and meetings belong to the **workspace**, not to whoever built them. One person teaches it, the team inherits it.
 - **Audience**: business teams. The champion is usually an individual contributor who adopts it in DMs; the expansion happens when the work becomes visible in channels.
 
@@ -332,7 +332,7 @@ gh pr merge <number> --merge
 - "The AI teammate that makes the whole team better"
 - "It knows everything your company knows"
 - "Everyone gets a private Lindy in their DMs. The whole team shares one in channels."
-- "Ask. Act. Create."
+- "Finished work, not just an answer"
 - "One person teaches it, the team inherits it"
 - "Skills and routines belong to the workspace, not to whoever built them"
 - "Finished work, not just an answer"
