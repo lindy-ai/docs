@@ -105,23 +105,11 @@
         "pages": [
           "index",
           "start-here/quickstart",
-          "start-here/team-setup"
+          "teammate/setup"
         ]
       },
       {
-        "group": "Lindy Teammate",
-        "pages": [
-          "teammate/setup",
-          "teammate/home",
-          "teammate/meeting-library",
-          "teammate/files",
-          "teammate/routines",
-          "teammate/skills",
-          "teammate/slack-commands"
-        ]
-      },
-      {
-        "group": "Assistant",
+        "group": "Your personal Lindy",
         "pages": [
           {
             "group": "Built-in Routines",
@@ -137,18 +125,29 @@
             ]
           },
           "features/imessage-sms",
-          "features/ad-hoc-tasks",
+          "features/chrome-extension",
           "start-here/best-practices"
         ]
       },
       {
-        "group": "Chrome extension",
+        "group": "Your team's Lindy",
         "pages": [
-          "features/chrome-extension"
+          "teammate/slack-commands",
+          "teammate/home",
+          "features/ad-hoc-tasks"
         ]
       },
       {
-        "group": "Integrations, Credentials, and MCP",
+        "group": "What the team shares",
+        "pages": [
+          "teammate/meeting-library",
+          "teammate/skills",
+          "teammate/routines",
+          "teammate/files"
+        ]
+      },
+      {
+        "group": "Connect your tools",
         "pages": [
           "integrations/overview",
           "integrations/credentials",
@@ -156,15 +155,16 @@
         ]
       },
       {
-        "group": "Accounts & Billing",
+        "group": "Admin & Billing",
         "pages": [
+          "start-here/team-setup",
           "pricing",
           "account-billing/usage",
           "teammate/lindy-teammate-billing"
         ]
       },
       {
-        "group": "Resources",
+        "group": "Security & Resources",
         "pages": [
           "resources/security",
           "resources/changelog",
