@@ -169,7 +169,7 @@ docs/
 
 **Source of truth is `index.mdx`.** It is the only positioning artifact that is both current and shipped. Read it before writing any page. Do not restore the pre-2026-08 "AI assistant that runs your work life / 10+ hours back every week" framing — that was the individual-EA pitch and the product is no longer sold that way.
 
-- **Promise**: "The AI teammate that knows your whole company." It lives in Slack, knows what the company knows, and does the actual work.
+- **Promise**: "The AI teammate that makes the whole team better." It lives in Slack, knows what the company knows, and does the actual work.
 - **Two surfaces, one Lindy**: everyone gets a private Lindy in their DMs; the whole team shares one in channels. These are surfaces of one product, never two SKUs.
 - **What it does**: Ask (answers from your tools and every meeting) · Act (multi-step work start to finish) · Create (real artifacts: decks, sheets, reports).
 - **Why it compounds**: skills, routines, files, and meetings belong to the **workspace**, not to whoever built them. One person teaches it, the team inherits it.
@@ -324,12 +324,13 @@ gh pr merge <number> --merge
 
 ### Positioning Language (team product, Aug 2026)
 
-**Promise**: "The AI teammate that knows your whole company."
+**Promise**: "The AI teammate that makes the whole team better."
 **Structure**: "Same Lindy, two surfaces" — private in DMs, shared in channels.
 **Stack replacement**: "One tool, not five" (do NOT name competitors in docs)
 
 **Use**:
-- "The AI teammate your whole team shares"
+- "The AI teammate that makes the whole team better"
+- "It knows everything your company knows"
 - "Everyone gets a private Lindy in their DMs. The whole team shares one in channels."
 - "Ask. Act. Create."
 - "One person teaches it, the team inherits it"
