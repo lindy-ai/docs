@@ -109,20 +109,15 @@
         ]
       },
       {
-        "group": "Your team's Lindy",
+        "group": "Lindy Teammate",
         "pages": [
-          "teammate/slack-commands",
           "teammate/home",
-          "features/ad-hoc-tasks"
-        ]
-      },
-      {
-        "group": "What the team shares",
-        "pages": [
           "teammate/skills",
           "teammate/routines",
           "teammate/files",
-          "teammate/meeting-library"
+          "teammate/meeting-library",
+          "features/ad-hoc-tasks",
+          "teammate/slack-commands"
         ]
       },
       {
