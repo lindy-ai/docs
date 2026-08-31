@@ -39,11 +39,27 @@ Anyone can run these for their own account.
 | Command | What it does |
 |---------|--------------|
 | `/lindy usage` | Show your Slack diagnostics for the last 7 days. |
+| `/lindy usemodel` | Run your next task on a specific model. |
 | `/lindy unlink` | Unlink your Slack account from Lindy. |
 
 <Warning>
   After `/lindy unlink`, Lindy stops responding to your DMs and @mentions until you link again. The next time you message the bot, tap **Connect Slack to Lindy** to reconnect.
 </Warning>
+
+#### Run one task on a specific model
+
+Type `/lindy usemodel` in any Slack message box and press enter. A modal opens with a model dropdown. Pick the model you want and it applies to the next task you ping Lindy with. That one task runs on the model you chose, and everything after it falls back to the default.
+
+Use it to:
+
+- Test the same task on two different models and compare the output
+- Force a specific model for a single gnarly task
+
+The override is one task only. It sets the model for the task started by your next Slack ping, holds for that whole task, then resets. A confirmation message shows which model was set, visible only to you.
+
+<Note>
+  `/lindy usemodel` is available in internal workspaces only for now. Next up on the roadmap is `/lindy redo`, which re-runs a task from its original trigger on a different model.
+</Note>
 
 ## Relevant Docs
 
