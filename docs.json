@@ -19,18 +19,8 @@
       "permanent": true
     },
     {
-      "source": "/features/meeting-assistant/follow-ups",
-      "destination": "/features/inbox-management/follow-up-bumps",
-      "permanent": true
-    },
-    {
-      "source": "/features/meeting-assistant/meeting-notes",
-      "destination": "/teammate/meeting-library",
-      "permanent": true
-    },
-    {
-      "source": "/coming-soon/setup",
-      "destination": "/teammate/setup",
+      "source": "/coming-soon/files",
+      "destination": "/teammate/files",
       "permanent": true
     },
     {
@@ -39,18 +29,28 @@
       "permanent": true
     },
     {
+      "source": "/coming-soon/lindy-teammate",
+      "destination": "/teammate/lindy-teammate",
+      "permanent": true
+    },
+    {
+      "source": "/coming-soon/lindy-teammate-billing",
+      "destination": "/teammate/lindy-teammate-billing",
+      "permanent": true
+    },
+    {
       "source": "/coming-soon/meeting-library",
       "destination": "/teammate/meeting-library",
       "permanent": true
     },
     {
-      "source": "/coming-soon/files",
-      "destination": "/teammate/files",
+      "source": "/coming-soon/routines",
+      "destination": "/teammate/routines",
       "permanent": true
     },
     {
-      "source": "/coming-soon/routines",
-      "destination": "/teammate/routines",
+      "source": "/coming-soon/setup",
+      "destination": "/teammate/setup",
       "permanent": true
     },
     {
@@ -64,13 +64,13 @@
       "permanent": true
     },
     {
-      "source": "/coming-soon/lindy-teammate",
-      "destination": "/teammate/lindy-teammate",
+      "source": "/features/meeting-assistant/follow-ups",
+      "destination": "/features/inbox-management/follow-up-bumps",
       "permanent": true
     },
     {
-      "source": "/coming-soon/lindy-teammate-billing",
-      "destination": "/teammate/lindy-teammate-billing",
+      "source": "/features/meeting-assistant/meeting-notes",
+      "destination": "/teammate/meeting-library",
       "permanent": true
     }
   ],
