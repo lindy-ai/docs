@@ -107,10 +107,8 @@ docs/
 │   └── hooks/
 │       └── branch-safety.sh       ← Git branch protection hook
 │
-├── internal-ref-docs/             ← Internal reference docs (excluded from Mintlify)
-│   ├── README.md                  ← Guide to internal reference docs
-│   ├── lifecycle_comms.md         ← Tone, voice, and messaging patterns
-│   └── messaging_positioning_frameworks.md  ← Product positioning frameworks
+├── .mintlify/
+│   └── Assistant.md               ← System context for the docs-site AI chatbot
 │
 ├── components/                    ← Custom React components for MDX
 │   ├── ChatIcon.jsx
@@ -168,30 +166,45 @@ docs/
 ```
 
 ## Current Positioning (live)
-- "The AI that runs your work life. 10+ hours back every week."
-- "Lindy doesn't assist. It acts. Autonomously."
-- Business user audience (professionals, not developers)
-- Core features: Inbox Management, Meeting Assistant, iMessage & SMS, Ad Hoc Tasks
-- Key language: "delegate" (not "ask"), "runs" (not "manages"), "text like a friend"
-- See `internal-ref-docs/messaging_positioning_frameworks.md` for authoritative messaging
+
+**Source of truth is `index.mdx`.** It is the only positioning artifact that is both current and shipped. Read it before writing any page. Do not restore the pre-2026-08 "AI assistant that runs your work life / 10+ hours back every week" framing — that was the individual-EA pitch and the product is no longer sold that way.
+
+- **Promise**: "The AI teammate that makes the whole team better." It lives in Slack, knows what the company knows, and does the actual work.
+- **Two surfaces, one Lindy**: everyone gets a private Lindy in their DMs; the whole team shares one in channels. These are surfaces of one product, never two SKUs.
+- **What it does**: finished work, not just an answer. Name the tool and the outcome ("updates the forecast tab", "files the notes where the team already looks"), not the capability. The homepage retired the abstract Ask/Act/Create triad for exactly this reason.
+- **Why it compounds**: skills, routines, files, and meetings belong to the **workspace**, not to whoever built them. One person teaches it, the team inherits it.
+- **Audience**: business teams. The champion is usually an individual contributor who adopts it in DMs; the expansion happens when the work becomes visible in channels.
+
+### Scope labeling (the most common mistake)
+
+Most features exist at both **Personal** and **Team** scope. `teammate/skills.mdx` (Your skills / Team skills / Built-in) and `teammate/files.mdx` (Personal / Team / System) get this right — copy their pattern.
+
+Possessives are **not** the problem. "Your inbox" is correct on the personal surface. The problem is failing to say *which surface a feature lives on*, which makes a shared product read as single-user. Say the scope; keep the "your".
 
 **Current Navigation Structure** (in `docs.json`):
 
-The repo migrated from the legacy `mint.json` to Mintlify's current **`docs.json`** schema (2026-05-16). The site theme is `maple`. Navigation is split into **two tabs**:
+The repo migrated from the legacy `mint.json` to Mintlify's current **`docs.json`** schema (2026-05-16). The site theme is `maple`. Navigation is a **single flat list of groups** (no tabs): Start Here, Lindy Teammate, Assistant, Chrome extension, Integrations/Credentials/MCP, Accounts & Billing, Resources.
 
-1. **Documentation** — user-facing pages: Start Here, Inbox Management, Meeting Assistant, iMessage & SMS, Ad Hoc Tasks, Accounts & Billing, Resources
-2. **Workflows** — the former "Advanced" section: Custom Agents 101, Testing, Use Cases, Skills, Integrations
+New pages must be registered in `docs.json` under `navigation.groups` or they will not appear on the site. A group's `pages` array accepts only page paths and nested groups — **it cannot hold a bare link**, so a nav entry that should send readers elsewhere needs a real stub page.
 
-New pages must be registered under the correct tab's `navigation` in `docs.json` or they will not appear on the site.
+**Known IA debt.** The "Lindy Teammate" and "Assistant" groups read as two products, while the content says "same Lindy, two surfaces." A restructure to mirror the adoption path (personal surface, then team surface, then what the team shares) is planned but not started.
+
+Note that this file **is** parsed by Mintlify's build, despite not being a nav page. Do not use HTML comments in it: MDX rejects `<!-- -->`. Use `{/* */}` or plain prose.
+
+## Verify before you trust this file
+
+This file has gone stale before. `internal-ref-docs/` was cited here as authoritative for months after it was deleted. Before relying on any path or claim below, confirm it exists.
 
 ## Key Files
 
 ### Configuration
-- **`docs.json`** - Navigation, metadata, branding
+- **`docs.json`** - Navigation, metadata, branding, redirects
   - All pages MUST be registered here to appear in nav
-  - Branding colors: `#E6C147` (yellow/gold)
+  - Branding colors: primary `#1A1A1A`, light `#E5E4E1`, dark `#000000`
   - Icons: FontAwesome library
-  - **Excluded from builds**: `internal-ref-docs/`, `CLAUDE.md`, `WORKFLOW.md`
+  - Top-level keys in use: `theme`, `name`, `redirects`, `colors`, `favicon`, `logo`, `navbar`, `navigation`
+  - There is **no `ignore` config**. Non-page files simply aren't registered in `navigation`.
+  - Deleting or moving a page means adding a `redirects` entry **and** fixing inbound links
 
 ### Content
 - **MDX files** - All documentation pages (Markdown + JSX)
@@ -205,12 +218,13 @@ New pages must be registered under the correct tab's `navigation` in `docs.json`
   ---
   ```
 
-### Internal Reference Docs (in `internal-ref-docs/`)
-- **README.md** - Guide to using internal reference documents
-- **lifecycle_comms.md** - Tone, voice, and messaging patterns from lifecycle emails (by David Henry, Jan 22, 2026)
-- **messaging_positioning_frameworks.md** - **Authoritative positioning doc** (by Everett Butler, Feb 9, 2026). All pivot docs pages are aligned to this. Contains core positioning, ICPs, differentiators, value pillars, brand narrative, feature descriptions, objection handling.
-- These files are excluded from Mintlify builds (see `docs.json` ignore config)
-- **Always check these before writing new content** to ensure messaging alignment
+### Docs-site AI chatbot (`.mintlify/Assistant.md`)
+- System context for the assistant that answers questions on the published site.
+- **It carries the product pitch to every visitor who asks a question**, so it drifts out of date the same way pages do. Update it whenever positioning changes.
+- Its terminology mappings point search terms at specific pages. **Deleting or moving a page means fixing the mapping**, or the chatbot cites a dead path.
+- Only indexes the production branch, same as search.
+
+*(A former `internal-ref-docs/` directory held the Feb 2026 positioning and lifecycle-comms references. It has been deleted. Older commit messages still cite it.)*
 
 ### Custom Components (in `components/`)
 - **ChatIcon.jsx** - Custom chat icon component for MDX
@@ -308,36 +322,42 @@ gh pr merge <number> --merge
 - **Screenshots** - Heavy visual documentation
 - **Concise** - 1-2 sentence paragraphs
 
-### New Positioning Language (from messaging doc, Feb 2026)
+### Positioning Language (team product, Aug 2026)
 
-**Core positioning**: "The AI that runs your work life. 10+ hours back every week."
-**Key line**: "Lindy doesn't assist. It acts. Autonomously."
+**Promise**: "The AI teammate that makes the whole team better."
+**Structure**: "Same Lindy, two surfaces" — private in DMs, shared in channels.
 **Stack replacement**: "One tool, not five" (do NOT name competitors in docs)
 
-**Use** (AI Assistant):
-- "Lindy runs your inbox / meetings / calendar"
-- "Delegate to Lindy" (not "ask Lindy")
-- "Text Lindy like a friend" (not "like a colleague")
-- "10+ hours back every week"
-- "You don't have to ask"
+**Use**:
+- "The AI teammate that makes the whole team better"
+- "It knows everything your company knows"
+- "Everyone gets a private Lindy in their DMs. The whole team shares one in channels."
+- "Finished work, not just an answer"
+- "One person teaches it, the team inherits it"
+- "Skills and routines belong to the workspace, not to whoever built them"
+- "Finished work, not just an answer"
+- "@mention it like a person"
 - "Nothing falls through the cracks"
-- "One assistant replaces your entire work stack"
 
-**Avoid** (Automation Platform):
+**Avoid**:
+- "Runs your work life" / "10+ hours back every week" — retired individual-EA framing
+- "Your next hire is AI" / anything implying Lindy replaces headcount. It makes the champion defensive, and the champion is who adopts it.
+- "Do more" as a benefit — an IC reads that as *more will be expected of me*. Say what compounds instead.
+- Treating "Lindy Teammate" and "Assistant" as separate products
 - "Build a workflow" / "Configure triggers" / "Deploy your agent"
-- "Actions" / "Automations" (use "Quick Tasks" / "Standing instructions")
-- "Interact with" (use "delegate to")
-- "Manages your" (use "runs your")
+- "Actions" / "Automations" (use "Routines" / "Skills")
 - Naming specific competitors (Superhuman, Calendly, Granola, Fyxer)
 - Em dashes (use colons for **Bold**: description patterns)
+- Implying Lindy spends time or takes a while: it is instant. Never "Lindy will spend a few minutes…"
+- "her" for Lindy: it is "it"
 
 ### Tone & Voice Reference
 
-**Primary source**: `internal-ref-docs/messaging_positioning_frameworks.md` (Feb 9, 2026 by Everett Butler) - authoritative messaging, positioning, differentiators, and feature descriptions.
+**Primary source**: `index.mdx`. It is shipped, approved, and current. Match its register.
 
-**Secondary source**: `internal-ref-docs/lifecycle_comms.md` - tone examples from lifecycle emails, key phrases, Problem/Solution/Value structure.
+**Good interior examples to copy**: `teammate/meeting-library.mdx` (team-first framing with clear Personal/Team scoping) and `teammate/skills.mdx` (ownership model stated plainly).
 
-See **`internal-ref-docs/README.md`** for guidance on using reference materials.
+Note: `internal-ref-docs/` (`messaging_positioning_frameworks.md`, `lifecycle_comms.md`) is referenced in older docs and commit messages. **That directory no longer exists.** Do not cite it.
 
 ## Safety Guidelines
 
@@ -479,8 +499,8 @@ mintlify broken-links
 ## Need Help?
 
 1. **Git workflow questions**: See `WORKFLOW.md`
-2. **Tone and messaging**: See `internal-ref-docs/lifecycle_comms.md`
-3. **Internal reference docs**: See `internal-ref-docs/README.md`
+2. **Tone, messaging, and positioning**: Read `index.mdx`. It is the shipped source of truth.
+3. **Good interior examples**: `teammate/meeting-library.mdx` and `teammate/skills.mdx`
 4. **Mintlify documentation**: https://mintlify.com/docs
 5. **Team lead**: Ask before pushing if unsure
 
