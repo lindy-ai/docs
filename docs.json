@@ -109,6 +109,23 @@
         ]
       },
       {
+        "group": "Your team's Lindy",
+        "pages": [
+          "teammate/slack-commands",
+          "teammate/home",
+          "features/ad-hoc-tasks"
+        ]
+      },
+      {
+        "group": "What the team shares",
+        "pages": [
+          "teammate/skills",
+          "teammate/routines",
+          "teammate/files",
+          "teammate/meeting-library"
+        ]
+      },
+      {
         "group": "Your personal Lindy",
         "pages": [
           {
@@ -127,23 +144,6 @@
           "features/imessage-sms",
           "features/chrome-extension",
           "start-here/best-practices"
-        ]
-      },
-      {
-        "group": "Your team's Lindy",
-        "pages": [
-          "teammate/slack-commands",
-          "teammate/home",
-          "features/ad-hoc-tasks"
-        ]
-      },
-      {
-        "group": "What the team shares",
-        "pages": [
-          "teammate/meeting-library",
-          "teammate/skills",
-          "teammate/routines",
-          "teammate/files"
         ]
       },
       {
