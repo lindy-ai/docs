@@ -1708,8 +1708,8 @@ html:not(.dark) #navigation-items a:hover {
 }
 .card svg,
 .card .icon {
-  width: 1.05rem !important;
-  height: 1.05rem !important;
+  width: 1.3rem !important;
+  height: 1.3rem !important;
 }
 /* no gold/underline flourish on hover — keep it flat */
 .card:hover h2,
