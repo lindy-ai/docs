@@ -11,6 +11,10 @@ There are two ways to interact with Lindy in Slack: **@mention** her when you wa
 
 @mention Lindy in a channel or thread whenever you want an immediate response. It replies right inside that thread.
 
+<Frame>
+  <img src="/lindy-brand-assets/teammate/artifact-ad-spend-report.png" alt="A teammate @mentions Lindy in #metrics to pull this week's ad spend report; Lindy pulls spend from three tools and replies in the channel with a Paid spend card, a flagged campaign, and a button to open the full report" />
+</Frame>
+
 Once Lindy has replied in a thread, you don't need to keep @mentioning her. Lindy reads the thread and disambiguates whether your next message is aimed at her or at the other people in the conversation, so a natural follow-up keeps the thread going without the extra @mention.
 
 ## Slash commands
@@ -39,11 +43,27 @@ Anyone can run these for their own account.
 | Command | What it does |
 |---------|--------------|
 | `/lindy usage` | Show your Slack diagnostics for the last 7 days. |
+| `/lindy usemodel` | **Coming soon.** Run your next task on a specific model. |
 | `/lindy unlink` | Unlink your Slack account from Lindy. |
 
 <Warning>
   After `/lindy unlink`, Lindy stops responding to your DMs and @mentions until you link again. The next time you message the bot, tap **Connect Slack to Lindy** to reconnect.
 </Warning>
+
+#### Run one task on a specific model
+
+<Note>
+  `/lindy usemodel` is coming soon and is not available yet. Here is how it will work.
+</Note>
+
+Type `/lindy usemodel` in any Slack message box and press enter. A modal opens with a model dropdown. Pick the model you want and it applies to the next task you ping Lindy with. That one task runs on the model you chose, and everything after it falls back to the default.
+
+Use it to:
+
+- Test the same task on two different models and compare the output
+- Force a specific model for a single gnarly task
+
+The override is one task only. It sets the model for the task started by your next Slack ping, holds for that whole task, then resets. A confirmation message shows which model was set, visible only to you.
 
 ## Relevant Docs
 
