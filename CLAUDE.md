@@ -40,10 +40,10 @@ This is the **Lindy documentation repository** built with **Mintlify** (a modern
 **Current Project**: Lindy documentation site. Restructure from "automation platform" to "AI assistant" positioning launched March 2, 2026.
 
 **Repository Stats**:
-- ~100+ MDX documentation pages
+- 32 MDX documentation pages, all registered in `docs.json`
 - 478 brand assets (screenshots, videos)
-- 22 integration guides
-- 3 internal reference documents
+
+The legacy workflow-builder docs (`fundamentals/lindy-101/`, `skills/`, `use-cases/`, `testing/`, `integrations/popular/`, and the old `account-billing/` and `bot-for-slack` pages) were dropped from the navigation during the pivot and **deleted from the repo on 2026-09-03**. Every one of those paths now has a `redirects` entry in `docs.json`. Do not restore them or link to them.
 
 ## Quick Start
 
@@ -116,44 +116,29 @@ docs/
 │
 ├── index.mdx                      ← Homepage ("What is Lindy?")
 ├── export-full-docs.mdx           ← Export utility page
-├── join-community.mdx             ← Community page
+├── pricing.mdx                    ← Plans and pricing
 │
-├── start-here/                    ← Getting started docs
-│   └── quickstart.mdx
-├── features/                      ← Core feature pages (NEW - pivot branch)
+├── start-here/                    ← Getting started
+│   ├── quickstart.mdx
+│   ├── best-practices.mdx
+│   └── team-setup.mdx
+├── teammate/                      ← Lindy Teammate surface
+│   ├── setup.mdx                  ← Get Lindy into Slack, link everyone
+│   ├── home.mdx, skills.mdx, routines.mdx, files.mdx
+│   ├── artifacts.mdx, meeting-library.mdx, slack-commands.mdx
+│   └── lindy-teammate-billing.mdx ← Seats, trials, shared credit pool
+├── features/                      ← Your personal Lindy
 │   ├── imessage-sms.mdx           ← iMessage & SMS guide
 │   ├── ad-hoc-tasks.mdx           ← Research & on-demand tasks
-│   ├── inbox-management/
-│   │   ├── email-triage.mdx       ← Email labeling & prioritization
-│   │   └── email-drafting.mdx     ← AI-drafted replies
-│   └── meeting-assistant/
-│       ├── meeting-prep.mdx       ← Pre-meeting briefings
-│       ├── meeting-notes.mdx      ← Recording & summaries
-│       ├── follow-ups.mdx         ← Automatic follow-up emails
-│       └── scheduling.mdx         ← Smart scheduling
-├── fundamentals/                  ← Core concepts (legacy workflow builder docs)
-│   ├── lindy-101/                 ← 15 workflow builder pages
-│   ├── testing/                   ← 5 testing pages
-│   └── account-billing/           ← 5 account pages
-├── use-cases/                     ← Use case documentation
-│   ├── popular-workflows/         ← 4 core assistant workflows
-│   ├── sales/                     ← 3 sales automation examples
-│   ├── operations/                ← Operations examples
-│   ├── finance/                   ← Finance examples
-│   ├── customer success/          ← Customer success examples
-│   ├── marketing/                 ← Marketing examples
-│   └── hr/                        ← HR examples
-├── skills/                        ← Features and integrations
-│   ├── by-lindy/                  ← 14 Lindy-built features
-│   ├── lindy-utilities/           ← 5 utility features
-│   ├── web-browsing/              ← 5 web scraping features
-│   └── popular-integrations/      ← 22 integration guides
-├── testing/                       ← Testing docs (legacy location)
-├── account-billing/               ← Account management (legacy location)
-├── integrations/                  ← Integration docs
+│   ├── chrome-extension.mdx
+│   ├── inbox-management/          ← triage, drafting, alerting, follow-up bumps
+│   └── meeting-assistant/         ← daily brief, prep, recording, scheduling
+├── integrations/                  ← Connect your tools
 │   ├── overview.mdx
-│   ├── all-integrations.mdx
-│   └── popular/
+│   ├── credentials.mdx
+│   └── mcp.mdx
+├── account-billing/
+│   └── usage.mdx                  ← Credits and usage
 ├── resources/                     ← Security, changelog
 │   ├── security.mdx
 │   └── changelog.mdx
