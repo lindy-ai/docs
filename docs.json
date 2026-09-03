@@ -115,6 +115,7 @@
           "teammate/skills",
           "teammate/routines",
           "teammate/files",
+          "teammate/artifacts",
           "teammate/meeting-library",
           "features/ad-hoc-tasks",
           "teammate/slack-commands"
