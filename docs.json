@@ -65,12 +65,492 @@
     },
     {
       "source": "/coming-soon/lindy-teammate",
-      "destination": "/teammate/lindy-teammate",
+      "destination": "/teammate/setup",
       "permanent": true
     },
     {
       "source": "/coming-soon/lindy-teammate-billing",
       "destination": "/teammate/lindy-teammate-billing",
+      "permanent": true
+    },
+    {
+      "source": "/account-billing/credit-optimizations",
+      "destination": "/account-billing/usage",
+      "permanent": true
+    },
+    {
+      "source": "/account-billing/credits",
+      "destination": "/account-billing/usage",
+      "permanent": true
+    },
+    {
+      "source": "/account-billing/teams",
+      "destination": "/start-here/team-setup",
+      "permanent": true
+    },
+    {
+      "source": "/account-billing/teams-collaboration",
+      "destination": "/start-here/team-setup",
+      "permanent": true
+    },
+    {
+      "source": "/account-billing/workspaces",
+      "destination": "/start-here/team-setup",
+      "permanent": true
+    },
+    {
+      "source": "/bot-for-slack",
+      "destination": "/teammate/setup",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/actions",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/ai-agents",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/computer-use",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/conditions",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/create-agent",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/evals",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/fields",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/introduction",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/knowledge-base",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/looping",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/memory",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/phone-calls",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/prompt-guide",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/tasks",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/templates",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/fundamentals/lindy-101/triggers",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/all-integrations",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/popular/calendar",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/popular/gmail",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/popular/google-drive",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/popular/hubspot",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/popular/notion",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/popular/salesforce",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/popular/slack",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/join-community",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/skills/by-lindy/chat-with-lindy",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/by-lindy/computer-use",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/by-lindy/http-request",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/by-lindy/lindy-embed",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/by-lindy/lindy-mail",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/by-lindy/lindy-phone",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/by-lindy/run-code",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/by-lindy/step-by-step-onboarding",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/by-lindy/talk-with-other-lindy",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/by-lindy/timer",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/by-lindy/webhooks",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/lindy-utilities/context",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/lindy-utilities/get-task",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/lindy-utilities/llm-call",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/lindy-utilities/memories",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/lindy-utilities/observability",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/lindy-utilities/set-variables",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/airtable",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/github",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/gmail",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/google-calendar",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/google-docs",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/google-drive",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/google-sheets",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/how-to-connect",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/hubspot",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/linkedin",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/microsoft-outlook",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/microsoft-teams",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/notion",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/people-data-labs",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/salesforce",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/slack",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/telegram",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/twilio",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/youtube",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/popular-integrations/zoom",
+      "destination": "/integrations/overview",
+      "permanent": true
+    },
+    {
+      "source": "/skills/web-browsing/apify",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/web-browsing/overview",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/web-browsing/parallel",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/web-browsing/perplexity",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/skills/web-browsing/web-browser",
+      "destination": "/teammate/skills",
+      "permanent": true
+    },
+    {
+      "source": "/teammate/lindy-teammate",
+      "destination": "/teammate/setup",
+      "permanent": true
+    },
+    {
+      "source": "/testing/debugging",
+      "destination": "/start-here/best-practices",
+      "permanent": true
+    },
+    {
+      "source": "/testing/human-in-the-loop",
+      "destination": "/start-here/best-practices",
+      "permanent": true
+    },
+    {
+      "source": "/testing/monitoring-your-agents",
+      "destination": "/start-here/best-practices",
+      "permanent": true
+    },
+    {
+      "source": "/testing/test-panel",
+      "destination": "/start-here/best-practices",
+      "permanent": true
+    },
+    {
+      "source": "/testing/version-history",
+      "destination": "/start-here/best-practices",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/customer success/report-generator",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/customer%20success/report-generator",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/customer success/smart-support-agent",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/customer%20success/smart-support-agent",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/customer success/voice-support",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/customer%20success/voice-support",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/finance/invoice-processing",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/finance/memo-generation",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/hr/employee-feedback-collector",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/hr/employee-help-desk",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/hr/resume-screening",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/marketing/competitive-content-analysis",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/marketing/focus-group-simulator",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/operations/document-processing",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/sales/email-negotiation",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/sales/lead-enrichment",
+      "destination": "/start-here/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/sales/multi-channel-outbound",
+      "destination": "/start-here/quickstart",
       "permanent": true
     }
   ],

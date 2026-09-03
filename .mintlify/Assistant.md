@@ -20,7 +20,6 @@ Scope matters when answering. Most things exist at both **Personal** and **Team*
 - **Utilities** (skills/lindy-utilities/): Internal tools — Observability, LLM Call, Context, Memories, Set Variables
 - **Web Scraping** (skills/web-browsing/): Web data extraction tools
 - **Integrations** (skills/popular-integrations/): Third-party service connections (Gmail, Slack, HubSpot, Salesforce, etc.)
-- **Custom Agents** (fundamentals/lindy-101/): Advanced workflow builder documentation
 - **Use Cases** (use-cases/): Department-specific examples (sales, marketing, HR, finance, etc.)
 
 ## Terminology Mappings
@@ -34,4 +33,3 @@ Scope matters when answering. Most things exist at both **Personal** and **Team*
 - "@mention" / "slack command" / "in a channel" → Slack Commands (teammate/slack-commands)
 - "schedule" / "calendar" / "book" → Scheduling (features/meeting-assistant/scheduling)
 - "text" / "sms" / "imessage" → iMessage & SMS (features/imessage-sms)
-- "create agent" / "new agent" / "build agent" / "new workflow" / "custom workflow" / "create workflow" → Create a Workflow (fundamentals/lindy-101/create-agent)
