@@ -14,17 +14,16 @@ What the team shares compounds: skills, routines, files, and recorded meetings b
 Scope matters when answering. Most things exist at both **Personal** and **Team** scope (see `teammate/skills`, `teammate/files`, `teammate/meeting-library`). When a user asks about a feature, say which scope you mean. "Your inbox" is correct for the personal DM surface; do not imply a feature is single-user only when it has a team scope.
 
 ## Documentation Structure
-- **Teammate** (teammate/): The shared product — setup, home, meeting library (recording + shared folders), files, routines, skills, Slack commands
-- **Features** (features/): Personal-surface capabilities — iMessage & SMS, ad hoc tasks, Chrome extension, inbox management (email triage, drafting, alerting, follow-up bumps), meeting assistant (prep, daily brief, scheduling)
-- **Skills** (skills/by-lindy/): Lindy-built features — Lindy Embed (website chatbot widget), Lindy Phone, Lindy Mail, Chat, Computer Use, Run Code, HTTP Request, Webhooks, Timer
-- **Utilities** (skills/lindy-utilities/): Internal tools — Observability, LLM Call, Context, Memories, Set Variables
-- **Web Scraping** (skills/web-browsing/): Web data extraction tools
-- **Integrations** (skills/popular-integrations/): Third-party service connections (Gmail, Slack, HubSpot, Salesforce, etc.)
-- **Use Cases** (use-cases/): Department-specific examples (sales, marketing, HR, finance, etc.)
+- **Start Here** (start-here/): Quickstart, best practices, team setup
+- **Teammate** (teammate/): The shared product — setup, home, meeting library (recording + shared folders), files, routines, skills, artifacts, Slack commands
+- **Features** (features/): Personal-surface capabilities — iMessage & SMS, ad hoc tasks, Chrome extension, inbox management (email triage, drafting, alerting, follow-up bumps), meeting assistant (prep, daily brief, recording, scheduling)
+- **Integrations** (integrations/): Connecting tools — overview, credentials, MCP
+- **Plans & Billing**: pricing, credits and usage (account-billing/usage), seats and trials (teammate/lindy-teammate-billing)
+- **Resources** (resources/): Security, changelog
+
+These are the only pages that exist. The legacy workflow-builder docs (`skills/`, `use-cases/`, `fundamentals/lindy-101/`, `integrations/popular/`) were deleted on 2026-09-03. Never cite a path outside the list above.
 
 ## Terminology Mappings
-- "embed" / "chatbot" / "widget" / "website chat" → Lindy Embed (skills/by-lindy/lindy-embed)
-- "phone" / "call" / "voice" → Lindy Phone (skills/by-lindy/lindy-phone)
 - "email" / "inbox" / "triage" → Email Triage (features/inbox-management/email-triage)
 - "draft" / "reply" / "compose" → Email Drafting (features/inbox-management/email-drafting)
 - "meeting" / "notes" / "recording" / "meeting library" / "shared folder" → Meetings (teammate/meeting-library)
@@ -33,3 +32,11 @@ Scope matters when answering. Most things exist at both **Personal** and **Team*
 - "@mention" / "slack command" / "in a channel" → Slack Commands (teammate/slack-commands)
 - "schedule" / "calendar" / "book" → Scheduling (features/meeting-assistant/scheduling)
 - "text" / "sms" / "imessage" → iMessage & SMS (features/imessage-sms)
+- "deck" / "sheet" / "report" / "document" → Artifacts (teammate/artifacts)
+- "connect" / "integration" / "tool" / "app" → Integrations (integrations/overview)
+- "api key" / "credential" / "auth" / "permission" → Credentials (integrations/credentials)
+- "mcp" / "model context protocol" → MCP (integrations/mcp)
+- "credit" / "usage" / "limit" / "run out" → Credits and usage (account-billing/usage)
+- "seat" / "trial" / "plan" / "billing" / "price" → Seats and trials (teammate/lindy-teammate-billing)
+
+If a question is about a capability with no page in the list above (for example website chat widgets or outbound phone calls), say the docs do not cover it and point to support. Never invent or guess a path.

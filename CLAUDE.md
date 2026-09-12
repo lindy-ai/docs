@@ -37,11 +37,11 @@ See **`WORKFLOW.md`** for detailed git workflow and safety checks.
 
 This is the **Lindy documentation repository** built with **Mintlify** (a modern documentation framework that renders MDX files).
 
-**Current Project**: Lindy documentation site. Restructure from "automation platform" to "AI assistant" positioning launched March 2, 2026.
+**Current Project**: Lindy documentation site, selling the **team** product ("The AI teammate that makes the whole team better"). The March 2026 individual-EA restructure is retired — see Current Positioning below.
 
 **Repository Stats**:
 - 32 MDX documentation pages, all registered in `docs.json`
-- 478 brand assets (screenshots, videos)
+- 643 brand assets (screenshots, videos) in `lindy-brand-assets/`
 
 The legacy workflow-builder docs (`fundamentals/lindy-101/`, `skills/`, `use-cases/`, `testing/`, `integrations/popular/`, and the old `account-billing/` and `bot-for-slack` pages) were dropped from the navigation during the pivot and **deleted from the repo on 2026-09-03**. Every one of those paths now has a `redirects` entry in `docs.json`. Do not restore them or link to them.
 
@@ -97,7 +97,7 @@ docs/
 ├── WORKFLOW.md                    ← Git workflow and safety guidelines
 ├── CLAUDE.md                      ← This file (for Claude Code)
 ├── docs.json                      ← Mintlify config (navigation, branding)
-├── styles.css                     ← Custom styling
+├── style.css                      ← Custom styling
 ├── favicon.png                    ← Site favicon
 ├── .gitignore                     ← Git ignore rules
 │
@@ -168,11 +168,11 @@ Possessives are **not** the problem. "Your inbox" is correct on the personal sur
 
 **Current Navigation Structure** (in `docs.json`):
 
-The repo migrated from the legacy `mint.json` to Mintlify's current **`docs.json`** schema (2026-05-16). The site theme is `maple`. Navigation is a **single flat list of groups** (no tabs): Start Here, Lindy Teammate, Assistant, Chrome extension, Integrations/Credentials/MCP, Accounts & Billing, Resources.
+The repo migrated from the legacy `mint.json` to Mintlify's current **`docs.json`** schema (2026-05-16). The site theme is `maple`. Navigation is a **single flat list of groups** (no tabs): Start Here, Lindy Teammate, Your personal Lindy (with a nested "Built-in Routines" group), Connect your tools, Admin & Billing, Security & Resources.
 
-New pages must be registered in `docs.json` under `navigation.groups` or they will not appear on the site. A group's `pages` array accepts only page paths and nested groups — **it cannot hold a bare link**, so a nav entry that should send readers elsewhere needs a real stub page.
+New pages must be registered in `docs.json` under `navigation.groups` or they will not appear in the sidebar. A group's `pages` array accepts only page paths and nested groups — **it cannot hold a bare link**, so a nav entry that should send readers elsewhere needs a real stub page.
 
-**Known IA debt.** The "Lindy Teammate" and "Assistant" groups read as two products, while the content says "same Lindy, two surfaces." A restructure to mirror the adoption path (personal surface, then team surface, then what the team shares) is planned but not started.
+**Nav is not the same as publishing.** Dropping a page from `docs.json` only removes it from the sidebar; the hosted build still serves and indexes the file. That is how 93 orphaned legacy pages stayed live for months after the pivot. To take a page off the site you must **delete the file** and add a `redirects` entry. Note that `mint export` builds only the nav pages, so it will *not* reveal this class of problem — check the deploy preview or the live URL directly.
 
 Note that this file **is** parsed by Mintlify's build, despite not being a nav page. Do not use HTML comments in it: MDX rejects `<!-- -->`. Use `{/* */}` or plain prose.
 
@@ -447,11 +447,9 @@ mintlify dev
 
 ## Project Context
 
-**What**: Restructuring documentation from "workflow automation platform" to "AI assistant for professionals"
+**What**: Documenting Lindy as a **team** product — an AI teammate that lives in Slack, shared by the workspace.
 
-**Why**: Product pivot to Executive Assistant (EA) positioning - focusing on inbox, meetings, calendar management
-
-**Launched**: March 2, 2026 (aligned with EA product launch)
+**History**: The docs were restructured twice. March 2, 2026 moved them from "workflow automation platform" to an individual Executive Assistant pitch (inbox, meetings, calendar). **That EA framing is retired.** August 2026 moved them to the current team positioning, and on 2026-09-03 the leftover workflow-builder pages were deleted. Older commit messages and PR titles still describe the EA phase — do not treat them as current.
 
 **Branch**: Work on `pivot`, merge to `main` for deployment
 
