@@ -2338,20 +2338,21 @@ html:not(.dark) .card:hover {
 
 /* Use cases: neutral minimal frame for the role screenshots */
 .uc-shot {
-  border: 1px solid #D8D4D0 !important;
-  border-radius: 14px !important;
-  overflow: hidden !important;
+  border: 1px solid #DDD9D5 !important;
+  border-radius: 16px !important;
+  padding: 10px !important;
+  background: #FAFAF9 !important;
   margin: 1.25rem 0 1.75rem !important;
-  background: #FFFFFF !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
 }
 .uc-shot img {
   display: block !important;
   width: 100% !important;
   margin: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 8px !important;
+  border: 1px solid #EBE8E5 !important;
 }
 .dark .uc-shot {
-  border-color: #2A2A2A !important;
-  background: transparent !important;
+  border-color: #2E2E2E !important;
+  background: #1A1A1A !important;
 }
+.dark .uc-shot img { border-color: #2E2E2E !important; }
