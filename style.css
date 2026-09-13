@@ -2335,3 +2335,22 @@ html:not(.dark) .card:hover {
 .dark #sidebar-content div.group:hover {
   background-color: rgba(255, 255, 255, 0.06) !important;
 }
+
+/* Use cases: neutral minimal frame for the role screenshots */
+.uc-shot {
+  border: 1px solid #E7E5E4 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  margin: 1.25rem 0 1.75rem !important;
+  background: #FFFFFF !important;
+}
+.uc-shot img {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+.dark .uc-shot {
+  border-color: #2A2A2A !important;
+  background: transparent !important;
+}
