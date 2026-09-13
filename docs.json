@@ -585,7 +585,8 @@
         "pages": [
           "index",
           "start-here/quickstart",
-          "teammate/setup"
+          "teammate/setup",
+          "use-cases"
         ]
       },
       {
@@ -595,9 +596,9 @@
           "teammate/meeting-library",
           "teammate/files",
           "teammate/routines",
-          "features/ad-hoc-tasks",
           "teammate/skills",
           "teammate/artifacts",
+          "features/ad-hoc-tasks",
           "teammate/slack-commands"
         ]
       },
