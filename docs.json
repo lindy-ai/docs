@@ -592,12 +592,12 @@
         "group": "Lindy Teammate",
         "pages": [
           "teammate/home",
-          "teammate/skills",
-          "teammate/routines",
-          "teammate/files",
-          "teammate/artifacts",
           "teammate/meeting-library",
+          "teammate/files",
+          "teammate/routines",
           "features/ad-hoc-tasks",
+          "teammate/skills",
+          "teammate/artifacts",
           "teammate/slack-commands"
         ]
       },

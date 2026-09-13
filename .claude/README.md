@@ -49,7 +49,7 @@ Please switch to the pivot branch or your personal branch:
   # OR
   git checkout -b pivot-yourname
 
-See WORKFLOW.md for detailed git workflow.
+See .claude/WORKFLOW.md for detailed git workflow.
 ```
 
 ## First Time Setup
@@ -110,5 +110,5 @@ If you need to temporarily disable the hook:
 ## More information
 
 - **Claude Code hooks documentation**: https://code.claude.com/docs/en/hooks.md
-- **Project git workflow**: See `WORKFLOW.md` in the repository root
-- **Development guidelines**: See `CLAUDE.md` in the repository root
+- **Project git workflow**: See `.claude/WORKFLOW.md`
+- **Development guidelines**: See `.claude/CLAUDE.md`
