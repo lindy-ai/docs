@@ -32,7 +32,7 @@ if [[ "$current_branch" == "main" ]]; then
   echo "  # OR" >&2
   echo "  git checkout -b pivot-yourname" >&2
   echo "" >&2
-  echo "See WORKFLOW.md for detailed git workflow." >&2
+  echo "See .claude/WORKFLOW.md for detailed git workflow." >&2
   exit 2
 fi
 

@@ -31,7 +31,7 @@ Separate from the local hook, GitHub itself protects `main`:
 - **A PR into `main` requires one approving review.** The PR author **cannot self-approve** — a teammate must approve it.
 - To deploy, open a PR `pivot` → `main` and request review. An admin merge (`gh pr merge <n> --admin --merge`) can bypass the approval gate, but **only do this with explicit authorization from the docs owner**.
 
-See **`WORKFLOW.md`** for detailed git workflow and safety checks.
+See **`.claude/WORKFLOW.md`** for detailed git workflow and safety checks.
 
 ## Repository Overview
 
@@ -88,20 +88,20 @@ git push -u origin pivot-yourname
 # Create PR: pivot-yourname → pivot (NOT to main)
 ```
 
-**For complete workflow details, see `WORKFLOW.md`**
+**For complete workflow details, see `.claude/WORKFLOW.md`**
 
 ## Repository Structure
 
 ```
 docs/
-├── WORKFLOW.md                    ← Git workflow and safety guidelines
-├── CLAUDE.md                      ← This file (for Claude Code)
 ├── docs.json                      ← Mintlify config (navigation, branding)
 ├── style.css                      ← Custom styling
 ├── favicon.png                    ← Site favicon
 ├── .gitignore                     ← Git ignore rules
 │
-├── .claude/                       ← Claude Code configuration (committed to git)
+├── .claude/                       ← Claude Code config + internal guides (committed)
+│   ├── CLAUDE.md                  ← This file (for Claude Code)
+│   ├── WORKFLOW.md                ← Git workflow and safety guidelines
 │   ├── README.md                  ← Hook documentation and setup guide
 │   ├── settings.json              ← Hook configuration
 │   └── hooks/
@@ -174,7 +174,15 @@ New pages must be registered in `docs.json` under `navigation.groups` or they wi
 
 **Nav is not the same as publishing.** Dropping a page from `docs.json` only removes it from the sidebar; the hosted build still serves and indexes the file. That is how 93 orphaned legacy pages stayed live for months after the pivot. To take a page off the site you must **delete the file** and add a `redirects` entry. Note that `mint export` builds only the nav pages, so it will *not* reveal this class of problem — check the deploy preview or the live URL directly.
 
-Note that this file **is** parsed by Mintlify's build, despite not being a nav page. Do not use HTML comments in it: MDX rejects `<!-- -->`. Use `{/* */}` or plain prose.
+### ⚠️ Keep internal docs inside a dot-directory
+
+**This file and `WORKFLOW.md` live in `.claude/` on purpose. Do not move them back to the repo root.**
+
+Any `.md` at the repo root gets published. Until 2026-09-12, `CLAUDE.md` and `WORKFLOW.md` were both live and readable at `docs.lindy.ai/CLAUDE` and `docs.lindy.ai/WORKFLOW` — internal branch strategy, team names, and the retired-positioning notes, served to anyone who asked, with `robots.txt` set to `ai-train=yes`. The `redirects` entries for those paths did not help: **a redirect never wins over a real file.**
+
+Mintlify does not serve anything inside a dot-directory (`.claude/`, `.mintlify/` — both verified 404 on production while root `.md` files return 200), and there is no `ignore` config in `docs.json`. A dot-directory is therefore the only reliable way to keep a Markdown file in this repo unpublished. Claude Code treats `.claude/CLAUDE.md` and root `CLAUDE.md` as equivalent auto-loaded memory, so nothing is lost by keeping it here.
+
+Note that any `.md` outside a dot-directory is parsed by Mintlify's build even when it is not a nav page, and MDX rejects HTML comments (`<!-- -->`) — use `{/* */}` or plain prose in those files. This file is exempt only because it sits in `.claude/`.
 
 ## Verify before you trust this file
 
@@ -442,7 +450,7 @@ mintlify dev
 
 ### Merge Conflicts
 1. Don't panic
-2. See `WORKFLOW.md` or ask team lead
+2. See `.claude/WORKFLOW.md` or ask team lead
 3. Never force push to resolve conflicts
 
 ## Project Context
@@ -481,7 +489,7 @@ mintlify broken-links
 
 ## Need Help?
 
-1. **Git workflow questions**: See `WORKFLOW.md`
+1. **Git workflow questions**: See `.claude/WORKFLOW.md`
 2. **Tone, messaging, and positioning**: Read `index.mdx`. It is the shipped source of truth.
 3. **Good interior examples**: `teammate/meeting-library.mdx` and `teammate/skills.mdx`
 4. **Mintlify documentation**: https://mintlify.com/docs
@@ -493,4 +501,4 @@ mintlify broken-links
 - ✅ **Always work on `pivot`** or personal branches
 - 🔍 **Always verify branch** before committing
 - 👀 **Preview locally** before pushing
-- 📖 **Follow WORKFLOW.md** for detailed git workflow
+- 📖 **Follow `.claude/WORKFLOW.md`** for detailed git workflow
