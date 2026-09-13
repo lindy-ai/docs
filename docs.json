@@ -595,9 +595,9 @@
           "teammate/meeting-library",
           "teammate/files",
           "teammate/routines",
-          "features/ad-hoc-tasks",
           "teammate/skills",
           "teammate/artifacts",
+          "features/ad-hoc-tasks",
           "teammate/slack-commands"
         ]
       },
