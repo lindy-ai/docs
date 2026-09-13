@@ -31,17 +31,17 @@ Separate from the local hook, GitHub itself protects `main`:
 - **A PR into `main` requires one approving review.** The PR author **cannot self-approve** — a teammate must approve it.
 - To deploy, open a PR `pivot` → `main` and request review. An admin merge (`gh pr merge <n> --admin --merge`) can bypass the approval gate, but **only do this with explicit authorization from the docs owner**.
 
-See **`WORKFLOW.md`** for detailed git workflow and safety checks.
+See **`.claude/WORKFLOW.md`** for detailed git workflow and safety checks.
 
 ## Repository Overview
 
 This is the **Lindy documentation repository** built with **Mintlify** (a modern documentation framework that renders MDX files).
 
-**Current Project**: Lindy documentation site. Restructure from "automation platform" to "AI assistant" positioning launched March 2, 2026.
+**Current Project**: Lindy documentation site. The lead claim is **"Lindy is an AI employee"** — it lives in your Slack, connects to your tools, and comes back with the work done. The March 2026 individual-EA restructure is retired, and the Aug 2026 "AI teammate" headline is superseded — see Current Positioning below.
 
 **Repository Stats**:
 - 32 MDX documentation pages, all registered in `docs.json`
-- 478 brand assets (screenshots, videos)
+- 643 brand assets (screenshots, videos) in `lindy-brand-assets/`
 
 The legacy workflow-builder docs (`fundamentals/lindy-101/`, `skills/`, `use-cases/`, `testing/`, `integrations/popular/`, and the old `account-billing/` and `bot-for-slack` pages) were dropped from the navigation during the pivot and **deleted from the repo on 2026-09-03**. Every one of those paths now has a `redirects` entry in `docs.json`. Do not restore them or link to them.
 
@@ -88,20 +88,20 @@ git push -u origin pivot-yourname
 # Create PR: pivot-yourname → pivot (NOT to main)
 ```
 
-**For complete workflow details, see `WORKFLOW.md`**
+**For complete workflow details, see `.claude/WORKFLOW.md`**
 
 ## Repository Structure
 
 ```
 docs/
-├── WORKFLOW.md                    ← Git workflow and safety guidelines
-├── CLAUDE.md                      ← This file (for Claude Code)
 ├── docs.json                      ← Mintlify config (navigation, branding)
-├── styles.css                     ← Custom styling
+├── style.css                      ← Custom styling
 ├── favicon.png                    ← Site favicon
 ├── .gitignore                     ← Git ignore rules
 │
-├── .claude/                       ← Claude Code configuration (committed to git)
+├── .claude/                       ← Claude Code config + internal guides (committed)
+│   ├── CLAUDE.md                  ← This file (for Claude Code)
+│   ├── WORKFLOW.md                ← Git workflow and safety guidelines
 │   ├── README.md                  ← Hook documentation and setup guide
 │   ├── settings.json              ← Hook configuration
 │   └── hooks/
@@ -154,8 +154,8 @@ docs/
 
 **Source of truth is `index.mdx`.** It is the only positioning artifact that is both current and shipped. Read it before writing any page. Do not restore the pre-2026-08 "AI assistant that runs your work life / 10+ hours back every week" framing — that was the individual-EA pitch and the product is no longer sold that way.
 
-- **Promise**: "The AI teammate that makes the whole team better." It lives in Slack, knows what the company knows, and does the actual work.
-- **Two surfaces, one Lindy**: everyone gets a private Lindy in their DMs; the whole team shares one in channels. These are surfaces of one product, never two SKUs.
+- **Category claim**: "Lindy is an AI employee." It lives in your Slack, connects to your tools, and maintains a rich profile of your team. Set by the sell-side deck and adopted on the homepage 2026-09-12, replacing the Aug 2026 "AI teammate that makes the whole team better" headline.
+- **Two surfaces, one Lindy**: an assistant for every employee in DMs, an AI teammate for the team in channels. Same Lindy, one team, one `@mention`. These are surfaces of one product, never two SKUs.
 - **What it does**: finished work, not just an answer. Name the tool and the outcome ("updates the forecast tab", "files the notes where the team already looks"), not the capability. The homepage retired the abstract Ask/Act/Create triad for exactly this reason.
 - **Why it compounds**: skills, routines, files, and meetings belong to the **workspace**, not to whoever built them. One person teaches it, the team inherits it.
 - **Audience**: business teams. The champion is usually an individual contributor who adopts it in DMs; the expansion happens when the work becomes visible in channels.
@@ -168,13 +168,21 @@ Possessives are **not** the problem. "Your inbox" is correct on the personal sur
 
 **Current Navigation Structure** (in `docs.json`):
 
-The repo migrated from the legacy `mint.json` to Mintlify's current **`docs.json`** schema (2026-05-16). The site theme is `maple`. Navigation is a **single flat list of groups** (no tabs): Start Here, Lindy Teammate, Assistant, Chrome extension, Integrations/Credentials/MCP, Accounts & Billing, Resources.
+The repo migrated from the legacy `mint.json` to Mintlify's current **`docs.json`** schema (2026-05-16). The site theme is `maple`. Navigation is a **single flat list of groups** (no tabs): Start Here, Lindy Teammate, Your personal Lindy (with a nested "Built-in Routines" group), Connect your tools, Admin & Billing, Security & Resources.
 
-New pages must be registered in `docs.json` under `navigation.groups` or they will not appear on the site. A group's `pages` array accepts only page paths and nested groups — **it cannot hold a bare link**, so a nav entry that should send readers elsewhere needs a real stub page.
+New pages must be registered in `docs.json` under `navigation.groups` or they will not appear in the sidebar. A group's `pages` array accepts only page paths and nested groups — **it cannot hold a bare link**, so a nav entry that should send readers elsewhere needs a real stub page.
 
-**Known IA debt.** The "Lindy Teammate" and "Assistant" groups read as two products, while the content says "same Lindy, two surfaces." A restructure to mirror the adoption path (personal surface, then team surface, then what the team shares) is planned but not started.
+**Nav is not the same as publishing.** Dropping a page from `docs.json` only removes it from the sidebar; the hosted build still serves and indexes the file. That is how 93 orphaned legacy pages stayed live for months after the pivot. To take a page off the site you must **delete the file** and add a `redirects` entry. Note that `mint export` builds only the nav pages, so it will *not* reveal this class of problem — check the deploy preview or the live URL directly.
 
-Note that this file **is** parsed by Mintlify's build, despite not being a nav page. Do not use HTML comments in it: MDX rejects `<!-- -->`. Use `{/* */}` or plain prose.
+### ⚠️ Keep internal docs inside a dot-directory
+
+**This file and `WORKFLOW.md` live in `.claude/` on purpose. Do not move them back to the repo root.**
+
+Any `.md` at the repo root gets published. Until 2026-09-12, `CLAUDE.md` and `WORKFLOW.md` were both live and readable at `docs.lindy.ai/CLAUDE` and `docs.lindy.ai/WORKFLOW` — internal branch strategy, team names, and the retired-positioning notes, served to anyone who asked, with `robots.txt` set to `ai-train=yes`. The `redirects` entries for those paths did not help: **a redirect never wins over a real file.**
+
+Mintlify does not serve anything inside a dot-directory (`.claude/`, `.mintlify/` — both verified 404 on production while root `.md` files return 200), and there is no `ignore` config in `docs.json`. A dot-directory is therefore the only reliable way to keep a Markdown file in this repo unpublished. Claude Code treats `.claude/CLAUDE.md` and root `CLAUDE.md` as equivalent auto-loaded memory, so nothing is lost by keeping it here.
+
+Note that any `.md` outside a dot-directory is parsed by Mintlify's build even when it is not a nav page, and MDX rejects HTML comments (`<!-- -->`) — use `{/* */}` or plain prose in those files. This file is exempt only because it sits in `.claude/`.
 
 ## Verify before you trust this file
 
@@ -307,27 +315,29 @@ gh pr merge <number> --merge
 - **Screenshots** - Heavy visual documentation
 - **Concise** - 1-2 sentence paragraphs
 
-### Positioning Language (team product, Aug 2026)
+### Positioning Language (AI employee, Sep 2026)
 
-**Promise**: "The AI teammate that makes the whole team better."
-**Structure**: "Same Lindy, two surfaces" — private in DMs, shared in channels.
+**Category**: "Lindy is an AI employee." This is the lead claim, set by the sell-side deck.
+**Structure**: "Same Lindy, one team, one `@mention`" — an assistant for every employee in DMs, an AI teammate for the team in channels.
 **Stack replacement**: "One tool, not five" (do NOT name competitors in docs)
 
 **Use**:
-- "The AI teammate that makes the whole team better"
-- "It knows everything your company knows"
-- "Everyone gets a private Lindy in their DMs. The whole team shares one in channels."
+- "Lindy is an AI employee"
+- "Lives in your Slack" / "Connects to your tools" / "Maintains a rich profile of your team"
+- "Value from day one" — every employee gets time back; real work gets done where everyone sees it
 - "Finished work, not just an answer"
+- "Context that compounds" / "every teammate starts where the last one left off"
 - "One person teaches it, the team inherits it"
 - "Skills and routines belong to the workspace, not to whoever built them"
-- "Finished work, not just an answer"
 - "@mention it like a person"
-- "Nothing falls through the cracks"
+
+**Note on "AI employee" vs "AI teammate".** Both are live and they are not interchangeable. "AI employee" is the **category claim** and leads the page. "AI teammate" names the **shared/team surface** specifically ("an AI teammate for the team"), paired against "an assistant for every employee" for the DM surface. Do not use "AI teammate" as the top-level promise — that was the Aug 2026 headline and it has been superseded.
 
 **Avoid**:
 - "Runs your work life" / "10+ hours back every week" — retired individual-EA framing
-- "Your next hire is AI" / anything implying Lindy replaces headcount. It makes the champion defensive, and the champion is who adopts it.
+- "Your next hire is AI", or any claim that Lindy lets you cut or avoid headcount. The category claim is that Lindy *does the work*, not that it removes people. The champion is an IC and will get defensive.
 - "Do more" as a benefit — an IC reads that as *more will be expected of me*. Say what compounds instead.
+- "Ontology" and similar jargon. The deck says "self-updating ontology of your entire business"; docs say "a self-updating map of your entire business".
 - Treating "Lindy Teammate" and "Assistant" as separate products
 - "Build a workflow" / "Configure triggers" / "Deploy your agent"
 - "Actions" / "Automations" (use "Routines" / "Skills")
@@ -442,16 +452,14 @@ mintlify dev
 
 ### Merge Conflicts
 1. Don't panic
-2. See `WORKFLOW.md` or ask team lead
+2. See `.claude/WORKFLOW.md` or ask team lead
 3. Never force push to resolve conflicts
 
 ## Project Context
 
-**What**: Restructuring documentation from "workflow automation platform" to "AI assistant for professionals"
+**What**: Documenting Lindy as a **team** product — an AI teammate that lives in Slack, shared by the workspace.
 
-**Why**: Product pivot to Executive Assistant (EA) positioning - focusing on inbox, meetings, calendar management
-
-**Launched**: March 2, 2026 (aligned with EA product launch)
+**History**: The docs were restructured twice. March 2, 2026 moved them from "workflow automation platform" to an individual Executive Assistant pitch (inbox, meetings, calendar). **That EA framing is retired.** August 2026 moved them to the current team positioning, and on 2026-09-03 the leftover workflow-builder pages were deleted. Older commit messages and PR titles still describe the EA phase — do not treat them as current.
 
 **Branch**: Work on `pivot`, merge to `main` for deployment
 
@@ -483,7 +491,7 @@ mintlify broken-links
 
 ## Need Help?
 
-1. **Git workflow questions**: See `WORKFLOW.md`
+1. **Git workflow questions**: See `.claude/WORKFLOW.md`
 2. **Tone, messaging, and positioning**: Read `index.mdx`. It is the shipped source of truth.
 3. **Good interior examples**: `teammate/meeting-library.mdx` and `teammate/skills.mdx`
 4. **Mintlify documentation**: https://mintlify.com/docs
@@ -495,4 +503,4 @@ mintlify broken-links
 - ✅ **Always work on `pivot`** or personal branches
 - 🔍 **Always verify branch** before committing
 - 👀 **Preview locally** before pushing
-- 📖 **Follow WORKFLOW.md** for detailed git workflow
+- 📖 **Follow `.claude/WORKFLOW.md`** for detailed git workflow
