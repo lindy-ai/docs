@@ -37,7 +37,7 @@ See **`.claude/WORKFLOW.md`** for detailed git workflow and safety checks.
 
 This is the **Lindy documentation repository** built with **Mintlify** (a modern documentation framework that renders MDX files).
 
-**Current Project**: Lindy documentation site, selling the **team** product ("The AI teammate that makes the whole team better"). The March 2026 individual-EA restructure is retired — see Current Positioning below.
+**Current Project**: Lindy documentation site. The lead claim is **"Lindy is an AI employee"** — it lives in your Slack, connects to your tools, and comes back with the work done. The March 2026 individual-EA restructure is retired, and the Aug 2026 "AI teammate" headline is superseded — see Current Positioning below.
 
 **Repository Stats**:
 - 32 MDX documentation pages, all registered in `docs.json`
@@ -154,8 +154,8 @@ docs/
 
 **Source of truth is `index.mdx`.** It is the only positioning artifact that is both current and shipped. Read it before writing any page. Do not restore the pre-2026-08 "AI assistant that runs your work life / 10+ hours back every week" framing — that was the individual-EA pitch and the product is no longer sold that way.
 
-- **Promise**: "The AI teammate that makes the whole team better." It lives in Slack, knows what the company knows, and does the actual work.
-- **Two surfaces, one Lindy**: everyone gets a private Lindy in their DMs; the whole team shares one in channels. These are surfaces of one product, never two SKUs.
+- **Category claim**: "Lindy is an AI employee." It lives in your Slack, connects to your tools, and maintains a rich profile of your team. Set by the sell-side deck and adopted on the homepage 2026-09-12, replacing the Aug 2026 "AI teammate that makes the whole team better" headline.
+- **Two surfaces, one Lindy**: an assistant for every employee in DMs, an AI teammate for the team in channels. Same Lindy, one team, one `@mention`. These are surfaces of one product, never two SKUs.
 - **What it does**: finished work, not just an answer. Name the tool and the outcome ("updates the forecast tab", "files the notes where the team already looks"), not the capability. The homepage retired the abstract Ask/Act/Create triad for exactly this reason.
 - **Why it compounds**: skills, routines, files, and meetings belong to the **workspace**, not to whoever built them. One person teaches it, the team inherits it.
 - **Audience**: business teams. The champion is usually an individual contributor who adopts it in DMs; the expansion happens when the work becomes visible in channels.
@@ -315,27 +315,29 @@ gh pr merge <number> --merge
 - **Screenshots** - Heavy visual documentation
 - **Concise** - 1-2 sentence paragraphs
 
-### Positioning Language (team product, Aug 2026)
+### Positioning Language (AI employee, Sep 2026)
 
-**Promise**: "The AI teammate that makes the whole team better."
-**Structure**: "Same Lindy, two surfaces" — private in DMs, shared in channels.
+**Category**: "Lindy is an AI employee." This is the lead claim, set by the sell-side deck.
+**Structure**: "Same Lindy, one team, one `@mention`" — an assistant for every employee in DMs, an AI teammate for the team in channels.
 **Stack replacement**: "One tool, not five" (do NOT name competitors in docs)
 
 **Use**:
-- "The AI teammate that makes the whole team better"
-- "It knows everything your company knows"
-- "Everyone gets a private Lindy in their DMs. The whole team shares one in channels."
+- "Lindy is an AI employee"
+- "Lives in your Slack" / "Connects to your tools" / "Maintains a rich profile of your team"
+- "Value from day one" — every employee gets time back; real work gets done where everyone sees it
 - "Finished work, not just an answer"
+- "Context that compounds" / "every teammate starts where the last one left off"
 - "One person teaches it, the team inherits it"
 - "Skills and routines belong to the workspace, not to whoever built them"
-- "Finished work, not just an answer"
 - "@mention it like a person"
-- "Nothing falls through the cracks"
+
+**Note on "AI employee" vs "AI teammate".** Both are live and they are not interchangeable. "AI employee" is the **category claim** and leads the page. "AI teammate" names the **shared/team surface** specifically ("an AI teammate for the team"), paired against "an assistant for every employee" for the DM surface. Do not use "AI teammate" as the top-level promise — that was the Aug 2026 headline and it has been superseded.
 
 **Avoid**:
 - "Runs your work life" / "10+ hours back every week" — retired individual-EA framing
-- "Your next hire is AI" / anything implying Lindy replaces headcount. It makes the champion defensive, and the champion is who adopts it.
+- "Your next hire is AI", or any claim that Lindy lets you cut or avoid headcount. The category claim is that Lindy *does the work*, not that it removes people. The champion is an IC and will get defensive.
 - "Do more" as a benefit — an IC reads that as *more will be expected of me*. Say what compounds instead.
+- "Ontology" and similar jargon. The deck says "self-updating ontology of your entire business"; docs say "a self-updating map of your entire business".
 - Treating "Lindy Teammate" and "Assistant" as separate products
 - "Build a workflow" / "Configure triggers" / "Deploy your agent"
 - "Actions" / "Automations" (use "Routines" / "Skills")
