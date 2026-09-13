@@ -2356,3 +2356,11 @@ html:not(.dark) .card:hover {
   background: #1A1A1A !important;
 }
 .dark .uc-shot img { border-color: #2E2E2E !important; }
+
+/* Use cases: the phone shot is portrait, so give it its own width and centre it.
+   Needs !important because .uc-shot's margin rule is !important and would
+   otherwise beat the inline auto margins. */
+.uc-shot--phone {
+  max-width: 460px !important;
+  margin: 1.5rem auto 2rem !important;
+}
