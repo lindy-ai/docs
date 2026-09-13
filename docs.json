@@ -585,7 +585,8 @@
         "pages": [
           "index",
           "start-here/quickstart",
-          "teammate/setup"
+          "teammate/setup",
+          "use-cases"
         ]
       },
       {
