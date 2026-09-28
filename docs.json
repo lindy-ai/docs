@@ -45,7 +45,12 @@
     },
     {
       "source": "/coming-soon/files",
-      "destination": "/teammate/files",
+      "destination": "/teammate/memory",
+      "permanent": true
+    },
+    {
+      "source": "/teammate/files",
+      "destination": "/teammate/memory",
       "permanent": true
     },
     {
@@ -594,7 +599,7 @@
         "pages": [
           "teammate/home",
           "teammate/meeting-library",
-          "teammate/files",
+          "teammate/memory",
           "teammate/routines",
           "teammate/skills",
           "teammate/artifacts",

@@ -162,7 +162,7 @@ docs/
 
 ### Scope labeling (the most common mistake)
 
-Most features exist at both **Personal** and **Team** scope. `teammate/skills.mdx` (Your skills / Team skills / Built-in) and `teammate/files.mdx` (Personal / Team / System) get this right — copy their pattern.
+Most features exist at both **Personal** and **Team** scope. `teammate/skills.mdx` (Your skills / Team skills / Built-in) and `teammate/memory.mdx` (Personal / Team / System) get this right — copy their pattern.
 
 Possessives are **not** the problem. "Your inbox" is correct on the personal surface. The problem is failing to say *which surface a feature lives on*, which makes a shared product read as single-user. Say the scope; keep the "your".
 
