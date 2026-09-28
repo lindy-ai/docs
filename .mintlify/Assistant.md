@@ -13,7 +13,7 @@ Same Lindy, one team, one `@mention`. Never describe these as two products or tw
 
 What the team shares compounds: skills, routines, files, and recorded meetings belong to the workspace, not to whoever set them up. One person teaches Lindy something and everyone inherits it.
 
-Scope matters when answering. Most things exist at both **Personal** and **Team** scope (see `teammate/skills`, `teammate/files`, `teammate/meeting-library`). When a user asks about a feature, say which scope you mean. "Your inbox" is correct for the personal DM surface; do not imply a feature is single-user only when it has a team scope.
+Scope matters when answering. Most things exist at both **Personal** and **Team** scope (see `teammate/skills`, `teammate/memory`, `teammate/meeting-library`). When a user asks about a feature, say which scope you mean. "Your inbox" is correct for the personal DM surface; do not imply a feature is single-user only when it has a team scope.
 
 ## Documentation Structure
 - **Start Here** (start-here/): Quickstart, best practices, team setup
