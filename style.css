@@ -2395,16 +2395,25 @@ html:not(.dark) .card:hover {
   color: var(--color-dark-text);
 }
 
-/* Invite note (Team Setup): code block tinted to match the blue mini cards */
-.invite-note .code-block {
+/* Blue box: wrap a code block or callout to tint it like the blue mini cards */
+.blue-box .code-block,
+html:not(.dark) .blue-box [data-callout-type] {
   background: rgba(58, 96, 255, 0.08) !important;
   border: 1px solid rgba(58, 96, 255, 0.35) !important;
 }
-.invite-note .code-block [data-component-part="code-block-root"],
-.invite-note .code-block pre {
+.blue-box .code-block [data-component-part="code-block-root"],
+.blue-box .code-block pre,
+.blue-box [data-callout-type] [class*="callout"] {
   background: transparent !important;
 }
-.dark .invite-note .code-block {
+html:not(.dark) .blue-box [data-callout-type],
+html:not(.dark) .blue-box [data-callout-type] .prose { color: #1F3047 !important; }
+html:not(.dark) .blue-box [data-callout-type] svg { color: #3A60FF !important; }
+.dark .blue-box .code-block,
+.dark .blue-box [data-callout-type] {
   background: rgba(58, 96, 255, 0.14) !important;
   border-color: rgba(58, 96, 255, 0.45) !important;
 }
+.dark .blue-box [data-callout-type],
+.dark .blue-box [data-callout-type] .prose { color: #E8EDFF !important; }
+.dark .blue-box [data-callout-type] svg { color: #90A8FF !important; }
