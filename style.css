@@ -2364,3 +2364,33 @@ html:not(.dark) .card:hover {
   max-width: 460px !important;
   margin: 1.5rem auto 2rem !important;
 }
+
+/* Example prompt list (Team Setup → Try it) */
+.prompt-list {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+.prompt-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+.prompt-row + .prompt-row {
+  border-top: 1px solid var(--color-border);
+}
+.prompt-row svg {
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+.dark .prompt-list,
+.dark .prompt-row + .prompt-row {
+  border-color: var(--color-dark-border);
+}
+.dark .prompt-row {
+  color: var(--color-dark-text);
+}
