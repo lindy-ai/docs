@@ -2417,3 +2417,17 @@ html:not(.dark) .blue-box [data-callout-type] svg { color: #3A60FF !important; }
 .dark .blue-box [data-callout-type],
 .dark .blue-box [data-callout-type] .prose { color: #E8EDFF !important; }
 .dark .blue-box [data-callout-type] svg { color: #90A8FF !important; }
+
+/* Gray box: wrap a code block to set it on a soft gray panel */
+.gray-box .code-block {
+  background: #EEEDEB !important;
+  border: 1px solid #E2E0DC !important;
+}
+.gray-box .code-block [data-component-part="code-block-root"],
+.gray-box .code-block pre {
+  background: transparent !important;
+}
+.dark .gray-box .code-block {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
