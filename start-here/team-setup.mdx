@@ -92,13 +92,13 @@ Your team works with Lindy in Slack, so the owner or an admin needs to install i
   <Step title="Try it">
     Ask for something real:
 
-    <CardGroup cols={2}>
-      <Card title="“What's urgent in my email?”" icon="envelope" />
-      <Card title="“Pull up our top competitors.”" icon="chart-line" />
-      <Card title="“Find me new leads.”" icon="user-plus" />
-      <Card title="“Start following up with people who haven't answered me this week.”" icon="reply" />
-      <Card title="“Always put my meeting notes in [this doc].”" icon="file-lines" />
-    </CardGroup>
+    <div className="prompt-list">
+      <div className="prompt-row"><Icon icon="envelope" size={14} /><span>“What's urgent in my email?”</span></div>
+      <div className="prompt-row"><Icon icon="chart-line" size={14} /><span>“Pull up our top competitors.”</span></div>
+      <div className="prompt-row"><Icon icon="user-plus" size={14} /><span>“Find me new leads.”</span></div>
+      <div className="prompt-row"><Icon icon="reply" size={14} /><span>“Start following up with people who haven't answered me this week.”</span></div>
+      <div className="prompt-row"><Icon icon="file-lines" size={14} /><span>“Always put my meeting notes in [this doc].”</span></div>
+    </div>
   </Step>
   <Step title="Bring your context (optional)">
     Carry over what ChatGPT or Claude already knows so Lindy gets to know you faster. Paste this prompt there, then share whatever you'd like Lindy to know:
