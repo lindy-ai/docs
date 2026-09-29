@@ -557,6 +557,11 @@
       "source": "/use-cases/sales/multi-channel-outbound",
       "destination": "/start-here/quickstart",
       "permanent": true
+    },
+    {
+      "source": "/start-here/team-onboarding",
+      "destination": "/start-here/team-setup",
+      "permanent": true
     }
   ],
   "colors": {
