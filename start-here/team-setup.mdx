@@ -92,11 +92,13 @@ Your team works with Lindy in Slack, so the owner or an admin needs to install i
   <Step title="Try it">
     Ask for something real:
 
-    - "What's urgent in my email?"
-    - "Pull up our top competitors."
-    - "Find me new leads."
-    - "Start following up with people who haven't answered me this week."
-    - "Always put my meeting notes in [this doc]."
+    <CardGroup cols={2}>
+      <Card title="“What's urgent in my email?”" icon="envelope" />
+      <Card title="“Pull up our top competitors.”" icon="chart-line" />
+      <Card title="“Find me new leads.”" icon="user-plus" />
+      <Card title="“Start following up with people who haven't answered me this week.”" icon="reply" />
+      <Card title="“Always put my meeting notes in [this doc].”" icon="file-lines" />
+    </CardGroup>
   </Step>
   <Step title="Bring your context (optional)">
     Carry over what ChatGPT or Claude already knows so Lindy gets to know you faster. Paste this prompt there, then share whatever you'd like Lindy to know:
@@ -130,10 +132,6 @@ Once Lindy is installed in your team's Slack, anyone can also add themselves jus
     The message that started it all is replayed automatically once they're linked, so nothing is lost.
   </Step>
 </Steps>
-
-<Frame>
-  <img src="/lindy-brand-assets/teammate/connect-slack-to-lindy.png" alt="A Slack DM from Lindy telling Priya she mentioned it in #launch, with a Connect Slack to Lindy button and a note that her original message will run once she's connected" />
-</Frame>
 
 <Note>
   **Admins stay in the loop.** Every admin gets an email when someone joins this way: who they are, that their first week is free, and a one-click link to remove them. If you remove a seat and that person @mentions Lindy again, it tells them it can't help and pings an admin. It won't quietly re-add them.
