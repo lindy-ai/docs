@@ -46,7 +46,7 @@ export const ConnectionsMockup = () => {
                 </div>
                 <div className="connections-demo-control" style={{ zIndex: expanded ? 3 : 1 }} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(null); }}>
                   <button type="button" aria-label={`${name} guardrail: ${value}`} aria-expanded={expanded} onClick={() => { setPaused(true); setOpen(open === name ? null : name); }} onFocus={() => setPaused(true)}>
-                    {value}<span aria-hidden="true">⌄</span>
+                    {value}<svg className="connections-demo-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#889096" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                   </button>
                   {expanded && <div className="connections-demo-options" role="group" aria-label={`${name} guardrail options`}>
                     {['Always allow', 'Ask for approval'].map((option) => <button key={option} type="button" aria-pressed={value === option} className={demo && phase === 3 && option === 'Always allow' ? 'connections-demo-highlight' : ''} onClick={() => { setGuards((current) => ({ ...current, [name]: option })); setOpen(null); setPaused(true); }}><span aria-hidden="true">{value === option ? '✓' : ''}</span>{option}</button>)}

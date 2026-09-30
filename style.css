@@ -2382,6 +2382,7 @@ html:not(.dark) .card:hover {
 .connections-demo-account > span { font-size: 13px; color: #687076; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .connections-demo-control { position: relative; justify-self: start; }
 .connections-demo-control button { display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 10px 0 12px; border-radius: 9px; border: 1px solid #e6e8eb; background: #fff; color: #687076; font-size: 14px; font-family: inherit; white-space: nowrap; cursor: pointer; }
+.connections-demo-control .connections-demo-chevron { display: block; flex: 0 0 13px; width: 13px; height: 13px; margin: 0; align-self: center; }
 .connections-demo-control button:focus-visible { outline: 2px solid #345dbb; outline-offset: 2px; }
 .connections-demo-options { position: absolute; left: -4px; top: -5px; width: 208px; padding: 5px; border-radius: 10px; background: #fcfcfdf5; border: 1px solid #00000014; box-shadow: 0 10px 30px #19378c2e; z-index: 2; }
 .connections-demo-options button { border: 0; width: 100%; color: #11181c; border-radius: 6px; padding-left: 8px; }
