@@ -2015,8 +2015,8 @@ html:not(.dark) #topbar {
 }
 .mini-cards .mini-card {
   display: block !important;
-  background: #FFFFFF !important;
-  border: 1px solid #E7E5E4 !important;
+  background: rgba(58, 96, 255, 0.08) !important;
+  border: 1px solid rgba(58, 96, 255, 0.35) !important;
   border-radius: 12px !important;
   padding: 0.8rem 1.1rem !important;
   font-size: 0.95rem !important;
@@ -2025,11 +2025,11 @@ html:not(.dark) #topbar {
   transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
 }
 .mini-cards a.mini-card:hover {
-  border-color: #D6D3D0 !important;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(58, 96, 255, 0.6) !important;
+  box-shadow: 0 3px 12px rgba(58, 96, 255, 0.08) !important;
 }
-.mini-cards .mini-card .mt { display: block !important; font-weight: 700 !important; color: #1A1A1A !important; margin-bottom: 0.15rem !important; }
-.mini-cards .mini-card .md { display: block !important; color: #57534E !important; font-weight: 400 !important; }
+.mini-cards .mini-card .mt { display: block !important; font-weight: 700 !important; color: #1F3047 !important; margin-bottom: 0.15rem !important; }
+.mini-cards .mini-card .md { display: block !important; color: #33475e !important; font-weight: 400 !important; }
 
 /* Trust cards (blue, for Security by design) */
 .trust-cards {
@@ -2267,15 +2267,82 @@ html:not(.dark) .card:hover {
 
 /* Mini cards */
 .dark .mini-cards .mini-card {
-  background: rgba(255, 255, 255, 0.04) !important;
-  border-color: rgba(255, 255, 255, 0.10) !important;
+  background: rgba(58, 96, 255, 0.14) !important;
+  border-color: rgba(58, 96, 255, 0.45) !important;
 }
 .dark .mini-cards a.mini-card:hover {
-  border-color: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(58, 96, 255, 0.7) !important;
   box-shadow: none !important;
 }
-.dark .mini-cards .mini-card .mt { color: #F4F4F5 !important; }
-.dark .mini-cards .mini-card .md { color: #A1A1AA !important; }
+.dark .mini-cards .mini-card .mt { color: #E8EDFF !important; }
+.dark .mini-cards .mini-card .md { color: #B4C4EE !important; }
+
+/* Example prompt list (Team Setup → Try it) */
+.prompt-list {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+.prompt-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+.prompt-row + .prompt-row {
+  border-top: 1px solid var(--color-border);
+}
+.prompt-row svg {
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+.dark .prompt-list,
+.dark .prompt-row + .prompt-row {
+  border-color: var(--color-dark-border);
+}
+.dark .prompt-row {
+  color: var(--color-dark-text);
+}
+
+/* Blue box: wrap a code block or callout to tint it like the blue mini cards */
+.blue-box .code-block,
+html:not(.dark) .blue-box [data-callout-type] {
+  background: rgba(58, 96, 255, 0.08) !important;
+  border: 1px solid rgba(58, 96, 255, 0.35) !important;
+}
+.blue-box .code-block [data-component-part="code-block-root"],
+.blue-box .code-block pre,
+.blue-box [data-callout-type] [class*="callout"] {
+  background: transparent !important;
+}
+html:not(.dark) .blue-box [data-callout-type],
+html:not(.dark) .blue-box [data-callout-type] .prose { color: #1F3047 !important; }
+html:not(.dark) .blue-box [data-callout-type] svg { color: #3A60FF !important; }
+.dark .blue-box .code-block,
+.dark .blue-box [data-callout-type] {
+  background: rgba(58, 96, 255, 0.14) !important;
+  border-color: rgba(58, 96, 255, 0.45) !important;
+}
+.dark .blue-box [data-callout-type],
+.dark .blue-box [data-callout-type] .prose { color: #E8EDFF !important; }
+.dark .blue-box [data-callout-type] svg { color: #90A8FF !important; }
+
+/* Gray box: wrap a code block for a white panel with a gray border */
+.gray-box .code-block {
+  background: #FFFFFF !important;
+  border: 1px solid #D6D3D0 !important;
+}
+.gray-box .code-block [data-component-part="code-block-root"],
+.gray-box .code-block pre {
+  background: transparent !important;
+}
+.dark .gray-box .code-block {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
 
 /* Feature list card */
 .dark .lindy-features {
