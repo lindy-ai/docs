@@ -2418,16 +2418,16 @@ html:not(.dark) .blue-box [data-callout-type] svg { color: #3A60FF !important; }
 .dark .blue-box [data-callout-type] .prose { color: #E8EDFF !important; }
 .dark .blue-box [data-callout-type] svg { color: #90A8FF !important; }
 
-/* Gray box: wrap a code block to set it on a soft gray panel */
+/* Gray box: wrap a code block for a white panel with a gray border */
 .gray-box .code-block {
-  background: #EEEDEB !important;
-  border: 1px solid #E2E0DC !important;
+  background: #FFFFFF !important;
+  border: 1px solid #D6D3D0 !important;
 }
 .gray-box .code-block [data-component-part="code-block-root"],
 .gray-box .code-block pre {
   background: transparent !important;
 }
 .dark .gray-box .code-block {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
 }
