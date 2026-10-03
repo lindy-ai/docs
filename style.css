@@ -2431,3 +2431,41 @@ html:not(.dark) .blue-box [data-callout-type] svg { color: #3A60FF !important; }
   max-width: 460px !important;
   margin: 1.5rem auto 2rem !important;
 }
+
+/* Connections illustration supplied for the Integrations guide. */
+.connections-demo { margin: 24px 0; container-type: inline-size; }
+.connections-demo-art { position: relative; overflow: hidden; border-radius: 28px; padding: 30px 0 0 30px; background: radial-gradient(70% 90% at 0% 0%,#c3d3f7 0%,transparent 55%),radial-gradient(60% 80% at 100% 100%,#b4d2f4 0%,transparent 60%),radial-gradient(60% 70% at 55% 50%,#7f9ff0 0%,transparent 75%),#8eadef; color: #11181c; font-family: Inter,-apple-system,BlinkMacSystemFont,sans-serif; }
+.connections-demo-panel { width: calc(100% + 20px); background: #fff; border-radius: 20px 0 0 0; box-shadow: 0 40px 90px #19378c40; padding: 26px 38px 12px 28px; }
+.connections-demo-title { font-size: 20px; font-weight: 600; padding-bottom: 16px; }
+.connections-demo-grid { display: grid; grid-template-columns: minmax(0,1fr) 150px 110px; column-gap: 24px; align-items: center; }
+.connections-demo-head { color: #7e868c; font-size: 14px; font-weight: 600; padding-bottom: 10px; border-bottom: 1px solid #eceef0; }
+.connections-demo-row { min-height: 66px; border-bottom: 1px solid #f3f4f5; font-size: 14px; }
+.connections-demo-app { display: flex; gap: 12px; min-width: 0; align-items: center; }
+.connections-demo-icon { position: relative; flex-shrink: 0; width: 32px; height: 32px; border-radius: 9px; box-shadow: inset 0 0 0 1px #e6e8eb; display: grid; place-items: center; }
+.connections-demo-icon img, .connections-demo-icon svg { width: 20px; height: 20px; margin: 0; object-fit: contain; }
+.connections-demo-icon > span:last-child { position: absolute; right: -3px; bottom: -3px; width: 10px; height: 10px; border: 2px solid white; border-radius: 50%; background: #30a46c; }
+.connections-demo-account { display: flex; flex-direction: column; min-width: 0; line-height: 1.4; }
+.connections-demo-account strong { font-size: 15px; font-weight: 500; }
+.connections-demo-account > span { font-size: 13px; color: #687076; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.connections-demo-control { position: relative; justify-self: start; }
+.connections-demo-control button { display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 10px 0 12px; border-radius: 9px; border: 1px solid #e6e8eb; background: #fff; color: #687076; font-size: 14px; font-family: inherit; white-space: nowrap; cursor: pointer; }
+.connections-demo-control .connections-demo-chevron { display: block; flex: 0 0 13px; width: 13px; height: 13px; margin: 0; align-self: center; }
+.connections-demo-control button:focus-visible { outline: 2px solid #345dbb; outline-offset: 2px; }
+.connections-demo-options { position: absolute; left: -4px; top: -5px; width: 208px; padding: 5px; border-radius: 10px; background: #fcfcfdf5; border: 1px solid #00000014; box-shadow: 0 10px 30px #19378c2e; z-index: 2; }
+.connections-demo-options button { border: 0; width: 100%; color: #11181c; border-radius: 6px; padding-left: 8px; }
+.connections-demo-options button > span { width: 14px; }
+.connections-demo-options button:hover, .connections-demo-options .connections-demo-highlight { background: #f1f3f5; }
+.connections-demo-cursor { position: absolute; z-index: 4; pointer-events: none; transition: left .7s,top .7s,opacity .35s; }
+.connections-demo .connections-demo-caption { margin-top: 10px; font-size: 12px; line-height: 1.6; color: #687076; }
+.connections-demo .connections-demo-caption button { text-decoration: underline; cursor: pointer; }
+@container (max-width: 559px) {
+  .connections-demo-art { padding: 18px 0 0 18px; }
+  .connections-demo-panel { padding: 20px 30px 12px 18px; }
+  .connections-demo-grid { grid-template-columns: minmax(0,1fr) 150px; gap: 12px; }
+  .connections-demo-shared { display: none; }
+  .connections-demo-options { left: auto; right: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .connections-demo-cursor { display: none; transition: none; } }
+
+.connections-demo .connections-demo-title { padding-bottom: 16px !important; }
+.connections-demo .connections-demo-panel { padding: 26px 38px 12px 28px !important; }
