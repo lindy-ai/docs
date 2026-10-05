@@ -2051,6 +2051,31 @@ html:not(.dark) #topbar {
 .trust-cards .trust-card .tt { display: block !important; font-weight: 700 !important; color: #1F3047 !important; margin-bottom: 0.15rem !important; }
 .trust-cards .trust-card .td { display: block !important; color: #33475e !important; font-weight: 400 !important; }
 
+/* Homepage channels, using the same blue treatment as the trust cards */
+.trust-cards.channel-cards {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.channel-cards .trust-card {
+  align-items: center !important;
+  text-decoration: none !important;
+}
+.channel-cards .trust-card svg { margin-top: 0 !important; }
+.channel-cards .trust-card .tt { margin-bottom: 0 !important; }
+.channel-cards .channel-card-wide { grid-column: 1 / -1; }
+.channel-cards .channel-status {
+  font-size: 0.85em;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.channel-cards a.trust-card:hover,
+.channel-cards a.trust-card:focus-visible {
+  border-color: #3A60FF !important;
+}
+@media (max-width: 640px) {
+  .trust-cards.channel-cards { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* Feature list (icon + bold title + description) — in a white card */
 .lindy-features {
   background: #FFFFFF !important;
