@@ -1,7 +1,7 @@
 ---
 title: "Set up Lindy"
 sidebarTitle: "Setup"
-description: "Get Lindy into your team's Slack, link everyone, and connect your email, calendar, and phone."
+description: "Connect your accounts, invite your team, connect your tools, and give Lindy a task."
 icon: "slack"
 ---
 
@@ -9,20 +9,26 @@ icon: "slack"
   <img src="/lindy-brand-assets/teammate/setup-investigate-hero.png" alt="Lindy in #growth: asked why signups are down this week, it traces the answer across four tools and finds that Tuesday's CSS change buried the mobile signup button, with mobile down 61 percent" />
 </Frame>
 
-Setting up Lindy has two parts: an admin adds Lindy to your Slack workspace, then each person links their account and connects their tools.
+Connect your accounts and tools so Lindy can work for you. Invite your colleagues to work together, and add Lindy to Slack if that's where your team communicates.
 
-<Note>
-  Lindy works with any Slack plan, including free.
-</Note>
+## 1. Connect your accounts
 
-<Warning>
-  AI-generated responses and summaries may be inaccurate. Review important information before acting.
-</Warning>
+If you're joining an existing team, accept your workspace invitation before signing up.
 
-## 1. Set up your team
+| Account | How to connect |
+| --- | --- |
+| **Email** | Connect your Google or Microsoft email for inbox management and replies. |
+| **Calendar** | Connect your Google or Microsoft calendar for scheduling, meeting prep, recording, and follow-ups. |
+| **Phone** | Get updates from your executive assistant and hand off work on the go through iMessage, SMS, or voice notes. |
+| **Slack** | Install the Slack app from **Integrations** to work with Lindy in DMs and shared channels. |
+| **MS Teams** | Coming soon. |
+
+<Accordion title="Slack installation steps">
 
 <Steps>
   <Step title="Install Lindy into Slack">
+    Lindy works with free and paid Slack plans.
+
     From Lindy (signed in), open **Integrations** in the left sidebar. **Set up Lindy Teammate in Slack** sits at the top of the page. Click **Install Slack app**.
 
     <Frame>
@@ -45,7 +51,7 @@ Setting up Lindy has two parts: an admin adds Lindy to your Slack workspace, the
           muted
           loop
           playsInline
-          style={{ display: 'block', width: '100%', borderRadius: '16px', maxHeight: 'none' }}
+          style={{ display: 'block', width: '100%', borderRadius: '16px', maxHeight: 'none', clipPath: 'none' }}
         />
       </div>
     </div>
@@ -57,20 +63,26 @@ Setting up Lindy has two parts: an admin adds Lindy to your Slack workspace, the
   </Step>
 </Steps>
 
-## 2. Set up your Lindy
+</Accordion>
 
-Once you're linked, connect your own tools so Lindy can work for you:
+## 2. Invite your team
 
-<Steps>
-  <Step title="Connect email and calendar">
-    Connect your Google or Microsoft account so Lindy can run your inbox and schedule meetings.
-  </Step>
-  <Step title="Add your phone">
-    Add your phone number (or connect Apple Messages) so you can text Lindy. You'll verify with a code.
-  </Step>
-</Steps>
+An owner or admin clicks **Invite colleague**, or opens **Settings → Members and groups → Add member**. Enter your colleagues' email addresses, choose their roles and plans, and click **Send invite**.
 
-## How to talk to Lindy
+Each person accepts their invitation and connects their own accounts. See [Team Setup](/start-here/team-setup) for the full invitation and onboarding steps.
+
+## 3. Connect your tools
+
+Open **Integrations** and connect the CRM, file storage, project tracker, and other apps Lindy needs for your work.
+
+Personal connections are available to you. Owners and admins can share connections with the workspace so the team can use them. A shared connection uses the connected account's permissions. See [Integrations](/integrations/overview) for connection settings and sharing.
+
+## 4. Give Lindy a task
+
+Ask privately through iMessage, email, or Slack, or @mention Lindy in a shared channel. Start with work you want finished:
+
+- *"Prepare a brief for tomorrow's client meeting using our previous calls and emails."*
+- *"Turn this week's sales calls into a report and update the CRM with next steps."*
 
 You don't need a new channel for Lindy. @mention it in any channel your team already uses, or DM it for anything private.
 
@@ -100,7 +112,7 @@ Press **⌘ + K** (**Ctrl + K** on Windows) to open Slack search, type **Lindy**
 
 ## Guardrails and approvals
 
-Each connected account has one setting: **Always allow** or **Ask for approval**, applied to every action that writes or sends. Read-only actions never need approval. Approval is enforced in shared Slack threads; your personal DMs keep their existing confirmation behavior.
+Choose which changes Lindy can make automatically and which need your approval in shared Slack threads. Manage these settings in [Integrations](/integrations/overview).
 
 ## Relevant Docs
 
