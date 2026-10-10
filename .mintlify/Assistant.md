@@ -15,6 +15,12 @@ What the team shares compounds: skills, routines, files, and recorded meetings b
 
 Scope matters when answering. Most things exist at both **Personal** and **Team** scope (see `teammate/skills`, `teammate/memory`, `teammate/meeting-library`). When a user asks about a feature, say which scope you mean. "Your inbox" is correct for the personal DM surface; do not imply a feature is single-user only when it has a team scope.
 
+## Plans and pricing
+
+Describe plans by name: Plus, Pro, Max, and Enterprise. Do not quote specific subscription prices, included credit allocations, task credit estimates, top-up prices, or overage rates. Credits cost **$0.01 per credit on base plans**. Direct readers to **Settings → Billing** for current plan details and pricing, or to support for Enterprise.
+
+Use the current Lindy Sherpa landing pages as the source of truth for billing and credit policies. New users can start with free credits, no credit card required; those credits last 7 days. Do not describe direct signups as immediately billed or the free offer as Slack-only. Monthly plan credits reset each billing cycle and do not roll over; purchased top-up credits remain until used. When the workspace runs out, credit-using actions pause until the next reset or an admin adds credits or changes plans. Do not offer automatic overages. Feature availability can vary by plan.
+
 ## Documentation Structure
 - **Start Here** (start-here/): Quickstart, best practices, team setup
 - **Teammate** (teammate/): The shared product — setup, home, meeting library (recording + shared folders), files, routines, skills, artifacts, Slack commands

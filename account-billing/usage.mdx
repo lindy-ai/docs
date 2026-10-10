@@ -3,14 +3,14 @@ title: 'Understanding Your Usage'
 icon: 'gauge-high'
 sidebarTitle: 'Usage & Limits'
 description: 'How your team shares one pool of credits, why Lindy pauses on a heavy task, and what to do when you need more'
-keywords: ['usage', 'limits', 'usage warning', 'credits', 'shared credit pool', 'spend cap', 'credit limit', 'teammate credits', 'team usage', 'slack', 'billing', 'over limit', 'paused task', 'top-up', 'overages']
+keywords: ['usage', 'limits', 'usage warning', 'credits', 'shared credit pool', 'spend cap', 'credit limit', 'teammate credits', 'team usage', 'slack', 'billing', 'over limit', 'paused task', 'top-up']
 ---
 
 <Frame>
   <img src="/lindy-brand-assets/teammate/usage-warning-slack.png" alt="Lindy pausing a heavy task in Slack and asking whether to continue" />
 </Frame>
 
-Your whole team draws from **one shared pool of credits**. Every seat adds to it, and every Lindy your team works with spends from it: the shared Lindy out in your channels, and the private Lindy in each person's DMs.
+Credits cost **$0.01 per credit on base plans**. Your whole team draws from **one shared pool of credits**. Every seat adds to it, and every Lindy your team works with spends from it: the shared Lindy out in your channels, and the private Lindy in each person's DMs.
 
 This page covers what actually uses credits, why Lindy sometimes pauses to check in, and what to do if your team needs more. For seats, pricing, and trials, see [Lindy Teammate Billing](/teammate/lindy-teammate-billing).
 
@@ -28,7 +28,7 @@ You're not doing anything wrong. The warning just makes sure your team stays in 
 
 ## Credit Usage by Feature
 
-Every plan covers every feature. Nothing here is gated. What follows is a general sense of what each kind of work draws from your pool.
+Credits pay for the work Lindy does. What follows is a general sense of what each kind of work draws from your pool.
 
 ### Your team's Lindy, in your channels
 
@@ -60,7 +60,7 @@ Private to each person, and much lighter. These run on their own to keep you ahe
 Both Lindys spend from the same pool. A busy channel where the whole team @mentions Lindy will move the number faster than any one person's DMs.
 </Note>
 
-**Most teams never come close to their limit.** Your pool resets every billing cycle, and unused credits do not roll over.
+Your monthly plan credits reset at the start of each billing cycle and do not roll over. Purchased top-up credits remain available until you use them.
 
 ## Checking your usage
 
@@ -76,35 +76,34 @@ Admins can cap how much any one person draws from the shared pool. It's the main
   <img src="/lindy-brand-assets/teammate/edit-credit-limit.png" alt="Setting a per-teammate credit limit from the Members table" />
 </Frame>
 
-In **Settings → Members**, click the **⋯** menu on a row and choose **Edit credit limit**. When someone hits their cap, Lindy pauses that person's credit-using actions with a clear message and keeps working for everyone else. Leave a cap unset for unlimited draw.
+In **Settings → Members**, click the **⋯** menu on a row and choose **Edit credit limit**. Once the limit is reached, Lindy pauses further credit-using actions for that person. A task already running can finish and take usage beyond the cap. Without a cap, that teammate can use the available workspace balance.
 
 ## What Happens When Your Team Hits the Limit?
 
-1. **Lindy pauses** until your next billing cycle.
-2. **Your data and settings are safe.** Lindy won't automatically restart paused tasks, but nothing is deleted. Anyone can manually restart their own work once the pool resets.
-3. **Your pool resets monthly** from your workspace's signup date.
+1. **Lindy pauses credit-using work** when the pool runs out. Admins can buy a top-up or change plans if the team needs more credits before the next reset.
+2. **Work can continue once credits are available again**, whether from a top-up, a plan change, or the next billing cycle.
+3. **Your monthly plan credits reset at the start of each billing cycle.** Unused plan credits do not roll over; purchased top-up credits remain until used.
 
 <Accordion title="What if we need more before the pool resets?">
-Admins have three options:
+Admins have two options:
 
-1. **Buy a top-up**: extra workspace credits at **$10 per 1,000 credits**, in 1,000-credit blocks. Top-ups are a one-time buy and never touch your base plan's credits.
-2. **Upgrade the plan**: go to **Settings → Billing → Upgrade** to move to a higher tier on a month-to-month basis. Every seat on the new tier adds more credits to the pool.
-3. **Enable Overages**: in **Settings → Billing**, toggle on Overages to let Lindy keep working past the limit. Overage usage is charged at **2x the cost of regular Lindy credits**.
+1. **Buy a top-up**: extra workspace credits, with current pricing shown in **Settings → Billing**. Purchased top-up credits remain available until you use them.
+2. **Change the plan**: review the available plans in **Settings → Billing** and choose one that fits your team's usage.
 </Accordion>
 
 <Accordion title="Does adding a teammate add credits?">
-Yes. Credits belong to the workspace, not to each person, and every seat adds its tier's allotment to the pool. A Plus seat adds 3,000, a Pro seat 15,000, and so on. Someone who joins by @mentioning Lindy in Slack gets a free first week before their seat converts to paid. See [Lindy Teammate Billing](/teammate/lindy-teammate-billing).
+Yes. Credits belong to the workspace, not to each person, and every seat adds its tier's allotment to the pool. See [Lindy Teammate Billing](/teammate/lindy-teammate-billing).
 </Accordion>
 
-<Accordion title="Will paused tasks pick up automatically?">
-No. When the pool resets, each person needs to manually restart anything that was paused. Nothing is lost: conversations, settings, and history are all preserved.
+<Accordion title="Can I try Lindy for free?">
+New users can start with free credits, no credit card required. The free credits last 7 days.
 </Accordion>
 
 If your team is regularly hitting the limit, [reach out](mailto:support@lindy.ai) and we'll find the right fit.
 
 ## Credit Optimization
 
-Most teams never come close to their limit. If you want to stretch the pool further, these are the levers that make the biggest difference, in rough order of impact.
+To make your team's credits go further, try these adjustments.
 
 <AccordionGroup>
   <Accordion title="Scope your team sources tightly">
@@ -143,7 +142,7 @@ Most teams never come close to their limit. If you want to stretch the pool furt
   <Accordion title="Pick the right model">
     Advanced models earn their cost on hard reasoning and analysis. Routine work like summarizing, drafting, and lookups runs well on a cheaper one.
 
-    Every plan gets every model, trial seats included, so this is purely a cost choice. Switch the model from the dropdown below the taskbar, then select **Set as default** to apply it to new conversations.
+    Switch the model from the dropdown below the taskbar, then select **Set as default** to apply it to new conversations.
   </Accordion>
 
   <Accordion title="Remove seats you aren't using">
@@ -154,18 +153,12 @@ Most teams never come close to their limit. If you want to stretch the pool furt
 
   <Accordion title="Check usage weekly">
     A quick look at **Settings → Billing** once a week turns an end-of-month surprise into a small adjustment you make on a Tuesday. Sorting **Settings → Members** by the **Credits** column is how you notice one person or one routine burning more than you expected.
-
-    Worth knowing: if your team goes over and has Overages enabled, that usage is charged at **2x** your plan's standard rate.
   </Accordion>
 </AccordionGroup>
 
 <Tip>
 You don't have to catch all of this yourself. If a single task starts running unusually heavy, Lindy pauses and checks in before continuing. See [Usage Warning](#usage-warning-why-am-i-seeing-this) above.
 </Tip>
-
-## Overages
-
-If your team exceeds the pool's limit, overage usage is charged at **2x your plan's standard rate**.
 
 ## Relevant Docs
 
