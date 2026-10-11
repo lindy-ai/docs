@@ -629,6 +629,7 @@
             ]
           },
           "features/imessage-sms",
+          "features/phone-line",
           "features/chrome-extension",
           "start-here/best-practices"
         ]
