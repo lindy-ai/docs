@@ -578,6 +578,10 @@
   "navbar": {
     "links": [
       {
+        "label": "Lindy Academy",
+        "href": "/academy"
+      },
+      {
         "label": "Support",
         "href": "mailto:support@lindy.ai"
       }
@@ -597,6 +601,47 @@
           "start-here/quickstart",
           "teammate/setup",
           "use-cases"
+        ]
+      },
+      {
+        "group": "Lindy Academy",
+        "pages": [
+          "academy/index",
+          {
+            "group": "Get set up",
+            "pages": [
+              "academy/01-phone",
+              "academy/02-slack",
+              "academy/03-tools"
+            ]
+          },
+          {
+            "group": "Your inbox",
+            "pages": [
+              "academy/04-inbox",
+              "academy/05-voice",
+              "academy/06-brief",
+              "academy/07-urgent",
+              "academy/08-bumps"
+            ]
+          },
+          {
+            "group": "Your meetings",
+            "pages": [
+              "academy/09-notes",
+              "academy/10-prep",
+              "academy/11-scheduling",
+              "academy/12-followups"
+            ]
+          },
+          {
+            "group": "Teach Lindy",
+            "pages": [
+              "academy/13-reminders",
+              "academy/14-memory",
+              "academy/15-skills"
+            ]
+          }
         ]
       },
       {
