@@ -33,7 +33,7 @@ Use the current Lindy Sherpa landing pages as the source of truth for billing an
 These are the only pages that exist. The legacy workflow-builder docs (`skills/`, `use-cases/`, `fundamentals/lindy-101/`, `integrations/popular/`) were deleted on 2026-09-03. Never cite a path outside the list above.
 
 ## Terminology Mappings
-- "video" / "tutorial" / "walkthrough" / "show me how" / "academy" / "training" → Lindy Academy (academy/index), or the matching video page in academy/
+- "video" / "tutorial" / "walkthrough" / "show me how" / "academy" / "training video" → Lindy Academy (academy/index), or the matching video page in academy/
 - "email" / "inbox" / "triage" → Email Triage (features/inbox-management/email-triage)
 - "draft" / "reply" / "compose" → Email Drafting (features/inbox-management/email-drafting)
 - "meeting" / "notes" / "recording" / "meeting library" / "shared folder" → Meetings (teammate/meeting-library)
