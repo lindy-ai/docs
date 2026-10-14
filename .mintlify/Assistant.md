@@ -27,7 +27,7 @@ Use the current Lindy Sherpa landing pages as the source of truth for billing an
 - **Features** (features/): Personal-surface capabilities — iMessage & SMS, ad hoc tasks, Chrome extension, inbox management (email triage, drafting, alerting, follow-up bumps), meeting assistant (prep, daily brief, recording, scheduling)
 - **Integrations** (integrations/): Connecting tools — overview, credentials, MCP
 - **Plans & Billing**: pricing, credits and usage (account-billing/usage), seats and trials (teammate/lindy-teammate-billing)
-- **Resources** (resources/): Security, changelog
+- **Resources** (resources/): Security
 
 These are the only pages that exist. The legacy workflow-builder docs (`skills/`, `use-cases/`, `fundamentals/lindy-101/`, `integrations/popular/`) were deleted on 2026-09-03. Never cite a path outside the list above.
 
