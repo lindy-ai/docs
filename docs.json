@@ -604,6 +604,40 @@
         ]
       },
       {
+        "group": "Lindy Teammate",
+        "pages": [
+          "teammate/home",
+          "teammate/meeting-library",
+          "teammate/memory",
+          "teammate/routines",
+          "teammate/skills",
+          "teammate/artifacts",
+          "features/ad-hoc-tasks",
+          "teammate/slack-commands"
+        ]
+      },
+      {
+        "group": "Your personal Lindy",
+        "pages": [
+          {
+            "group": "Built-in Routines",
+            "pages": [
+              "features/meeting-assistant/daily-brief",
+              "features/inbox-management/email-drafting",
+              "features/inbox-management/email-triage",
+              "features/meeting-assistant/meeting-recording",
+              "features/meeting-assistant/meeting-prep",
+              "features/meeting-assistant/scheduling",
+              "features/inbox-management/email-alerting",
+              "features/inbox-management/follow-up-bumps"
+            ]
+          },
+          "features/imessage-sms",
+          "features/chrome-extension",
+          "start-here/best-practices"
+        ]
+      },
+      {
         "group": "Lindy Academy",
         "pages": [
           "academy/index",
@@ -642,40 +676,6 @@
               "academy/15-skills"
             ]
           }
-        ]
-      },
-      {
-        "group": "Lindy Teammate",
-        "pages": [
-          "teammate/home",
-          "teammate/meeting-library",
-          "teammate/memory",
-          "teammate/routines",
-          "teammate/skills",
-          "teammate/artifacts",
-          "features/ad-hoc-tasks",
-          "teammate/slack-commands"
-        ]
-      },
-      {
-        "group": "Your personal Lindy",
-        "pages": [
-          {
-            "group": "Built-in Routines",
-            "pages": [
-              "features/meeting-assistant/daily-brief",
-              "features/inbox-management/email-drafting",
-              "features/inbox-management/email-triage",
-              "features/meeting-assistant/meeting-recording",
-              "features/meeting-assistant/meeting-prep",
-              "features/meeting-assistant/scheduling",
-              "features/inbox-management/email-alerting",
-              "features/inbox-management/follow-up-bumps"
-            ]
-          },
-          "features/imessage-sms",
-          "features/chrome-extension",
-          "start-here/best-practices"
         ]
       },
       {
