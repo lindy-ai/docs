@@ -562,6 +562,11 @@
       "source": "/start-here/team-onboarding",
       "destination": "/start-here/team-setup",
       "permanent": true
+    },
+    {
+      "source": "/resources/changelog",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "colors": {
@@ -699,7 +704,6 @@
         "group": "Security & Resources",
         "pages": [
           "resources/security",
-          "resources/changelog",
           "export-full-docs"
         ]
       }
