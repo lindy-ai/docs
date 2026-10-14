@@ -139,9 +139,8 @@ docs/
 │   └── mcp.mdx
 ├── account-billing/
 │   └── usage.mdx                  ← Credits and usage
-├── resources/                     ← Security, changelog
-│   ├── security.mdx
-│   └── changelog.mdx
+├── resources/                     ← Security
+│   └── security.mdx
 │
 ├── lindy-brand-assets/            ← Screenshots, videos (478 files)
 ├── images/                        ← Documentation images (8 files)
