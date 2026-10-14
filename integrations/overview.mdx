@@ -7,9 +7,17 @@ icon: 'plug'
 
 import { ConnectionsMockup } from "/snippets/connections-mockup.jsx";
 
-<Frame>
-  <img src="/lindy-brand-assets/integrations/integrations-panel.png" alt="The Integrations page: an Add button, a Browse all integrations banner, and enabled tools like Browserbase, Datadog, DeepWiki, and GitHub showing their connected accounts" />
-</Frame>
+<div className="academy-lesson">
+  <video
+    src="/lindy-brand-assets/academy/03-tools.mp4"
+    poster="/lindy-brand-assets/academy/03-tools.jpg"
+    controls
+    playsInline
+    preload="metadata"
+    aria-label="Connect your tools"
+  />
+  <p className="academy-caption">Connect your tools · 0:43</p>
+</div>
 
 Lindy connects to **1,000+ tools**: Gmail, Slack, Notion, HubSpot, Google Drive, GitHub, and the rest of your stack. Open **Integrations** to see what's connected, or click **Browse all integrations** for the full catalog.
 
@@ -62,17 +70,5 @@ When Lindy needs approval, it posts **Approve** and **Deny** buttons in the thre
 ## Connecting and managing
 
 Search for the tool you want and connect it with OAuth or an API key. Every action for that tool turns on at once, so there's no action-picking step. For tools that support more than one login, like Gmail, you can add further accounts under the same integration.
-
-<div className="academy-lesson">
-  <video
-    src="/lindy-brand-assets/academy/03-tools.mp4"
-    poster="/lindy-brand-assets/academy/03-tools.jpg"
-    controls
-    playsInline
-    preload="metadata"
-    aria-label="Connect your tools"
-  />
-  <p className="academy-caption">Connect your tools · 0:43</p>
-</div>
 
 Each connection shows whether it's healthy, needs reconnecting (usually an expired token), or isn't set up yet. From a connection you can rename it, share it with the workspace (owners and admins only), or disconnect it. Removing the last account of an integration removes the integration from your list.
