@@ -2479,3 +2479,18 @@ html:not(.dark) .blue-box [data-callout-type] svg { color: #3A60FF !important; }
 
 .connections-demo .connections-demo-title { padding-bottom: 16px !important; }
 .connections-demo .connections-demo-panel { padding: 26px 38px 12px 28px !important; }
+
+/* Academy walkthroughs keep their native playback controls and original posters. */
+.academy-lesson { margin: 1.5rem 0; }
+.academy-lesson video {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 16px;
+  clip-path: none;
+  background: #0f1e2e;
+}
+.academy-lesson video:focus-visible { outline: 2px solid currentColor !important; outline-offset: 3px; }
+.academy-lesson .academy-caption { margin: .65rem 0 0 !important; font-size: .875rem; line-height: 1.5; opacity: .75; }
