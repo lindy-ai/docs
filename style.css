@@ -1428,6 +1428,13 @@ figure img {
   clip-path: inset(0 round 20px); /* round the image itself, not just its container */
 }
 
+/* The supplied Calls artwork has transparent padding to the right of its 16:9 canvas. */
+img.phone-calls-hero {
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover;
+  object-position: left;
+}
+
 /* figure is Mintlify's other Frame wrapper: round it the same way */
 figure {
   border-radius: 20px;
