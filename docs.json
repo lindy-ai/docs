@@ -583,6 +583,10 @@
   "navbar": {
     "links": [
       {
+        "label": "Lindy Academy",
+        "href": "/academy"
+      },
+      {
         "label": "Support",
         "href": "mailto:support@lindy.ai"
       }
@@ -612,6 +616,7 @@
           "teammate/memory",
           "teammate/routines",
           "teammate/skills",
+          "teammate/watch-and-learn",
           "teammate/artifacts",
           "features/ad-hoc-tasks",
           "teammate/slack-commands"
@@ -637,6 +642,47 @@
           "features/phone-line",
           "features/chrome-extension",
           "start-here/best-practices"
+        ]
+      },
+      {
+        "group": "Lindy Academy",
+        "pages": [
+          "academy/index",
+          {
+            "group": "Setup",
+            "pages": [
+              "academy/01-phone",
+              "academy/02-slack",
+              "academy/03-tools"
+            ]
+          },
+          {
+            "group": "Inbox",
+            "pages": [
+              "academy/04-inbox",
+              "academy/05-voice",
+              "academy/06-brief",
+              "academy/07-urgent",
+              "academy/08-bumps"
+            ]
+          },
+          {
+            "group": "Meetings",
+            "pages": [
+              "academy/09-notes",
+              "academy/10-prep",
+              "academy/11-scheduling",
+              "academy/12-followups"
+            ]
+          },
+          {
+            "group": "Reminders, memory, and skills",
+            "pages": [
+              "academy/13-reminders",
+              "academy/14-memory",
+              "academy/15-skills"
+            ]
+          }
         ]
       },
       {

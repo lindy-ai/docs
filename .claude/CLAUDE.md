@@ -133,6 +133,9 @@ docs/
 │   ├── chrome-extension.mdx
 │   ├── inbox-management/          ← triage, drafting, alerting, follow-up bumps
 │   └── meeting-assistant/         ← daily brief, prep, recording, scheduling
+├── academy/                       ← Lindy Academy: how-to videos (index + one page per video)
+│                                    Each page's steps match its video's narration. Changing a step
+│                                    means re-rendering that video too, or the two disagree.
 ├── integrations/                  ← Connect your tools
 │   ├── overview.mdx
 │   ├── credentials.mdx
@@ -167,7 +170,7 @@ Possessives are **not** the problem. "Your inbox" is correct on the personal sur
 
 **Current Navigation Structure** (in `docs.json`):
 
-The repo migrated from the legacy `mint.json` to Mintlify's current **`docs.json`** schema (2026-05-16). The site theme is `maple`. Navigation is a **single flat list of groups** (no tabs): Start Here, Lindy Teammate, Your personal Lindy (with a nested "Built-in Routines" group), Connect your tools, Admin & Billing, Security & Resources.
+The repo migrated from the legacy `mint.json` to Mintlify's current **`docs.json`** schema (2026-05-16). The site theme is `maple`. Navigation is a **single flat list of groups** (no tabs): Start Here, Lindy Teammate, Your personal Lindy (with a nested "Built-in Routines" group), Lindy Academy (nested groups by stage), Connect your tools, Admin & Billing, Security & Resources. The navbar also links to `/academy`.
 
 New pages must be registered in `docs.json` under `navigation.groups` or they will not appear in the sidebar. A group's `pages` array accepts only page paths and nested groups — **it cannot hold a bare link**, so a nav entry that should send readers elsewhere needs a real stub page.
 
