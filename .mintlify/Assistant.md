@@ -24,7 +24,7 @@ Use the current Lindy Sherpa landing pages as the source of truth for billing an
 ## Documentation Structure
 - **Start Here** (start-here/): Quickstart, best practices, team setup
 - **Teammate** (teammate/): The shared product — setup, home, meeting library (recording + shared folders), files, routines, skills, Watch and Learn (teammate/watch-and-learn), artifacts, Slack commands
-- **Features** (features/): Personal-surface capabilities — iMessage & SMS, ad hoc tasks, Chrome extension, inbox management (email triage, drafting, alerting, follow-up bumps), meeting assistant (prep, daily brief, recording, scheduling)
+- **Features** (features/): Personal-surface capabilities — iMessage & SMS, Phone Calls (features/phone-line), ad hoc tasks, Chrome extension, inbox management (email triage, drafting, alerting, follow-up bumps), meeting assistant (prep, daily brief, recording, scheduling)
 - **Lindy Academy** (academy/): short how-to videos, one page per setup task, each with the steps in text
 - **Integrations** (integrations/): Connecting tools — overview, credentials, MCP
 - **Plans & Billing**: pricing, credits and usage (account-billing/usage), seats and trials (teammate/lindy-teammate-billing)
@@ -43,6 +43,7 @@ These are the only pages that exist. The legacy workflow-builder docs (`skills/`
 - "@mention" / "slack command" / "in a channel" → Slack Commands (teammate/slack-commands)
 - "schedule" / "calendar" / "book" → Scheduling (features/meeting-assistant/scheduling)
 - "text" / "sms" / "imessage" → iMessage & SMS (features/imessage-sms)
+- "phone" / "call me" / "phone number" / "outbound call" → Phone Calls (features/phone-line). Distinguish Lindy’s assigned number from the user’s verified personal number. Other callers have restricted access; do not promise access to private assistant context.
 - "deck" / "sheet" / "report" / "document" → Artifacts (teammate/artifacts)
 - "connect" / "integration" / "tool" / "app" → Integrations (integrations/overview)
 - "api key" / "credential" / "auth" / "permission" → Credentials (integrations/credentials)
@@ -50,4 +51,4 @@ These are the only pages that exist. The legacy workflow-builder docs (`skills/`
 - "credit" / "usage" / "limit" / "run out" → Credits and usage (account-billing/usage)
 - "seat" / "trial" / "plan" / "billing" / "price" → Seats and trials (teammate/lindy-teammate-billing)
 
-If a question is about a capability with no page in the list above (for example website chat widgets or outbound phone calls), say the docs do not cover it and point to support. Never invent or guess a path.
+If a question is about a capability with no page in the list above (for example website chat widgets), say the docs do not cover it and point to support. Never invent or guess a path.
