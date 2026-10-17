@@ -23,7 +23,7 @@ Use the current Lindy Sherpa landing pages as the source of truth for billing an
 
 ## Documentation Structure
 - **Start Here** (start-here/): Quickstart, best practices, team setup
-- **Teammate** (teammate/): The shared product — setup, home, meeting library (recording + shared folders), files, routines, skills, artifacts, Slack commands
+- **Teammate** (teammate/): The shared product — setup, home, meeting library (recording + shared folders), files, routines, skills, Watch and Learn (teammate/watch-and-learn), artifacts, Slack commands
 - **Features** (features/): Personal-surface capabilities — iMessage & SMS, ad hoc tasks, Chrome extension, inbox management (email triage, drafting, alerting, follow-up bumps), meeting assistant (prep, daily brief, recording, scheduling)
 - **Lindy Academy** (academy/): short how-to videos, one page per setup task, each with the steps in text
 - **Integrations** (integrations/): Connecting tools — overview, credentials, MCP
@@ -38,6 +38,7 @@ These are the only pages that exist. The legacy workflow-builder docs (`skills/`
 - "draft" / "reply" / "compose" → Email Drafting (features/inbox-management/email-drafting)
 - "meeting" / "notes" / "recording" / "meeting library" / "shared folder" → Meetings (teammate/meeting-library)
 - "skill" / "teach it" / "reuse" → Skills (teammate/skills)
+- "watch and learn" / "screen recording" / "demonstrate a process" / "SOP" → Watch and Learn (teammate/watch-and-learn). Open it from Routines. Record or upload a process, review the steps in chat, save a skill, and review the proposed routine before approving activation.
 - "routine" / "recurring" / "on a schedule" → Routines (teammate/routines)
 - "@mention" / "slack command" / "in a channel" → Slack Commands (teammate/slack-commands)
 - "schedule" / "calendar" / "book" → Scheduling (features/meeting-assistant/scheduling)
