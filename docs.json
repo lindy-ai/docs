@@ -634,6 +634,7 @@
               "features/inbox-management/follow-up-bumps"
             ]
           },
+          "features/booking-links",
           "features/imessage-sms",
           "features/phone-line",
           "features/chrome-extension",
