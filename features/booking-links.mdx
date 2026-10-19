@@ -7,13 +7,19 @@ keywords: ['booking links', 'booking page', 'schedule a meeting', 'availability'
 
 <div className="booking-links-guide" />
 
-{/* Add the Booking links overview video here when available. */}
+<Frame>
+  <video
+    src="/lindy-brand-assets/booking-links/overview-v2.mp4"
+    poster="/lindy-brand-assets/booking-links/overview-v2-poster.png"
+    controls
+    playsInline
+    preload="metadata"
+    style={{ maxHeight: "none", aspectRatio: "16 / 9" }}
+    aria-label="Set up your Lindy booking link"
+  />
+</Frame>
 
 Booking links let people choose an available time on your calendar. Create different links for different meetings, such as a quick intro or a longer client call, and share the one that fits.
-
-<Frame>
-  <img src="/lindy-brand-assets/booking-links/overview.png" alt="Booking links with meeting lengths, availability, copy links, and upcoming bookings" />
-</Frame>
 
 ## Before you start
 
@@ -24,6 +30,10 @@ Connect your **Google Calendar** in [Integrations](/integrations/overview), with
 <Steps>
   <Step title="Open Booking links">
     Open **Meetings**, find **Booking links**, and click **Create custom**. You can also start with one of the suggested meeting types.
+
+    <Frame>
+      <img src="/lindy-brand-assets/booking-links/overview.png" alt="Booking links with meeting lengths, availability, copy links, and upcoming bookings" />
+    </Frame>
   </Step>
   <Step title="Set up the meeting">
     Enter a title and description, then choose the meeting length and video app. Use your usual video app, Google Meet, connected Zoom, or no video link.
