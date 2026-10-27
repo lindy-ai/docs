@@ -23,7 +23,7 @@ Use the current Lindy Sherpa landing pages as the source of truth for billing an
 
 ## Documentation Structure
 - **Start Here** (start-here/): Quickstart, best practices, team setup
-- **Teammate** (teammate/): The shared product — setup, home, meeting library (recording + shared folders), files, routines, skills, Watch and Learn (teammate/watch-and-learn), artifacts, Slack commands
+- **Teammate** (teammate/): The shared product — setup, home, meeting library (recording + shared folders), files, routines, skills, Watch and Learn (teammate/watch-and-learn), Mini Apps (teammate/mini-apps), artifacts, Slack commands
 - **Features** (features/): Personal-surface capabilities — Booking links (features/booking-links), iMessage & SMS, Phone Calls (features/phone-line), ad hoc tasks, Chrome extension, inbox management (email triage, drafting, alerting, follow-up bumps), meeting assistant (prep, daily brief, recording, scheduling)
 - **Integrations** (integrations/): Connecting tools — overview, credentials, MCP
 - **Plans & Billing**: pricing, credits and usage (account-billing/usage), seats and trials (teammate/lindy-teammate-billing)
@@ -44,7 +44,8 @@ These are the only pages that exist. The legacy workflow-builder docs (`skills/`
 - "text" / "sms" / "imessage" → iMessage & SMS (features/imessage-sms)
 - "phone" / "call me" / "phone number" / "outbound call" → Phone Calls (features/phone-line). Distinguish Lindy’s assigned number from the user’s verified personal number. Other callers have restricted access; do not promise access to private assistant context.
 - "deck" / "sheet" / "report" / "document" → Artifacts (teammate/artifacts)
-- "connect" / "integration" / "tool" / "app" → Integrations (integrations/overview)
+- "mini app" / "mini apps" / "build an app" / "app version" → Mini Apps (teammate/mini-apps). Build and change web apps in chat, then open them from Apps. Visibility can be Only you, Workspace, or Public. Restoring a version restores the app's code, not its saved data.
+- "connect" / "integration" / "tool" / "connect an app" → Integrations (integrations/overview)
 - "api key" / "credential" / "auth" / "permission" → Credentials (integrations/credentials)
 - "mcp" / "model context protocol" → MCP (integrations/mcp)
 - "credit" / "usage" / "limit" / "run out" → Credits and usage (account-billing/usage)
