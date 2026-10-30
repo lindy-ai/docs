@@ -567,6 +567,11 @@
       "source": "/resources/changelog",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/teammate/mini-apps",
+      "destination": "/teammate/apps",
+      "permanent": true
     }
   ],
   "colors": {
@@ -613,7 +618,7 @@
           "teammate/routines",
           "teammate/skills",
           "teammate/watch-and-learn",
-          "teammate/mini-apps",
+          "teammate/apps",
           "teammate/artifacts",
           "features/ad-hoc-tasks",
           "teammate/slack-commands"
