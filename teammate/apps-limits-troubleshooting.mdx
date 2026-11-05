@@ -1,0 +1,96 @@
+---
+title: "Apps: limits and troubleshooting"
+sidebarTitle: "Limits and troubleshooting"
+description: "How many apps a workspace can hold, what pauses an app, and what to do when a build or publish fails. Also how to delete an app and what happens when its owner leaves."
+icon: "triangle-exclamation"
+keywords: ["app limit", "apps limit", "app limits", "usage limit", "app paused", "build failed", "deploy failed", "publish failed", "setup failed", "delete app", "owner leaves", "troubleshooting", "daily AI limit", "version history"]
+---
+
+## Limits
+
+| Limit | Amount |
+| --- | --- |
+| Apps per workspace | 30. Apps still being set up count. A deleted app frees its place when deletion finishes. |
+| Files per app | 200 files, up to 512 KB each and 4 MB in total |
+| Versions kept | The latest 50. Older ones can't be restored. |
+| Webhook endpoints per app | 10 |
+
+Each app has its own database and backend. An app can't read another app's data.
+
+If you try to create an app past the limit, Lindy tells you the workspace already has the most it can have and asks you to delete one.
+
+## How long things take
+
+Creating an app, restoring a version, and rebuilding after a change take about a minute. If a restore takes longer, Lindy shows that it's still running. Check back in a minute.
+
+## Usage limits and pauses
+
+Every app has daily and monthly usage limits on its backend. An app that goes over a limit pauses until the day or month rolls over. Other apps in the workspace keep working.
+
+AI, image, video, speech, and music features in an app cost credits. They're charged to the person using the app. Work an app does when nobody is there, such as a scheduled job, is charged to the app's creator.
+
+Each app also has a daily cap on what it can spend on these features, and each person has a limit on how fast they can use them. When an app reaches its daily cap, people see "This app reached its daily AI limit. Try again tomorrow." The cap resets each day (UTC).
+
+If an app that's working normally keeps hitting a limit, ask Lindy to check the app's logs, or contact support.
+
+## When something fails
+
+| What you see | What it means | What to do |
+| --- | --- | --- |
+| "Apps are not available for this account yet." | Your account isn't in the Apps pilot. | Contact support. |
+| **Setting up** on an app's card | Lindy is still creating the app. | Wait a minute and reload. |
+| **Setup failed** on an app's card | The app didn't finish being created. | Ask Lindy to try again. If it keeps failing, ask Lindy to delete the failed app and create a new one. |
+| **Not published yet** on an app's card | The app exists but Lindy hasn't built its first version. | Ask Lindy to deploy it. |
+| "We couldn't open this app" | The app doesn't exist, was deleted, or you don't have access. A private app opens only for its creator. | Check with the person who built it. |
+| "This artifact is private" with **Request access** | Your page access ran out, or you opened a link directly. | Open the app again from **Apps**. |
+| "Open this app from Lindy to sign in." | Your sign-in expired. | Select **Open in Lindy**. |
+
+Learn more about sessions in [Share an app](/teammate/apps-sharing).
+
+### A build fails
+
+A failed build changes nothing. The live app and its version stay as they were. Lindy gets a list of what went wrong, with the file and line, and fixes it. Ask Lindy to fix the build and try again.
+
+If two people change the same app at once, one change can be refused because the app moved to a newer version. Ask again and Lindy applies it to the latest version.
+
+### A publish fails
+
+Sometimes the app's backend is updated but its page can't be published. Ask Lindy to deploy again.
+
+### A restore fails
+
+A restore puts old code back, but it keeps the app's data. If the data no longer fits the old code, the restore fails and the live app stays as it is. Ask Lindy to fix the app forward from the current version instead.
+
+### The app crashes or shows an error
+
+Tell Lindy the app is broken. Lindy reads the errors people hit on the live app and the app's logs. The error screen also has an option for the people who manage the app to ask Lindy to fix the error directly. **Reload** gets the latest version.
+
+## Delete an app
+
+Ask Lindy to delete it. Lindy asks you to confirm every time. The app's creator and workspace owners and admins can delete it.
+
+Deleting an app takes its page offline and removes its backend and data. Treat it as permanent.
+
+## If the owner leaves
+
+An app belongs to the person who created it. Lindy has no way to hand an app to someone else.
+
+If the creator is removed from the workspace:
+
+- Apps shared with the workspace, and public apps, keep working for everyone else.
+- Workspace owners and admins can still change, restore, and delete the app.
+- A private app can't be opened by anyone else. An admin can delete it.
+- Work that runs as the creator, such as scheduled jobs that call Lindy and webhook deliveries, stops.
+
+If the creator deletes their Lindy account, their apps are deleted with it, including apps shared with the workspace. Deleting a whole workspace deletes its apps.
+
+## Relevant Docs
+
+<CardGroup cols={2}>
+  <Card title="Apps" icon="grid-2" href="/teammate/apps">
+    Build an app, make changes, and restore a previous version
+  </Card>
+  <Card title="Share an app" icon="share-nodes" href="/teammate/apps-sharing">
+    Private, workspace, and public apps, sign-in, and what updates live
+  </Card>
+</CardGroup>
