@@ -12,6 +12,10 @@ Apps are web apps Lindy builds for you and your team. Describe what you need, su
 
 Open **Apps** in the Lindy sidebar to find apps you've created and apps shared with your workspace.
 
+<Note>
+  Apps are in a pilot, so they aren't on for every account yet. If **Apps** says "Apps are not available for this account yet," your account doesn't have access.
+</Note>
+
 ## Create an app
 
 Ask Lindy in chat. Explain what the app should do, what information it needs, and who will use it.
@@ -48,7 +52,7 @@ Open the app again to review the result.
 
 ## Choose who can use it
 
-Ask Lindy to keep an app private, share it with your workspace, or make it public. The badge on its card in **Apps** shows its current visibility.
+Ask Lindy to keep an app private, share it with your workspace, or make it public. On the **Apps** page, **Personal** lists apps you created, **Workspace** lists apps shared with the workspace, and **Shared with me** lists the ones other people created.
 
 | Visibility | Who can open the app |
 | --- | --- |
@@ -64,6 +68,8 @@ For example: *"Share my project tracker with the workspace so the team can use i
 
 The app's creator and workspace owners or admins can manage it. Sharing an app doesn't give everyone permission to change its design or settings.
 
+For what visitors can do, how sign-in works, and what updates live, see [Share an app](/teammate/apps-sharing).
+
 ## Use data from your tools
 
 If your app needs data from another service, tell Lindy which service and what the app should read or change. An app needs its own permission to use saved API credentials; connecting a tool to Lindy doesn't automatically give every app access.
@@ -72,6 +78,17 @@ Review that access alongside the app's audience, since it can let people using t
 
 ## Restore a previous version
 
-On the **Apps** page, click **Versions** on an app you manage. Choose **Restore** beside an earlier version, or **Undo last change** to return to the previous one.
+On the **Apps** page, open the **More options** menu (**...**) on an app you manage and choose **Version history**. Choose **Restore** beside an earlier version, or **Undo last change** to return to the previous one.
 
-Restoring brings back that version of the app. Its saved data stays as it is; restoring a version doesn't undo changes to records or recover deleted data.
+Restoring puts that version's code back live as a new version, and takes about a minute. Lindy keeps the latest 50 versions. The app's saved data stays as it is; restoring a version doesn't undo changes to records or recover deleted data.
+
+## Relevant Docs
+
+<CardGroup cols={2}>
+  <Card title="Share an app" icon="share-nodes" href="/teammate/apps-sharing">
+    Private, workspace, and public apps, sign-in, and what updates live
+  </Card>
+  <Card title="Limits and troubleshooting" icon="triangle-exclamation" href="/teammate/apps-limits-troubleshooting">
+    App limits, usage pauses, failed builds, and deleting apps
+  </Card>
+</CardGroup>

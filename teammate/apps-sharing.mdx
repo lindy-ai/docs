@@ -1,0 +1,94 @@
+---
+title: "Share an app"
+sidebarTitle: "Share an app"
+description: "Keep an app private, share it with your workspace, or give it a public link. What people can do with each, how sign-in works, and what updates live."
+icon: "share-nodes"
+keywords: ["share an app", "app sharing", "public app", "public link", "lindy.link", "private app", "workspace app", "app visibility", "app sign in", "session expired", "request access", "open in lindy", "real-time", "live updates"]
+---
+
+Every app has a visibility setting. It decides who can open the app and what they can do in it. Ask Lindy to change it in chat. Lindy may ask you to approve the change.
+
+## Who can open it
+
+### Only you
+
+By default, apps created in a private conversation start here. Only you can open the app, and only while you're an active member of the workspace.
+
+Workspace owners and admins can still change, restore, and delete it. They can't open a private app that isn't theirs.
+
+### Workspace
+
+Every active member of your workspace can open the app from **Apps** and use it signed in as themselves. People who didn't create it find it under **Shared with me**.
+
+Anyone who can open the app can use everything it offers. If only some people should see something, such as a settings tab for admins, say so when you ask Lindy to build or change the app.
+
+If Lindy builds an app in a shared Slack thread, the app is shared with the workspace. A private app can't be built in a shared thread. Ask Lindy in a direct message or in web chat.
+
+### Public
+
+Anyone with the link can open the page, with no Lindy account. Ask Lindy for the app's public link. The link ends in `lindy.link` and never changes.
+
+You can't create an app as public. Create it first, then ask Lindy to make it public once it's ready.
+
+<Warning>
+  Public means public. Anyone on the internet can use the parts of the app that Lindy built for visitors, and they can send them any input. Keep public apps to what you'd put on a website, such as a booking form that saves a request without showing anyone else's.
+</Warning>
+
+## What visitors can and can't do
+
+A visitor is someone who opens a public link without opening the app from Lindy.
+
+| A visitor can | A visitor can't |
+| --- | --- |
+| See the public page and data its visitor features expose | Use features restricted to signed-in members |
+| Use the visitor features Lindy built, such as a booking form | Use the app's AI, image, video, or audio features |
+| | Use any feature that runs as a signed-in person |
+
+Before sharing a public link, check that its visitor features don't expose private data. Workspace members who want the full app open it from **Apps**, not from the public link.
+
+If you make a public app private or workspace-only again, its visitor features stop working right away. A visitor's browser may keep showing the page itself for a few minutes, but it can't load or change any data.
+
+## Sign in and sessions
+
+When you open an app from **Apps**, Lindy checks your access, opens the app's page, and signs you in as yourself. Open apps this way, not from a saved link.
+
+Two things expire after about an hour:
+
+| What | How long it lasts |
+| --- | --- |
+| Page access in your browser | About 1 hour from the moment you open the app. It isn't renewed. |
+| Sign-in token the app uses for your data | 1 hour. An open tab renews it quietly while you use the app. |
+
+What you see when one runs out:
+
+- **"This artifact is private" with a Request access button.** Your page access ran out, or you opened the link directly. Open the app again from **Apps**.
+- **"Open this app from Lindy to sign in."** The tab was asleep or idle long enough that the token couldn't renew. Select **Open in Lindy**, or open the app from **Apps**.
+
+If you lose access to a workspace app, for example because you're removed from the workspace, your sign-in token isn't renewed. A page you already have open can keep working for up to an hour.
+
+## What updates live and what doesn't
+
+Updates live:
+
+- **The app's data.** Lindy builds apps with live queries. When one person adds or changes a record, everyone with the app open sees it without refreshing.
+- **AI answers, images, video, and audio.** They can appear in the app as soon as they're ready, without a reload.
+
+Doesn't update live:
+
+- **A new version of the app.** A page that's already open keeps the old version until the person reloads it. On a public page, a reload can take up to about 5 minutes to show the new version.
+- **The app's name inside the page.** Lindy shows a new name in **Apps** at once. The page shows it after the next change to the app.
+- **The Apps page.** Reload it to see apps and changes from other people.
+
+## Relevant Docs
+
+<CardGroup cols={2}>
+  <Card title="Apps" icon="grid-2" href="/teammate/apps">
+    Build an app, make changes, and restore a previous version
+  </Card>
+  <Card title="Limits and troubleshooting" icon="triangle-exclamation" href="/teammate/apps-limits-troubleshooting">
+    App limits, usage pauses, failed builds, and deleting apps
+  </Card>
+  <Card title="Artifacts" icon="browser" href="/teammate/artifacts">
+    Live pages Lindy hosts on their own link
+  </Card>
+</CardGroup>
