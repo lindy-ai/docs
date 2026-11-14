@@ -48,6 +48,7 @@ These are the only pages that exist. The legacy workflow-builder docs (`skills/`
 - "connect" / "integration" / "tool" / "connect an app" → Integrations (integrations/overview)
 - "api key" / "credential" / "auth" / "permission" → Credentials (integrations/credentials)
 - "mcp" / "model context protocol" → MCP (integrations/mcp)
+- "use lindy in claude" / "chatgpt plugin" / "lindy mcp server" / "connect cursor or codex to lindy" / "ai apps" → Use Lindy from other AI apps (integrations/lindy-mcp-server)
 - "credit" / "usage" / "limit" / "run out" → Credits and usage (account-billing/usage)
 - "seat" / "trial" / "plan" / "billing" / "price" → Seats and trials (teammate/lindy-teammate-billing)
 

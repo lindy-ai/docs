@@ -1,0 +1,149 @@
+---
+title: 'Use Lindy from other AI apps'
+sidebarTitle: 'Lindy in AI apps'
+description: 'Connect Claude, ChatGPT, Cursor, Codex or any MCP app to Lindy, so it can read your threads, meetings and files and hand work to Lindy.'
+icon: 'plug-circle-bolt'
+keywords: ['MCP server', 'Lindy MCP', 'Claude connector', 'ChatGPT plugin', 'Cursor', 'Codex', 'Claude Code', 'AI apps', 'connect Lindy to Claude', 'OAuth']
+---
+
+Lindy runs an MCP server. MCP (Model Context Protocol) is the standard way AI apps connect to other tools. Once you connect an app such as Claude or ChatGPT, it can look things up in your Lindy and ask Lindy to do work for you, without leaving the chat you are in.
+
+For the opposite direction, giving Lindy the tools of another product's MCP server, see [MCP servers](/integrations/mcp).
+
+## What you can ask
+
+A few things people ask once Lindy is connected:
+
+- "What did we agree with Acme in yesterday's meeting?" The app searches your meetings and reads the transcript.
+- "Ask Lindy to draft follow-ups to everyone I met today." The app starts a Lindy task, which uses your connected accounts and approvals like any other task.
+- "Every Monday at 9, have Lindy send me my open threads." The app creates a routine in your Lindy.
+- "Find the Q3 pricing doc in our team files and summarize it." The app searches and reads your Lindy files.
+- "Why did my lead-intake workflow fail last night?" The app reads the workflow's runs and their errors.
+
+## Connect an app
+
+You need the server URL, which is the same for everyone:
+
+```text
+https://api.lindy.ai/mcp
+```
+
+You will not need an API key. The first time, the app opens Lindy in your browser. You sign in, pick the workspace and choose what the app may do. You can also copy the URL and these steps from **Settings > AI apps** in Lindy.
+
+<Tabs>
+  <Tab title="Claude">
+    1. In Claude, open **Customize**, then **Connectors**.
+    2. Click **+** and choose **Add custom connector**.
+    3. Paste the server URL and click **Connect**.
+
+    On Team and Enterprise plans, an owner adds the connector first under **Organization settings > Connectors**. Members then connect their own Lindy account.
+  </Tab>
+  <Tab title="ChatGPT">
+    1. On chatgpt.com, open **Plugins**, click **+**, then **Add custom MCP server**.
+    2. Name it Lindy and paste the server URL.
+    3. Choose **OAuth**, accept the warning and click **Create**.
+    4. In a chat, type `@Lindy` to use it.
+
+    On ChatGPT Business, only workspace admins and owners can add a custom MCP server. On Enterprise and Edu, admins can also allow selected members.
+  </Tab>
+  <Tab title="Claude Code">
+    ```bash
+    claude mcp add --transport http lindy https://api.lindy.ai/mcp
+    ```
+
+    Then run `/mcp` in Claude Code, choose **lindy** and sign in.
+  </Tab>
+  <Tab title="Cursor">
+    Add this to `~/.cursor/mcp.json` (or `.cursor/mcp.json` in one project):
+
+    ```json
+    {
+      "mcpServers": {
+        "lindy": { "url": "https://api.lindy.ai/mcp" }
+      }
+    }
+    ```
+
+    Cursor opens Lindy so you can sign in.
+  </Tab>
+  <Tab title="Codex">
+    ```bash
+    codex mcp add lindy --url https://api.lindy.ai/mcp
+    codex mcp login lindy
+    ```
+
+    The login opens Lindy in your browser. The Codex app, CLI and IDE extension share this setting.
+  </Tab>
+  <Tab title="Other apps">
+    Any app that supports remote MCP servers over HTTP with OAuth can connect. Add a server with the URL above and sign in when it asks. Lindy supports dynamic client registration and client ID metadata documents, so the app needs no client ID or secret.
+  </Tab>
+</Tabs>
+
+## What an app can do
+
+You choose one of two levels when you connect.
+
+| Level | What the app can do |
+| --- | --- |
+| **Read only** | Read your private and team threads. See your personal and team routines, skills and workflows. Search your meetings, transcripts and files. |
+| **Read and act** | Everything above, plus: start threads and reply in them, run or test routines, create, change and delete your own routines and skills, and create, publish, share and turn on your workflows. These actions use your credits and connected accounts. |
+
+The app sees only what you can see in Lindy. It works in the one workspace you picked; connect again to use another workspace.
+
+### What an app cannot do
+
+- Approve anything. When Lindy needs your approval or a connection, the app gets a link and you decide in Lindy.
+- See your passwords, API keys or connected-account tokens.
+- Change team routines or team skills, or another member's routines, skills and private workflows. A workflow someone shared with you as an editor can be changed, as in Lindy.
+- Buy anything, such as a phone number or credits.
+
+## Tools
+
+Apps see these tools. You don't call them yourself; the app picks them from your request.
+
+| Area | Tools | Example |
+| --- | --- | --- |
+| Account | `get_connection` | "Which Lindy workspace are you connected to?" |
+| Threads | `list_tasks`, `get_task`, `start_task`, `reply_to_task` | "Ask Lindy to prepare tomorrow's briefing, then show me the result." |
+| Routines | `list_routines`, `get_routine`, `list_routine_runs`, `save_routine`, `set_routine_enabled`, `preview_routine`, `rerun_routine_run`, `delete_routine` | "Turn off my Friday report routine." |
+| Skills | `list_skills`, `read_skill`, `save_skill`, `write_skill_file`, `delete_skill_file`, `delete_skill` | "Save this checklist as a Lindy skill called weekly-review." |
+| Meetings | `search_meetings`, `get_meeting`, `read_meeting_transcript` | "What did Sam say about pricing on Tuesday's call?" |
+| Files | `search_files`, `read_file` | "Read the onboarding doc in our team files." |
+| Workflows | `list_workflows`, `get_workflow`, `create_workflow`, `build_workflow`, `publish_workflow`, `test_workflow`, `set_workflow_enabled`, `list_workflow_runs`, `read_workflow_run` and more | "Add every new Typeform response to my sheet, test it, then turn it on." |
+
+Workflow tools appear when workflows are available on your account. A test run (`test_workflow`) reads with your accounts but never sends, writes or calls anyone; it shows what each step would have done.
+
+## Limits
+
+- Each member can make 120 reads and 10 changes a minute per workspace. Building workflows has its own limit of 60 saves a minute. When an app hits a limit, Lindy tells it how many seconds to wait.
+- Tasks run in the background. The app gets a receipt right away and checks back for the result.
+- Long results come back a page at a time. One read of a thread returns up to 32,000 characters of messages, with a link to the full thread.
+- A connection lasts 30 days. After that, the app asks you to sign in again.
+
+## Security
+
+- Signing in uses OAuth with PKCE. Lindy stores only hashes of the tokens it issues.
+- Access tokens last one hour. Every request checks that your connection, your membership in the workspace and Lindy access are still active. Removing someone from the workspace stops their apps immediately.
+- Every app connection and every tool call is recorded in your workspace's access log, with the app, the tool and the item it touched, never message text or search queries.
+- Text that an app reads from Lindy, such as an email in a thread, can contain instructions written by someone else. Lindy tells apps to treat it as content, not instructions, and apps like Claude and ChatGPT ask you before running tools that change things. Keep that confirmation on for apps you give **Read and act**.
+- Apps choose their own display name, so check the app and the website named on the sign-in page before you click **Allow access**.
+
+## See and disconnect apps
+
+Open **Settings > AI apps**. **Connected apps** lists every app you connected to this workspace, its access level and when it last used Lindy.
+
+- To remove one, open its **...** menu and choose **Disconnect**.
+- To remove all of them, click **Disconnect all**.
+
+A disconnected app loses access right away. Work it already started in Lindy keeps running; stop it from the thread if you need to.
+
+## Troubleshooting
+
+| What you see | What to do |
+| --- | --- |
+| "No Lindy workspace available" on the sign-in page | Your workspace does not have Lindy's assistant yet. Sign in with an account whose workspace does, or contact support. |
+| "Apps cannot be connected during login-as" | You are in a support login-as session. Sign out and sign in as yourself. |
+| The app says it needs permission to start threads | It was connected as **Read only**. Disconnect it in **Settings > AI apps** and connect again with **Read and act**. |
+| The app keeps asking you to sign in | The 30-day connection ended or was disconnected. Sign in again from the app. |
+| "Lindy allows N reads a minute" | The app hit a limit. It should wait the number of seconds Lindy gives, then retry. |
+| A task shows as waiting for approval | Open the link the app shows and approve or deny it in Lindy. |
