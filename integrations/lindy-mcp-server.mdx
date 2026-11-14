@@ -28,7 +28,7 @@ You need the server URL, which is the same for everyone:
 https://api.lindy.ai/mcp
 ```
 
-You will not need an API key. The first time, the app opens Lindy in your browser. You sign in, pick the workspace and choose what the app may do. You can also copy the URL and these steps from **Settings > AI apps** in Lindy.
+You will not need an API key. The first time, the app opens Lindy in your browser. You sign in, pick the workspace, check what the app asks to do, and allow it. You can also copy the URL and these steps from **Settings > AI apps** in Lindy.
 
 <Tabs>
   <Tab title="Claude">
@@ -81,7 +81,7 @@ You will not need an API key. The first time, the app opens Lindy in your browse
 
 ## What an app can do
 
-You choose one of two levels when you connect.
+Each app asks for one of two levels when it connects. The sign-in page shows which one, and you allow it or cancel.
 
 | Level | What the app can do |
 | --- | --- |
@@ -143,7 +143,7 @@ A disconnected app loses access right away. Work it already started in Lindy kee
 | --- | --- |
 | "No Lindy workspace available" on the sign-in page | Your workspace does not have Lindy's assistant yet. Sign in with an account whose workspace does, or contact support. |
 | "Apps cannot be connected during login-as" | You are in a support login-as session. Sign out and sign in as yourself. |
-| The app says it needs permission to start threads | It was connected as **Read only**. Disconnect it in **Settings > AI apps** and connect again with **Read and act**. |
+| The app says it needs permission to start threads | It connected with **Read only**. Disconnect it in **Settings > AI apps**, then reconnect from an app setup that asks for **Read and act**. |
 | The app keeps asking you to sign in | The 30-day connection ended or was disconnected. Sign in again from the app. |
 | "Lindy allows N reads a minute" | The app hit a limit. It should wait the number of seconds Lindy gives, then retry. |
 | A task shows as waiting for approval | Open the link the app shows and approve or deny it in Lindy. |
