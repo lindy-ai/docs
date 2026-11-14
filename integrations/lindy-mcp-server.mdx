@@ -69,10 +69,9 @@ You will not need an API key. The first time, the app opens Lindy in your browse
   <Tab title="Codex">
     ```bash
     codex mcp add lindy --url https://api.lindy.ai/mcp
-    codex mcp login lindy
     ```
 
-    The login opens Lindy in your browser. The Codex app, CLI and IDE extension share this setting.
+    Codex opens Lindy in your browser to sign in. If you skip it, run `codex mcp login lindy` later. The Codex app, CLI and IDE extension share this setting.
   </Tab>
   <Tab title="Other apps">
     Any app that supports remote MCP servers over HTTP with OAuth can connect. Add a server with the URL above and sign in when it asks. Lindy supports dynamic client registration and client ID metadata documents, so the app needs no client ID or secret.
