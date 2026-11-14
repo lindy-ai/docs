@@ -109,12 +109,36 @@ Apps see these tools. You don't call them yourself; the app picks them from your
 | Meetings | `search_meetings`, `get_meeting`, `read_meeting_transcript` | "What did Sam say about pricing on Tuesday's call?" |
 | Files | `search_files`, `read_file` | "Read the onboarding doc in our team files." |
 | Workflows | `list_workflows`, `get_workflow`, `create_workflow`, `build_workflow`, `publish_workflow`, `test_workflow`, `set_workflow_enabled`, `list_workflow_runs`, `read_workflow_run` and more | "Add every new Typeform response to my sheet, test it, then turn it on." |
+| Apps | `list_apps`, `read_app_source`, `search_app_code`, `list_app_versions`, `read_app_health`, `check_app_change`, `submit_app_change` | "Fix the date filter on my sales dashboard app and send it for review." |
 
-Workflow tools appear when workflows are available on your account. A test run (`test_workflow`) reads with your accounts but never sends, writes or calls anyone; it shows what each step would have done.
+Workflow tools appear when workflows are available on your account. App tools appear only for the apps you chose when you connected. A test run (`test_workflow`) reads with your accounts but never sends, writes or calls anyone; it shows what each step would have done.
+
+## Build and edit Lindy apps from a coding agent
+
+When it is available on your account, a coding agent such as Claude Code, Cursor or Codex can work on the Lindy apps you manage. Nothing it does goes live until an app manager approves it in Lindy.
+
+<Steps>
+  <Step title="Choose the apps when you connect">
+    The sign-in page lists the apps you manage, each set to **No access**. Pick **Read code** or **Read and propose changes** for the ones the agent may open. You can share up to 20 apps per connection. Proposing changes needs a connection with **Read and act**.
+  </Step>
+  <Step title="Let the agent work">
+    The agent can read and search the app's code, see its versions and its health (calls, status, timings and where errors happen in the code), and check a change: Lindy validates, typechecks and builds it without deploying anything.
+  </Step>
+  <Step title="Approve the change">
+    When the agent submits a change, it gives you a review link. Open it on the **Apps** page, read the full diff, then choose **Approve and deploy** or **Decline**. A rollback to an earlier version goes through the same review.
+  </Step>
+</Steps>
+
+Good to know:
+
+- The agent never sees what people typed into the app, the app's raw logs or its error messages, and it cannot run the app's functions or read its data.
+- A pending change lasts 24 hours. Each person has at most one pending change per app; submitting again replaces it.
+- Workspace admins can turn this off for everyone in **Settings > Workspace** ("Let coding agents edit apps through AI Apps connections").
+- Every call is recorded in the access log with the app, the change and the version.
 
 ## Limits
 
-- Each member can make 120 reads and 10 changes a minute per workspace. Building workflows has its own limit of 60 saves a minute. When an app hits a limit, Lindy tells it how many seconds to wait.
+- Each member can make 120 reads and 10 changes a minute per workspace. Building workflows has its own limit of 60 saves a minute. Checking an app change is limited to 3 a minute. When an app hits a limit, Lindy tells it how many seconds to wait.
 - Tasks run in the background. The app gets a receipt right away and checks back for the result.
 - Long results come back a page at a time. One read of a thread returns up to 32,000 characters of messages, with a link to the full thread.
 - A connection lasts 30 days. After that, the app asks you to sign in again.
@@ -146,3 +170,5 @@ A disconnected app loses access right away. Work it already started in Lindy kee
 | The app keeps asking you to sign in | The 30-day connection ended or was disconnected. Sign in again from the app. |
 | "Lindy allows N reads a minute" | The app hit a limit. It should wait the number of seconds Lindy gives, then retry. |
 | A task shows as waiting for approval | Open the link the app shows and approve or deny it in Lindy. |
+| The agent can't see one of your apps | Apps start at **No access**. Disconnect the agent and connect again, choosing that app. |
+| "This change expired or was already handled." | Pending changes last 24 hours, and a newer submit from the same person replaces the old one. Ask the agent to submit again. |
