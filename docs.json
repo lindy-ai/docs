@@ -4,6 +4,11 @@
   "name": "Lindy Documentation",
   "redirects": [
     {
+      "source": "/teammate/watch-and-learn",
+      "destination": "/teammate/teach-a-task",
+      "permanent": true
+    },
+    {
       "source": "/CLAUDE",
       "destination": "/",
       "permanent": true
@@ -621,7 +626,7 @@
           "teammate/memory",
           "teammate/routines",
           "teammate/skills",
-          "teammate/watch-and-learn",
+          "teammate/teach-a-task",
           "teammate/apps",
           "teammate/apps-sharing",
           "teammate/apps-limits-troubleshooting",
