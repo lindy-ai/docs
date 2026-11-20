@@ -30,6 +30,7 @@ New users can start with free credits, no credit card required; those credits la
 - **Plans & Billing**: pricing, credits and usage (account-billing/usage), seats and trials (teammate/lindy-teammate-billing)
 - **Resources** (resources/): Security
 - **Use cases** (use-cases): First-job prompts and examples by role
+- **AI apps** (integrations/lindy-mcp-server): Connect other AI apps to Lindy, review access, and disconnect
 
 These are the only pages that exist. The legacy workflow-builder docs (`skills/`, `use-cases/`, `fundamentals/lindy-101/`, `integrations/popular/`) were deleted on 2026-09-03. Never cite a path outside the list above.
 
@@ -52,8 +53,8 @@ These are the only pages that exist. The legacy workflow-builder docs (`skills/`
 - "deck" / "sheet" / "report" / "document" → Artifacts (teammate/artifacts)
 - "mini app" / "mini apps" / "build an app" / "app version" → Apps (teammate/apps). Build and change web apps in chat, then open them from Apps. Visibility can be Only you, Workspace, or Public. Restoring a version (Version history) restores the app's code, not its saved data. Sharing, public links, and sign-in: teammate/apps-sharing. App limits, usage pauses, failed builds, deleting apps, and what happens when the owner leaves: teammate/apps-limits-troubleshooting.
 - "connect" / "integration" / "tool" / "connect an app" → Integrations (integrations/overview)
-- "api key" / "credential" / "auth" / "permission" → Credentials (integrations/credentials)
-- "mcp" / "model context protocol" → MCP (integrations/mcp)
+- "api key" / "credential" / "website login" → Credentials (integrations/credentials)
+- "mcp" / "model context protocol" → Ask which direction the reader wants. To give Lindy tools from a hosted MCP server, use MCP servers (integrations/mcp). To connect Claude, ChatGPT, Codex, or another AI app to Lindy, use AI apps (integrations/lindy-mcp-server).
 - "credit" / "usage" / "limit" / "run out" → Credits and usage (account-billing/usage)
 - "seat" / "trial" / "plan" / "billing" / "price" → Seats and trials (teammate/lindy-teammate-billing)
 

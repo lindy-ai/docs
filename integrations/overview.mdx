@@ -5,29 +5,21 @@ description: 'Connect Lindy to the tools your team already uses, and control wha
 icon: 'plug'
 ---
 
-import { ConnectionsMockup } from "/snippets/connections-mockup.jsx";
+Open **Integrations** in the Lindy sidebar or in **Settings**. Use **Search apps** to find a tool by name, or start with **Popular** to see commonly used tools and what's already connected. Lindy supports **3,000+ integrations**. You can also [browse the full catalog](https://www.lindy.ai/integrations).
 
-<div className="academy-lesson">
-  <video
-    src="/lindy-brand-assets/academy/03-tools.mp4"
-    poster="/lindy-brand-assets/academy/03-tools.jpg"
-    controls
-    playsInline
-    preload="metadata"
-    aria-label="Connect your tools"
-  />
-  <p className="academy-caption">Connect your tools · 0:43</p>
-</div>
+## Connect an app
 
-Lindy supports **3,000+ integrations** and can connect to hosted MCP servers. Connect the tools you need for the job, like Google Sheets for client reports or HubSpot for lead research. Open **Integrations** in the web app to manage connections, or [browse the full catalog](https://www.lindy.ai/integrations).
+Select the app you want to use, then follow its sign-in or API key instructions. Start with the tools Lindy needs for the job, like Google Sheets for client reports or HubSpot for lead research. Some integrations let you add more than one account.
 
 ## When a tool isn't in the list
 
-Lindy supports **MCP**, so any MCP server your team runs plugs straight in.
+| Choose | When to use it |
+| --- | --- |
+| **MCP server** | The tool publishes a hosted MCP link. [Connect the server to Lindy](/integrations/mcp). |
+| **API** | The service gives you an API key or token. [Save it as a credential](/integrations/credentials#save-an-api-key-or-token). |
+| **Browser** | Lindy needs to sign in to a website to do the job. [Save a website login](/integrations/credentials#save-a-website-login) where Browser is available. |
 
-If a tool has no integration and no MCP server, Lindy still isn't stuck. It can drive the browser the way a person would, or write its own integration against the tool's API.
-
-Two more things are worth understanding: whether a connection is yours or the team's, and what Lindy is allowed to do with it.
+To use Lindy from Claude, ChatGPT, or another AI app, open **Settings → AI apps**. See [Use Lindy from other AI apps](/integrations/lindy-mcp-server).
 
 ## Personal and team connections
 
@@ -46,8 +38,6 @@ Whether Lindy asks depends on the action, where the job runs, and any saved appr
 
 ## Guardrails
 
-<ConnectionsMockup />
-
 In shared Slack threads, integration guardrails control actions that make a change, such as updating a CRM record. Use these settings to decide when Lindy should ask first.
 
 | Setting | What Lindy does in shared Slack threads |
@@ -58,18 +48,14 @@ In shared Slack threads, integration guardrails control actions that make a chan
 
 The shared Slack settings apply to writes. Read-only actions like looking up a record can run with the access already granted to Lindy.
 
-<Note>
-  A guardrail covers every account under an integration. You can't yet set one rule for your work Gmail and a different one for your personal Gmail.
-</Note>
-
 ## Approving a write in Slack
 
 When Lindy needs approval, it posts **Approve** and **Deny** buttons in the thread. The person who asked can approve their own request, and so can any workspace owner or admin. Anyone else gets a private note to ask one of them.
 
 **Approve** allows that one action and changes nothing else. **Always allow** changes the rule going forward: workspace-wide if an owner or admin clicks it, or just for that person if a member does.
 
-## Connecting and managing
+## Manage and reconnect accounts
 
-Search for the tool you want and connect it with OAuth or an API key. Every action for that tool turns on at once, so there's no action-picking step. For tools that support more than one login, like Gmail, you can add further accounts under the same integration.
+Open an integration to manage its accounts. Where available, you can add another account, rename it, change who can use it, or disconnect it.
 
-Each connection shows whether it's healthy, needs reconnecting (usually an expired token), or isn't set up yet. From a connection you can rename it, share it with the workspace (owners and admins only), or disconnect it. Removing the last account of an integration removes the integration from your list.
+If a connection appears under **Needs attention**, select **Reconnect** and sign in again. Use **Manage credentials** to see the API keys and website logins available to you.

@@ -703,7 +703,8 @@
         "pages": [
           "integrations/overview",
           "integrations/credentials",
-          "integrations/mcp"
+          "integrations/mcp",
+          "integrations/lindy-mcp-server"
         ]
       },
       {
