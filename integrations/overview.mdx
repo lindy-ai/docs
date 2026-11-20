@@ -19,7 +19,7 @@ import { ConnectionsMockup } from "/snippets/connections-mockup.jsx";
   <p className="academy-caption">Connect your tools · 0:43</p>
 </div>
 
-Lindy connects to **1,500+ integrations**, plus any MCP server: Gmail, Slack, Notion, HubSpot, Google Drive, GitHub, and the rest of your stack. Open **Integrations** to see what's connected, or click **Browse all integrations** for the full catalog.
+Lindy supports **3,000+ integrations** and can connect to hosted MCP servers. Connect the tools you need for the job, like Google Sheets for client reports or HubSpot for lead research. Open **Integrations** in the web app to manage connections, or [browse the full catalog](https://www.lindy.ai/integrations).
 
 ## When a tool isn't in the list
 
@@ -40,22 +40,23 @@ A personal connection is private to you. Your Lindy uses it for your own work, y
 
 An owner or admin can share one of their personal connections with the whole workspace. From then on, everyone's Lindy reads that tool as that account and acts with its permissions. Members can see team connections but can't change them.
 
+## When Lindy asks for approval
+
+Whether Lindy asks depends on the action, where the job runs, and any saved approval settings. Some actions can require approval in a personal conversation or during a routine. If you want to review a result yourself, ask Lindy to leave it as a draft. For a routine, [start with a dry run](/teammate/routines#test-with-a-dry-run).
+
 ## Guardrails
 
 <ConnectionsMockup />
 
-Guardrails decide what Lindy can do without asking. This is the setting that matters most for Teammate. Each integration has one:
+In shared Slack threads, integration guardrails control actions that make a change, such as updating a CRM record. Use these settings to decide when Lindy should ask first.
 
-| Setting | What Lindy does |
+| Setting | What Lindy does in shared Slack threads |
 | --- | --- |
-| **Always allow** | Writes without asking |
+| **Always allow** | Allows writes without this approval step |
 | **Require approval** | Asks in Slack before writing |
-| **Don't offer** | Never writes with this tool |
+| **Don't offer** | Hides write actions for this tool |
 
-Two things to know:
-
-- **Reads are never guarded.** Checking your calendar or searching your email always just works. Guardrails only cover writes.
-- **Guardrails apply in shared Slack threads only.** Your web app chat, Slack DMs with Lindy, and iMessage and SMS aren't guarded.
+The shared Slack settings apply to writes. Read-only actions like looking up a record can run with the access already granted to Lindy.
 
 <Note>
   A guardrail covers every account under an integration. You can't yet set one rule for your work Gmail and a different one for your personal Gmail.
