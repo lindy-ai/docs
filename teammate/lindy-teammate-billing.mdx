@@ -7,30 +7,43 @@ icon: "credit-card"
 
 <div className="billing-guide" />
 
+## Plans and credits
+
+<div className="billing-plans not-prose">
+  <section className="billing-plan">
+    <h3>Free</h3>
+    <p className="billing-plan-price">&#36;0</p>
+    <p>&#36;50 in credits to try Lindy. Credits last seven days.</p>
+    <a href="https://chat.lindy.ai/signup">Try for free</a>
+  </section>
+  <section className="billing-plan billing-plan-team">
+    <h3>Team</h3>
+    <p className="billing-plan-price">&#36;29.99 <small>per seat per month</small></p>
+    <p>Starts at 3,000 monthly credits per seat, shared across your workspace.</p>
+    <a href="https://www.lindy.ai/pricing">See current pricing</a>
+  </section>
+  <section className="billing-plan">
+    <h3>Enterprise</h3>
+    <p className="billing-plan-price">Custom</p>
+    <p>Custom credits and billing, with a signed BAA for HIPAA requirements.</p>
+    <a href="https://www.lindy.ai/contact-sales">Book a demo</a>
+  </section>
+</div>
+
+### Top-ups
+
+Admins can change the plan or buy top-ups in **Settings → Billing**. The standard top-up rate is **$10 for 1,000 credits**. Monthly credits reset each cycle, and purchased top-ups stay available until you use them.
+
+See [Credits and usage](/account-billing/usage) for task cost estimates, usage reports, and per-person limits.
+
 ## Seats
 
 On a paid workspace, every active user is billed as one seat. All seats appear on one workspace bill, and each paid seat adds monthly credits to the team's shared pool.
 
-New teammates who first join through Slack get seven days before their seat is billed. Returning teammates go straight to a paid seat.
+New teammates who first join through Slack get seven days before their seat is billed. The trial is available once per teammate.
 
-Admins manage seats in **Settings → Members and groups**. If you remove a paid seat, it stays active through the end of the billing cycle you've already paid for.
-
-## Plans and credits
-
-| Plan | How it works |
-| --- | --- |
-| **Free** | Start with $50 in credits to try Lindy. The credits last seven days. |
-| **Team** | Choose a monthly credit allowance per seat. A 5,000-credit seat, for example, costs $49.99 per month. |
-| **Enterprise** | Get custom credits and billing for your workspace. |
-
-Admins can change the plan or buy top-up credits in **Settings → Billing**. Monthly credits reset each billing cycle. Purchased top-ups stay available until you use them.
-
-See [Lindy pricing](https://www.lindy.ai/pricing) for all current options and [Credits and usage](/account-billing/usage) to track spending or set per-person limits.
+Admins manage seats in **Settings → Members and groups** and can review billing in **Settings → Billing**.
 
 ## Enterprise with a signed BAA
 
-If your team has HIPAA requirements, Lindy Enterprise includes a signed **Business Associate Agreement (BAA)**, plus SSO, SCIM, and audit logs.
-
-<Card title="Book a demo" icon="calendar" href="https://www.lindy.ai/contact-sales">
-  Talk with sales about your BAA, security requirements, and a credit plan for your team.
-</Card>
+Lindy Enterprise includes a signed **Business Associate Agreement (BAA)** for teams with HIPAA requirements, plus SSO, SCIM, and audit logs. [Talk to sales about Enterprise](https://www.lindy.ai/contact-sales).
