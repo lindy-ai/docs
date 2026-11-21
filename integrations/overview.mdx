@@ -5,6 +5,10 @@ description: 'Connect Lindy to the tools your team already uses, and control wha
 icon: 'plug'
 ---
 
+import { IntegrationLogoGrid } from "/snippets/integration-logo-grid.jsx";
+
+<IntegrationLogoGrid />
+
 ## Find Integrations
 
 Open **Integrations** in the Lindy sidebar. If you don't see it, expand **Customize** in the sidebar and select **Integrations**. You can also go to **Settings → Integrations**.
@@ -19,9 +23,11 @@ Open **Integrations** in the Lindy sidebar. If you don't see it, expand **Custom
 
 Use **Search apps** to find a tool by name, or start with **Popular** to see commonly used tools and what's already connected. Lindy supports **3,000+ integrations**. You can also [browse the full catalog](https://www.lindy.ai/integrations).
 
-<Frame>
-  <img src="/lindy-brand-assets/integrations/integrations-page.jpg" alt="The Integrations page showing Search apps and the MCP server, API, and Browser setup options" width="752" height="269" />
-</Frame>
+<div className="integrations-setup">
+  <Frame>
+    <img className="integrations-setup-screenshot" src="/lindy-brand-assets/integrations/integrations-page.jpg" alt="The Integrations page showing Search apps and the MCP server, API, and Browser setup options" width="752" height="269" />
+  </Frame>
+</div>
 
 Select the app you want to use, then follow its sign-in or API key instructions. Start with the tools Lindy needs for the job, like Google Sheets for client reports or HubSpot for lead research. Some integrations let you add more than one account.
 
