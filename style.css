@@ -1441,6 +1441,12 @@ figure {
   overflow: hidden;
 }
 
+#content-area .integrations-setup img.integrations-setup-screenshot {
+  box-sizing: border-box;
+  padding: clamp(16px, 3.6vw, 28px) !important;
+  background: #f5f5f3;
+}
+
 /* Remove any wrapper padding that might create buffers */
 div[style*="text-align: center"] img,
 div[style*="justify-content: center"] img,
@@ -1730,13 +1736,86 @@ html:not(.dark) #navigation-items a:hover {
 /* Lindy 2026 refinements: blue accent, no H1, edgeless callouts          */
 /* ===================================================================== */
 
-/* Never render a page H1 title */
+/* Hide page titles by default. */
 h1 { display: none !important; }
 
-/* Text-first Booking links guide uses the native page title. */
+/* Guides that use the native page title. */
 body:has(.booking-links-guide) h1#page-title { display: block !important; }
 body:has(.meetings-guide) h1#page-title { display: block !important; }
 body:has(.mini-apps-guide) h1#page-title { display: block !important; }
+body:has(.credits-usage-guide) h1#page-title { display: block !important; }
+body:has(.billing-guide) h1#page-title { display: block !important; }
+
+.billing-plans {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 1.25rem 0;
+}
+
+.billing-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  border: 1px solid #e4e1da;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.billing-plan-team {
+  border-color: #ddba64;
+  background: linear-gradient(175deg, #fff4d9, #fff 65%);
+}
+
+.billing-plans .billing-plan h3[id],
+.billing-plan p {
+  margin: 0 !important;
+}
+
+.billing-plan .billing-plan-price {
+  font: 1.65rem/1.15 Georgia, serif;
+}
+
+.billing-plan .billing-plan-description {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.billing-plan-price small {
+  display: block;
+  margin-top: 0.2rem;
+  font: 0.75rem system-ui, sans-serif;
+}
+
+.billing-plan > a {
+  margin-top: auto;
+  padding: 0.45rem 0.65rem;
+  border-radius: 7px;
+  background: #f0eeea;
+  color: #202020;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.billing-plan:last-child > a {
+  background: #fae8b8;
+}
+
+.dark .billing-plan {
+  border-color: #46423a;
+  background: #242320;
+}
+
+.dark .billing-plan-team {
+  border-color: #a7833f;
+  background: linear-gradient(175deg, #3b301c, #242320 65%);
+}
+
+@media (max-width: 580px) {
+  .billing-plans { grid-template-columns: 1fr; }
+}
 
 /* Blue is the single accent */
 :root:not(.dark) {
