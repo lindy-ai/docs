@@ -1441,41 +1441,6 @@ figure {
   overflow: hidden;
 }
 
-/* Integrations guide */
-.integrations-logo-grid {
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: clamp(4px, 1.2vw, 10px);
-  padding: clamp(10px, 2.4vw, 22px);
-  margin: 1.75rem 0 2.5rem;
-  border: 1px solid #eae5db;
-  border-radius: 20px;
-  background: radial-gradient(ellipse at 35% 0%, #fcf0d8, transparent 76%), #f7f6f2;
-}
-
-.integrations-logo-tile {
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  border: 1px solid #ebe6de;
-  border-radius: clamp(7px, 1.65vw, 13px);
-  background: #fff;
-  box-shadow: 0 2px 4px rgb(49 37 17 / 5%);
-}
-
-.integrations-logo-tile img.integrations-logo {
-  display: block;
-  width: 64%;
-  height: 64%;
-  margin: 0 !important;
-  object-fit: contain;
-}
-
-.dark .integrations-logo-grid {
-  border-color: #47433a;
-  background: radial-gradient(ellipse at 35% 0%, #3b3124, transparent 76%), #242321;
-}
-
 #content-area .integrations-setup img.integrations-setup-screenshot {
   box-sizing: border-box;
   padding: clamp(16px, 3.6vw, 28px) !important;
