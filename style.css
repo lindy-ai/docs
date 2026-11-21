@@ -1441,6 +1441,12 @@ figure {
   overflow: hidden;
 }
 
+.usage-credit-illustrations {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
+
 #content-area .integrations-setup img.integrations-setup-screenshot {
   box-sizing: border-box;
   padding: clamp(16px, 3.6vw, 28px) !important;
