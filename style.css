@@ -1744,6 +1744,7 @@ body:has(.booking-links-guide) h1#page-title { display: block !important; }
 body:has(.meetings-guide) h1#page-title { display: block !important; }
 body:has(.mini-apps-guide) h1#page-title { display: block !important; }
 body:has(.credits-usage-guide) h1#page-title { display: block !important; }
+body:has(.billing-guide) h1#page-title { display: block !important; }
 
 /* Blue is the single accent */
 :root:not(.dark) {

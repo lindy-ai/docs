@@ -1,78 +1,36 @@
 ---
 title: "Billing"
 sidebarTitle: "Billing"
-description: "Lindy plans, free credits, seats, and the credit pool your whole team shares."
+description: "How paid seats work, what each plan includes, and how to get a signed BAA on Enterprise."
 icon: "credit-card"
 ---
 
-Lindy is priced per person. Each teammate gets a seat, and your whole team draws from one shared pool of credits.
+<div className="billing-guide" />
 
-## Plans
+## Seats
 
-See **Settings → Billing** for current plans, prices, and included credits. For Enterprise, [contact us](mailto:support@lindy.ai).
+On a paid workspace, every active user is billed as one seat. All seats appear on one workspace bill, and each paid seat adds monthly credits to the team's shared pool.
 
-## Try Lindy for free
+New teammates who first join through Slack get seven days before their seat is billed. Returning teammates go straight to a paid seat.
 
-New users can start with free credits, no credit card required. The free credits last 7 days. Choose a paid plan to keep using Lindy after that.
+Admins manage seats in **Settings → Members and groups**. If you remove a paid seat, it stays active through the end of the billing cycle you've already paid for.
 
-## How someone becomes a seat
+## Plans and credits
 
-A person takes a seat when they:
+| Plan | How it works |
+| --- | --- |
+| **Free** | Start with $50 in credits to try Lindy. The credits last seven days. |
+| **Team** | Choose a monthly credit allowance per seat. A 5,000-credit seat, for example, costs $49.99 per month. |
+| **Enterprise** | Get custom credits and billing for your workspace. |
 
-- Sign up to Lindy directly
-- Join your workspace by signing up
-- @mention Lindy in your team's Slack for the first time
+Admins can change the plan or buy top-up credits in **Settings → Billing**. Monthly credits reset each billing cycle. Purchased top-ups stay available until you use them.
 
-<Note>
-  New teammates who join through Slack get a 7-day free trial before their seat is billed. The free week is one-time per teammate; returning teammates do not get another trial.
-</Note>
+See [Lindy pricing](https://www.lindy.ai/pricing) for all current options and [Credits and usage](/account-billing/usage) to track spending or set per-person limits.
 
-### The Slack trial
+## Enterprise with a signed BAA
 
-1. Someone new @mentions Lindy in Slack.
-2. Lindy sets up an account for them under your workspace.
-3. Every admin gets an email: who joined, that they're free for a week, and a one-click link to remove them.
-4. The new teammate gets a Slack DM to finish setting up their own Lindy.
-5. Remove someone's seat and, if they @mention Lindy again, it tells them it can't help and pings an admin. It won't quietly re-add them.
+If your team has HIPAA requirements, Lindy Enterprise includes a signed **Business Associate Agreement (BAA)**, plus SSO, SCIM, and audit logs.
 
-A paid seat stays billed until an admin removes it. You keep it through the end of the current cycle, with no mid-cycle proration.
-
-## Your shared credit pool
-
-Everyone in the workspace draws from one credit pool. The pool includes:
-
-- Your base plan's credits
-- The credits included with each teammate's seat
-- Any top-ups an admin buys
-
-### Spend caps
-
-Admins can cap how much any teammate uses from the shared pool. Once the limit is reached, Lindy pauses further credit-using actions for that person until the next cycle or a higher cap. A task already running can finish and take usage beyond the cap. Without a cap, that teammate can use the available workspace balance.
-
-### Top-ups
-
-Admins can buy extra workspace credits from **Settings → Billing**, where current top-up pricing is shown. Monthly plan credits reset at the start of each billing cycle and don't roll over. Purchased top-up credits stay available until you use them.
-
-If the workspace runs out of credits, Lindy pauses credit-using actions until the next reset. Admins can top up or move to a plan with more credits to continue sooner.
-
-## Plan features
-
-Lindy supports major AI models, and you can choose which model to use.
-
-A few things depend on your plan:
-
-- SSO, SCIM, audit logs, and HIPAA/BAA on Enterprise
-- Live onboarding on Pro and up
-- Computer use on Pro and Max
-- Connected inbox limits vary by plan; see **Settings → Billing** for current details
-
-## Relevant Docs
-
-<CardGroup cols={2}>
-  <Card title="Set up Lindy" icon="slack" href="/teammate/setup">
-    Get Lindy into your team's Slack and link everyone
-  </Card>
-  <Card title="Routines" icon="bolt" href="/teammate/routines">
-    Recurring work Lindy runs on a schedule
-  </Card>
-</CardGroup>
+<Card title="Book a demo" icon="calendar" href="https://www.lindy.ai/contact-sales">
+  Talk with sales about your BAA, security requirements, and a credit plan for your team.
+</Card>
