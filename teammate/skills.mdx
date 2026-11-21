@@ -1,7 +1,7 @@
 ---
 title: "Skills"
 sidebarTitle: "Skills"
-description: "Teach Lindy how you work: reusable playbooks it picks up on its own when a request calls for them."
+description: "Save instructions for work you repeat and share skills with your workspace."
 icon: "graduation-cap"
 ---
 
@@ -17,15 +17,11 @@ icon: "graduation-cap"
   <p className="academy-caption">Teach Lindy a repeatable process · 0:44</p>
 </div>
 
-A skill is a playbook you teach Lindy: a named set of instructions for a procedure you repeat, like *how I write my weekly report*, *how I triage my inbox*, or *how I prep for a customer call*. Describe the process once, and from then on Lindy picks the right skill whenever a request calls for it. You never have to remember to invoke one.
+A skill is a set of instructions Lindy can reuse for a job, like writing your weekly report, sorting your inbox, or preparing for customer calls. Write down what to do and when the instructions apply. Lindy can then use the skill when a request matches.
 
-Think of skills as everything Lindy can do, plus what it can learn from you.
+## Find your skills
 
-## How to Set It Up
-
-<Note>
-  Open **Skills** from the left sidebar to see every skill Lindy has, create new ones, edit their instructions, and turn them on or off.
-</Note>
+Open **Skills** in the sidebar. If it isn't visible, expand **Customize**. Use **Personal** for your own skills and **Workspace** for skills shared with the workspace. Use **Search skills** to find one and switch between **Grid view** and **List view**.
 
 ## Create a skill
 
@@ -33,7 +29,7 @@ You can also teach a process by recording your screen or uploading a walkthrough
 
 <Tabs>
   <Tab title="In chat">
-    Tell Lindy how you want something handled, like *"When I ask for my weekly report, pull the numbers from the dashboard, lead with the top three changes, and keep it under a page."* It saves the process as a skill and uses it from then on.
+    Ask Lindy to save a skill and explain when it should use it. For example, *"Save this as my weekly reporting skill. When I ask for my weekly report, pull the numbers from the dashboard, lead with the top three changes, and keep it under a page."*
 
     <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
       <div className="video-card">
@@ -49,55 +45,21 @@ You can also teach a process by recording your screen or uploading a walkthrough
     </div>
   </Tab>
   <Tab title="On the Skills page">
-    Click **New skill**, give it a name and a description, and write the instructions. The description matters: it's how Lindy decides when the skill applies.
+    Select **New skill** and enter a name in lowercase with dashes between words, such as `weekly-report`. If you can create workspace skills, choose **Create in the team folder** to share the skill with the workspace.
 
-    <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-      <div className="video-card">
-        <video
-          src="/lindy-brand-assets/teammate/createskillonpage.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          style={{ display: 'block', width: '100%', borderRadius: '16px', maxHeight: 'none' }}
-        />
-      </div>
-    </div>
+    Select **Create**. In **Memory**, edit the starter `SKILL.md` and save it. Describe when Lindy should use the skill, then write the steps it should follow and what it should return.
   </Tab>
 </Tabs>
 
-## Three kinds of skills
+## Edit or share a skill
 
-<CardGroup cols={1}>
-  <Card title="Your skills" icon="user">
-    Personal to you. Lindy uses them only for your requests.
-  </Card>
-  <Card title="Team skills" icon="users">
-    Shared across your workspace, so everyone's Lindy works the same way. Managed by workspace admins.
-  </Card>
-  <Card title="Built-in skills" icon="wand-magic-sparkles">
-    Ready to use out of the box. Browse the library and install the ones you want.
-  </Card>
-</CardGroup>
+Open a skill you can manage and choose **Edit in Memory** to change its instructions. If you have permission to manage workspace skills, **Add to workspace** makes a personal skill available to the team.
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/teammate/skills-scopes-discover.mp4"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px', maxHeight: 'none' }}
-    />
-  </div>
-</div>
-
-You can customize any built-in skill by making your own version, then editing it like a skill you wrote yourself.
+Look under **Personal** for built-in skills. Open one to read what it does and select **Install** if you want to add it.
 
 ## How Lindy picks a skill
 
-Lindy always sees the list of available skills, just their names and descriptions. It loads a skill's full instructions only when the skill is actually relevant to what you asked. That way it has the right expertise on hand without slowing anything down.
+Lindy uses a skill's name and description to decide when to read its instructions. If it misses a skill you expected it to use, make the description more specific about the requests and tools it covers.
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
   <div className="video-card">
@@ -112,12 +74,7 @@ Lindy always sees the list of available skills, just their names and description
   </div>
 </div>
 
-## Good to know
-
-- **Turn skills off, don't delete them**: flip a skill off on the Skills page when you want Lindy to stop using it but might want it back.
-- **Descriptions do the routing**: if Lindy isn't picking a skill when you expect, make its description more specific about when it applies.
-
-## Relevant Docs
+## Related guides
 
 <CardGroup cols={2}>
   <Card title="Routines" icon="bolt" href="/teammate/routines">

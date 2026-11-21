@@ -1,0 +1,41 @@
+---
+title: 'Use Lindy from other AI apps'
+sidebarTitle: 'AI apps'
+description: 'Connect Claude, ChatGPT, Codex, or another AI app to your Lindy workspace over MCP.'
+icon: 'plug'
+keywords: ['AI apps', 'Lindy MCP server', 'remote MCP', 'Claude', 'ChatGPT', 'Codex', 'Cursor', 'VS Code']
+---
+
+Connect an AI app to Lindy so it can look up your threads, meetings, and files, or hand work to Lindy from the app you already use. If you want to give Lindy access to tools from another product, see [Connect an MCP server to Lindy](/integrations/mcp).
+
+## Connect an AI app
+
+<Steps>
+  <Step title="Open AI apps in Lindy">
+    Go to **Settings → AI apps** in the workspace you want to connect. Copy the **Server URL** (`https://api.lindy.ai/mcp`). If you don't see **AI apps**, this feature may not be available in that workspace.
+  </Step>
+  <Step title="Follow the setup for your app">
+    Choose the tab for your app in Lindy, such as **Claude Desktop**, **ChatGPT web**, **Claude Code**, **Cursor**, **Codex**, or **VS Code**. Follow the instructions there. For another MCP client, use **Other** and add the URL as a remote MCP server with OAuth.
+  </Step>
+  <Step title="Review the requested access">
+    Sign in to Lindy, select your workspace, and review the access the app requests. You can allow that level or cancel. The sign-in screen shows what the app will be able to do.
+  </Step>
+  <Step title="Check the connection">
+    Ask the app to run Lindy's `get_connection` tool and check that it returns the workspace you intended. In Lindy, check that the app appears under **Connected apps**.
+  </Step>
+</Steps>
+
+## Access levels
+
+| Access | What the app can do |
+| --- | --- |
+| **Read only** | Read threads you can access, find routines, skills, and workflows, and search your meetings and files. |
+| **Read and act** | Look up the same information, start and reply to threads, run or test routines, create or delete routines and skills, and build, publish, share, or turn on workflows. This access can use workspace credits and connected accounts. |
+
+Access is limited to the workspace you selected and what your Lindy account can see or do there. When something needs your approval, approve it in Lindy.
+
+## Review or disconnect an app
+
+In **Settings → AI apps → Connected apps**, check each app's access level and when it last used the connection. Select **Disconnect** beside an app to revoke its access to that workspace, or **Disconnect all** to revoke every listed connection.
+
+If sign-in succeeds but `get_connection` fails, check that the app appears under **Connected apps** and that you picked the right workspace. Then follow the setup steps on your app's tab again.

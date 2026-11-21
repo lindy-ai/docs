@@ -1,38 +1,42 @@
 ---
-title: 'Understanding Your Usage'
+title: 'Credits and usage'
 icon: 'gauge-high'
-sidebarTitle: 'Usage & Limits'
-description: 'How your team shares one pool of credits, why Lindy pauses on a heavy task, and what to do when you need more'
+sidebarTitle: 'Credits and usage'
+description: "Estimate what a task might cost, check what it used, and get work moving again if Lindy pauses."
 keywords: ['usage', 'limits', 'usage warning', 'credits', 'shared credit pool', 'spend cap', 'credit limit', 'teammate credits', 'team usage', 'slack', 'billing', 'over limit', 'paused task', 'top-up']
 ---
 
+<div className="credits-usage-guide" />
+
 <Frame>
-  <img src="/lindy-brand-assets/teammate/usage-credits-topups-banner.jpg" alt="One pool, whole team: shared credit usage with Set credit allocations, Pause routines, and Add credits controls" />
+  <img src="/lindy-brand-assets/account-billing/usage/one-pool-whole-team.png" alt="One pool, whole team. Team credits used, with Set credit allocations, Pause routines, and Add credits controls." width="1680" height="944" />
 </Frame>
 
-Credits cost **$0.01 per credit on base plans**. Your whole team draws from **one shared pool of credits**. Every seat adds to it, and every Lindy your team works with spends from it: the shared Lindy out in your channels, and the private Lindy in each person's DMs.
-
-This page covers what actually uses credits, why Lindy sometimes pauses to check in, and what to do if your team needs more. For seats, pricing, and trials, see [Lindy Teammate Billing](/teammate/lindy-teammate-billing).
-
-## Usage Warning: Why Am I Seeing This?
-
-Lindy paused a task because it's using significantly more resources than usual. This is a **protection for your team**, not an error.
-
-When a task starts drawing more from the pool than expected, Lindy stops and checks in before continuing. It asks right where you delegated the work: in the Slack thread if you @mentioned it in a channel, or in your DM if you asked there.
-
-You can **continue** (the task finishes normally) or **stop** (no additional credits are used). If you stop, the thread stays open and you can pick it back up later.
-
-<Tip>
-You're not doing anything wrong. The warning just makes sure your team stays in control of a pool everyone shares.
-</Tip>
+Credits measure the work Lindy does. Start with the estimates below, then [check your usage](#checking-your-usage) to see what work used or [find out what to do if work stops](#what-happens-when-your-team-hits-the-limit).
 
 ## Credit Usage by Feature
 
-Credits pay for the work Lindy does. What follows is a general sense of what each kind of work draws from your pool.
+| Type of work | Estimated credits | Examples |
+| --- | --- | --- |
+| Everyday requests | 2–250 | Summarize a document or look up a record. |
+| Deeper work | 250–1,000 | Research a competitor or turn a week of calls into a proposal. |
+| Large builds | 1,000–2,500 | Build a dashboard from CRM and analytics data. |
+
+These are [published estimates](https://www.lindy.ai/pricing#how-usage-works). The model, how much context Lindy reads, the length of the output, and extra model or tool calls all affect the actual charge. A connected-app lookup with a zero tool charge can use credits when the model reads or summarizes the result.
+
+[Routines](/teammate/routines) can spend credits each time they run. Meeting recording and [phone calls](/features/phone-line) have separate charging rules.
+
+### How the shared pool works
+
+Paid seats add credits to one workspace pool. Requests in channels and DMs, along with automated work, draw from it. Usage usually counts toward the person who makes the request, including their follow-up in a shared thread. Sponsored group work can count toward the sponsor. A [personal cap](#spend-caps-per-teammate) limits how much one person can draw.
+
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/how-the-shared-pool-works.png" alt="Every paid seat adds to the shared pool. Team and personal Lindy both draw from it." width="1208" height="504" loading="lazy" />
+</Frame>
 
 ### Your team's Lindy, in your channels
 
-Shared with the whole team, drawing on your approved team sources. This is where most of a team's credits go, because everyone @mentions the same Lindy.
+Your whole team can ask Lindy to work with approved team sources. The table shows typical credit impact by task.
 
 | What Lindy does | Credit impact |
 |---|---|
@@ -40,11 +44,11 @@ Shared with the whole team, drawing on your approved team sources. This is where
 | Pulling a report or a lookup from a connected tool | Low |
 | Drafting a client update, summary, or document | Moderate |
 | Team routines, priced by how often they run | Moderate |
-| Deep research across channels and Drive folders | **Varies** |
+| Deep research across channels and Drive folders | Varies |
 
 ### Your personal Lindy, in your DMs
 
-Private to each person, and much lighter. These run on their own to keep you ahead of your day.
+Personal Lindy handles private requests and automatic updates such as daily briefs and meeting prep.
 
 | What Lindy does | Credit impact |
 |---|---|
@@ -54,38 +58,107 @@ Private to each person, and much lighter. These run on their own to keep you ahe
 | Meeting prep briefings | Very low |
 | Catch-up summaries when you're @mentioned in a busy channel | Low |
 | Meeting recaps and notes | Low |
-| Ad hoc research you delegate in a DM | **Varies** |
-| [Phone calls](/features/phone-line) | **From 25 credits per minute** |
+| Ad hoc research you delegate in a DM | Varies |
+| [Phone calls](/features/phone-line) | From 25 credits per minute |
 
-Your Lindy's phone number itself is a separate monthly fee, billed with your plan.
+A purchased Lindy phone number has a separate monthly fee, billed with your plan.
 
-<Note>
-Both Lindys spend from the same pool. A busy channel where the whole team @mentions Lindy will move the number faster than any one person's DMs.
-</Note>
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/phone-calls.png" alt="Phone calls start at 25 credits per minute." width="1208" height="364" loading="lazy" />
+</Frame>
 
-Your monthly plan credits reset at the start of each billing cycle and do not roll over. Purchased top-up credits remain available until you use them.
+Monthly plan credits reset each billing cycle. Purchased top-ups carry over until used. Admins can see current top-up prices in **Settings → Billing**.
+
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/plan-credits-and-top-ups.png" alt="Plan credits refill every cycle. Top-up credits stay until used." width="1208" height="664" loading="lazy" />
+</Frame>
 
 ## Checking your usage
 
-To see your workspace's total, go to **Settings → Billing** and scroll to the usage section.
+Owners and admins can see the workspace breakdown under **Settings → Billing**. If your settings sidebar has a separate **Usage** item, open **Settings → Usage** for the breakdown.
 
-To see it person by person, open **Settings → Members**. The **Credits** column shows what each teammate has drawn this cycle, and sorting by it is the fastest way to find out where your pool is going.
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/find-usage.png" alt="Usage in the workspace section of the Settings sidebar." width="1208" height="778" loading="lazy" />
+</Frame>
+
+Choose a date range and use the **All users** filter to narrow the view. The summary shows credits used, the credit balance, and the daily average.
+
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/usage-totals.png" alt="The date and user filters above credits used, credit balance, and daily average." width="1208" height="600" loading="lazy" />
+</Frame>
+
+Under **Where credits went**, hover over or select a day on the chart to see its usage.
+
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/usage-breakdown.png" alt="The Where credits went chart showing how many credits were used each day." width="1208" height="916" loading="lazy" />
+</Frame>
+
+Use **By agent**, **By member**, or **By model** to see which used the most credits.
+
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/usage-by-agent-member-model.png" alt="The By agent, By member, and By model tabs above the credit breakdown." width="1208" height="610" loading="lazy" />
+</Frame>
+
+For a quick balance check, look below **Rewards** at the bottom of the Lindy sidebar.
+
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/sidebar-credit-balance.png" alt="The remaining credit balance below Rewards in the Lindy sidebar." width="1208" height="382" loading="lazy" />
+</Frame>
+
+To compare teammates in the member list, open **Settings → Members and groups** and select the **Credits** column to sort by usage.
+
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/members-credits-sorted.png" alt="The live Members and groups table sorted by Credits, with names and usage values covered." width="877" height="306" loading="lazy" />
+</Frame>
 
 ## Spend caps per teammate
 
-Admins can cap how much any one person draws from the shared pool. It's the main tool for keeping one heavy user from spending the team's month.
+Admins can set a monthly credit cap for each teammate.
+
+In **Settings → Members and groups**, open the **⋯** menu on a member's row and choose **Edit credit limit**.
 
 <Frame>
-  <img src="/lindy-brand-assets/teammate/edit-credit-limit.png" alt="Setting a per-teammate credit limit from the Members table" />
+  <img src="/lindy-brand-assets/account-billing/usage/credit-limit-menu.png" alt="The member row menu in Lindy with Edit credit limit highlighted." width="889" height="157" loading="lazy" />
 </Frame>
 
-In **Settings → Members**, click the **⋯** menu on a row and choose **Edit credit limit**. Once the limit is reached, Lindy pauses further credit-using actions for that person. A task already running can finish and take usage beyond the cap. Without a cap, that teammate can use the available workspace balance.
+Turn on **Limit credit consumption**, enter a monthly limit, then select **Update credit limit**.
+
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/credit-limit-example.png" alt="Credit limit dialog with Limit credit consumption on, an example limit of 5,000 credits, and the Update credit limit button." width="1208" height="850" loading="lazy" />
+</Frame>
+
+- At the limit, Lindy pauses new credit-using actions for that person.
+- A task already running can finish past the cap. For example, someone who has used 90 of a 100-credit cap can finish a 50-credit task. Their usage reaches 140, and they cannot start another credit-using task until the cap is raised or the next cycle starts.
+- With no cap, a teammate can use the whole workspace balance.
+
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/at-the-credit-limit.png" alt="At a teammate's credit limit, new credit-using work pauses and running tasks can finish." width="1208" height="508" loading="lazy" />
+</Frame>
 
 ## What Happens When Your Team Hits the Limit?
 
-1. **Lindy pauses credit-using work** when the pool runs out. Admins can buy a top-up or change plans if the team needs more credits before the next reset.
-2. **Work can continue once credits are available again**, whether from a top-up, a plan change, or the next billing cycle.
-3. **Your monthly plan credits reset at the start of each billing cycle.** Unused plan credits do not roll over; purchased top-up credits remain until used.
+| What happened | What to do |
+| --- | --- |
+| Lindy asks to keep spending on a task | [Choose **Continue** or **Stop**](#usage-warning-why-am-i-seeing-this). |
+| You reached your member cap | Ask an owner or admin to raise it, or wait for the next cycle. A workspace top-up leaves your personal cap in place. |
+| The workspace ran out of credits | An owner or admin can buy a top-up or change the plan in **Settings → Billing**. |
+
+Some billing interruptions require an updated payment method or a plan change. Eligible runs can resume after billing is fixed. If a run expires, check what it already completed before rerunning it.
+
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/when-the-pool-runs-out.png" alt="When the pool is empty, buy a top-up, change plans, or wait for the reset." width="1208" height="636" loading="lazy" />
+</Frame>
+
+### Usage Warning: Why Am I Seeing This?
+
+When spending checks are enabled for your workspace, Lindy can pause a task that's using more credits than usual. If you asked in Slack, look for the prompt in the channel thread or DM where you delegated it.
+
+- Select **Continue** to let Lindy finish the task.
+- Select **Stop** to end work on that run. Credits for work already done can still appear in usage.
+
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/continue-or-stop.png" alt="Continue lets Lindy finish the task. Stop ends further work on the run." width="1208" height="464" loading="lazy" />
+</Frame>
 
 <Accordion title="What if we need more before the pool resets?">
 Admins have two options:
@@ -102,11 +175,11 @@ Yes. Credits belong to the workspace, not to each person, and every seat adds it
 New users can start with free credits, no credit card required. The free credits last 7 days.
 </Accordion>
 
-If your team is regularly hitting the limit, [reach out](mailto:support@lindy.ai) and we'll find the right fit.
+If your team keeps hitting the limit, [reach out](mailto:support@lindy.ai) and we'll find the right fit.
 
 ## Credit Optimization
 
-To make your team's credits go further, try these adjustments.
+Try these ways to make your team's credits go further.
 
 <AccordionGroup>
   <Accordion title="Scope your team sources tightly">
@@ -149,19 +222,17 @@ To make your team's credits go further, try these adjustments.
   </Accordion>
 
   <Accordion title="Remove seats you aren't using">
-    A seat stays billed until an admin removes it, and you keep it through the end of the current cycle with no mid-cycle proration. When someone leaves the team, remove them in **Settings → Members**.
-
-    If a removed person @mentions Lindy again, it tells them it can't help and pings an admin. It won't quietly re-add them.
+    When someone leaves the team, manage their seat in **Settings → Members and groups**. Review the workspace subscription in **Settings → Billing**.
   </Accordion>
 
   <Accordion title="Check usage weekly">
-    A quick look at **Settings → Billing** once a week turns an end-of-month surprise into a small adjustment you make on a Tuesday. Sorting **Settings → Members** by the **Credits** column is how you notice one person or one routine burning more than you expected.
+    Check the [workspace usage breakdown](#checking-your-usage) each week. Sort **Settings → Members and groups** by **Credits** to see which teammates are using the most.
   </Accordion>
 </AccordionGroup>
 
-<Tip>
-You don't have to catch all of this yourself. If a single task starts running unusually heavy, Lindy pauses and checks in before continuing. See [Usage Warning](#usage-warning-why-am-i-seeing-this) above.
-</Tip>
+<Frame>
+  <img src="/lindy-brand-assets/account-billing/usage/credit-optimization-tips.png" alt="Eight ways to make credits go further." width="1208" height="698" loading="lazy" />
+</Frame>
 
 ## Relevant Docs
 

@@ -1,47 +1,31 @@
 ---
-title: 'MCP servers'
-sidebarTitle: 'MCP'
-description: 'Point Lindy at a hosted MCP server and it builds actions from the tools that server publishes.'
+title: 'Connect an MCP server to Lindy'
+sidebarTitle: 'MCP servers'
+description: 'Give Lindy access to tools from a hosted MCP server and manage which actions it can use.'
 icon: 'server'
 ---
 
-<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-  <div className="video-card">
-    <video
-      src="/lindy-brand-assets/integrations/mcp-connect.mp4"
-      width="600"
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ display: 'block', width: '100%', borderRadius: '16px' }}
-    />
-  </div>
-</div>
-
-The [built-in integrations](/integrations/overview) cover the tools most teams use. MCP covers the rest. If a product publishes an MCP server, you can hand Lindy the URL and it gains that product's tools without waiting for a native integration.
+Connect a hosted MCP server to give Lindy access to the tools it publishes. Check [Integrations](/integrations/overview) for a built-in connection first. To use Lindy from Claude, ChatGPT, Codex, or another AI app, follow [Use Lindy from other AI apps](/integrations/lindy-mcp-server).
 
 Lindy connects to hosted servers that expose a public HTTPS streamable-HTTP endpoint. On connect it reads the server's tool catalog and creates an action for every tool whose schema it supports. There is no action-picking or field-mapping step: everything supported arrives switched on, and you turn off what you don't want afterwards. A small server might add three tools; a large one adds well over a hundred.
 
 ## Adding an MCP server
 
-The only thing you must have is the server's URL. Everything else in the dialog is optional.
-
 <Steps>
   <Step title="Get the server URL">
-    The product you're connecting publishes it, usually in their docs under MCP. It looks like `https://mcp.example.com/mcp`, and it has to be reachable over public HTTPS.
+    Look for the MCP link in the tool's documentation. It should look like `https://mcp.example.com/mcp` and must be reachable over public HTTPS. Enter any static key separately under **Advanced**.
   </Step>
-  <Step title="Open the Add menu">
-    Go to **Integrations**, click **+ Add**, and choose **MCP**. The other option in that menu, **Integration**, is for the built-in tools.
+  <Step title="Open the MCP dialog">
+    In **Integrations**, select **MCP server**. If you see **+ Add**, open it and choose **MCP**.
   </Step>
-  <Step title="Fill in the server">
-    In **Connect MCP server**, paste the **Server URL** and set a **Display name**.
+  <Step title="Paste the link">
+    In **Connect MCP server**, paste the link into **MCP link** and optionally add a **Display name**.
   </Step>
-  <Step title="Add a credential only if the server needs one">
-    Servers that allow anonymous access, and servers that run their own OAuth flow, need nothing here. If yours authenticates with a static credential instead, open **Advanced** and send it as an **Authorization** bearer token, a custom header, or a query parameter.
+  <Step title="Set up authentication if needed">
+    If the server requires an API key or token, open **Advanced** and use **Send as** to select the form the provider expects. Lindy supports an Authorization bearer token, a custom header, and a query parameter. For OAuth, leave **Advanced** empty and follow the sign-in prompt after you select **Connect**.
   </Step>
   <Step title="Connect">
-    Click **Connect**. The server appears in your list with its host and its tool counts.
+    Select **Connect**. After any sign-in is complete, open the server in **Integrations** to check its tool counts.
   </Step>
 </Steps>
 
