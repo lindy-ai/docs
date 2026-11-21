@@ -1777,6 +1777,11 @@ body:has(.billing-guide) h1#page-title { display: block !important; }
   font: 1.65rem/1.15 Georgia, serif;
 }
 
+.billing-plan .billing-plan-description {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
 .billing-plan-price small {
   display: block;
   margin-top: 0.2rem;
