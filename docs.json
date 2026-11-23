@@ -4,6 +4,11 @@
   "name": "Lindy Documentation",
   "redirects": [
     {
+      "source": "/pricing",
+      "destination": "/teammate/lindy-teammate-billing",
+      "permanent": true
+    },
+    {
       "source": "/teammate/watch-and-learn",
       "destination": "/teammate/teach-a-task",
       "permanent": true
@@ -711,7 +716,6 @@
         "group": "Admin & Billing",
         "pages": [
           "start-here/team-setup",
-          "pricing",
           "account-billing/usage",
           "teammate/lindy-teammate-billing"
         ]
