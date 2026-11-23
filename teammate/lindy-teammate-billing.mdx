@@ -3,6 +3,7 @@ title: "Billing"
 sidebarTitle: "Billing"
 description: "Pick a plan, manage your team's seats, or get a signed BAA with Enterprise."
 icon: "credit-card"
+keywords: ['pricing', 'plans', 'subscription', 'seats', 'payment', 'cancellation']
 ---
 
 <div className="billing-guide" />
@@ -34,11 +35,13 @@ icon: "credit-card"
   </section>
 </div>
 
-Team pricing is shown per month. If annual billing is available for your workspace, you'll see it when you choose a plan in **Settings → Billing**. For custom annual terms, [talk to Enterprise sales](https://www.lindy.ai/contact-sales).
+You can start on Free without a credit card. To keep using Lindy after your free credits expire, choose a paid plan.
+
+Open **Settings → Billing** for the plans, prices, and included credits available to your workspace. Team pricing above is monthly. If annual billing is available for your workspace, you'll see it when you choose a plan. For custom annual terms, [talk to Enterprise sales](https://www.lindy.ai/contact-sales).
 
 ### Top-ups
 
-Need more credits? Admins can see top-up prices, buy credits, or change the plan in **Settings → Billing**. Top-ups stay in your balance until you use them.
+Need more credits? Owners and admins can see top-up prices and buy credits in **Settings → Billing**.
 
 See [Credits and usage](/account-billing/usage) to check spending, estimate task costs, and set limits.
 
@@ -50,23 +53,41 @@ Every paid seat adds monthly credits to your team's shared pool.
   <img src="/lindy-brand-assets/account-billing/billing/every-seat-adds-credits.png" alt="At 3,000 monthly credits per seat, one seat adds 3,000 credits, three add 9,000, and five add 15,000 to the shared pool." width="1208" height="584" loading="lazy" />
 </Frame>
 
-You pay for each active user as a seat on one workspace bill.
+You pay for each active user as a seat on one workspace bill. That includes teammates who join through an invite or start using Lindy in Slack.
 
 <Frame>
   <img src="/lindy-brand-assets/account-billing/billing/one-workspace-bill.png" alt="Example workspace bill for five Team seats at $29.99 each, totaling $149.95 for the month." width="1857" height="847" loading="lazy" />
 </Frame>
 
-New teammates who join through Slack get seven days free before their seat is billed. Each teammate gets one trial.
+When a teammate first joins through Slack, they get seven days free before their seat is billed. The trial is available once per teammate.
 
 <Frame>
   <img src="/lindy-brand-assets/account-billing/billing/seven-day-seat-trial.png" alt="A new teammate who joins through Slack gets seven days free and is billed on day eight. Each teammate gets one trial." width="1208" height="410" loading="lazy" />
 </Frame>
 
-To manage seats, go to **Settings → Members and groups**. To manage your plan, top-ups, and bill, go to **Settings → Billing**.
+To manage seats, go to **Settings → Members and groups**. You can also [set a credit limit for each teammate](/account-billing/usage#spend-caps-per-teammate) there.
 
 <Frame>
   <img src="/lindy-brand-assets/account-billing/billing/manage-seats-and-billing.png" alt="The workspace settings sidebar highlights Billing for plans, top-ups, and bills, and Members and groups for seats." width="1208" height="778" loading="lazy" />
 </Frame>
+
+## Manage your subscription
+
+Open **Settings → Billing** to see your plan, available credits, and billing dates.
+
+<AccordionGroup>
+  <Accordion title="How do I change plans?">
+    Workspace owners can review available plans in **Settings → Billing**. Check the price and when the change will take effect before confirming.
+  </Accordion>
+
+  <Accordion title="What happens if we cancel?">
+    Workspace owners can cancel eligible plans in **Settings → Billing**. If you cancel a paid plan, your workspace stays on that plan through the period you've paid for. After that, work that uses credits pauses until credits are available again.
+  </Accordion>
+
+  <Accordion title="How do I pay or update my card?">
+    Lindy accepts major credit and debit cards through Stripe. In **Settings → Billing**, find **Payment method** to add or update a card.
+  </Accordion>
+</AccordionGroup>
 
 ## Enterprise with a signed BAA
 
@@ -75,3 +96,5 @@ Get a signed **Business Associate Agreement (BAA)** for your team's HIPAA requir
 <Frame>
   <img src="/lindy-brand-assets/account-billing/billing/enterprise-signed-baa.png" alt="Enterprise includes a signed Business Associate Agreement, single sign-on, SCIM user provisioning, and audit logs." width="1208" height="686" loading="lazy" />
 </Frame>
+
+See [Security](/resources/security) for how Lindy protects your data and [integration approvals](/integrations/overview#when-lindy-asks-for-approval) for when Lindy asks before making changes.

@@ -67,12 +67,6 @@ A purchased Lindy phone number has a separate monthly fee, billed with your plan
   <img src="/lindy-brand-assets/account-billing/usage/phone-calls.png" alt="Phone calls start at 25 credits per minute." width="1208" height="364" loading="lazy" />
 </Frame>
 
-Monthly plan credits reset each billing cycle. Purchased top-ups carry over until used. Admins can see current top-up prices in **Settings → Billing**.
-
-<Frame>
-  <img src="/lindy-brand-assets/account-billing/usage/plan-credits-and-top-ups.png" alt="Plan credits refill every cycle. Top-up credits stay until used." width="1208" height="664" loading="lazy" />
-</Frame>
-
 ## Checking your usage
 
 Owners and admins can see the workspace breakdown under **Settings → Billing**. If your settings sidebar has a separate **Usage** item, open **Settings → Usage** for the breakdown.
@@ -141,7 +135,7 @@ Turn on **Limit credit consumption**, enter a monthly limit, then select **Updat
 | --- | --- |
 | Lindy asks to keep spending on a task | [Choose **Continue** or **Stop**](#usage-warning-why-am-i-seeing-this). |
 | You reached your member cap | Ask an owner or admin to raise it, or wait for the next cycle. A workspace top-up leaves your personal cap in place. |
-| The workspace ran out of credits | An owner or admin can buy a top-up or change the plan in **Settings → Billing**. |
+| The workspace ran out of credits | An owner or admin can buy a top-up in **Settings → Billing**, or the owner can change the plan. |
 
 Some billing interruptions require an updated payment method or a plan change. Eligible runs can resume after billing is fixed. If a run expires, check what it already completed before rerunning it.
 
@@ -160,22 +154,35 @@ When spending checks are enabled for your workspace, Lindy can pause a task that
   <img src="/lindy-brand-assets/account-billing/usage/continue-or-stop.png" alt="Continue lets Lindy finish the task. Stop ends further work on the run." width="1208" height="464" loading="lazy" />
 </Frame>
 
-<Accordion title="What if we need more before the pool resets?">
-Admins have two options:
-
-1. **Buy a top-up**: extra workspace credits, with current pricing shown in **Settings → Billing**. Purchased top-up credits remain available until you use them.
-2. **Change the plan**: review the available plans in **Settings → Billing** and choose one that fits your team's usage.
-</Accordion>
-
-<Accordion title="Does adding a teammate add credits?">
-Yes. Credits belong to the workspace, not to each person, and every seat adds its tier's allotment to the pool. See [Lindy Teammate Billing](/teammate/lindy-teammate-billing).
-</Accordion>
-
-<Accordion title="Can I try Lindy for free?">
-New users can start with free credits, no credit card required. The free credits last 7 days.
-</Accordion>
-
 If your team keeps hitting the limit, [reach out](mailto:support@lindy.ai) and we'll find the right fit.
+
+## Credit FAQs
+
+<AccordionGroup>
+  <Accordion title="How do credits work?">
+    Credits measure how much work Lindy does. The model you use, the information Lindy reads, and the tools it calls all affect the total. See [estimated credits by task](#credit-usage-by-feature).
+  </Accordion>
+
+  <Accordion title="Does adding a teammate add credits?">
+    Every paid seat adds its included credits to the workspace's [shared pool](#how-the-shared-pool-works). Owners and admins can [set a credit limit for each teammate](#spend-caps-per-teammate).
+  </Accordion>
+
+  <Accordion title="Do unused credits roll over?">
+    Unused monthly plan credits expire when they reset. Purchased top-ups stay in your balance until you use them. Check **Settings → Billing → Credits reset** for your workspace's reset date.
+
+    <Frame>
+      <img src="/lindy-brand-assets/account-billing/usage/plan-credits-and-top-ups.png" alt="Plan credits refill every cycle. Top-up credits stay until used." width="1208" height="664" loading="lazy" />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="What happens if we run out of credits?">
+    Lindy pauses work that uses credits until more are available. An owner or admin can check top-up pricing and buy more in **Settings → Billing**, or the workspace owner can choose a plan with more credits. You can also wait for the next reset. See [what to do when work pauses](#what-happens-when-your-team-hits-the-limit).
+  </Accordion>
+
+  <Accordion title="Can I try Lindy for free?">
+    Yes. New users can start with [free credits](/teammate/lindy-teammate-billing#plans-and-credits) for seven days without a credit card.
+  </Accordion>
+</AccordionGroup>
 
 ## Credit Optimization
 
@@ -218,7 +225,7 @@ Try these ways to make your team's credits go further.
   <Accordion title="Pick the right model">
     Advanced models earn their cost on hard reasoning and analysis. Routine work like summarizing, drafting, and lookups runs well on a cheaper one.
 
-    Switch the model from the dropdown below the taskbar, then select **Set as default** to apply it to new conversations.
+    Choose a model for the current task from the dropdown below the taskbar. Select **Set as default** to use it in new conversations.
   </Accordion>
 
   <Accordion title="Remove seats you aren't using">
